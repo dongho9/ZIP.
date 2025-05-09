@@ -1,4 +1,4 @@
-<div align="center"> <h1>ZIP.</h1>
+<div> <h1>ZIP.</h1>
 <br>
 ## 서비스 소개
 커머스와 OTT서비스 결합 서비스
