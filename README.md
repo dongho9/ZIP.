@@ -1,13 +1,17 @@
 <div> <h1>ZIP.</h1>
 <br>
 ## 서비스 소개
+<br>
 커머스와 OTT서비스 결합 서비스
 <br>
+<hr>
 ## 개발환경
+<br>
 - ReactJS
 <br>
+<hr>
 ## 팀원소개
-
+<br>
 👩🏻‍💻 강동호
 
 - FRONTEND
