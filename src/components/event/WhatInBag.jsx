@@ -1,0 +1,270 @@
+import { picture } from 'motion/react-client'
+import React from 'react'
+import styled from 'styled-components'
+
+
+
+const TattooContents = styled.div`
+/* position: absolute; */
+width: 100%;
+/* height: 2500px; */
+display: flex;
+flex-direction: column;
+gap: 64px;
+padding:  206px 210px 210px 210px ;
+`
+
+const TattooTittle = styled.div`
+width: 100%;
+height: 42px;
+  font-size: 5rem;
+`
+const TattooVideos = styled.div`
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+/* border: 1px solid #f00; */
+`
+
+const VideoTop = styled.div`
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px 20px 0 0;
+  background: var(--event-color);
+  gap: 10px;
+`
+
+const Circle = styled.div`
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--light-color);
+  &:first-child{
+    margin-left: 30px;
+    background: var(--dark-color);
+  }
+`
+
+const ContentTitle = styled.div`
+font-size: 2rem;
+font-weight: 700;
+color: #ACE0FF;
+margin-bottom: 5px;
+`
+
+
+const InfluencerName = styled.div`
+font-size: 6rem;
+font-weight: bold;
+margin-bottom: 40px;
+`
+
+const QuoteSection = styled.div`
+font-size: 3rem;
+font-weight: 500;
+margin-bottom: 90px;
+`
+
+
+const VideosContents = styled.div`
+width: 100%;
+height: 840px;
+display: flex;
+/* justify-content: center; */
+align-items: center;
+border-radius: 0 0 20px 20px;
+border: 1px solid var(--border-color);
+margin-bottom: 60px;
+`
+
+
+
+const VideoContent = styled.div`
+width: 36%;
+height: 100%;
+display: flex;
+align-items: center;
+border-radius: 0 0  0 20px ;
+cursor: pointer;
+background: var(--border-color);
+/* border: 1px solid #f00; */
+video {
+    transition: all 1s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 0 0 20px;
+  }
+`
+const CommerceContent = styled.div`
+position: relative;
+width: 64%;
+/* height: 100%; */
+/* border: 1px solid #0f0; */
+`
+
+
+const Content = styled.div`
+/* position: absolute; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  padding: 6%;
+  /* border: 1px solid var(--dark-color); */
+`
+
+const Pick = styled.div`
+font-size: 1.6rem;
+color: var(--border-color);
+`
+
+const Goods = styled.div`
+font-size: 2.2rem;
+font-weight: bold;
+`
+
+
+const Picture = styled.div`
+width: 250px;
+height: 250px;
+border: 1px solid #000;
+`
+const Line = styled.div`
+width: 240px;
+border: 1px solid #000;
+`
+
+const Bundle = styled.div`
+/* border: 1px solid #f00; */
+display: flex;
+flex-direction: column;
+gap: 20px;
+
+
+`
+
+const Bundles = styled.div`
+display: flex;
+gap: 40px;
+/* flex-direction: column; */
+
+`
+
+
+const DetailBundle = styled.div`
+display: flex;
+flex-direction: column;
+gap: 8px;
+`
+
+
+
+
+
+const tattooData = [
+  {
+    title: 'EVERYDAY TOTEM:',
+    name: '박재범 JAY PARK',
+    quote: 'JAY’S WAY: 무심한 듯 확실한 취향',
+    picture1:'"/src/imgs/home/누끼.png"',
+    picture2:'"/src/imgs/home/누끼.png"',
+    picture3:'"/src/imgs/home/누끼.png"',
+    pick: 'JAYPARK PICK',
+    content1: 'GUCCI BELT',
+    content2: 'LIB BALM',
+    content3: 'SHAVER',
+  },
+  {
+    title: 'EVERYDAY TOTEM:',
+    name: '모니카 MONIKA',
+    quote: '“모든 선택에 태도가 담긴 사람, 모니카.”',
+    picture1:'"/src/imgs/home/누끼.png"',
+    picture2:'"/src/imgs/home/누끼.png"',
+    picture3:'"/src/imgs/home/누끼.png"',
+    pick: 'MORNIKA PICK',
+    content1: 'TAMBURINS PERFUME',
+    content2: 'BURBERRY WALLET',
+    content3: 'LAKA LIB',
+  },
+  {
+    title: 'EVERYDAY TOTEM:',
+    name: '박준원 PH-1',
+    quote: '“PH-1의 무드를 완성하는 작은 취향들.”',
+    picture1:'"/src/imgs/home/누끼.png"',
+    picture2:'"/src/imgs/home/누끼.png"',
+    picture3:'"/src/imgs/home/누끼.png"',
+    pick: 'PH-1 PICK',
+    content1: 'PRADA BAG',
+    content2: 'BUCKET HAT',
+    content3: 'SALVATORE PERFUME',
+  },
+];
+
+
+const WhatInBag = () => {
+  return (
+    <>
+        <TattooContents>
+        <TattooTittle>WHAT’S IN MY BAG</TattooTittle>
+    <TattooVideos>
+    {tattooData.map((item, index) => (
+            <React.Fragment key={index}>
+      <VideoTop>
+        <Circle/>
+        <Circle/>
+        <Circle/>
+      </VideoTop>
+      <VideosContents>
+          <VideoContent>
+          <video src="/public/videos/일반비_플러스 메인 상단_V2_저용량 버전.mp4" autoPlay loop ></video>
+          {/* <video src={item.videoSrc} autoPlay loop muted /> */}
+          </VideoContent>
+          <CommerceContent>
+        <Content >
+          <ContentTitle >{item.title}</ContentTitle>
+          <InfluencerName>{item.name}</InfluencerName>
+          <QuoteSection>{item.quote}</QuoteSection> 
+          <Bundles>
+            <Bundle>
+              <Picture>{item.picture1}</Picture>
+              <DetailBundle>
+                <Pick>{item.pick}</Pick>
+                <Goods>{item.content1}</Goods>
+                <Line/>
+              </DetailBundle>
+              </Bundle>
+            <Bundle>
+            <Picture>{item.picture2}</Picture>
+              <DetailBundle>
+                <Pick>{item.pick}</Pick>
+                <Goods>{item.content2}</Goods>
+                <Line/>
+              </DetailBundle>
+            </Bundle>
+            <Bundle>
+            <Picture>{item.picture3}</Picture>
+              <DetailBundle>
+                <Pick>{item.pick}</Pick>
+                <Goods>{item.content3}</Goods>
+                <Line/>
+              </DetailBundle>
+            </Bundle>
+          </Bundles>
+        </Content>
+          </CommerceContent>
+      </VideosContents>
+      </React.Fragment>
+))}
+    </TattooVideos>
+        </TattooContents>
+        </>
+  );
+};
+
+export default WhatInBag

@@ -24,6 +24,7 @@ a{
   --accent: #dc143c;
   --subTitle: #838383;
   --lightGray: #D3D3D3;
+  --event-color: #ACE0FF;
 }
 
 html {
