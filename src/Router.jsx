@@ -6,6 +6,9 @@ import Event from "./pages/Event";
 import Ott from "./pages/Ott";
 import FilterCategory from "./pages/FilterCategory";
 import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +37,14 @@ export const router = createBrowserRouter([
       {
         path: "cart",
         element: <Cart />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "signup",
+        element: <Signup />,
       },
     ],
   },
