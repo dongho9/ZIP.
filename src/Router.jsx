@@ -5,6 +5,7 @@ import Detail from "./pages/Detail";
 import Event from "./pages/Event";
 import Ott from "./pages/Ott";
 import FilterCategory from "./pages/FilterCategory";
+import Cart from "./pages/Cart";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
       {
         path: "filtercategory/:categoryName",
         element: <FilterCategory />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
       },
     ],
   },
