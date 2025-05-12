@@ -8,6 +8,7 @@ import FilterCategory from "./pages/FilterCategory";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Search from "./pages/Search";
 import Payment from "./pages/Payment";
 import Mypage from "./pages/mypages/Mypage";
 import MypageMain from "./pages/mypages/MypageMain";
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
       {
         path: "signup",
         element: <Signup />,
+      },
+      {
+        path: "search/:name",
+        element: <Search />,
       },
       {
         path: "payment",
