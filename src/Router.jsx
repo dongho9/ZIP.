@@ -8,7 +8,7 @@ import FilterCategory from "./pages/FilterCategory";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-
+import Search from "./pages/Search";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -45,6 +45,10 @@ export const router = createBrowserRouter([
       {
         path: "signup",
         element: <Signup />,
+      },
+      {
+        path: "search/:name",
+        element: <Search />,
       },
     ],
   },
