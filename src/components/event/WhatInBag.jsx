@@ -5,26 +5,32 @@ import styled from 'styled-components'
 
 
 const TattooContents = styled.div`
-/* position: absolute; */
 width: 100%;
-/* height: 2500px; */
 display: flex;
 flex-direction: column;
 gap: 64px;
-padding:  206px 210px 210px 210px ;
+padding:  200px 210px;
+@media screen and (max-width:1024px){
+  padding:  200px 50px;
+}
 `
 
 const TattooTittle = styled.div`
 width: 100%;
 height: 42px;
   font-size: 5rem;
+  @media screen and (max-width:1024px){
+    font-size: 4rem;
+}
 `
 const TattooVideos = styled.div`
 width: 100%;
 height: 100%;
 display: flex;
 flex-direction: column;
-/* border: 1px solid #f00; */
+@media screen and (max-width:1024px){
+  
+}
 `
 
 const VideoTop = styled.div`
@@ -35,6 +41,9 @@ const VideoTop = styled.div`
   border-radius: 20px 20px 0 0;
   background: var(--event-color);
   gap: 10px;
+  @media screen and (max-width:1024px){
+    height: 35px;
+}
 `
 
 const Circle = styled.div`
@@ -46,6 +55,9 @@ const Circle = styled.div`
     margin-left: 30px;
     background: var(--dark-color);
   }
+  @media screen and (max-width:1024px){
+  
+}
 `
 
 const ContentTitle = styled.div`
@@ -53,6 +65,11 @@ font-size: 2rem;
 font-weight: 700;
 color: #ACE0FF;
 margin-bottom: 5px;
+@media screen and (max-width:1024px){
+  font-size: 1.7rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+}
 `
 
 
@@ -60,12 +77,20 @@ const InfluencerName = styled.div`
 font-size: 6rem;
 font-weight: bold;
 margin-bottom: 40px;
+@media screen and (max-width:1024px){
+  font-size: 4rem;
+  margin-bottom: 30px;
+}
 `
 
 const QuoteSection = styled.div`
 font-size: 3rem;
 font-weight: 500;
 margin-bottom: 90px;
+@media screen and (max-width:1024px){
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
 `
 
 
@@ -73,11 +98,13 @@ const VideosContents = styled.div`
 width: 100%;
 height: 840px;
 display: flex;
-/* justify-content: center; */
 align-items: center;
 border-radius: 0 0 20px 20px;
 border: 1px solid var(--border-color);
 margin-bottom: 60px;
+@media screen and (max-width:1024px){
+  height: 100%;
+}
 `
 
 
@@ -97,6 +124,9 @@ video {
     height: 100%;
     object-fit: cover;
     border-radius: 0 0 0 20px;
+    @media screen and (max-width:1024px){
+      height: 440px; 
+}
   }
 `
 const CommerceContent = styled.div`
@@ -104,6 +134,9 @@ position: relative;
 width: 64%;
 /* height: 100%; */
 /* border: 1px solid #0f0; */
+@media screen and (max-width:1024px){
+  
+}
 `
 
 
@@ -117,16 +150,25 @@ const Content = styled.div`
   /* align-items: center; */
   padding: 6%;
   /* border: 1px solid var(--dark-color); */
+  @media screen and (max-width:1024px){
+  
+}
 `
 
 const Pick = styled.div`
 font-size: 1.6rem;
 color: var(--border-color);
+@media screen and (max-width:1024px){
+  font-size: 1.3rem;
+}
 `
 
 const Goods = styled.div`
 font-size: 2.2rem;
 font-weight: bold;
+@media screen and (max-width:1024px){
+  font-size: 1.4rem;
+}
 `
 
 
@@ -134,10 +176,17 @@ const Picture = styled.div`
 width: 250px;
 height: 250px;
 border: 1px solid #000;
+@media screen and (max-width:1024px){
+  width: 150px;
+height: 150px;
+}
 `
 const Line = styled.div`
-width: 240px;
+/* width: 240px; */
 border: 1px solid #000;
+@media screen and (max-width:1024px){
+  
+}
 `
 
 const Bundle = styled.div`
@@ -145,15 +194,19 @@ const Bundle = styled.div`
 display: flex;
 flex-direction: column;
 gap: 20px;
-
+@media screen and (max-width:1024px){
+  
+}
 
 `
 
 const Bundles = styled.div`
 display: flex;
-gap: 40px;
+gap: 30px;
 /* flex-direction: column; */
-
+@media screen and (max-width:1024px){
+  
+}
 `
 
 
@@ -161,6 +214,9 @@ const DetailBundle = styled.div`
 display: flex;
 flex-direction: column;
 gap: 8px;
+@media screen and (max-width:1024px){
+  
+}
 `
 
 
