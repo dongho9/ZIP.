@@ -150,13 +150,13 @@ const Category = () => {
           <Title>Category</Title>
         </MainTitle>
         <CategoryItem>
-          <li onClick={() => navigate("/filtercategory/Style")} onMouseEnter={() => onMouseEnter("style")}>
+          <li onClick={() => navigate("/filtercategory/style")} onMouseEnter={() => onMouseEnter("style")}>
             Style
           </li>
-          <li onClick={() => navigate("/filtercategory/Beauty")} onMouseEnter={() => onMouseEnter("beauty")}>
+          <li onClick={() => navigate("/filtercategory/beauty")} onMouseEnter={() => onMouseEnter("beauty")}>
             Beauty
           </li>
-          <li onClick={() => navigate("/filtercategory/Artist")} onMouseEnter={() => onMouseEnter("artist")}>
+          <li onClick={() => navigate("/filtercategory/artist")} onMouseEnter={() => onMouseEnter("artist")}>
             Artist
           </li>
           <li onClick={() => navigate("/promotion")} onMouseEnter={() => onMouseEnter("promotion")}>

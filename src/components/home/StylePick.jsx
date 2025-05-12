@@ -162,7 +162,7 @@ export default function StylePick() {
     <Container>
       <MainTitle>
         <Title>Style ZIP.</Title>
-        <Button onClick={() => navigate("/filtercategory/Style")}>More Zip</Button>
+        <Button onClick={() => navigate("/filtercategory/style")}>More Zip</Button>
       </MainTitle>
       <Swiper
         slidesPerView={4}

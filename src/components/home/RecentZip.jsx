@@ -209,7 +209,7 @@ function RecentZip() {
     <Container>
       <MainTitle>
         <Title>Recent Zip</Title>
-        <Button onClick={() => navigate("/filtercategory/Artist")}>More Zip</Button>
+        <Button onClick={() => navigate("/filtercategory/artist")}>More Zip</Button>
       </MainTitle>
       <Wrapper>
         <Item className="panel">

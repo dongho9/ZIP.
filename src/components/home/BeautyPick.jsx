@@ -147,7 +147,7 @@ const BeautyPick = () => {
     <Container>
       <MainTitle>
         <Title>Beauty ZIP.</Title>
-        <Button onClick={() => navigate("/filtercategory/Beauty")}>More Zip</Button>
+        <Button onClick={() => navigate("/filtercategory/beauty")}>More Zip</Button>
       </MainTitle>
       <ProductList>
         <ProductItem>
