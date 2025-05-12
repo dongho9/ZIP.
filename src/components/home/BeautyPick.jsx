@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "motion/react";
 
@@ -8,6 +9,9 @@ const Container = styled.div`
   color: var(--dark-color);
   padding: 100px 3% 0px;
   /* display: flex; */
+  @media screen and (max-width: 1024px) {
+    padding: 70px 3% 0px;
+  }
 `;
 const MainTitle = styled.div`
   display: flex;
@@ -18,6 +22,10 @@ const Title = styled.h2`
   color: var(--dark-color);
   font-size: 10rem;
   letter-spacing: -4px;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 7rem;
+  }
 `;
 const Button = styled.button`
   font-size: 2rem;
@@ -28,6 +36,11 @@ const Button = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1.6rem;
+    padding: 20px 40px;
+  }
 `;
 const ProductList = styled.ul`
   padding: 100px 0;
@@ -35,6 +48,12 @@ const ProductList = styled.ul`
   grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-gap: 12px;
   padding-bottom: 1px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 50px 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 8px;
+  }
 `;
 const ProductItem = styled.li`
   border-right: 1px solid var(--border-color);
@@ -42,6 +61,23 @@ const ProductItem = styled.li`
   &:nth-child(5),
   &:last-child {
     border: 0px solid;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding-right: 8px;
+    &:nth-child(3),
+    &:nth-child(6),
+    &:nth-child(9) {
+      border: 0px solid;
+    }
+
+    &:nth-child(5),
+    &:last-child {
+      border-right: 1px solid var(--border-color);
+    }
+    &:last-child {
+      display: none;
+    }
   }
 `;
 const ProductImg = styled.div`
@@ -70,29 +106,48 @@ const ProductInfo = styled.div`
     color: var(--light-color);
     background: var(--dark-color);
   }
+
+  @media screen and (max-width: 1024px) {
+    padding: 16px;
+  }
 `;
 const Prod_sub = styled.span`
   font-size: 1.4rem;
   color: var(--subTitle);
+
+  @media screen and (max-width: 1024px) {
+    /* font-size: 1.2rem; */
+  }
 `;
 const Prod_name = styled.span`
   font-size: 2.6rem;
   margin: 10px 0 14px;
   font-weight: bold;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2.2rem;
+    margin: 10px 0 8px;
+  }
 `;
 const Prod_price = styled.span`
   margin-top: 6px;
   letter-spacing: 0.2px;
   color: var(--subTitle);
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1.6rem;
+  }
 `;
 
 /*--- 출력 ---*/
 const BeautyPick = () => {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <MainTitle>
-        <Title>Beauty Pick</Title>
-        <Button>More Zip</Button>
+        <Title>Beauty ZIP.</Title>
+        <Button onClick={() => navigate("/filtercategory/Beauty")}>More Zip</Button>
       </MainTitle>
       <ProductList>
         <ProductItem>

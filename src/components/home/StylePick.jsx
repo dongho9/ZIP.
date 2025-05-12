@@ -1,12 +1,46 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
-// import { motion } from "motion/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+// import "./styles.css";
+
+// import required modules
+// import { Pagination } from "swiper/modules";
 
 /*--- 스타일 ---*/
 const Container = styled.div`
   width: 100%;
+  height: 100%;
   background: #000;
   color: #fff;
+  /* border: 1px solid #f00; */
+  position: relative;
+  .swiper {
+    width: 100%;
+    /* height: 500px; */
+    /* display: flex; */
+    margin: 120px 0 180px 0;
+    /* overflow: visible !important; */
+    .swiper-wrapper {
+      width: 100%;
+      height: 100%;
+      /* justify-content: space-between; */
+      margin-right: 0;
+      .swiper-slide {
+        margin-right: 0;
+        flex-shrink: 1;
+      }
+    }
+    @media screen and (max-width: 1024px) {
+      margin: 80px 0 160px 0;
+    }
+  }
 `;
 const MainTitle = styled.div`
   display: flex;
@@ -15,57 +49,67 @@ const MainTitle = styled.div`
   align-items: center;
 `;
 const Title = styled.h2`
-  color: var(--dark-color);
+  color: var(--light-color);
   font-size: 10rem;
-  letter-spacing: -4px;
+  /* letter-spacing: -4px; */
+
+  @media screen and (max-width: 1024px) {
+    font-size: 7rem;
+  }
 `;
 const Button = styled.button`
   font-size: 2rem;
   padding: 22px 50px;
-  color: #fff;
-  background: #000;
+  color: var(--dark-color);
+  background: var(--light-color);
   text-transform: uppercase;
   border: none;
   outline: none;
   cursor: pointer;
-`;
-const CardSlide = styled.div`
-  width: 100%;
-  margin: 150px 0 180px 0;
-`;
-const CardList = styled.ul`
-  width: 100%;
-  display: flex;
-  gap: 80px;
-  justify-content: center;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1.6rem;
+    padding: 20px 40px;
+  }
 `;
 const CardItem = styled.li`
   width: 380px;
   height: 500px;
-  background: #e4e4e4;
+  background: var(--light-color);
+  color: var(--dark-color);
   /* background: var(--border); */
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  /* gap: 20px; */
   display: flex;
   flex-direction: column;
-  /* gap: 20px; */
   align-items: center;
+  position: relative;
+  @media screen and (max-width: 1024px) {
+    width: 330px;
+    height: 420px;
+  }
 `;
 const CardItemInfo = styled.div`
   /* position: absolute; */
   width: inherit;
   padding: 40px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1; /* 이미지보다 낮게 설정 */
   span {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    font-weight: 300;
   }
   p {
-    max-width: 240px;
-    font-size: 3.6rem;
-    font-weight: bold;
+    max-width: 300px;
+    font-size: 3.4rem;
     line-height: 4rem;
-    margin: 14px 0 30px;
+    margin: 18px 0 30px;
+    font-weight: 600;
+    cursor: pointer;
   }
   button {
-    padding: 9px 10px;
+    padding: 15px 16px;
     font-size: 2rem;
     border-radius: 50%;
     background: #000;
@@ -74,92 +118,134 @@ const CardItemInfo = styled.div`
     outline: none;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 1024px) {
+    span {
+      font-size: 1.6rem;
+    }
+    p {
+      max-width: 280px;
+      font-size: 3rem;
+      line-height: 3.6rem;
+      margin: 8px 0 20px;
+    }
+    button {
+      padding: 10px 11px;
+      font-size: 1.6rem;
+    }
+  }
 `;
 const CardImg = styled.div`
-  width: 350px;
-  height: 350px;
-  bottom: 0;
-  /* position: absolute; */
+  width: 320px;
+  height: 320px;
+  bottom: -100px;
+  position: absolute;
+  z-index: 1;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
+  }
+
+  @media screen and (max-width: 1024px) {
+    bottom: -70px;
+    width: 260px;
+    height: 260px;
   }
 `;
 
-const StylePick = () => {
+export default function StylePick() {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <MainTitle>
-        <Title>Style Pick</Title>
-        <Button>More Zip</Button>
+        <Title>Style ZIP.</Title>
+        <Button onClick={() => navigate("/filtercategory/Style")}>More Zip</Button>
       </MainTitle>
-      <CardSlide>
-        <CardList>
+      <Swiper
+        slidesPerView={4}
+        spaceBetween={400}
+        loop={true}
+        loopedSlides={8}
+        modules={[]}
+        style={{ overflow: "visible" }}
+        className="swiper"
+      >
+        <SwiperSlide className="swiperItem">
           <CardItem>
             <CardItemInfo>
-              <span>브랜드명</span>
-              <p>클래식한 무드의 상품명 </p>
+              <span>Equipe urban SW</span>
+              <p>세련된 레트로 무드의 Equipe urban</p>
               <button>→</button>
             </CardItemInfo>
             <CardImg>
               <img src="/src/imgs/home/누끼.png" alt="" />
             </CardImg>
           </CardItem>
+        </SwiperSlide>
+        <SwiperSlide>
           <CardItem>
             <CardItemInfo>
-              <span>브랜드명</span>
-              <p>클래식한 무드의 상품명</p>
+              <span>Equipe urban SW</span>
+              <p>세련된 레트로 무드의 Equipe urban</p>
               <button>→</button>
             </CardItemInfo>
             <CardImg>
               <img src="/src/imgs/home/누끼.png" alt="" />
             </CardImg>
           </CardItem>
+        </SwiperSlide>
+        <SwiperSlide>
           <CardItem>
             <CardItemInfo>
-              <span>브랜드명</span>
-              <p>클래식한 무드의 상품명 </p>
+              <span>Equipe urban SW</span>
+              <p>세련된 레트로 무드의 Equipe urban</p>
               <button>→</button>
             </CardItemInfo>
             <CardImg>
               <img src="/src/imgs/home/누끼.png" alt="" />
             </CardImg>
           </CardItem>
+        </SwiperSlide>
+        <SwiperSlide>
           <CardItem>
             <CardItemInfo>
-              <span>브랜드명</span>
-              <p>클래식한 무드의 상품명 </p>
+              <span>Equipe urban SW</span>
+              <p>세련된 레트로 무드의 Equipe urban</p>
               <button>→</button>
             </CardItemInfo>
             <CardImg>
               <img src="/src/imgs/home/누끼.png" alt="" />
             </CardImg>
           </CardItem>
+        </SwiperSlide>
+        <SwiperSlide>
           <CardItem>
             <CardItemInfo>
-              <span>브랜드명</span>
-              <p>클래식한 무드의 상품명</p>
+              <span>Equipe urban SW</span>
+              <p>세련된 레트로 무드의 Equipe urban</p>
               <button>→</button>
             </CardItemInfo>
             <CardImg>
               <img src="/src/imgs/home/누끼.png" alt="" />
             </CardImg>
           </CardItem>
+        </SwiperSlide>
+        <SwiperSlide>
           <CardItem>
             <CardItemInfo>
-              <span>브랜드명</span>
-              <p>클래식한 무드의 상품명 </p>
+              <span>Equipe urban SW</span>
+              <p>세련된 레트로 무드의 Equipe urban</p>
               <button>→</button>
             </CardItemInfo>
             <CardImg>
               <img src="/src/imgs/home/누끼.png" alt="" />
             </CardImg>
           </CardItem>
-        </CardList>
-      </CardSlide>
+        </SwiperSlide>
+      </Swiper>
     </Container>
   );
-};
-
-export default StylePick;
+}
