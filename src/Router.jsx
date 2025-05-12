@@ -8,6 +8,14 @@ import FilterCategory from "./pages/FilterCategory";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Payment from "./pages/Payment";
+import Mypage from "./pages/mypages/Mypage";
+import MypageMain from "./pages/mypages/MypageMain";
+import OrderConfirmation from "./pages/mypages/OrderConfirmation";
+import FAQ from "./pages/mypages/FAQ";
+import DeleteAccount from "./pages/mypages/DeleteAccount";
+import ChangeUserInfo from "./pages/mypages/ChangeUserInfo";
+import UserAddress from "./pages/mypages/UserAddress";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +53,40 @@ export const router = createBrowserRouter([
       {
         path: "signup",
         element: <Signup />,
+      },
+      {
+        path: "payment",
+        element: <Payment />,
+      },
+      {
+        path: "mypage",
+        element: <Mypage />,
+        children: [
+          {
+            index: true,
+            element: <MypageMain />,
+          },
+          {
+            path: "order-confirmation",
+            element: <OrderConfirmation />,
+          },
+          {
+            path: "faq",
+            element: <FAQ />,
+          },
+          {
+            path: "delete-account",
+            element: <DeleteAccount />,
+          },
+          {
+            path: "change-user-info",
+            element: <ChangeUserInfo />,
+          },
+          {
+            path: "user-address",
+            element: <UserAddress />,
+          },
+        ],
       },
     ],
   },
