@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
-
+import { useRef } from "react";
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
@@ -16,6 +16,9 @@ const ImgWrap = styled.div`
   position: relative;
   aspect-ratio: 1 / 1;
   @media screen and (max-width: 1024px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;
@@ -30,23 +33,23 @@ const Form = styled.form`
   width: 40%;
   height: 100%;
   /* flex: 2; */
-  padding: 0 10%;
+  padding: 0 5%;
   display: flex;
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 1024px) {
-    width: 100%;
-    padding: 0 30%;
+    width: 50%;
+    padding: 0 3%;
   }
   //모바일
   @media screen and (max-width: 768px) {
     width: 100%;
-    padding: 0 20%;
+    padding: 0 3%;
   }
-  @media screen and (max-width: 402px) {
+  /* @media screen and (max-width: 402px) {
     width: 100%;
     padding: 0 20%;
-  }
+  } */
 `;
 
 const Inner = styled.div`
@@ -108,6 +111,9 @@ const SubBtn = styled(Button)`
   background: var(--light-color);
   color: 1px solid var(--dark-color);
   border: 1px solid var(--dark-color);
+  position: relative;
+  a {
+  }
 `;
 
 const Text = styled.div`
@@ -127,9 +133,11 @@ const Kakao = styled(Button)`
 
 const Login = () => {
   const navigate = useNavigate();
-  const handleSignupClick = () => {
-    navigate("/signup");
-  };
+  // const handleSignupClick = () => {
+  //   navigate("/signup");
+  // };
+  const btnRef = useRef();
+  console.log(btnRef.current);
   return (
     <Wrapper>
       <ImgWrap>
@@ -145,7 +153,9 @@ const Login = () => {
           <InputGroup>
             <Group>
               <Button>LOGIN</Button>
-              <SubBtn onClick={handleSignupClick}>CREATE ACCOUNT</SubBtn>
+              <SubBtn ref={btnRef} type="button">
+                <Link to="/signup">CREATE ACCOUNT</Link>
+              </SubBtn>
             </Group>
             <Text>아이디 | 비밀번호 찾기</Text>
           </InputGroup>

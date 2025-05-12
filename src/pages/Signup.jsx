@@ -1,25 +1,25 @@
 import styled from "styled-components";
 import Agreement from "../components/signup/Agreement";
 import Modal from "../components/signup/Modal";
-
 const Wrapper = styled.div`
-  width: 450px;
-  margin: 30px auto;
+  width: 540px;
+  margin: 60px auto;
   height: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 6% 0;
   @media screen and (max-width: 1024px) {
-    width: 360px;
+    /* width: 360px; */
     /* margin: 30px auto; */
+    padding: 6% 3%;
+    width: 100%;
   }
 
   @media screen and (max-width: 428px) {
-    width: 300px;
-    margin: 40px auto;
+    /* width: 300px;
+    margin: 40px auto; */
   }
 `;
 
@@ -60,7 +60,7 @@ const Input = styled.input`
       opacity: 0;
     }
   }
-  @media screen and (max-width: 428px) {
+  @media screen and (max-width: 767px) {
     padding: 20px;
   }
 `;
