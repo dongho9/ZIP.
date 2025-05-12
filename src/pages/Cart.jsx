@@ -203,21 +203,11 @@ const Cart = () => {
   };
 
   const toggleSelectItem = (id) => {
-    setItems(
-      items.map((item) =>
-        item.id === id ? { ...item, selected: !item.selected } : item
-      )
-    );
+    setItems(items.map((item) => (item.id === id ? { ...item, selected: !item.selected } : item)));
   };
 
   const changeQty = (id, diff) => {
-    setItems(
-      items.map((item) =>
-        item.id === id
-          ? { ...item, quantity: Math.max(1, item.quantity + diff) }
-          : item
-      )
-    );
+    setItems(items.map((item) => (item.id === id ? { ...item, quantity: Math.max(1, item.quantity + diff) } : item)));
   };
 
   const removeItem = (id) => {
@@ -229,10 +219,7 @@ const Cart = () => {
   };
 
   const selectedItems = items.filter((item) => item.selected);
-  const totalPrice = selectedItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+  const totalPrice = selectedItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
     <PageWrapper>
@@ -253,11 +240,7 @@ const Cart = () => {
 
           {items.map((item) => (
             <ItemBox key={item.id}>
-              <input
-                type="checkbox"
-                checked={item.selected}
-                onChange={() => toggleSelectItem(item.id)}
-              />
+              <input type="checkbox" checked={item.selected} onChange={() => toggleSelectItem(item.id)} />
               <Image src={item.image} alt={item.name} />
               <ItemInfo>
                 <Brand>{item.brand}</Brand>

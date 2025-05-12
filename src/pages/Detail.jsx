@@ -189,17 +189,15 @@ const Detail = () => {
           <ItemDesc>
             <p>DESCRIPTION</p>
             <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-              obcaecati fuga facere deleniti incidunt quam et dolore in. Optio
-              quae eligendi nobis sed rem nam consequatur, qui quis nisi. Quos!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus obcaecati fuga facere deleniti incidunt
+              quam et dolore in. Optio quae eligendi nobis sed rem nam consequatur, qui quis nisi. Quos!
             </span>
           </ItemDesc>
           <ItemDesc>
             <p>EXCHANGE</p>
             <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-              obcaecati fuga facere deleniti incidunt quam et dolore in. Optio
-              quae eligendi nobis sed rem nam consequatur, qui quis nisi. Quos!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus obcaecati fuga facere deleniti incidunt
+              quam et dolore in. Optio quae eligendi nobis sed rem nam consequatur, qui quis nisi. Quos!
             </span>
           </ItemDesc>
         </TextBox>
@@ -257,10 +255,7 @@ const Detail = () => {
           </SwiperSlide>
           <SwiperSlide className="RelateItem">
             <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/product_11_1280x.jpg?v=1698491524"
-                alt="img04"
-              />
+              <RelateItemImg src="https://relilla.com/cdn/shop/files/product_11_1280x.jpg?v=1698491524" alt="img04" />
             </RelateItemImgWrap>
             <RelateItemText>
               <RelateItemPick>카리나 PICK</RelateItemPick>
@@ -269,10 +264,7 @@ const Detail = () => {
           </SwiperSlide>
           <SwiperSlide className="RelateItem">
             <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801"
-                alt="img05"
-              />
+              <RelateItemImg src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801" alt="img05" />
             </RelateItemImgWrap>
             <RelateItemText>
               <RelateItemPick>카리나 PICK</RelateItemPick>
@@ -281,10 +273,7 @@ const Detail = () => {
           </SwiperSlide>
           <SwiperSlide className="RelateItem">
             <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-                alt="img06"
-              />
+              <RelateItemImg src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654" alt="img06" />
             </RelateItemImgWrap>
             <RelateItemText>
               <RelateItemPick>카리나 PICK</RelateItemPick>
