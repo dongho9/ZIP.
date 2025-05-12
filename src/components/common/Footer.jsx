@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useMatch, Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -30,13 +31,50 @@ const HeaderLogoImg = styled.img`
   width: 90px;
 `;
 const Footer = () => {
+  const [filterCheck, setFilterCheck] = useState(false);
   const commerceMatch = useMatch("/");
   const detailMatch = useMatch("/detail");
+  const loginMatch = useMatch("/login");
+  const signUpMatch = useMatch("/signup");
+  const eventMatch = useMatch("/event");
+  const cartMatch = useMatch("/cart");
+  const filterCategoryMatch = useMatch("/filtercategory/:categoryName");
+  const mypageMatch = useMatch("/mypage");
+  const mypageMatch02 = useMatch("/mypage/:name");
+  const filterFunc = () => {
+    if (
+      commerceMatch ||
+      detailMatch ||
+      filterCategoryMatch ||
+      loginMatch ||
+      signUpMatch ||
+      eventMatch ||
+      cartMatch ||
+      mypageMatch ||
+      mypageMatch02
+    ) {
+      setFilterCheck(true);
+    } else {
+      setFilterCheck(false);
+    }
+  };
+  useEffect(() => {
+    filterFunc();
+  }, [
+    commerceMatch,
+    detailMatch,
+    filterCategoryMatch,
+    loginMatch,
+    signUpMatch,
+    eventMatch,
+    mypageMatch,
+    mypageMatch02,
+  ]);
   return (
     <Container>
       <FooterLeft>
         <Fnb>
-          {commerceMatch || detailMatch ? (
+          {filterCheck ? (
             <FooterFnb>
               <li>Style</li>
               <li>Beauty</li>

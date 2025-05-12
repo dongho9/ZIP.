@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import DetailSwiper from "../components/detail/DetailSwiper";
-
-const Container = styled.div`
-  /* margin-top: 60px; */
-`;
+import { Swiper, SwiperSlide } from "swiper/react";
+const Container = styled.div``;
 const Wrapper = styled.div`
   display: flex;
   @media screen and (max-width: 1024px) {
@@ -33,6 +31,8 @@ const TextBox = styled.div`
     height: 500px;
     width: 100%;
     position: relative;
+    padding: 0 3%;
+    margin-top: 50px;
   }
 `;
 
@@ -114,23 +114,22 @@ const RelateProducts = styled.div`
   gap: 40px;
   padding: 80px 3%;
   margin-bottom: 80px;
+  .RelateItemWrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .RelateItem {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
 `;
 const RelateProductsTitle = styled.h3`
   font-size: 3.2rem !important;
   font-size: var(--dark-color);
 `;
-const RelateItemWrap = styled.div`
-  height: 300px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-`;
 
-const RelateItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
 const RelateItemImgWrap = styled.div`
   width: 100%;
 `;
@@ -190,25 +189,47 @@ const Detail = () => {
           <ItemDesc>
             <p>DESCRIPTION</p>
             <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-              obcaecati fuga facere deleniti incidunt quam et dolore in. Optio
-              quae eligendi nobis sed rem nam consequatur, qui quis nisi. Quos!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus obcaecati fuga facere deleniti incidunt
+              quam et dolore in. Optio quae eligendi nobis sed rem nam consequatur, qui quis nisi. Quos!
             </span>
           </ItemDesc>
           <ItemDesc>
             <p>EXCHANGE</p>
             <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-              obcaecati fuga facere deleniti incidunt quam et dolore in. Optio
-              quae eligendi nobis sed rem nam consequatur, qui quis nisi. Quos!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus obcaecati fuga facere deleniti incidunt
+              quam et dolore in. Optio quae eligendi nobis sed rem nam consequatur, qui quis nisi. Quos!
             </span>
           </ItemDesc>
         </TextBox>
       </Wrapper>
       <RelateProducts>
         <RelateProductsTitle>Related Products</RelateProductsTitle>
-        <RelateItemWrap>
-          <RelateItem>
+        <Swiper
+          className="RelateItemWrap"
+          breakpoints={{
+            1920: {
+              slidesPerView: 5,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            540: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            0: {
+              slidesPerView: 2, // ✅ 모바일용 설정 추가 (예: 1개 보여줌)
+              spaceBetween: 20,
+            },
+          }}
+        >
+          <SwiperSlide className="RelateItem">
             <RelateItemImgWrap>
               <RelateItemImg
                 src="https://relilla.com/cdn/shop/files/product_15_kikii_1280x.jpg?v=1698491589"
@@ -219,8 +240,8 @@ const Detail = () => {
               <RelateItemPick>카리나 PICK</RelateItemPick>
               <RelateItemName>Sorbet Balm</RelateItemName>
             </RelateItemText>
-          </RelateItem>
-          <RelateItem>
+          </SwiperSlide>
+          <SwiperSlide className="RelateItem">
             <RelateItemImgWrap>
               <RelateItemImg
                 src="https://relilla.com/cdn/shop/files/product_8_moist_1280x.jpg?v=1698501809"
@@ -231,20 +252,35 @@ const Detail = () => {
               <RelateItemPick>카리나 PICK</RelateItemPick>
               <RelateItemName>Sorbet Balm</RelateItemName>
             </RelateItemText>
-          </RelateItem>
-          <RelateItem>
+          </SwiperSlide>
+          <SwiperSlide className="RelateItem">
             <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/product_11_1280x.jpg?v=1698491524"
-                alt="img04"
-              />
+              <RelateItemImg src="https://relilla.com/cdn/shop/files/product_11_1280x.jpg?v=1698491524" alt="img04" />
             </RelateItemImgWrap>
             <RelateItemText>
               <RelateItemPick>카리나 PICK</RelateItemPick>
               <RelateItemName>Sorbet Balm</RelateItemName>
             </RelateItemText>
-          </RelateItem>
-          <RelateItem>
+          </SwiperSlide>
+          <SwiperSlide className="RelateItem">
+            <RelateItemImgWrap>
+              <RelateItemImg src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801" alt="img05" />
+            </RelateItemImgWrap>
+            <RelateItemText>
+              <RelateItemPick>카리나 PICK</RelateItemPick>
+              <RelateItemName>Sorbet Balm</RelateItemName>
+            </RelateItemText>
+          </SwiperSlide>
+          <SwiperSlide className="RelateItem">
+            <RelateItemImgWrap>
+              <RelateItemImg src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654" alt="img06" />
+            </RelateItemImgWrap>
+            <RelateItemText>
+              <RelateItemPick>카리나 PICK</RelateItemPick>
+              <RelateItemName>Sorbet Balm</RelateItemName>
+            </RelateItemText>
+          </SwiperSlide>
+          <SwiperSlide className="RelateItem">
             <RelateItemImgWrap>
               <RelateItemImg
                 src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801"
@@ -255,8 +291,8 @@ const Detail = () => {
               <RelateItemPick>카리나 PICK</RelateItemPick>
               <RelateItemName>Sorbet Balm</RelateItemName>
             </RelateItemText>
-          </RelateItem>
-          <RelateItem>
+          </SwiperSlide>
+          <SwiperSlide className="RelateItem">
             <RelateItemImgWrap>
               <RelateItemImg
                 src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
@@ -267,8 +303,8 @@ const Detail = () => {
               <RelateItemPick>카리나 PICK</RelateItemPick>
               <RelateItemName>Sorbet Balm</RelateItemName>
             </RelateItemText>
-          </RelateItem>
-        </RelateItemWrap>
+          </SwiperSlide>
+        </Swiper>
       </RelateProducts>
     </Container>
   );

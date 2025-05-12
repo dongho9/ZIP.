@@ -7,6 +7,7 @@ const Container = styled.div`
   height: 80px;
   background: var(--dark-color);
   color: var(--light-color);
+
   /* animation: roll 10s linear infinite; */
 `;
 const LogoWrapper = styled.ul`
@@ -17,15 +18,6 @@ const LogoWrapper = styled.ul`
   align-items: center;
   animation: roll 12s linear infinite;
 `;
-// const LogoWrapperTwo = styled.ul`
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   animation-delay: 10s;
-//   animation: roll 10s linear infinite;
-// `;
 const BrandLogo = styled.li`
   width: 80px;
   img {
@@ -75,7 +67,7 @@ const RollingBanner = () => {
           <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
         </BrandLogo>
       </LogoWrapper>
-      {/* <LogoWrapperTwo>
+      <LogoWrapper>
         <BrandLogo>
           <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
         </BrandLogo>
@@ -103,7 +95,7 @@ const RollingBanner = () => {
         <BrandLogo>
           <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
         </BrandLogo>
-      </LogoWrapperTwo> */}
+      </LogoWrapper>
     </Container>
   );
 };
