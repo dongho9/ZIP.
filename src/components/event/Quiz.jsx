@@ -6,24 +6,37 @@ const Container = styled.div`
   height: 100%;
   justify-content: center;
   background: var(--dark-color);
-  /* margin-top: 140%; */
+  padding-bottom: 100px
 `
 
 const QuizTitle = styled.div`
 color: var(--light-color);
 font-size: 8rem;
 font-weight: bold;
-padding: 176px  238px 152px;
+padding: 176px  50px 152px;
+@media screen and (max-width: 1024px) {
+    font-size: 6rem;
+    padding: 100px 50px;
+}
+@media screen and (max-width: 402px) {
+  font-size: 2.5rem;
+  padding: 100px 30px;
+  }
 `
 
 const BlueBox = styled.div`
-width: 240px;
+/* width: 240px; */
 height: 1326px;
 background: #ACE0FF;
 border-radius: 50px 0 0 50px;
 display: flex;
 justify-content: center;
 /* align-items: center; */
+padding: 0 60px;
+@media screen and (max-width: 1024px) {
+padding: 0;
+height: auto;
+}
 `
 
 const Question = styled.div`
@@ -31,11 +44,20 @@ font-size: 8rem;
 font-weight: bold;
 padding-top: 126px;
 color: var(--dark-color);
+
+@media screen and (max-width: 1024px) {
+  font-size: 4.2rem;
+  padding: 80px 36px;
+}
+@media screen and (max-width: 402px) {
+  font-size: 2rem;
+  padding: 36px 10px;
+}
+
+
 `
 
 const WhiteBox = styled.div`
-width: 1155px;
-height: 1326px;
 background: #fff;
 border-radius: 0 50px 50px 0;
 display: flex;
@@ -43,27 +65,70 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 gap: 100px;
+@media screen and (max-width: 1024px) {
+  width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: 70px;
+}
+@media screen and (max-width: 402px) {
+  gap: 20px;
+  padding-bottom : 40px;
+}
 `
 
 const AllBox = styled.div`
-  width: 100%;
+/* box-sizing: border-box; */
+  /* width: 100%; */
   height: 100%;
   display: flex;
   justify-content: center;
-  /* border: 1px solid #f00; */
   padding-bottom: 100px;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: 100%;
+    padding: 0 50px 100px 50px;
+  }
+  @media screen and (max-width: 402px) {
+    padding: 0 20px 100px;
+  }
 `
 
 const Title = styled.div`
-position: absolute;
+/* position: absolute; */
 font-weight: bold;
 font-size: 6rem;
-transform: translateY(-830%);
+padding: 0 100px;
+@media screen and (max-width: 1024px) {
+      font-weight: bold;
+    font-size: 4.2rem;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 80px 0  0;
+}
+@media screen and (max-width: 402px) {
+  font-weight: bold;
+        font-size: 1.6rem;
+        display: flex;
+        align-items: center;
+        padding: 36px 0 0;
+}
 `
+
 
 const EachName = styled.div`
 font-size: 3.2rem;
 line-height: 2;
+@media screen and (max-width: 1024px) {
+  font-size: 2.8rem;
+line-height: 1;
+}
+@media screen and (max-width: 402px) {
+  font-size: 1.5rem;
+  line-height: 0.8;
+}
 `
 
 const Picture = styled.div`
@@ -71,18 +136,38 @@ width: 320px;
 height: 320px;
 background: #f00;
 border-radius: 10%;
+@media screen and (max-width: 1024px) {
+  width: 250px;
+    height: 250px;
+}
+@media screen and (max-width: 402px) {
+  width: 100px;
+  height: 100px;
+}
 `
 
 const FirstBundle = styled.div`
   display: flex;
   gap: 200px;
   /* border: 1px solid #000; */
+  @media screen and (max-width: 1024px) {
+    gap: 150px;
+  }
+  @media screen and (max-width: 402px) {
+    gap: 20px;
+  }
 `
 
 const SecondBundle = styled.div`
   display: flex;
   gap: 200px;
   /* border: 1px solid #000; */
+  @media screen and (max-width: 1024px) {
+    gap: 150px;
+  }
+  @media screen and (max-width: 402px) {
+    gap: 20px;
+  }
 `
 
 const DetailBundle = styled.div`
@@ -90,18 +175,31 @@ display: flex;
 flex-direction: column;
 gap: 25px;
   /* border: 1px solid #000; */
+  @media screen and (max-width: 1024px) {
+  }
+  @media screen and (max-width: 402px) {
+    gap: 10px;
+  }
 `
 
 const ThirdBundle = styled.div`
-display: flex;
-flex-direction: column;
-gap: 100px;
-margin-top: 12%;
+display: flex
+;
+    flex-direction: column;
+    gap: 100px;
+    /* margin-top: 7%; */
+    @media screen and (max-width: 1024px) {
+    }
+    @media screen and (max-width: 402px) {
+      gap: 30px;
+    }
+
 `
 
 const EventButton = styled.div`
-width: 12%;
+width: fit-content;
 height: 60px;
+padding: 30px;
 margin: 0 auto ;
   color: var(--dark-color);
   background: var(--border-color);
@@ -113,6 +211,13 @@ margin: 0 auto ;
   align-items: center;
   outline: none;
   cursor: pointer;
+  @media screen and (max-width: 1024px) {
+  }
+  @media screen and (max-width: 402px) {
+    font-size: 1.3rem;
+    height: 50px;
+    padding: 20px;
+  }
   &:hover{
     color: var(--light-color);
     transition: all 0.3s;
