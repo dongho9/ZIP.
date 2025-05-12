@@ -72,18 +72,49 @@ const Container = styled.div`
 const SideSection = styled.div`
   grid-column: span 1;
   display: flex;
-  align-items: end;
+  /* align-items: end; */
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
   /* padding-bottom: 60%; */
+  /* border: 1px solid #f0f; */
+
   img {
-    /* width: 100px; */
+    /* width: 100%; */
     object-fit: cover;
   }
   @media screen and (max-width: 1024px) {
     display: none;
+  }
+`;
+const SideItem = styled.div`
+  width: 100%;
+  height: 100%;
+
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  justify-content: start;
+
+  /* top: 0; */
+  /* left: 0; */
+  transform: rotate(-90deg);
+  position: absolute;
+  bottom: 10%;
+  left: 0%;
+  p {
+    border: 1px solid #f00;
+    /* bottom: 10%;
+    left: 0%; */
+  }
+  span {
+    width: 100%;
+    height: 100%;
+    /* position: absolute; */
+    /* transform: rotate(-90deg); */
+    /* bottom: 10%;
+    left: 0; */
   }
 `;
 const Line = styled.div`
@@ -179,6 +210,9 @@ const InfoSection = styled.div`
   /* justify-content: end; */
   /* background: rgba($color: #000000, $alpha: 0.6); */
   /* background: rgba(0, 0, 0, 0.6); */
+  /* background-image: "https://live.staticflickr.com/65535/54271277085_8ebc361c1f_o.jpg" ; */
+  /* background: url("/public/img/noise.png") center/cover no-repeat; */
+  /* background: url("https://live.staticflickr.com/65535/54271277085_8ebc361c1f_o.jpg") center/cover no-repeat; */
   h4 {
     font-weight: 600;
     font-size: 9rem;
@@ -236,8 +270,8 @@ const InfoVideo = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
     z-index: 2;
+    /* background: rgba(0, 0, 0, 0.1); */
   }
 `;
 
@@ -252,6 +286,12 @@ const MainBanner = () => {
   return (
     <Container>
       <SideSection>
+        <SideItem>
+          <p>What's in star's bag? now yours</p>
+          {/* <hr /> */}
+          <span>only on zip.</span>
+          <span>only on zip.</span>
+        </SideItem>
         <img src="/src/imgs/home/vertical.png" alt="" />
       </SideSection>
       <ImgSection>

@@ -11,6 +11,7 @@ const Container = styled.div`
   width: 100%;
   background: var(--light-color);
   color: var(--dark-color);
+  margin-bottom: 100px;
 `;
 
 const Wrapper = styled.div`
@@ -93,7 +94,7 @@ const CardTitle = styled.div`
 const CardInfo = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 100px;
+  gap: 80px;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
@@ -238,7 +239,6 @@ function RecentZip() {
             </AccordionCard>
           </div>
         </Item>
-
         <Item className="panel">
           <div className="card-inner">
             <AccordionCard>
@@ -266,7 +266,6 @@ function RecentZip() {
             </AccordionCard>
           </div>
         </Item>
-
         <Item className="panel">
           <div className="card-inner">
             <AccordionCard>
@@ -294,61 +293,6 @@ function RecentZip() {
             </AccordionCard>
           </div>
         </Item>
-
-        {/* <Item className="panel">
-          <div className="card-inner">
-            <AccordionCard>
-              <CardTitle>
-                <span>02</span>
-                <h3>유아</h3>
-              </CardTitle>
-              <CardInfo>
-                <LeftInfo>
-                  <h4>
-                    오마이걸 유아 인마이백
-                    <br />
-                    상큼함이 물씬 나는 그녀의 리얼템!
-                  </h4>
-                  <p>
-                    유아가 직접 챙긴 아이템에는 그녀의 취향이 가득! 무대 뒤 일상 루틴부터, 그녀만의 뷰티 꿀템까지 담아온
-                    가방 속 이야기.
-                  </p>
-                  <button>view zip</button>
-                </LeftInfo>
-                <RightInfo>
-                  <video src="/videos/main_2.mp4" muted autoPlay loop></video>
-                </RightInfo>
-              </CardInfo>
-            </AccordionCard>
-          </div>
-        </Item>
-        <Item className="panel">
-          <div className="card-inner">
-            <AccordionCard>
-              <CardTitle>
-                <span>03</span>
-                <h3>이무진</h3>
-              </CardTitle>
-              <CardInfo>
-                <LeftInfo>
-                  <h4>
-                    싱어송라이터 이무진 인마이백
-                    <br />
-                    그의 감성이 담긴 소지품들
-                  </h4>
-                  <p>
-                    음악 작업의 흔적이 담긴 아이템부터, 무진만의 루틴이 묻어나는 소지품들까지. 그의 가방 안에는 진심이
-                    있습니다.
-                  </p>
-                  <button>view zip</button>
-                </LeftInfo>
-                <RightInfo>
-                  <video src="/videos/main_3.mp4" muted autoPlay loop></video>
-                </RightInfo>
-              </CardInfo>
-            </AccordionCard>
-          </div>
-        </Item> */}
       </Wrapper>
     </Container>
   );
