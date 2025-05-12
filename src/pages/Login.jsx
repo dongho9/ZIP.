@@ -1,16 +1,13 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
-`;
-
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 const ImgWrap = styled.div`
@@ -18,6 +15,15 @@ const ImgWrap = styled.div`
   height: 100%;
   position: relative;
   aspect-ratio: 1 / 1;
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+`;
+
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const Form = styled.form`
@@ -28,6 +34,19 @@ const Form = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    padding: 0 30%;
+  }
+  //모바일
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding: 0 20%;
+  }
+  @media screen and (max-width: 402px) {
+    width: 100%;
+    padding: 0 20%;
+  }
 `;
 
 const Inner = styled.div`
@@ -37,11 +56,15 @@ const Inner = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
-`;
-
-const Title = styled.h3`
-  font-size: 3.6rem;
-  font-weight: bold;
+  h3 {
+    font-size: 3.6rem;
+    font-weight: bold;
+  }
+  @media screen and (max-width: 428px) {
+    h3 {
+      font-size: 3rem;
+    }
+  }
 `;
 
 const Input = styled.input`
@@ -49,8 +72,15 @@ const Input = styled.input`
   /* font-size: 1.8rem; */
   border: 1px solid var(--border-color);
   padding: 20px 20px;
+  &::placeholder {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
   &:focus {
     outline: none;
+    &::placeholder {
+      opacity: 0;
+    }
   }
 `;
 
@@ -96,6 +126,10 @@ const Kakao = styled(Button)`
 `;
 
 const Login = () => {
+  const navigate = useNavigate();
+  const handleSignupClick = () => {
+    navigate("/signup");
+  };
   return (
     <Wrapper>
       <ImgWrap>
@@ -103,8 +137,7 @@ const Login = () => {
       </ImgWrap>
       <Form>
         <Inner>
-          <Title>LOGIN</Title>
-
+          <h3>LOGIN</h3>
           <Group>
             <Input type="text" placeholder="아이디" />
             <Input type="password" placeholder="비밀번호" />
@@ -112,7 +145,7 @@ const Login = () => {
           <InputGroup>
             <Group>
               <Button>LOGIN</Button>
-              <SubBtn>CREATE ACCOUNT</SubBtn>
+              <SubBtn onClick={handleSignupClick}>CREATE ACCOUNT</SubBtn>
             </Group>
             <Text>아이디 | 비밀번호 찾기</Text>
           </InputGroup>
