@@ -39,6 +39,8 @@ const Footer = () => {
   const eventMatch = useMatch("/event");
   const cartMatch = useMatch("/cart");
   const filterCategoryMatch = useMatch("/filtercategory/:categoryName");
+  const mypageMatch = useMatch("/mypage");
+  const mypageMatch02 = useMatch("/mypage/:name");
   const filterFunc = () => {
     if (
       commerceMatch ||
@@ -47,7 +49,9 @@ const Footer = () => {
       loginMatch ||
       signUpMatch ||
       eventMatch ||
-      cartMatch
+      cartMatch ||
+      mypageMatch ||
+      mypageMatch02
     ) {
       setFilterCheck(true);
     } else {
@@ -63,6 +67,8 @@ const Footer = () => {
     loginMatch,
     signUpMatch,
     eventMatch,
+    mypageMatch,
+    mypageMatch02,
   ]);
   return (
     <Container>

@@ -42,7 +42,7 @@ const Logo = styled.div`
   align-items: center;
   transform-origin: top left;
   padding-top: 24px;
-  width: 200px;
+  width: 160px;
   z-index: 3;
   a {
     width: 100%;
@@ -265,6 +265,8 @@ const Header = () => {
   const cartMatch = useMatch("/cart");
   const filterCategoryMatch = useMatch("/filtercategory/:categoryName");
   const searchMatch = useMatch("/search/:name");
+  const mypageMatch = useMatch("/mypage");
+  const mypageMatch02 = useMatch("/mypage/:name");
   const handleCategory = (e) => {
     const category = e.target.innerText;
     navigate(`/filtercategory/${category}`.toLowerCase());
@@ -283,7 +285,9 @@ const Header = () => {
       signUpMatch ||
       eventMatch ||
       cartMatch ||
-      searchMatch
+      searchMatch ||
+      mypageMatch ||
+      mypageMatch02
     ) {
       setFilterCheck(true);
     } else {
@@ -300,6 +304,8 @@ const Header = () => {
     signUpMatch,
     eventMatch,
     searchMatch,
+    mypageMatch,
+    mypageMatch02,
   ]);
 
   gsap.registerPlugin(ScrollTrigger);
