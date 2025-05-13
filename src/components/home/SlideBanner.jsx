@@ -17,6 +17,10 @@ const Container = styled.section`
     display: flex;
     flex-direction: column;
   }
+
+  @media screen and (max-width: 768px) {
+    height: 400px;
+  }
 `;
 
 const Title = styled.article`
@@ -37,9 +41,16 @@ const Title = styled.article`
     margin-top: 0%;
     font-size: 5rem;
     line-height: 6rem;
-    /* flex-direction: row; */
     br {
       display: none;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 3.6rem;
+    line-height: 6rem;
+    p {
+      font-size: 1.6rem;
+      color: var(--subTitle);
     }
   }
 `;
@@ -50,7 +61,6 @@ const CardWrapper = styled.ul`
   gap: 14px;
   overflow: hidden;
   display: flex;
-  height: 400px;
 `;
 
 const CardItem = styled.li`
@@ -77,7 +87,7 @@ const CardItem = styled.li`
     left: 0;
     width: 100%;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(19, 16, 16, 0.6);
     color: #fff;
     transition: bottom 0.5s ease;
   }

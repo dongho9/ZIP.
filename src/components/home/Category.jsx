@@ -15,6 +15,9 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
   }
+  @media screen and (max-width: 767px) {
+    padding: 0px;
+  }
 `;
 
 const CategotyImg = styled.ul`
@@ -38,6 +41,9 @@ const CategotyImg = styled.ul`
   @media screen and (max-width: 1024px) {
     height: 400px;
   }
+  @media screen and (max-width: 767px) {
+    height: 200px;
+  }
 `;
 
 const Info = styled.section`
@@ -56,6 +62,9 @@ const MainTitle = styled.div`
   @media screen and (max-width: 1024px) {
     padding: 50px 5%;
   }
+  @media screen and (max-width: 767px) {
+    padding: 30px 5%;
+  }
 `;
 
 const Title = styled.h2`
@@ -65,6 +74,10 @@ const Title = styled.h2`
 
   @media screen and (max-width: 1024px) {
     font-size: 7rem;
+  }
+  @media screen and (max-width: 767px) {
+    letter-spacing: -2px;
+    font-size: 5rem;
   }
 `;
 
@@ -86,6 +99,12 @@ const CategoryItem = styled.ul`
     li {
       font-size: 4rem;
       padding: 40px 5%;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    li {
+      font-size: 3.2rem;
+      padding: 30px 5%;
     }
   }
 `;
@@ -159,7 +178,7 @@ const Category = () => {
           <li onClick={() => navigate("/filtercategory/artist")} onMouseEnter={() => onMouseEnter("artist")}>
             Artist
           </li>
-          <li onClick={() => navigate("/promotion")} onMouseEnter={() => onMouseEnter("promotion")}>
+          <li onClick={() => navigate("/event")} onMouseEnter={() => onMouseEnter("promotion")}>
             Promotion
           </li>
         </CategoryItem>

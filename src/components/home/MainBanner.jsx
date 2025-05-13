@@ -55,7 +55,7 @@ const slides = [
 const Container = styled.div`
   /* margin-top: 60px; */
   width: 100%;
-  height: 100%;
+
   height: 100vh;
   /* height: 860px; */
   position: relative;
@@ -67,6 +67,9 @@ const Container = styled.div`
   overflow: hidden;
   @media screen and (max-width: 1024px) {
     height: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    /* height: 600px; */
   }
 `;
 const SideSection = styled.div`
@@ -103,8 +106,8 @@ const SideItem = styled.div`
   position: absolute;
   bottom: 10%;
   left: 0%;
+  border: 1px solid #f00;
   p {
-    border: 1px solid #f00;
     /* bottom: 10%;
     left: 0%; */
   }
@@ -195,10 +198,14 @@ const ImgSection = styled.div`
       opacity: 1;
     }
   }
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
 `;
 const InfoSection = styled.div`
   /* padding: 0 80px; */
-  /* padding: 6% 8%; */
+  /* paddin
+   g: 6% 8%; */
   padding: 0 8%;
   /* padding-bottom: 5%; */
   padding-top: 100px;

@@ -56,6 +56,10 @@ const Title = styled.h2`
   @media screen and (max-width: 1024px) {
     font-size: 7rem;
   }
+  @media screen and (max-width: 768px) {
+    font-size: 5rem;
+    letter-spacing: -2px;
+  }
 `;
 const Button = styled.button`
   font-size: 2rem;
@@ -70,6 +74,10 @@ const Button = styled.button`
   @media screen and (max-width: 1024px) {
     font-size: 1.6rem;
     padding: 20px 40px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 1.2rem;
+    padding: 16px 24px;
   }
 `;
 const CardItem = styled.li`
@@ -87,6 +95,10 @@ const CardItem = styled.li`
   @media screen and (max-width: 1024px) {
     width: 330px;
     height: 420px;
+  }
+  @media screen and (max-width: 767px) {
+    width: 290px;
+    height: 380px;
   }
 `;
 const CardItemInfo = styled.div`
@@ -134,6 +146,20 @@ const CardItemInfo = styled.div`
       font-size: 1.6rem;
     }
   }
+  @media screen and (max-width: 767px) {
+    span {
+      font-size: 1.4rem;
+    }
+    p {
+      max-width: 250px;
+      font-size: 2.4rem;
+      line-height: 3rem;
+      margin: 8px 0 12px;
+    }
+    button {
+      padding: 8px 9px;
+    }
+  }
 `;
 const CardImg = styled.div`
   width: 320px;
@@ -152,6 +178,11 @@ const CardImg = styled.div`
     bottom: -70px;
     width: 260px;
     height: 260px;
+  }
+  @media screen and (max-width: 767px) {
+    bottom: -40px;
+    width: 220px;
+    height: 220px;
   }
 `;
 
