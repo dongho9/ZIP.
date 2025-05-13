@@ -1,4 +1,3 @@
-// CartPage.jsx
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FaTrashAlt } from "react-icons/fa";

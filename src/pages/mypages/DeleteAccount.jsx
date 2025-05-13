@@ -1,21 +1,53 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled.div`
-  padding: 0 40px;
+  padding: 0 3%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1024px) {
+    padding: 0 5%;
+  }
+
+  @media screen and (max-width: 402px) {
+    padding: 0 4%;
+  }
 `;
 
 const PageTitle = styled.h1`
-  font-size: 2.4rem;
+  font-size: 3.6rem;
   text-align: center;
+  margin-top: 60px;
   margin-bottom: 40px;
-  font-weight: normal;
+  font-weight: bold;
   font-family: "EHNormalTrial", sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2.4rem;
+    margin-top: 50px;
+    margin-bottom: 35px;
+  }
+
+  @media screen and (max-width: 402px) {
+    font-size: 2.2rem;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
 `;
 
 const Form = styled.form`
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 550px;
+  }
+
+  @media screen and (max-width: 402px) {
+    max-width: 100%;
+  }
 `;
 
 const Description = styled.p`
@@ -24,10 +56,29 @@ const Description = styled.p`
   font-size: 1.3rem;
   margin-bottom: 40px;
   font-family: "Pretendard", sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+  }
+
+  @media screen and (max-width: 402px) {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
 `;
 
 const InputGroup = styled.div`
   margin-bottom: 32px;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 28px;
+  }
+
+  @media screen and (max-width: 402px) {
+    margin-bottom: 24px;
+  }
 `;
 
 const Label = styled.label`
@@ -36,6 +87,11 @@ const Label = styled.label`
   color: #333;
   margin-bottom: 8px;
   font-family: "Pretendard", sans-serif;
+
+  @media screen and (max-width: 402px) {
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+  }
 `;
 
 const InputWrapper = styled.div`
@@ -53,8 +109,18 @@ const Input = styled.input`
     outline: none;
     border-color: #333;
   }
+
+  @media screen and (max-width: 1024px) {
+    padding: 10px 12px;
+  }
+
+  @media screen and (max-width: 402px) {
+    padding: 10px 8px;
+    font-size: 1.2rem;
+  }
 `;
 
+// FontAwesome 아이콘을 위한 스타일 수정
 const PasswordToggle = styled.button`
   position: absolute;
   right: 12px;
@@ -62,9 +128,20 @@ const PasswordToggle = styled.button`
   transform: translateY(-50%);
   background: none;
   border: none;
-  font-size: 1.2rem;
   color: #999;
   cursor: pointer;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+
+  @media screen and (max-width: 402px) {
+    right: 8px;
+    font-size: 1.4rem;
+  }
 `;
 
 const DeleteButton = styled.button`
@@ -87,43 +164,110 @@ const DeleteButton = styled.button`
     color: #ccc;
     cursor: not-allowed;
   }
+
+  @media screen and (max-width: 1024px) {
+    padding: 14px;
+    margin-top: 20px;
+  }
+
+  @media screen and (max-width: 402px) {
+    padding: 12px;
+    font-size: 1.3rem;
+    margin-top: 16px;
+  }
 `;
 
 const Notice = styled.div`
-  margin-top: 40px;
+  margin-top: 30px;
   padding: 24px;
   background: #f8f8f8;
   border: 1px solid #e0e0e0;
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 35px;
+    padding: 20px;
+  }
+
+  @media screen and (max-width: 402px) {
+    margin-top: 30px;
+    padding: 16px;
+  }
 `;
 
 const NoticeTitle = styled.h3`
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: bold;
   margin-bottom: 16px;
   font-family: "EHNormalTrial", sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1.3rem;
+    margin-bottom: 14px;
+  }
+
+  @media screen and (max-width: 402px) {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
 `;
 
 const NoticeText = styled.p`
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #666;
   line-height: 1.6;
   margin-bottom: 8px;
   font-family: "Pretendard", sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  @media screen and (max-width: 402px) {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 5px;
+  }
 `;
 
 const Checkbox = styled.div`
   display: flex;
+  justify-content: end;
   align-items: center;
-  margin-top: 32px;
+  margin-top: 0px;
 
   input {
-    margin-right: 8px;
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+
+    @media screen and (max-width: 402px) {
+      width: 13px;
+      height: 13px;
+    }
   }
 
   label {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #333;
     font-family: "Pretendard", sans-serif;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 1.2rem;
+    }
+
+    @media screen and (max-width: 402px) {
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 28px;
+  }
+
+  @media screen and (max-width: 402px) {
+    margin-top: 24px;
   }
 `;
 
@@ -138,7 +282,7 @@ const DeleteAccount = () => {
       // 회원 탈퇴 로직 실행
       if (window.confirm("정말로 회원 탈퇴를 하시겠습니까?")) {
         // 탈퇴 처리
-        console.log("회원 탈퇴 처리");
+        alert("회원 탈퇴가 정상적으로 처리 되었습니다.");
       }
     }
   };
@@ -166,7 +310,7 @@ const DeleteAccount = () => {
               type="button"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? "👁️‍🗨️" : "👁️"}
+              <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
             </PasswordToggle>
           </InputWrapper>
         </InputGroup>
@@ -196,7 +340,7 @@ const DeleteAccount = () => {
         </Checkbox>
 
         <DeleteButton type="submit" disabled={!password || !agreed}>
-          OK
+          확인
         </DeleteButton>
       </Form>
     </Container>
