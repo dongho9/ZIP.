@@ -208,7 +208,7 @@ function RecentZip() {
   return (
     <Container>
       <MainTitle>
-        <Title>Recent Zip</Title>
+        <Title>Artist Zip</Title>
         <Button onClick={() => navigate("/filtercategory/artist")}>More Zip</Button>
       </MainTitle>
       <Wrapper>
@@ -227,7 +227,7 @@ function RecentZip() {
                     기다렸습니다. 제대로 모시겠습니다.
                   </h4>
                   <p>
-                    카리나가 자신의 애장품을 보부상 백에 가득 담아왔습니다. 작사 노트부터 폴라로이드 필름 앨범, 유치원
+                    닝닝이 자신의 애장품을 보부상 백에 가득 담아왔습니다. 작사 노트부터 폴라로이드 필름 앨범, 유치원
                     시절부터 모아온 편지들, 팬이 만들어 준 파우치, 최애 간식까지!
                   </p>
                   <button>view zip</button>
@@ -249,7 +249,7 @@ function RecentZip() {
               <CardInfo>
                 <LeftInfo>
                   <h4>
-                    필릭스가 입술을 위해
+                    스트레이키즈 필릭스가
                     <br />
                     n번째 구매한 아이템은?
                   </h4>

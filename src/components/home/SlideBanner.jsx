@@ -9,6 +9,7 @@ const Container = styled.section`
   color: var(--light-color);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  /* padding: 0 3%; */
 
   @media screen and (max-width: 1024px) {
     height: 500px;
@@ -19,7 +20,7 @@ const Container = styled.section`
 `;
 
 const Title = styled.article`
-  padding: 6% 3%;
+  padding: 6%;
   font-size: 6rem;
   line-height: 7rem;
   grid-column: 1 / span 5;
@@ -86,7 +87,6 @@ const CardItem = styled.li`
   }
 
   @media screen and (max-width: 1024px) {
-    
   }
 `;
 
