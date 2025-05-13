@@ -1,22 +1,34 @@
 import styled from "styled-components";
 import Agreement from "../components/signup/Agreement";
 import Modal from "../components/signup/Modal";
-
 const Wrapper = styled.div`
-  width: 450px;
-  margin: 0 auto;
+  width: 540px;
+  margin: 60px auto;
   height: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 6% 0;
+  @media screen and (max-width: 1024px) {
+    /* width: 360px; */
+    /* margin: 30px auto; */
+    padding: 6% 3%;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 428px) {
+    /* width: 300px;
+    margin: 40px auto; */
+  }
 `;
 
 const Title = styled.h3`
   font-size: 3.6rem;
   font-weight: bold;
+  @media screen and (max-width: 428px) {
+    font-size: 3rem;
+  }
 `;
 
 const Form = styled.div`
@@ -36,10 +48,20 @@ const Input = styled.input`
   /* padding: 24px 20px; */
   padding: 24px 20px;
   transition: all 0.3s;
+  &::placeholder {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
   &:focus {
     border: 1px solid var(--dark-color);
     color: var(--dark-color);
     outline: none;
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    padding: 20px;
   }
 `;
 
@@ -67,6 +89,9 @@ const Select = styled.select`
     outline: none;
     border: 1px solid var(--dark-color);
   }
+  @media screen and (max-width: 428px) {
+    padding: 20px 0;
+  }
 `;
 
 const Btn = styled.button`
@@ -77,10 +102,16 @@ const Btn = styled.button`
   background: var(--dark-color);
   border: none;
   cursor: pointer;
+  @media screen and (max-width: 428px) {
+    padding: 20px 0;
+  }
 `;
 
 const Button = styled(Btn)`
   width: 44%;
+  @media screen and (max-width: 428px) {
+    width: 50%;
+  }
 `;
 
 const Desc = styled.p`

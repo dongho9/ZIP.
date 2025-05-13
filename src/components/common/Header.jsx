@@ -1,25 +1,35 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import { Link, useMatch, useNavigate } from "react-router-dom";
-const Container = styled.div`
+import SearchComp from "./SearchComp";
+import { Link, useMatch, useNavigate, useParams } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+const Container = styled.header``;
+const Wrapper = styled.div`
   height: 60px;
   padding: 0 3%;
   position: fixed;
-  mix-blend-mode: difference;
   transform: translateY(0px);
   top: 0;
   left: 0;
   width: 100%;
-  transition: all 0.5s;
+  transition: all 0.3s;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 2;
   color: #fff;
+  mix-blend-mode: difference;
+  background: transparent;
   /* backdrop-filter: blur(16px) saturate(180%); */
-
+  z-index: 2;
   &.active {
     transform: translateY(-100px);
+  }
+  &.filterUnActive {
+    mix-blend-mode: normal;
+    /* filter: invert(1); */
+  }
+  @media screen and (max-width: 1024px) {
   }
 `;
 
@@ -28,16 +38,27 @@ const HeaderLeft = styled.div`
   gap: 20px;
   align-items: center;
 `;
-
-const HeaderLogo = styled.h1`
-  cursor: pointer;
-  display: block;
-  z-index: 10;
+const Logo = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
+  transform-origin: top left;
+  padding-top: 24px;
+  width: 160px;
+  z-index: 3;
+  transition: all 0.3s;
+  a {
+    width: 100%;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 120px !important;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100px !important;
+  }
 `;
-
 const HeaderLogoImg = styled.img`
-  width: 90px;
+  width: 100%;
 `;
 
 const HeaderSelect = styled.div`
@@ -66,6 +87,7 @@ const HeaderRight = styled.nav`
   font-weight: 300;
   font-family: "EHNormalTrial";
   font-size: 1.2rem;
+
   @media screen and (max-width: 1024px) {
     gap: 20px;
   }
@@ -74,14 +96,90 @@ const HeaderRight = styled.nav`
 const HeaderGnb = styled.ul`
   display: flex;
   gap: 16px;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  &::after {
+    transition: all 0.5s ease-in-out;
+  }
   li {
     cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    &::after {
+      transition: all 0.3s;
+      content: attr(data-li);
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translateY(140%);
+    }
+    &:hover {
+      span {
+        transform: translateY(-100%);
+      }
+      &::after {
+        transform: translateY(0%);
+      }
+    }
   }
+  span {
+    width: 100%;
+    transition: all 0.3s;
+    display: block;
+    height: 100%;
+    position: relative;
+    transform: translateY(0);
+  }
+
   @media screen and (max-width: 1024px) {
-    position: absolute;
-    opacity: 0;
+    display: none;
+    position: fixed;
     visibility: hidden;
     pointer-events: none;
+    opacity: 0;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    padding: 160px 3%;
+    li {
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      z-index: 10;
+      &::after {
+        display: none;
+      }
+      &:hover {
+        span {
+          transform: none;
+        }
+      }
+    }
+  }
+  &.active {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: visible;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100vh;
+      width: 100%;
+      background: var(--dark-color);
+      top: 0;
+      left: 0;
+      transition: all 0.5s ease-in-out;
+    }
+    li {
+      width: 100%;
+      height: auto;
+      color: var(--light-color);
+    }
   }
 `;
 
@@ -93,36 +191,41 @@ const HeaderEtc = styled.ul`
     display: flex;
     align-items: center;
     cursor: pointer;
-    /* svg {
+    img {
+      filter: invert(1);
+      position: absolute;
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-      position: absolute;
-      width: 16px;
-      path {
-        width: 100%;
-        fill: rgb(255, 255, 255);
-      }
-    } */
+      width: 18px;
+      height: 18px;
+    }
   }
   @media screen and (max-width: 1024px) {
     gap: 20px;
     li {
       span {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        position: absolute;
+        display: flex;
+        align-items: center;
+        span {
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          position: absolute;
+        }
       }
       img {
-        object-fit: cover;
-        width: 14px;
-        height: 14px;
+        display: block;
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: visible;
       }
     }
   }
 `;
-
+const HeaderEtcLi = styled.li``;
+const HeaderEtcText = styled.span``;
 const HeaderBars = styled.span`
   @media screen and (max-width: 1024px) {
     opacity: 0;
@@ -160,88 +263,186 @@ const MenuBars = styled.div`
   }
 `;
 const Header = () => {
+  const [filterCheck, setFilterCheck] = useState(false);
+  const [menuClick, setMenuClick] = useState(false);
+  const [searchClick, setSearchClick] = useState(false);
   const headerRef = useRef();
   const navigate = useNavigate();
-  let prevScroll = 0;
-  window.addEventListener("scroll", () => {
-    const scrollTop = window.scrollY;
-    if (scrollTop > prevScroll) {
-      headerRef.current.classList.add("active");
-    } else {
-      headerRef.current.classList.remove("active");
-    }
-    prevScroll = scrollTop;
-  });
+
   const commerceMatch = useMatch("/");
   const detailMatch = useMatch("/detail");
-  const filterCategoryMatch = useMatch("/filtercategory/:category");
-  // const handleMenuBars = () => {
-  //   console.log("hi");
-  // };
-
+  const loginMatch = useMatch("/login");
+  const signUpMatch = useMatch("/signup");
+  const eventMatch = useMatch("/event");
+  const cartMatch = useMatch("/cart");
+  const filterCategoryMatch = useMatch("/filtercategory/:categoryName");
+  const searchMatch = useMatch("/search/:name");
+  const mypageMatch = useMatch("/mypage");
+  const mypageMatch02 = useMatch("/mypage/:name");
   const handleCategory = (e) => {
     const category = e.target.innerText;
-    // console.log(category);
-    navigate(`/filtercategory/${category}`);
+    navigate(`/filtercategory/${category}`.toLowerCase());
+    setMenuClick(false);
   };
+  const toEvent = () => {
+    navigate("./event");
+    setMenuClick(false);
+  };
+  const filterFunc = () => {
+    if (
+      commerceMatch ||
+      detailMatch ||
+      filterCategoryMatch ||
+      loginMatch ||
+      signUpMatch ||
+      eventMatch ||
+      cartMatch ||
+      searchMatch ||
+      mypageMatch ||
+      mypageMatch02
+    ) {
+      setFilterCheck(true);
+    } else {
+      setFilterCheck(false);
+    }
+  };
+  useEffect(() => {
+    filterFunc();
+  }, [
+    commerceMatch,
+    detailMatch,
+    filterCategoryMatch,
+    loginMatch,
+    signUpMatch,
+    eventMatch,
+    searchMatch,
+    mypageMatch,
+    mypageMatch02,
+  ]);
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const headerLogo = () => {
+    if (window.innerWidth > 1024) {
+      gsap.to(".logo", {
+        width: "120px",
+        scrollTrigger: {
+          trigger: ".logo",
+          start: "top top",
+          end: "+=300",
+          scrub: true,
+        },
+      });
+    }
+  };
+  headerLogo();
+
+  headerLogo();
+  const handleMenuClick = () => {
+    setMenuClick((prev) => !prev);
+  };
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1024) {
+      setMenuClick(false);
+    }
+  });
+  const searchToggle = () => {
+    setMenuClick(false);
+    setSearchClick(true);
+  };
+
   return (
-    <Container ref={headerRef}>
-      <HeaderLeft>
-        <Link to="/">
-          <HeaderLogoImg src="./img/Logo.png" />
-        </Link>
-        <HeaderSelect>
-          {commerceMatch || detailMatch || filterCategoryMatch ? (
-            <div>
-              <p>COMMERCE</p>
-              <span>|</span>
-              <Link to="/ott">
-                <p className="selectActive">OTT</p>
-              </Link>
-            </div>
+    <Container>
+      <Wrapper ref={headerRef} className={menuClick ? "filterUnActive" : ""}>
+        <HeaderLeft>
+          <Logo className="logo">
+            <Link to="/">
+              <HeaderLogoImg src="/img/Logo.png" alt="logo" />
+            </Link>
+          </Logo>
+          <HeaderSelect>
+            {filterCheck ? (
+              <div>
+                <p>COMMERCE</p>
+                <span>|</span>
+                <Link to="/ott">
+                  <p className="selectActive">OTT</p>
+                </Link>
+              </div>
+            ) : (
+              <div>
+                <Link to="/">
+                  <p className="selectActive">COMMERCE</p>
+                </Link>
+                <span>|</span>
+                <p>OTT</p>
+              </div>
+            )}
+          </HeaderSelect>
+        </HeaderLeft>
+        <HeaderRight>
+          {filterCheck ? (
+            <HeaderGnb className={menuClick ? "active" : ""}>
+              <li onClick={handleCategory} data-li="Style">
+                <span>Style</span>
+              </li>
+              <li onClick={handleCategory} data-li="Beauty">
+                <span>Beauty</span>
+              </li>
+              <li onClick={handleCategory} data-li="Artist">
+                <span>Artist</span>
+              </li>
+              <li onClick={toEvent} data-li="Promotion">
+                <span>Promotion</span>
+              </li>
+            </HeaderGnb>
           ) : (
-            <div>
-              <Link to="/">
-                <p className="selectActive">COMMERCE</p>
-              </Link>
-              <span>|</span>
-              <p>OTT</p>
-            </div>
+            <HeaderGnb>
+              <li>haha</li>
+            </HeaderGnb>
           )}
-        </HeaderSelect>
-      </HeaderLeft>
-      <HeaderRight>
-        {commerceMatch || detailMatch || filterCategoryMatch ? (
-          <HeaderGnb>
-            <li onClick={handleCategory}>Style</li>
-            <li onClick={handleCategory}>Beauty</li>
-            <li onClick={handleCategory}>Artist</li>
-            <li>Promotion</li>
-          </HeaderGnb>
-        ) : (
-          <HeaderGnb>
-            <li>haha</li>
-          </HeaderGnb>
-        )}
-        <HeaderBars>|</HeaderBars>
-        <HeaderEtc>
-          <li>
-            <span>Cart</span>
-            {/* <img src="./img/cartIcon.svg" alt="" /> */}
-          </li>
-          <li>
-            <span>Search</span>
-          </li>
-          <li>
-            <span>Login</span>
-          </li>
-        </HeaderEtc>
-        <MenuBars>
-          <p></p>
-          <p></p>
-          <p></p>
-        </MenuBars>
-      </HeaderRight>
+          <HeaderBars>|</HeaderBars>
+          <HeaderEtc>
+            <HeaderEtcLi>
+              <HeaderEtcText>
+                <Link to="/cart">
+                  <span>Cart</span>
+                  <img
+                    src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad_bag.svg"
+                    alt="cart"
+                  />
+                </Link>
+              </HeaderEtcText>
+            </HeaderEtcLi>
+            <HeaderEtcLi>
+              <HeaderEtcText onClick={searchToggle}>
+                <span>Search</span>
+                <img
+                  src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad-icon-search-mo.svg"
+                  alt="search"
+                />
+              </HeaderEtcText>
+            </HeaderEtcLi>
+            <HeaderEtcLi>
+              <HeaderEtcText>
+                <Link to="/login">
+                  <span>Login</span>
+                  <img
+                    src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad_mypage.svg"
+                    alt="login"
+                  />
+                </Link>
+              </HeaderEtcText>
+            </HeaderEtcLi>
+          </HeaderEtc>
+          <MenuBars onClick={handleMenuClick}>
+            <p></p>
+            <p></p>
+            <p></p>
+          </MenuBars>
+        </HeaderRight>
+      </Wrapper>
+      <SearchComp searchClick={searchClick} setSearchClick={setSearchClick} />
     </Container>
   );
 };
