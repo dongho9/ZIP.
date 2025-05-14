@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { button, style } from "motion/react-client";
 import styled from "styled-components";
 import { color } from "motion";
+import Promotion from "./Promotion";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -11,48 +13,11 @@ const Wrapper = styled.div`
   @media screen and (max-width: 1024px) {
     padding-top: 40px;
   }
-  @media screen and (max-width: 402px) {
+  @media screen and (max-width: 767px) {
     padding-top: 30px;
   }
-`;
-
-const ButtonContents = styled.div`
-  display: flex;
-  height: 80px;
-
-  @media screen and (max-width: 1024px) {
-    height: 70px;
-  }
   @media screen and (max-width: 402px) {
-    height: 60px;
-  }
-`;
-
-const ScrollButton = styled.button`
-  width: 100%;
-  border: 1px solid var(--dark-color);
-  background: var(--light-color);
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
-
-  @media screen and (max-width: 1024px) {
-    font-size: 1.8rem;
-  }
-  @media screen and (max-width: 402px) {
-    font-size: 1.5rem;
-  }
-
-  &:hover {
-    background: var(--dark-color);
-    color: var(--light-color);
-    transition: 0.3s;
-  }
-  &:first-child {
-    background: ${({ selected }) =>
-      selected ? "var(--light-color)" : "var(--dark-color)"};
+    padding-top: 30px;
   }
 `;
 
@@ -61,16 +26,30 @@ const TattooContents = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 206px 210px 300px 210px;
+  padding: 10%;
+  /* padding: 206px 210px 300px 210px; */
+  /* @media screen and (max-width: 1500px) {
+    padding: 206px 100px 300px 100px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    padding: 206px 50px 300px 50px;
+  }
 
   @media screen and (max-width: 1024px) {
     padding: 100px 50px 150px 50px;
     gap: 30px;
   }
+  @media screen and (max-width: 767px) {
+    padding: 50px 100px 80px 100px;
+  }
+  @media screen and (max-width: 550px) {
+    padding: 50px 50px 80px 50px;
+  }
   @media screen and (max-width: 402px) {
     padding: 50px 20px 80px 20px;
     gap: 20px;
-  }
+  } */
 `;
 
 const TattooTittle = styled.div`
@@ -79,6 +58,9 @@ const TattooTittle = styled.div`
 
   @media screen and (max-width: 1024px) {
     font-size: 4rem;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 2rem;
   }
   @media screen and (max-width: 402px) {
     font-size: 2rem;
@@ -93,6 +75,9 @@ const TattooVideos = styled.div`
 
   @media screen and (max-width: 1024px) {
     gap: 40px;
+  }
+  @media screen and (max-width: 767px) {
+    gap: 30px;
   }
   @media screen and (max-width: 402px) {
     gap: 30px;
@@ -112,6 +97,11 @@ const VideoTop = styled.div`
     height: 35px;
     gap: 8px;
   }
+  @media screen and (max-width: 767px) {
+    height: 30px;
+    border-radius: 0;
+    gap: 6px;
+  }
   @media screen and (max-width: 402px) {
     height: 30px;
     border-radius: 0;
@@ -128,6 +118,10 @@ const Circle = styled.div`
   @media screen and (max-width: 1024px) {
     width: 11px;
     height: 11px;
+  }
+  @media screen and (max-width: 767px) {
+    width: 10px;
+    height: 10px;
   }
   @media screen and (max-width: 402px) {
     width: 10px;
@@ -151,6 +145,10 @@ const ContentTitle = styled.div`
     font-weight: 600;
     margin-bottom: 15px;
   }
+  @media screen and (max-width: 767px) {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
   @media screen and (max-width: 402px) {
     font-size: 1rem;
     margin-bottom: 6px;
@@ -165,6 +163,10 @@ const InfluencerName = styled.div`
   @media screen and (max-width: 1024px) {
     font-size: 4rem;
     margin-bottom: 30px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 3rem;
+    margin-bottom: 15px;
   }
   @media screen and (max-width: 402px) {
     font-size: 2rem;
@@ -183,6 +185,12 @@ const QuoteSection = styled.div`
     font-size: 1.6rem;
     line-height: 2.7rem;
     margin-bottom: 25px;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+    margin-bottom: 15px;
   }
   @media screen and (max-width: 402px) {
     width: 100%;
@@ -210,6 +218,11 @@ const VideosContent = styled.div`
     margin-bottom: 30px;
     border-radius: 0;
   }
+  @media screen and (max-width: 767px) {
+    height: 100%;
+    margin-bottom: 30px;
+    border-radius: 0;
+  }
 `;
 
 const AllContent = styled.div`
@@ -224,6 +237,11 @@ const AllContent = styled.div`
   @media screen and (max-width: 1024px) {
     padding: 40px;
     gap: 30px;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 20px;
+    gap: 20px;
+    flex-direction: column-reverse;
   }
   @media screen and (max-width: 402px) {
     padding: 20px;
@@ -248,6 +266,11 @@ const RightContent = styled.div`
   @media screen and (max-width: 1024px) {
     height: 380px;
   }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+  }
   @media screen and (max-width: 402px) {
     width: 100%;
     height: 200px;
@@ -261,6 +284,9 @@ const LeftContent = styled.div`
 
   @media screen and (max-width: 1024px) {
     width: 48%;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
   }
   @media screen and (max-width: 402px) {
     width: 100%;
@@ -284,6 +310,11 @@ const HashtagWrap = styled.div`
       padding: 10px 15px;
       font-size: 1.14rem;
     }
+    @media screen and (max-width: 767px) {
+      padding: 6px 10px;
+      font-size: 0.9rem;
+      border-radius: 30px;
+    }
     @media screen and (max-width: 402px) {
       padding: 6px 10px;
       font-size: 0.9rem;
@@ -294,6 +325,10 @@ const HashtagWrap = styled.div`
   @media screen and (max-width: 1024px) {
     margin-bottom: 30px;
     gap: 8px;
+  }
+  @media screen and (max-width: 767px) {
+    margin-bottom: 20px;
+    gap: 6px;
   }
   @media screen and (max-width: 402px) {
     margin-bottom: 20px;
@@ -312,7 +347,7 @@ const Content = styled.div`
 `;
 
 const ClickButton = styled.div`
-  width: 400px;
+  width: 430px;
   border-radius: 50px;
   display: flex;
   justify-content: center;
@@ -336,6 +371,9 @@ const ClickButton = styled.div`
     span {
       transform: translateX(10px);
 
+      @media screen and (max-width: 767px) {
+        transform: translateX(5px);
+      }
       @media screen and (max-width: 402px) {
         transform: translateX(5px);
       }
@@ -347,6 +385,13 @@ const ClickButton = styled.div`
     padding: 14px 0;
     font-size: 1.4rem;
     gap: 8px;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 0.8rem;
+    gap: 5px;
+    border-radius: 30px;
   }
   @media screen and (max-width: 402px) {
     width: 100%;
@@ -388,7 +433,6 @@ const tattooData = [
 ];
 
 const Introduce = () => {
-  const [active, setActive] = useState(true);
   const HashtagList = ({ tags }) => {
     console.log(tags);
     return (
@@ -404,10 +448,6 @@ const Introduce = () => {
   return (
     <>
       <Wrapper />
-      <ButtonContents>
-        <ScrollButton selected={active}>INTROUDUCE TATTOO</ScrollButton>
-        <ScrollButton>PROMOTION</ScrollButton>
-      </ButtonContents>
       <TattooContents>
         <TattooTittle>INTRODUCE TATTOO</TattooTittle>
         <TattooVideos>
