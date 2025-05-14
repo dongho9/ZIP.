@@ -20,12 +20,14 @@ const Wrapper = styled.div`
   color: #fff;
   mix-blend-mode: difference;
   background: transparent;
+  /* backdrop-filter: blur(16px) saturate(180%); */
   z-index: 2;
   &.active {
     transform: translateY(-100px);
   }
   &.filterUnActive {
     mix-blend-mode: normal;
+    /* filter: invert(1); */
   }
   @media screen and (max-width: 1024px) {
   }
@@ -44,8 +46,15 @@ const Logo = styled.div`
   padding-top: 24px;
   width: 160px;
   z-index: 3;
+  transition: all 0.3s;
   a {
     width: 100%;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 120px !important;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100px !important;
   }
 `;
 const HeaderLogoImg = styled.img`
@@ -98,6 +107,7 @@ const HeaderGnb = styled.ul`
     width: 100%;
     height: 100%;
     position: relative;
+
     &::after {
       transition: all 0.3s;
       content: attr(data-li);
@@ -182,31 +192,50 @@ const HeaderEtc = styled.ul`
     display: flex;
     align-items: center;
     cursor: pointer;
-    /* svg {
+    img {
+      filter: invert(1);
+      position: absolute;
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
+      width: 18px;
+      height: 18px;
+    }
+    svg {
       position: absolute;
-      width: 16px;
-      path {
-        width: 100%;
-        fill: rgb(255, 255, 255);
-      }
-    } */
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      width: 20px;
+      height: 20px;
+    }
   }
   @media screen and (max-width: 1024px) {
     gap: 20px;
     li {
       span {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        position: absolute;
+        display: flex;
+        align-items: center;
+        span {
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          position: absolute;
+        }
       }
       img {
-        object-fit: cover;
-        width: 14px;
-        height: 14px;
+        display: block;
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: visible;
+      }
+      svg {
+        display: block;
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: visible;
       }
     }
   }
@@ -255,8 +284,6 @@ const Header = () => {
   const [searchClick, setSearchClick] = useState(false);
   const headerRef = useRef();
   const navigate = useNavigate();
-  // let prevScroll = 0;
-
   const commerceMatch = useMatch("/");
   const detailMatch = useMatch("/detail");
   const loginMatch = useMatch("/login");
@@ -309,26 +336,23 @@ const Header = () => {
   ]);
 
   gsap.registerPlugin(ScrollTrigger);
-  useEffect(() => {
-    gsap.to(".logo", {
-      width: "120px",
-      scrollTrigger: {
-        start: "top top",
-        end: "+=300",
-        scrub: true,
-      },
-    });
-  }, []);
-  // window.addEventListener("scroll", () => {
-  //   const scrollTop = window.scrollY;
-  //   if (scrollTop > prevScroll) {
-  //     headerRef.current.classList.add("active");
-  //   } else {
-  //     headerRef.current.classList.remove("active");
-  //   }
-  //   prevScroll = scrollTop;
-  // });
 
+  const headerLogo = () => {
+    if (window.innerWidth > 1024) {
+      gsap.to(".logo", {
+        width: "120px",
+        scrollTrigger: {
+          trigger: ".logo",
+          start: "top top",
+          end: "+=300",
+          scrub: true,
+        },
+      });
+    }
+  };
+  headerLogo();
+
+  headerLogo();
   const handleMenuClick = () => {
     setMenuClick((prev) => !prev);
   };
@@ -341,12 +365,10 @@ const Header = () => {
     setMenuClick(false);
     setSearchClick(true);
   };
+
   return (
     <Container>
-      <Wrapper
-        ref={headerRef}
-        className={menuClick || searchClick ? "filterUnActive" : ""}
-      >
+      <Wrapper ref={headerRef} className={menuClick ? "filterUnActive" : ""}>
         <HeaderLeft>
           <Logo className="logo">
             <Link to="/">
@@ -398,16 +420,43 @@ const Header = () => {
           <HeaderEtc>
             <HeaderEtcLi>
               <HeaderEtcText>
-                <Link to="/cart">Cart</Link>
+                <Link to="/cart">
+                  <span>Cart</span>
+                  <svg
+                    fill="none"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                    />
+                  </svg>
+                </Link>
               </HeaderEtcText>
-              {/* <img src="./img/cartIcon.svg" alt="" /> */}
             </HeaderEtcLi>
             <HeaderEtcLi>
-              <HeaderEtcText onClick={searchToggle}>Search</HeaderEtcText>
+              <HeaderEtcText onClick={searchToggle}>
+                <span>Search</span>
+                <img
+                  src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad-icon-search-mo.svg"
+                  alt="search"
+                />
+              </HeaderEtcText>
             </HeaderEtcLi>
             <HeaderEtcLi>
               <HeaderEtcText>
-                <Link to="/login">Login</Link>
+                <Link to="/login">
+                  <span>Login</span>
+                  <img
+                    src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad_mypage.svg"
+                    alt="login"
+                  />
+                </Link>
               </HeaderEtcText>
             </HeaderEtcLi>
           </HeaderEtc>

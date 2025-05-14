@@ -13,13 +13,32 @@ const FilterTitle = styled.h3`
   font-size: 6rem;
   font-family: "EHNormalTrial";
 `;
-const Filter = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+const SearchResult = styled.div`
+  font-size: 2.4rem;
   span {
     font-weight: bold;
   }
+`;
+const FilterWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  border: 1px solid var(--border-color);
+`;
+const Filter = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  span {
+    font-weight: bold;
+  }
+`;
+const FilterSelect = styled.select`
+  height: 100%;
+  padding: 10px 40px 10px 4px;
+  border: none;
+  border-left: 1px solid var(--border-color);
 `;
 const FilterContent = styled.div`
   width: 100%;
@@ -59,12 +78,22 @@ const Search = () => {
   return (
     <Container>
       <FilterTitle>Search</FilterTitle>
-      <Filter>
-        <p>{name}에 대한 검색결과입니다.</p>
-        <p>
-          검색결과 <span>123</span>건
-        </p>
-      </Filter>
+      <SearchResult>
+        <span>"{name}"</span>에 대한 검색결과입니다.
+      </SearchResult>
+      <FilterWrap>
+        <Filter>
+          <p>
+            검색결과 <span>123</span>건
+          </p>
+        </Filter>
+        <FilterSelect>
+          <option value="가격순">신상품순</option>
+          <option value="가격순">판매많은순</option>
+          <option value="가격순">가격높은순</option>
+          <option value="가격순">가격낮은순</option>
+        </FilterSelect>
+      </FilterWrap>
       <FilterContent>
         <FilterItem>
           <FilterItemImgWrap>

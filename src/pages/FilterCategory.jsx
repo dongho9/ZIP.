@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -14,9 +14,22 @@ const FilterTitle = styled.h3`
   font-size: 6rem;
   font-family: "EHNormalTrial";
 `;
+const FilterWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  border: 1px solid var(--border-color);
+`;
 const Filter = styled.ul`
   display: flex;
   gap: 16px;
+  align-items: center;
+`;
+const FilterSelect = styled.select`
+  height: 100%;
+  padding: 10px 40px 10px 4px;
+  border: none;
+  border-left: 1px solid var(--border-color);
 `;
 const FilterContent = styled.div`
   width: 100%;
@@ -99,7 +112,6 @@ const FilterItemName = styled.p`
 `;
 const FilterCategory = () => {
   const { categoryName } = useParams();
-  console.log(categoryName);
   if (
     categoryName === "style" ||
     categoryName === "beauty" ||
@@ -110,23 +122,33 @@ const FilterCategory = () => {
         <FilterTitle style={{ textTransform: "capitalize" }}>
           {categoryName}
         </FilterTitle>
-        <Filter>
-          <li>ALL</li>
-          <li>SKINCARE</li>
-          <li>MAKEUP</li>
-        </Filter>
+        <FilterWrap>
+          <Filter>
+            <li>ALL</li>
+            <li>SKINCARE</li>
+            <li>MAKEUP</li>
+          </Filter>
+          <FilterSelect>
+            <option value="가격순">신상품순</option>
+            <option value="가격순">판매많은순</option>
+            <option value="가격순">가격높은순</option>
+            <option value="가격순">가격낮은순</option>
+          </FilterSelect>
+        </FilterWrap>
         <FilterContent>
           <FilterItem className="g01">
-            <FilterItemImgWrap>
-              <FilterItemImg
-                src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-                alt="img06"
-              />
-            </FilterItemImgWrap>
-            <FilterItemText>
-              <FilterItemPick>카리나 PICK</FilterItemPick>
-              <FilterItemName>Sorbet Balm</FilterItemName>
-            </FilterItemText>
+            <Link to="/detail">
+              <FilterItemImgWrap>
+                <FilterItemImg
+                  src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
+                  alt="img06"
+                />
+              </FilterItemImgWrap>
+              <FilterItemText>
+                <FilterItemPick>카리나 PICK</FilterItemPick>
+                <FilterItemName>Sorbet Balm</FilterItemName>
+              </FilterItemText>
+            </Link>
           </FilterItem>
           <FilterItem className="g02">
             <FilterItemImgWrap>

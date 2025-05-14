@@ -25,6 +25,26 @@ const initialItems = [
     quantity: 1,
     selected: true,
   },
+  {
+    id: 3,
+    brand: "CONVERSE",
+    name: "CHUCK 70 HI",
+    detail: "BLACK/EGERT/BLACK | 260",
+    price: 105500,
+    image: "../src/imgs/cart/shoes2.png",
+    quantity: 1,
+    selected: true,
+  },
+  {
+    id: 4,
+    brand: "CONVERSE",
+    name: "CHUCK 70 HI",
+    detail: "BLACK/EGERT/BLACK | 260",
+    price: 105500,
+    image: "../src/imgs/cart/shoes2.png",
+    quantity: 1,
+    selected: true,
+  },
 ];
 
 const PageWrapper = styled.div`
@@ -310,9 +330,21 @@ const Cart = () => {
         item.id === id ? { ...item, selected: !item.selected } : item
       )
     );
+    setItems(
+      items.map((item) =>
+        item.id === id ? { ...item, selected: !item.selected } : item
+      )
+    );
   };
 
   const changeQty = (id, diff) => {
+    setItems(
+      items.map((item) =>
+        item.id === id
+          ? { ...item, quantity: Math.max(1, item.quantity + diff) }
+          : item
+      )
+    );
     setItems(
       items.map((item) =>
         item.id === id
@@ -331,7 +363,6 @@ const Cart = () => {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-
   return (
     <PageWrapper>
       <GlobalStyles />
