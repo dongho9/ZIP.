@@ -40,6 +40,9 @@ const Container = styled.div`
     @media screen and (max-width: 1024px) {
       margin: 80px 0 160px 0;
     }
+    @media screen and (max-width: 767px) {
+      margin: 50px 0 50px 0;
+    }
   }
 `;
 const MainTitle = styled.div`

@@ -1,233 +1,225 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import ShippingAddress from "../../components/mypage/ShippingAddress";
 
 const Container = styled.div`
-  padding: 0 40px;
+  padding: 0 3%;
+  margin: 0 auto;
+  max-width: 800px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 0 5%;
+    max-width: 700px;
+  }
+
+  @media screen and (max-width: 402px) {
+    padding: 0 3%;
+    max-width: 100%;
+  }
 `;
 
 const PageTitle = styled.h1`
-  font-size: 2.4rem;
+  font-size: 3.6rem;
   text-align: center;
+  margin-top: 60px;
   margin-bottom: 40px;
-  font-weight: normal;
+  font-weight: bold;
   font-family: "EHNormalTrial", sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 50px;
+  }
+
+  @media screen and (max-width: 402px) {
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+  }
 `;
 
 const AddressHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 32px;
-`;
+  margin-bottom: 24px;
 
-const AddressTabs = styled.div`
-  display: flex;
-  gap: 12px;
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 25px;
+  }
+
+  @media screen and (max-width: 402px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const TabButton = styled.button`
-  padding: 10px 20px;
+  width: 100%;
+  padding: 15px;
   border: 1px solid #e0e0e0;
-  background: ${(props) => (props.active ? "#000" : "#fff")};
-  color: ${(props) => (props.active ? "#fff" : "#333")};
-  font-size: 1.3rem;
-  cursor: pointer;
-  font-family: "Pretendard", sans-serif;
-
-  &:hover {
-    background: ${(props) => (props.active ? "#000" : "#f8f8f8")};
-  }
-`;
-
-const AddNewButton = styled.button`
-  padding: 10px 24px;
-  background: none;
-  border: 1px solid #333;
-  font-size: 1.3rem;
-  cursor: pointer;
-  font-family: "Pretendard", sans-serif;
-
-  &:hover {
-    background: #f8f8f8;
-  }
-`;
-
-const AddressForm = styled.form`
-  max-width: 600px;
-  margin-bottom: 48px;
-`;
-
-const FormGroup = styled.div`
-  margin-bottom: 24px;
-`;
-
-const Label = styled.label`
-  display: block;
-  font-size: 1.4rem;
+  background: #fff;
   color: #333;
-  margin-bottom: 8px;
-  font-family: "Pretendard", sans-serif;
-`;
-
-const InputWrapper = styled.div`
-  display: flex;
-  gap: 12px;
-  align-items: center;
-`;
-
-const Input = styled.input`
-  flex: 1;
-  padding: 12px;
-  border: 1px solid #e0e0e0;
-  font-size: 1.3rem;
-  font-family: "Pretendard", sans-serif;
-
-  &:focus {
-    outline: none;
-    border-color: #333;
-  }
-
-  &:disabled {
-    background: #f8f8f8;
-    color: #999;
-  }
-`;
-
-const SearchButton = styled.button`
-  padding: 12px 24px;
-  background: #333;
-  color: #fff;
-  border: none;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  text-align: center;
   cursor: pointer;
   font-family: "Pretendard", sans-serif;
-  white-space: nowrap;
+  margin-bottom: 40px;
+  transition: background-color 0.3s ease;
 
   &:hover {
-    background: #555;
+    background-color: #f5f5f5;
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: 402px) {
+    margin-bottom: 25px;
+    padding: 12px;
+    font-size: 1.3rem;
   }
 `;
 
 const AddressList = styled.div`
-  margin-top: 48px;
+  margin-top: 20px;
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 40px;
+  }
+
+  @media screen and (max-width: 402px) {
+    margin-top: 30px;
+  }
 `;
 
 const AddressItem = styled.div`
-  border: 1px solid #e0e0e0;
-  padding: 24px;
-  margin-bottom: 16px;
+  background: #f8f8f8;
+  padding: 28px; // 기존 30px에서 약간 줄임
+  margin-bottom: 20px;
   position: relative;
-`;
 
-const DefaultBadge = styled.span`
-  position: absolute;
-  top: 16px;
-  right: 24px;
-  background: #333;
-  color: #fff;
-  padding: 4px 12px;
-  font-size: 1.1rem;
-  font-family: "Pretendard", sans-serif;
+  @media screen and (max-width: 1024px) {
+    padding: 24px; // 기존 25px에서 약간 줄임
+  }
+
+  @media screen and (max-width: 402px) {
+    padding: 18px; // 기존 20px에서 약간 줄임
+    margin-bottom: 15px;
+  }
 `;
 
 const AddressInfo = styled.div`
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-family: "Pretendard", sans-serif;
-  line-height: 1.6;
+  line-height: 1.7;
+  margin-bottom: 20px;
 
-  .recipient {
-    font-weight: bold;
-    margin-bottom: 8px;
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 15px;
   }
 
-  .phone {
-    color: #666;
-    margin-bottom: 8px;
-  }
-
-  .address {
-    margin-bottom: 4px;
+  @media screen and (max-width: 402px) {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
   }
 `;
 
-const AddressActions = styled.div`
-  margin-top: 16px;
+const AddressName = styled.div`
   display: flex;
-  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+`;
+
+const DefaultBadgeContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const DefaultBadge = styled.span`
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 1.3rem;
+  font-family: "Pretendard", sans-serif;
+  margin-left: 8px;
+
+  @media screen and (max-width: 402px) {
+    font-size: 1rem;
+    padding: 4px 8px;
+  }
+`;
+
+const Recipient = styled.div`
+  font-weight: bold;
+  font-size: 1.7rem;
+
+  @media screen and (max-width: 402px) {
+    font-size: 1.4rem;
+  }
+`;
+
+const AddressText = styled.div`
+  margin-bottom: 5px;
+`;
+
+const ZipCode = styled.div`
+  color: #666;
+`;
+
+const Phone = styled.div`
+  color: #666;
+  margin-top: 5px;
+`;
+
+const ActionButtons = styled.div`
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 5px;
 `;
 
 const ActionButton = styled.button`
-  padding: 8px 16px;
-  border: 1px solid #e0e0e0;
+  padding: 10px 20px;
+  border: none;
   background: #fff;
-  font-size: 1.2rem;
+  color: #333;
+  font-size: 1.3rem;
   cursor: pointer;
   font-family: "Pretendard", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   &:hover {
-    background: #f8f8f8;
-  }
-`;
-
-const ButtonGroup = styled.div`
-  margin-top: 32px;
-  display: flex;
-  gap: 12px;
-`;
-
-const Button = styled.button`
-  flex: 1;
-  padding: 14px;
-  font-size: 1.4rem;
-  font-family: "EHNormalTrial", sans-serif;
-  border: none;
-  cursor: pointer;
-
-  &:disabled {
-    background: #f5f5f5;
-    color: #ccc;
-    cursor: not-allowed;
-  }
-`;
-
-const SaveButton = styled(Button)`
-  background: #000;
-  color: #fff;
-
-  &:hover:not(:disabled) {
     background: #333;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 9px 18px;
+  }
+
+  @media screen and (max-width: 402px) {
+    padding: 8px 15px;
+    font-size: 1.2rem;
   }
 `;
 
-const CancelButton = styled(Button)`
-  background: #e0e0e0;
-  color: #333;
-
-  &:hover {
-    background: #d0d0d0;
-  }
-`;
-
-const NoticeText = styled.p`
+const NoAddressText = styled.p`
   text-align: center;
   color: #666;
-  font-size: 1.3rem;
-  margin-top: 32px;
+  font-size: 1.4rem;
+  margin: 60px 0;
   font-family: "Pretendard", sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    margin: 50px 0;
+  }
+
+  @media screen and (max-width: 402px) {
+    font-size: 1.3rem;
+    margin: 40px 0;
+  }
 `;
 
 const UserAddress = () => {
-  const [activeTab, setActiveTab] = useState("delivery");
-  const [isAdding, setIsAdding] = useState(false);
-  const [newAddress, setNewAddress] = useState({
-    recipient: "",
-    zipCode: "",
-    address: "",
-    detailAddress: "",
-    phone: "",
-  });
-
-  const addresses = [
+  const [addresses, setAddresses] = useState([
     {
       id: 1,
       recipient: "000 님",
@@ -246,28 +238,44 @@ const UserAddress = () => {
       detailAddress: "000아파트 000호",
       isDefault: false,
     },
-  ];
+  ]);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNewAddress((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+  // 배송지 모달 상태
+  const [isShippingModalOpen, setIsShippingModalOpen] = useState(false);
+
+  // 모달 열기/닫기 함수
+  const handleOpenShippingModal = () => {
+    setIsShippingModalOpen(true);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // 배송지 저장 로직
-    console.log("새 배송지 저장:", newAddress);
-    setIsAdding(false);
-    setNewAddress({
-      recipient: "",
-      zipCode: "",
-      address: "",
-      detailAddress: "",
-      phone: "",
-    });
+  const handleCloseShippingModal = () => {
+    setIsShippingModalOpen(false);
+  };
+
+  // 주소 삭제 함수
+  const handleDeleteAddress = (id) => {
+    setAddresses(addresses.filter((address) => address.id !== id));
+  };
+
+  // 주소 추가 함수
+  const handleAddAddress = (newAddressData) => {
+    // 새로운 주소 객체 생성
+    const newAddressObj = {
+      ...newAddressData,
+      id: Date.now(), // 임시 고유 ID
+    };
+
+    // 새 주소가 기본 배송지라면 다른 주소의 기본 배송지 상태 해제
+    let updatedAddresses = [...addresses];
+    if (newAddressData.isDefault) {
+      updatedAddresses = updatedAddresses.map((addr) => ({
+        ...addr,
+        isDefault: false,
+      }));
+    }
+
+    // 새 주소 추가
+    setAddresses([...updatedAddresses, newAddressObj]);
   };
 
   return (
@@ -275,106 +283,46 @@ const UserAddress = () => {
       <PageTitle>User Address</PageTitle>
 
       <AddressHeader>
-        <AddressTabs>
-          <TabButton
-            active={activeTab === "delivery"}
-            onClick={() => setActiveTab("delivery")}
-          >
-            배송지 등록
-          </TabButton>
-        </AddressTabs>
-        <AddNewButton onClick={() => setIsAdding(true)}>신규 추가</AddNewButton>
+        <TabButton onClick={handleOpenShippingModal}>배송지 등록</TabButton>
       </AddressHeader>
 
-      {isAdding && (
-        <AddressForm onSubmit={handleSubmit}>
-          <FormGroup>
-            <Label>수취인</Label>
-            <Input
-              type="text"
-              name="recipient"
-              value={newAddress.recipient}
-              onChange={handleInputChange}
-            />
-          </FormGroup>
-
-          <FormGroup>
-            <Label>주소</Label>
-            <InputWrapper>
-              <Input
-                type="text"
-                name="zipCode"
-                value={newAddress.zipCode}
-                onChange={handleInputChange}
-                placeholder="우편번호"
-                disabled
-              />
-              <SearchButton type="button">기본 배송지</SearchButton>
-              <SearchButton type="button">실제 검색</SearchButton>
-            </InputWrapper>
-          </FormGroup>
-
-          <FormGroup>
-            <Input
-              type="text"
-              name="address"
-              value={newAddress.address}
-              onChange={handleInputChange}
-              placeholder="기본주소"
-              disabled
-            />
-          </FormGroup>
-
-          <FormGroup>
-            <Input
-              type="text"
-              name="detailAddress"
-              value={newAddress.detailAddress}
-              onChange={handleInputChange}
-              placeholder="상세주소를 입력해주세요"
-            />
-          </FormGroup>
-
-          <FormGroup>
-            <Label>휴대폰</Label>
-            <Input
-              type="text"
-              name="phone"
-              value={newAddress.phone}
-              onChange={handleInputChange}
-              placeholder="-없이 번호만 입력해주세요"
-            />
-          </FormGroup>
-
-          <ButtonGroup>
-            <SaveButton type="submit">저장</SaveButton>
-            <CancelButton type="button" onClick={() => setIsAdding(false)}>
-              취소
-            </CancelButton>
-          </ButtonGroup>
-        </AddressForm>
-      )}
-
       <AddressList>
-        {addresses.map((address) => (
-          <AddressItem key={address.id}>
-            {address.isDefault && <DefaultBadge>기본</DefaultBadge>}
-            <AddressInfo>
-              <div className="recipient">{address.recipient}</div>
-              <div className="phone">{address.phone}</div>
-              <div className="address">{address.address}</div>
-              <div className="address">{address.detailAddress}</div>
-              <div>({address.zipCode})</div>
-            </AddressInfo>
-            <AddressActions>
-              <ActionButton>수정</ActionButton>
-              <ActionButton>삭제</ActionButton>
-            </AddressActions>
-          </AddressItem>
-        ))}
+        {addresses.length > 0 ? (
+          addresses.map((address) => (
+            <AddressItem key={address.id}>
+              <AddressInfo>
+                <AddressName>
+                  <Recipient>{address.recipient}</Recipient>
+                  {address.isDefault && (
+                    <DefaultBadgeContainer>
+                      <DefaultBadge>기본 배송지</DefaultBadge>
+                    </DefaultBadgeContainer>
+                  )}
+                </AddressName>
+                <AddressText>{address.address}</AddressText>
+                <AddressText>{address.detailAddress}</AddressText>
+                <ZipCode>{address.zipCode}</ZipCode>
+                <Phone>{address.phone}</Phone>
+              </AddressInfo>
+              <ActionButtons>
+                <ActionButton>수정</ActionButton>
+                <ActionButton onClick={() => handleDeleteAddress(address.id)}>
+                  삭제
+                </ActionButton>
+              </ActionButtons>
+            </AddressItem>
+          ))
+        ) : (
+          <NoAddressText>입력된 주소가 없습니다.</NoAddressText>
+        )}
       </AddressList>
 
-      <NoticeText>입력된 주소가 없습니다.</NoticeText>
+      {/* 배송지 등록 모달 컴포넌트 */}
+      <ShippingAddress
+        isOpen={isShippingModalOpen}
+        onClose={handleCloseShippingModal}
+        onAddAddress={handleAddAddress}
+      />
     </Container>
   );
 };

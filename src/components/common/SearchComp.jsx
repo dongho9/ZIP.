@@ -154,7 +154,10 @@ const SearchComp = ({ searchClick, setSearchClick }) => {
             ref={inputRef}
           />
           <button type="submit">
-            <i className="fas fa-search"></i>
+            <img
+              src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad-icon-search-mo.svg"
+              alt="search"
+            />
           </button>
         </Search>
         <Keyword>

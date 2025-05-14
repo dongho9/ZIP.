@@ -20,12 +20,14 @@ const Wrapper = styled.div`
   color: #fff;
   mix-blend-mode: difference;
   background: transparent;
+  /* backdrop-filter: blur(16px) saturate(180%); */
   z-index: 2;
   &.active {
     transform: translateY(-100px);
   }
   &.filterUnActive {
     mix-blend-mode: normal;
+    /* filter: invert(1); */
   }
   @media screen and (max-width: 1024px) {
   }
@@ -44,8 +46,15 @@ const Logo = styled.div`
   padding-top: 24px;
   width: 160px;
   z-index: 3;
+  transition: all 0.3s;
   a {
     width: 100%;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 120px !important;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100px !important;
   }
 `;
 const HeaderLogoImg = styled.img`
@@ -182,31 +191,35 @@ const HeaderEtc = styled.ul`
     display: flex;
     align-items: center;
     cursor: pointer;
-    /* svg {
+    img {
+      filter: invert(1);
+      position: absolute;
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-      position: absolute;
-      width: 16px;
-      path {
-        width: 100%;
-        fill: rgb(255, 255, 255);
-      }
-    } */
+      width: 18px;
+      height: 18px;
+    }
   }
   @media screen and (max-width: 1024px) {
     gap: 20px;
     li {
       span {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        position: absolute;
+        display: flex;
+        align-items: center;
+        span {
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          position: absolute;
+        }
       }
       img {
-        object-fit: cover;
-        width: 14px;
-        height: 14px;
+        display: block;
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: visible;
       }
     }
   }
@@ -255,7 +268,6 @@ const Header = () => {
   const [searchClick, setSearchClick] = useState(false);
   const headerRef = useRef();
   const navigate = useNavigate();
-  // let prevScroll = 0;
 
   const commerceMatch = useMatch("/");
   const detailMatch = useMatch("/detail");
@@ -309,26 +321,23 @@ const Header = () => {
   ]);
 
   gsap.registerPlugin(ScrollTrigger);
-  useEffect(() => {
-    gsap.to(".logo", {
-      width: "120px",
-      scrollTrigger: {
-        start: "top top",
-        end: "+=300",
-        scrub: true,
-      },
-    });
-  }, []);
-  // window.addEventListener("scroll", () => {
-  //   const scrollTop = window.scrollY;
-  //   if (scrollTop > prevScroll) {
-  //     headerRef.current.classList.add("active");
-  //   } else {
-  //     headerRef.current.classList.remove("active");
-  //   }
-  //   prevScroll = scrollTop;
-  // });
 
+  const headerLogo = () => {
+    if (window.innerWidth > 1024) {
+      gsap.to(".logo", {
+        width: "120px",
+        scrollTrigger: {
+          trigger: ".logo",
+          start: "top top",
+          end: "+=300",
+          scrub: true,
+        },
+      });
+    }
+  };
+  headerLogo();
+
+  headerLogo();
   const handleMenuClick = () => {
     setMenuClick((prev) => !prev);
   };
@@ -341,12 +350,10 @@ const Header = () => {
     setMenuClick(false);
     setSearchClick(true);
   };
+
   return (
     <Container>
-      <Wrapper
-        ref={headerRef}
-        className={menuClick || searchClick ? "filterUnActive" : ""}
-      >
+      <Wrapper ref={headerRef} className={menuClick ? "filterUnActive" : ""}>
         <HeaderLeft>
           <Logo className="logo">
             <Link to="/">
@@ -398,16 +405,33 @@ const Header = () => {
           <HeaderEtc>
             <HeaderEtcLi>
               <HeaderEtcText>
-                <Link to="/cart">Cart</Link>
+                <Link to="/cart">
+                  <span>Cart</span>
+                  <img
+                    src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad_bag.svg"
+                    alt="cart"
+                  />
+                </Link>
               </HeaderEtcText>
-              {/* <img src="./img/cartIcon.svg" alt="" /> */}
             </HeaderEtcLi>
             <HeaderEtcLi>
-              <HeaderEtcText onClick={searchToggle}>Search</HeaderEtcText>
+              <HeaderEtcText onClick={searchToggle}>
+                <span>Search</span>
+                <img
+                  src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad-icon-search-mo.svg"
+                  alt="search"
+                />
+              </HeaderEtcText>
             </HeaderEtcLi>
             <HeaderEtcLi>
               <HeaderEtcText>
-                <Link to="/login">Login</Link>
+                <Link to="/login">
+                  <span>Login</span>
+                  <img
+                    src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad_mypage.svg"
+                    alt="login"
+                  />
+                </Link>
               </HeaderEtcText>
             </HeaderEtcLi>
           </HeaderEtc>
