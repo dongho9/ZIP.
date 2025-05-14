@@ -25,13 +25,40 @@ const initialItems = [
     quantity: 1,
     selected: true,
   },
+  {
+    id: 3,
+    brand: "CONVERSE",
+    name: "CHUCK 70 HI",
+    detail: "BLACK/EGERT/BLACK | 260",
+    price: 105500,
+    image: "../src/imgs/cart/shoes2.png",
+    quantity: 1,
+    selected: true,
+  },
+  {
+    id: 4,
+    brand: "CONVERSE",
+    name: "CHUCK 70 HI",
+    detail: "BLACK/EGERT/BLACK | 260",
+    price: 105500,
+    image: "../src/imgs/cart/shoes2.png",
+    quantity: 1,
+    selected: true,
+  },
 ];
 
 const PageWrapper = styled.div`
-  padding: 40px;
-  margin: auto;
-  font-family: "Arial", sans-serif;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: calc(100vh - 190px);
+  padding: 0 10%;
+  /* margin: auto; */
+  font-family: "Pretendard", sans-serif;
+  gap: 60px;
+  margin: 100px 0;
   @media (max-width: 1024px) {
     padding: 40px;
     margin: 60px 30px;
@@ -44,9 +71,8 @@ const PageWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 28px;
+  font-size: 3.6rem;
   text-align: center;
-  margin-bottom: 40px;
   font-weight: 700;
 
   @media (max-width: 767px) {
@@ -59,7 +85,7 @@ const CartLayout = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 20px;
-
+  width: 100%;
   @media (max-width: 1024px) {
     flex-direction: column;
   }
@@ -256,11 +282,21 @@ const Cart = () => {
   };
 
   const toggleSelectItem = (id) => {
-    setItems(items.map((item) => (item.id === id ? { ...item, selected: !item.selected } : item)));
+    setItems(
+      items.map((item) =>
+        item.id === id ? { ...item, selected: !item.selected } : item
+      )
+    );
   };
 
   const changeQty = (id, diff) => {
-    setItems(items.map((item) => (item.id === id ? { ...item, quantity: Math.max(1, item.quantity + diff) } : item)));
+    setItems(
+      items.map((item) =>
+        item.id === id
+          ? { ...item, quantity: Math.max(1, item.quantity + diff) }
+          : item
+      )
+    );
   };
 
   const removeItem = (id) => {
@@ -268,7 +304,10 @@ const Cart = () => {
   };
 
   const selectedItems = items.filter((item) => item.selected);
-  const totalPrice = selectedItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const totalPrice = selectedItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
 
   return (
     <PageWrapper>
@@ -288,7 +327,11 @@ const Cart = () => {
 
           {items.map((item) => (
             <ItemBox key={item.id}>
-              <input type="checkbox" checked={item.selected} onChange={() => toggleSelectItem(item.id)} />
+              <input
+                type="checkbox"
+                checked={item.selected}
+                onChange={() => toggleSelectItem(item.id)}
+              />
               <Image src={item.image} alt={item.name} />
               <ItemInfo>
                 <Brand>{item.brand}</Brand>

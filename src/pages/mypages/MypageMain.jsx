@@ -1,13 +1,36 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logoSellor from "../../imgs/mypage/logo-sellor.png";
+import UserLevel from "../../components/mypage/UserLevel";
+import SellerMark from "../../components/mypage/SellerMark";
+import CouponList from "../../components/mypage/CouponList";
+
+const Container = styled.div`
+  margin: 0 auto;
+  padding: 0 3%;
+
+  @media screen and (max-width: 1024px) {
+    padding: 0 5%;
+  }
+
+  @media screen and (max-width: 402px) {
+    padding: 0 3%;
+  }
+`;
 
 const PageTitle = styled.h1`
-  font-size: 2.4rem;
+  font-size: 3.6rem;
   text-align: center;
+  margin-top: 60px;
   margin-bottom: 40px;
-  font-weight: normal;
+  font-weight: bold;
   font-family: "EHNormalTrial", sans-serif;
+
+  @media screen and (max-width: 402px) {
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+  }
 `;
 
 const UserInfo = styled.div`
@@ -25,12 +48,31 @@ const UserInfo = styled.div`
     font-size: 1.3rem;
     font-family: "EHNormalTrial", sans-serif;
   }
+
+  @media screen and (max-width: 402px) {
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 1.6rem;
+    }
+  }
 `;
 
 const StatsContainer = styled.div`
   display: flex;
   gap: 8px;
   margin-bottom: 48px;
+
+  @media screen and (max-width: 1024px) {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media screen and (max-width: 402px) {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
 `;
 
 const StatCard = styled.div`
@@ -40,34 +82,64 @@ const StatCard = styled.div`
   text-align: left;
   border-radius: 8px;
   position: relative;
-  min-height: 100px;
-  position: relative;
+  min-height: 80px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  cursor: pointer;
   &:first-child {
-    flex: 1.2;
-    padding-right: 50px;
+    width: 45%;
   }
 
   &:not(:first-child) {
-    flex: 1;
+    width: 25%;
   }
 
   h4 {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     color: ${(props) => (props.dark ? "#ccc" : "#666")};
     margin-bottom: 8px;
     font-family: "Pretendard", sans-serif;
   }
+
   .grade-icon {
     position: absolute;
     right: 30px;
-    top: 50%;
-    transform: translateY(-20%);
+    top: 20px;
     width: 32px;
     height: 32px;
+
     img {
       width: 100%;
       height: 100%;
       opacity: 0.8;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    &:first-child {
+      width: 100%;
+    }
+
+    &:not(:first-child) {
+      width: calc(50% - 6px);
+    }
+  }
+
+  @media screen and (max-width: 402px) {
+    &:first-child {
+      width: 100%;
+    }
+
+    &:not(:first-child) {
+      width: calc(50% - 5px);
+    }
+
+    min-height: auto;
+    padding: 15px;
+
+    h4 {
+      font-size: 1.4rem;
     }
   }
 `;
@@ -77,10 +149,16 @@ const LogoSellor = styled.img`
   height: 32px;
   opacity: 1;
   position: absolute;
-  right: 20px;
+  right: 0px;
   top: 20%;
   transform: translateY(-50%);
   cursor: pointer;
+
+  @media screen and (max-width: 402px) {
+    width: 24px;
+    height: 24px;
+    right: 0px;
+  }
 `;
 
 const StatValue = styled.p`
@@ -89,13 +167,19 @@ const StatValue = styled.p`
   margin: 0;
   font-family: "Pretendard", sans-serif;
   margin-top: 16px;
+
+  @media screen and (max-width: 402px) {
+    font-size: 1.6rem;
+    margin-top: 8px;
+  }
 `;
 
 const GradeContainer = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 16px;
+  margin-top: 20px;
 
   .grade-text {
     font-size: 1.8rem;
@@ -113,30 +197,112 @@ const GradeContainer = styled.div`
     font-family: "Pretendard", sans-serif;
     border-radius: 4px;
   }
+
+  @media screen and (max-width: 402px) {
+    margin-top: 10px;
+
+    .grade-text {
+      font-size: 1.6rem;
+    }
+
+    .upgrade-btn {
+      padding: 4px 12px;
+      font-size: 0.9rem;
+    }
+  }
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 24px;
   font-family: "EHNormalTrial", sans-serif;
+
+  @media screen and (max-width: 402px) {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+  }
 `;
 
 const FilterSection = styled.div`
   margin-bottom: 48px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 35px;
+  }
+
+  @media screen and (max-width: 580px) {
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  @media screen and (max-width: 430px) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 12px;
+  }
+
+  @media screen and (max-width: 402px) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    gap: 10px;
+  }
 `;
 
 const FilterLabel = styled.label`
-  display: inline-block;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
   color: #666;
   margin-right: 16px;
   font-family: "Pretendard", sans-serif;
+
+  @media screen and (max-width: 580px) {
+    margin-right: 0;
+    margin-bottom: 4px;
+  }
+
+  @media screen and (max-width: 430px) {
+    margin-right: 0;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 402px) {
+    margin-bottom: 0;
+    font-size: 1.4rem;
+  }
 `;
 
 const FilterButtons = styled.div`
-  display: inline-flex;
-  gap: 4px;
+  display: flex;
+  gap: 8px;
+
+  @media screen and (max-width: 1024px) {
+    gap: 6px;
+  }
+
+  @media screen and (max-width: 580px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 576px) {
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 5px;
+  }
+
+  @media screen and (max-width: 430px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 402px) {
+    gap: 4px;
+  }
 `;
 
 const FilterButton = styled.button`
@@ -144,13 +310,25 @@ const FilterButton = styled.button`
   border: none;
   background: ${(props) => (props.active ? "#000" : "#f0f0f0")};
   color: ${(props) => (props.active ? "#fff" : "#999")};
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   cursor: pointer;
   font-family: "EHNormalTrial", sans-serif;
   border-radius: 20px;
+  white-space: nowrap;
 
   &:hover {
     background: ${(props) => (props.active ? "#000" : "#e0e0e0")};
+  }
+
+  @media screen and (max-width: 430px) {
+    padding: 5px 15px;
+    font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 402px) {
+    padding: 6px 15px;
+    font-size: 1.1rem;
+    flex-shrink: 0;
   }
 `;
 
@@ -159,11 +337,28 @@ const OrderStatusGrid = styled.div`
   gap: 32px;
   margin-bottom: 48px;
   justify-content: center;
+
+  @media screen and (max-width: 1024px) {
+    gap: 20px; // 태블릿에서 간격 축소
+  }
+
+  @media screen and (max-width: 402px) {
+    flex-wrap: wrap;
+    gap: 8px; // 모바일에서 간격 더 축소
+    margin-bottom: 30px;
+    justify-content: space-between; // 공간 균등하게 분배
+    max-width: 320px; // 최대 너비 제한
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: 375px) {
+    gap: 6px; // 더 작은 모바일에서 간격 더 축소
+  }
 `;
 
 const OrderStatusItem = styled.div`
   text-align: center;
-
   .circle {
     width: 100px;
     height: 100px;
@@ -186,6 +381,49 @@ const OrderStatusItem = styled.div`
     color: #333;
     font-family: "Pretendard", sans-serif;
   }
+
+  @media screen and (max-width: 1024px) {
+    .circle {
+      width: 80px;
+      height: 80px;
+
+      span {
+        font-size: 2.4rem;
+      }
+    }
+
+    .label {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media screen and (max-width: 402px) {
+    width: calc(50% - 4px);
+    margin-bottom: 15px;
+
+    .circle {
+      width: 55px;
+      height: 55px;
+      margin-bottom: 6px;
+
+      span {
+        font-size: 1.8rem;
+      }
+    }
+
+    .label {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    width: calc(50% - 3px); // 더 작은 간격에 맞춰 너비 수정
+
+    .circle {
+      width: 50px; // 더 작은 화면에서 원 크기 더 축소
+      height: 50px;
+    }
+  }
 `;
 
 const NoOrdersMessage = styled.p`
@@ -194,6 +432,11 @@ const NoOrdersMessage = styled.p`
   font-size: 1.4rem;
   margin: 48px 0;
   font-family: "Pretendard", sans-serif;
+
+  @media screen and (max-width: 402px) {
+    font-size: 1.3rem;
+    margin: 30px 0;
+  }
 `;
 
 const ActionButtons = styled.div`
@@ -202,9 +445,16 @@ const ActionButtons = styled.div`
   justify-content: center;
   margin-top: 48px;
   margin-bottom: 60px;
+
+  @media screen and (max-width: 402px) {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
 `;
 
-const ButtonLink = styled.button`
+const ButtonLink = styled(Link)`
   padding: 12px 48px;
   border: 1px solid #e0e0e0;
   text-decoration: none;
@@ -213,9 +463,27 @@ const ButtonLink = styled.button`
   background: #fff;
   font-family: "EHNormalTrial", sans-serif;
   cursor: pointer;
-
+  white-space: nowrap;
   &:hover {
     background: #f8f8f8;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 430px) {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+  }
+
+  @media screen and (max-width: 402px) {
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    white-space: nowrap;
   }
 `;
 
@@ -223,9 +491,42 @@ const MypageMain = () => {
   const [selectedFilter, setSelectedFilter] = useState("Today");
   const filterOptions = ["Today", "1 week", "1 month", "3 month"];
 
+  // 등급혜택 모달달
+  const [isLevelModalOpen, setIsLevelModalOpen] = useState(false);
+
+  const handleOpenLevelModal = () => {
+    setIsLevelModalOpen(true);
+  };
+
+  const handleCloseLevelModal = () => {
+    setIsLevelModalOpen(false);
+  };
+
+  //(인플루언서) 모달 상태
+  const [isSellerMarkModalOpen, setIsSellerMarkModalOpen] = useState(false);
+
+  const handleOpenSellerMarkModal = (e) => {
+    e.stopPropagation(); // 이벤트 전파 방지
+    setIsSellerMarkModalOpen(true);
+  };
+
+  const handleCloseSellerMarkModal = () => {
+    setIsSellerMarkModalOpen(false);
+  };
+
+  // 쿠폰 모달 상태
+  const [isCouponModalOpen, setIsCouponModalOpen] = useState(false);
+
+  const handleOpenCouponModal = () => {
+    setIsCouponModalOpen(true);
+  };
+
+  const handleCloseCouponModal = () => {
+    setIsCouponModalOpen(false);
+  };
+
   return (
-    <>
-      {/* My Page 타이틀 - 이 컴포넌트에서만 표시 */}
+    <Container>
       <PageTitle>My Page</PageTitle>
 
       <UserInfo>
@@ -237,14 +538,20 @@ const MypageMain = () => {
         <StatCard dark>
           <h4>나의 등급</h4>
           <div className="grade-icon">
-            <LogoSellor src={logoSellor} alt="셀러로고" />
+            <LogoSellor
+              src={logoSellor}
+              alt="셀러로고"
+              onClick={handleOpenSellerMarkModal}
+            />
           </div>
           <GradeContainer>
             <div className="grade-text">WELCOME</div>
-            <button className="upgrade-btn">등급혜택 보기</button>
+            <button className="upgrade-btn" onClick={handleOpenLevelModal}>
+              등급혜택 보기
+            </button>
           </GradeContainer>
         </StatCard>
-        <StatCard>
+        <StatCard clickable onClick={handleOpenCouponModal}>
           <h4>보유 쿠폰</h4>
           <StatValue>4 장</StatValue>
         </StatCard>
@@ -301,10 +608,16 @@ const MypageMain = () => {
       <NoOrdersMessage>최근 주문 내역이 없습니다.</NoOrdersMessage>
 
       <ActionButtons>
-        <ButtonLink>SHOP NEW ITEMS</ButtonLink>
-        <ButtonLink>GO TO EVENT PAGE</ButtonLink>
+        <ButtonLink to="/detail">SHOP NEW ITEMS</ButtonLink>
+        <ButtonLink to="/event">GO TO EVENT PAGE</ButtonLink>
       </ActionButtons>
-    </>
+      <UserLevel isOpen={isLevelModalOpen} onClose={handleCloseLevelModal} />
+      <SellerMark
+        isOpen={isSellerMarkModalOpen}
+        onClose={handleCloseSellerMarkModal}
+      />
+      <CouponList isOpen={isCouponModalOpen} onClose={handleCloseCouponModal} />
+    </Container>
   );
 };
 
