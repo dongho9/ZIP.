@@ -17,6 +17,7 @@ import FAQ from "./pages/mypages/FAQ";
 import DeleteAccount from "./pages/mypages/DeleteAccount";
 import ChangeUserInfo from "./pages/mypages/ChangeUserInfo";
 import UserAddress from "./pages/mypages/UserAddress";
+import Promotion from "./pages/Promotion";
 
 export const router = createBrowserRouter([
   {
