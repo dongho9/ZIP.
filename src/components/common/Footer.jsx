@@ -14,17 +14,41 @@ const FooterLeft = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media screen and (max-width: 767px) {
+    gap: 40px;
+  }
 `;
 const Fnb = styled.nav``;
 const FooterFnb = styled.ul`
   display: flex;
   gap: 16px;
+
+  @media screen and (max-width: 767px) {
+  }
 `;
 const Address = styled.address`
   font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  p {
+    font-size: 1.2rem;
+  }
 `;
 const AddressList = styled.ul`
   display: flex;
+  gap: 10px;
+  li {
+    font-size: 1.2rem;
+  }
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    li {
+      &:nth-child(even) {
+        display: none;
+      }
+    }
+  }
 `;
 const FooterRight = styled.div``;
 const HeaderLogoImg = styled.img`
@@ -39,6 +63,7 @@ const Footer = () => {
   const eventMatch = useMatch("/event");
   const cartMatch = useMatch("/cart");
   const filterCategoryMatch = useMatch("/filtercategory/:categoryName");
+  const searchMatch = useMatch("/search/:name");
   const mypageMatch = useMatch("/mypage");
   const mypageMatch02 = useMatch("/mypage/:name");
   const filterFunc = () => {
@@ -50,6 +75,7 @@ const Footer = () => {
       signUpMatch ||
       eventMatch ||
       cartMatch ||
+      searchMatch ||
       mypageMatch ||
       mypageMatch02
     ) {
@@ -69,6 +95,7 @@ const Footer = () => {
     eventMatch,
     mypageMatch,
     mypageMatch02,
+    searchMatch,
   ]);
   return (
     <Container>
@@ -90,11 +117,15 @@ const Footer = () => {
         <Address>
           <AddressList>
             <li>COMPANY: ZIP.</li>
+            <li>|</li>
             <li>OWNER: JAEGI JUNG</li>
+            <li>|</li>
             <li>TEL: 02 - 1234- 5678</li>
-            <li>ADDRESS: Gangnam-gu, Seoul</li>
-            <li>COPYRIGHT © ZIP. ALL RIGHTS RESERVED.</li>
           </AddressList>
+          <p>
+            ADDRESS: Gangnam-gu, Seoul <br /> COPYRIGHT © ZIP. ALL RIGHTS
+            RESERVED.
+          </p>
         </Address>
       </FooterLeft>
       <FooterRight>
