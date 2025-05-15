@@ -3,29 +3,27 @@
     {
       "artistId": 1,
       "artistName": "서강준",
-      "jobCategory": "actor",
+      "jobCategory": "actor", 
       "videoURL": "https://www.youtube.com/watch?v=QOZcIWeQYBc&t=105s",
       "products": [
         {
           "productId": 1,
           "categories": {
             "mainCategory": "style",
-            "subCategory": "bag"
+            keyword: "bag", 
           },
           "name": "Stussy Canvas Extra Large Tote Bag / 스투시 캔버스 엑스트라 라지 토트백 워시드 블랙",
           "subtitle": "서강준 PICK",
           "brand": "스투시",
           "brandEng": "stussy",
           "price": 115000,
-          "createdAt": "2025-05-10",
+          "relase": 20250510,
           "detailImg": {
             "img01": "https://kr.stussy.com/cdn/shop/files/134253_WABL_1.jpg?v=1743700814&width=1920",
             "img02": "https://kr.stussy.com/cdn/shop/files/134253_WABL_2.jpg?v=1743700814&width=1920",
             "img03": "https://kr.stussy.com/cdn/shop/files/134253_WABL_6_2d1bb3d6-db57-48c5-a937-666cac531671.jpg?v=1743700814&width=1920"
           },
-          "thumbnailImg": "https://kr.stussy.com/cdn/shop/files/134253_WABL_1.jpg?v=1743700814&width=1920",
           "description": "Oversized tote bag in 12oz cotton canvas. Large central compartment Interior drop pocket Two exterior pockets Webbed strap handles Double-layered base panel Unlined 100% cotton",
-          "shippingAndReturn": "롯데택배 (1588-2121) 구매하신 제품은 수령하신 날로부터 7일 이내에 접수해 주셔야 합니다. 자세한 내용은 주문 및 반품 페이지(kr.stussy.com/pages/shipping-returns)에서 확인해 주세요."
         },
         {
           "id": 2,
