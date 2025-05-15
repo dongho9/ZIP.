@@ -39,12 +39,12 @@ export const router = createBrowserRouter([
       {
         path: "event",
         element: <Event />,
-        children:[
+        children: [
           {
             path: "promotion",
             element: <Promotion />,
           },
-        ]
+        ],
       },
       {
         path: "filtercategory/:categoryName",
