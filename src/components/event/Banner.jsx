@@ -1,8 +1,20 @@
-import React from 'react'
+import styled from "styled-components"
+
+const ImgWrapper = styled.div`
+/* position: relative; */
+  width: 100%;
+  img{
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+  }
+`
 
 const Banner = () => {
   return (
-    <div>Banner</div>
+    <ImgWrapper>
+      <img src="/src/imgs/event/banner.png" alt="eventbanner"/>
+    </ImgWrapper>
   )
 }
 

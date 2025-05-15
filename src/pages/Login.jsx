@@ -1,6 +1,7 @@
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useRef } from "react";
+
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
@@ -18,7 +19,7 @@ const ImgWrap = styled.div`
   @media screen and (max-width: 1024px) {
     width: 50%;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 `;
@@ -42,7 +43,7 @@ const Form = styled.form`
     padding: 0 3%;
   }
   //모바일
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     width: 100%;
     padding: 0 3%;
   }
@@ -112,8 +113,6 @@ const SubBtn = styled(Button)`
   color: 1px solid var(--dark-color);
   border: 1px solid var(--dark-color);
   position: relative;
-  a {
-  }
 `;
 
 const Text = styled.div`
@@ -133,9 +132,9 @@ const Kakao = styled(Button)`
 
 const Login = () => {
   const navigate = useNavigate();
-  // const handleSignupClick = () => {
-  //   navigate("/signup");
-  // };
+  const handleSignupClick = () => {
+    navigate("/signup");
+  };
   const btnRef = useRef();
   console.log(btnRef.current);
   return (
@@ -153,8 +152,8 @@ const Login = () => {
           <InputGroup>
             <Group>
               <Button>LOGIN</Button>
-              <SubBtn ref={btnRef} type="button">
-                <Link to="/signup">CREATE ACCOUNT</Link>
+              <SubBtn ref={btnRef} type="button" onClick={handleSignupClick}>
+                CREATE ACCOUNT
               </SubBtn>
             </Group>
             <Text>아이디 | 비밀번호 찾기</Text>

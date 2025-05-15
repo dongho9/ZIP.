@@ -25,127 +25,192 @@ const initialItems = [
     quantity: 1,
     selected: true,
   },
+  {
+    id: 3,
+    brand: "CONVERSE",
+    name: "CHUCK 70 HI",
+    detail: "BLACK/EGERT/BLACK | 260",
+    price: 105500,
+    image: "../src/imgs/cart/shoes2.png",
+    quantity: 1,
+    selected: true,
+  },
+  {
+    id: 4,
+    brand: "CONVERSE",
+    name: "CHUCK 70 HI",
+    detail: "BLACK/EGERT/BLACK | 260",
+    price: 105500,
+    image: "../src/imgs/cart/shoes2.png",
+    quantity: 1,
+    selected: true,
+  },
 ];
 
 const PageWrapper = styled.div`
+  width: 100%;
+  margin-top: 60px;
+  min-height: calc(100vh - 250px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
   padding: 40px;
-  margin: auto;
-  font-family: "Arial", sans-serif;
 
   @media (max-width: 1024px) {
-    padding: 40px;
-    margin: 60px 30px;
+    padding: 40px 20px;
   }
 
   @media (max-width: 767px) {
-    padding: 40px;
-    margin: 60px 30px;
+    padding: 30px 16px;
+    gap: 20px;
   }
 `;
 
 const Title = styled.h2`
-  font-size: 28px;
-  text-align: center;
-  margin-bottom: 40px;
+  font-size: 3.6rem;
   font-weight: 700;
+  margin: 0;
+
+  @media (max-width: 1024px) {
+    font-size: 2.8rem;
+  }
 
   @media (max-width: 767px) {
-    font-size: 22px;
-    margin-bottom: 24px;
+    font-size: 2rem;
+  }
+`;
+
+const EmptyMessage = styled.div`
+  height: 100%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  color: var(--dark-color);
+  text-align: center;
+  border: 1px solid var(--border-color);
+  @media (max-width: 767px) {
+    height: 200px;
+    font-size: 1.4rem;
   }
 `;
 
 const CartLayout = styled.div`
+  width: 80%;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
-
+  gap: 60px;
   @media (max-width: 1024px) {
     flex-direction: column;
+    width: 100%;
+    gap: 40px;
+  }
+
+  @media (max-width: 767px) {
+    gap: 20px;
   }
 `;
 
 const Left = styled.div`
-  flex: 0.5;
-  width: 100%;
-  padding: 10px;
+  flex: 0.6;
 `;
 
 const Right = styled.div`
-  flex: 0.3;
-  width: 100%;
-  padding: 10px;
+  flex: 0.4;
+  height: 100%;
+`;
+
+const OrderSummary = styled.div`
+  margin: 10px 0px;
+  padding: 30px;
 `;
 
 const SelectAllBox = styled.div`
-  margin: 20px auto;
   display: flex;
   align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "Pretendard", sans-serif;
 `;
 
 const ItemBox = styled.div`
   display: flex;
-  margin-top: 30px;
-  margin-bottom: 20px;
   align-items: flex-start;
+  margin: 30px 0;
 
   @media (max-width: 767px) {
-    display: flex;
     flex-direction: row;
-    text-align: left;
+    gap: 12px;
   }
 `;
 
 const Image = styled.img`
-  width: 124px;
-  height: 124px;
+  width: 122px;
+  height: 122px;
   object-fit: cover;
-  margin: 0px 8px;
+  margin: 0 8px;
+
+  @media (max-width: 767px) {
+    width: 50%;
+    height: auto;
+  }
+
+  @media (max-width: 480px) {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 const ItemInfo = styled.div`
-  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: "EHNormalTrial", sans-serif;
+
   @media (max-width: 767px) {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 0px;
+    margin-top: 0;
+    margin-bottom: auto;
   }
 `;
 
 const Brand = styled.div`
-  font-size: 12px;
-  color: #666;
+  font-size: 1.6rem;
+  color: var(--subTitle);
 `;
 
 const Name = styled.div`
-  font-size: 16px;
+  font-size: 1.8rem;
   font-weight: 700;
-  margin: 8px 0px;
 `;
 
 const Detail = styled.div`
-  font-size: 12px;
-  color: #999;
+  font-size: 1.6rem;
+  color: var(--subTitle);
 `;
 
 const BottomRow = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 12px;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: auto;
 
   @media (max-width: 767px) {
     flex-direction: column;
+    align-items: flex-start;
     gap: 12px;
-    align-items: center;
   }
 `;
 
 const PriceBox = styled.div`
   font-size: 2.2rem;
   font-weight: bold;
-  color: #111;
-  margin-top: auto;
+  font-family: "Pretendard", sans-serif;
+  color: var(--dark-color);
 `;
 
 const ActionBox = styled.div`
@@ -156,14 +221,13 @@ const ActionBox = styled.div`
 
 const QtyControl = styled.div`
   display: flex;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
 `;
 
-const Btn = styled.button`
-  width: 32px;
-  height: 32px;
+const QtyBtn = styled.button`
+  width: 100%;
   font-size: 16px;
-  background: white;
+  background: var(--light-color);
   border: none;
   cursor: pointer;
 
@@ -184,61 +248,66 @@ const Qty = styled.div`
 `;
 
 const Trash = styled(FaTrashAlt)`
-  color: #999;
+  color: var(--dark-color);
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.8rem;
 
   &:hover {
-    color: black;
+    color: var(--dark-color);
   }
 `;
 
 const PaymentBox = styled.div`
-  padding: 10px;
-  margin-top: 13px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 10px 0px;
+  padding: 30px;
+  background-color: #f8f8f8;
+  font-family: "Pretendard", sans-serif;
+  border: 1px solid var(--border-color);
 `;
 
 const PaymentTitle = styled.h4`
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 24px;
 `;
 
 const Row = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 500;
-  margin: 33px auto;
+  margin-top: 30px;
 `;
 
 const Line = styled.hr`
-  border: 1px solid #ccc;
-  margin: 30px auto;
+  border: 1px solid var(--border-color);
+  margin: 30px 0;
 `;
 
 const Total = styled(Row)`
-  margin: 30px auto;
+  font-size: 1.6rem;
   font-weight: 700;
-  font-size: 16px;
+  margin-top: auto;
+  margin-bottom: 30px;
 `;
 
 const OrderBtn = styled.button`
-  margin-top: 5px;
   width: 100%;
   padding: 14px 0;
   background: black;
   color: white;
+  font-size: 1.5rem;
   font-weight: bold;
-  font-size: 15px;
   border: none;
   cursor: pointer;
-  transition: background 0.3s;
+  margin: 0px auto;
+  position: sticky;
 
   &:disabled {
-    background: #aaa;
+    background: var(--lightGray);
     cursor: not-allowed;
   }
 
@@ -261,9 +330,21 @@ const Cart = () => {
         item.id === id ? { ...item, selected: !item.selected } : item
       )
     );
+    setItems(
+      items.map((item) =>
+        item.id === id ? { ...item, selected: !item.selected } : item
+      )
+    );
   };
 
   const changeQty = (id, diff) => {
+    setItems(
+      items.map((item) =>
+        item.id === id
+          ? { ...item, quantity: Math.max(1, item.quantity + diff) }
+          : item
+      )
+    );
     setItems(
       items.map((item) =>
         item.id === id
@@ -282,55 +363,64 @@ const Cart = () => {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-
   return (
     <PageWrapper>
+      <GlobalStyles />
       <Title>SHOPPING CART</Title>
       <CartLayout>
         <Left>
-          <SelectAllBox>
-            <input
-              type="checkbox"
-              checked={items.length > 0 && items.every((item) => item.selected)}
-              onChange={toggleSelectAll}
-            />
-            <span style={{ marginLeft: "8px" }}>
-              전체 선택 ({selectedItems.length}/{items.length})
-            </span>
-          </SelectAllBox>
+          {items.length === 0 ? (
+            <EmptyMessage>상품이 비었습니다.</EmptyMessage>
+          ) : (
+            <OrderSummary>
+              <SelectAllBox>
+                <input
+                  type="checkbox"
+                  checked={
+                    items.length > 0 && items.every((item) => item.selected)
+                  }
+                  onChange={toggleSelectAll}
+                />
+                <span style={{ marginLeft: "8px" }}>
+                  전체 선택 ({selectedItems.length}/{items.length})
+                </span>
+              </SelectAllBox>
 
-          {items.map((item) => (
-            <ItemBox key={item.id}>
-              <input
-                type="checkbox"
-                checked={item.selected}
-                onChange={() => toggleSelectItem(item.id)}
-              />
-              <Image src={item.image} alt={item.name} />
-              <ItemInfo>
-                <Brand>{item.brand}</Brand>
-                <Name>{item.name}</Name>
-                <Detail>{item.detail}</Detail>
-
-                <BottomRow>
-                  <PriceBox>KRW {item.price.toLocaleString()}</PriceBox>
-                  <ActionBox>
-                    <QtyControl>
-                      <Btn
-                        onClick={() => changeQty(item.id, -1)}
-                        disabled={item.quantity <= 1}
-                      >
-                        -
-                      </Btn>
-                      <Qty>{item.quantity}</Qty>
-                      <Btn onClick={() => changeQty(item.id, 1)}>+</Btn>
-                    </QtyControl>
-                    <Trash onClick={() => removeItem(item.id)} />
-                  </ActionBox>
-                </BottomRow>
-              </ItemInfo>
-            </ItemBox>
-          ))}
+              {items.map((item) => (
+                <ItemBox key={item.id}>
+                  <input
+                    type="checkbox"
+                    checked={item.selected}
+                    onChange={() => toggleSelectItem(item.id)}
+                  />
+                  <Image src={item.image} alt={item.name} />
+                  <ItemInfo>
+                    <Brand>{item.brand}</Brand>
+                    <Name>{item.name}</Name>
+                    <Detail>{item.detail}</Detail>
+                    <BottomRow>
+                      <PriceBox>KRW {item.price.toLocaleString()}</PriceBox>
+                      <ActionBox>
+                        <QtyControl>
+                          <QtyBtn
+                            onClick={() => changeQty(item.id, -1)}
+                            disabled={item.quantity <= 1}
+                          >
+                            -
+                          </QtyBtn>
+                          <Qty>{item.quantity}</Qty>
+                          <QtyBtn onClick={() => changeQty(item.id, 1)}>
+                            +
+                          </QtyBtn>
+                        </QtyControl>
+                        <Trash onClick={() => removeItem(item.id)} />
+                      </ActionBox>
+                    </BottomRow>
+                  </ItemInfo>
+                </ItemBox>
+              ))}
+            </OrderSummary>
+          )}
         </Left>
 
         <Right>
