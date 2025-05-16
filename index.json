@@ -1,61 +1,2126 @@
 {
   "artists": [
     {
-      "id": 1,
-      "artistName": "서강준",
-      "jobCategory": "actor",
-      "videoURL": "https://www.youtube.com/watch?v=QOZcIWeQYBc&t=105s",
+      "id": 46,
+      "artistName": "슈화",
+      "artistImg": "https://img.allurekorea.com/allure/2025/02/style_67b5925e7d76e-700x1050.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://youtu.be/SCGW79pWEIw?si=ah3_iFw9rUUHV-54",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "무인양품 카카오 트러플 초콜렛",
+          "brand": "무인양품",
+          "brandEng": "MUJI",
+          "price": 4900,
+          "releasedDate": 20241215,
+          "sellNum": 78,
+          "detailImg": {
+            "img01": "https://cdn11.bigcommerce.com/s-4b0oh2xvlj/images/stencil/640w/products/9676/1206270/4550583034160_01_1260__02168.1745571917.jpg?c=1",
+            "img02": "https://cdn11.bigcommerce.com/s-4b0oh2xvlj/images/stencil/1280x1280/products/9676/1206267/4550182619225_1260__63002.1745571913.jpg?c=1",
+            "img03": "https://cdn11.bigcommerce.com/s-4b0oh2xvlj/images/stencil/1280x1280/products/9676/1206268/4550182619225_02_1260__86538.1745571915.jpg?c=1"
+          },
+          "description": "진한 카카오 풍미와 부드러운 생초콜릿 식감, 트러플 향이 추가되어 고유한 재료가 더해져 다양한 풍미를 즐길 수 있습니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "beauty",
+          "keyword": "hair",
+          "itemName": "두피 마사지 빗",
+          "brand": "웰픽스",
+          "brandEng": "well-pics",
+          "price": 12460,
+          "releasedDate": 20250124,
+          "sellNum": 32,
+          "detailImg": {
+            "img01": "https://ae01.alicdn.com/kf/Sf9fdd93f323c42c58888b1d43865ab317/-.jpg",
+            "img02": "https://ae01.alicdn.com/kf/S359df4a3afb5459b97d46cb69159d7d97/-.jpg",
+            "img03": "https://baby2.freeship.co.kr/goodsimg/63707/2024-04-22/big/1005006852486999.jpg"
+          },
+          "description": "머리 두피 빗자극적 인 마사지와 긁기 효과를 제공하여 두피 마사지를 통해 긴장을 풀고 모발 성장을 촉진합니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "도나토르 옥괄사 마사지 스틱형",
+          "brand": "도나토르",
+          "brandEng": "DonaThor",
+          "price": 7900,
+          "releasedDate": 20240814,
+          "sellNum": 302,
+          "detailImg": {
+            "img01": "https://thumbnail10.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/dbef/90c0e26a522bd1202248cb9c3c3acea38dec13414124d96bbb5b63c3d1e9.jpg",
+            "img02": "https://thumbnail7.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/f98f/800e50fa05917fe7914c973d5e35892bc8a995da88b7ddf0cf702185ec83.jpg",
+            "img03": "https://thumbnail9.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/d0cb/23b23e25eaef44401bb3c12c87b579e4f1e466484af03a2a99a955ef2a67.jpg"
+          },
+          "description": "다양한 마사지 기능으로 5-10분 투자하여 내몸의 피로를 풀어주세요. 괄사의 여러면을 활용하여 필요한 부위에 맞게 다양한 마사지가 가능합니다."
+        },
+        {
+          "productId": 4,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "RICOH GR III",
+          "brand": "리코",
+          "brandEng": "RICOH",
+          "price": 1493800,
+          "releasedDate": 20230623,
+          "sellNum": 53,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/735/312/img/7312735_1.jpg?shrink=500:*&_v=20240328122032",
+            "img02": "https://img.danawa.com/prod_img/500000/735/312/img/7312735_2.jpg?shrink=500:*&_v=20240328122032",
+            "img03": "https://the-edit.co.kr/wp-content/uploads/2024/02/4.jpg"
+          },
+          "description": "궁극의 스냅용 카메라, 고유의 컨셉을 지키며 꾸준히 진화하는 GR, 순간을 기록하기 위한 뛰어난 화질과 휴대성,순간의 포착을 놓치지 않는 스피드, 창의적인 표현도구로서의 편의성과 신뢰성, GR3는 이 모든 탐구의 결정체 입니다."
+        },
+        {
+          "productId": 5,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "가넷 스피넬 비즈 진주 행운팔찌",
+          "brand": "준 주얼리",
+          "brandEng": "JUN JEWELRY",
+          "price": 44620,
+          "releasedDate": 20230808,
+          "sellNum": 510,
+          "detailImg": {
+            "img01": "https://sitem.ssgcdn.com/99/04/74/item/1000627740499_i3_1200.jpg",
+            "img02": "https://sitem.ssgcdn.com/99/04/74/item/1000627740499_i2_1200.jpg",
+            "img03": "https://sitem.ssgcdn.com/99/04/74/item/1000627740499_i1_1200.jpg"
+          },
+          "description": "착용후 화장품,땀,습기,지문등의 이물질이 없도록 닦은후 여러 제품이 섞이지 않도록 보관하세요. 진주나 에메랄드 제품은 초음파 세척을 절대 하지마세요."
+        },
+        {
+          "productId": 6,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "프로젝트 프로덕트 FS26 CMBK",
+          "brand": "프로젝트 프로덕트",
+          "brandEng": "PROJEKT PRODUKT",
+          "price": 259000,
+          "releasedDate": 20241110,
+          "sellNum": 124,
+          "detailImg": {
+            "img01": "https://projektprodukt.co.kr/web/product/big/fs26_cmbk_1.jpg",
+            "img02": "https://projektprodukt.co.kr/web/product/extra/small/ppcase_black.jpg",
+            "img03": "https://projektprodukt.co.kr/web/product/extra/small/fs26_cmbk_5.jpg"
+          },
+          "description": "극도로 슬림한 프레임과 템플에 프로젝트 프로덕트의 디자인 철학, 모던함과 웨어러블을 온전히 담아낸 티타늄안경. 착용하기 편하면서도 구조적인 견고함을 잃지 않은 디자인은 세심한 두께감과 균형감 있는 소재 조합으로 완성되었습니다. 원형과 사각형, 다각형으로 다양화된 안구 형태는 폭넓은 취향을 만족시킵니다."
+        },
+        {
+          "productId": 7,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "조르지오 아르마니 투고 쿠션",
+          "brand": "조르지오 아르마니",
+          "brandEng": "GIORGIO ARMANI",
+          "price": 77900,
+          "releasedDate": 20210507,
+          "sellNum": 302,
+          "detailImg": {
+            "img01": "https://cdn.hddfs.com/files/goos/0080/20220808/910b5701.png?sf=webp&RS=750x750",
+            "img02": "https://cdn.hddfs.com/files/goos/0080/20240724/4c92c8bc.png?sf=webp&RS=520x520",
+            "img03": "https://contents.lotteon.com/itemimage/20250507113912/LE/12/19/28/74/69/_1/31/50/89/31/2/LE1219287469_1315089312_1.jpg/dims/optimize/dims/resizemc/400x400"
+          },
+          "description": "정교한 베이스 메이크업을 연출해주는 휴대용 쿠션 다양한 케이스로 당신의 특별함을 연출해보세요."
+        },
+        {
+          "productId": 8,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "나스 라이트 리플렉팅 세팅 루스 파우더",
+          "brand": "나스",
+          "brandEng": "NARS",
+          "price": 58500,
+          "releasedDate": 20190724,
+          "sellNum": 457,
+          "detailImg": {
+            "img01": "https://sitem.ssgcdn.com/81/30/71/item/1000035713081_i1_750.jpg",
+            "img02": "https://contents.lotteon.com/itemimage/20250201000858/LE/12/09/08/09/15/_1/24/91/79/07/8/LE1209080915_1249179078_1.jpg/dims/optimize/dims/resizemc/400x400",
+            "img03": "https://cdn.chicor.com/images/product/20220621111359250.jpg?d=750x750"
+          },
+          "description": "미세 미네랄 파우더에 글리세린과 토코페릴아세테이트가 함유되어 건조함을 막아주고 하루 종일 편안한 피부를 유지시켜 줍니다. 여기에 나스만의 독자적인 라이트 리플렉팅 콤플렉스™ 기술로 젊고 건강한 피부 본연의 생기를 되찾아줍니다."
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "artistName": "부승관",
+      "artistImg": "https://img.allurekorea.com/allure/2025/01/style_678e427573265-960x1200.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://youtu.be/4n6M4xy77II?si=nu5iKNN9Z9Yy7oTs",
       "products": [
         {
           "productId": 1,
           "mainCategory": "style",
-          "keyword": "bag",
-          "itemName": "스투시 캔버스 엑스트라 라지 토트백 워시드 블랙",
-          "brand": "스투시",
-          "brandEng": "stussy",
-          "price": 115000,
-          "releasedDate": 20250510,
-          "SellNum": 104,
+          "keyword": "styling",
+          "itemName": "발렌시아가 모나코 레더 메신저 백",
+          "brand": "발렌시아가",
+          "brandEng": "BALENCIAGA",
+          "price": 1726000,
+          "releasedDate": 20241009,
+          "sellNum": 203,
           "detailImg": {
-            "img01": "https://kr.stussy.com/cdn/shop/files/134253_WABL_1.jpg?v=1743700814&width=1920",
-            "img02": "https://kr.stussy.com/cdn/shop/files/134253_WABL_2.jpg?v=1743700814&width=1920",
-            "img03": "https://kr.stussy.com/cdn/shop/files/134253_WABL_6_2d1bb3d6-db57-48c5-a937-666cac531671.jpg?v=1743700814&width=1920"
+            "img01": "https://cdn.jentestore.io/resource/products/1774239/d9d5e7f5_1774239_1.jpg?_=69447313",
+            "img02": "https://cdn.jentestore.io/resource/products/1774239/161da320_1774239_3.jpg?_=69447315",
+            "img03": "https://cdn-images.farfetch-contents.com/26/65/42/76/26654276_56399914_1000.jpg"
           },
-          "description": "Oversized tote bag in 12oz cotton canvas. Large central compartment Interior drop pocket Two exterior pockets Webbed strap handles Double-layered base panel Unlined 100% cotton"
+          "description": "세탁불가(부드러운 천으로 닦아주세요). 가죽제품의 경우, 사용방법과 환경(습기, 온도, 비, 눈, 빛, 마찰, 체열과 땀)으로 인하여 제품이 이염 및 손상, 변형 될 수 있으니 주의요망."
         },
         {
           "productId": 2,
           "mainCategory": "style",
-          "keyword": "bag",
-          "itemName": "스투시 캔버스 엑스트라 라지 토트백 워시드 블랙",
-          "brand": "스투시",
-          "brandEng": "stussy",
-          "price": 115000,
-          "realeasedDate": 20250510,
-          "SellNum": 65,
+          "keyword": "styling",
+          "itemName": "메르몽 베이직 버킷햇",
+          "brand": "메르몽",
+          "brandEng": "MERMONT",
+          "price": 63200,
+          "releasedDate": 20231022,
+          "sellNum": 254,
           "detailImg": {
-            "img01": "https://kr.stussy.com/cdn/shop/files/134253_WABL_1.jpg?v=1743700814&width=1920",
-            "img02": "https://kr.stussy.com/cdn/shop/files/134253_WABL_2.jpg?v=1743700814&width=1920",
-            "img03": "https://kr.stussy.com/cdn/shop/files/134253_WABL_6_2d1bb3d6-db57-48c5-a937-666cac531671.jpg?v=1743700814&width=1920"
+            "img01": "https://cdn.imweb.me/thumbnail/20231106/9b2e8340ca100.jpg",
+            "img02": "https://cdn.imweb.me/thumbnail/20231106/f5fc7c87fd142.jpg",
+            "img03": "https://cdn.imweb.me/thumbnail/20231106/f6bd80197adc6.png"
           },
-          "description": "Oversized tote bag in 12oz cotton canvas. Large central compartment Interior drop pocket Two exterior pockets Webbed strap handles Double-layered base panel Unlined 100% cotton"
+          "description": "베이직한 자수 로고가 포인트인 코튼 버킷햇입니다. 다양한 스타일에 어울리는 클래식한 블랙 컬러로 제작되어 데일리 코디에 활용하기 좋습니다. 메르몽만의 고유한 쉐입으로 편안한 착용감을 제공하며, 햇빛과 자외선을 효과적으로 차단해줍니다. 가벼운 코튼 소재로 사계절 내내 부담 없이 착용 가능한 아이템입니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "부승관 괄사",
+          "brand": "세븐틴 핸드메이드",
+          "brandEng": "SEVENTEEN HANDMADE",
+          "price": 57000,
+          "releasedDate": 20240324,
+          "sellNum": 450,
+          "detailImg": {
+            "img01": "https://www.kpopalbums.com/cdn/shop/files/b17d711ef34ee8560fd5a93a80bd0ec82bf734ca3080085941a280d8355c1856.png?v=1737714801",
+            "img02": "https://down-my.img.susercontent.com/file/sg-11134207-7reqd-m2c89nkpxeju86",
+            "img03": "https://seoulterrace.com/cdn/shop/files/GaY4ZrfbAAAYKmR.jpg?v=1730626791&width=823"
+          },
+          "description": "세븐틴 멤버 부승관이 팬들이 위해 직접 제작한 핸드메이드 괄사 제품. 안에 액체가 들어있어 쿨링기능도 되고 마사지 기능을 활용할수도 있습니다."
+        },
+        {
+          "productId": 4,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "마이밀 퓨로틴 250ML (24개입)",
+          "brand": "마이밀",
+          "brandEng": "MYMEAL",
+          "price": 44900,
+          "releasedDate": 20250510,
+          "sellNum": 200,
+          "detailImg": {
+            "img01": "https://thumbnail10.coupangcdn.com/thumbnails/remote/492x492ex/image/1025_amir_coupang_oct_80k/084b/de63588ac2021e58044b8ac289f0a6d2be7e0bb524227815241d50e93d2e.jpg",
+            "img02": "https://img-cf.kurly.com/hdims/resize/%3E720x/quality/90/src/shop/data/goodsview/20231119/gv20000780540_1.jpg",
+            "img03": "https://sitem.ssgcdn.com/35/32/71/item/2097001713235_i1_750.jpg"
+          },
+          "description": "당류 zero, 단백질 20g, 아미노산 19종, 비타민/미네랄 14종 함유 맛있는 100% 식물성 단백질 음료"
+        },
+        {
+          "productId": 5,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "이클립스 스피아민트향 캔디",
+          "brand": "이클립스",
+          "brandEng": "ECLIPSE",
+          "price": 3000,
+          "releasedDate": 20240708,
+          "sellNum": 12,
+          "detailImg": {
+            "img01": "https://image.artbox.co.kr/upload/C00001/goods/800_800/481/240522005394481.jpg?s=/goods/org/481/240522005394481.jpg",
+            "img02": "https://sitem.ssgcdn.com/72/66/31/item/1000631316672_i1_500.jpg",
+            "img03": "https://image.auction.co.kr/itemimage/43/cc/40/43cc401413.jpg"
+          },
+          "description": "먹는순간 상쾌함!, 언제 어디서나 간편하게 FRESH!!"
+        },
+        {
+          "productId": 6,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "오틀리 귀리 우유 250ML (18개입)",
+          "brand": "오틀리!",
+          "brandEng": "OATLY!",
+          "price": 30000,
+          "releasedDate": 20250428,
+          "sellNum": 177,
+          "detailImg": {
+            "img01": "https://cdn.oasis.co.kr:48581/product/63736/thumb/thumb_63736aa0572d3-35a3-4766-8a96-568114310f25.jpg",
+            "img02": "https://gi.esmplus.com/imaummall2/BGR/drink/BGR_oatly_1L_04.jpg",
+            "img03": "https://img-cf.kurly.com/hdims/resize/%3E720x/quality/90/src/shop/data/goodsview/20221011/gv40000435093_1.jpg"
+          },
+          "description": "귀리 본연의 맛과 향을 즐길 수있는 부드럽고 고소한 귀리음료!"
+        },
+        {
+          "productId": 7,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "지중해 이지백 칙피그레인",
+          "brand": "파지티브호텔",
+          "brandEng": "POSITIVEHOTEL",
+          "price": 33000,
+          "releasedDate": 20250224,
+          "sellNum": 300,
+          "detailImg": {
+            "img01": "https://positivehotel.com/web/product/big/202505/f29cd95e7e8d41ead5da16365c5dfc4b.jpg",
+            "img02": "https://positivehotel.com/web/product/extra/small/202505/de0fbb33849aac392d9b5869bff9be4a.jpg",
+            "img03": "https://positivehotel.com/web/product/extra/small/202505/31b8f643c1b0e460883ef3770b62cb4f.jpg"
+          },
+          "description": "믿을 수 있는 원료로 속이 편안한 프리미엄 식물성 프로틴 쉐이크! 건강하고 맛있게"
+        },
+        {
+          "productId": 8,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "지중해 그린민트",
+          "brand": "파지티브호텔",
+          "brandEng": "POSITIVEHOTEL",
+          "price": 21000,
+          "releasedDate": 20250221,
+          "sellNum": 450,
+          "detailImg": {
+            "img01": "https://positivehotel.com/web/product/big/202505/6c73067d9ea125ca631879b5ec1d700a.jpg",
+            "img02": "https://positivehotel.com/web/product/extra/small/202505/b35a269d5c804800b1670b53132b2c06.jpg",
+            "img03": "https://positivehotel.com/web/product/extra/small/202505/3e2ee1ec06df755538819ffec2d5c5e5.jpg"
+          },
+          "description": "매일 마시는 밸런스 워터 지중해 그린민트! 하루 한 포로 챙기는 내몸의 밸런스! 7가지 자연유래 성분으로 당 걱정없이 밸런스를 챙겨보세요."
+        },
+        {
+          "productId": 9,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "올리브오일 캡슐 쿠파주",
+          "brand": "파지티브호텔",
+          "brandEng": "POSITIVEHOTEL",
+          "price": 32000,
+          "releasedDate": 20250214,
+          "sellNum": 178,
+          "detailImg": {
+            "img01": "https://positivehotel.com/web/product/big/202505/fcc45149fb4e7bd1e4adfb3c795c6667.jpg",
+            "img02": "https://positivehotel.com/web/product/extra/small/202505/4716530d376ab307f268c7264432ca37.jpg",
+            "img03": "https://positivehotel.com/web/product/extra/small/202505/e75e73c96dad9aed54dfb9ca65154985.jpg"
+          },
+          "description": "캡슐형태로 간편하고 신선하게 섭취하는 올리브 오일, 쉽게 시작하는 웰니스 루틴"
+        },
+        {
+          "productId": 10,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "기분전환 알파",
+          "brand": "생활약속",
+          "brandEng": "",
+          "price": 36500,
+          "releasedDate": 20241225,
+          "sellNum": 784,
+          "detailImg": {
+            "img01": "https://lifepharm.kr/web/product/big/202502/2e69b326d159e30b49cea6c1ada1f500.jpg",
+            "img02": "https://lifepharm.kr/web/product/extra/big/202306/560d2cc05d542a3b0dc5b97fe3b52c56.jpg",
+            "img03": "https://lifepharm.kr/web/product/extra/big/202306/12a467e849a6c2706b20b9e9013c0049.jpg"
+          },
+          "description": "호박, 비트, 모링가에 식이섬유까지 더한 한 포 습관! 자연스럽고 건강한 V라인"
+        },
+        {
+          "productId": 10,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "대장사랑 오리저널 30포",
+          "brand": "대장사랑",
+          "brandEng": "",
+          "price": 36500,
+          "releasedDate": 20241211,
+          "sellNum": 774,
+          "detailImg": {
+            "img01": "https://www.migung365.com/web/product/small/202503/dfc9977d05b3dd28d996b86825701c8a.png",
+            "img02": "https://www.migung365.com/web/product/extra/small/202407/74449fa3b4817af388f18962815e3ffb.jpg",
+            "img03": "https://www.migung365.com/web/product/extra/small/202407/04f1f8633bd62af277bf2f569ad67c3c.jpg"
+          },
+          "description": "비움의 근본, 가벼움 다이어트를 하는 당신을 위한 최선의 선택!"
+        },
+        {
+          "productId": 11,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "에그플랜드 클리어 필링패드 70매",
+          "brand": "유리스킨",
+          "brandEng": "URESKIN",
+          "price": 13500,
+          "releasedDate": 20240711,
+          "sellNum": 333,
+          "detailImg": {
+            "img01": "http://skin-mobile1.urecosmeteic.cafe24.com/web/product/big/202206/d2bf7e4185fd3566c9988d2c749e5ebc.jpg",
+            "img02": "https://mblogthumb-phinf.pstatic.net/MjAyMDA3MTlfMTU5/MDAxNTk1MTYzMjIzMzM5.8sDkI8r_N_N_FUT5Tl8hjbO642xv4Oq0ncgOyyCUwAMg.fSxu0xIwDssluVT0JEFfJ81D_oLAvVEbYNGFkJjI44cg.JPEG.tonyforlife/%EC%9C%A0%EB%A6%AC%EC%8A%A4%ED%82%A8_%EC%97%90%EA%B7%B8%ED%94%8C%EB%9E%9C%ED%8A%B8_%ED%81%B4%EB%A6%AC%EC%96%B4_%ED%95%84%EB%A7%81_%ED%8C%A8%EB%93%9C__%EB%A7%88%EC%8A%A4%ED%84%B0_%EC%98%AC%EC%9D%B8%EC%9B%90_%ED%86%A0%EB%84%88-1.jpg?type=w420",
+            "img03": "https://mblogthumb-phinf.pstatic.net/MjAyMDA3MTlfMjY5/MDAxNTk1MTYzMjI0NjA4.H56JTP_ucFiw-ITu1ZiJSE_QKdSk4oicYbJTi2bnLLEg.MsWVYgmnB0bmw9pdQHxiwO9FXxxo6pOCBTt8mLIHEfsg.JPEG.tonyforlife/%EC%9C%A0%EB%A6%AC%EC%8A%A4%ED%82%A8_%EC%97%90%EA%B7%B8%ED%94%8C%EB%9E%9C%ED%8A%B8_%ED%81%B4%EB%A6%AC%EC%96%B4_%ED%95%84%EB%A7%81_%ED%8C%A8%EB%93%9C__%EB%A7%88%EC%8A%A4%ED%84%B0_%EC%98%AC%EC%9D%B8%EC%9B%90_%ED%86%A0%EB%84%88-5.jpg?type=w420"
+          },
+          "description": "자연유래 성분으로 가득 채워 피지, 노폐물 및 각질 케어에 도움을 주고, 피지의 의한 번들거림을 정돈 시켜주는 클리어 패드"
+        },
+        {
+          "productId": 12,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "브링그린 티트리시카 수딩크림",
+          "brand": "브링그린",
+          "brandEng": "BRING GREEN",
+          "price": 20000,
+          "releasedDate": 20180331,
+          "sellNum": 53,
+          "detailImg": {
+            "img01": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/550/10/0000/0018/A00000018509815ko.jpg?l=ko",
+            "img02": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0018/A00000018509816ko.jpg?qt=80",
+            "img03": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0018/A00000018509819ko.jpg?qt=80"
+          },
+          "description": "수부지 피부를 위한 수분 밸런스 크림 피부고민 빠른 해답! 브링그린"
+        },
+        {
+          "productId": 13,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "피츠 나튜로덤 새살앰플SET",
+          "brand": "피츠",
+          "brandEng": "PHYT'S",
+          "price": 51200,
+          "releasedDate": 20230330,
+          "sellNum": 60,
+          "detailImg": {
+            "img01": "https://nubonmarket.com/cdn/shop/products/7e19454b4c192a9d4d36bb862794abb9.jpg?v=1610755376&width=713",
+            "img02": "https://nubonmarket.com/cdn/shop/products/phyts.jpg?v=1610755376&width=713",
+            "img03": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0018/A00000018509819ko.jpg?qt=80"
+          },
+          "description": "이 식물성 향료 화합물은 96%의 센텔라 아시아티카 잎 추출물 덕분에 피부를 정화하는 데 도움을 줍니다. 센텔라 아시아티카 잎 추출물은 피부 세포 생성 및 콜라겐 합성을 가속화하여 치유에 도움이 알려져 있습니다. 또한 항균 작용이 있으며, 항산화 활성을 강화하고 혈관 형성을 촉진할 수 있습니다. 지성, 여드름, 문제성 피부(결점, 블랙헤드 등)는 물론 곤충 물린 상처, 찰과상, 피부 자극 등 다양한 피부 문제에도 사용할 수 있습니다."
+        },
+        {
+          "productId": 14,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "협재의 아침바람",
+          "brand": "르플랑",
+          "brandEng": "le plein",
+          "price": 59000,
+          "releasedDate": 20240706,
+          "sellNum": 950,
+          "detailImg": {
+            "img01": "https://cdn.imweb.me/thumbnail/20240523/13cbb12dc7754.jpg",
+            "img02": "https://cdn.imweb.me/thumbnail/20240502/1c05fdf7c0f60.jpg",
+            "img03": "https://cdn.imweb.me/thumbnail/20240502/46259627e7b52.jpg"
+          },
+          "description": "머리칼을 헝크는 제주의 바람이 기분 좋다. 푸른 바다냄새, 상쾌한 숲의 향기, 상큼한 귤 냄새까지 겨울과 봄 사이 자유롭게 피어난 색색의 꽃향을 제주 바람이 담고 온다. 짭쪼름한 바다 냄새와 눈이 시리도록 푸른 수평선, 뽀얀 포말 속 반짝이는 바다 소금향이 청량하다"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "artistName": "이창섭",
+      "artistImg": "https://img.allurekorea.com/allure/2024/09/style_66e7c8a8df668-960x1200.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://youtu.be/iIitXGfYmRc?si=QtRYWnqvJBi6gX8t",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "아바론 메신저백(공용)",
+          "brand": "오닐",
+          "brandEng": "O'NEILL",
+          "price": 69300,
+          "releasedDate": 20250224,
+          "sellNum": 803,
+          "detailImg": {
+            "img01": "https://pbs.twimg.com/media/Gi4xW72a4AIvEFc.jpg",
+            "img02": "https://cafe24.poxo.com/ec01/oneillmall/5GslpdAnCPzGTb8GqqEZ3tjoqjLd4hYOS2DpdEhfxf6PK5S9m1GQz6ioxLe/a0BF/XQiSHaDKxPUR7kGlAMFiw==/_/web/product/extra/big/20240305/9aa992cc983405600749381542e88718.jpg",
+            "img03": "https://cafe24.poxo.com/ec01/oneillmall/5GslpdAnCPzGTb8GqqEZ3tjoqjLd4hYOS2DpdEhfxf6PK5S9m1GQz6ioxLe/a0BF/XQiSHaDKxPUR7kGlAMFiw==/_/web/product/extra/big/20240305/b136780fc8af24dbb686a0757906ac90.jpg"
+          },
+          "description": "타포린 원단을 사용하여 방수력과 내구성이 좋은 메신저백. 전면에 아일렛과 웨빙 테잎을 사용한 독특한 디테일이 포인트 심플하고 베이직한 디자인"
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "톰포드 뷰티 (블랙오키드)",
+          "brand": "톰 포드",
+          "brandEng": "TOM FORD",
+          "price": 215000,
+          "releasedDate": 20240303,
+          "sellNum": 204,
+          "detailImg": {
+            "img01": "https://duciel.co.kr/web/product/big/202409/a3c46c45cf288b4b15542bf276d8c856.jpg",
+            "img02": "https://m.perfumegraphy.com/web/product/big/202211/324e785f14df7de1fa97e55ba144fe50.jpg",
+            "img03": "https://wooridle.co.kr/data/goods/323/2023/10/_tmp_64148cec9fa50d60e3f2ea650d8d57739872view.png"
+          },
+          "description": "톰포드 베스트셀러, 럼에 담긴 플럼의 다크한 보랏빛이 연출하는 퇴폐적인 관능미 와 초콜릿과 우디의 묵직한 밸런스 덕분에 남성과 여성 모두에게 사랑받는 향수입니다."
         },
         {
           "productId": 3,
           "mainCategory": "style",
-          "keyword": "bag",
-          "itemName": "스투시 캔버스 엑스트라 라지 토트백 워시드 블랙",
-          "brand": "스투시",
-          "brandEng": "stussy",
-          "price": 115000,
-          "realeasedDate": 20250510,
-          "SellNum": 218,
+          "keyword": "perfume",
+          "itemName": "리퀴드 퍼븀바 비디케이 그리 샤르넬",
+          "brand": "비디케이",
+          "brandEng": "BDK",
+          "price": 350000,
+          "releasedDate": 20240402,
+          "sellNum": 257,
           "detailImg": {
-            "img01": "https://kr.stussy.com/cdn/shop/files/134253_WABL_1.jpg?v=1743700814&width=1920",
-            "img02": "https://kr.stussy.com/cdn/shop/files/134253_WABL_2.jpg?v=1743700814&width=1920",
-            "img03": "https://kr.stussy.com/cdn/shop/files/134253_WABL_6_2d1bb3d6-db57-48c5-a937-666cac531671.jpg?v=1743700814&width=1920"
+            "img01": "https://img.danawa.com/prod_img/500000/734/121/img/20121734_1.jpg?_v=20230511105123",
+            "img02": "https://m.perfumegraphy.com/web/product/big/202406/9c501ddff98db1c46d6d75bbd5462ab5.jpg",
+            "img03": "https://image.thehyundai.com/static/image/sect/dispbnnr19747011041020241121162123.jpg"
           },
-          "description": "Oversized tote bag in 12oz cotton canvas. Large central compartment Interior drop pocket Two exterior pockets Webbed strap handles Double-layered base panel Unlined 100% cotton"
+          "description": "바닐라 빈의 고급스러운 달콤함을 더한 향기, 조도가 낮아진 위스키바, 인센스 연기처럼 짙게 흐르는 향기"
+        },
+        {
+          "productId": 4,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "맑은 쌀 선크림",
+          "brand": "조선미녀",
+          "brandEng": "BEAUTY OF JOSEON",
+          "price": 18000,
+          "releasedDate": 20190307,
+          "sellNum": 277,
+          "detailImg": {
+            "img01": "https://cdn.chicor.com/images/product/20250310105414748.jpg?d=750x750",
+            "img02": "https://beautyofjoseon.co.kr/web/product/extra/small/202504/9e3f9d8b408b4fd0f8c59275c91fb2cb.jpg",
+            "img03": "https://beautyofjoseon.co.kr/web/product/extra/small/202504/911292bfdd4b65e0af00fbaf19444bfb.jpg"
+          },
+          "description": "선케어 맛집 조선미녀 선케어 라인 머리부터 발끝까지 자외선차단, 사계절내내 쓰는 데일리 선크림"
+        },
+        {
+          "productId": 5,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "맑은 쌀 선크림 아쿠아프레쉬",
+          "brand": "조선미녀",
+          "brandEng": "BEAUTY OF JOSEON",
+          "price": 18000,
+          "releasedDate": 20190308,
+          "sellNum": 615,
+          "detailImg": {
+            "img01": "https://beautyofjoseon.co.kr/web/product/small/202504/9e32e6d8b481a37757c49363497c8ce7.jpg",
+            "img02": "https://beautyofjoseon.co.kr/web/product/extra/small/202504/292aa39ea41ac7b1cbd70672d0b1bb8e.jpg",
+            "img03": "https://beautyofjoseon.co.kr/web/product/extra/small/202504/0bffda70fd9944f3413f0475d233305e.jpg"
+          },
+          "description": "더욱 가볍게 돌아온 조선미녀 선케어 아쿠아 프레쉬! 끈적임 없이 촉촉하게, 사계절내내 쓰는 데일리 선크림"
+        },
+        {
+          "productId": 6,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "아리얼 더 퍼펙트 클렌징 티슈",
+          "brand": "아리얼",
+          "brandEng": "ariul",
+          "price": 3900,
+          "releasedDate": 20180406,
+          "sellNum": 148,
+          "detailImg": {
+            "img01": "https://cdn.chicor.com/images/product/20200529122114608.jpg?d=360x360",
+            "img02": "https://www.wishbucket.io/_next/image?url=https%3A%2F%2Fd2gfz7wkiigkmv.cloudfront.net%2Fpickin%2F2%2F1%2F2%2FhAc6dy9MT9qp_-vkFMOEpg&w=640&q=75",
+            "img03": "https://d2gfz7wkiigkmv.cloudfront.net/pickin/2/1/2/vimclWBXSveOShgr54t3fg"
+          },
+          "description": "매일하는 클렌징 피부에게 부담되면 안되니까요! 세정력 만족도 100%"
+        },
+        {
+          "productId": 7,
+          "mainCategory": "beauty",
+          "keyword": "body",
+          "itemName": "일리윤 세라마이드 아토 로션",
+          "brand": "일리윤",
+          "brandEng": "ILLIYOON",
+          "price": 20900,
+          "releasedDate": 20180516,
+          "sellNum": 188,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/740/550/img/5550740_1.jpg?_v=20230712132141",
+            "img02": "https://sitem.ssgcdn.com/64/42/97/item/1000062974264_i1_750.jpg",
+            "img03": "https://static.megamart.com/product/image/1226/12267873/12267873_1_960.jpg"
+          },
+          "description": "3세대 세라마이드 아토 민감보습 진정로션 100시간 보습, 빠른 흡수, 무향"
+        },
+        {
+          "productId": 8,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "메이엑티브 프로폴리스&허니스프레이",
+          "brand": "닥터내츄럴",
+          "brandEng": "DRNATURAL",
+          "price": 21900,
+          "releasedDate": 20051204,
+          "sellNum": 183,
+          "detailImg": {
+            "img01": "https://static.lottedfs.com/prod/prd-img/31/91/17/00/00/01/10000179131_2.jpg/dims/resize/460x460",
+            "img02": "https://static.lottedfs.com/prod/prd-img/31/91/17/00/00/01/10000179131_01.jpg/dims/resize/460x460",
+            "img03": "https://contents-image.twayair.com/contents/2023/0918/efd29e2a-c407-439f-a2d7-73f85410fe31.png"
+          },
+          "description": "자연의 선물을 담아 드리는 호주 건강기능식품 브랜드, 박테리아 및 각종세균에 대한 높은 향균성! 구강을 보호하는데 도움을 드립니다."
+        },
+        {
+          "productId": 9,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "메이엑티브 프로폴리스&허니스프레이",
+          "brand": "닥터내츄럴",
+          "brandEng": "DRNATURAL",
+          "price": 2000,
+          "releasedDate": 20051114,
+          "sellNum": 877,
+          "detailImg": {
+            "img01": "https://mblogthumb-phinf.pstatic.net/MjAyNDA2MDZfNjMg/MDAxNzE3NjEwMjc1NTcw.K9z9jktc8scAvZLF0dNMKkuwNHIvVO_SbX73rHWCzf0g.mxvxV9Mc46HdiBDnCLpKW8MHCbgnBBmhWcnOdhzjTvMg.JPEG/SE-461FF89D-9A9B-4A99-987F-8F949D449381.jpg?type=w800",
+            "img02": "https://i.namu.wiki/i/YV6vWzmSrfIB71sCbbw8j_BpznqTj9cOeBdWhWfGMr7atuCqC6V0t5apdtwUUoi3O7E_WlrZcDQOK5JVnT5oYw.webp",
+            "img03": "https://www.brandb.net/_next/image?url=https%3A%2F%2Fapi.brandb.net%2Fapi%2Fv2%2Fcommon%2Fimage%3FfileId%3D18716&w=1920&q=75"
+          },
+          "description": "가벼운 맛과 사과의 상큼함 부드러운 목넘김 가볍게 마시고 즐겁게 즐기자!!"
+        },
+        {
+          "productId": 10,
+          "mainCategory": "beauty",
+          "keyword": "acc",
+          "itemName": "마코레 스크리토 레더 지갑",
+          "brand": "벨루티",
+          "brandEng": "BERLUTI",
+          "price": 1200000,
+          "releasedDate": 20000215,
+          "sellNum": 337,
+          "detailImg": {
+            "img01": "https://www.berluti.com/dw/image/v2/BBMR_PRD/on/demandware.static/-/Sites-masterCatalog_Berluti/default/dw513c9dee/images/N235738_makore-scritto-leather-wallet_nero-grigio_berluti_01.jpg?sw=2000&sfrm=jpg",
+            "img02": "https://www.berluti.com/dw/image/v2/BBMR_PRD/on/demandware.static/-/Sites-masterCatalog_Berluti/default/dwc31a3db6/images/N235738_makore-scritto-leather-wallet_nero-grigio_berluti_03.jpg?sw=2000&sfrm=jpg",
+            "img03": "https://mblogthumb-phinf.pstatic.net/MjAyMTA5MDlfMTAg/MDAxNjMxMTQyNTA5MDI1.YKYW0pZ2-tY1R1Oc_RiOTZATlVzJRRWgLaTo1r_eZT4g.ZHRDX5IKe_Wk0BXbciI8Se8LxVXFMo2wYJoWOAqMiyUg.JPEG.cong2229/IMG_5799(Edited).jpg?type=w800"
+          },
+          "description": "이탈리아 장인이 만드는 수제 가죽지갑, 신용카드 슬롯 8개 지폐 및 티켓 보관용 컴파트먼트 2개"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "artistName": "헤이즈",
+      "artistImg": "https://img.allurekorea.com/allure/2020/09/style_5f6ffe2101f24-916x1200.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://youtu.be/0v3f8z0z9Wk?si=OPJKIbmKykImRNw7b",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "필드 버킷 백 인 컬러 블럭",
+          "brand": "코치",
+          "brandEng": "COACH",
+          "price": 470000,
+          "releasedDate": 20210307,
+          "sellNum": 575,
+          "detailImg": {
+            "img01": "https://s7d2.scene7.com/is/image/Coach/c3850_b4m2_a0",
+            "img02": "https://shop.r10s.jp/tukiup/cabinet/02864730/03356458/3850-10.jpg",
+            "img03": "https://s7d2.scene7.com/is/image/Coach/c3850_b4m2_a8"
+          },
+          "description": "너무 크지도 작지도 않은 버킷백은 어디를 가든 알맞은 숄더 백으로 필수 소지품을 위한 수납 공간이 넉넉합니다. 컬러블럭 폴리쉬드 페블 가죽으로 제작, 내부 지퍼 수납칸, 오픈 수납칸 2개 및 소형 소지품을 위한 포켓으로 구성되어 있어 소지품 정리가 간편합니다. 간결한 버킷 스타일의 이 백은 시그니처 턴락 잠금으로 완성하였으며, 손에 들거나 숄더 백 또는 크로스 바디로 연출할 수 있습니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "컬럼비아 공용 스쿠너 뱅크 캡",
+          "brand": "컬럼비아",
+          "brandEng": "COLUMBIA",
+          "price": 29400,
+          "releasedDate": 20210107,
+          "sellNum": 555,
+          "detailImg": {
+            "img01": "https://image.msscdn.net/thumbnails/images/goods_img/20240315/3956416/3956416_17104805537967_big.jpg?w=1200",
+            "img02": "https://image.msscdn.net/thumbnails/images/prd_img/20240315/3956416/detail_3956416_17104805598509_big.jpg?w=1200",
+            "img03": "https://image.msscdn.net/thumbnails/images/prd_img/20240315/3956416/detail_3956416_17104805615191_big.jpg?w=1200"
+          },
+          "description": "변화 무쌍한 기후와 거친 자연환경 에서 최적화된 아이템을 제공, 다양한 아웃도어 라이프스타일을 제안해봅니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "어나더 13 오 드 퍼퓸",
+          "brand": "르 라보",
+          "brandEng": "LE LABO",
+          "price": 219000,
+          "releasedDate": 20160307,
+          "sellNum": 789,
+          "detailImg": {
+            "img01": "https://cf.bysuco.net/497941440f1f2efebb12b8186d7f262a.jpg?w=800&f=webp",
+            "img02": "https://img.danawa.com/prod_img/500000/629/178/img/7178629_1.jpg?_v=20230310170200",
+            "img03": "https://m.perfumegraphy.com/web/product/big/202108/e75376a1f5b336ce304e9f0dd81d51eb.jpg"
+          },
+          "description": "백지장과 같이 순수하며 새하얀 느낌을 지닌 향으로 마치 캘리포니아 절벽 꼭대기에 있는 집처럼 아주 날카로운 매력을 갖고 있다."
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "artistName": "채원빈",
+      "artistImg": "https://img.allurekorea.com/allure/2024/12/style_676184eebd109-650x650.jpg",
+      "jobCategory": "actor",
+      "videoURL": "https://youtu.be/gyPu1NzCfV0?si=FCkGauoFgJ4Eq7L0",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "엠버서드 로고 레더 맥시 백",
+          "brand": "마뗑킴",
+          "brandEng": "Matin Kim",
+          "price": 178000,
+          "releasedDate": 20240908,
+          "sellNum": 781,
+          "detailImg": {
+            "img01": "https://image.msscdn.net/thumbnails/images/goods_img/20240829/4383275/4383275_17252612036402_big.jpg",
+            "img02": "https://m.matinkim.com/web/product/small/202409/7bc71a874d5cf8cbabc77d2e9f52464f.jpg",
+            "img03": "https://m.kimmatin.com/web/product/extra/small/202409/f39c0c6c50f879f91690662f18d0720b.jpg"
+          },
+          "description": "로고 엠보 불박이 포인트인 핸들백, 숄더백이 가능한 넉넉한 사이즈의 실용적인 빅백"
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "밤 쉘(오일 퍼퓸)",
+          "brand": "다니엘 트루스",
+          "brandEng": "DANIELS TRUTH",
+          "price": 59000,
+          "releasedDate": 20230728,
+          "sellNum": 17,
+          "detailImg": {
+            "img01": "https://danielstruth.com/shopimages/dmcosmetic/0010000000012.jpg?1733095051",
+            "img02": "https://dmcosmetic.img8.kr/MS_product/1/1695084808_508185.jpg",
+            "img03": "https://www.wishbucket.io/_next/image?url=https%3A%2F%2Fd2gfz7wkiigkmv.cloudfront.net%2Fpickin%2F2%2F1%2F2%2FsoDqQbZnQweFrW1QGY0gAQ&w=1080&q=75"
+          },
+          "description": "미국 서부 청정 지역의 작약과 보라색 과일 열매껍질 오일을 블렌딩해 깊고 부드러운 감성의 향을 연출합니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "민티아 포도맛",
+          "brand": "아사히",
+          "brandEng": "ASAHI",
+          "price": 1800,
+          "releasedDate": 20110721,
+          "sellNum": 555,
+          "detailImg": {
+            "img01": "https://mkmon.com/cdn/shop/files/MINTIA_-_-_-_-MINTIA-23461486.jpg?v=1703305718&width=900",
+            "img02": "https://www.niconicomall.com/data/item/thumbnail/FD60100024.jpg",
+            "img03": "https://mkmon.com/cdn/shop/files/MINTIA_-_-_-_-_-_-MINTIA-52718223.jpg?v=1703310798"
+          },
+          "description": "포도향이 나는 민트로 상쾌한 향을 즐겨보시고 깔끔한 구강상태를 유지해보세요."
+        },
+        {
+          "productId": 4,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "라 브루켓 립밤",
+          "brand": "라 브루켓",
+          "brandEng": "LA BRUKET",
+          "price": 24300,
+          "releasedDate": 20180301,
+          "sellNum": 868,
+          "detailImg": {
+            "img01": "https://image.thehyundai.com/static/3/2/2/96/A1/40A1962232_0_480.jpg",
+            "img02": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0019/A00000019609913ko.jpg?qt=80",
+            "img03": "https://contents.lotteon.com/itemimage/20250421093839/LE/12/17/90/92/31/_1/30/56/79/52/1/LE1217909231_1305679521_1.jpg/dims/optimize/dims/resizemc/400x400"
+          },
+          "description": "스웨덴 방식의 촉촉한 수분감으로 푸석하고 건조한 입술에 오래도록 지속되는 보습감을 선사드립니다. 스트레스를 받을때 사용되는 향으로 안정감을 부여해드립니다."
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "artistName": "고보결",
+      "artistImg": "https://www.job-post.co.kr/news/photo/202409/115525_122044_2233.jpg",
+      "jobCategory": "actor",
+      "videoURL": "https://youtu.be/sgJaw5pzkd0?si=p-p5o0wNlM_fe3kI",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "나르시소 로드리게즈 포 허",
+          "brand": "나르시소 로드리게즈",
+          "brandEng": "narciso rodriguez",
+          "price": 100000,
+          "releasedDate": 20171111,
+          "sellNum": 245,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/965/754/img/1754965_1.jpg?_v=20220110145807",
+            "img02": "https://m.perfumegraphy.com/web/product/big/202212/d5c4c95b3e140737a895bbdac081653d.jpg",
+            "img03": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0016/A00000016238425ko.jpg?qt=80"
+          },
+          "description": "강렬한 튜베로즈와 풍성한 부케가 어우러져 감각적이면서도 친밀한 향, 출구없는 매력"
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "구찌 블룸",
+          "brand": "구찌",
+          "brandEng": "GUCCI",
+          "price": 227000,
+          "releasedDate": 20140321,
+          "sellNum": 978,
+          "detailImg": {
+            "img01": "https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1545327905/488830_99999_0099_001_100_0000_Light--100ml.jpg",
+            "img02": "https://duciel.co.kr/web/product/big/202409/0ae19afceaa43df873740bfe759d3285.jpg",
+            "img03": "https://media.gucci.com/content/BestOfEditsFeatured_Standard_432x364/1675758625/BestOfEditsFeatured_Gucci-Bloom-2023_001_Default.jpg"
+          },
+          "description": "튜베로즈, 자스민, 향 제조에 최초로 사용되는 랑군 덩굴을 블렌딩하여 상상의 정원에 있는 듯한 풍성한 향을 선사합니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "상탈 33",
+          "brand": "르 라보",
+          "brandEng": "LE LABO",
+          "price": 169000,
+          "releasedDate": 20170811,
+          "sellNum": 658,
+          "detailImg": {
+            "img01": "https://img.ssgdfs.com/upload/C00001/v1/images/product/2000/263/20210422N0000209.jpg?SF=webp&AR=0",
+            "img02": "https://m.perfumegraphy.com/web/product/big/202108/f18023aa44ba17ed14025cf711a2297b.jpg",
+            "img03": "https://image.sivillage.com/upload/C00001/s3/goods/org/637/240718024815637.jpg?RS=750&SP=1"
+          },
+          "description": "짙은 고동나무와 푸릇한 파피루스가 울창하게 심어져 있는 오스트레일리아의 숲속"
+        },
+        {
+          "productId": 4,
+          "mainCategory": "beauty",
+          "keyword": "body",
+          "itemName": "저스트31 오일 75ML",
+          "brand": "스위스유스트",
+          "brandEng": "SWISS JUST",
+          "price": 49000,
+          "releasedDate": 20011004,
+          "sellNum": 34,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/631/266/img/5266631_1.jpg?_v=20210318163654&shrink=360:360",
+            "img02": "https://img.danawa.com/prod_img/500000/691/266/img/5266691_1.jpg?_v=20210318163710",
+            "img03": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo7b_-9AU8mMJ1jHDW68MmSSlG5wPyL6WD3w&s"
+          },
+          "description": "31가지 조화로운 허브에서 추출한 100% 천연 에센셜 오일로 클래식 JUST를 만들었습니다. 온 가족을 위한 농축되고 매우 효과적인 만능 제품입니다."
+        },
+        {
+          "productId": 5,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "페이스팩토리 세라믹 괄사 마사저",
+          "brand": "페이스팩토리",
+          "brandEng": "FACEFACTORY",
+          "price": 33900,
+          "releasedDate": 20240406,
+          "sellNum": 344,
+          "detailImg": {
+            "img01": "https://m.face-factory.com/web/product/extra/small/202305/d0141e64e50a258caa04e24a368bc3bc.jpg",
+            "img02": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/html/crop/A000000156905/202411080023/crop0/image.oliveyoung.co.kr/uploads/images/editor/QuickUpload/C14647/image/20230807153514/qc14_20230807153514.jpg?created=202411080052",
+            "img03": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/550/10/0000/0015/A00000015690520ko.jpg?l=ko"
+          },
+          "description": "가장 자연스러운 라인을 찾기 위해 천연 백토 100%로 만들어진 괄사로 두피부터 몸전체를 부드럽게 마사지 하여 본연의 아름다운 라인을 찾아드려요."
+        },
+        {
+          "productId": 6,
+          "mainCategory": "beauty",
+          "keyword": "body",
+          "itemName": "스파키 마사지볼",
+          "brand": "웨이버",
+          "brandEng": "WAVAR",
+          "price": 11000,
+          "releasedDate": 20230806,
+          "sellNum": 733,
+          "detailImg": {
+            "img01": "https://image.chukouplus.com/upload/C_2283/file/20230412/1121e79657b8d63f4ab7724847cb393c.jpg",
+            "img02": "https://image.chukouplus.com/upload/C_2283/file/20230412/d0febeb06daf6459fbd2f34e1ef073d5.jpg",
+            "img03": "https://www.dhresource.com/webp/m/0x0/f2/albu/g9/M01/9D/45/rBVaVVznbCKAN9AVAAam6T1jWuI637.jpg"
+          },
+          "description": "작은크기, 가벼운 무게, 사용하기 쉽고 휴대가 간편하며 사무실, 가정, 여행 언제어디서나 마사지 및 휴식을 취할 수 있습니다."
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "artistName": "윤산하",
+      "artistImg": "https://img.allurekorea.com/allure/2024/07/style_669b6f50cfcfd.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://youtu.be/gaK8W-Q0QAY?si=68JXaH2hm1xugfiD",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "겟 레디 위드 티 (24개입)",
+          "brand": "닥터 구 클리닉",
+          "brandEng": "DR.GU CLINIC",
+          "price": 155700,
+          "releasedDate": 20220924,
+          "sellNum": 894,
+          "detailImg": {
+            "img01": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFIm7A5llOLb9lTrqQAEtw66t41GgDjfAPVA&s",
+            "img02": "https://drguclinic.com/cdn/shop/products/product_thumb-4.jpg?v=1704962011",
+            "img03": "https://drguclinic.com/cdn/shop/files/2.png?v=1720760279"
+          },
+          "description": "비건 인증 콜라겐 붓기 관리 차 안심하고 먹을 수 있는 100%식물성 콜라겐 차 마셔보세요."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "이팔라트 목캔디",
+          "brand": "이팔라트",
+          "brandEng": "IPALAT",
+          "price": 11900,
+          "releasedDate": 20030714,
+          "sellNum": 327,
+          "detailImg": {
+            "img01": "https://thumbnail7.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/5cd9/adefaf09c97313bf0a341a8574c138b26aa52f2daa747971f85310cca438.jpg",
+            "img02": "https://before-images-item.croketglobal.net/item/thumbnail/466342fc8a1b6ce232fd5c21944a1227.webp",
+            "img03": "https://mblogthumb-phinf.pstatic.net/MjAxOTA1MjJfMTk5/MDAxNTU4NTIwNTUyNjkz.J2a9cpFDja4LsfKWc4EMLuCg1vVuirHffenhG0zraDog.tj8m1jmk9u_9bBjQrjVSp0SqKB9iPwtBuq5FQMKPWxog.JPEG.fromrei8/%EB%8F%85%EC%9D%BC_%EB%AA%A9%EC%BA%94%EB%94%94_%EA%B0%90%EA%B8%B0%EC%82%AC%ED%83%95_%EC%9D%B4%ED%8C%94%EB%9D%BC%ED%8A%B8_%EC%97%A0%EC%98%A4%EC%9D%B4%EC%B9%BC_%EC%95%88%EA%B8%B0%EB%84%A4%ED%85%90_(12).JPG?type=w800"
+          },
+          "description": "식물성 원료로 만든 독일 목캔니 피로하거나 건조한 목을 보호해주는 제품으로 허브 추출물이 함유되어있어 목을 건강하게 지켜줍니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "로렌스폴 캐나다 우디",
+          "brand": "로렌스폴",
+          "brandEng": "LAURENCE PAUL",
+          "price": 252000,
+          "releasedDate": 20200524,
+          "sellNum": 784,
+          "detailImg": {
+            "img01": "https://cdn-optimized.imweb.me/upload/S201711155a0b9322d5475/1854e8b762dbf.jpg?w=1536",
+            "img02": "https://cdn-optimized.imweb.me/upload/S201711155a0b9322d5475/f1cef71830f9d.jpg?w=1536",
+            "img03": "https://cdn-optimized.imweb.me/upload/S201711155a0b9322d5475/1f36df5b1de09.jpg?w=1536"
+          },
+          "description": "세련되고 플렉서블한 몸체로 구성되어있어 안전한 내구성을 내포하고 있습니다."
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "artistName": "조이",
+      "artistImg": "https://img.allurekorea.com/allure/2024/04/style_66214ba7280e0.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://youtu.be/mxQcFLgeO1Y?si=QBQaZx09bkKaMb7m",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "토즈 조이 토트백",
+          "brand": "토즈",
+          "brandEng": "TOD'S",
+          "price": 481000,
+          "releasedDate": 20240130,
+          "sellNum": 76,
+          "detailImg": {
+            "img01": "https://fapis.io/_next/image?url=https%3A%2F%2Fimage.fapis.io%2Fmedia%2Fshop%2Fgoods-image%2F952f1375-99d4-48d7-bd8f-4b0913067f3e_1.jpeg&w=768&q=75",
+            "img02": "https://fapis.io/_next/image?url=https%3A%2F%2Fimage.fapis.io%2Fmedia%2Fshop%2Fgoods-image%2F952f1375-99d4-48d7-bd8f-4b0913067f3e_2.jpeg&w=768&q=75",
+            "img03": "https://cdn.rnx.kr/news/photo/202402/507913_522158_5249.jpg"
+          },
+          "description": "넓은 수납공간과 가볍게 들고 다니고 어느 의상에도 어울리는 토트백 당신에게 추천드립니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "body",
+          "itemName": "바디버터 화이트 진저 릴리",
+          "brand": "퓨어피지",
+          "brandEng": "purefiji",
+          "price": 33000,
+          "releasedDate": 20230530,
+          "sellNum": 78,
+          "detailImg": {
+            "img01": "https://www.purefijikor.com/shopimages/becomp/mobile/9/2745979_represent?08181017",
+            "img02": "https://purefijikor.com/shopimages/becomp/0050000001873.jpg?06281449",
+            "img03": "https://thumbnail8.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/2021/08/26/10/8/b93a14ed-ed6b-4238-9447-1851725e522d.jpg"
+          },
+          "description": "남태평양 청정 피지섬의 식물, 꽃, 열매의 성분 프리미엄 케어 5성급 호텔의 스파에서 느끼는 향기로운 바디케어"
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "face",
+          "itemName": "바이오 필링 허벌 로션",
+          "brand": "바이오필링",
+          "brandEng": "BIOPEELING",
+          "price": 60000,
+          "releasedDate": 20230208,
+          "sellNum": 43,
+          "detailImg": {
+            "img01": "https://cafe24.poxo.com/ec01/skin2018/65uN764GExGfUPmYExKJki+jkqCVFv6XtQxKLLFhTHmYCV9rGmpDUEYOQAv34dBkj1fIKFfpS3t8rlUyl4V9Sw==/_/web/product/big/202403/ede9fce42d829215d8e66aeda0b9251e.jpg",
+            "img02": "https://thumbnail10.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/c051/3af6abccce3574b4f2644adbd96452d695dcb049a453de1cf1768af489cd.jpg",
+            "img03": "https://cafe24.poxo.com/ec01/skin2018/65uN764GExGfUPmYExKJki+jkqCVFv6XtQxKLLFhTHmYCV9rGmpDUEYOQAv34dBkj1fIKFfpS3t8rlUyl4V9Sw==/_/web/upload/NNEditor/20240304/mobile/64dbb9a6039e5c93f7f636e919cf2954_1709517352.jpg"
+          },
+          "description": "피부를 편안하고 산뜻하게! 고농축 허브추출물이 과다한 피지와 유분을 케어해주는 피부정화 리프레싱 모공 진정토너"
+        },
+        {
+          "productId": 4,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "에스쁘아 레드 뷰러",
+          "brand": "에스쁘아",
+          "brandEng": "espoir",
+          "price": 12000,
+          "releasedDate": 20201012,
+          "sellNum": 63,
+          "detailImg": {
+            "img01": "https://images-kr.amoremall.com/products/611120000578/611120000578_02.png?1684829557379&format=webp&resize=550:550&shrink=550:550",
+            "img02": "https://images-kr.amoremall.com/products/611120000578/611120000578_01.png?1684829557379&format=webp&resize=550:550&shrink=550:550",
+            "img03": "https://www.espoir.com/resources/images/shop/list/ko/other/face_model.png"
+          },
+          "description": "최적의 커브형 곡선 디자인 눈 앞머리 부터 눈 꼬리까지 한번에 속눈썹을 짱짱하게 컬링하는 아이래쉬 뷰러"
+        },
+        {
+          "productId": 5,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "에스쁘아 히팅 아이래쉬 컬러 듀얼 콤",
+          "brand": "에스쁘아",
+          "brandEng": "espoir",
+          "price": 12000,
+          "releasedDate": 20201012,
+          "sellNum": 633,
+          "detailImg": {
+            "img01": "https://thumbnail.10x10.co.kr/webimage/image/basic600/325/B003254557.jpg?cmd=thumb&w=400&h=400&fit=true&ws=false",
+            "img02": "https://mblogthumb-phinf.pstatic.net/MjAxOTA5MjhfNDEg/MDAxNTY5NjQ3NjY2NjE2.nlv7pcabuOuR30hUEwRy28M8lZfVoXfa4PgXSyz-TBsg.QOSZE47BOm5533EtuhxfsE8mA5oAi1Zro7ST00p_rdMg.JPEG.lufh718/%EC%97%90%EC%8A%A4%EC%81%98%EC%95%84_%ED%9E%88%ED%8C%85_%EC%95%84%EC%9D%B4%EB%9E%98%EC%89%AC_%EC%BB%AC%EB%9F%AC_%EB%93%80%EC%96%BC_%EC%BD%A44.JPG?type=w800",
+            "img03": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQyA78vnGSXEyNi0wQSzE6yalGCVOKOKxSrw&s"
+          },
+          "description": "속눈썹 고데기 + 빗 2 in 1 마스카라 찰떡궁합! 꺽임없이 드라마틱한 C컬 컬링과 한올 한올 살아있는 속눈썹 연출"
+        },
+        {
+          "productId": 7,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "에스쁘아 립스틱 노웨어 쉬폰 매트",
+          "brand": "에스쁘아",
+          "brandEng": "espoir",
+          "price": 20000,
+          "releasedDate": 20231022,
+          "sellNum": 69,
+          "detailImg": {
+            "img01": "https://cdn.aritaum.com/UPLOAD/UPLOAD_IMAGE/C020/202106/IMG1622fPn534608027.png",
+            "img02": "https://images.espoir.com/UPLOAD/UPLOAD_IMAGE/PRD_TP03_02/202110/IMG1633goJ074168456.jpg",
+            "img03": "https://images.espoir.com/UPLOAD/UPLOAD_IMAGE/PRD_TP02_02/202106/IMG1623LGM636534073.jpg"
+          },
+          "description": "안 바른듯 무게감 없이 가볍게 밀착되어 매끈하고 블러리한 립을 연출해주는 쉬폰 매트 립스틱"
+        },
+        {
+          "productId": 8,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "에스쁘아 꾸뛰르 립 틴트 샤인",
+          "brand": "에스쁘아",
+          "brandEng": "espoir",
+          "price": 20000,
+          "releasedDate": 20230722,
+          "sellNum": 309,
+          "detailImg": {
+            "img01": "https://images.espoir.com/UPLOAD/UPLOAD_IMAGE/PRD01/202311/IMG1698EIn998362888.jpg",
+            "img02": "https://images.espoir.com/UPLOAD/UPLOAD_IMAGE/PRD_TP03_01/202311/IMG1698BOI998323807.jpg",
+            "img03": "https://images.espoir.com/UPLOAD/UPLOAD_IMAGE/EDITOR/20221019/IMG1666Rog154325185.jpg"
+          },
+          "description": "맑고 생생하게 차오르는 물빛 컬러로 오랜 시간 촉촉하고 반짝이는 립을 연출해 주는 립 틴트"
+        },
+        {
+          "productId": 9,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "에스쁘아 테이핑 커버 쿠션 SPF25 PA++",
+          "brand": "에스쁘아",
+          "brandEng": "espoir",
+          "price": 33000,
+          "releasedDate": 20240722,
+          "sellNum": 379,
+          "detailImg": {
+            "img01": "https://thumbnail8.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/13987322613929-ec15bc95-00ac-4df4-87dc-d0ebf36edb64.jpg",
+            "img02": "https://images.espoir.com/UPLOAD/UPLOAD_IMAGE/PRD_TP03_02/202110/IMG1633KkY073830525.jpg",
+            "img03": "https://cdn.wedding21.co.kr/news/photo/201904/207160_15445_4110.jpg"
+          },
+          "description": "잦은 수정 화장없이 오래가는 밀착커버 쿠션 탁월한 밀착력의 테이핑 테크닉 포뮬러™와 땀과 피지, 유분에 강한 Sweat Resistant 효과로 오랜 시간 무너짐없는 메이크업을 완성"
+        },
+        {
+          "productId": 10,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "놋담 방짜유기 괄사",
+          "brand": "놋담",
+          "brandEng": "notdam",
+          "price": 33000,
+          "releasedDate": 20240722,
+          "sellNum": 379,
+          "detailImg": {
+            "img01": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0015/A00000015429912ko.jpg?qt=80",
+            "img02": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/550/10/0000/0015/A00000015424815ko.jpg?l=ko",
+            "img03": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/550/10/0000/0015/A00000015424814ko.jpg?l=ko"
+          },
+          "description": "건강을 생각한 하트 괄사 마사지기는 페이스라인 정리에 탁월 하며 바디 마사지를 하기에도 좋습니다. 유기 특성상 오래사용하여도 변형이 일어나지 않아 평생 쓰실수 있는 제품입니다."
+        },
+        {
+          "productId": 11,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "니콘 쿨 픽스",
+          "brand": "니콘",
+          "brandEng": "NICON",
+          "price": 33000,
+          "releasedDate": 20010902,
+          "sellNum": 249,
+          "detailImg": {
+            "img01": "https://sitem.ssgcdn.com/63/09/93/item/1000603930963_i1_370.jpg",
+            "img02": "https://sitem.ssgcdn.com/81/77/92/item/1000603927781_i4_750.jpg",
+            "img03": "https://image.production.fruitsfamily.com/public/product/resized%40width1125/9LFp7XTmBz-6361407B-0F10-434F-927A-8D83D6892B26.jpg"
+          },
+          "description": "12가지 종류의 효과를 적용시킬 수 있는 뷰티 모드가 탑재 되어 있어 인물 사진 찍기에 적합한 기종입니다. (마스카라, 아이섀도우, 립스틱, 홍조 등) 피부 화이트닝 및 얼굴 축소 기능도 있는 신세대 디지털 카메라 입니다"
+        },
+        {
+          "productId": 12,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "6am 오드 드 퍼퓸",
+          "brand": "SW19",
+          "brandEng": "SW19",
+          "price": 109000,
+          "releasedDate": 20230717,
+          "sellNum": 299,
+          "detailImg": {
+            "img01": "https://sw19official.com/web/product/big/202505/d0772830fdb893e9159383ec1a660f97.jpg",
+            "img02": "https://sw19official.com/web/product/extra/big/202208/f41071144616ae375ef54722259c530d.png",
+            "img03": "https://sw19official.com/web/product/extra/big/202208/569b0d54a958ab7b5a36019807f3a5a8.png"
+          },
+          "description": "[숲의 정령이 만들어낸 중독적인 묘약, 신비로운 풀의 향취] 세상의 아침이 시작되기 전, 윔블던의 숲을 산책하는 당신에게 푸른 안개가 바람에 실려와 인사를 합니다. 이슬 머금은 잔디와 촉촉한 흙내음을 품은 윔블던의 새벽 6시를 느껴보세요"
+        },
+        {
+          "productId": 13,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "3pm 오드 드 퍼퓸",
+          "brand": "SW19",
+          "brandEng": "SW19",
+          "price": 109000,
+          "releasedDate": 20230717,
+          "sellNum": 149,
+          "detailImg": {
+            "img01": "https://sw19official.com/web/product/big/202505/62623b1379f42b78f075a52259fc5b88.jpg",
+            "img02": "https://sw19official.com/web/product/extra/big/202208/a1e1d75463c1898925f4c07e70faed51.png",
+            "img03": "https://sw19official.com/web/product/extra/big/202208/98dccb5fa6ad16a3857d444eb079ae5a.png"
+          },
+          "description": "[햇살이 내리쬐는 푸른 잔디와 부드럽고 향긋한 과일의 향취] 이슬 젖은 초록숲이 상큼한 햇살에 말라가는 윔블던의 오후. 공원에 만개한 꽃들의 향기와 홍차에 띄운 레몬 조각 향기가 어우러진 윔블던의 오후 3시를 느껴보세요."
+        },
+        {
+          "productId": 14,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "유한 비타민씨정 1000mg",
+          "brand": "유한양행",
+          "brandEng": "yuhan",
+          "price": 29400,
+          "releasedDate": 20000417,
+          "sellNum": 657,
+          "detailImg": {
+            "img01": "https://www.yuhan.co.kr/__DATA/YH_PRODUCTS/2024/8/%EC%9C%A0%ED%95%9C%EB%B9%84%ED%83%80%EB%AF%BC%EC%94%A8%EC%A0%951000mg_1main.jpg",
+            "img02": "https://dimg.donga.com/wps/NEWS/IMAGE/2020/02/11/99614660.7.jpg",
+            "img03": "https://common.health.kr/shared/images/ext_images/pack_img/P_A11AHHHHH0243_03.jpg"
+          },
+          "description": "상큼한 비타민C 로 내몸에 피로를 풀어주시고 건강을 챙겨보세요."
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "artistName": "이상헌",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2025/04/style_6808a5cc83d0b-982x1400.jpg",
+      "jobCategory": "actor",
+      "videoURL": "https://youtu.be/FjXQjP_vozQ?si=KutFi4eu3iPtaKkh",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "입생로랑 더플 백",
+          "brand": "입생로랑",
+          "brandEng": "YSL",
+          "price": 3083600,
+          "releasedDate": 20250109,
+          "sellNum": 888,
+          "detailImg": {
+            "img01": "https://saint-laurent.dam.kering.com/m/7039f042d22e284a/Medium2-649646DTI0E1000_A.jpg?v=2",
+            "img02": "https://saint-laurent.dam.kering.com/m/417998edcf335e17/Medium2-649646DTI0E1000_D.jpg?v=2",
+            "img03": "https://cdna.lystit.com/520/650/n/photos/mytheresa/48aa969b/saint-laurent-black-Giant-Leather-Duffel-Bag.jpeg"
+          },
+          "description": "튜브형 가죽 상단 핸들과 조절 및 분리 가능한 크로스바디 스트랩이 달린 오버사이즈 생 로랑 파리 엠보싱 지퍼 볼링백입니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "아미 볼 캡",
+          "brand": "아미",
+          "brandEng": "AMI",
+          "price": 345000,
+          "releasedDate": 20250119,
+          "sellNum": 972,
+          "detailImg": {
+            "img01": "https://img.ssfshop.com/cmd/LB_750x1000/src/https://img.ssfshop.com/goods/ECBR/25/03/11/GM0025031104710_1_THNAIL_ORGINL_20250314184248405.jpg",
+            "img02": "https://img.ssfshop.com/cmd/LB_750x1000/src/https://img.ssfshop.com/goods/ECBR/25/03/11/GM0025031104710_1_THNAIL_ORGINL_20250314184248405.jpg",
+            "img03": "https://static.luck-d.com/community/202503131236/rulkc8m4xb5dfw7q.webp"
+          },
+          "description": "이번 시즌 특별하게 선보이는 아미와 배우 최우식의 협업 볼캡입니다. 데님 소재로 제작되어 캐주얼하게 연출하기 좋습니다. W 하트 로고가 포인트로 귀여운 매력이 돋보입니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "소바쥬 오드 퍼퓸",
+          "brand": "디올",
+          "brandEng": "Dior",
+          "price": 154000,
+          "releasedDate": 20230319,
+          "sellNum": 547,
+          "detailImg": {
+            "img01": "https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dwb57d0b59/Y0685240/Y0685240_F068524009_E01_GHC.jpg?sw=800",
+            "img02": "https://www.dior.com/on/demandware.static/-/Library-Sites-DiorSharedLibrary/default/dwd35de799/images/beauty/01-FRAGRANCES/2022/SAUVAGE/UNIVERSSAUVAGE/Y0785220_F078524009_E02_GHC_1850x2000.jpg",
+            "img03": "https://www.dior.com/on/demandware.static/-/Library-Sites-DiorSharedLibrary/default/dwba2dabd8/images/beauty/01-FRAGRANCES/2024/SAUVAGE-EAU-FORTE/PLP/A24F094_SAUVAGE_EAU_FORTE_Instit_Pack_3000x2250.jpg"
+          },
+          "description": "강렬하면서도 산뜻한 향기! 생동감과 우디노트가 가진 상쾌함 거친 자연 그대로의 고귀한 잔향"
+        },
+        {
+          "productId": 4,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "옥문강 키 체인",
+          "brand": "주술회전",
+          "brandEng": "Jujutsu Kaisen",
+          "price": 30000,
+          "releasedDate": 20240627,
+          "sellNum": 444,
+          "detailImg": {
+            "img01": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQshX270ABg8xZjTaoySd5I1LPV7m-CTl9qEA&s",
+            "img02": "https://cdn2.colley.kr/item_437011_1_0_title_0.jpeg",
+            "img03": "https://media.bunjang.co.kr/product/278272865_1_1720420788_w360.jpg"
+          },
+          "description": "주술회전 고죠 사토루를 가둔 유니크 아이템 [옥문강] 을 키링으로 만나보세요."
+        },
+        {
+          "productId": 5,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "메종 마르지엘라 x 젠틀 몬스터 선글라스",
+          "brand": "젠틀몬스터",
+          "brandEng": "Gentle Monster",
+          "price": 398000,
+          "releasedDate": 20250306,
+          "sellNum": 914,
+          "detailImg": {
+            "img01": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYwVN6_Rxq1LVB5HXhO6DzwNq5wFMtmRHq_A&s",
+            "img02": "https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Library-Sites-margiela-shared/default/dwd7510b4e/MM/MM_HOMEPAGE_REFRESH_240226_2_3_GM.jpg?sw=3000",
+            "img03": "https://uratop.com/web/product/big/202405/a101fa20a1b4958d06663a4037b7afa0.jpg"
+          },
+          "description": "메종 마르지엘라와 콜라보한 젠틀몬스터의 선글라스 자외선으로 부터 당신의 눈을 보호하고 패션을 지켜줍니다."
+        },
+        {
+          "productId": 6,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "초록매실 PET 500ML",
+          "brand": "웅진",
+          "brandEng": "wjfood",
+          "price": 2800,
+          "releasedDate": 20010430,
+          "sellNum": 40,
+          "detailImg": {
+            "img01": "https://contents.lotteon.com/itemimage/20250329031712/LM/T8/80/13/82/14/96/99/_0/01/LMT8801382149699_001_1.jpg/dims/resizef/720X720",
+            "img02": "https://www.thinkfood.co.kr/news/photo/202203/93872_122286_428.jpg",
+            "img03": "https://cdn.ezyeconomy.com/news/photo/202203/116801_64782_2340.jpg"
+          },
+          "description": "소화를 도와주는 초록매실의 효능 장기간 사랑받아온 음료입니다."
+        },
+        {
+          "productId": 6,
+          "mainCategory": "beauty",
+          "keyword": "body",
+          "itemName": "듀오덤 드레싱 밴드",
+          "brand": "듀오덤",
+          "brandEng": "DUODERM",
+          "price": 5000,
+          "releasedDate": 2010616,
+          "sellNum": 335,
+          "detailImg": {
+            "img01": "https://i.namu.wiki/i/XDclCI2lykgVI9bjDgBskI5iu01HUcCr3nkbCpmL4yJyKkOT8jJcb7ivB-3e48CtpVtIVhxUpHBnJhe_qRR7Hw.webp",
+            "img02": "https://gdimg.gmarket.co.kr/1482427586/still/400?ver=1724299574",
+            "img03": "https://thumbnail7.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/1408173285140553-67ea867e-a07a-43e8-83d9-8578fa938466.png"
+          },
+          "description": "상처부위의 짓물을 방지해주고 습윤하게 딱지가 생기는걸 방지해서 피부가 빠르고 자연스럽게 재생하는걸 도와줍니다."
+        },
+        {
+          "productId": 7,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "무드 체인지 립밤",
+          "brand": "오브제",
+          "brandEng": "OBGE",
+          "price": 11900,
+          "releasedDate": 20230416,
+          "sellNum": 798,
+          "detailImg": {
+            "img01": "https://m.obge.co.kr/web/product/big/202401/868c986d8c3ff7633e24baf1c4be82eb.jpg",
+            "img02": "https://m.obge.co.kr/img/detail/P00000QK/v2/14_moodlip.jpg",
+            "img03": "https://sitem.ssgcdn.com/32/39/39/item/1000338393932_i1_750.jpg"
+          },
+          "description": "남성분들에게 추천! 티 나지 않고 자연스럽게, 한 끗 다른 스타일의 완성"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "artistName": "투어스",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2025/04/style_68042fb929d1b-800x539.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://youtu.be/NX6yPis4Zn8?si=DSKsQoHdW7gRyYif",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "릴렉스 마사지볼",
+          "brand": "트라택",
+          "brandEng": "TRATAC",
+          "price": 4950,
+          "releasedDate": 20191201,
+          "sellNum": 794,
+          "detailImg": {
+            "img01": "https://image.msscdn.net/images/goods_img/20201120/1696603/1696603_17163654436795_500.jpg",
+            "img02": "https://thumbnail7.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/2527767409962704-7910da5e-b0bb-4c0a-bfee-4e3e6be25110.jpg",
+            "img03": "https://tratac.co.kr/web/product/extra/small/20240528/88e4a10071b74ecd08de626ac1df3382.jpg"
+          },
+          "description": "미니멀하고 간편해서 어느 곳이나 편안한 몸상태를 유지할 수 있게 도와줍니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "배럴 혀클리너",
+          "brand": "라 덴스",
+          "brandEng": "LA DENS",
+          "price": 9900,
+          "releasedDate": 20220317,
+          "sellNum": 84,
+          "detailImg": {
+            "img01": "https://shopby-images.cdn-nhncommerce.com/20231207/190354.673269000/thumb_02.jpg",
+            "img02": "https://shopby-images.cdn-nhncommerce.com/20231207/190313.82517000/thumb_02.jpg",
+            "img03": "https://shopby-images.cdn-nhncommerce.com/20231207/185755.570699000/thumb_04.jpg"
+          },
+          "description": "상쾌함의 새로운 진화 3세대 듀얼 브로쉬 혀클리너, 구역감 최소화 차원이 다른 개운함"
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "뷰센 30 미백 치약(클로브 민트향)",
+          "brand": "오스템",
+          "brandEng": "OSSTEM",
+          "price": 9900,
+          "releasedDate": 20240204,
+          "sellNum": 878,
+          "detailImg": {
+            "img01": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020633012ko.jpg?qt=80",
+            "img02": "https://vussen.co.kr/web/product/big/202407/2eeca7a043c7c989793d515367fe9aee.jpg",
+            "img03": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/html/crop/A000000206330/202504161616/crop0/image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/html/attached/2025/04/16/15f_16161624.jpg?created=202504161642"
+          },
+          "description": "차원이 다른 상쾌함이 입에서 부터 시작하여 오늘 하루를 기분 좋게!"
+        },
+        {
+          "productId": 4,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "PowerShot G7 X Mark III (Black)",
+          "brand": "캐논",
+          "brandEng": "CANON",
+          "price": 949000,
+          "releasedDate": 20230414,
+          "sellNum": 35,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/188/589/img/8589188_1.jpg?_v=20240607132223&shrink=360:360",
+            "img02": "https://cdn.akakce.com/canon/canon-powershot-g7-x-mark-iii-z.jpg",
+            "img03": "https://images.squarespace-cdn.com/content/v1/579bbd35b3db2bfbd63eb3ae/c2ebd032-3990-4fdd-80e4-9416e007247f/canonpowershotg7xmarkiisamplephotos.jpg"
+          },
+          "description": "최신 영상엔진 탑재, 최대 약 30.0fps 고속 연속 촬영, 광학 4.2배줌, 크롭 없이 촬영하는 4k 30p 동영상"
+        },
+        {
+          "productId": 6,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "손톱깎이 세트",
+          "brand": "위글위글",
+          "brandEng": "wiggle wiggle",
+          "price": 16000,
+          "releasedDate": 202240316,
+          "sellNum": 795,
+          "detailImg": {
+            "img01": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAcswRFgJL-h_ijcpVWWycC58juUioJPh78w&s",
+            "img02": "https://thumbnail.10x10.co.kr/webimage/image/basic600/492/B004921572.jpg?cmd=thumb&w=400&h=400&fit=true&ws=false",
+            "img03": "https://m.wiggle-wiggle.com/web/product/extra/big/202209/aac5d7fde30f3a903b7b6f6a8404158b.jpg"
+          },
+          "description": "귀여운 캐릭터와 함께 깔끔하고 기분좋은 하루를 보내보면 어떨까요?"
+        },
+        {
+          "productId": 7,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "바세린 립밤",
+          "brand": "바세린",
+          "brandEng": "Vaseline",
+          "price": 3600,
+          "releasedDate": 20030606,
+          "sellNum": 856,
+          "detailImg": {
+            "img01": "https://image.msscdn.net/images/goods_img/20230412/3226608/3226608_16812609677239_500.jpg",
+            "img02": "https://www.greenorganic.co.kr/data/item/VAL20677/VAL20677.jpg",
+            "img03": "https://s3.ap-northeast-2.amazonaws.com/healthpang.com/wp-content/uploads/2023/04/27153039/%EB%B0%94%EC%84%B8%EB%A6%B04-1024x768.webp"
+          },
+          "description": "충분한 보습감과 거부감 없는 무향으로 당신의 피부에 촉촉함을 유지해 주세요."
+        },
+        {
+          "productId": 8,
+          "mainCategory": "beauty",
+          "keyword": "body",
+          "itemName": "시카알엑스 비세린 내추럴 매직 밤",
+          "brand": "비세린",
+          "brandEng": "Beeseline",
+          "price": 23000,
+          "releasedDate": 20250319,
+          "sellNum": 285,
+          "detailImg": {
+            "img01": "https://image9.coupangcdn.com/image/vendor_inventory/4c8c/ec91a63332be6d580951fc20e05c03f4254b27b5c458f817a9712eb48058.jpg",
+            "img02": "https://d2gfz7wkiigkmv.cloudfront.net/pickin/2/7/5/clatoTRuRgK4Be-SY8El2Q",
+            "img03": "https://asset.m-gs.kr/prod/1049168998/1/550"
+          },
+          "description": "건조 시즌 필수 아이템!! 자연유래 꿀성분으로 건조한 피부를 촉촉하게"
+        },
+        {
+          "productId": 9,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "에브리타임 홍삼 30포",
+          "brand": "정관장",
+          "brandEng": "jungkwanjang",
+          "price": 67960,
+          "releasedDate": 20171007,
+          "sellNum": 671,
+          "detailImg": {
+            "img01": "https://www.costco.co.kr/medias/sys_master/images/h00/hd0/275772477472798.jpg",
+            "img02": "https://item.elandrs.com/r/image/item/2024-08-29/6a0bc6d7-affb-403c-b888-fa59e5f9f742.jpg?w=750&h=&q=100",
+            "img03": "https://image.oliveyoung.co.kr/uploads/images/display/90000020181/263/3046663829445529603.jpg"
+          },
+          "description": "10배의 타우린 성분과 진한 홍삼 농축액 함유 지금의 나를 위해 1포 하라!"
+        },
+        {
+          "productId": 10,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "이뮨 멀티 비타민 15정",
+          "brand": "이뮨",
+          "brandEng": "immun",
+          "price": 34000,
+          "releasedDate": 20200614,
+          "sellNum": 439,
+          "detailImg": {
+            "img01": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0014/A00000014269524ko.jpg?qt=80",
+            "img02": "https://img.danawa.com/prod_img/500000/235/676/img/15676235_1.jpg?_v=20230714105156",
+            "img03": "https://mypick.co.kr/web/product/medium/202501/3be2561b4bd317c69e4d325671d27832.jpg"
+          },
+          "description": "국내 최초 이중제형 비타민, 미네랄 오쏘몰 이뮨의 핵심적인 근본 상품!"
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "artistName": "김종국",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2025/04/style_6800691a8badf-982x1400.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://youtu.be/oVmk1140GOo?si=S_NP4n23S_EujEN8",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "아디다스 x 아이언스테인 D4T HOODIE",
+          "brand": "아디다스",
+          "brandEng": "ADIDAS",
+          "price": 10900,
+          "releasedDate": 20250614,
+          "sellNum": 854,
+          "detailImg": {
+            "img01": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/72cb20387268471ba6e55e5ffab4df48_9366/D4T_HOODIE_ironstein_Black_KK7641_01_laydown.jpg",
+            "img02": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/81ab78d3bab64673967caa4cf80218cb_9366/D4T_HOODIE_ironstein_Black_KK7641_02_laydown_hover.jpg",
+            "img03": "https://image.msscdn.net/mfile_s01/_news/list6703bd04f1889.png"
+          },
+          "description": "최고의 운동 파트너를 찾는다면 주목. 아디다스(ADIDAS)가 ‘WORKOUT GENIUS’ 철학으로 높은 수준의 트레이닝을 선구하는 브랜드 아이언슈타인(IRONSTEIN)과 협업 컬렉션을 완성했다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "티로 리그 더플 백 M",
+          "brand": "아디다스",
+          "brandEng": "ADIDAS",
+          "price": 55000,
+          "releasedDate": 20240328,
+          "sellNum": 937,
+          "detailImg": {
+            "img01": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/9d7963e98faa4784b4a8af0e00fb62dc_9366/M_Black_HS9749_01_standard.jpg",
+            "img02": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/9d401e59ab744ecfb083af0e00fb7310_9366/M_Black_HS9749_02_standard.jpg",
+            "img03": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/c7c2c083ef2745fb8f0faf0e00fb9392_9366/M_Black_HS9749_05_hover_standard.jpg"
+          },
+          "description": "원정 경기를 완벽하게 준비할 수 있도록 제작된 견고한 아디다스 더플 백을 만나보세요. 물건을 손쉽게 넣고 꺼낼 수 있는 넓은 앞면 투입구와 넉넉한 내부 구조를 통해 필요한 모든 것을 보관할 수 있습니다. "
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "드롭셋 3 트레이너",
+          "brand": "아디다스",
+          "brandEng": "ADIDAS",
+          "price": 149000,
+          "releasedDate": 20230728,
+          "sellNum": 33,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/096/141/img/56141096_1.jpg?shrink=360:360&_v=20240611131108",
+            "img02": "https://item.elandrs.com/r/image/oa/2024-12-05/0738a354-1e2a-4105-9571-c926ec62c9b3.jpg?w=750&h=&q=100",
+            "img03": "https://i.localised.com/img/as/product/3cac4e78-d8b5-4002-a149-892c2cfdb3a2_LARGE.jpg"
+          },
+          "description": "순간적인 힘부터 지구력까지 근력 트레이닝에 필요한 최적의 지지력을 담아낸 아디다스 드롭셋을 만나보세요."
+        },
+        {
+          "productId": 4,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "IRONSTEIN LOGO RD BALLCAP",
+          "brand": "아이언슈테인",
+          "brandEng": "ironstein",
+          "price": 36000,
+          "releasedDate": 20241018,
+          "sellNum": 490,
+          "detailImg": {
+            "img01": "https://cdn-optimized.imweb.me/upload/S202308291c8a4b3b305c4/feaf3f669ce51.jpg",
+            "img02": "https://cdn.imweb.me/thumbnail/20250204/1d83d1a7b0fa9.jpg",
+            "img03": "https://cdn.imweb.me/thumbnail/20250204/3f269accf713b.jpg"
+          },
+          "description": "16수 트윌 피그 바이오원단, 오말워싱처리 포인트라벨 운동할때 적합합니다."
+        },
+        {
+          "productId": 5,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "IRONSTEIN LIFTING STRAPS CA",
+          "brand": "아이언슈테인",
+          "brandEng": "ironstein",
+          "price": 14000,
+          "releasedDate": 20250228,
+          "sellNum": 948,
+          "detailImg": {
+            "img01": "https://cdn.imweb.me/thumbnail/20250116/a24d7a9e1da70.jpg",
+            "img02": "https://cdn.imweb.me/thumbnail/20250116/fdbd96aa3135f.jpg",
+            "img03": "https://cdn.imweb.me/thumbnail/20250110/33ace69310e84.jpg"
+          },
+          "description": "구성 2PCS[1SET]• 폭 4CM• 총길이 51CM• 논슬립 28CM"
+        },
+        {
+          "productId": 6,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "IRONSTEIN LIFTING STRAPS CA",
+          "brand": "아이언슈테인",
+          "brandEng": "ironstein",
+          "price": 14000,
+          "releasedDate": 20250228,
+          "sellNum": 948,
+          "detailImg": {
+            "img01": "https://thumbnail8.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/2021/02/08/16/8/b8c999c6-af12-49af-8579-2afb852bbab9.jpg",
+            "img02": "https://thumbnail6.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/2021/05/25/16/9/6c89a4f8-4db1-41dd-bc66-617ee71209b2.jpg",
+            "img03": "https://cdn.imweb.me/thumbnail/20211024/2f6dcb28cf7e6.jpg"
+          },
+          "description": "두번 더, 더욱 강력하게 내구성을 한단계 더 높이기 위하여 밀도있는 기법을 적용하였습니다."
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "artistName": "차준환",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2025/02/style_67bbda4ee9891-1039x1400.jpg",
+      "jobCategory": "sports",
+      "videoURL": "https://youtu.be/uZKcvsHGcXc?si=GCq5H_TfcVAkY1wG",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "발렌시아가 백팩",
+          "brand": "발렌시아가",
+          "brandEng": "BALENCIAGA",
+          "price": 1870000,
+          "releasedDate": 20220419,
+          "sellNum": 283,
+          "detailImg": {
+            "img01": "https://balenciaga.dam.kering.com/m/5a253d59ae0a7b01/Large-5032212AA291090_F.jpg?v=1",
+            "img02": "https://balenciaga.dam.kering.com/m/197885d06ebf8a31/Large-5032212AA291090_D.jpg?v=1",
+            "img03": "https://cafe24.poxo.com/ec01/cts1031/Xeym8gXyw/uNs04t9Tz1DqzLQPefV/TPWGVY5hbRJo9dOOCCptK8Ob7Y2W60IDTkgo8Xue5IbwKB6hZalWW7Ew==/_/web/product/big/202110/c28a3729a4b8d57f6bb50b87a400a5be.jpg"
+          },
+          "description": "블랙 리사이클드 나일론 소재의 익스플로러 백팩/ 상단 이중지퍼 잠금장치"
+        },
+        {
+          "productId": 2,
+          "mainCategory": "beauty",
+          "keyword": "body",
+          "itemName": "퓨어 라벤더 오일",
+          "brand": "멜라루카",
+          "brandEng": "MELALEUCA",
+          "price": 28000,
+          "releasedDate": 20200628,
+          "sellNum": 496,
+          "detailImg": {
+            "img01": "https://thumbnail8.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/ce5f/4d793c0c75bbc5a836b08ba52181389b181e00280322aafb4b06ab8c295e.jpg",
+            "img02": "https://cdnsc1.melaleuca.com/kr/images/product-store/pure-landing/2306/cat-pure-learn-2306.jpg",
+            "img03": "https://cdnsc1.melaleuca.com/kr/images/product-detail-pages/pure-essential-oil/51045-safety-mom-daughter.png"
+          },
+          "description": "가장 널리 알려진 에센셜 오일 중 하나인 라벤더 오일은 많은 사람들이 사랑하는 아름답고 부드러운 향기를 간직하고 있습니다. 피부의 긴장을 가라앉히고 민감한 피부는 물론 모든 피부에 사용할 수 있는 대중적인 오일입니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "젠틀몬스터 에디 A 01",
+          "brand": "젠틀몬스터",
+          "brandEng": "Gentle Monster",
+          "price": 249000,
+          "releasedDate": 20230728,
+          "sellNum": 256,
+          "detailImg": {
+            "img01": "https://gm-prd-resource.gentlemonster.com/catalog/product/FI30BRX6V9PE/FI30BRX6V9PE_FRONT.jpg",
+            "img02": "https://gm-prd-resource.gentlemonster.com/catalog/product/FI30BRX6V9PE/FI30BRX6V9PE_D_45.jpg",
+            "img03": "https://gm-prd-resource.gentlemonster.com/catalog/product/FI30BRX6V9PE/FI30BRX6V9PE_SIDE.jpg"
+          },
+          "description": "에디 A 01은 사각형태의 블랙 아세테이트 프레임입니다. 기존 에디 모델을 재해석하여 아세테이트 템플로 제작된 제품입니다."
+        },
+        {
+          "productId": 4,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "아이셔 캔디",
+          "brand": "오리온",
+          "brandEng": "orion",
+          "price": 1500,
+          "releasedDate": 20000214,
+          "sellNum": 533,
+          "detailImg": {
+            "img01": "https://cmprd-content.baemin.com/upload/product/main/0014554d-17ef-4cfc-8970-c00ca2bd48d6.png",
+            "img02": "https://salln-item.ssgcdn.com/trans.ssg?src=/cmpt/edit/202201/24/112022012410595185658663599866_936.jpg&gmarket",
+            "img03": "https://sitem.ssgcdn.com/27/98/70/item/1000277709827_i3_750.jpg"
+          },
+          "description": "아이셔 츄잉 캔디! 새콤이 쫄깃 머리가 찌릿!"
+        },
+        {
+          "productId": 5,
+          "mainCategory": "beauty",
+          "keyword": "body",
+          "itemName": "에펙토 쿨",
+          "brand": "스폴",
+          "brandEng": "spol",
+          "price": 3000,
+          "releasedDate": 20100625,
+          "sellNum": 146,
+          "detailImg": {
+            "img01": "https://image.hnsmall.com/images/goods/073/12532073_g.jpg",
+            "img02": "https://cafe24.poxo.com/ec01/atchealth/23bcTEF8oirDIpc6Xvxjp7WUHK0kVjq2bGZ2O0GDQpQbC0zN/ZQ2treopVVvUIpL/kwx9abV3iIfCGjsDuB1YA==/_/web/product/big/atchealth_6621.jpg",
+            "img03": "https://mblogthumb-phinf.pstatic.net/MjAxOTA5MjZfMjQ2/MDAxNTY5NDYyNDU1OTE2.gCiNAlyh6luev_rsBAxeNUCVMLNGnHE2gly8SpUsz6Mg.9Ixqvxpz-xVwWU7eZuZlYYFPMh2XlbMiZn-2yP29w74g.PNG.sch1711/image.png?type=w800"
+          },
+          "description": "피부자극없이 관절과 근육에 편안함을 주는 쿨링겔"
+        },
+        {
+          "productId": 6,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "씨마스터 다이버 300M",
+          "brand": "오메가",
+          "brandEng": "OMEGA",
+          "price": 8900000,
+          "releasedDate": 20240725,
+          "sellNum": 481,
+          "detailImg": {
+            "img01": "https://www.omegawatches.co.kr/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422004001-899ba1.png?w=700",
+            "img02": "https://www.omegawatches.co.kr/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422004001-portrait-6-c4b3e2.png?w=720",
+            "img03": "https://img.gqkorea.co.kr/gq/2025/02/style_67bbda30b6bc9-800x1078.jpg"
+          },
+          "description": "스테인리스 스틸로 제작된 42mm 사이즈의 타임피스는 화이트 에나멜 다이빙 스케일 버전의 블랙 세라믹 베젤이 탑재되어 있으며⁠, 화이트 세라믹으로 폴리싱 처리된 다이얼은 레이저로 각인된 물결 패턴과 레드 컬러로 강조된 씨마스터 문구가 특징입니다⁠."
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "artistName": "이채운",
+      "artistImg": "https://i.namu.wiki/i/9V3GYoA76o-_0ED5rPXlBfi7qubxQI8_OIQh_GB52dGm7zjEiSvumbKMZL8cXyiGroY_5y7K7BQIkXwTUi4dvQ.webp",
+      "jobCategory": "sports",
+      "videoURL": "https://youtu.be/cBMY36cnsDY?si=jp10yRi0D6cZC3Gj",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "JBL 블루투스 스피커 PULSE5 블랙",
+          "brand": "삼성",
+          "brandEng": "SAMSUNG",
+          "price": 420000,
+          "releasedDate": 20230412,
+          "sellNum": 105,
+          "detailImg": {
+            "img01": "https://kr.jbl.com/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dwd00d6ef4/6_JBL_PULSE_5_3_4_RIGHT_34334_x2.jpg?sw=556&sh=680&sm=fit&sfrm=png",
+            "img02": "https://sitem.ssgcdn.com/19/95/20/item/1000558209519_i1_750.jpg",
+            "img03": "https://image2.lotteimall.com/goods/12/71/75/2367757112_4.jpg/dims/resizemc/550x550/optimize"
+          },
+          "description": "강력한 사운드와 360도 조명 효과를 갖춘 휴대용 블루투스 스피커입니다. 방진, 방수 기능으로 야외에서도 사용 가능하며, 튼튼한 스트랩으로 휴대성이 뛰어납니다. 음악 비트에 맞춰 변화하는 360도 조명은 분위기를 더욱 돋우고, 강력한 베이스와 JBL Original Pro 사운드를 경험할 수 있습니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "JACQUARD ALWAYS BSR KINTWEAR BLACK",
+          "brand": "비에스 래빗",
+          "brandEng": "bsrabbit",
+          "price": 78000,
+          "releasedDate": 20241212,
+          "sellNum": 174,
+          "detailImg": {
+            "img01": "https://bsrabbit.com/cdn/shop/files/025_JACQUARDALWAYSBSRKINTWEARBLACK-01.jpg?v=1734425324&width=750",
+            "img02": "https://bsrabbit.com/cdn/shop/files/025_JACQUARDALWAYSBSRKINTWEARBLACK-02.jpg?v=1734425323&width=750",
+            "img03": "https://bsrabbit2010.cafe24.com/bsrabbit/2425FW/BD025-001.jpg"
+          },
+          "description": "손세탁 100%, 그늘진 곳에서 말려주세요, 건조기에 넣지 마세요, 세제로 세탁금지"
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "VARIETY PATCH GLOVE BLACK",
+          "brand": "비에스 래빗",
+          "brandEng": "bsrabbit",
+          "price": 108000,
+          "releasedDate": 20241222,
+          "sellNum": 134,
+          "detailImg": {
+            "img01": "https://bsrabbit.com/cdn/shop/files/011_VARIETYPATCHGLOVEBLACK-01.jpg?v=1730169788&width=750",
+            "img02": "https://bsrabbit.com/cdn/shop/files/BSR2425FWGL011-2.jpg?v=1730169788&width=750",
+            "img03": "https://bsrabbit.com/cdn/shop/files/BSR2425FWGL011-4.jpg?v=1730169789&width=750"
+          },
+          "description": "손세탁 100%, 그늘진 곳에서 말려주세요, 건조기에 넣지 마세요, 세제로 세탁금지"
+        },
+        {
+          "productId": 4,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "마크 제이콥스 레인 EDT",
+          "brand": "마크제이콥스",
+          "brandEng": "MARC JACOBS",
+          "price": 369600,
+          "releasedDate": 20170319,
+          "sellNum": 395,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/100/752/img/1752100_1.jpg?_v=20231020145627",
+            "img02": "https://m.perfumegraphy.com/web/product/big/202212/d493a06a465fb675d26aeecee0a96c1a.jpg",
+            "img03": "https://web.joongna.com/cafe-article-data/live/2023/12/01/1027170058/1701402436351_006_KBc3h.jpeg"
+          },
+          "description": "청순하고 상쾌한 여름향수 비오는날 어렴풋하게 떠오르는 그날의 풍경을 느껴보세요."
+        },
+        {
+          "productId": 5,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "아크테릭스 미니백 Mantis 1 Waist Pack",
+          "brand": "아크테릭스",
+          "brandEng": "ARCTERYX",
+          "price": 77300,
+          "releasedDate": 20230929,
+          "sellNum": 208,
+          "detailImg": {
+            "img01": "https://img.croketglobal.net/item/thumbnail/d4826a98-e30d-4fa5-80c7-6c85b8ab670b.webp",
+            "img02": "https://image-cdn.trenbe.com/productmain-image/638794023706614313_24892753_0.jpg",
+            "img03": "https://shop.moderateweb.com/cdn/shop/files/LkNlZskmo0apFpkJPnH1BCuUr5vuoaWzk2WZ3sjH.jpg?v=1744609419&width=1024"
+          },
+          "description": "아크테릭스 맨티스1 웨이스트 팩은 100% 재생 폴리에스터 소재로 제작된 미니 크로스백입니다. 짧은 산행이나 장거리 여행 시 보조 가방으로 활용하기 좋습니다. 웨이스트백이나 숄더백 스타일로 착용할 수 있어 다양한 상황에 맞춰 스타일 연출이 가능합니다."
+        },
+        {
+          "productId": 6,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "블리스텍스 립밤",
+          "brand": "아크테릭스",
+          "brandEng": "ARCTERYX",
+          "price": 77300,
+          "releasedDate": 20230929,
+          "sellNum": 208,
+          "detailImg": {
+            "img01": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0001/A00000001261404ko.jpg?l=ko&SF=webp",
+            "img02": "https://gdimg.gmarket.co.kr/2667597017/still/280?ver=1710314969",
+            "img03": "https://blistex.godohosting.com/CJ/20241120/DE/BT01_01.jpg"
+          },
+          "description": "겨울철 특히 건조할때 스키장, 캠핑, 등 아웃도어 라이프를 즐기시는 분들께 추천해드리는 최강 보습 연고"
+        },
+        {
+          "productId": 7,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "헤라 선 메이트 레포츠 프로",
+          "brand": "아모레퍼시픽",
+          "brandEng": "amore",
+          "price": 20800,
+          "releasedDate": 20220526,
+          "sellNum": 59,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/950/286/img/7286950_1.jpg?_v=20220105131758",
+            "img02": "https://image.babathe.com/goods/G268108942/G268108942_3.jpg/babathe/optimize",
+            "img03": "https://gdimg1.gmarket.co.kr/goods_image2/large_jpgimg/428/820/4288204539.jpg?ver=33289261480"
+          },
+          "description": "자외선 차단 기능 강화 및 워터프루프 작용까지 탁월한 선크림"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "artistName": "태민",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2014/12/style_55ee8dbb59428.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://youtu.be/jAvF-Sh9tRw?si=4eGd-nf1T7NQesIt",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "르메르 크로아상 숄더백",
+          "brand": "르메르",
+          "brandEng": "lemaire",
+          "price": 20800,
+          "releasedDate": 20220526,
+          "sellNum": 59,
+          "detailImg": {
+            "img01": "https://m.manter.co.kr/web/product/extra/big/20230310/4d3ecf0bfb5cdd11e1ae1f0e84546db7.jpg",
+            "img02": "https://m.manter.co.kr/web/product/extra/big/20230310/4d3ecf0bfb5cdd11e1ae1f0e84546db7.jpg",
+            "img03": "https://m.manter.co.kr/web/product/big/202303/cce7f4369f50f677b1cce322547c4706.jpg"
+          },
+          "description": "모든제품(가죽,의류,금속 등)은 습기나 열기 마찰과 같은 외부환경에 의해 이염이 될 수 있습니다. ·명품 전문 세탁점 등을 통한 세탁,수선 및 제품 특성에 맞는 세탁, 수선을 권장드립니다. · 미 사용 시 더스트 백에 보관하십시오."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "아이엠더퓨처 x 스쿠읏 그로우 옵 래빗 키링 블랙",
+          "brand": "아이엠더퓨처",
+          "brandEng": "IATF",
+          "price": 92000,
+          "releasedDate": 20230716,
+          "sellNum": 19,
+          "detailImg": {
+            "img01": "https://kream-phinf.pstatic.net/MjAyNDA3MDNfMTA2/MDAxNzE5OTgyNDQzMTY5.lUjaOzyDUQq_AEqqO5f_ThiOBIM4IL1qTU4rfv9RJ80g.MvxoDbOMqh6hJodx99tyvTllnztlUbeQ7lGSq9QHe-Ag.JPEG/p_f0cd4387c17e4b4cbaa1320b4b83f833.jpg",
+            "img02": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi5A-fAqWC1OEK5DYg-PyvRUKYoy2U6KDxcA&s",
+            "img03": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPdjCgE6qJFLWRVDWq6YtY1i8pwZC9CbfHtw&s"
+          },
+          "description": "습기나 열기 마찰과 같은 외부환경에 의해 이염이 될 수 있습니다. 세탁시 주의 해주세요."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "젤리 멀티 비타민 nature made",
+          "brand": "네이처 메이드",
+          "brandEng": "nature made",
+          "price": 12000,
+          "releasedDate": 20100826,
+          "sellNum": 42,
+          "detailImg": {
+            "img01": "https://sitem.ssgcdn.com/65/69/40/item/1000561406965_i1_750.jpg",
+            "img02": "https://sitem.ssgcdn.com/65/69/40/item/1000561406965_i2_750.jpg",
+            "img03": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020526302ko.jpg?qt=80"
+          },
+          "description": "네이처메이드 젤리 비타민은 아이들부터 성인까지 다양한 연령층을 위한 영양 보충제입니다. 젤리 형태로 되어 있어 먹기 편하고, 다양한 종류의 비타민과 미네랄이 함유되어 있어 건강 관리에 도움을 줍니다. 특히 면역력 강화에 필요한 비타민 C, 에너지 대사를 돕는 비타민 B12, 뼈 건강을 돕는 비타민 D 등 다양한 제품들이 있습니다."
+        },
+        {
+          "productId": 4,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "멜라토닌 프리 슬립 리스토어 가바 마그네슘 60구미",
+          "brand": "나트롤",
+          "brandEng": "NATROL",
+          "price": 34500,
+          "releasedDate": 20120606,
+          "sellNum": 682,
+          "detailImg": {
+            "img01": "https://static.wixstatic.com/media/96a811_ccbd3ab2006a4acc8487fa3a551d4e37~mv2.png/v1/fill/w_763,h_693,al_c,q_90,enc_avif,quality_auto/96a811_ccbd3ab2006a4acc8487fa3a551d4e37~mv2.png",
+            "img02": "https://www.yakup.com/data/editor/news/202309/rZvTb7WsBYmbU.jpg",
+            "img03": "https://j-better.com/cdn/shop/files/imageService_71b46e01-ae91-4d4a-94c0-bcec6dc2a536_800x.jpg?v=1708468401"
+          },
+          "description": "미국 FDA 승인을 받은 안전한 영양제로, 건강한 수면 습관을 유지하는 데 도움이 됩니다. 면역력 강화, 신진대사 촉진, 집중력 향상 등 전반적인 건강 개선에도 효과적 입니다."
+        },
+        {
+          "productId": 5,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "크롬하츠 24k 세이프티 목걸이",
+          "brand": "크롬하츠",
+          "brandEng": "Chrome heart",
+          "price": 1590000,
+          "releasedDate": 20200706,
+          "sellNum": 99,
+          "detailImg": {
+            "img01": "https://www.wishbucket.io/_next/image?url=https%3A%2F%2Fd2gfz7wkiigkmv.cloudfront.net%2Fpickin%2F2%2F1%2F2%2Fm_JLkn2SRMKrByzQnBb7-A&w=640&q=75",
+            "img02": "https://www.wishbucket.io/_next/image?url=https%3A%2F%2Fd2gfz7wkiigkmv.cloudfront.net%2Fpickin%2F2%2F1%2F2%2FmJFd35jTSduXd9di6xiM2w&w=640&q=75",
+            "img03": "https://shs-dome5.com/data/item/1710841770/thumb-h_30iUd018svc9y06b5n6zbif_57s0h1_600x600.jpg"
+          },
+          "description": "안전핀 모양의 펜던트가 특징입니다. 주로 실버 소재로 제작되며, 다이아몬드나 다른 장식 요소가 추가될 수도 있습니다. 크롬하츠 세이프티 핀 목걸이는 개성 넘치는 스타일을 표현하기 좋은 아이템 입니다."
+        },
+        {
+          "productId": 6,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "탱크 루이 까르띠에 워치",
+          "brand": "까르띠에",
+          "brandEng": "Cartier",
+          "price": 16500000,
+          "releasedDate": 20220905,
+          "sellNum": 498,
+          "detailImg": {
+            "img01": "https://www.cartier.com/dw/image/v2/BGTJ_PRD/on/demandware.static/-/Sites-cartier-master/default/dwe9b6f425/images/large/dbe362d0bc8355d4b42be3eea9b21975.png?sw=750&sh=750&sm=fit&sfrm=png",
+            "img02": "https://media.bunjang.co.kr/product/303168166_%7Bcnt%7D_1732872772_w%7Bres%7D.jpg",
+            "img03": "https://image.gugus.co.kr/goods/updata2/img2024/05/50318558452024058046427116_534x534.jpg"
+          },
+          "description": "탱크 워치는 제1차 세계 대전에 참전한 탱크에서 영감을 받아 루이 까르띠에가 디자인했습니다. 플랫 버티컬 샤프트와 사파이어 카보숑으로 절제된 품격을 상징적으로 보여주는 워치는 출시 이후 전 세계 애호가들의 마음을 사로잡았습니다."
+        },
+        {
+          "productId": 7,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "지방시 스무스 복스 레더 반지갑",
+          "brand": "지방시",
+          "brandEng": "GIVENCHY",
+          "price": 700000,
+          "releasedDate": 20231105,
+          "sellNum": 398,
+          "detailImg": {
+            "img01": "https://cdn.jentestore.io/resource/products/653169/653169_1.jpg",
+            "img02": "https://cdn.jentestore.io/resource/products/653169/653169_2.jpg?_=33326338",
+            "img03": "https://cdn.jentestore.io/resource/products/622023/622023_2.jpg?_=31659799"
+          },
+          "description": "부드러운 복스 가죽을 사용하여 제작되었으며, 앞면에는 지방시 시그니처가 디보싱 처리되어 있습니다. 뒷면에는 4G 엠블럼이 디보싱 처리되어 있으며, 카드 슬롯, 플랫 포켓, 동전 지갑 등 다양한 수납 공간을 제공합니다."
+        },
+        {
+          "productId": 8,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "AHC 선크림",
+          "brand": "AHC",
+          "brandEng": "AHC",
+          "price": 24000,
+          "releasedDate": 20231110,
+          "sellNum": 582,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/586/606/img/16606586_1.jpg?_v=20220707165658&shrink=360:360",
+            "img02": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0015/A00000015351031ko.jpg?qt=80",
+            "img03": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx_b2AYTZFXj00pJho7xkXAIBBjX4tHxPeVG2mjqHll3l5fNoYNg94VrwrFv85BQoH7hQ&usqp=CAU"
+          },
+          "description": "AHC official 점점 다가오는 여름  AHC 선크림 마스터즈와 함께라면 뜨거운 날씨에도 피부 걱정은 NO!"
+        },
+        {
+          "productId": 9,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "(태민) 6v6 긴팔파자마",
+          "brand": "스파오",
+          "brandEng": "SPAO",
+          "price": 39900,
+          "releasedDate": 20240924,
+          "sellNum": 699,
+          "detailImg": {
+            "img01": "https://image.msscdn.net/thumbnails/images/prd_img/20210714/2028445/detail_2028445_3_big.jpg?w=1200",
+            "img02": "https://image.msscdn.net/thumbnails/images/prd_img/20210714/2028445/detail_2028445_4_big.jpg?w=1200",
+            "img03": "https://image.msscdn.net/thumbnails/images/goods_img/20210714/2028445/2028445_8_big.jpg?w=1200"
+          },
+          "description": "샤이니 태민과 콜라보하여 심혈을 기울여 만든 파자마 어디서든 편안함을 느낄 수있고 잠자리가 편안하게 만들어 드립니다."
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "artistName": "추성훈",
+      "artistImg": "https://www.cosmopolitan.co.kr/resources/online/online_image/2025/03/26/048fb9b1-1943-42ff-9f32-42020875b3ef.jpg",
+      "jobCategory": "sports",
+      "videoURL": "https://youtu.be/PGwulF75_Z0?si=9gmnAR4heIhMmb9a",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "시그니처 투 포켓 백팩 [블랙]",
+          "brand": "성1975",
+          "brandEng": "SUNG1975",
+          "price": 149000,
+          "releasedDate": 20241124,
+          "sellNum": 34,
+          "detailImg": {
+            "img01": "https://sung1975w.openhost.cafe24.com/web/upload/NNEditor/20240105/4a932b1cbafa72074258d92e3cdf813f.jpg",
+            "img02": "https://www.sung1975japanshop.com/cdn/shop/files/ba2.jpg?v=1736846545&width=1445",
+            "img03": "https://www.sung1975japanshop.com/cdn/shop/files/IMG_5169.jpg?v=1736846545&width=1080"
+          },
+          "description": "고급스러운 질감에서는 상상할 수 없을 정도의 가벼움의 백 팩입니다, 튼튼한 천을 사용하고 있기 때문에, 오래 사용하실 수 있습니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "넘버링 후디(SUNG-HD-02)",
+          "brand": "성1975",
+          "brandEng": "SUNG1975",
+          "price": 89000,
+          "releasedDate": 20241125,
+          "sellNum": 354,
+          "detailImg": {
+            "img01": "https://sung1975w.com/web/product/big/202411/fbc7930eadc62843418ad1b8a7989bfa.jpg",
+            "img02": "https://m.sung1975w.com/web/product/tiny/202410/9ee9c3b1a721a3895a14a5eb24e57ed0.png",
+            "img03": "https://m.sung1975w.com/web/product/extra/small/202404/1bbad08fe4ba9795628f11e087c60e9f.jpg"
+          },
+          "description": "견고하고 견고한 헤비 웨이트 플리스 소재를 사용했으며, 표면에 불필요한 보풀이 없어 아름다운 룩을 완성합니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "시그니처 니트 비니",
+          "brand": "성1975",
+          "brandEng": "SUNG1975",
+          "price": 39000,
+          "releasedDate": 20241122,
+          "sellNum": 845,
+          "detailImg": {
+            "img01": "https://image.msscdn.net/images/goods_img/20231230/3770921/3770921_17131613147400_500.png",
+            "img02": "https://www.sung1975japanshop.com/cdn/shop/files/be2.jpg?v=1736845423",
+            "img03": "https://www.sung1975japanshop.com/cdn/shop/files/be5.jpg?v=1736845423&width=1080"
+          },
+          "description": "100% 면사로 제작된 비니입니다. 두꺼운 골지 니트에 입체적인 자수가 돋보이는 고급스러운 아이템입니다. 주의 손상될 수 있습니다. 날카로운 물체와의 접촉에 주의해 주세요."
+        },
+        {
+          "productId": 4,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "샤넬 3392 틴트 렌즈 선글라스",
+          "brand": "샤넬",
+          "brandEng": "chanel",
+          "price": 500000,
+          "releasedDate": 20090723,
+          "sellNum": 483,
+          "detailImg": {
+            "img01": "https://mblogthumb-phinf.pstatic.net/MjAyMzA1MjNfMjkz/MDAxNjg0ODI0NzUxNjkx.IVERXzy92v9BnygkoHr9pOq7uVSHcJLay_Mv6I7IvKEg.hdE4x0kjw9XNge3apG3UPf5XHmlRVPgCICjnGyXIRrgg.JPEG.kpopeyewear/IMG_1933.JPG?type=w800",
+            "img02": "https://mblogthumb-phinf.pstatic.net/MjAyMzA1MjNfMjE1/MDAxNjg0ODI0NzUxNzA2.fN0pnSSru2JQSlXCcn4pc-gLlBO2aYJqizgXw6X7krYg.ox1cIh59SkvTBfcB9no3UMPagzlB02pzltQiloOCaqgg.JPEG.kpopeyewear/IMG_1937.JPG?type=w800",
+            "img03": "https://mblogthumb-phinf.pstatic.net/MjAyMzA1MjNfNjIg/MDAxNjg0ODI0NzUxNzg1.6IbAU6nw6adS0qmenmvkFTHX6vJldx7a1vFaKHke5Q0g.YiFhi8RBxnP65_6rhkpvAFI6B2iaL_HOExjoLk3yiwIg.JPEG.kpopeyewear/IMG_1946.JPG?type=w800"
+          },
+          "description": "가벼운 소재를 사용해 장시간 착용해도 편안함을 유지할 수 있습니다. 상단 부분의 샤넬 레터링이. 더욱 고급스러움을 자아냅니다."
+        },
+        {
+          "productId": 5,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "로렌조 빌로레시",
+          "brand": "로렌조",
+          "brandEng": "LORENZO",
+          "price": 269000,
+          "releasedDate": 20170223,
+          "sellNum": 469,
+          "detailImg": {
+            "img01": "https://m.perfumegraphy.com/web/product/big/202405/5aac20ef5840694052e629e260182288.jpg",
+            "img02": "https://thumbnail10.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/6ecb/3ccbde4162c91ea30d7a50a11a3b3b087c31a29a18a28e1efe63904e5c7c.jpg",
+            "img03": "https://image.sivillage.com/upload/C00001/dspl/banner/8510/658/00/240200000440658.jpg"
+          },
+          "description": "눈의 색인 Teint de Neige는 Belle Epoque에서 소위 백설 공주 안색이라고 불렸던 것입니다. 향긋한 가루의 확실한 향기, 활석의 부드러움, 젊음의 안색의 향기. 부드럽고 섬세한 향수, 독특하고 감싸는 동시에 강렬하고 오래 지속되는 향수."
+        },
+        {
+          "productId": 6,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "iPhone Case Capsule 16-Gold",
+          "brand": "골든컨셉",
+          "brandEng": "GOLDEN CONCEPT",
+          "price": 1000000,
+          "releasedDate": 20250115,
+          "sellNum": 763,
+          "detailImg": {
+            "img01": "https://cafe24.poxo.com/ec01/viawatch/qG7W5YG4u15UcFpJqE8Ufx73QjQyk80DIodJCRX6apQL1UskoJcvZiW0ZLeI177CydX/1h2DkXm8NPNOjJSjpQ==/_/web/product/big/202409/29a2175689da6ee397b0d630b39189fb.png",
+            "img02": "https://cafe24.poxo.com/ec01/viawatch/qG7W5YG4u15UcFpJqE8Ufx73QjQyk80DIodJCRX6apQL1UskoJcvZiW0ZLeI177CydX/1h2DkXm8NPNOjJSjpQ==/_/web/product/extra/big/202409/3c381d72aa1bc286813d13d04761fbcc.png",
+            "img03": "https://cafe24.poxo.com/ec01/viawatch/qG7W5YG4u15UcFpJqE8Ufx73QjQyk80DIodJCRX6apQL1UskoJcvZiW0ZLeI177CydX/1h2DkXm8NPNOjJSjpQ==/_/web/product/extra/big/202409/76f24e8fd669d9142bdc38675988867c.png"
+          },
+          "description": "포뮬러 1 및 항공우주 산업에서 사용되는 것과 동일한 고성능 소재인 스테인리스 스틸과 TPC 탄소 복합재로 제작되었습니다. 이 조합은 케이스가 매우 가볍고 튼튼하다는 것을 보장합니다."
+        },
+        {
+          "productId": 7,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "마샬 미들톤 포터블 스피커 크림",
+          "brand": "마샬",
+          "brandEng": "Marshall",
+          "price": 489000,
+          "releasedDate": 20220403,
+          "sellNum": 705,
+          "detailImg": {
+            "img01": "https://image.sivillage.com/upload/C00001/goods/org/674/230714005712674.jpg?RS=750&SP=1",
+            "img02": "https://image.sivillage.com/upload/C00001/goods/org/673/230714005712673.jpg?RS=750&SP=1",
+            "img03": "https://m.etlandmall.co.kr/nas/cdn/attach/product/2024/08/21/B0492446/B0492446_5_600.jpg"
+          },
+          "description": "새롭게 출시된 마샬의 6번째 포터블 스피커인 라인업인 미들톤은 쿼드 스피커가 설치되어 있어 어디서든 깊은 몰입감을 선사하여 언제 어디서든 당신의 공간을 프리미엄 사운드로 가득 채워줄 수 있는 최고의 휴대용 스피커입니다."
+        },
+        {
+          "productId": 8,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "와일드 무어 30년산 위스키",
+          "brand": "와일드 무어",
+          "brandEng": "wildMoor",
+          "price": 834000,
+          "releasedDate": 20241128,
+          "sellNum": 787,
+          "detailImg": {
+            "img01": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpWEzAUuedInaUPfqybDfkkJkVqu9CO1y-jg&s",
+            "img02": "https://mblogthumb-phinf.pstatic.net/MjAyNTAxMTRfNTcg/MDAxNzM2NzgyOTY5MTE0.82k2LIMCzmB5BrJ89Z4QkZuh-41eGi9zIPhHQv576Lcg.CkIKDV_1QaUjv05IvFdZ-x2yIyVN3AVW8J3W5L7V178g.JPEG/1.jpg?type=w800",
+            "img03": "https://mblogthumb-phinf.pstatic.net/MjAyNTAxMTVfMjE3/MDAxNzM2OTA4NDMwMjgz.WW0YJFtWqINY7JBL4WVHfhJTRBCTVG9Ll1bw98nVPZYg.hc26WjDiiXm6CLTAeHTZ3GkjpbMOtk9ypG-gL_LkBgYg.JPEG/3.jpg?type=w800"
+          },
+          "description": "섬세한 셰리 스모크가 풍기는 30년 이상의 풍미. 와일드무어 30년은 스코틀랜드의 거친 해안에서 영감을 받아 탄생한 고숙성 블렌디드 위스키입니다."
+        },
+        {
+          "productId": 9,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "맨소래담 메디케이티드 립밤",
+          "brand": "맨소래담",
+          "brandEng": "mansolatum",
+          "price": 14900,
+          "releasedDate": 20250303,
+          "sellNum": 933,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/889/228/img/2228889_1.jpg?_v=20200908090217",
+            "img02": "https://sitem.ssgcdn.com/80/82/25/item/0000008258280_i1_750.jpg",
+            "img03": "https://pbs.twimg.com/amplify_video_thumb/1884239023885148160/img/6gLG7cFKq8vOHqEN.jpg"
+          },
+          "description": "맨소래담 립밤은 멘톨 성분 함유로 입술 진정 및 보습 효과를 제공하며, 끈적이지 않고 매끄럽게 발리는 것이 특징입니다. 또한 무색으로 마스크 착용 시 묻어남 없이 사용할 수 있으며, 남녀노소 누구나 사용할 수 있습니다. "
+        },
+        {
+          "productId": 10,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "스네일 리들샷 오데어 더블 세트",
+          "brand": "VT 코스메틱",
+          "brandEng": "VT COSMETICS",
+          "price": 75000,
+          "releasedDate": 20250323,
+          "sellNum": 795,
+          "detailImg": {
+            "img01": "https://m.vt-cosmetics.com/web/product/big/202502/dab39f8407b425d2bc20ac4dff737faa.png",
+            "img02": "https://m.vt-cosmetics.com/web/product/big/202502/dab39f8407b425d2bc20ac4dff737faa.png",
+            "img03": "https://cf.product-image.s.zigzag.kr/original/d/2024/6/25/40973_202406251423110310_85608.jpeg"
+          },
+          "description": "피부흡수를 도와주는 시카 리들로 흡수를 돕는 동시에 그린 스네일 시너지 성분으로 피부의 보습, 진정 밸런스를 맞춰주는 스네일 리들샷! 마이크로 사이즈의 미네랄 유래 미세 입자성분으로 모공보다 14배 얇은 두께로 흡수를 돕는 피지컬 더마 딜리버리 시스템이 적용! 섬세하게 피부를 자극하면서 피부흡수를 도와 본연의 건강한 피부로 변화할 수 있도록 가꿔주는 시카 리들"
         }
       ]
     }
