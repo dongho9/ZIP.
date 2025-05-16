@@ -17,6 +17,8 @@ import FAQ from "./pages/mypages/FAQ";
 import DeleteAccount from "./pages/mypages/DeleteAccount";
 import ChangeUserInfo from "./pages/mypages/ChangeUserInfo";
 import UserAddress from "./pages/mypages/UserAddress";
+import Star from "./pages/Star";
+import StarDetail from "./pages/StarDetail";
 import Promotion from "./components/event/Promotion";
 
 export const router = createBrowserRouter([
@@ -39,16 +41,24 @@ export const router = createBrowserRouter([
       {
         path: "event",
         element: <Event />,
-        children:[
+        children: [
           {
             path: "promotion",
             element: <Promotion />,
           },
-        ]
+        ],
       },
       {
         path: "filtercategory/:categoryName",
         element: <FilterCategory />,
+      },
+      {
+        path: "star",
+        element: <Star />,
+      },
+      {
+        path: "star/:starName",
+        element: <StarDetail />,
       },
       {
         path: "cart",
