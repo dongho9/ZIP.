@@ -1,0 +1,128 @@
+{
+  "mainData": [
+    {
+      "image": "https://live.staticflickr.com/65535/53594693457_167b1ede8b_o.jpg",
+      "title": "윈터의",
+      "video": "/videos/main_2.mp4"
+    },
+    {
+      "image": "https://pbs.twimg.com/media/Gnu6RwCagAAK7y3?format=jpg&name=large",
+      "title": "공명 & 김민하의",
+      "video": "/videos/main_3.mp4"
+    },
+    {
+      "image": "https://live.staticflickr.com/65535/52179222680_027d60eb7e_o.jpg",
+      "title": "고민시의",
+      "video": "/videos/main_4.mp4"
+    },
+    {
+      "image": "https://pbs.twimg.com/media/GniPbUkakAA-Afx.jpg:large",
+      "title": "차은우의",
+      "video": "/videos/main_5.mp4"
+    },
+    {
+      "image": "https://live.staticflickr.com/65535/54156681354_a544af095a_o.jpg",
+      "title": "아일릿의",
+      "video": "/videos/main_6.mp4"
+    },
+    {
+      "image": "https://www.cosmopolitan.co.kr/resources/online/online_image/2025/01/21/32b5668b-9f68-4e77-8f81-48d847320422.jpg",
+      "title": "서강준의",
+      "video": "/videos/main_1.mp4"
+    }
+  ],
+  "productData": [
+    {
+      "img": "https://i.ibb.co/GX3spgN/8.png",
+      "subtitle": "이정하 PICK",
+      "name": "비레디 웨이크업 생기 립밤",
+      "price": 12900
+    },
+    {
+      "img": "https://i.ibb.co/KprJ7928/6.png",
+      "subtitle": "고현정 PICK",
+      "name": "오에라 하이드라 글로우 쿠션",
+      "price": 105000
+    },
+    {
+      "img": "https://i.ibb.co/kgQcPZPs/7.png",
+      "subtitle": "위하준 PICK",
+      "name": "디올 루즈 밤",
+      "price": 59000
+    },
+    {
+      "img": "https://i.ibb.co/Kp3ZCXcf/5.png",
+      "subtitle": "필릭스 PICK",
+      "name": "라네즈 립 슬리핑 마스크 EX",
+      "price": 22000
+    },
+    {
+      "img": "https://i.ibb.co/Z5ybdTW/10.png",
+      "subtitle": "신시아 PICK",
+      "name": "하리보",
+      "price": 300000
+    },
+    {
+      "img": "https://i.ibb.co/tdBkCPS/3.png",
+      "subtitle": "김민하 PICK",
+      "name": "르라보 핸드 포마드 히노키",
+      "price": 39000
+    },
+    {
+      "img": "https://i.ibb.co/HDD0GJmc/1.png",
+      "subtitle": "윈터 PICK",
+      "name": "샤넬 라 크렘 망 핸드크림",
+      "price": 88000
+    },
+    {
+      "img": "https://i.ibb.co/Wp6gvJWx/9.png",
+      "subtitle": "카리나 PICK",
+      "name": "오쏘몰",
+      "price": 300000
+    },
+    {
+      "img": "https://i.ibb.co/nvLgp07/4.png",
+      "subtitle": "고민시 PICK",
+      "name": "블리스텍스 립 메덱스",
+      "price": 4200
+    },
+    {
+      "img": "https://i.ibb.co/zW3dKjqC/2.png",
+      "subtitle": "공명 PICK",
+      "name": "멜릭서 비건 립 버터",
+      "price": 14000
+    }
+  ],
+  "slideData": [
+    {
+      "subtitle": "buberry",
+      "title": "올림피아 캔버스 레더 크로스 바디백",
+      "img": "https://i.ibb.co/j9G74pQJ/1.png"
+    },
+    {
+      "subtitle": "case a lot",
+      "title": "세련된 레트로 무드의 Equipe urban",
+      "img": "https://i.ibb.co/zHhWK8wT/2.png"
+    },
+    {
+      "subtitle": "Equipe urban SW",
+      "title": "세련된 레트로 무드의 Equipe urban",
+      "img": "/src/imgs/home/누끼.png"
+    },
+    {
+      "subtitle": "bottega veneta",
+      "title": "23FW 카드지갑 인트레치아토 블랙",
+      "img": "https://i.ibb.co/mVP0tJHn/3.png"
+    },
+    {
+      "subtitle": "AcneStudios",
+      "title": "멀티 포켓 마이크로 백 다크브라운",
+      "img": "https://i.ibb.co/YTqWGzHq/4.png"
+    },
+    {
+      "subtitle": "Equipe urban SW",
+      "title": "세련된 레트로 무드의 Equipe urban",
+      "img": "/src/imgs/home/누끼.png"
+    }
+  ]
+}

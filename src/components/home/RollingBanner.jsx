@@ -7,7 +7,6 @@ const Container = styled.div`
   height: 80px;
   background: var(--dark-color);
   color: var(--light-color);
-
   /* animation: roll 10s linear infinite; */
 `;
 const LogoWrapper = styled.ul`

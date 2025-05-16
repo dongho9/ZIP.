@@ -1,69 +1,20 @@
-import React, { useState, useRef } from "react";
-import styled from "styled-components";
+import React, { useState, useRef, useEffect } from "react";
+/*--- 스와이퍼 라이브러리 ---*/
 import { Swiper, SwiperSlide } from "swiper/react";
-// import SlideSection from "./SlideSection";
-
-// import "./styles.css";
-// import "/node_modules/swiper/swiper.css";
 import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/pagination";
-
 import { Autoplay, EffectFade, Pagination, Navigation, Parallax } from "swiper/modules";
+import styled from "styled-components";
 
-//슬라이드 목업 데이터
-const slides = [
-  {
-    image: "https://live.staticflickr.com/65535/53594693457_167b1ede8b_o.jpg",
-    // image: "https://live.staticflickr.com/65535/53594693517_15cbd4832f_o.jpg",
-    title: "윈터의",
-    video: "/videos/main_2.mp4",
-  },
-  {
-    image: "https://pbs.twimg.com/media/Gnu6RwCagAAK7y3?format=jpg&name=large",
-    title: "공명 & 김민하의",
-    video: "/videos/main_3.mp4",
-  },
-  {
-    image: "https://live.staticflickr.com/65535/52179222680_027d60eb7e_o.jpg",
-    // image: "https://live.staticflickr.com/65535/52179222645_d288f3d839_o.jpg",
-    // image: "https://live.staticflickr.com/65535/51878475053_65bf0a7e27_o.jpg",
-    // image: "https://live.staticflickr.com/65535/53002595028_306c2cc6a1_o.jpg",
-    title: "고민시의",
-    video: "/videos/main_4.mp4",
-  },
-  {
-    // image: "https://www.nemopan.com/files/attach/images/6294/591/694/018/bbe05e023c9a18820a0b1906c534bc0b.jpg",
-    image: "https://pbs.twimg.com/media/GniPbUkakAA-Afx.jpg:large",
-    title: "차은우의",
-    video: "/videos/main_5.mp4",
-  },
-  {
-    image: "https://live.staticflickr.com/65535/54156681354_a544af095a_o.jpg",
-    title: "아일릿의",
-    video: "/videos/main_6.mp4",
-  },
-  {
-    image:
-      "https://www.cosmopolitan.co.kr/resources/online/online_image/2025/01/21/32b5668b-9f68-4e77-8f81-48d847320422.jpg",
-    title: "서강준의",
-    video: "/videos/main_1.mp4",
-  },
-];
-
-//스타일
+/*--- 스타일 ---*/
 const Container = styled.div`
-  /* margin-top: 60px; */
   width: 100%;
-  height: 100%;
   height: 100vh;
-  /* height: 860px; */
   position: relative;
-  /* text-transform: uppercase; */
   display: grid;
   grid-template-columns: repeat(17, 1fr);
   background: #ffffff;
-  /* background-color: rgba(0 0 0 / var(--dark-color)); */
   overflow: hidden;
   @media screen and (max-width: 1024px) {
     height: 100%;
@@ -72,65 +23,26 @@ const Container = styled.div`
 const SideSection = styled.div`
   grid-column: span 1;
   display: flex;
-  /* align-items: end; */
   align-items: center;
+  align-items: end;
   justify-content: center;
   width: 100%;
   height: 100%;
-  /* padding-bottom: 60%; */
-  /* border: 1px solid #f0f; */
-
+  padding-bottom: 50px;
   img {
-    /* width: 100%; */
+    width: 16px;
     object-fit: cover;
   }
   @media screen and (max-width: 1024px) {
     display: none;
   }
 `;
-const SideItem = styled.div`
-  width: 100%;
-  height: 100%;
-
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
-  justify-content: start;
-
-  /* top: 0; */
-  /* left: 0; */
-  transform: rotate(-90deg);
-  position: absolute;
-  bottom: 10%;
-  left: 0%;
-  p {
-    border: 1px solid #f00;
-    /* bottom: 10%;
-    left: 0%; */
-  }
-  span {
-    width: 100%;
-    height: 100%;
-    /* position: absolute; */
-    /* transform: rotate(-90deg); */
-    /* bottom: 10%;
-    left: 0; */
-  }
-`;
-const Line = styled.div`
-  width: 1px;
-  height: 100px;
-  background: #000;
-`;
 const ImgSection = styled.div`
   grid-column: span 7;
   width: 100%;
   height: 100%;
-  /* height: 100vh; */
-  /* height: 800px; */
   overflow: hidden;
   position: relative;
-  /* color: #fff; */
   background: rgba(0, 0, 0, 0.8);
   img {
     width: 100%;
@@ -195,24 +107,17 @@ const ImgSection = styled.div`
       opacity: 1;
     }
   }
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
 `;
 const InfoSection = styled.div`
-  /* padding: 0 80px; */
-  /* padding: 6% 8%; */
   padding: 0 8%;
-  /* padding-bottom: 5%; */
   padding-top: 100px;
   grid-column: span 9;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
-  /* justify-content: end; */
-  /* background: rgba($color: #000000, $alpha: 0.6); */
-  /* background: rgba(0, 0, 0, 0.6); */
-  /* background-image: "https://live.staticflickr.com/65535/54271277085_8ebc361c1f_o.jpg" ; */
-  /* background: url("/public/img/noise.png") center/cover no-repeat; */
-  /* background: url("https://live.staticflickr.com/65535/54271277085_8ebc361c1f_o.jpg") center/cover no-repeat; */
   h4 {
     font-weight: 600;
     font-size: 9rem;
@@ -228,7 +133,6 @@ const InfoSection = styled.div`
     font-size: 2rem;
     letter-spacing: 2px;
     font-weight: 400;
-    /* margin-bottom: 60px; */
     font-family: "Pretendard";
   }
 
@@ -249,10 +153,7 @@ const InfoVideo = styled.div`
   margin-top: 40px;
   position: relative;
   width: 100%;
-  /* width: 90%; */
   padding-top: 50.625%;
-  /* padding-top: 56.25%; */
-  /* background: rgba($color: #000000, $alpha: 0.6); */
   background: rgba(0, 0, 0, 0.6);
   video {
     position: absolute;
@@ -271,13 +172,56 @@ const InfoVideo = styled.div`
     width: 100%;
     height: 100%;
     z-index: 2;
-    /* background: rgba(0, 0, 0, 0.1); */
+    background: rgba(0, 0, 0, 0.6);
   }
 `;
 
-//출력
-const MainBanner = () => {
+/*--- 목업데이터 ---*/
+const slides = [
+  {
+    image: "https://live.staticflickr.com/65535/53594693457_167b1ede8b_o.jpg",
+    title: "윈터의",
+    video: "/videos/main_2.mp4",
+  },
+  {
+    image: "https://pbs.twimg.com/media/Gnu6RwCagAAK7y3?format=jpg&name=large",
+    title: "공명 & 김민하의",
+    video: "/videos/main_3.mp4",
+  },
+  {
+    image: "https://live.staticflickr.com/65535/52179222680_027d60eb7e_o.jpg",
+    title: "고민시의",
+    video: "/videos/main_4.mp4",
+  },
+  {
+    image: "https://pbs.twimg.com/media/GniPbUkakAA-Afx.jpg:large",
+    title: "차은우의",
+    video: "/videos/main_5.mp4",
+  },
+  {
+    image: "https://live.staticflickr.com/65535/54156681354_a544af095a_o.jpg",
+    title: "아일릿의",
+    video: "/videos/main_6.mp4",
+  },
+  {
+    image:
+      "https://www.cosmopolitan.co.kr/resources/online/online_image/2025/01/21/32b5668b-9f68-4e77-8f81-48d847320422.jpg",
+    title: "서강준의",
+    video: "/videos/main_1.mp4",
+  },
+];
+
+/*--- 출력 ---*/
+const MainBanner = ({ image, title, video }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const [mainData, setMainData] = useState([]);
+
+  useEffect(() => {
+    fetch("/mocData/homeData.json")
+      .then((response) => response.json())
+      .then((data) => setMainData(data.mainData));
+  }, []);
 
   const handleSlideChange = (swiper) => {
     setCurrentSlide(swiper.activeIndex);
@@ -286,13 +230,7 @@ const MainBanner = () => {
   return (
     <Container>
       <SideSection>
-        <SideItem>
-          <p>What's in star's bag? now yours</p>
-          {/* <hr /> */}
-          <span>only on zip.</span>
-          <span>only on zip.</span>
-        </SideItem>
-        <img src="/src/imgs/home/vertical.png" alt="" />
+        <img src="/src/imgs/home/vertical.png" alt="사이드 영역 이미지" />
       </SideSection>
       <ImgSection>
         <Swiper
