@@ -17,6 +17,12 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 100%;
   margin: 100px 0;
+  @media screen and (max-width: 1024px) {
+    margin: 80px 0;
+  }
+  @media screen and (max-width: 767px) {
+    margin: 50px 0;
+  }
 `;
 
 const Item = styled.section`
@@ -45,9 +51,14 @@ const Title = styled.h2`
   color: var(--dark-color);
   font-size: 10rem;
   letter-spacing: -4px;
+  font-family: "EHNormalTrial";
 
   @media screen and (max-width: 1024px) {
     font-size: 7rem;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 5rem;
+    letter-spacing: -2px;
   }
 `;
 
@@ -59,20 +70,25 @@ const Button = styled.button`
   text-transform: uppercase;
   border: none;
   cursor: pointer;
+  font-family: "EHNormalTrial";
 
   @media screen and (max-width: 1024px) {
     font-size: 1.6rem;
     padding: 20px 40px;
   }
+  @media screen and (max-width: 767px) {
+    font-size: 1.2rem;
+    padding: 16px 24px;
+  }
 `;
 
 const AccordionCard = styled.div`
   width: 100%;
-  /* padding: 0% 10%; */
+  padding: 0 10%;
   margin: 50px 0;
-
   @media screen and (max-width: 1024px) {
     padding: 0% 14%;
+    margin: 0;
     /* margin: 50px 0; */
   }
 `;
@@ -84,9 +100,16 @@ const CardTitle = styled.div`
   font-size: 6rem;
   font-weight: 700;
   margin-bottom: 100px;
+  span {
+    font-family: "EHNormalTrial";
+  }
 
   @media screen and (max-width: 1024px) {
     font-size: 5rem;
+    margin-bottom: 30px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 4rem;
     margin-bottom: 30px;
   }
 `;
@@ -119,6 +142,7 @@ const LeftInfo = styled.aside`
   }
 
   button {
+    font-family: "EHNormalTrial";
     font-weight: 500;
     background: #000;
     color: #fff;
@@ -140,6 +164,21 @@ const LeftInfo = styled.aside`
       margin: 20px 0 20px;
       font-size: 1.6rem;
       line-height: 2.4rem;
+    }
+
+    button {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    h4 {
+      font-size: 2.2rem;
+      line-height: 3rem;
+    }
+    p {
+      margin: 10px 0 10px;
+      font-size: 1.4rem;
+      line-height: 2rem;
     }
 
     button {
@@ -224,7 +263,7 @@ function RecentZip() {
                   <h4>
                     에스파 닝닝 인마이백
                     <br />
-                    기다렸습니다. 제대로 모시겠습니다.
+                    제대로 모시겠습니다.
                   </h4>
                   <p>
                     닝닝이 자신의 애장품을 보부상 백에 가득 담아왔습니다. 작사 노트부터 폴라로이드 필름 앨범, 유치원
