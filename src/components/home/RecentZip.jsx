@@ -51,6 +51,7 @@ const Title = styled.h2`
   color: var(--dark-color);
   font-size: 10rem;
   letter-spacing: -4px;
+  font-family: "EHNormalTrial";
 
   @media screen and (max-width: 1024px) {
     font-size: 7rem;
@@ -69,6 +70,7 @@ const Button = styled.button`
   text-transform: uppercase;
   border: none;
   cursor: pointer;
+  font-family: "EHNormalTrial";
 
   @media screen and (max-width: 1024px) {
     font-size: 1.6rem;
@@ -98,6 +100,9 @@ const CardTitle = styled.div`
   font-size: 6rem;
   font-weight: 700;
   margin-bottom: 100px;
+  span {
+    font-family: "EHNormalTrial";
+  }
 
   @media screen and (max-width: 1024px) {
     font-size: 5rem;
@@ -137,6 +142,7 @@ const LeftInfo = styled.aside`
   }
 
   button {
+    font-family: "EHNormalTrial";
     font-weight: 500;
     background: #000;
     color: #fff;
@@ -172,7 +178,7 @@ const LeftInfo = styled.aside`
     p {
       margin: 10px 0 10px;
       font-size: 1.4rem;
-      line-height: 2.2rem;
+      line-height: 2rem;
     }
 
     button {

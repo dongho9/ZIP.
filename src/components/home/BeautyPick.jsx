@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ProductItem from "./ProductItem";
 import styled from "styled-components";
-import { motion } from "motion/react";
 
 /*--- 스타일 ---*/
 const Container = styled.div`
   background: var(--light-color);
   color: var(--dark-color);
   padding: 100px 3% 0px;
-  /* display: flex; */
   @media screen and (max-width: 1024px) {
     padding: 50px 3% 0px;
   }
@@ -25,6 +24,8 @@ const Title = styled.h2`
   color: var(--dark-color);
   font-size: 10rem;
   letter-spacing: -4px;
+  font-family: "EHNormalTrial";
+  font-weight: 500;
 
   @media screen and (max-width: 1024px) {
     font-size: 7rem;
@@ -39,6 +40,7 @@ const Button = styled.button`
   padding: 22px 50px;
   color: var(--light-color);
   background: var(--dark-color);
+  font-family: "EHNormalTrial";
   text-transform: uppercase;
   border: none;
   outline: none;
@@ -69,229 +71,29 @@ const ProductList = styled.ul`
     grid-gap: 6px;
   }
 `;
-const ProductItem = styled.li`
-  border-right: 1px solid var(--border-color);
-  padding-right: 12px;
-  &:nth-child(5),
-  &:last-child {
-    border: 0px solid;
-  }
-
-  @media screen and (max-width: 1024px) {
-    padding-right: 8px;
-    &:nth-child(3),
-    &:nth-child(6),
-    &:nth-child(9) {
-      border: 0px solid;
-    }
-
-    &:nth-child(5),
-    &:last-child {
-      border-right: 1px solid var(--border-color);
-    }
-    &:last-child {
-      display: none;
-    }
-  }
-  @media screen and (max-width: 767px) {
-    &:nth-child(2),
-    &:nth-child(4),
-    &:nth-child(6) {
-      border: 0px solid;
-    }
-
-    &:nth-child(3),
-    &:last-child {
-      border-right: 1px solid var(--border-color);
-    }
-    &:nth-child(7),
-    &:nth-child(8),
-    &:nth-child(9) {
-      display: none;
-    }
-  }
-`;
-const ProductImg = styled.div`
-  cursor: pointer;
-  overflow: hidden;
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    transition: all 1s;
-    &:hover {
-      transform: scale(120%);
-    }
-  }
-`;
-const ProductInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  transition: all 0.5s;
-  cursor: pointer;
-  &:hover {
-    color: var(--light-color);
-    background: var(--dark-color);
-  }
-
-  @media screen and (max-width: 1024px) {
-    padding: 16px;
-  }
-  @media screen and (max-width: 767px) {
-    /* padding: 16px; */
-  }
-`;
-const Prod_sub = styled.span`
-  font-size: 1.4rem;
-  color: var(--subTitle);
-
-  @media screen and (max-width: 1024px) {
-    font-size: 1.2rem;
-  }
-`;
-const Prod_name = styled.span`
-  font-size: 2.6rem;
-  margin: 10px 0 14px;
-  font-weight: bold;
-
-  @media screen and (max-width: 1024px) {
-    font-size: 2.2rem;
-    margin: 10px 0 8px;
-  }
-  @media screen and (max-width: 767px) {
-    font-size: 1.8rem;
-    margin: 8px 0 6px;
-  }
-`;
-const Prod_price = styled.span`
-  margin-top: 6px;
-  letter-spacing: 0.2px;
-  color: var(--subTitle);
-
-  @media screen and (max-width: 1024px) {
-    margin-top: 2px;
-    font-size: 1.6rem;
-  }
-  @media screen and (max-width: 767px) {
-    font-size: 1.4rem;
-  }
-`;
 
 /*--- 출력 ---*/
 const BeautyPick = () => {
   const navigate = useNavigate();
 
+  const [productData, setProductData] = useState([]);
+
+  useEffect(() => {
+    fetch("/API/homeData.json")
+      .then((response) => response.json())
+      .then((data) => setProductData(data.productData));
+  }, []);
+
   return (
     <Container>
       <MainTitle>
-        <Title>Beauty ZIP.</Title>
+        <Title>Beauty ZIP</Title>
         <Button onClick={() => navigate("/filtercategory/beauty")}>More Zip</Button>
       </MainTitle>
       <ProductList>
-        <ProductItem>
-          <ProductImg>
-            <img src="/src/imgs/product.png" alt="" />
-          </ProductImg>
-          <ProductInfo>
-            <Prod_sub>카리나 PICK</Prod_sub>
-            <Prod_name>상품명</Prod_name>
-            <Prod_price>300,000 KRW</Prod_price>
-          </ProductInfo>
-        </ProductItem>
-        <ProductItem>
-          <ProductImg>
-            <img src="/src/imgs/product.png" alt="" />
-          </ProductImg>
-          <ProductInfo>
-            <Prod_sub>카리나 PICK</Prod_sub>
-            <Prod_name>상품명</Prod_name>
-            <Prod_price>300,000KRW</Prod_price>
-          </ProductInfo>
-        </ProductItem>
-        <ProductItem>
-          <ProductImg>
-            <img src="/src/imgs/product.png" alt="" />
-          </ProductImg>
-          <ProductInfo>
-            <Prod_sub>카리나 PICK</Prod_sub>
-            <Prod_name>상품명</Prod_name>
-            <Prod_price>300,000KRW</Prod_price>
-          </ProductInfo>
-        </ProductItem>
-        <ProductItem>
-          <ProductImg>
-            <img src="/src/imgs/product.png" alt="" />
-          </ProductImg>
-          <ProductInfo>
-            <Prod_sub>카리나 PICK</Prod_sub>
-            <Prod_name>상품명</Prod_name>
-            <Prod_price>300,000KRW</Prod_price>
-          </ProductInfo>
-        </ProductItem>
-        <ProductItem>
-          <ProductImg>
-            <img src="/src/imgs/product.png" alt="" />
-          </ProductImg>
-          <ProductInfo>
-            <Prod_sub>카리나 PICK</Prod_sub>
-            <Prod_name>상품명</Prod_name>
-            <Prod_price>300,000KRW</Prod_price>
-          </ProductInfo>
-        </ProductItem>
-        <ProductItem>
-          <ProductImg>
-            <img src="/src/imgs/product.png" alt="" />
-          </ProductImg>
-          <ProductInfo>
-            <Prod_sub>카리나 PICK</Prod_sub>
-            <Prod_name>상품명</Prod_name>
-            <Prod_price>300,000 KRW</Prod_price>
-          </ProductInfo>
-        </ProductItem>
-        <ProductItem>
-          <ProductImg>
-            <img src="/src/imgs/product.png" alt="" />
-          </ProductImg>
-          <ProductInfo>
-            <Prod_sub>카리나 PICK</Prod_sub>
-            <Prod_name>상품명</Prod_name>
-            <Prod_price>300,000KRW</Prod_price>
-          </ProductInfo>
-        </ProductItem>
-        <ProductItem>
-          <ProductImg>
-            <img src="/src/imgs/product.png" alt="" />
-          </ProductImg>
-          <ProductInfo>
-            <Prod_sub>카리나 PICK</Prod_sub>
-            <Prod_name>상품명</Prod_name>
-            <Prod_price>300,000KRW</Prod_price>
-          </ProductInfo>
-        </ProductItem>
-        <ProductItem>
-          <ProductImg>
-            <img src="/src/imgs/product.png" alt="" />
-          </ProductImg>
-          <ProductInfo>
-            <Prod_sub>카리나 PICK</Prod_sub>
-            <Prod_name>상품명</Prod_name>
-            <Prod_price>300,000KRW</Prod_price>
-          </ProductInfo>
-        </ProductItem>
-        <ProductItem>
-          <ProductImg>
-            <img src="/src/imgs/product.png" alt="" />
-          </ProductImg>
-          <ProductInfo>
-            <Prod_sub>카리나 PICK</Prod_sub>
-            <Prod_name>상품명</Prod_name>
-            <Prod_price>300,000KRW</Prod_price>
-          </ProductInfo>
-        </ProductItem>
+        {productData?.map((item, index) => (
+          <ProductItem key={index} img={item.img} name={item.name} price={item.price} subtitle={item.subtitle} />
+        ))}
       </ProductList>
     </Container>
   );
