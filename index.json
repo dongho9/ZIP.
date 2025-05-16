@@ -1,61 +1,874 @@
 {
   "artists": [
     {
-      "id": 1,
-      "artistName": "서강준",
+      "id": 61,
+      "artistName": "홍경",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2024/01/style_65b0b9342c63f-800x539.jpg",
       "jobCategory": "actor",
-      "videoURL": "https://www.youtube.com/watch?v=QOZcIWeQYBc&t=105s",
+      "videoURL": "https://youtu.be/aForFaVcDsg?si=mJDSeHfca065cEf8",
       "products": [
         {
           "productId": 1,
-          "mainCategory": "style",
-          "keyword": "bag",
-          "itemName": "스투시 캔버스 엑스트라 라지 토트백 워시드 블랙",
-          "brand": "스투시",
-          "brandEng": "stussy",
-          "price": 115000,
-          "releasedDate": 20250510,
-          "SellNum": 104,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "에그 립밤 로즈우디",
+          "brand": "탬버린즈",
+          "brandEng": "tamburins",
+          "price": 28900,
+          "releasedDate": 20241212,
+          "sellNum": 284,
           "detailImg": {
-            "img01": "https://kr.stussy.com/cdn/shop/files/134253_WABL_1.jpg?v=1743700814&width=1920",
-            "img02": "https://kr.stussy.com/cdn/shop/files/134253_WABL_2.jpg?v=1743700814&width=1920",
-            "img03": "https://kr.stussy.com/cdn/shop/files/134253_WABL_6_2d1bb3d6-db57-48c5-a937-666cac531671.jpg?v=1743700814&width=1920"
+            "img01": "https://web-resource.tamburins.com/catalog/product/1695802162/427af98d-5277-4a6c-a937-e0b11b7d37a2/thumbnail_LipBalm_RoseWoody.jpg",
+            "img02": "https://web-resource.tamburins.com/catalog/product/1695802162/688ed6c9-31c7-407a-ad5e-f67f11a86149/thumbnail_LipBalm_RoseWoody_Box.jpg",
+            "img03": "https://web-resource.tamburins.com/catalog/product/1695802162/427af98d-5277-4a6c-a937-e0b11b7d37a2/thumbnail_LipBalm_RoseWoody.jpg"
           },
-          "description": "Oversized tote bag in 12oz cotton canvas. Large central compartment Interior drop pocket Two exterior pockets Webbed strap handles Double-layered base panel Unlined 100% cotton"
+          "description": "섬세한 장미향은 시대를 초월하면서도 현대적인 우아함을 간직하고 있습니다. 여기에 자몽의 시트러스함과 유향의 스파이시함이 더해져 매력적이고 모던한 느낌을 경험하게 합니다. 우디한 잔향은 머스크 노트로 따뜻하고 부드럽게 전체 향을 감싸줍니다"
         },
         {
           "productId": 2,
           "mainCategory": "style",
-          "keyword": "bag",
-          "itemName": "스투시 캔버스 엑스트라 라지 토트백 워시드 블랙",
-          "brand": "스투시",
-          "brandEng": "stussy",
-          "price": 115000,
-          "realeasedDate": 20250510,
-          "SellNum": 65,
+          "keyword": "perfume",
+          "itemName": "퍼퓸 밤 보타리",
+          "brand": "탬버린즈",
+          "brandEng": "tamburins",
+          "price": 46500,
+          "releasedDate": 20241213,
+          "sellNum": 213,
           "detailImg": {
-            "img01": "https://kr.stussy.com/cdn/shop/files/134253_WABL_1.jpg?v=1743700814&width=1920",
-            "img02": "https://kr.stussy.com/cdn/shop/files/134253_WABL_2.jpg?v=1743700814&width=1920",
-            "img03": "https://kr.stussy.com/cdn/shop/files/134253_WABL_6_2d1bb3d6-db57-48c5-a937-666cac531671.jpg?v=1743700814&width=1920"
+            "img01": "https://web-resource.tamburins.com/catalog/product/12001516/6acc76d3-c9e0-4ed2-80c4-157db8e88af1/thumbnail_BALM_BOTTARI.jpg",
+            "img02": "https://web-resource.tamburins.com/catalog/product/12001516/b9a967f5-4ac9-4136-bb53-bc768cfbd86c/thumbnail_BOX_BOTTARI_2.jpg",
+            "img03": "https://web-resource.tamburins.com/catalog/product/12001516/6acc76d3-c9e0-4ed2-80c4-157db8e88af1/thumbnail_BALM_BOTTARI.jpg"
           },
-          "description": "Oversized tote bag in 12oz cotton canvas. Large central compartment Interior drop pocket Two exterior pockets Webbed strap handles Double-layered base panel Unlined 100% cotton"
+          "description": "보타리는 버섯 포자가 터질 때 느껴지는 폭발적인 생명력을 닮아, 깊고 감각적인 향의 파동으로 주변을 장악합니다. 단단한 매듭 속에 감춰진 것들이 하나씩 모습을 드러내며 호기심을 자아내고, 시원한 아키갈라우드를 가득 머금은 공기가 스치면 젖은 대지 위 부드러운 이끼와 나뭇결의 내음이 뒤따르며 예상치 못한 향의 변주가 시작됩니다. 그리고 마침내 보따리가 완전히 펼쳐지면, 생소한 물건들이 쏟아져 나오듯이 신비로운 앰버그리스와 묵직한 머스크가 만나 폭발하듯 퍼뜨려지며 어두운 하늘에 반짝이는 수천 개의 별처럼 아름다운 형상을 수놓아 공기를 황홀하게 물들입니다."
         },
         {
           "productId": 3,
           "mainCategory": "style",
-          "keyword": "bag",
-          "itemName": "스투시 캔버스 엑스트라 라지 토트백 워시드 블랙",
-          "brand": "스투시",
-          "brandEng": "stussy",
-          "price": 115000,
-          "realeasedDate": 20250510,
-          "SellNum": 218,
+          "keyword": "acc",
+          "itemName": "캣 아이 S187 선글라스 - 아세테이트",
+          "brand": "셀린느",
+          "brandEng": "celine",
+          "price": 580000,
+          "releasedDate": 20241214,
+          "sellNum": 140,
           "detailImg": {
-            "img01": "https://kr.stussy.com/cdn/shop/files/134253_WABL_1.jpg?v=1743700814&width=1920",
-            "img02": "https://kr.stussy.com/cdn/shop/files/134253_WABL_2.jpg?v=1743700814&width=1920",
-            "img03": "https://kr.stussy.com/cdn/shop/files/134253_WABL_6_2d1bb3d6-db57-48c5-a937-666cac531671.jpg?v=1743700814&width=1920"
+            "img01": "https://www.celine.com/on/demandware.static/-/Sites-masterCatalog/default/dwe080ba28/images/large/4S187CPLB.38NO_1_FALL21.jpg?im=Resize=(480);AspectCrop=(1,1),xPosition=.5,yPosition=.5",
+            "img02": "https://www.celine.com/on/demandware.static/-/Sites-masterCatalog/default/dw6dbaafc1/images/large/4S187CPLB.38NO_2_FALL21.jpg?im=Resize=(480);AspectCrop=(1,1),xPosition=.5,yPosition=.5",
+            "img03": "https://www.celine.com/on/demandware.static/-/Sites-masterCatalog/default/dwebf91d78/images/large/4S187CPLB.38NO_5_SUM22.jpg?im=Resize=(1200);AspectCrop=(1,1),xPosition=.5,yPosition=.5"
           },
-          "description": "Oversized tote bag in 12oz cotton canvas. Large central compartment Interior drop pocket Two exterior pockets Webbed strap handles Double-layered base panel Unlined 100% cotton"
+          "description": "세련된 실루엣과 강렬한 존재감이 돋보이는 캣 아이 S187 선글라스는 클래식한 캣아이 쉐입에 현대적인 감각을 더한 아이템입니다. 고급 아세테이트 소재로 제작되어 가볍고 편안한 착용감을 제공하며, 매끄러운 광택감이 얼굴에 고급스러운 인상을 더해줍니다."
+        },
+        {
+          "productId": 4,
+          "mainCategory": "beauty",
+          "keyword": "body",
+          "itemName": "31 허브 오일 20ml",
+          "brand": "스위스유스트",
+          "brandEng": "swissjust",
+          "price": 17400,
+          "releasedDate": 20241215,
+          "sellNum": 590,
+          "detailImg": {
+            "img01": "https://img-cf.kurly.com/hdims/resize/%3E1010x/quality/90/src/shop/data/goodsview/20231121/gv00000196777_1.jpg",
+            "img02": "https://img-cf.kurly.com/hdims/resize/%3E1010x/quality/90/src/shop/data/goodsview/20210624/gv40000196779_1.jpg",
+            "img03": "https://img-cf.kurly.com/hdims/resize/%3E1010x/quality/90/src/shop/data/goodsview/20231121/gv00000196777_1.jpg"
+          },
+          "description": "자연이 선물한 31가지 허브의 에센스를 한 병에 담은 31 허브오일은 다양한 일상 속 케어에 활용할 수 있는 다목적 아로마 오일입니다. 유칼립투스, 라벤더, 로즈마리, 페퍼민트 등 천연 에센셜 오일이 조화롭게 블렌딩되어 상쾌하고 편안한 향을 선사하며, 일상 속 긴장을 완화하고 활력을 불어넣는 데 도움을 줍니다."
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "artistName": "우영",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2024/10/style_671b42acb6ded-800x1074.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://youtu.be/oxzMDqX1oRM?si=S6lL-Y4X4MX_xqB2",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "크로스 패치 더블 핀 벨트 가죽 숄더백",
+          "brand": "크롬하츠",
+          "brandEng": "chromehearts",
+          "price": 8000000,
+          "releasedDate": 20241216,
+          "sellNum": 80,
+          "detailImg": {
+            "img01": "https://archive-factory.com/cdn/shop/products/1094000787909576_01_271.jpg?v=1667112890&width=823",
+            "img02": "https://archive-factory.com/cdn/shop/products/1094000787909576_05_427.jpg?v=1667112893&width=823",
+            "img03": "https://archive-factory.com/cdn/shop/products/1094000787909576_06_47.jpg?v=1667112891&width=823"
+          },
+          "description": "아이코닉한 크로스 패치 디테일과 중후한 무드의 더블 핀 벨트 스트랩이 조화를 이루는 크롬하츠의 프리미엄 레더 숄더백.부드러운 천연 가죽 소재로 제작되어 시간이 지날수록 깊이 있는 텍스처와 광택을 더해가며, 고급스러운 무드를 완성합니다. 메인 수납공간은 일상 소지품을 넉넉히 수납할 수 있는 크기로, 실용성과 스타일을 동시에 만족시킵니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "맨 레인 에센스 오 드 퍼퓸",
+          "brand": "불가리",
+          "brandEng": "bulgari",
+          "price": 207000,
+          "releasedDate": 20241217,
+          "sellNum": 430,
+          "detailImg": {
+            "img01": "https://media.bulgari.com/image/upload/c_pad,h_1124,w_1440/q_auto/f_auto/1411428.png",
+            "img02": "https://media.bulgari.com/image/upload/c_pad,h_1124,w_1440/q_auto/f_auto/1411429.png",
+            "img03": "https://media.bulgari.com/image/upload/c_pad,h_1124,w_1440/q_auto/f_auto/1411428.png"
+          },
+          "description": "마스터 조향사 알베르토 모리야스는 생생한 비의 잔향을 고스란히 담았습니다. 가장 먼저 에너지를 불어넣어 주는 그린 티와 싱그럽고 화려한 오렌지 에센스가 등장합니다. 투명한 화이트 로터스 어코드와 우아한 카리스마를 지닌 크리스탈 머스크 어코드로 이루어진 하트 노트는 빗방울의 순수하고도 강렬한 매력을 발산합니다. 마지막으로 깊고 남성적인 미네랄 앰버와 과이악 우드 노트로 구성된 드라이 다운 노트는 비가 지나간 후, 공기 중에 남아 있는 신선한 감각을 선사합니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "실버 크로스 블랙 레더 카드홀더",
+          "brand": "크롬하츠",
+          "brandEng": "chromehearts",
+          "price": 3240000,
+          "releasedDate": 20241218,
+          "sellNum": 150,
+          "detailImg": {
+            "img01": "https://shengliroadmarket.com/cdn/shop/files/chrome-hearts-silver-cross-black-leather-cardholder-186584.jpg?v=1737953892&width=1080",
+            "img02": "https://shengliroadmarket.com/cdn/shop/files/chrome-hearts-silver-cross-black-leather-cardholder-135903.jpg?v=1737953892&width=1080",
+            "img03": "https://shengliroadmarket.com/cdn/shop/files/chrome-hearts-silver-cross-black-leather-cardholder-186584.jpg?v=1737953892&width=1080"
+          },
+          "description": "크롬하츠 특유의 실버 크로스 장식이 더해진 블랙 레더 카드홀더.부드럽고 견고한 천연 가죽 소재로 제작되어 오랜 사용에도 멋스러운 에이징이 기대되며, 심플한 디자인 속에서도 고급스러운 존재감을 드러냅니다. 전면에는 크롬하츠 시그니처 실버 크로스가 세련된 포인트로 자리하고 있으며, 슬림한 구조 덕분에 주머니나 작은 가방에도 간편하게 수납할 수 있습니다."
+        },
+        {
+          "productId": 4,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "비건 립 글로우",
+          "brand": "네시픽",
+          "brandEng": "nacific",
+          "price": 9000,
+          "releasedDate": 20241219,
+          "sellNum": 640,
+          "detailImg": {
+            "img01": "https://m.nacific.com/web/product/big/202310/6e406ced38508c20074b0c316c5af0e9.jpg",
+            "img02": "https://img.hwahae.co.kr/products/2015741/2015741_20221115141127.jpg",
+            "img03": "https://m.nacific.com/web/product/big/202310/6e406ced38508c20074b0c316c5af0e9.jpg"
+          },
+          "description": "입술에 자연스러운 생기와 촉촉함을 더해주는 비건 립밤. 자연 유래 성분과 식물성 오일이 입술을 부드럽게 감싸주며, 끈적임 없이 산뜻한 발림성을 자랑합니다. 데일리로 사용하기 좋은 컬러감과 부담 없는 광택으로 건강한 입술을 연출해 보세요."
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "artistName": "안효섭",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2024/10/style_6710b8c09ce3a-800x1000.jpg",
+      "jobCategory": "actor",
+      "videoURL": "https://youtu.be/UIvBFDpcXh8?si=8lYsvc9cNvkfmglE",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "네오크록 더플백",
+          "brand": "라코스테",
+          "brandEng": "lacoste",
+          "price": 135150,
+          "releasedDate": 20241220,
+          "sellNum": 50,
+          "detailImg": {
+            "img01": "https://asset.m-gs.kr/prod/1061160852/1/550",
+            "img02": "https://asset.m-gs.kr/prod/1061160852/3/550",
+            "img03": "https://asset.m-gs.kr/prod/1061160852/4/550"
+          },
+          "description": "심플한 디자인과 실용성을 겸비한 라코스테 더플백. 넉넉한 수납공간과 가벼운 방수 소재로 제작되어 여행, 운동, 데일리용으로 활용도가 높습니다.라코스테 특유의 크로커다일 로고가 세련된 포인트를 더하며, 토트와 크로스 모두 가능한 스트랩 구성으로 편리함까지 갖춘 아이템입니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "우븐 셋업 자켓",
+          "brand": "라코스테",
+          "brandEng": "lacoste",
+          "price": 153300,
+          "releasedDate": 20241221,
+          "sellNum": 80,
+          "detailImg": {
+            "img01": "https://imageapac1.lacoste.com/dw/image/v2/BBCL_PRD/on/demandware.static/-/Sites-master/default/dwc08a62c8/SH214E-54NH_031_24.jpg?imwidth=615&impolicy=pctp",
+            "img02": "https://imageapac1.lacoste.com/dw/image/v2/BBCL_PRD/on/demandware.static/-/Sites-master/default/dw770124fb/SH214E-54NH_031_31.jpg?imwidth=615&impolicy=pctp",
+            "img03": "https://imageapac1.lacoste.com/dw/image/v2/BBCL_PRD/on/demandware.static/-/Sites-master/default/dw188431e0/SH214E-54NH_031_34.jpg?imwidth=615&impolicy=pctp"
+          },
+          "description": "경량 소재로 제작된 라코스테 우븐자켓. 심플하면서도 깔끔한 디자인에 뛰어난 활동성과 내구성을 갖추어 일상은 물론 야외 활동에도 적합합니다.라코스테 시그니처 크로커다일 로고가 포인트로 들어가 있어 세련된 스타일을 완성해 줍니다."
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "artistName": "마이큐",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2024/09/style_66f39ef2592ec-800x1000.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://youtu.be/4oGWhRQlyEQ?si=uaxQzL98McUO0HiL",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "캔버스토트백",
+          "brand": "유니클로",
+          "brandEng": "UNIQLO",
+          "price": 12900,
+          "releasedDate": 20241222,
+          "sellNum": 730,
+          "detailImg": {
+            "img01": "https://image.uniqlo.com/UQ/ST3/kr/imagesgoods/467521/sub/krgoods_467521_sub14_3x4.jpg?width=750",
+            "img02": "https://image.uniqlo.com/UQ/ST3/kr/imagesgoods/467521/sub/krgoods_467521_sub14_3x4.jpg?width=750",
+            "img03": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/467521/sub/goods_467521_sub18_3x4.jpg?width=400"
+          },
+          "description": "심플한 디자인과 실용성을 겸비한 캔버스 토트백입니다. 견고한 캔버스 소재로 제작되어 일상 생활에서의 다양한 용도로 활용이 가능합니다. 넉넉한 수납 공간과 튼튼한 손잡이가 특징으로, 데일리 백으로 적합합니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "러닝 캡",
+          "brand": "소어 러닝",
+          "brandEng": "soarrunning",
+          "price": 86000,
+          "releasedDate": 20241223,
+          "sellNum": 120,
+          "detailImg": {
+            "img01": "https://www.soarrunning.com/cdn/shop/files/SA4MW-Blue-Tone-Product_001_1296x.png?v=1742903614",
+            "img02": "https://www.soarrunning.com/cdn/shop/files/SA4MW-Blue-Tone-Product_002_1296x.png?v=1742903614",
+            "img03": "https://www.soarrunning.com/cdn/shop/files/SA4MW-Blue-Tone-Product_001_1296x.png?v=1742903614"
+          },
+          "description": "가볍고 통기성이 뛰어난 러너 전용 모자입니다. 고기능성 소재로 제작되어 땀을 빠르게 배출하고, 머리에 밀착되는 안정적인 핏을 제공합니다. 햇빛을 효과적으로 차단하면서도 장시간 착용에도 부담 없는 착용감으로 러닝에 최적화된 디자인입니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "드라이 백",
+          "brand": "나헤",
+          "brandEng": "nahe",
+          "price": 23500,
+          "releasedDate": 20241224,
+          "sellNum": 30,
+          "detailImg": {
+            "img01": "https://dasneue.jp/cdn/shop/files/IMG_1838.jpg?v=1734059690&width=480",
+            "img02": "https://item-shopping.c.yimg.jp/i/n/kt-gigaweb_598-gb320_2_d_20230604153236",
+            "img03": "https://dasneue.jp/cdn/shop/files/IMG_1838.jpg?v=1734059690&width=480"
+          },
+          "description": "나일론으로 제작되어 엄청 가볍고 생활방수가 가능하여 아웃도어용으로 최적입니다. 캠핑활동 또는 운동 시, 필요한 물건들을 담아 사용해보세요. 소재 특성 상, 약간의 비침이 있습니다. 손잡이는 상단 부분을 돌돌 말아 버클을 연결해주세요. 보관할 때는 끝까지 말아 접어 컴팩트하게 보관할 수 있습니다."
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "artistName": "고준희",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2024/09/style_66e3ca93d0474-744x930.jpg",
+      "jobCategory": "actor",
+      "videoURL": "https://youtu.be/fKUE8BjsvHM?si=6capAWzzk1yWy--I",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "코듀라 나일론 베이직 백팩",
+          "brand": "벗딥",
+          "brandEng": "butdeep",
+          "price": 59000,
+          "releasedDate": 20241225,
+          "sellNum": 260,
+          "detailImg": {
+            "img01": "https://contents.sixshop.com/thumbnails/uploadedFiles/14451/product/image_1580887222986_1000.jpg",
+            "img02": "https://contents.sixshop.com/thumbnails/uploadedFiles/14451/product/image_1580887222986_1000.jpg",
+            "img03": "https://contents.sixshop.com/thumbnails/uploadedFiles/14451/product/image_1580887222986_1000.jpg"
+          },
+          "description": "심플한 디자인과 실용성을 겸비한 캔버스 토트백입니다. 견고한 캔버스 소재로 제작되어 일상 생활에서의 다양한 용도로 활용이 가능합니다. 넉넉한 수납 공간과 튼튼한 손잡이가 특징으로, 데일리 백으로 적합합니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "시그니처 에스투드 프로텍터",
+          "brand": "데마르3",
+          "brandEng": "demar3",
+          "price": 43990,
+          "releasedDate": 20241226,
+          "sellNum": 780,
+          "detailImg": {
+            "img01": "https://sitem.ssgcdn.com/18/98/20/item/1000070209818_i1_750.jpg",
+            "img02": "https://sitem.ssgcdn.com/18/98/20/item/1000070209818_i1_750.jpg",
+            "img03": "https://sitem.ssgcdn.com/18/98/20/item/1000070209818_i1_750.jpg"
+          },
+          "description": "트러블과 악취를 유발하는 불쾌한 노폐물을 말끔히 흡착하면서, 세정 후 당김없이 촉촉한 수분감을 남겨주는 여드름성 피부 완화 기능성 바디 클렌저입니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "블랙팬텀 메멘토 모리",
+          "brand": "킬리안",
+          "brandEng": "kilian",
+          "price": 366000,
+          "releasedDate": 20241227,
+          "sellNum": 129,
+          "detailImg": {
+            "img01": "https://chelseanose.com/web/product/big/202206/288111c5a883cd96931c29b106bdb1b4.png",
+            "img02": "https://chelseanose.com/web/product/big/202206/288111c5a883cd96931c29b106bdb1b4.png",
+            "img03": "https://chelseanose.com/web/product/big/202206/288111c5a883cd96931c29b106bdb1b4.png"
+          },
+          "description": "킬리안 블랙 팬텀 메멘토 모리는 파도 사이에 숨겨진 보물을 코로 드러냅니다. 진정한 '해적 술'인 마르티니크 럼 어코드는 베티버의 에센스와 균형을 이루는 진한 커피 향이 마음에 스며듭니다. 죽음의 미소처럼 은폐된 청산가리의 치명적인 위협. 달콤한 보상과 함께 힘든 여정의 끝에 사탕수수 설탕과 진하고 크리미한 샌달우드로 미소를 재발견하십시오."
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "artistName": "조슈아",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2024/09/style_66ed4bdacaca7-800x1000.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://youtu.be/kZx4sJQiNRo?si=fd_fSygYNtzOYg0s",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "페블 그레인 라지 듀엣 토트",
+          "brand": "톰 브라운",
+          "brandEng": "thombrowne",
+          "price": 3850000,
+          "releasedDate": 20241228,
+          "sellNum": 530,
+          "detailImg": {
+            "img01": "https://www.thombrowne.com/cdn/shop/files/MAG228A-00198-001_V1.jpg?v=1740675280&width=1000",
+            "img02": "https://www.thombrowne.com/cdn/shop/files/MAG228A-00198-001_V2.jpg?v=1740675280&width=1000",
+            "img03": "https://www.thombrowne.com/cdn/shop/files/MAG228A-00198-001_V3.jpg?v=1740675280&width=1000"
+          },
+          "description": "페블 그레인 라지 듀엣 토트는 기능성과 세련된 감각을 모두 품어내어 톰브라운의 모든 수트에 어울리는 감각적인 액세서리로, 브라스 하드웨어와 시그니처 골드 포일 로고가 돋보이는 실루엣입니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "베이 19",
+          "brand": "르 라보",
+          "brandEng": "lelabo",
+          "price": 310000,
+          "releasedDate": 20241229,
+          "sellNum": 78,
+          "detailImg": {
+            "img01": "https://lelabokorea-java.s3.amazonaws.com/images/skus/J2JX01R000__PRODUCT_01--IMG_1200--BAIE19--1721859346.jpg",
+            "img02": "https://lelabokorea-java.s3.amazonaws.com/images/skus/J2JX01R000__PRODUCT_01--IMG_1200--BAIE19--1721859346.jpg",
+            "img03": "https://lelabokorea-java.s3.amazonaws.com/images/skus/J2JX01R000__PRODUCT_01--IMG_1200--BAIE19--1721859346.jpg"
+          },
+          "description": "사실 BAIE 19는 ‘WATER 19’로 불릴 뻔했습니다. 아무 향기도 나지 않아서가 아니라(물론 어떤 것도 물과 같은 향기가 나진 않죠.), 비가 내린 뒤 물이 땅에 선사하는 상쾌하고, 촉촉하면서도 흠뻑 젖어 드는 느낌을 담아냈기 때문입니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "블랙팬텀 메멘토 모리",
+          "brand": "킬리안",
+          "brandEng": "kilian",
+          "price": 366000,
+          "releasedDate": 20241230,
+          "sellNum": 129,
+          "detailImg": {
+            "img01": "https://chelseanose.com/web/product/big/202206/288111c5a883cd96931c29b106bdb1b4.png",
+            "img02": "https://chelseanose.com/web/product/big/202206/288111c5a883cd96931c29b106bdb1b4.png",
+            "img03": "https://chelseanose.com/web/product/big/202206/288111c5a883cd96931c29b106bdb1b4.png"
+          },
+          "description": "킬리안 블랙 팬텀 메멘토 모리는 파도 사이에 숨겨진 보물을 코로 드러냅니다. 진정한 '해적 술'인 마르티니크 럼 어코드는 베티버의 에센스와 균형을 이루는 진한 커피 향이 마음에 스며듭니다. 죽음의 미소처럼 은폐된 청산가리의 치명적인 위협. 달콤한 보상과 함께 힘든 여정의 끝에 사탕수수 설탕과 진하고 크리미한 샌달우드로 미소를 재발견하십시오."
+        },
+        {
+          "productId": 4,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "34번가 생제르망 오 드 뚜왈렛",
+          "brand": "딥디크",
+          "brandEng": "diptyque",
+          "price": 192000,
+          "releasedDate": 20241231,
+          "sellNum": 129,
+          "detailImg": {
+            "img01": "https://cf.bysuco.net/bebb5fbbd102b705c5e07b177e0e17c8.jpg?w=600",
+            "img02": "https://cf.bysuco.net/220513bd45e9a64f54e328f80d3669bb.jpg?w=600",
+            "img03": "https://cf.bysuco.net/bebb5fbbd102b705c5e07b177e0e17c8.jpg?w=600"
+          },
+          "description": "은은한 플로럴 머스크 향이 매력적인 향수로, 싱그러운 시트러스와 부드러운 장미, 따뜻한 머스크가 조화를 이루며 산뜻하고 세련된 분위기를 연출합니다. 데일리로 사용하기 좋고, 남녀 모두에게 잘 어울립니다."
+        },
+        {
+          "productId": 5,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "바카라 루쥬 540 엑스트레 드 퍼퓸",
+          "brand": "메종프란시스커정",
+          "brandEng": "maisonfranciskurkdjian",
+          "price": 558000,
+          "releasedDate": 20250101,
+          "sellNum": 238,
+          "detailImg": {
+            "img01": "https://sitem.ssgcdn.com/66/15/60/item/1000023601566_i1_1200.jpg",
+            "img02": "https://sitem.ssgcdn.com/66/15/60/item/1000023601566_i2_1200.jpg",
+            "img03": "https://sitem.ssgcdn.com/66/15/60/item/1000023601566_i3_1200.jpg"
+          },
+          "description": "깊고 풍부한 앰버 플로럴 향이 특징. 사프란과 아몬드의 따뜻함이 자스민과 우디 노트로 이어지며, 부드러운 머스크와 앰버그리스가 잔향을 오래 남깁니다. 강렬하고 고급스러운 분위기를 연출하며 특별한 날에 잘 어울립니다."
+        },
+        {
+          "productId": 6,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "톰포드 프라이빗 블렌드 느와드느와 오드 퍼퓸",
+          "brand": "톰포드",
+          "brandEng": "tomford",
+          "price": 586280,
+          "releasedDate": 20250102,
+          "sellNum": 358,
+          "detailImg": {
+            "img01": "https://shopping-premiereavenue.com/medias/products/3486/600x600/noir-de-noir-tom-ford-14399.jpg",
+            "img02": "https://shopping-premiereavenue.com/medias/products/3486/600x600/noir-de-noir-tom-ford-14399.jpg",
+            "img03": "https://shopping-premiereavenue.com/medias/products/3486/600x600/noir-de-noir-tom-ford-14399.jpg"
+          },
+          "description": "Tom Ford의 '느와 드 느와(Noir de Noir)'는 풍부하고 관능적인 향수로, 남성과 여성 모두에게 어울립니다. 이 향수는 사프란, 블랙 트러플, 블랙 로즈의 조합으로 깊고 어두운 플로럴 향을 선사하며, 바닐라, 패출리, 우드 노트가 따뜻하고 달콤한 잔향을 남깁니다."
+        },
+        {
+          "productId": 7,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "톰포드 화이트 스웨이드 오 드 퍼퓸",
+          "brand": "톰포드",
+          "brandEng": "tomford",
+          "price": 273000,
+          "releasedDate": 20250103,
+          "sellNum": 548,
+          "detailImg": {
+            "img01": "https://kream-phinf.pstatic.net/MjAyMjA5MTlfMjA0/MDAxNjYzNTcxMTMyODY0.p8_x7hZGuOB98TINrrcqquU9kpu4ikXhUYfOTV_AE-cg.LHk2QCdpRjKSPQKxSXsxjgwRff2EWKThQYCf22q2DAcg.PNG/a_0399f63512e343f0820be045aaeb0132.png?type=l_webp",
+            "img02": "https://kream-phinf.pstatic.net/MjAyMjA5MTlfMjA0/MDAxNjYzNTcxMTMyODY0.p8_x7hZGuOB98TINrrcqquU9kpu4ikXhUYfOTV_AE-cg.LHk2QCdpRjKSPQKxSXsxjgwRff2EWKThQYCf22q2DAcg.PNG/a_0399f63512e343f0820be045aaeb0132.png?type=l_webp",
+            "img03": "https://kream-phinf.pstatic.net/MjAyMjA5MTlfMjA0/MDAxNjYzNTcxMTMyODY0.p8_x7hZGuOB98TINrrcqquU9kpu4ikXhUYfOTV_AE-cg.LHk2QCdpRjKSPQKxSXsxjgwRff2EWKThQYCf22q2DAcg.PNG/a_0399f63512e343f0820be045aaeb0132.png?type=l_webp"
+          },
+          "description": "부드러운 머스크와 은은한 플로럴, 따뜻한 우디 노트가 조화를 이룸. 스웨이드 특유의 포근한 질감이 고급스럽게 느껴지며, 깔끔하고 세련된 인상을 줌. 사계절 모두 어울리며 데일리 향수로 적합합니다."
+        },
+        {
+          "productId": 8,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "루즈 안텔디 립밤",
+          "brand": "지방시",
+          "brandEng": "givenchy",
+          "price": 76500,
+          "releasedDate": 20250104,
+          "sellNum": 548,
+          "detailImg": {
+            "img01": "https://a.cdnsbn.com/images/products/l/31379484202-2.jpg",
+            "img02": "https://www.harpersbazaar.co.kr/resources_old/online/org_online_image/0d50a9ec-5f62-401e-905f-3e2ec9229813.jpg",
+            "img03": "https://a.cdnsbn.com/images/products/l/31379484202-2.jpg"
+          },
+          "description": "지방시의 '르 루즈 앙떼르디 밤(Le Rouge Interdit Baume)'은 96% 자연 유래 성분으로 구성된 립밤으로, 히알루론산, 호호바씨 추출물, 아크멜라 올레라세아 꽃 추출물이 함유되어 최대 24시간 보습 효과를 제공합니다."
+        },
+        {
+          "productId": 9,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "스몰 플랩 지갑 그레인드 샤이니 카프스킨 골드 메탈 블랙 ",
+          "brand": "지방시",
+          "brandEng": "givenchy",
+          "price": 2200000,
+          "releasedDate": 20250105,
+          "sellNum": 180,
+          "detailImg": {
+            "img01": "https://asset.m-gs.kr/prod/1082496038/1/550",
+            "img02": "https://asset.m-gs.kr/prod/1082496038/2/550",
+            "img03": "https://asset.m-gs.kr/prod/1082496038/3/550"
+          },
+          "description": "블랙 그레인드 샤이니 카프스킨에 골드 메탈 장식이 어우러진 스몰 플랩 지갑입니다. 아이코닉한 CC 로고가 앞면에 있으며, 스냅 버튼으로 여닫도록 되어 있습니다. 내부에는 지퍼 동전 주머니, 카드 슬롯 6개, 지폐 수납 공간이 있어 실용적입니다."
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "artistName": "범규",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2024/09/style_66f3d2584c4aa.jpg",
+      "jobCategory": "actor",
+      "videoURL": "https://youtu.be/jf9K-zDcxZc?si=dehxXrjVm7LvQjU5",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "D-Vibe 라지 볼링백",
+          "brand": "디올",
+          "brandEng": "dior",
+          "price": 5000000,
+          "releasedDate": 20250106,
+          "sellNum": 89,
+          "detailImg": {
+            "img01": "https://assets.christiandior.com/is/image/diorprod/M1341UTZQM928_E01?$default_GHC$&crop=169,124,1751,1744&wid=1440&hei=1557&scale=0.6811&bfc=on&qlt=85",
+            "img02": "https://assets.christiandior.com/is/image/diorprod/M1341UTZQM928_E03?$default_GHC$&crop=325,204,1392,1649&wid=1440&hei=1557&scale=0.6811&bfc=on&qlt=85",
+            "img03": "https://assets.christiandior.com/is/image/diorprod/M1341UTZQM928_E06?$default_GHC$&crop=413,181,1062,1637&wid=1440&hei=1557&scale=0.6811&bfc=on&qlt=85"
+          },
+          "description": "심플하고 모던한 실루엣의 D-Vibe 라지 볼링백입니다. 블루 Dior Oblique 자카드 소재와 톤온톤 가죽 디테일로 제작되었으며, Christian Dior Paris 시그니처 인그레이빙과 골드 피니시 별로 장식한 가죽 열쇠 홀더가 특징입니다. 부착된 열쇠로 지퍼 자물쇠를 열면 슬립 포켓 1개 및 지퍼 포켓 1개를 갖춘 넉넉한 수납공간이 나타나 데일리 소지품을 모두 보관할 수 있습니다. 길이 조절 가능한 탈착식 스트랩과 가죽 탑 핸들로 완성된 실용적인 라지 백으로 핸드백, 숄더백, 크로스백으로 연출하기 좋습니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "버티컬 2단 카드 지갑",
+          "brand": "디올",
+          "brandEng": "dior",
+          "price": 590000,
+          "releasedDate": 20250107,
+          "sellNum": 320,
+          "detailImg": {
+            "img01": "https://assets.christiandior.com/is/image/diorprod/2ESCH138YSEH03E_E01?$default_GHC$&crop=723,1049,554,756&wid=1850&hei=2000&scale=0.875&bfc=on&qlt=85",
+            "img02": "https://assets.christiandior.com/is/image/diorprod/2ESCH138YSEH03E_E08?$default_GHC$&crop=728,1048,567,746&wid=1440&hei=1557&scale=0.6811&bfc=on&qlt=85",
+            "img03": "https://assets.christiandior.com/is/image/diorprod/2ESCH138YSEH03E_E07?$default_GHC$&crop=461,1012,1078,787&wid=1440&hei=1557&scale=0.6811&bfc=on&qlt=85"
+          },
+          "description": "세련된 디자인의 실용적인 버티컬 2단 카드 지갑입니다. 디올 하우스만의 노하우가 드러나는 아이템으로 외부는 블랙 Dior Oblique 자카드, 내부는 블랙 송아지 가죽 소재로 제작되었습니다. 양쪽에 카드 슬롯이 3개씩 마련되어 있고 2개의 슬립 포켓에 영수증을 보관할 수 있습니다. 다양한 포켓에 손쉽게 휴대하기 좋은 우아한 카드 지갑입니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "미스 디올 헤어 미스트",
+          "brand": "디올",
+          "brandEng": "dior",
+          "price": 71000,
+          "releasedDate": 20250108,
+          "sellNum": 670,
+          "detailImg": {
+            "img01": "https://kream-phinf.pstatic.net/MjAyNTAzMDRfMTEw/MDAxNzQxMDUzNTcwNjA0.hkQ4kewP0pu-aH0IBkLBl2qNd2qrI0K-RPEx9C-WRxUg.Aur3RtyLMrM3jMOwmeyvrOXgwOrq0AW7bpo12gMxmfkg.PNG/a_43cc3178aa1f4efaacb665a38198d0f7.png?type=l_webp",
+            "img02": "https://kream-phinf.pstatic.net/MjAyNTAzMDRfMTEw/MDAxNzQxMDUzNTcwNjA0.hkQ4kewP0pu-aH0IBkLBl2qNd2qrI0K-RPEx9C-WRxUg.Aur3RtyLMrM3jMOwmeyvrOXgwOrq0AW7bpo12gMxmfkg.PNG/a_43cc3178aa1f4efaacb665a38198d0f7.png?type=l_webp",
+            "img03": "https://kream-phinf.pstatic.net/MjAyNTAzMDRfMTEw/MDAxNzQxMDUzNTcwNjA0.hkQ4kewP0pu-aH0IBkLBl2qNd2qrI0K-RPEx9C-WRxUg.Aur3RtyLMrM3jMOwmeyvrOXgwOrq0AW7bpo12gMxmfkg.PNG/a_43cc3178aa1f4efaacb665a38198d0f7.png?type=l_webp"
+          },
+          "description": "벨벳처럼 부드럽고 감각적인 미스 디올 오 드 퍼퓸의 향기를 그대로 옮겨 놓은 헤어 미스트는 봄에 핀 꽃으로 만든 플로럴 부케처럼 싱그러운 향을 선사합니다. 로즈워터가 함유된 워터 베이스 포뮬러의 헤어 미스트는 다채로운 플로럴 노트가 우디 어코드에 부드럽게 감싸여 마치 '밀레피오리'처럼 다채로운 향기를 선사합니다. 새로운 이 헤어 미스트는 미스 디올 오 드 퍼퓸의 섬세한 향을 오래도록 선명하게 표현해 줍니다."
+        },
+        {
+          "productId": 4,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "이뮨 멀티비타민&미네랄",
+          "brand": "오쏘몰",
+          "brandEng": "orthomol",
+          "price": 38000,
+          "releasedDate": 20250109,
+          "sellNum": 780,
+          "detailImg": {
+            "img01": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0014/A00000014269524ko.jpg?qt=80",
+            "img02": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0014/A00000014269524ko.jpg?qt=80",
+            "img03": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0014/A00000014269524ko.jpg?qt=80"
+          },
+          "description": "오쏘몰 이뮨 멀티비타민&미네랄은 면역 기능 강화에 도움을 줄 수 있는 고함량 복합 영양제입니다. 비타민 C, 비타민 D, 아연을 비롯한 20여 가지 이상의 비타민과 미네랄이 균형 있게 함유되어 있어 일상 속 영양 불균형을 해소하는 데 도움을 줍니다. 특히 신체 활력 유지와 스트레스 환경에서의 면역력 보강에 초점을 맞춰 개발되었습니다."
+        },
+        {
+          "productId": 5,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "브라이트 크리스탈 향수",
+          "brand": "베르사체",
+          "brandEng": "vesace",
+          "price": 245000,
+          "releasedDate": 20250110,
+          "sellNum": 450,
+          "detailImg": {
+            "img01": "https://www.versace.com/dw/image/v2/BGWN_PRD/on/demandware.static/-/Sites-ver-master-catalog/default/dwb160920c/original/90_R512032-R090MLS_RNUL_20_BrightCrystalParfum90ml-Bright~Crystal-Versace-online-store_1_1.jpg?sw=850&q=85&strip=true",
+            "img02": "https://www.versace.com/dw/image/v2/BGWN_PRD/on/demandware.static/-/Sites-ver-master-catalog/default/dw081650b0/original/90_R512032-R090MLS_RNUL_22_BrightCrystalParfum90ml-Bright~Crystal-Versace-online-store_0_1.jpg?sw=850&q=85&strip=true",
+            "img03": "https://www.versace.com/dw/image/v2/BGWN_PRD/on/demandware.static/-/Sites-ver-master-catalog/default/dwb160920c/original/90_R512032-R090MLS_RNUL_20_BrightCrystalParfum90ml-Bright~Crystal-Versace-online-store_1_1.jpg?sw=850&q=85&strip=true"
+          },
+          "description": "자신감 넘치고 매력적인 베르사체 여성을 상징하는 관능적이고 여성스러운 향수입니다. 감각을 만족시키는 흥미로우면서도 섬세한 노트를 선사하는 향수입니다."
+        },
+        {
+          "productId": 6,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "스텔레어 O8 010 팔라디움",
+          "brand": "디올",
+          "brandEng": "dior",
+          "price": 920000,
+          "releasedDate": 20250111,
+          "sellNum": 230,
+          "detailImg": {
+            "img01": "https://image.sivillage.com/upload/C00001/s3/goods/org/205/240705023839205.jpg?RS=600&SP=1",
+            "img02": "https://image.sivillage.com/upload/C00001/s3/goods/org/206/240705023839206.jpg?RS=600&SP=1",
+            "img03": "https://image.sivillage.com/upload/C00001/s3/goods/org/207/240705023839207.jpg?RS=600&SP=1"
+          },
+          "description": "DIORSTELLAIREO8 010 PALLADIUM은 디올(DIOR)의 여성용 선글라스 모델로, 고급스러우면서도 세련된 분위기를 자아내는 아이웨어입니다. 이 제품은 가볍고 견고한 팔라디움(Palladium) 컬러의 메탈 프레임으로 제작되었으며, 디올 특유의 미니멀하고 우아한 디자인이 특징입니다. 오버사이즈 형태의 얇은 프레임은 얼굴형에 구애받지 않고 자연스럽게 어우러지며, 세련된 도시적 무드를 연출해 줍니다."
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "artistName": "임성진",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2024/07/style_66a073c6c51bc-scaled.jpg",
+      "jobCategory": "sports",
+      "videoURL": "https://youtu.be/ns4rnsWn14U?si=kQffVWHFiDxIm7Hz",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "에이펙스 유틸리티 백팩",
+          "brand": "푸마",
+          "brandEng": "puma",
+          "price": 189000,
+          "releasedDate": 20250112,
+          "sellNum": 39,
+          "detailImg": {
+            "img01": "https://image.yswholesale.com/picture/yssports/800-1(24400).jpg",
+            "img02": "https://image.yswholesale.com/picture/yssports/800-2(7784).jpg",
+            "img03": "https://image.yswholesale.com/picture/yssports/800-1(24400).jpg"
+          },
+          "description": "푸마 에이펙스 유틸리티 백팩은 일상생활과 다양한 활동에 적합하도록 설계된 다용도 백팩입니다. 고급 폴리에스터 소재를 사용하여 내구성이 뛰어나며, 생활 방수 기능을 갖추고 있어 다양한 날씨 조건에서도 사용 가능합니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "게임코트 2.0 올코트 테니스화 인도어화",
+          "brand": "아디다스",
+          "brandEng": "adidas",
+          "price": 65000,
+          "releasedDate": 20250113,
+          "sellNum": 320,
+          "detailImg": {
+            "img01": "https://cdn.media.amplience.net/i/frasersdev/14522701_o?fmt=auto&upscale=false&w=1534&h=1534&sm=scaleFit&$h-ttl$",
+            "img02": "https://cdn.media.amplience.net/i/frasersdev/14522701_o_a2?fmt=auto&upscale=false&w=1534&h=1534&sm=scaleFit&$h-ttl$",
+            "img03": "https://cdn.media.amplience.net/i/frasersdev/14522701_o_a3?fmt=auto&upscale=false&w=1534&h=1534&sm=scaleFit&$h-ttl$"
+          },
+          "description": "아디다스 게임코트 2.0 올코트 테니스화는 다양한 코트 환경에서 활용 가능한 다목적 테니스화로, 가벼운 메쉬 갑피가 뛰어난 통기성을 제공하며 발을 쾌적하게 유지해준다. 중족부를 안정적으로 잡아주어 격한 움직임에도 발을 편안하게 지지해주며, EVA 미드솔이 충격을 효과적으로 흡수해 장시간 착용 시에도 피로감을 줄여준다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "불가리 알루미늄 워치",
+          "brand": "불가리",
+          "brandEng": "bvlgari",
+          "price": 6900000,
+          "releasedDate": 20250114,
+          "sellNum": 70,
+          "detailImg": {
+            "img01": "https://media.bulgari.com/image/upload/c_pad,h_1874,w_2400/q_auto/f_auto/1488363.png",
+            "img02": "https://media.bulgari.com/image/upload/c_pad,h_1874,w_2400/q_auto/f_auto/1488359.png",
+            "img03": "https://media.bulgari.com/image/upload/c_pad,h_1874,w_2400/q_auto/f_auto/1488361.png"
+          },
+          "description": "불가리 알루미늄 워치. 메커니컬 매뉴팩처 무브먼트, 오토매틱 와인딩, 크로노그래프, 41mm 사이즈, 알루미늄 소재의 케이스, 티타늄 소재의 케이스백, 불가리 더블 로고가 음각된 블랙 러버 베젤, 그레이 다이얼, 블랙 러버 브레이슬릿. 최대 100미터 방수 기능"
+        },
+        {
+          "productId": 4,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "스페이셜 센트 섀도우",
+          "brand": "이스턴 에디션",
+          "brandEng": "easternedition",
+          "price": 90000,
+          "releasedDate": 20250115,
+          "sellNum": 40,
+          "detailImg": {
+            "img01": "https://eastern-edition.com/web/eefproduct/spatial%20scent-shadow%20detail-1.jpg",
+            "img02": "https://eastern-edition.com/web/eefproduct/spatial%20scent-shadow%20detail-2.jpg",
+            "img03": "https://eastern-edition.com/web/eefproduct/spatial%20scent-shadow%20detail-1.jpg"
+          },
+          "description": "한옥의 고요한 그림자와 공간의 잔향을 모티브로 만들어진 룸 스프레이입니다. 베르가못과 자몽의 상쾌한 첫 향에 생강과 쿠민, 허브의 따뜻한 향이 어우러지며, 이어지는 제라늄과 은방울꽃, 목련이 은은하고 차분한 플로럴 계열의 분위기를 형성합니다. 마지막으로 시더우드와 샌달우드, 패출리, 이끼가 공간에 깊이와 안정감을 더해주며, 앰버와 바닐라가 은은한 잔향으로 오래 남습니다.."
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "artistName": "선미",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2024/06/style_6678cfd5471fe.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://youtu.be/oPHaXmwhicQ?si=6cWj6lLEGAlGtzEI",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "아크네 스튜디오 데님 백팩",
+          "brand": "아크네",
+          "brandEng": "acnestudios",
+          "price": 530000,
+          "releasedDate": 20250116,
+          "sellNum": 283,
+          "detailImg": {
+            "img01": "https://product-image.wconcept.co.kr/productimg/image/img0/36/305783836_GG16908.jpg",
+            "img02": "https://product-image.wconcept.co.kr/productimg/image/img9/36/305783836_add1_GG52085.jpg",
+            "img03": "https://product-image.wconcept.co.kr/productimg/image/img9/36/305783836_add2_NJ18978.jpg"
+          },
+          "description": "이 백팩은 순면 데님으로 제작되었으며, 다양한 워싱 기법을 활용한 패치워크 디자인이 특징입니다. 라이트 워시부터 다크 인디고까지의 색상 조합이 조화를 이루며, 실용적인 포켓이 배치되어 있어 수납에 용이합니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "플뢰르 나르코티끄 오 드 퍼퓸",
+          "brand": "엑스니힐로",
+          "brandEng": "exnihilo",
+          "price": 300000,
+          "releasedDate": 20250117,
+          "sellNum": 233,
+          "detailImg": {
+            "img01": "https://image.sivillage.com/upload/C00001/goods/org/823/210309001111823.jpg?RS=600&SP=1",
+            "img02": "https://image.sivillage.com/upload/C00001/goods/org/823/210309001111823.jpg?RS=600&SP=1",
+            "img03": "https://image.sivillage.com/upload/C00001/goods/org/823/210309001111823.jpg?RS=600&SP=1"
+          },
+          "description": "첫 향은 리치와 복숭아, 베르가못이 어우러진 상큼한 과일 향으로 시작한다. 이어 작약, 자스민, 오렌지 블로섬이 중심을 이루며 화사하고 여성스러운 플로럴 노트가 퍼진다. 잔향은 머스크와 우디한 노트가 부드럽고 포근하게 마무리되며, 전체적으로 섬세하면서도 세련된 분위기를 준다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "로사 노벨라 오드코롱",
+          "brand": "산타마리아노벨라",
+          "brandEng": "santamarianovella",
+          "price": 130000,
+          "releasedDate": 20250118,
+          "sellNum": 370,
+          "detailImg": {
+            "img01": "https://image.sivillage.com/upload/C00001/goods/org/392/210924001482392.jpg?RS=600&SP=1",
+            "img02": "https://image.sivillage.com/upload/C00001/goods/org/392/210924001482392.jpg?RS=600&SP=1",
+            "img03": "https://image.sivillage.com/upload/C00001/goods/org/392/210924001482392.jpg?RS=600&SP=1"
+          },
+          "description": "장미와 가데니아 꽃의 우아한 조화를 담은 플로럴-머스크 계열의 향수입니다. 이 향수는 베르가못, 아몬드 블라썸, 오렌지 블라썸의 상쾌한 탑 노트로 시작하여, 가데니아, 센티폴리아 로즈, 무화과 잎, 자스민의 풍부한 미들 노트를 거쳐, 샌달우드, 바닐라, 머스크의 부드러운 베이스 노트로 마무리됩니다."
+        },
+        {
+          "productId": 4,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "트래블 케이스 헥사곤 블랙마블",
+          "brand": "엑스니힐로",
+          "brandEng": "exnihilo",
+          "price": 150000,
+          "releasedDate": 20250119,
+          "sellNum": 440,
+          "detailImg": {
+            "img01": "https://image.sivillage.com/upload/C00001/goods/org/752/210512001224752.jpg?RS=600&SP=1",
+            "img02": "https://image.sivillage.com/upload/C00001/goods/org/751/210512001224751.jpg?RS=600&SP=1",
+            "img03": "https://image.sivillage.com/upload/C00001/goods/org/753/210512001224753.jpg?RS=600&SP=1"
+          },
+          "description": "엑스 니힐로(EX NIHILO)의 헥사곤 블랙 마블(Hexagone Black Marble) 트래블 케이스는 프랑스의 별칭인 '육각형'과 브랜드의 육각형 로고에서 영감을 받아 디자인된 고급스러운 향수 휴대용 케이스입니다. 이 케이스는 아르데코(Art Deco) 스타일을 현대적으로 재해석하여 여성의 핸드백이나 재킷 주머니에 쉽게 휴대할 수 있도록 설계되었습니다. 7.5ml의 EX NIHILO 향수 바이알과 호환되며, 블랙 마블과 화이트 마블 두 가지 색상으로 제공됩니다."
+        },
+        {
+          "productId": 5,
+          "mainCategory": "beauty",
+          "keyword": "body",
+          "itemName": "르 리프트 라 크렘 망 핸드 크림",
+          "brand": "샤넬",
+          "brandEng": "chanel",
+          "price": 93000,
+          "releasedDate": 20250120,
+          "sellNum": 560,
+          "detailImg": {
+            "img01": "https://kream-phinf.pstatic.net/MjAyNTAzMDRfMTM1/MDAxNzQxMDUzNDEzNzQ4.8Ch0RIjaHNzHmSJtewSeVZK_cpa5fMzL5Wwh2ArCxDog.Hw9vjGq5g9_eBn8KWW61gUPw1IXv0--hG5-Yf_QWE6kg.PNG/a_ec3a20bc9f5a47eeac9fb04c65fb8c01.png?type=l_webp",
+            "img02": "https://kream-phinf.pstatic.net/MjAyNTAzMDRfMTM1/MDAxNzQxMDUzNDEzNzQ4.8Ch0RIjaHNzHmSJtewSeVZK_cpa5fMzL5Wwh2ArCxDog.Hw9vjGq5g9_eBn8KWW61gUPw1IXv0--hG5-Yf_QWE6kg.PNG/a_ec3a20bc9f5a47eeac9fb04c65fb8c01.png?type=l_webp",
+            "img03": "https://kream-phinf.pstatic.net/MjAyNTAzMDRfMTM1/MDAxNzQxMDUzNDEzNzQ4.8Ch0RIjaHNzHmSJtewSeVZK_cpa5fMzL5Wwh2ArCxDog.Hw9vjGq5g9_eBn8KWW61gUPw1IXv0--hG5-Yf_QWE6kg.PNG/a_ec3a20bc9f5a47eeac9fb04c65fb8c01.png?type=l_webp"
+          },
+          "description": "샤넬의 '르 리프트 라 크렘 망(LE LIFT LA CRÈME MAIN)' 핸드 크림은 손의 젊음을 유지하고 피부를 매끄럽게 가꿔주는 제품입니다. 이 크림은 식물성 알팔파 농축물과 천연 감초 추출물을 함유하여 주름을 완화하고 피부 톤을 균일하게 만들어줍니다. 또한, 미모사, 호호바, 해바라기 왁스가 함유되어 손 피부에 집중적인 영양을 공급합니다."
+        },
+        {
+          "productId": 6,
+          "mainCategory": "beauty",
+          "keyword": "body",
+          "itemName": " 루쥬 알뤼르 벨벳 232 랑베르쌍뜨",
+          "brand": "샤넬",
+          "brandEng": "chanel",
+          "price": 59000,
+          "releasedDate": 20250121,
+          "sellNum": 540,
+          "detailImg": {
+            "img01": "https://kream-phinf.pstatic.net/MjAyNDExMDFfMiAg/MDAxNzMwNDMzNDY0MTI5.KA4PVxd6bQ3F7GlX3D2joh_FlhQTDFJ5dFvvvmfiKWYg.UmSg2Dwz0c5GL3iuFRZq6Udi9C510q_Jl4SxMftFiTwg.PNG/a_78df340adbe6476b807dec63308ccedb.png?type=l_webp",
+            "img02": "https://kream-phinf.pstatic.net/MjAyNDExMDFfMiAg/MDAxNzMwNDMzNDY0MTI5.KA4PVxd6bQ3F7GlX3D2joh_FlhQTDFJ5dFvvvmfiKWYg.UmSg2Dwz0c5GL3iuFRZq6Udi9C510q_Jl4SxMftFiTwg.PNG/a_78df340adbe6476b807dec63308ccedb.png?type=l_webp",
+            "img03": "https://kream-phinf.pstatic.net/MjAyNDExMDFfMiAg/MDAxNzMwNDMzNDY0MTI5.KA4PVxd6bQ3F7GlX3D2joh_FlhQTDFJ5dFvvvmfiKWYg.UmSg2Dwz0c5GL3iuFRZq6Udi9C510q_Jl4SxMftFiTwg.PNG/a_78df340adbe6476b807dec63308ccedb.png?type=l_webp"
+          },
+          "description": "샤넬의 '루쥬 알뤼르 리퀴드 벨벳(ROUGE ALLURE LIQUID VELVET)'은 강렬한 매트 피니시와 함께 오랜 지속력을 자랑하는 액상 립스틱입니다. 232번 '랑베르쌍뜨(Renversante)'는 따뜻한 브라운 톤의 색상으로, 다양한 피부 톤에 자연스럽게 어울립니다."
+        },
+        {
+          "productId": 7,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "스킨 누더 커버레이어 쿠션",
+          "brand": "정샘물",
+          "brandEng": "jungsaemmool",
+          "price": 45000,
+          "releasedDate": 20250122,
+          "sellNum": 670,
+          "detailImg": {
+            "img01": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0016/A00000016337801ko.jpg?qt=80",
+            "img02": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0016/A00000016337801ko.jpg?qt=80",
+            "img03": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0016/A00000016337801ko.jpg?qt=80"
+          },
+          "description": "정샘물 쿠션은 피부 본연의 결을 살리면서 자연스럽고 깨끗한 피부 표현을 도와주는 제품입니다. 얇고 가볍게 발리며, 밀착력이 좋아 들뜸 없이 피부에 고르게 스며듭니다."
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "artistName": "변요한",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2022/07/style_62d79f3ea76be-1200x1618.jpg",
+      "jobCategory": "actor",
+      "videoURL": "https://youtu.be/ziChej_WIP0?si=33rYMRv1tSnuOfVlhttps://youtu.be/ziChej_WIP0?si=33rYMRv1tSnuOfVl",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "beauty",
+          "keyword": "food",
+          "itemName": "수용성 프로폴리스",
+          "brand": "안상규벌꿀",
+          "brandEng": "ahnsanggyuhoney",
+          "price": 150000,
+          "releasedDate": 20250123,
+          "sellNum": 83,
+          "detailImg": {
+            "img01": "https://beeman.co.kr/web/product/big/202412/9ee2f9f84ed1e13d04546b629b5e69b0.png",
+            "img02": "https://beeman.co.kr/web/product/extra/big/202412/9eba5c452529faf2ee0d7c9e2361e2b5.png",
+            "img03": "https://beeman.co.kr/web/product/extra/big/202412/e51df8e12c3f48a064535475a82e1172.png"
+          },
+          "description": "프로폴리스는 꿀벌들이 자신의 생존과 번식을 위하여 여러식물에서 채취한 수지에 자신의 타액과 효소들을 혼합하여 만든 천연물질입니다. 이를 인체에 적용할 경우, 항산화 작용과 구강에서의 항균작용에 도움을 줄 수 있습니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "beauty",
+          "keyword": "face",
+          "itemName": "마우스 스프레이 가글",
+          "brand": "민티드",
+          "brandEng": "minted",
+          "price": 4000,
+          "releasedDate": 20250124,
+          "sellNum": 340,
+          "detailImg": {
+            "img01": "https://static.lottedfs.com/prod/prd-img/55/30/22/01/00/02/20001223055_3.jpg/dims/resize/460x460",
+            "img02": "https://static.lottedfs.com/prod/prd-img/55/30/22/01/00/02/20001223055_3.jpg/dims/resize/460x460",
+            "img03": "https://static.lottedfs.com/prod/prd-img/55/30/22/01/00/02/20001223055_3.jpg/dims/resize/460x460"
+          },
+          "description": "MINTED MOUTH SPRAY GARGLE는 휴대가 간편한 스프레이 형태의 구강 청결제로, 언제 어디서나 구강 위생을 유지하는 데 도움이 됩니다. 이 제품은 식사 후나 대화 전 등 구강 청결이 필요한 순간에 입안에 1~2회 분사하여 사용합니다. 주요 성분으로는 항균 작용을 하는 세틸피리디늄 클로라이드(Cetylpyridinium Chloride)가 포함되어 있어 구강 내 유해균을 효과적으로 제거합니다. 또한, 녹차 추출물, 로즈마리 추출물, 병풀 추출물 등 천연 성분이 함유되어 구강 건강을 더욱 촉진합니다. "
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "오드 우드 오 드 퍼퓸",
+          "brand": "톰 포드",
+          "brandEng": "tomford",
+          "price": 250000,
+          "releasedDate": 20250125,
+          "sellNum": 620,
+          "detailImg": {
+            "img01": "https://cf.bysuco.net/b26c9b393726d01fd533ef5cabcc632f_cvt.webp?w=600",
+            "img02": "https://cf.bysuco.net/1abfa80f2f0c3481f7a02995a99e47ce_cvt.webp?w=600",
+            "img03": "https://cf.bysuco.net/2a083b4fcbefd643bf88307ad4dcc373.jpg?w=600"
+          },
+          "description": "오드 우드는 희귀한 우드 노트인 우드를 중심으로 한 고급스러운 향수입니다. 로즈우드, 샌달우드, 베티버 등 깊이 있는 우디 향조에 카다멈과 통카빈, 바닐라의 부드러운 따뜻함이 더해져 이국적이고 세련된 분위기를 연출합니다. 무겁지 않으면서도 은은하게 오래 지속되어 데일리로도 사용하기 좋으며, 남녀 모두에게 잘 어울립니다."
+        },
+        {
+          "productId": 4,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "샌디에이고 파드리스 게임 볼캡 브라운",
+          "brand": "엠엘비",
+          "brandEng": "mlb",
+          "price": 36000,
+          "releasedDate": 20250126,
+          "sellNum": 420,
+          "detailImg": {
+            "img01": "http://newera5950.jpg3.kr/item/12351305_1.jpg",
+            "img02": "http://newera5950.jpg3.kr/item/12351305_2.jpg",
+            "img03": "http://newera5950.jpg3.kr/item/12351305_3.jpg"
+          },
+          "description": "뉴에라의 'MLB 팀 클래식 샌디에이고 파드리스 게임 볼캡 브라운'은 샌디에이고 파드리스 팀의 공식 로고가 전면에 자수로 새겨진 볼캡입니다. 이 제품은 뉴에라의 39THIRTY 실루엣을 채택하여 신축성 있는 6패널 구조와 타원형으로 구부러진 챙으로 구성되어 있습니다. 소재는 폴리에스터 95%와 스판덱스 5%로 제작되어 편안한 착용감을 제공합니다."
         }
       ]
     }

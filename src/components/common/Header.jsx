@@ -4,7 +4,10 @@ import SearchComp from "./SearchComp";
 import { Link, useMatch, useNavigate, useParams } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { scrollTop } from "./Footer";
+
 const Container = styled.header``;
+
 const Wrapper = styled.div`
   height: 60px;
   padding: 0 3%;
@@ -107,7 +110,6 @@ const HeaderGnb = styled.ul`
     width: 100%;
     height: 100%;
     position: relative;
-
     &::after {
       transition: all 0.3s;
       content: attr(data-li);
@@ -180,6 +182,7 @@ const HeaderGnb = styled.ul`
       width: 100%;
       height: auto;
       color: var(--light-color);
+      border-bottom: 1px solid #fff;
     }
   }
 `;
@@ -263,9 +266,10 @@ const MenuBars = styled.div`
     p {
       position: absolute;
       width: 100%;
-      height: 3px;
+      height: 2px;
       background: var(--light-color);
       border-radius: 20px;
+      transition: all 0.3s;
       &:first-child {
         top: 0;
       }
@@ -276,12 +280,28 @@ const MenuBars = styled.div`
         top: 100%;
       }
     }
+    &.active {
+      p {
+        &:nth-child(1) {
+          transform: rotate(45deg);
+          top: 50%;
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+          top: 50%;
+        }
+      }
+    }
   }
 `;
 const Header = () => {
   const [filterCheck, setFilterCheck] = useState(false);
   const [menuClick, setMenuClick] = useState(false);
   const [searchClick, setSearchClick] = useState(false);
+  const [toggleClick, setToggleClick] = useState(false);
   const headerRef = useRef();
   const navigate = useNavigate();
   const commerceMatch = useMatch("/");
@@ -290,6 +310,7 @@ const Header = () => {
   const signUpMatch = useMatch("/signup");
   const eventMatch = useMatch("/event");
   const cartMatch = useMatch("/cart");
+  const starMatch = useMatch("/star");
   const filterCategoryMatch = useMatch("/filtercategory/:categoryName");
   const searchMatch = useMatch("/search/:name");
   const mypageMatch = useMatch("/mypage");
@@ -298,10 +319,20 @@ const Header = () => {
     const category = e.target.innerText;
     navigate(`/filtercategory/${category}`.toLowerCase());
     setMenuClick(false);
+    setToggleClick(false);
+    scrollTop();
   };
   const toEvent = () => {
     navigate("./event");
     setMenuClick(false);
+    setToggleClick(false);
+    scrollTop();
+  };
+  const toStar = () => {
+    navigate("./star");
+    setMenuClick(false);
+    setToggleClick(false);
+    scrollTop();
   };
   const filterFunc = () => {
     if (
@@ -314,7 +345,8 @@ const Header = () => {
       cartMatch ||
       searchMatch ||
       mypageMatch ||
-      mypageMatch02
+      mypageMatch02 ||
+      starMatch
     ) {
       setFilterCheck(true);
     } else {
@@ -333,6 +365,7 @@ const Header = () => {
     searchMatch,
     mypageMatch,
     mypageMatch02,
+    starMatch,
   ]);
 
   gsap.registerPlugin(ScrollTrigger);
@@ -352,26 +385,36 @@ const Header = () => {
   };
   headerLogo();
 
-  headerLogo();
   const handleMenuClick = () => {
     setMenuClick((prev) => !prev);
   };
   window.addEventListener("resize", () => {
     if (window.innerWidth > 1024) {
       setMenuClick(false);
+      setToggleClick(false);
     }
   });
   const searchToggle = () => {
+    setToggleClick(false);
     setMenuClick(false);
     setSearchClick(true);
   };
-
+  const ToggleMenu = () => {
+    setToggleClick((prev) => !prev);
+  };
   return (
     <Container>
       <Wrapper ref={headerRef} className={menuClick ? "filterUnActive" : ""}>
         <HeaderLeft>
           <Logo className="logo">
-            <Link to="/">
+            <Link
+              to="/"
+              onClick={() => {
+                setMenuClick(false);
+                setToggleClick(false);
+                scrollTop();
+              }}
+            >
               <HeaderLogoImg src="/img/Logo.png" alt="logo" />
             </Link>
           </Logo>
@@ -380,13 +423,13 @@ const Header = () => {
               <div>
                 <p>COMMERCE</p>
                 <span>|</span>
-                <Link to="/ott">
+                <Link to="/ott" onClick={scrollTop}>
                   <p className="selectActive">OTT</p>
                 </Link>
               </div>
             ) : (
               <div>
-                <Link to="/">
+                <Link to="/" onClick={scrollTop}>
                   <p className="selectActive">COMMERCE</p>
                 </Link>
                 <span>|</span>
@@ -404,8 +447,8 @@ const Header = () => {
               <li onClick={handleCategory} data-li="Beauty">
                 <span>Beauty</span>
               </li>
-              <li onClick={handleCategory} data-li="Artist">
-                <span>Artist</span>
+              <li onClick={toStar} data-li="Star">
+                <span>Star</span>
               </li>
               <li onClick={toEvent} data-li="Promotion">
                 <span>Promotion</span>
@@ -420,7 +463,14 @@ const Header = () => {
           <HeaderEtc>
             <HeaderEtcLi>
               <HeaderEtcText>
-                <Link to="/cart">
+                <Link
+                  to="/cart"
+                  onClick={() => {
+                    setMenuClick(false);
+                    setToggleClick(false);
+                    scrollTop();
+                  }}
+                >
                   <span>Cart</span>
                   <svg
                     fill="none"
@@ -450,7 +500,14 @@ const Header = () => {
             </HeaderEtcLi>
             <HeaderEtcLi>
               <HeaderEtcText>
-                <Link to="/login">
+                <Link
+                  to="/login"
+                  onClick={() => {
+                    setMenuClick(false);
+                    setToggleClick(false);
+                    scrollTop();
+                  }}
+                >
                   <span>Login</span>
                   <img
                     src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad_mypage.svg"
@@ -460,7 +517,13 @@ const Header = () => {
               </HeaderEtcText>
             </HeaderEtcLi>
           </HeaderEtc>
-          <MenuBars onClick={handleMenuClick}>
+          <MenuBars
+            onClick={() => {
+              handleMenuClick();
+              ToggleMenu();
+            }}
+            className={toggleClick ? "active" : ""}
+          >
             <p></p>
             <p></p>
             <p></p>
