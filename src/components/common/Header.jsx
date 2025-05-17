@@ -305,7 +305,7 @@ const Header = () => {
   const headerRef = useRef();
   const navigate = useNavigate();
   const commerceMatch = useMatch("/");
-  const detailMatch = useMatch("/detail");
+  const detailMatch = useMatch("/detail/:itemName");
   const loginMatch = useMatch("/login");
   const signUpMatch = useMatch("/signup");
   const eventMatch = useMatch("/event");

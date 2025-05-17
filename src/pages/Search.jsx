@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { StarData } from "../StarData";
 
 const Container = styled.div`
   margin-top: 60px;
@@ -43,9 +44,12 @@ const FilterSelect = styled.select`
 const FilterContent = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 767px) {
     grid-template-columns: repeat(2, 1fr);
   }
 `;
@@ -59,6 +63,10 @@ const FilterItemImgWrap = styled.div`
 `;
 const FilterItemImg = styled.img`
   width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  filter: brightness(0.95);
+  background: var(--light-color);
 `;
 const FilterItemText = styled.div`
   display: flex;
@@ -74,6 +82,7 @@ const FilterItemName = styled.p`
   border-bottom: 1px solid var(--border-color);
 `;
 const Search = () => {
+  const { isLoading, data } = StarData();
   const { name } = useParams();
   return (
     <Container>
@@ -94,152 +103,34 @@ const Search = () => {
           <option value="가격순">가격낮은순</option>
         </FilterSelect>
       </FilterWrap>
-      <FilterContent>
-        <FilterItem>
-          <FilterItemImgWrap>
-            <FilterItemImg
-              src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-              alt="img06"
-            />
-          </FilterItemImgWrap>
-          <FilterItemText>
-            <FilterItemPick>카리나 PICK</FilterItemPick>
-            <FilterItemName>Sorbet Balm</FilterItemName>
-          </FilterItemText>
-        </FilterItem>
-        <FilterItem>
-          <FilterItemImgWrap>
-            <FilterItemImg
-              src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-              alt="img06"
-            />
-          </FilterItemImgWrap>
-          <FilterItemText>
-            <FilterItemPick>카리나 PICK</FilterItemPick>
-            <FilterItemName>Sorbet Balm</FilterItemName>
-          </FilterItemText>
-        </FilterItem>
-        <FilterItem>
-          <FilterItemImgWrap>
-            <FilterItemImg
-              src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-              alt="img06"
-            />
-          </FilterItemImgWrap>
-          <FilterItemText>
-            <FilterItemPick>카리나 PICK</FilterItemPick>
-            <FilterItemName>Sorbet Balm</FilterItemName>
-          </FilterItemText>
-        </FilterItem>
-        <FilterItem>
-          <FilterItemImgWrap>
-            <FilterItemImg
-              src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-              alt="img06"
-            />
-          </FilterItemImgWrap>
-          <FilterItemText>
-            <FilterItemPick>카리나 PICK</FilterItemPick>
-            <FilterItemName>Sorbet Balm</FilterItemName>
-          </FilterItemText>
-        </FilterItem>
-        <FilterItem>
-          <FilterItemImgWrap>
-            <FilterItemImg
-              src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-              alt="img06"
-            />
-          </FilterItemImgWrap>
-          <FilterItemText>
-            <FilterItemPick>카리나 PICK</FilterItemPick>
-            <FilterItemName>Sorbet Balm</FilterItemName>
-          </FilterItemText>
-        </FilterItem>
-        <FilterItem>
-          <FilterItemImgWrap>
-            <FilterItemImg
-              src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-              alt="img06"
-            />
-          </FilterItemImgWrap>
-          <FilterItemText>
-            <FilterItemPick>카리나 PICK</FilterItemPick>
-            <FilterItemName>Sorbet Balm</FilterItemName>
-          </FilterItemText>
-        </FilterItem>
-        <FilterItem>
-          <FilterItemImgWrap>
-            <FilterItemImg
-              src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-              alt="img06"
-            />
-          </FilterItemImgWrap>
-          <FilterItemText>
-            <FilterItemPick>카리나 PICK</FilterItemPick>
-            <FilterItemName>Sorbet Balm</FilterItemName>
-          </FilterItemText>
-        </FilterItem>
-        <FilterItem>
-          <FilterItemImgWrap>
-            <FilterItemImg
-              src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-              alt="img06"
-            />
-          </FilterItemImgWrap>
-          <FilterItemText>
-            <FilterItemPick>카리나 PICK</FilterItemPick>
-            <FilterItemName>Sorbet Balm</FilterItemName>
-          </FilterItemText>
-        </FilterItem>
-        <FilterItem>
-          <FilterItemImgWrap>
-            <FilterItemImg
-              src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-              alt="img06"
-            />
-          </FilterItemImgWrap>
-          <FilterItemText>
-            <FilterItemPick>카리나 PICK</FilterItemPick>
-            <FilterItemName>Sorbet Balm</FilterItemName>
-          </FilterItemText>
-        </FilterItem>
-        <FilterItem>
-          <FilterItemImgWrap>
-            <FilterItemImg
-              src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-              alt="img06"
-            />
-          </FilterItemImgWrap>
-          <FilterItemText>
-            <FilterItemPick>카리나 PICK</FilterItemPick>
-            <FilterItemName>Sorbet Balm</FilterItemName>
-          </FilterItemText>
-        </FilterItem>
-        <FilterItem>
-          <FilterItemImgWrap>
-            <FilterItemImg
-              src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-              alt="img06"
-            />
-          </FilterItemImgWrap>
-          <FilterItemText>
-            <FilterItemPick>카리나 PICK</FilterItemPick>
-            <FilterItemName>Sorbet Balm</FilterItemName>
-          </FilterItemText>
-        </FilterItem>
-        <FilterItem>
-          <FilterItemImgWrap>
-            <FilterItemImg
-              src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-              alt="img06"
-            />
-          </FilterItemImgWrap>
-          <FilterItemText>
-            <FilterItemPick>카리나 PICK</FilterItemPick>
-            <FilterItemName>Sorbet Balm</FilterItemName>
-          </FilterItemText>
-        </FilterItem>
-      </FilterContent>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <FilterContent>
+          {data.artists.map((artist) => {
+            const products = artist.products.filter(
+              (product) =>
+                product.itemName.toLowerCase().includes(name.toLowerCase()) ||
+                product.brandEng.toLowerCase().includes(name.toLowerCase()) ||
+                product.brand.toLowerCase().includes(name.toLowerCase()) ||
+                artist.artistName.includes(name)
+            );
+            return products.map((product, j) => {
+              return (
+                <FilterItem key={j}>
+                  <FilterItemImgWrap>
+                    <FilterItemImg src={product.detailImg.img01} alt="img06" />
+                  </FilterItemImgWrap>
+                  <FilterItemText>
+                    <FilterItemPick>{artist.artistName} PICK</FilterItemPick>
+                    <FilterItemName>{product.itemName}</FilterItemName>
+                  </FilterItemText>
+                </FilterItem>
+              );
+            });
+          })}
+        </FilterContent>
+      )}
     </Container>
   );
 };

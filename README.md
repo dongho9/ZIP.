@@ -36,8 +36,3 @@
 
 - FRONTEND
 - https://github.com/junghwichan3436
-
-👩🏽‍💻 황예진
-
-- FRONTEND
-- https://github.com/YJ-localhost
