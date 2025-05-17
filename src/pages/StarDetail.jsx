@@ -1,8 +1,5 @@
-import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import Masonry from "react-masonry-css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -97,11 +94,6 @@ const ArtistText = styled.div`
   flex-direction: column;
   gap: 20px;
 `;
-const ArtistItem = styled.div`
-  background: var(--light-colior);
-  color: var(--dark-color);
-  height: 300px;
-`;
 
 const FilterItem = styled.div`
   display: flex;
@@ -167,43 +159,6 @@ const RelateItemName = styled.p`
 `;
 const StarDetail = () => {
   const { starName } = useParams();
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  const headerLogo = () => {
-    if (window.innerWidth > 1024) {
-      gsap.to(".artistBg", {
-        scrollTrigger: {
-          trigger: ".artistBg",
-          start: "top top",
-          end: "+=3500",
-          pin: true,
-          pinSpacing: false,
-          scrub: true,
-        },
-      });
-    }
-    // if (window.innerWidth < 767) {
-    //   gsap.to(".artistBg", {
-    //     scrollTrigger: {
-    //       trigger: ".artistBg",
-    //       start: "top top",
-    //       end: "+=1800",
-    //       pin: true,
-    //       pinSpacing: false,
-    //       scrub: true,
-    //     },
-    //   });
-    // }
-  };
-  useEffect(() => {
-    headerLogo();
-  }, []);
-
-  const breakpointColumnsObj = {
-    default: 2,
-  };
-
   return (
     <Container>
       <ArtistBg>
