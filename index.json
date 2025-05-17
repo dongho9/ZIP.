@@ -3,6 +3,7 @@
     {
       "id": 16,
       "artistName": "대성",
+      "artistImg": "https://img.allurekorea.com/allure/2024/05/style_664ec7342e279-960x1200.jpg",
       "jobCategory": "singer",
       "videoURL": "https://www.youtube.com/watch?v=IBb-UoIAPAI",
       "products": [
@@ -164,6 +165,7 @@
     {
       "id": 17,
       "artistName": "정은채",
+      "artistImg" : "https://img.vogue.co.kr/vogue/2018/04/style_5acab4be30646.jpg",
       "jobCategory": "actor",
       "videoURL": "https://www.youtube.com/watch?v=3BmehC0J-p4",
       "products": [
@@ -326,6 +328,7 @@
     {
       "id": 18,
       "artistName": "손예진",
+      "artistImg" : "https://img.vogue.co.kr/vogue/2025/02/style_67b434f6024a3-1120x1400.jpg",
       "jobCategory": "actor",
       "videoURL": "https://www.youtube.com/watch?v=U81bfvtPGvY",
       "products": [
@@ -470,6 +473,7 @@
     {
       "id": 19,
       "artistName": "송은이",
+      "artistImg" : "https://img.vogue.co.kr/vogue/2025/02/style_67b451b5ad00c-1116x1400.jpg",
       "jobCategory": "actor",
       "videoURL": "https://www.youtube.com/watch?v=og2heGkF3go",
       "products": [
@@ -631,6 +635,7 @@
     {
       "id": 20,
       "artistName": "나나",
+      "artistImg" : "https://img.vogue.co.kr/vogue/2024/05/style_6646efe061c73-1120x1400.jpg",
       "jobCategory": "actor",
       "videoURL": "https://www.youtube.com/watch?v=TitDem4lhsY",
       "products": [
@@ -741,6 +746,7 @@
     {
       "id": 21,
       "artistName": "로제",
+      "artistImg" : "https://img.extmovie.com/files/attach/images/148/396/182/065/05d516ff375debe8265a0ca1044f8f92.jpg",
       "jobCategory": "musician",
       "videoURL": "https://www.youtube.com/watch?v=Fd_En3y2amo",
       "products": [
@@ -869,6 +875,7 @@
     {
       "id": 22,
       "artistName": "최지우",
+      "artistImg" : "https://img.vogue.co.kr/vogue/2012/05/style_5554888bdcdad.jpg",
       "jobCategory": "actor",
       "videoURL": "https://www.youtube.com/watch?v=_eS4mNSdQb8",
       "products": [
@@ -1013,6 +1020,7 @@
     {
       "id": 23,
       "artistName": "산다라박",
+      "artistImg": "https://media.nudge-community.com/7982071?w=856&format=avif",
       "jobCategory": "musician",
       "videoURL": "https://www.youtube.com/watch?v=10Y7UTMsY9o",
       "products": [
@@ -1157,6 +1165,7 @@
     {
       "id": 24,
       "artistName": "임시현",
+      "artistImg":"https://img.vogue.co.kr/vogue/2024/08/style_66c2a3ed445e9-1120x1400.jpg",
       "jobCategory": "sports",
       "videoURL": "https://www.youtube.com/watch?v=W_RDxa-6EqM",
       "products": [
@@ -1182,6 +1191,7 @@
     {
       "id": 25,
       "artistName": "민규",
+      "artistImg":"https://img.vogue.co.kr/vogue/2024/08/style_66b6cf151bd02-1120x1400.jpg",
       "jobCategory": "musician",
       "videoURL": "https://www.youtube.com/watch?v=aglDr2udqsU",
       "products": [
@@ -1326,6 +1336,7 @@
     {
       "id": 26,
       "artistName": "엔하이픈",
+      "artistImg": "https://cloudfront-ap-northeast-1.images.arcpublishing.com/chosunbiz/HE3RGUMS777WRVMLIDNGZ3IHCE.jpg",
       "jobCategory": "musician",
       "videoURL": "https://www.youtube.com/watch?v=9BY6Qc1Yf0o",
       "products": [
@@ -1589,6 +1600,7 @@
     {
       "id": 27,
       "artistName": "김지원",
+      "artistImg": "https://img.vogue.co.kr/vogue/2024/06/style_6670df750c33a-1120x1400.jpg",
       "jobCategory": "actor",
       "videoURL": "https://www.youtube.com/watch?v=iR4g6v_pggM",
       "products": [
@@ -1716,6 +1728,7 @@
     {
       "id": 28,
       "artistName": "혜리",
+      "artistImg" : "https://img.vogue.co.kr/vogue/2024/09/style_66f26617ca64f-1120x1400.jpg",
       "jobCategory": "actor",
       "videoURL": "https://www.youtube.com/watch?v=iR4g6v_pggM",
       "products": [
@@ -1914,6 +1927,117 @@
             "img03": "https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1681402527/586169_9PLP8_9208_008_100_0000_Light-208.jpg"
           },
           "description": "풍부한 수분감과 빛나는 발색이 돋보이며 가볍고 부드러운 느낌의 순수한 컬러를 선사하는 루즈 아 레브르 브왈 립스틱 컬렉션. 황금시대를 대표하는 할리우드 영화 및 캐릭터에서 영감을 받은 다양한 컬러의 볼드한 팔레트는 하우스 컬렉션의 톡톡 튀고 자유분방한 분위기를 고스란히 반영하며 무한한 형태의 개성을 표출함. 1950년대 빈티지 프린트를 연상케 하는 로즈 프린트가 돋보이는 커버와 함께 고급스러운 골드 톤 패키지 케이스에 담겨 제공됨."
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "artistName": "장규리",
+      "artistImg": "https://img.gqkorea.co.kr/gq/2024/06/style_6678cb7747f9b-1039x1400.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://www.youtube.com/watch?v=6mDCz747ZJU",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "셀린느 미디엄 버킷",
+          "brand": "셀린느",
+          "brandEng": "celine",
+          "price": 2450000,
+          "releasedDate": 20241027,
+          "sellNum": 901,
+          "detailImg": {
+            "img01": "https://www.celine.com/on/demandware.static/-/Sites-masterCatalog/default/dwb1250c9f/images/large/191132CAS.04LU_1_WIN19_W_V3.jpg?im=Resize=(720);AspectCrop=(1,1),xPosition=.5,yPosition=.5",
+            "img02": "https://www.celine.com/on/demandware.static/-/Sites-masterCatalog/default/dw3c51c78b/images/large/191132CAS.04LU_2_WIN19_W_V3.jpg?im=Resize=(720);AspectCrop=(1,1),xPosition=.5,yPosition=.5",
+            "img03": "https://www.celine.com/on/demandware.static/-/Sites-masterCatalog/default/dwa85efd87/images/large/191132CAS.04LU_4_WIN19_W_V3.jpg?im=Resize=(720);AspectCrop=(1,1),xPosition=.5,yPosition=.5"
+          },
+          "description": "크로스바디백 및 숄더백으로 착용 가능스냅 버튼 잠금장치 최소 길이 48 CM (19 인치) 및 최대 길이 55 CM (22 인치)의 길이 조절 가능한 스트랩"
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "미스 디올 오 드 퍼퓸",
+          "brand": "디올",
+          "brandEng": "dior",
+          "price": 125000,
+          "releasedDate": 20231125,
+          "sellNum": 902,
+          "detailImg": {
+            "img01": "https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dwfebdb5ba/Y0996347/Y0996347_C099600762_E01_ZHC.jpg?sw=1920",
+            "img02": "https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dw6880ae3e/Y0996347/Y0996347_C099600762_E02_GHC.jpg?sw=1024",
+            "img03": "https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dw05025bad/Y0996347/Y0996347_C099600762_E03_GHC.jpg?sw=1024"
+          },
+          "description": "947년, 미스 디올은 매혹적인 삶과 눈부시게 빛나는 다채로운 사랑에 눈을 뜨고자 하는 여성을 위해 탄생했습니다. 암울한 시기를 겪던 크리스챤 디올에게 이 향수는 행복과 서정적인 조화를 상징하는 또 다른 표현이었습니다. 미스 디올은 사랑에 대한 경이로움과 세상의 모든 아름다움으로 우리를 초대합니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "이솝 테싯",
+          "brand": "이솝",
+          "brandEng": "aesop",
+          "price": 154000,
+          "releasedDate": 20240820,
+          "sellNum": 903,
+          "detailImg": {
+            "img01": "https://img.ssgdfs.com/upload/C00001/goos/org/927/230202000187927.png?SF=webp&AR=0",
+            "img02": "https://imagecdn.dpon.gift/images/merchandises/%E1%84%90%E1%85%A6%E1%84%89%E1%85%B5%E1%86%BA_%E1%84%8B%E1%85%A9_%E1%84%83%E1%85%B3_%E1%84%91%E1%85%A5%E1%84%91%E1%85%B2%E1%86%B7_%E1%84%92%E1%85%A3%E1%86%BC%E1%84%89%E1%85%AE_50mL.jpg",
+            "img03": "https://m.perfumegraphy.com/web/product/big/202211/2d5050ab8fa1b5ab5c9de9206a47d698.jpg"
+          },
+          "description": "마음을 차분하게 가라앉혀주고 우리 몸의 감각을 일깨워주는 흙내음과 시트러스 노트의 따뜻하고 생기 넘치는 블렌드."
+        },
+        {
+          "productId": 4,
+          "mainCategory": "beaty",
+          "keyword": "food",
+          "itemName": "메가도스 비타민 씨",
+          "brand": "메가도스",
+          "brandEng": "megadose",
+          "price": 24800,
+          "releasedDate": 20230730,
+          "sellNum": 904,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/820/243/img/5243820_2.jpg?_v=20240904144310",
+            "img02": "https://www.costco.co.kr/medias/sys_master/images/h60/h6a/316017125425182.jpg",
+            "img03": "https://sitem.ssgcdn.com/60/51/79/item/1000546795160_i3_750.jpg"
+          },
+          "description": "순수 비타민을 담은 메가도스C 비타민C 3000mg을 소개합니다. 현대인에게 부족한 비타민C를 충분하게 섭취할 수 있도록 1포에 비타민 3000mg을 담았어요. 세계적인 비타민 전문 기업 DSM 사의 영국산 비타민C 원료를 사용했으며, 첨가물은 넣지 않은 채 분말 형태로 비타민을 그대로 담았으니 안심하고 만나 보세요. 가루 흩날림이 적고 보관 및 섭취가 간편한 스틱으로 포장되어 어디서나 간편하고 깔끔하게 섭취할 수 있는 제품이랍니다."
+        },
+        {
+          "productId": 5,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "젤리캣 베어 키링",
+          "brand": "젤리캣",
+          "brandEng": "jellycat",
+          "price": 39300,
+          "releasedDate": 20230520,
+          "sellNum": 905,
+          "detailImg": {
+            "img01": "https://before-images-item.croketglobal.net/storeItem/63ef46aaae9c8b002e4b433e/itemImg/1676625579100/0/item_J8Ipc.jpeg",
+            "img02": "https://before-images-item.croketglobal.net/storeItem/63ef46aaae9c8b002e4b433e/contents/1676625578397/1/0/contents_kk09t.jpeg",
+            "img03": "https://image.sivillage.com/upload/C00001/s3/goods/org/575/240510016343575.jpg?RS=750&SP=1"
+          },
+          "description": "내돈내산 선물 인싸템 가방 곰 악세사리 스타일리쉬 당신의 가방을 한층 귀엽게 만들어줌"
+        },
+        {
+          "productId": 6,
+          "mainCategory": "beauty",
+          "keyword": "body",
+          "itemName": "모스킨토 오리지널 잇치 릴리프 패치 ",
+          "brand": "모스킨토",
+          "brandEng": "moskinto",
+          "price": 12500,
+          "releasedDate": 20240318,
+          "sellNum": 906,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/424/614/img/20614424_1.jpg?_v=20230628172541",
+            "img02": "https://img.danawa.com/prod_img/500000/977/613/img/20613977_1.jpg?_v=20230628172548",
+            "img03": "https://thumbnail9.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/d0f7/08d2fa4cdf55e5501505b36d166b2061e30b750e2644db55586f87c7a189.png"
+          },
+          "description": "썸머 모기패치 독일 모스킨토 아동 유아 어린이 성인 야외 캠핑 용품 물리면 긁지말고 붙이세요"
         }
       ]
     }

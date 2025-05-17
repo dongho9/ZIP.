@@ -16,7 +16,7 @@ const QuizTitle = styled.div`
   color: var(--light-color);
   font-size: 8rem;
   font-weight: bold;
-  padding: 176px 0px 152px;
+  padding: 0px 0px 152px;
   align-self: flex-start;
   @media screen and (max-width: 1300px) {
   color: var(--light-color);

@@ -10,12 +10,12 @@ const ImgWrapper = styled.div`
   }
 `
 
-const Banner = () => {
+const InfluencerBanner = () => {
   return (
     <ImgWrapper>
-      <img src="/src/imgs/event/banner.png" alt="eventbanner"/>
+      <img src="/src/imgs/event/influencer-PC.png" alt="eventbanner"/>
     </ImgWrapper>
   )
 }
 
-export default Banner
+export default InfluencerBanner

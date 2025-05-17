@@ -1,4 +1,4 @@
-import Promotion from "../../pages/eventpages/Promotion";
+import Promotion from "./Influencer";
 import IntroduceTattoo from "../../pages/eventpages/IntroduceTattoo";
 import React from "react";
 import { Outlet } from "react-router-dom";
