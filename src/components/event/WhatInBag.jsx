@@ -1,6 +1,6 @@
 import { picture } from "motion/react-client";
-import React from "react";
 import styled from "styled-components";
+import React from "react";
 
 const TattooContents = styled.div`
   width: 100%;

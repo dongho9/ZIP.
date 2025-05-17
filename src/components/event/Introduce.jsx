@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { button, style } from "motion/react-client";
 import styled from "styled-components";
 import { color } from "motion";
-import Promotion from "./Promotion";
 import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
@@ -26,7 +25,8 @@ const TattooContents = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 10%;
+  padding: 100px 15%;
+
   /* padding: 206px 210px 300px 210px; */
   /* @media screen and (max-width: 1500px) {
     padding: 206px 100px 300px 100px;

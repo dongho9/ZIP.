@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const ButtonContents = styled.div`
   display: flex;
@@ -50,7 +51,9 @@ const ScrollButton = () => {
             <PromotionButton
               selected={active}
               >INTROUDUCE TATTOO</PromotionButton>
-            <PromotionButton>PROMOTION</PromotionButton>
+            <PromotionButton ><Link href="/about">
+  INFLUENCER
+</Link></PromotionButton>
       </ButtonContents>
 </>
   )

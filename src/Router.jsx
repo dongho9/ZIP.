@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
-import Event from "./pages/Event";
+import Event from "./pages/eventpages/Event";
 import Ott from "./pages/Ott";
 import FilterCategory from "./pages/FilterCategory";
 import Cart from "./pages/Cart";
@@ -17,7 +17,8 @@ import FAQ from "./pages/mypages/FAQ";
 import DeleteAccount from "./pages/mypages/DeleteAccount";
 import ChangeUserInfo from "./pages/mypages/ChangeUserInfo";
 import UserAddress from "./pages/mypages/UserAddress";
-import Promotion from "./components/event/Promotion";
+import Promotion from "./pages/eventpages/Promotion";
+import IntroduceTattoo from "./pages/eventpages/IntroduceTattoo";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
         path: "event",
         element: <Event />,
         children:[
+          {
+            index : true,
+            element: <IntroduceTattoo/>,
+          },
           {
             path: "promotion",
             element: <Promotion />,

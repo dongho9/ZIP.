@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: var(--dark-color);
+width: 100%;
+    height: 100%;
+    padding: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    background: var(--dark-color);
 `;
 
 const QuizTitle = styled.div`
@@ -18,25 +18,38 @@ const QuizTitle = styled.div`
   font-weight: bold;
   padding: 176px 0px 152px;
   align-self: flex-start;
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1300px) {
+  color: var(--light-color);
     font-size: 6rem;
-    padding: 100px 50px;
+    font-weight: bold;
+    padding: 10% 0;
+    align-self: flex-start;
+  }
+  @media screen and (max-width: 1024px) {
+    font-size: 5rem;
+    /* padding: 100px 50px; */
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 3rem;
   }
   @media screen and (max-width: 402px) {
-    font-size: 2.5rem;
-    padding: 100px 30px;
+    font-size: 2rem;
+    /* padding: 100px 30px; */
   }
 `;
 
 const BlueBox = styled.div`
   /* width: 240px; */
-  height: 1326px;
+  /* height: 1326px; */
   background: #ace0ff;
   border-radius: 50px 0 0 50px;
   display: flex;
   justify-content: center;
   /* align-items: center; */
   padding: 0 60px;
+  @media screen and (max-width: 1300px) {
+    padding: 0 15px;
+  }
   @media screen and (max-width: 1024px) {
     padding: 0;
     height: auto;
@@ -44,14 +57,25 @@ const BlueBox = styled.div`
 `;
 
 const Question = styled.div`
-  font-size: 8rem;
-  font-weight: bold;
-  padding-top: 126px;
-  color: var(--dark-color);
+    font-size: 6rem;
+    font-weight: bold;
+    padding-top: 80px;
+    color: var(--dark-color);
+    @media screen and (max-width: 1300px) {
+    font-size: 5rem;
+    padding: 80px 36px;
+  }
 
   @media screen and (max-width: 1024px) {
-    font-size: 4.2rem;
+    font-size: 3.5rem;
     padding: 80px 36px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 3.5rem;
+    padding: 40px 30px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 2.5rem;
   }
   @media screen and (max-width: 402px) {
     font-size: 2rem;
@@ -66,13 +90,23 @@ const WhiteBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 90px;
+  padding: 80px 0;
+  @media screen and (max-width: 1300px) {
+    gap: 50px;
+  } 
   @media screen and (max-width: 1024px) {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding-bottom: 70px;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 40px 0 40px;
+  } 
+  @media screen and (max-width: 450px) {
+    gap: 30px;
   }
   @media screen and (max-width: 402px) {
     gap: 20px;
@@ -90,109 +124,106 @@ const AllBox = styled.div`
   @media screen and (max-width: 1024px) {
     width: 100%;
     height: 100%;
-    padding: 0 50px 100px 50px;
   }
   @media screen and (max-width: 402px) {
-    padding: 0 20px 100px;
+    /* padding: 0 20px 100px; */
   }
 `;
 
 const Title = styled.div`
   /* position: absolute; */
   font-weight: bold;
-  font-size: 6rem;
-  padding: 0 100px;
+  font-size: 5rem;
+  @media screen and (max-width: 1300px) {
+font-size: 3.5rem;
+  }
   @media screen and (max-width: 1024px) {
     font-weight: bold;
-    font-size: 4.2rem;
+    font-size: 3rem;
     display: flex;
     align-items: center;
     /* justify-content: center; */
-    padding: 80px 0 0;
+    /* padding: 80px 0 0; */
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 1.5rem;
   }
   @media screen and (max-width: 402px) {
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
-    padding: 36px 0 0;
+    /* padding: 36px 0 0; */
   }
 `;
 
 const EachName = styled.div`
   font-size: 3.2rem;
-  line-height: 2;
+  line-height: 1;
+  @media screen and (max-width: 1300px) {
+font-size: 2.2rem;
+  }
   @media screen and (max-width: 1024px) {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     line-height: 1;
   }
-  @media screen and (max-width: 402px) {
+  @media screen and (max-width: 767px) {
     font-size: 1.5rem;
-    line-height: 0.8;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 402px) {
+    /* font-size: 1.5rem; */
+    /* line-height: 0.8; */
   }
 `;
 
 const Picture = styled.div`
-  width: 320px;
-  height: 320px;
-  background: #f00;
-  border-radius: 10%;
-  @media screen and (max-width: 1178px) {
-    width: 280px;
-    height: 280px;
-  }
-  @media screen and (max-width: 1024px) {
-    width: 200px;
-    height: 200px;
-  }
-  @media screen and (max-width: 900px) {
-    width: 200px;
-    height: 200px;
-  }
-  @media screen and (max-width: 900px) {
-    width: 140px;
-    height: 140px;
-  }
-  @media screen and (max-width: 70px) {
-    width: 100px;
-    height: 100px;
-  }
-  @media screen and (max-width: 402px) {
-    width: 100px;
-    height: 100px;
+  width: 100%;
+  object-fit: cover;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10%;
   }
 `;
 
 const FirstBundle = styled.div`
   display: flex;
-  gap: 200px;
-  border: 1px solid #000;
-  @media screen and (max-width: 1024px) {
+gap: 20%;
+  justify-content: center;
+  /* @media screen and (max-width: 1024px) {
     gap: 120px;
   }
   @media screen and (max-width: 402px) {
     gap: 20px;
-  }
+  } */
 `;
 
 const SecondBundle = styled.div`
   display: flex;
-  gap: 200px;
+  gap: 20%;
+  justify-content: center;
   /* border: 1px solid #000; */
-  @media screen and (max-width: 1024px) {
+  /* @media screen and (max-width: 1024px) {
     gap: 120px;
-  }
-  @media screen and (max-width: 402px) {
+  } */
+  /* @media screen and (max-width: 402px) {
     gap: 20px;
-  }
+  } */
 `;
 
 const DetailBundle = styled.div`
+width: 25%;
   display: flex;
   flex-direction: column;
   gap: 25px;
-  /* border: 1px solid #000; */
   @media screen and (max-width: 1024px) {
+  }
+  @media screen and (max-width: 600px) {
+    gap: 15px;
   }
   @media screen and (max-width: 402px) {
     gap: 10px;
@@ -202,10 +233,15 @@ const DetailBundle = styled.div`
 const ThirdBundle = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 100px;
-  /* margin-top: 7%; */
+  gap: 70px;
   @media screen and (max-width: 1024px) {
     gap: 70px;
+  }
+  @media screen and (max-width: 767px) {
+    gap: 50px;
+  }
+  @media screen and (max-width: 600px) {
+    gap: 25px;
   }
   @media screen and (max-width: 402px) {
     gap: 30px;
@@ -246,7 +282,7 @@ const quizData = [
     title: "박재범에게 타투이스트를 소개시켜준 인물은?",
     name1: "A. 더 콰이엇 ",
     name2: "B. 빈지노 ",
-    name3: "C. 오왼 오바도즈  ",
+    name3: "C. 오왼  ",
     name4: "D. 도끼 ",
     picture1: "/public/img/thumbnail.png",
     picture2: "/public/img/thumbnail.png",
@@ -299,21 +335,21 @@ const Quiz = () => {
                 <FirstBundle>
                   <DetailBundle>
                     <EachName>{item.name1}</EachName>
-                    <Picture>{item.picture1}</Picture>
+                    <Picture><img src="/src/imgs/event/the_quiett.png" alt="first" /></Picture>
                   </DetailBundle>
                   <DetailBundle>
                     <EachName>{item.name2}</EachName>
-                    <Picture>{item.picture2}</Picture>
+                    <Picture><img src="/src/imgs/event/the_quiett.png" alt="first" /></Picture>
                   </DetailBundle>
                 </FirstBundle>
                 <SecondBundle>
                   <DetailBundle>
                     <EachName>{item.name3}</EachName>
-                    <Picture>{item.picture3}</Picture>
+                    <Picture><img src="/src/imgs/event/the_quiett.png" alt="first" /></Picture>
                   </DetailBundle>
                   <DetailBundle>
                     <EachName>{item.name4}</EachName>
-                    <Picture>{item.picture4}</Picture>
+                    <Picture><img src="/src/imgs/event/the_quiett.png" alt="first" /></Picture>
                   </DetailBundle>
                 </SecondBundle>
               </ThirdBundle>
