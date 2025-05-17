@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styled from "styled-components";
-
-gsap.registerPlugin(ScrollTrigger);
+import { scrollTop } from "../common/Footer";
+import { useLocation } from "react-router-dom";
 
 /* --- styled-components --- */
 const Container = styled.div`
@@ -92,7 +92,6 @@ const AccordionCard = styled.div`
     /* margin: 50px 0; */
   }
 `;
-
 const CardTitle = styled.div`
   display: flex;
   align-items: center;
@@ -113,7 +112,6 @@ const CardTitle = styled.div`
     margin-bottom: 30px;
   }
 `;
-
 const CardInfo = styled.div`
   display: flex;
   justify-content: space-between;
@@ -207,11 +205,19 @@ const RightInfo = styled.div`
   }
 `;
 
+gsap.registerPlugin(ScrollTrigger);
+
 function RecentZip() {
+  const location = useLocation();
+
+  useEffect(() => {
+    scrollTop();
+  }, [location.pathname]);
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
 
     gsap.utils.toArray(".panel").forEach((panel) => {
       ScrollTrigger.create({
@@ -220,6 +226,7 @@ function RecentZip() {
         end: "+=100%",
         pin: true,
         pinSpacing: false,
+        markers: true,
       });
 
       const inner = panel.querySelector(".card-inner");
@@ -248,89 +255,90 @@ function RecentZip() {
     <Container>
       <MainTitle>
         <Title>Artist Zip</Title>
-        <Button onClick={() => navigate("/filtercategory/artist")}>More Zip</Button>
+        <Button
+          onClick={() => {
+            scrollTop();
+            navigate("/filtercategory/artist");
+          }}
+        >
+          More Zip
+        </Button>
       </MainTitle>
       <Wrapper>
         <Item className="panel">
-          <div className="card-inner">
-            <AccordionCard>
-              <CardTitle>
-                <span>01</span>
-                <h3>닝닝</h3>
-              </CardTitle>
-              <CardInfo>
-                <LeftInfo>
-                  <h4>
-                    에스파 닝닝 인마이백
-                    <br />
-                    제대로 모시겠습니다.
-                  </h4>
-                  <p>
-                    닝닝이 자신의 애장품을 보부상 백에 가득 담아왔습니다. 작사 노트부터 폴라로이드 필름 앨범, 유치원
-                    시절부터 모아온 편지들, 팬이 만들어 준 파우치, 최애 간식까지!
-                  </p>
-                  <button>view zip</button>
-                </LeftInfo>
-                <RightInfo>
-                  <video src="/videos/recent_1.mp4" muted autoPlay loop></video>
-                </RightInfo>
-              </CardInfo>
-            </AccordionCard>
-          </div>
+          <AccordionCard className="card-inner">
+            <CardTitle>
+              <span>01</span>
+              <h3>닝닝</h3>
+            </CardTitle>
+            <CardInfo>
+              <LeftInfo>
+                <h4>
+                  에스파 닝닝 인마이백
+                  <br />
+                  제대로 모시겠습니다.
+                </h4>
+                <p>
+                  닝닝이 자신의 애장품을 보부상 백에 가득 담아왔습니다. 작사 노트부터 폴라로이드 필름 앨범, 유치원
+                  시절부터 모아온 편지들, 팬이 만들어 준 파우치, 최애 간식까지!
+                </p>
+                <button>view zip</button>
+              </LeftInfo>
+              <RightInfo>
+                <video src="/videos/recent_1.mp4" muted autoPlay loop></video>
+              </RightInfo>
+            </CardInfo>
+          </AccordionCard>
         </Item>
         <Item className="panel">
-          <div className="card-inner">
-            <AccordionCard>
-              <CardTitle>
-                <span>02</span>
-                <h3>필릭스</h3>
-              </CardTitle>
-              <CardInfo>
-                <LeftInfo>
-                  <h4>
-                    스트레이키즈 필릭스가
-                    <br />
-                    n번째 구매한 아이템은?
-                  </h4>
-                  <p>
-                    스트레이 키즈 필릭스가 화이트 셔츠에 뿌린다는 향수부터 가장 아끼는 애착 인형, 당 충전용 젤리까지!
-                    보고 있으면 나도 모르게 웃게 되는 필릭스의 인 마이 백을 만나보세요
-                  </p>
-                  <button>view zip</button>
-                </LeftInfo>
-                <RightInfo>
-                  <video src="/videos/recent_2.mp4" muted autoPlay loop></video>
-                </RightInfo>
-              </CardInfo>
-            </AccordionCard>
-          </div>
+          <AccordionCard className="card-inner">
+            <CardTitle>
+              <span>02</span>
+              <h3>필릭스</h3>
+            </CardTitle>
+            <CardInfo>
+              <LeftInfo>
+                <h4>
+                  스트레이키즈 필릭스가
+                  <br />
+                  n번째 구매한 아이템은?
+                </h4>
+                <p>
+                  스트레이 키즈 필릭스가 화이트 셔츠에 뿌린다는 향수부터 가장 아끼는 애착 인형, 당 충전용 젤리까지! 보고
+                  있으면 나도 모르게 웃게 되는 필릭스의 인 마이 백을 만나보세요
+                </p>
+                <button>view zip</button>
+              </LeftInfo>
+              <RightInfo>
+                <video src="/videos/recent_2.mp4" muted autoPlay loop></video>
+              </RightInfo>
+            </CardInfo>
+          </AccordionCard>
         </Item>
         <Item className="panel">
-          <div className="card-inner">
-            <AccordionCard>
-              <CardTitle>
-                <span>03</span>
-                <h3>고현정</h3>
-              </CardTitle>
-              <CardInfo>
-                <LeftInfo>
-                  <h4>
-                    품절 대란, 고현정이
-                    <br />
-                    가방 탈탈 털어 소개한 일상템
-                  </h4>
-                  <p>
-                    업로드 일주일 만에 유튜브 조회 수는 100만을 앞뒀고, 소개한 팩트는 이미 품절되었다는 소식을 전해왔죠!
-                    흔치 않은 기회, 요즘 고현정이 주로 쓰는 찐 일상템, 구경해볼까요?
-                  </p>
-                  <button>view zip</button>
-                </LeftInfo>
-                <RightInfo>
-                  <video src="/videos/recent_3.mp4" muted autoPlay loop></video>
-                </RightInfo>
-              </CardInfo>
-            </AccordionCard>
-          </div>
+          <AccordionCard className="card-inner">
+            <CardTitle>
+              <span>03</span>
+              <h3>고현정</h3>
+            </CardTitle>
+            <CardInfo>
+              <LeftInfo>
+                <h4>
+                  품절 대란, 고현정이
+                  <br />
+                  가방 탈탈 털어 소개한 일상템
+                </h4>
+                <p>
+                  업로드 일주일 만에 유튜브 조회 수는 100만을 앞뒀고, 소개한 팩트는 이미 품절되었다는 소식을 전해왔죠!
+                  흔치 않은 기회, 요즘 고현정이 주로 쓰는 찐 일상템, 구경해볼까요?
+                </p>
+                <button>view zip</button>
+              </LeftInfo>
+              <RightInfo>
+                <video src="/videos/recent_3.mp4" muted autoPlay loop></video>
+              </RightInfo>
+            </CardInfo>
+          </AccordionCard>
         </Item>
       </Wrapper>
     </Container>

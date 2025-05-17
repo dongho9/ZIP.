@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import ProductItem from "./ProductItem";
 import styled from "styled-components";
 
+import { scrollTop } from "../common/Footer";
+import { useLocation } from "react-router-dom";
+
 /*--- 스타일 ---*/
 const Container = styled.div`
   background: var(--light-color);
@@ -74,6 +77,12 @@ const ProductList = styled.ul`
 
 /*--- 출력 ---*/
 const BeautyPick = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    scrollTop();
+  }, [location.pathname]);
+
   const navigate = useNavigate();
 
   const [productData, setProductData] = useState([]);
@@ -88,7 +97,14 @@ const BeautyPick = () => {
     <Container>
       <MainTitle>
         <Title>Beauty ZIP</Title>
-        <Button onClick={() => navigate("/filtercategory/beauty")}>More Zip</Button>
+        <Button
+          onClick={() => {
+            scrollTop();
+            navigate("/filtercategory/beauty");
+          }}
+        >
+          More Zip
+        </Button>
       </MainTitle>
       <ProductList>
         {productData?.map((item, index) => (

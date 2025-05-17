@@ -4,10 +4,11 @@ import CardItem from "./CardItem";
 /*--- 스와이퍼 ---*/
 import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
-
-/*--- 스와이퍼 라이브러리 스타일 ---*/
 import "swiper/css";
 import "swiper/css/pagination";
+
+import { scrollTop } from "../common/Footer";
+import { useLocation } from "react-router-dom";
 
 /*--- 스타일 ---*/
 const Container = styled.div`
@@ -86,6 +87,12 @@ const Button = styled.button`
 
 /*--- 출력 ---*/
 export default function StylePick() {
+  const location = useLocation();
+
+  useEffect(() => {
+    scrollTop();
+  }, [location.pathname]);
+
   const navigate = useNavigate();
 
   const [sildeData, setSlideData] = useState([]);

@@ -1,100 +1,68 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-/*--- 스타일 ---*/
+const roll = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+`;
+
 const Container = styled.div`
-  /* margin: 60px 0; */
   width: 100%;
   height: 80px;
   background: var(--dark-color);
   color: var(--light-color);
-  /* animation: roll 10s linear infinite; */
+  overflow: hidden;
+  position: relative;
 `;
-const LogoWrapper = styled.ul`
-  width: 100%;
-  height: 100%;
+
+const Track = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  animation: roll 12s linear infinite;
+  width: max-content;
+  animation: ${roll} 20s linear infinite;
 `;
+
+const LogoWrapper = styled.ul`
+  display: flex;
+  align-items: center;
+`;
+
 const BrandLogo = styled.li`
   width: 80px;
+  margin-right: 40px;
+  list-style: none;
+
   img {
     width: 100%;
-    object-fit: cover;
-  }
-
-  @keyframes roll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+    height: auto;
+    object-fit: contain;
   }
 `;
+
+// 로고 이미지 여러 개 반복 (한 세트를 두 번 반복)
+const logos = new Array(9).fill("/src/imgs/home/image.png");
 
 const RollingBanner = () => {
   return (
     <Container>
-      <LogoWrapper>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-      </LogoWrapper>
-      <LogoWrapper>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-        <BrandLogo>
-          <img src="/src/imgs/home/image.png" alt="엘르매거진 로고" />
-        </BrandLogo>
-      </LogoWrapper>
+      <Track>
+        <LogoWrapper>
+          {logos.map((src, idx) => (
+            <BrandLogo key={`1-${idx}`}>
+              <img src={src} alt="브랜드 로고" />
+            </BrandLogo>
+          ))}
+        </LogoWrapper>
+        <LogoWrapper>
+          {logos.map((src, idx) => (
+            <BrandLogo key={`2-${idx}`}>
+              <img src={src} alt="브랜드 로고" />
+            </BrandLogo>
+          ))}
+        </LogoWrapper>
+      </Track>
     </Container>
   );
 };
