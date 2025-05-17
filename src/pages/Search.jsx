@@ -112,7 +112,8 @@ const Search = () => {
               (product) =>
                 product.itemName.toLowerCase().includes(name.toLowerCase()) ||
                 product.brandEng.toLowerCase().includes(name.toLowerCase()) ||
-                product.brand.toLowerCase().includes(name.toLowerCase())
+                product.brand.toLowerCase().includes(name.toLowerCase()) ||
+                artist.artistName.includes(name)
             );
             return products.map((product, j) => {
               return (
