@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { StarData } from "../StarData";
 
@@ -37,20 +37,11 @@ const FilterContent = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
-  /* grid-template-areas:
-    "g01 g01 g02 g03"
-    "g04 . g05 g06"
-    ". g07 . g08"
-    "g09 g10 g11 g11"; */
   @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 767px) {
     grid-template-columns: repeat(2, 1fr);
-    /* grid-template-areas:
-      "g01 g02"
-      "g03 g04"
-      "g05 g06"
-      "g07 g08"
-      "g09 g10"
-      "g11 ."; */
   }
 `;
 
@@ -98,7 +89,9 @@ const FilterItemImgWrap = styled.div`
 const FilterItemImg = styled.img`
   width: 100%;
   object-fit: cover;
+  aspect-ratio: 1 / 1;
   filter: brightness(0.95);
+  background: var(--light-color);
 `;
 const FilterItemText = styled.div`
   display: flex;
@@ -116,6 +109,7 @@ const FilterItemName = styled.p`
 const FilterCategory = () => {
   const { categoryName } = useParams();
   const { isLoading, data } = StarData();
+  const navigate = useNavigate("");
   if (categoryName === "style") {
     return (
       <>
@@ -146,7 +140,10 @@ const FilterCategory = () => {
                   (product) => product.mainCategory === "style"
                 );
                 return products.map((product, i) => (
-                  <FilterItem key={i}>
+                  <FilterItem
+                    key={i}
+                    onClick={() => navigate(`/detail/${product.itemName}`)}
+                  >
                     <FilterItemImgWrap>
                       <FilterItemImg src={product.detailImg.img01} />
                     </FilterItemImgWrap>
@@ -195,7 +192,10 @@ const FilterCategory = () => {
                   (product) => product.mainCategory === "beauty"
                 );
                 return products.map((product, i) => (
-                  <FilterItem key={i}>
+                  <FilterItem
+                    key={i}
+                    onClick={() => navigate(`/detail/${product.itemName}`)}
+                  >
                     <FilterItemImgWrap>
                       <FilterItemImg src={product.detailImg.img01} />
                     </FilterItemImgWrap>
@@ -213,6 +213,8 @@ const FilterCategory = () => {
         )}
       </>
     );
+  } else {
+    null;
   }
 };
 
