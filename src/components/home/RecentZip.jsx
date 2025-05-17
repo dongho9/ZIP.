@@ -13,7 +13,6 @@ const Container = styled.div`
   color: var(--dark-color);
   margin-bottom: 100px;
 `;
-
 const Wrapper = styled.div`
   width: 100%;
   margin: 100px 0;
@@ -24,7 +23,6 @@ const Wrapper = styled.div`
     margin: 50px 0;
   }
 `;
-
 const Item = styled.section`
   width: 100%;
   /* height: 100vh; */
@@ -39,14 +37,12 @@ const Item = styled.section`
   /* padding: 10px; */
   background: #fff;
 `;
-
 const MainTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 100px 3% 0px;
 `;
-
 const Title = styled.h2`
   color: var(--dark-color);
   font-size: 10rem;
@@ -61,7 +57,6 @@ const Title = styled.h2`
     letter-spacing: -2px;
   }
 `;
-
 const Button = styled.button`
   font-size: 2rem;
   padding: 22px 50px;
@@ -81,7 +76,6 @@ const Button = styled.button`
     padding: 16px 24px;
   }
 `;
-
 const AccordionCard = styled.div`
   width: 100%;
   padding: 0 10%;
@@ -122,7 +116,6 @@ const CardInfo = styled.div`
     gap: 20px;
   }
 `;
-
 const LeftInfo = styled.aside`
   width: 50%;
 
@@ -184,7 +177,6 @@ const LeftInfo = styled.aside`
     }
   }
 `;
-
 const RightInfo = styled.div`
   position: relative;
   width: 60%;
@@ -207,6 +199,7 @@ const RightInfo = styled.div`
 
 gsap.registerPlugin(ScrollTrigger);
 
+//
 function RecentZip() {
   const location = useLocation();
 
@@ -217,14 +210,12 @@ function RecentZip() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // gsap.registerPlugin(ScrollTrigger);
-
     gsap.utils.toArray(".panel").forEach((panel) => {
       ScrollTrigger.create({
         trigger: panel,
         start: "top top",
         end: "+=100%",
-        pin: true,
+        // pin: true,
         pinSpacing: false,
         markers: true,
       });
