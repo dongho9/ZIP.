@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -197,50 +197,93 @@ const RightInfo = styled.div`
   }
 `;
 
+/* --- 목업데이터 --- */
+const data = [
+  {
+    id: "01",
+    name: "닝닝",
+    title: "에스파 닝닝 인마이백\n제대로 모시겠습니다.",
+    desc: "닝닝이 자신의 애장품을 보부상 백에 가득 담아왔습니다...",
+    video: "/videos/recent_1.mp4",
+  },
+  {
+    id: "02",
+    name: "필릭스",
+    title: "스트레이키즈 필릭스가\nn번째 구매한 아이템은?",
+    desc: "스트레이 키즈 필릭스가 화이트 셔츠에 뿌린다는 향수부터...",
+    video: "/videos/recent_2.mp4",
+  },
+  {
+    id: "03",
+    name: "고현정",
+    title: "품절 대란, 고현정이\n가방 탈탈 털어 소개한 일상템",
+    desc: "업로드 일주일 만에 유튜브 조회 수는 100만을 앞뒀고...",
+    video: "/videos/recent_3.mp4",
+  },
+];
+
+/* --- 출력 --- */
 gsap.registerPlugin(ScrollTrigger);
 
-//
 function RecentZip() {
+  const navigate = useNavigate();
   const location = useLocation();
+
+  // 패널 각각에 ref 배열
+  const panelsRef = useRef([]);
 
   useEffect(() => {
     scrollTop();
-  }, [location.pathname]);
 
-  const navigate = useNavigate();
+    // ScrollTrigger 초기화
+    panelsRef.current.forEach((panel) => {
+      if (!panel) return;
 
-  useEffect(() => {
-    gsap.utils.toArray(".panel").forEach((panel) => {
       ScrollTrigger.create({
         trigger: panel,
-        start: "top top",
-        end: "+=100%",
-        // pin: true,
-        pinSpacing: false,
-        markers: true,
+        start: "top top", // ← 중요: 겹침 방지
+        end: "bottom bottom",
+        pin: true,
+        scrub: true,
+        pinSpacing: true,
+        markers: true, // 디버깅 시 켜기
       });
-
-      const inner = panel.querySelector(".card-inner");
-      if (inner) {
-        gsap.fromTo(
-          inner,
-          { y: 100 },
-          {
-            y: 0,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: panel,
-              start: "top center",
-              end: "bottom center",
-              scrub: true,
-            },
-          }
-        );
-      }
     });
 
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
-  }, []);
+    ScrollTrigger.refresh();
+
+    return () => {
+      const triggers = ScrollTrigger.getAll();
+      for (const t of triggers) {
+        t.kill();
+      }
+    };
+  }, [location.pathname]);
+
+  // 목업 데이터
+  const cards = [
+    {
+      id: 1,
+      name: "닝닝",
+      title: "에스파 닝닝 인마이백\n제대로 모시겠습니다.",
+      desc: "닝닝이 자신의 애장품을 보부상 백에 가득 담아왔습니다. 작사 노트부터 폴라로이드 필름 앨범, 유치원 시절부터 모아온 편지들, 팬이 만들어 준 파우치, 최애 간식까지!",
+      video: "/videos/recent_1.mp4",
+    },
+    {
+      id: 2,
+      name: "필릭스",
+      title: "스트레이키즈 필릭스가\nn번째 구매한 아이템은?",
+      desc: "스트레이 키즈 필릭스가 화이트 셔츠에 뿌린다는 향수부터 가장 아끼는 애착 인형, 당 충전용 젤리까지! 보고 있으면 나도 모르게 웃게 되는 필릭스의 인 마이 백을 만나보세요",
+      video: "/videos/recent_2.mp4",
+    },
+    {
+      id: 3,
+      name: "고현정",
+      title: "품절 대란, 고현정이\n가방 탈탈 털어 소개한 일상템",
+      desc: "업로드 일주일 만에 유튜브 조회 수는 100만을 앞뒀고, 소개한 팩트는 이미 품절되었다는 소식을 전해왔죠! 흔치 않은 기회, 요즘 고현정이 주로 쓰는 찐 일상템, 구경해볼까요?",
+      video: "/videos/recent_3.mp4",
+    },
+  ];
 
   return (
     <Container>
@@ -249,88 +292,33 @@ function RecentZip() {
         <Button
           onClick={() => {
             scrollTop();
-            navigate("/filtercategory/artist");
+            navigate("/star");
           }}
         >
           More Zip
         </Button>
       </MainTitle>
       <Wrapper>
-        <Item className="panel">
-          <AccordionCard className="card-inner">
-            <CardTitle>
-              <span>01</span>
-              <h3>닝닝</h3>
-            </CardTitle>
-            <CardInfo>
-              <LeftInfo>
-                <h4>
-                  에스파 닝닝 인마이백
-                  <br />
-                  제대로 모시겠습니다.
-                </h4>
-                <p>
-                  닝닝이 자신의 애장품을 보부상 백에 가득 담아왔습니다. 작사 노트부터 폴라로이드 필름 앨범, 유치원
-                  시절부터 모아온 편지들, 팬이 만들어 준 파우치, 최애 간식까지!
-                </p>
-                <button>view zip</button>
-              </LeftInfo>
-              <RightInfo>
-                <video src="/videos/recent_1.mp4" muted autoPlay loop></video>
-              </RightInfo>
-            </CardInfo>
-          </AccordionCard>
-        </Item>
-        <Item className="panel">
-          <AccordionCard className="card-inner">
-            <CardTitle>
-              <span>02</span>
-              <h3>필릭스</h3>
-            </CardTitle>
-            <CardInfo>
-              <LeftInfo>
-                <h4>
-                  스트레이키즈 필릭스가
-                  <br />
-                  n번째 구매한 아이템은?
-                </h4>
-                <p>
-                  스트레이 키즈 필릭스가 화이트 셔츠에 뿌린다는 향수부터 가장 아끼는 애착 인형, 당 충전용 젤리까지! 보고
-                  있으면 나도 모르게 웃게 되는 필릭스의 인 마이 백을 만나보세요
-                </p>
-                <button>view zip</button>
-              </LeftInfo>
-              <RightInfo>
-                <video src="/videos/recent_2.mp4" muted autoPlay loop></video>
-              </RightInfo>
-            </CardInfo>
-          </AccordionCard>
-        </Item>
-        <Item className="panel">
-          <AccordionCard className="card-inner">
-            <CardTitle>
-              <span>03</span>
-              <h3>고현정</h3>
-            </CardTitle>
-            <CardInfo>
-              <LeftInfo>
-                <h4>
-                  품절 대란, 고현정이
-                  <br />
-                  가방 탈탈 털어 소개한 일상템
-                </h4>
-                <p>
-                  업로드 일주일 만에 유튜브 조회 수는 100만을 앞뒀고, 소개한 팩트는 이미 품절되었다는 소식을 전해왔죠!
-                  흔치 않은 기회, 요즘 고현정이 주로 쓰는 찐 일상템, 구경해볼까요?
-                </p>
-                <button>view zip</button>
-              </LeftInfo>
-              <RightInfo>
-                <video src="/videos/recent_3.mp4" muted autoPlay loop></video>
-              </RightInfo>
-            </CardInfo>
-          </AccordionCard>
-        </Item>
+        {cards.map((item, index) => (
+          <Item key={item.index} ref={(el) => (panelsRef.current[index] = el)}>
+            <AccordionCard>
+              <CardTitle>
+                <span>{String(item.id).padStart(2, "0")}</span>
+                <h3>{item.name}</h3>
+              </CardTitle>
+              <CardInfo>
+                <LeftInfo>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                  <button onClick={() => navigate(`/star/${item.name}`)}>view zip</button>
+                </LeftInfo>
+                <RightInfo>
+                  <video src={item.video} muted autoPlay loop></video>
+                </RightInfo>
+              </CardInfo>
+            </AccordionCard>
+          </Item>
+        ))}
       </Wrapper>
     </Container>
   );

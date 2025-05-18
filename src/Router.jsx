@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
         element: <Ott />,
       },
       {
-        path: "detail",
+        path: "detail/:itemName",
         element: <Detail />,
       },
       {

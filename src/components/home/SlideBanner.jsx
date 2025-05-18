@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 /*--- 스타일 ---*/
@@ -95,6 +96,7 @@ const CardItem = styled.li`
     p {
       font-size: 2rem;
       font-weight: 600;
+      line-height: 2.6rem;
       margin: 8px 0 20px;
     }
     span {
@@ -113,7 +115,7 @@ const CardItem = styled.li`
 `;
 const Button = styled.button`
   font-size: 1.2rem;
-  padding: 10px 20px;
+  padding: 12px 20px;
   background: var(--light-color);
   color: var(--dark-color);
   text-transform: uppercase;
@@ -135,6 +137,9 @@ const Button = styled.button`
 
 /*--- 출력 ---*/
 const SlideBanner = () => {
+  const navigate = useNavigate();
+  const onClick = () => {};
+
   return (
     <Container>
       <Title>
@@ -151,10 +156,10 @@ const SlideBanner = () => {
             alt=""
           />
           <div className="text-overlay">
-            <h3>르라보</h3>
+            <h3>lelabo</h3>
             <p>핸드 포마드 히노키 55ml</p>
             <span>KRW 2631000</span>
-            <Button>view more</Button>
+            <Button onClick={() => navigate("/detail/핸드 포마드 히노키 55ml")}>view more</Button>
           </div>
         </CardItem>
         <CardItem>
@@ -163,22 +168,22 @@ const SlideBanner = () => {
             alt=""
           />
           <div className="text-overlay">
-            <h3>샤넬</h3>
+            <h3>chanel</h3>
             <p>르 리프트 라 크렘 망 핸드크림</p>
             <span>KRW 2631000</span>
-            <Button>view more</Button>
+            <Button onClick={() => navigate("/detail/르 리프트 라 크렘 망 핸드 크림")}>view more</Button>
           </div>
         </CardItem>
         <CardItem>
           <img
-            src="https://assets.levelshoes.com/cdn-cgi/image/width=800,height=1120,quality=85,format=jpeg/media/catalog/product/h/0/h0500-lcl213s-1n001_5.jpg?ts=20240713030523"
+            src="https://img.ssfshop.com/cmd/LB_750x1000/src/https://img.ssfshop.com/goods/ECBR/25/03/11/GM0025031104710_1_THNAIL_ORGINL_20250314184248405.jpg"
             alt=""
           />
           <div className="text-overlay">
-            <h3>톰포드</h3>
-            <p>블랙 송아지 가죽 지퍼 포트폴리오</p>
+            <h3>AMI</h3>
+            <p>아미 볼 캡</p>
             <span>KRW 2631000</span>
-            <Button>view more</Button>
+            <Button onClick={() => navigate("/detail/아미 볼 캡")}>view more</Button>
           </div>
         </CardItem>
       </CardWrapper>

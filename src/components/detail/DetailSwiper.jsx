@@ -57,49 +57,32 @@ const DisableContent = styled.div`
   }
 `;
 
-const DetailSwiper = ({ enabled }) => {
+const DetailSwiper = ({ enabled, product }) => {
+  console.log(product);
   return (
     <Container>
       {enabled ? (
         <Swiper slidesPerView={1}>
           <SwiperSlide>
-            <img
-              src="https://relilla.com/cdn/shop/files/product_17_kikii_1280x.jpg?v=1698502401"
-              alt="img01"
-            />
+            <img src={product.detailImg.img01} alt="img01" />
           </SwiperSlide>
           <SwiperSlide>
-            <img
-              src="https://relilla.com/cdn/shop/files/relilla_sub8_1280x.jpg?v=1698502415"
-              alt="img02"
-            />
+            <img src={product.detailImg.img02} alt="img02" />
           </SwiperSlide>
           <SwiperSlide>
-            <img
-              src="https://relilla.com/cdn/shop/files/product_17_kikii_1280x.jpg?v=1698502401"
-              alt="img01"
-            />
+            <img src={product.detailImg.img03} alt="img03" />
           </SwiperSlide>
         </Swiper>
       ) : (
         <DisableSwiper>
           <DisableContent>
-            <img
-              src="https://relilla.com/cdn/shop/files/product_17_kikii_1280x.jpg?v=1698502401"
-              alt="img01"
-            />
+            <img src={product.detailImg.img01} alt="img01" />
           </DisableContent>
           <DisableContent>
-            <img
-              src="https://relilla.com/cdn/shop/files/relilla_sub8_1280x.jpg?v=1698502415"
-              alt="img02"
-            />
+            <img src={product.detailImg.img02} alt="img02" />
           </DisableContent>
           <DisableContent>
-            <img
-              src="https://relilla.com/cdn/shop/files/product_17_kikii_1280x.jpg?v=1698502401"
-              alt="img01"
-            />
+            <img src={product.detailImg.img03} alt="img03" />
           </DisableContent>
         </DisableSwiper>
       )}

@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
 import "swiper/css";
 import "swiper/css/pagination";
-
+/* --- 스크롤 탑 --- */
 import { scrollTop } from "../common/Footer";
 import { useLocation } from "react-router-dom";
 
@@ -16,6 +16,7 @@ const Container = styled.div`
   height: 100%;
   background: #000;
   color: #fff;
+  margin-top: 120px;
   position: relative;
   .swiper {
     width: 100%;
@@ -120,7 +121,7 @@ export default function StylePick() {
       >
         {sildeData?.map((item, index) => (
           <SwiperSlide key={index}>
-            <CardItem subtitle={item.subtitle} title={item.title} img={item.img} />
+            <CardItem subtitle={item.subtitle} title={item.title} img={item.img} detailURL={item.detailURL} />
           </SwiperSlide>
         ))}
       </Swiper>

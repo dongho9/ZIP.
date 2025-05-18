@@ -10,7 +10,7 @@ const Container = styled.div`
   width: 100%;
   background: #fff;
   color: #000;
-  padding: 100px 0% 0px;
+  padding: 30px 0% 0px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   font-family: "EHNormalTrial";
@@ -188,12 +188,12 @@ const Category = () => {
           </li>
           <li
             onClick={() => {
-              navigate("/filtercategory/artist");
+              navigate("/star");
               setTimeout(() => scrollTop(), 0);
             }}
             onMouseEnter={() => onMouseEnter("artist")}
           >
-            Artist
+            star
           </li>
           <li
             onClick={() => {

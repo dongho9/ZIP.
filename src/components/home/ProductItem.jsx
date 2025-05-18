@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+
+import { scrollTop } from "../common/Footer";
 
 /*--- 스타일 ---*/
 const Container = styled.li`
@@ -47,7 +50,9 @@ const Container = styled.li`
 const ProductImg = styled.div`
   cursor: pointer;
   overflow: hidden;
+  position: relative;
   img {
+    padding: 30px;
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -116,15 +121,36 @@ const Prod_price = styled.span`
   @media screen and (max-width: 767px) {
   }
 `;
+const FilterItemPick = styled.span`
+  display: inline-block;
+  color: var(--light-color);
+  background: var(--dark-color);
+  font-weight: 400;
+  z-index: 1;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-align: center;
+  padding: 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  /* border: 1px solid #f00; */
+`;
 
 /*--- 출력 ---*/
-const ProductItem = ({ img, subtitle, name, price }) => {
+const ProductItem = ({ img, subtitle, name, price, artistName, detailURL }) => {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <ProductImg>
-        <img src={img} alt="" />
+        <FilterItemPick>
+          {artistName} <br />
+          PICK
+        </FilterItemPick>
+        <img src={img} alt="{img} 제품" onClick={() => navigate(`/detail/${detailURL}`)} />
       </ProductImg>
-      <ProductInfo>
+      <ProductInfo onClick={() => navigate(`/detail/${detailURL}`)}>
         <Prod_sub>{subtitle}</Prod_sub>
         <Prod_name>{name}</Prod_name>
         <Prod_price>KRW {price}</Prod_price>

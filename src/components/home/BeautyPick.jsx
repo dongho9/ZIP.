@@ -60,6 +60,7 @@ const Button = styled.button`
 `;
 const ProductList = styled.ul`
   padding: 100px 0;
+  text-transform: uppercase;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-gap: 12px;
@@ -77,13 +78,13 @@ const ProductList = styled.ul`
 
 /*--- 출력 ---*/
 const BeautyPick = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    scrollTop();
-  }, [location.pathname]);
-
   const navigate = useNavigate();
+
+  // const location = useLocation();
+
+  // useEffect(() => {
+  //   scrollTop();
+  // }, [location.pathname]);
 
   const [productData, setProductData] = useState([]);
 
@@ -108,7 +109,16 @@ const BeautyPick = () => {
       </MainTitle>
       <ProductList>
         {productData?.map((item, index) => (
-          <ProductItem key={index} img={item.img} name={item.name} price={item.price} subtitle={item.subtitle} />
+          <ProductItem
+            onClick={() => navigate(`/detail/${item.detailURL}`)}
+            key={index}
+            img={item.img}
+            name={item.name}
+            price={item.price}
+            subtitle={item.subtitle}
+            artistName={item.artistName}
+            detailURL={item.detailURL}
+          />
         ))}
       </ProductList>
     </Container>

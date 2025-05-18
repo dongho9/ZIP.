@@ -65,7 +65,7 @@ const Footer = () => {
   const [filterCheck, setFilterCheck] = useState(false);
   const navigate = useNavigate();
   const commerceMatch = useMatch("/");
-  const detailMatch = useMatch("/detail");
+  const detailMatch = useMatch("/detail/:itemName");
   const loginMatch = useMatch("/login");
   const signUpMatch = useMatch("/signup");
   const eventMatch = useMatch("/event");
@@ -168,7 +168,7 @@ const Footer = () => {
       </FooterLeft>
       <FooterRight>
         <Link to="/" onClick={scrollTop}>
-          <HeaderLogoImg src="./img/Logo.png" />
+          <HeaderLogoImg src="/img/Logo.png" />
         </Link>
       </FooterRight>
     </Container>

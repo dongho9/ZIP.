@@ -1,9 +1,9 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { StarData } from "../StarData";
 
 const Container = styled.div`
-  margin-top: 60px;
+  margin-top: 100px;
   background: var(--light-color);
   padding: 60px 3% 100px 3%;
   display: flex;
@@ -12,110 +12,128 @@ const Container = styled.div`
   position: relative;
 `;
 const FilterTitle = styled.h3`
-  font-size: 6rem;
+  font-size: 10rem;
+  letter-spacing: -4px;
   font-family: "EHNormalTrial";
 `;
 const FilterWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-left: 10px;
+  /* padding-left: 10px; */
   border: 1px solid var(--border-color);
 `;
 const Filter = styled.ul`
   display: flex;
-  gap: 16px;
+  font-family: "EHNormalTrial";
   align-items: center;
+  font-size: 2rem;
+  transition: all 0.5s;
+  li {
+    color: var(--dark-color);
+    background: var(--light-color);
+    padding: 20px;
+    &:hover {
+      color: var(--light-color);
+      background: var(--dark-color);
+      font-weight: 500;
+    }
+  }
 `;
 const FilterSelect = styled.select`
   height: 100%;
-  padding: 10px 40px 10px 4px;
-  border: none;
   border-left: 1px solid var(--border-color);
 `;
 const FilterContent = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  /* grid-template-areas:
-    "g01 g01 g02 g03"
-    "g04 . g05 g06"
-    ". g07 . g08"
-    "g09 g10 g11 g11"; */
+  grid-gap: 20px;
+
   @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 767px) {
     grid-template-columns: repeat(2, 1fr);
-    /* grid-template-areas:
-      "g01 g02"
-      "g03 g04"
-      "g05 g06"
-      "g07 g08"
-      "g09 g10"
-      "g11 ."; */
   }
 `;
 
 const FilterItem = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  &.g01 {
-    grid-area: g01;
-  }
-  &.g02 {
-    grid-area: g02;
-  }
-  &.g03 {
-    grid-area: g03;
-  }
-  &.g04 {
-    grid-area: g04;
-  }
-  &.g05 {
-    grid-area: g05;
-  }
-  &.g06 {
-    grid-area: g06;
-  }
-  &.g07 {
-    grid-area: g07;
-  }
-  &.g08 {
-    grid-area: g08;
-  }
-  &.g09 {
-    grid-area: g09;
-  }
-  &.g10 {
-    grid-area: g10;
-  }
-  &.g11 {
-    grid-area: g11;
+  border-right: 1px solid var(--border-color);
+  padding-right: 20px;
+
+  &:nth-child(5),
+  &:nth-child(10),
+  &:nth-child(15),
+  &:nth-child(20),
+  &:nth-child(25),
+  &:nth-child(30),
+  &:nth-child(35),
+  &:nth-child(40) {
+    border-right: none;
   }
 `;
 const FilterItemImgWrap = styled.div`
   width: 100%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 `;
 const FilterItemImg = styled.img`
+  padding: 30px;
   width: 100%;
   object-fit: cover;
-  filter: brightness(0.95);
+  aspect-ratio: 1 / 1;
+  background: var(--light-color);
+  transition: all 0.5s ease;
+  /* filter: brightness(0.95); */
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 const FilterItemText = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: center;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  min-height: 120px;
+  padding: 10px 10px;
 `;
 const FilterItemPick = styled.span`
-  font-size: 1.4rem;
+  display: inline-block;
+  color: var(--light-color);
+  background: var(--dark-color);
+  font-weight: 400;
+  z-index: 1;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-align: center;
+  padding: 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
 `;
 const FilterItemName = styled.p`
   font-size: 1.8rem;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border-color);
+  line-height: 2.4rem;
+  margin: 10px 0;
+  font-weight: 600;
+`;
+const FilterItemBrand = styled.li`
+  color: var(--subTitle);
+  font-size: 1.4rem;
+`;
+const FilterItemPrice = styled.li`
+  letter-spacing: 0.2px;
+  color: var(--subTitle);
+  font-size: 1.4rem;
 `;
 const FilterCategory = () => {
   const { categoryName } = useParams();
   const { isLoading, data } = StarData();
+  const navigate = useNavigate("");
   if (categoryName === "style") {
     return (
       <>
@@ -123,9 +141,7 @@ const FilterCategory = () => {
           <div>isLoading...</div>
         ) : (
           <Container>
-            <FilterTitle style={{ textTransform: "capitalize" }}>
-              {categoryName}
-            </FilterTitle>
+            <FilterTitle style={{ textTransform: "capitalize" }}>{categoryName} ZIP</FilterTitle>
             <FilterWrap>
               <Filter>
                 <li>ALL</li>
@@ -142,19 +158,20 @@ const FilterCategory = () => {
             </FilterWrap>
             <FilterContent>
               {data.artists.map((artist) => {
-                const products = artist.products.filter(
-                  (product) => product.mainCategory === "style"
-                );
+                const products = artist.products.filter((product) => product.mainCategory === "style");
                 return products.map((product, i) => (
-                  <FilterItem key={i}>
+                  <FilterItem key={i} onClick={() => navigate(`/detail/${product.itemName}`)}>
                     <FilterItemImgWrap>
+                      <FilterItemPick>
+                        {artist.artistName} <br />
+                        PICK
+                      </FilterItemPick>
                       <FilterItemImg src={product.detailImg.img01} />
                     </FilterItemImgWrap>
                     <FilterItemText>
-                      <FilterItemPick>{artist.artistName} PICK</FilterItemPick>
+                      <FilterItemBrand>{product.brand}</FilterItemBrand>
                       <FilterItemName>{product.itemName}</FilterItemName>
-                      <li>{product.brand}</li>
-                      <li>{product.price}</li>
+                      <FilterItemPrice>KRW {product.price}</FilterItemPrice>
                     </FilterItemText>
                   </FilterItem>
                 ));
@@ -171,9 +188,7 @@ const FilterCategory = () => {
           <div>isLoading...</div>
         ) : (
           <Container>
-            <FilterTitle style={{ textTransform: "capitalize" }}>
-              {categoryName}
-            </FilterTitle>
+            <FilterTitle style={{ textTransform: "capitalize" }}>{categoryName} ZIP</FilterTitle>
             <FilterWrap>
               <Filter>
                 <li>ALL</li>
@@ -191,18 +206,16 @@ const FilterCategory = () => {
             </FilterWrap>
             <FilterContent>
               {data.artists.map((artist) => {
-                const products = artist.products.filter(
-                  (product) => product.mainCategory === "beauty"
-                );
+                const products = artist.products.filter((product) => product.mainCategory === "beauty");
                 return products.map((product, i) => (
-                  <FilterItem key={i}>
+                  <FilterItem key={i} onClick={() => navigate(`/detail/${product.itemName}`)}>
                     <FilterItemImgWrap>
+                      <FilterItemPick>{artist.artistName} PICK</FilterItemPick>
                       <FilterItemImg src={product.detailImg.img01} />
                     </FilterItemImgWrap>
                     <FilterItemText>
-                      <FilterItemPick>{artist.artistName} PICK</FilterItemPick>
+                      <FilterItemBrand>{product.brand}</FilterItemBrand>
                       <FilterItemName>{product.itemName}</FilterItemName>
-                      <li>{product.brand}</li>
                       <li>{product.price}</li>
                     </FilterItemText>
                   </FilterItem>
@@ -213,6 +226,8 @@ const FilterCategory = () => {
         )}
       </>
     );
+  } else {
+    null;
   }
 };
 

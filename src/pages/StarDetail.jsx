@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import Masonry from "react-masonry-css";
 import { Swiper, SwiperSlide } from "swiper/react";
+// import YouTube from "react-youtube";
+import { StarData } from "../StarData";
 
 const Container = styled.div`
   color: var(--light-color);
@@ -53,31 +55,20 @@ const Container = styled.div`
 `;
 
 const ArtistTitle = styled.h3`
-  font-size: 3.6rem;
+  font-size: 6rem;
+  font-family: "EHNormalTrial";
 `;
 
 const ArtistBg = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  img {
+  iframe {
     width: 100%;
     object-fit: cover;
     height: 100vh;
     filter: brightness(50%);
   }
-`;
-
-const ArtistInfoContainer = styled.div`
-  width: 100%;
-  left: 0;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1;
-  background: transparent;
-  height: 3500px;
 `;
 const ArtistInfoWrap = styled.div`
   text-align: center;
@@ -87,28 +78,20 @@ const ArtistInfoWrap = styled.div`
   padding: 0 3%;
   position: absolute;
   top: 40%;
+  z-index: 1;
 `;
 
 const ArtistText = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-`;
-
-const FilterItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  position: relative;
-`;
-const FilterItemImgWrap = styled.div`
-  width: 100%;
-`;
-const FilterItemImg = styled.img`
-  width: 100%;
-  object-fit: cover;
-
-  transition: all 0.3s ease-in-out;
+  p {
+    font-size: 2.6rem;
+    font-family: "EHNormalTrial";
+  }
+  h4 {
+    margin-top: 14px;
+  }
 `;
 
 const RelateProducts = styled.div`
@@ -157,73 +140,44 @@ const RelateItemName = styled.p`
   padding-bottom: 20px;
   border-bottom: 1px solid var(--border-color);
 `;
+
 const StarDetail = () => {
   const { starName } = useParams();
+  const { itemName } = useParams();
+  
+  const { isLoading, data } = StarData();
+
+  const videoOpts = {
+    height: "1920",
+    width: "1080",
+    playerVars: {
+      autoplay: 0, // 자동재생 끔
+      controls: 1, // 컨트롤 보임
+    },
+  };
+
   return (
     <Container>
+      <ArtistInfoWrap>
+        <ArtistText>
+          <p>ACTOR</p>
+          <ArtistTitle>
+            IN MY PLACE
+            <h4>{starName}</h4>
+          </ArtistTitle>
+        </ArtistText>
+      </ArtistInfoWrap>
       <ArtistBg>
-        <img
-          src="https://img.allurekorea.com/allure/2024/11/style_673c87c9cb95e-1920x1080.jpg?x=1280&y=1538"
-          alt=""
-          className="
-          artistBg"
+        <iframe
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=0&showinfo=0&modestbranding=1&loop=1&playlist=dQw4w9WgXcQ"
+          title="Artist Background Video"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          frameBorder="0"
         />
       </ArtistBg>
-      <ArtistInfoContainer>
-        <ArtistInfoWrap>
-          <ArtistText>
-            <div>ACTOR</div>
-            <ArtistTitle>IN MY PLACE / {starName}</ArtistTitle>
-          </ArtistText>
-          <Masonry
-            breakpointCols={breakpointColumnsObj}
-            className="my-masonry-grid"
-            columnClassName="my-masonry-grid_column"
-          >
-            <FilterItem className="g01">
-              <FilterItemImgWrap>
-                <FilterItemImg src="https://img.allurekorea.com/allure/2024/11/style_673c8798ca192.jpg" />
-              </FilterItemImgWrap>
-            </FilterItem>
-            <FilterItem className="g02">
-              <FilterItemImgWrap>
-                <FilterItemImg
-                  src="https://img.allurekorea.com/allure/2024/11/style_673c879ee107c.jpg"
-                  alt="img06"
-                />
-              </FilterItemImgWrap>
-            </FilterItem>
-            <FilterItem className="g03">
-              <FilterItemImgWrap>
-                <FilterItemImg src="https://img.allurekorea.com/allure/2024/11/style_673c87a516097.jpg" />
-              </FilterItemImgWrap>
-            </FilterItem>
-            <FilterItem className="g04">
-              <FilterItemImgWrap>
-                <FilterItemImg
-                  src="https://img.allurekorea.com/allure/2024/11/style_673c87ab13c1b.jpg"
-                  alt="img06"
-                />
-              </FilterItemImgWrap>
-            </FilterItem>
-            <FilterItem className="g05">
-              <FilterItemImgWrap>
-                <FilterItemImg src="https://img.allurekorea.com/allure/2024/11/style_673c87b17c57a.jpg" />
-              </FilterItemImgWrap>
-            </FilterItem>
-            <FilterItem className="g06">
-              <FilterItemImgWrap>
-                <FilterItemImg
-                  src="https://img.allurekorea.com/allure/2024/11/style_673c87b7a734d.jpg"
-                  alt="img06"
-                />
-              </FilterItemImgWrap>
-            </FilterItem>
-          </Masonry>
-        </ArtistInfoWrap>
-      </ArtistInfoContainer>
       <RelateProducts>
-        <RelateProductsTitle>{starName} Items</RelateProductsTitle>
+        <RelateProductsTitle>{starName} Pick</RelateProductsTitle>
         <Swiper
           className="RelateItemWrap"
           breakpoints={{
@@ -275,10 +229,7 @@ const StarDetail = () => {
           </SwiperSlide>
           <SwiperSlide className="RelateItem">
             <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/product_11_1280x.jpg?v=1698491524"
-                alt="img04"
-              />
+              <RelateItemImg src="https://relilla.com/cdn/shop/files/product_11_1280x.jpg?v=1698491524" alt="img04" />
             </RelateItemImgWrap>
             <RelateItemText>
               <RelateItemPick>카리나 PICK</RelateItemPick>
@@ -287,10 +238,7 @@ const StarDetail = () => {
           </SwiperSlide>
           <SwiperSlide className="RelateItem">
             <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801"
-                alt="img05"
-              />
+              <RelateItemImg src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801" alt="img05" />
             </RelateItemImgWrap>
             <RelateItemText>
               <RelateItemPick>카리나 PICK</RelateItemPick>
@@ -299,10 +247,7 @@ const StarDetail = () => {
           </SwiperSlide>
           <SwiperSlide className="RelateItem">
             <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-                alt="img06"
-              />
+              <RelateItemImg src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654" alt="img06" />
             </RelateItemImgWrap>
             <RelateItemText>
               <RelateItemPick>카리나 PICK</RelateItemPick>
@@ -311,10 +256,7 @@ const StarDetail = () => {
           </SwiperSlide>
           <SwiperSlide className="RelateItem">
             <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801"
-                alt="img05"
-              />
+              <RelateItemImg src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801" alt="img05" />
             </RelateItemImgWrap>
             <RelateItemText>
               <RelateItemPick>카리나 PICK</RelateItemPick>
@@ -323,10 +265,7 @@ const StarDetail = () => {
           </SwiperSlide>
           <SwiperSlide className="RelateItem">
             <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-                alt="img06"
-              />
+              <RelateItemImg src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654" alt="img06" />
             </RelateItemImgWrap>
             <RelateItemText>
               <RelateItemPick>카리나 PICK</RelateItemPick>

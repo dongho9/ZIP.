@@ -16,49 +16,79 @@ const Container = styled.div`
   color: var(--light-color);
   overflow: hidden;
   position: relative;
+  display: flex;
 `;
 
 const Track = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: max-content;
-  animation: ${roll} 20s linear infinite;
+  padding: 30px 0;
+  animation: ${roll} 10s linear infinite;
 `;
 
 const LogoWrapper = styled.ul`
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 
 const BrandLogo = styled.li`
-  width: 80px;
-  margin-right: 40px;
+  width: 60px;
+  margin-right: 60px;
   list-style: none;
-
+  /* mix-blend-mode: difference; */
   img {
     width: 100%;
     height: auto;
-    object-fit: contain;
+    /* object-fit: contain; */
   }
 `;
 
-// 로고 이미지 여러 개 반복 (한 세트를 두 번 반복)
-const logos = new Array(9).fill("/src/imgs/home/image.png");
+const logos = [
+  {
+    logo: "https://www.pngall.com/wp-content/uploads/15/Gq-Logo-PNG-Photo.png",
+  },
+  {
+    logo: "https://www.pngall.com/wp-content/uploads/15/Gq-Logo-PNG-Photo.png",
+  },
+  {
+    logo: "https://www.pngall.com/wp-content/uploads/15/Gq-Logo-PNG-Photo.png",
+  },
+  {
+    logo: "https://www.pngall.com/wp-content/uploads/15/Gq-Logo-PNG-Photo.png",
+  },
+  {
+    logo: "/public/img/Logo.png",
+  },
+  {
+    logo: "https://www.pngall.com/wp-content/uploads/15/Gq-Logo-PNG-Photo.png",
+  },
+  {
+    logo: "https://www.pngall.com/wp-content/uploads/15/Gq-Logo-PNG-Photo.png",
+  },
+
+  {
+    logo: "/public/img/Logo.png",
+  },
+];
 
 const RollingBanner = () => {
   return (
     <Container>
       <Track>
         <LogoWrapper>
-          {logos.map((src, idx) => (
-            <BrandLogo key={`1-${idx}`}>
-              <img src={src} alt="브랜드 로고" />
+          {logos.map((logo, index) => (
+            <BrandLogo key={index}>
+              <img src={logo.logo} alt="브랜드 로고" />
             </BrandLogo>
           ))}
         </LogoWrapper>
         <LogoWrapper>
-          {logos.map((src, idx) => (
-            <BrandLogo key={`2-${idx}`}>
-              <img src={src} alt="브랜드 로고" />
+          {logos.map((logo, index) => (
+            <BrandLogo key={index}>
+              <img src={logo.logo} alt="브랜드 로고" />
             </BrandLogo>
           ))}
         </LogoWrapper>
