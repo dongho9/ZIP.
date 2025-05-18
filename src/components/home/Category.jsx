@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+
+import { scrollTop } from "../common/Footer";
+import { useLocation } from "react-router-dom";
 
 /*--- 스타일 ---*/
 const Container = styled.div`
   width: 100%;
   background: #fff;
   color: #000;
-  padding: 100px 0% 0px;
+  padding: 30px 0% 0px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   font-family: "EHNormalTrial";
@@ -114,6 +117,12 @@ const CategoryItem = styled.ul`
 
 /*--- 출력 ---*/
 const Category = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    scrollTop();
+  }, [location.pathname]);
+
   const navigate = useNavigate();
   const [selectedImg, setSelectedImg] = useState(
     "https://imagedelivery.net/djfufN1Ft6CV8Emdrip5jA/7b92c9b5-8641-48f2-e332-78536e252f00/w=1024,h=1425"
@@ -159,16 +168,40 @@ const Category = () => {
           <Title>Category</Title>
         </MainTitle>
         <CategoryItem>
-          <li onClick={() => navigate("/filtercategory/style")} onMouseEnter={() => onMouseEnter("style")}>
+          <li
+            onClick={() => {
+              navigate("/filtercategory/style");
+              setTimeout(() => scrollTop(), 0);
+            }}
+            onMouseEnter={() => onMouseEnter("style")}
+          >
             Style
           </li>
-          <li onClick={() => navigate("/filtercategory/beauty")} onMouseEnter={() => onMouseEnter("beauty")}>
+          <li
+            onClick={() => {
+              navigate("/filtercategory/beauty");
+              setTimeout(() => scrollTop(), 0);
+            }}
+            onMouseEnter={() => onMouseEnter("beauty")}
+          >
             Beauty
           </li>
-          <li onClick={() => navigate("/filtercategory/artist")} onMouseEnter={() => onMouseEnter("artist")}>
-            Artist
+          <li
+            onClick={() => {
+              navigate("/star");
+              setTimeout(() => scrollTop(), 0);
+            }}
+            onMouseEnter={() => onMouseEnter("artist")}
+          >
+            star
           </li>
-          <li onClick={() => navigate("/event")} onMouseEnter={() => onMouseEnter("promotion")}>
+          <li
+            onClick={() => {
+              navigate("/event");
+              setTimeout(() => scrollTop(), 0);
+            }}
+            onMouseEnter={() => onMouseEnter("promotion")}
+          >
             Promotion
           </li>
         </CategoryItem>

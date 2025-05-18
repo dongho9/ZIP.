@@ -34,95 +34,139 @@
   "productData": [
     {
       "img": "https://i.ibb.co/GX3spgN/8.png",
-      "subtitle": "이정하 PICK",
+      "subtitle": "b-ready",
       "name": "비레디 웨이크업 생기 립밤",
-      "price": 12900
+      "artistName": "이정하",
+      "price": 12900,
+      "detailURL": "웨이크업 생기 립밤 3g"
     },
     {
       "img": "https://i.ibb.co/KprJ7928/6.png",
-      "subtitle": "고현정 PICK",
+      "subtitle": "oera",
       "name": "오에라 하이드라 글로우 쿠션",
-      "price": 105000
+      "artistName": "고현정",
+      "price": 105000,
+      "detailURL": "스킨 터치 하이드라 글로우 쿠션 SPF30 PA++"
     },
     {
       "img": "https://i.ibb.co/kgQcPZPs/7.png",
-      "subtitle": "위하준 PICK",
+      "subtitle": "dior",
       "name": "디올 루즈 밤",
-      "price": 59000
+      "artistName": "위하준",
+      "price": 59000,
+      "detailURL": "루즈 디올 밤"
     },
     {
       "img": "https://i.ibb.co/Kp3ZCXcf/5.png",
-      "subtitle": "필릭스 PICK",
+      "subtitle": "lanege",
       "name": "라네즈 립 슬리핑 마스크 EX",
-      "price": 22000
+      "price": 22000,
+      "artistName": "필릭스",
+      "detailURL": "립 슬리핑 마스크 EX"
     },
     {
-      "img": "https://i.ibb.co/Z5ybdTW/10.png",
-      "subtitle": "신시아 PICK",
-      "name": "하리보",
-      "price": 300000
+      "img": "https://i.ibb.co/TGsk2Zk/product.png",
+      "subtitle": "POSITIVEHOTEL",
+      "name": "파지티브호텔 지중해 그린민트",
+      "price": 300000,
+      "artistName": "부승관",
+      "detailURL": "지중해 이지백 칙피그레인"
     },
     {
-      "img": "https://i.ibb.co/tdBkCPS/3.png",
-      "subtitle": "김민하 PICK",
+      "img": "https://i.ibb.co/tTv3j3Fs/3.png",
+      "subtitle": "lelabo",
       "name": "르라보 핸드 포마드 히노키",
-      "price": 39000
+      "price": 39000,
+      "artistName": "김민하",
+      "detailURL": "핸드 포마드 히노키 55ml"
     },
     {
       "img": "https://i.ibb.co/HDD0GJmc/1.png",
-      "subtitle": "윈터 PICK",
+      "subtitle": "chanel",
       "name": "샤넬 라 크렘 망 핸드크림",
-      "price": 88000
+      "price": 88000,
+      "artistName": "윈터",
+      "detailURL": "르 리프트 라 크렘 망 핸드크림"
     },
     {
       "img": "https://i.ibb.co/Wp6gvJWx/9.png",
-      "subtitle": "카리나 PICK",
-      "name": "오쏘몰",
-      "price": 300000
+      "subtitle": "immun",
+      "name": "오쏘몰 이뮨 멀티비타민&미네랄",
+      "price": 300000,
+      "artistName": "영케이",
+      "detailURL": "오쏘뮬 이뮨"
     },
     {
       "img": "https://i.ibb.co/nvLgp07/4.png",
-      "subtitle": "고민시 PICK",
+      "subtitle": "blistex",
       "name": "블리스텍스 립 메덱스",
-      "price": 4200
+      "price": 4200,
+      "artistName": "고민시",
+      "detailURL": "립 메덱스"
     },
     {
       "img": "https://i.ibb.co/zW3dKjqC/2.png",
-      "subtitle": "공명 PICK",
+      "subtitle": "melixer",
       "name": "멜릭서 비건 립 버터",
-      "price": 14000
+      "price": 14000,
+      "artistName": "공명",
+      "detailURL": "비건 립 버터"
     }
   ],
   "slideData": [
     {
-      "subtitle": "buberry",
-      "title": "올림피아 캔버스 레더 크로스 바디백",
-      "img": "https://i.ibb.co/j9G74pQJ/1.png"
+      "subtitle": "AcneStudios",
+      "title": "멀티 포켓 마이크로 백 다크브라운",
+      "img": "https://i.ibb.co/YTqWGzHq/4.png",
+      "detailURL": "마이크로 멀티 포켓 미니 백"
     },
     {
-      "subtitle": "case a lot",
-      "title": "세련된 레트로 무드의 Equipe urban",
-      "img": "https://i.ibb.co/zHhWK8wT/2.png"
+      "subtitle": "case A lot",
+      "title": "오래 함께 할,슬로건 로고 볼 캡 블루",
+      "img": "https://i.ibb.co/zHhWK8wT/2.png",
+      "detailURL": "슬로건 로고 볼 캡 블루"
     },
     {
-      "subtitle": "Equipe urban SW",
-      "title": "세련된 레트로 무드의 Equipe urban",
-      "img": "/src/imgs/home/누끼.png"
+      "subtitle": "Converse",
+      "title": "컨버스 척70 클래식 블랙",
+      "img": "https://i.ibb.co/cKcDSHgs/11.png",
+      "detailURL": "컨버스 척70 클래식 블랙"
     },
     {
       "subtitle": "bottega veneta",
       "title": "23FW 카드지갑 인트레치아토 블랙",
-      "img": "https://i.ibb.co/mVP0tJHn/3.png"
+      "img": "https://i.ibb.co/mVP0tJHn/3.png",
+      "detailURL": "23FW 여성 카드지갑 인트레치아토 블랙"
     },
     {
-      "subtitle": "AcneStudios",
-      "title": "멀티 포켓 마이크로 백 다크브라운",
-      "img": "https://i.ibb.co/YTqWGzHq/4.png"
+      "subtitle": "ADIDAS",
+      "title": "아디다스 x 아이언스테인 D4T HOODIE",
+      "img": "https://i.ibb.co/jvpcsc31/12.png",
+      "detailURL": "아디다스 x 아이언스테인 D4T HOODIE"
     },
     {
-      "subtitle": "Equipe urban SW",
-      "title": "세련된 레트로 무드의 Equipe urban",
-      "img": "/src/imgs/home/누끼.png"
+      "subtitle": "buberry",
+      "title": "올림피아 캔버스 레더 크로스 바디백",
+      "img": "https://i.ibb.co/j9G74pQJ/1.png",
+      "detailURL": "올림피아 캔버스 레더 크로스 바디백"
+    },
+    {
+      "subtitle": "peaceminusone",
+      "title": "모남희 x 피스마이너스원 데희 플러시 키링",
+      "img": "https://i.ibb.co/Pzcv4Qdn/44.png",
+      "detailURL": "모남희 x 피스마이너스원 데희 플러시 키링"
+    },
+    {
+      "subtitle": "TAMBURINS",
+      "title": "특별하고 작은 위안, 퍼퓸 카모 ",
+      "img": "https://i.ibb.co/QvL4cfSy/21.png",
+      "detailURL": "퍼퓸 카모"
+    },
+    {
+      "subtitle": "TAMBURINS",
+      "title": "특별하고 작은 위안, 퍼퓸 카모 ",
+      "img": "https://i.ibb.co/1Jnk1qR8/4.png",
+      "detailURL": "퍼퓸 카모"
     }
   ]
 }

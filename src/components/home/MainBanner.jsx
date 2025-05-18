@@ -43,7 +43,7 @@ const ImgSection = styled.div`
   height: 100%;
   overflow: hidden;
   position: relative;
-  background: rgba(0, 0, 0, 0.8);
+  /* background: rgba(0, 0, 0, 0.8); */
   img {
     width: 100%;
     height: 100%;
@@ -179,33 +179,32 @@ const InfoVideo = styled.div`
 /*--- 목업데이터 ---*/
 const slides = [
   {
-    image: "https://live.staticflickr.com/65535/53594693457_167b1ede8b_o.jpg",
+    image: "https://i.ibb.co/99CggBjL/image.jpg",
     title: "윈터의",
     video: "/videos/main_2.mp4",
   },
   {
-    image: "https://pbs.twimg.com/media/Gnu6RwCagAAK7y3?format=jpg&name=large",
+    image: "https://i.ibb.co/4n2gNmmD/image.jpg",
     title: "공명 & 김민하의",
     video: "/videos/main_3.mp4",
   },
   {
-    image: "https://live.staticflickr.com/65535/52179222680_027d60eb7e_o.jpg",
+    image: "https://i.ibb.co/VYbLgK83/image.jpg",
     title: "고민시의",
     video: "/videos/main_4.mp4",
   },
   {
-    image: "https://pbs.twimg.com/media/GniPbUkakAA-Afx.jpg:large",
+    image: "https://i.ibb.co/ccbKYm16/image.jpg",
     title: "차은우의",
     video: "/videos/main_5.mp4",
   },
   {
-    image: "https://live.staticflickr.com/65535/54156681354_a544af095a_o.jpg",
+    image: "https://i.ibb.co/4wmR4m4j/image.jpg",
     title: "아일릿의",
     video: "/videos/main_6.mp4",
   },
   {
-    image:
-      "https://www.cosmopolitan.co.kr/resources/online/online_image/2025/01/21/32b5668b-9f68-4e77-8f81-48d847320422.jpg",
+    image: "https://i.ibb.co/1JTsskc6/image.jpg",
     title: "서강준의",
     video: "/videos/main_1.mp4",
   },
