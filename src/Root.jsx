@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import Lenis from "@studio-freight/lenis";
+
 const Root = () => {
   useEffect(() => {
     // lenis 라이브러리

@@ -141,7 +141,9 @@ const FilterCategory = () => {
           <div>isLoading...</div>
         ) : (
           <Container>
-            <FilterTitle style={{ textTransform: "capitalize" }}>{categoryName} ZIP</FilterTitle>
+            <FilterTitle style={{ textTransform: "capitalize" }}>
+              {categoryName} ZIP
+            </FilterTitle>
             <FilterWrap>
               <Filter>
                 <li>ALL</li>
@@ -158,9 +160,14 @@ const FilterCategory = () => {
             </FilterWrap>
             <FilterContent>
               {data.artists.map((artist) => {
-                const products = artist.products.filter((product) => product.mainCategory === "style");
+                const products = artist.products.filter(
+                  (product) => product.mainCategory === "style"
+                );
                 return products.map((product, i) => (
-                  <FilterItem key={i} onClick={() => navigate(`/detail/${product.itemName}`)}>
+                  <FilterItem
+                    key={i}
+                    onClick={() => navigate(`/detail/${product.itemName}`)}
+                  >
                     <FilterItemImgWrap>
                       <FilterItemPick>
                         {artist.artistName} <br />
@@ -171,7 +178,9 @@ const FilterCategory = () => {
                     <FilterItemText>
                       <FilterItemBrand>{product.brand}</FilterItemBrand>
                       <FilterItemName>{product.itemName}</FilterItemName>
-                      <FilterItemPrice>KRW {product.price}</FilterItemPrice>
+                      <FilterItemPrice>
+                        KRW {product.price.toLocaleString("ko-KR")}
+                      </FilterItemPrice>
                     </FilterItemText>
                   </FilterItem>
                 ));
@@ -188,7 +197,9 @@ const FilterCategory = () => {
           <div>isLoading...</div>
         ) : (
           <Container>
-            <FilterTitle style={{ textTransform: "capitalize" }}>{categoryName} ZIP</FilterTitle>
+            <FilterTitle style={{ textTransform: "capitalize" }}>
+              {categoryName} ZIP
+            </FilterTitle>
             <FilterWrap>
               <Filter>
                 <li>ALL</li>
@@ -206,9 +217,14 @@ const FilterCategory = () => {
             </FilterWrap>
             <FilterContent>
               {data.artists.map((artist) => {
-                const products = artist.products.filter((product) => product.mainCategory === "beauty");
+                const products = artist.products.filter(
+                  (product) => product.mainCategory === "beauty"
+                );
                 return products.map((product, i) => (
-                  <FilterItem key={i} onClick={() => navigate(`/detail/${product.itemName}`)}>
+                  <FilterItem
+                    key={i}
+                    onClick={() => navigate(`/detail/${product.itemName}`)}
+                  >
                     <FilterItemImgWrap>
                       <FilterItemPick>{artist.artistName} PICK</FilterItemPick>
                       <FilterItemImg src={product.detailImg.img01} />
@@ -216,7 +232,9 @@ const FilterCategory = () => {
                     <FilterItemText>
                       <FilterItemBrand>{product.brand}</FilterItemBrand>
                       <FilterItemName>{product.itemName}</FilterItemName>
-                      <li>{product.price}</li>
+                      <FilterItemPrice>
+                        KRW {product.price.toLocaleString("ko-KR")}
+                      </FilterItemPrice>
                     </FilterItemText>
                   </FilterItem>
                 ));

@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import FormTop from "../components/payment/FormTop";
 import FormBottom from "../components/payment/FormBottom";
 import Order from "../components/payment/Order";
 import CouponModal from "../components/payment/CouponModal";
+import {
+  QueryClientProvider,
+  QueryClient,
+  useQuery,
+} from "@tanstack/react-query";
+import { ORDER_ITEMS_KEY } from "../constants/queryKeys";
 
 const Container = styled.div`
   max-width: 1200px;
@@ -12,11 +18,12 @@ const Container = styled.div`
 `;
 
 const PageTitle = styled.h1`
-  font-size: 2.4rem;
+  font-size: 3.6rem;
   text-align: center;
   margin: 40px 0;
   font-weight: bold;
   margin-top: 60px;
+  font-family: "EHNormalTrial", sans-serif;
 
   @media screen and (max-width: 1024px) {
     font-size: 2rem;
@@ -46,7 +53,6 @@ const PageContent = styled.div`
   }
 `;
 
-// This is the left section on desktop that will split into top and bottom on mobile
 const FormSection = styled.div`
   flex: 6;
 
@@ -56,7 +62,6 @@ const FormSection = styled.div`
   }
 `;
 
-// This is the right section on desktop
 const OrderSection = styled.div`
   flex: 4;
   position: sticky;
@@ -69,11 +74,10 @@ const OrderSection = styled.div`
     width: 100%;
     position: relative;
     top: 0;
-    display: none; /* Hide this on mobile as we'll show Order in between form sections */
+    display: none;
   }
 `;
 
-// This only appears on mobile, positioned between FormTop and FormBottom
 const MobileOrderSection = styled.div`
   display: none;
 
@@ -84,8 +88,9 @@ const MobileOrderSection = styled.div`
   }
 `;
 
+const queryClient = new QueryClient();
+
 const Payment = () => {
-  // State management for different components
   const [saveAddress, setSaveAddress] = useState(false);
   const [addressDropdownOpen, setAddressDropdownOpen] = useState(false);
   const [selectedAddress, setSelectedAddress] = useState("신규 입력");
@@ -97,14 +102,20 @@ const Payment = () => {
   const [quantities, setQuantities] = useState({
     1: 1,
     2: 1,
-    3: 1,
   });
   const [isCouponModalOpen, setIsCouponModalOpen] = useState(false);
   const [couponDropdownOpen, setCouponDropdownOpen] = useState(false);
   const [selectedCoupon, setSelectedCoupon] = useState("선택 없음");
   const [couponNumber, setCouponNumber] = useState("");
 
-  // Handler functions
+  // 할인 정보 상태 추가
+  const [discount, setDiscount] = useState({
+    applied: false,
+    type: "",
+    rate: 0,
+    amount: 0,
+  });
+
   const openCouponModal = () => {
     setIsCouponModalOpen(true);
   };
@@ -119,54 +130,108 @@ const Payment = () => {
   };
 
   const applyCoupon = () => {
-    // 쿠폰 적용 로직
-    console.log("쿠폰 적용:", selectedCoupon, couponNumber);
+    if (selectedCoupon.includes("10%")) {
+      setDiscount({
+        applied: true,
+        type: "percentage",
+        rate: 10,
+        amount: 0,
+      });
+    } else if (selectedCoupon.includes("15%")) {
+      setDiscount({
+        applied: true,
+        type: "percentage",
+        rate: 15,
+        amount: 0,
+      });
+    } else {
+      setDiscount({
+        applied: false,
+        type: "",
+        rate: 0,
+        amount: 0,
+      });
+    }
+
     closeCouponModal();
   };
 
+  const { data: orderItems = [] } = useQuery({
+    queryKey: [ORDER_ITEMS_KEY],
+    // 데이터가 없으면 빈 배열 사용
+    initialData: [],
+  });
+
+  useEffect(() => {
+    const initialQuantities = {};
+    orderItems.forEach((item) => {
+      initialQuantities[item.id] = item.quantity;
+    });
+    setQuantities(initialQuantities);
+  }, [orderItems]);
+
   return (
-    <Container>
-      <PageTitle>Payment</PageTitle>
-      <PageContent>
-        <FormSection>
-          {/* Top part of the form (shipping info & coupon/mileage) */}
-          <FormTop
-            saveAddress={saveAddress}
-            setSaveAddress={setSaveAddress}
-            addressDropdownOpen={addressDropdownOpen}
-            setAddressDropdownOpen={setAddressDropdownOpen}
-            selectedAddress={selectedAddress}
-            setSelectedAddress={setSelectedAddress}
-            openCouponModal={openCouponModal}
-          />
+    <>
+      <Container>
+        <PageTitle>Payment</PageTitle>
+        <PageContent>
+          <FormSection>
+            <FormTop
+              saveAddress={saveAddress}
+              setSaveAddress={setSaveAddress}
+              addressDropdownOpen={addressDropdownOpen}
+              setAddressDropdownOpen={setAddressDropdownOpen}
+              selectedAddress={selectedAddress}
+              setSelectedAddress={setSelectedAddress}
+              openCouponModal={openCouponModal}
+              selectedCoupon={selectedCoupon}
+              couponNumber={couponNumber}
+            />
 
-          {/* Order section that only appears on mobile between form sections */}
-          <MobileOrderSection>
-            <Order quantities={quantities} setQuantities={setQuantities} />
-          </MobileOrderSection>
+            <MobileOrderSection>
+              <Order
+                orderItems={orderItems}
+                quantities={quantities}
+                setQuantities={setQuantities}
+                discount={discount}
+                couponName={selectedCoupon}
+              />
+            </MobileOrderSection>
 
-          {/* Bottom part of the form (payment methods & agreements) */}
-          <FormBottom agreements={agreements} setAgreements={setAgreements} />
-        </FormSection>
+            <FormBottom
+              agreements={agreements}
+              setAgreements={setAgreements}
+              orderItems={orderItems}
+              quantities={quantities}
+              discount={discount}
+              selectedAddress={selectedAddress}
+            />
+          </FormSection>
 
-        {/* Order section that appears on desktop */}
-        <OrderSection>
-          <Order quantities={quantities} setQuantities={setQuantities} />
-        </OrderSection>
-      </PageContent>
+          <OrderSection>
+            <Order
+              orderItems={orderItems}
+              quantities={quantities}
+              setQuantities={setQuantities}
+              discount={discount}
+              couponName={selectedCoupon}
+            />
+          </OrderSection>
+        </PageContent>
 
-      <CouponModal
-        isOpen={isCouponModalOpen}
-        onClose={closeCouponModal}
-        couponNumber={couponNumber}
-        setCouponNumber={setCouponNumber}
-        selectedCoupon={selectedCoupon}
-        setSelectedCoupon={setSelectedCoupon}
-        couponDropdownOpen={couponDropdownOpen}
-        toggleCouponDropdown={toggleCouponDropdown}
-        applyCoupon={applyCoupon}
-      />
-    </Container>
+        <CouponModal
+          isOpen={isCouponModalOpen}
+          onClose={closeCouponModal}
+          couponNumber={couponNumber}
+          setCouponNumber={setCouponNumber}
+          selectedCoupon={selectedCoupon}
+          setSelectedCoupon={setSelectedCoupon}
+          couponDropdownOpen={couponDropdownOpen}
+          toggleCouponDropdown={toggleCouponDropdown}
+          applyCoupon={applyCoupon}
+        />
+      </Container>
+    </>
   );
 };
 
