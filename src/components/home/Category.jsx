@@ -10,10 +10,16 @@ const Container = styled.div`
   padding: 100px 0% 0px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  font-family: "EHNormalTrial";
+  font-weight: 500;
+  letter-spacing: 0.2px;
 
   @media screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 0px;
   }
 `;
 
@@ -38,6 +44,9 @@ const CategotyImg = styled.ul`
   @media screen and (max-width: 1024px) {
     height: 400px;
   }
+  @media screen and (max-width: 767px) {
+    height: 200px;
+  }
 `;
 
 const Info = styled.section`
@@ -56,6 +65,9 @@ const MainTitle = styled.div`
   @media screen and (max-width: 1024px) {
     padding: 50px 5%;
   }
+  @media screen and (max-width: 767px) {
+    padding: 30px 5%;
+  }
 `;
 
 const Title = styled.h2`
@@ -65,6 +77,10 @@ const Title = styled.h2`
 
   @media screen and (max-width: 1024px) {
     font-size: 7rem;
+  }
+  @media screen and (max-width: 767px) {
+    letter-spacing: -2px;
+    font-size: 5rem;
   }
 `;
 
@@ -88,6 +104,12 @@ const CategoryItem = styled.ul`
       padding: 40px 5%;
     }
   }
+  @media screen and (max-width: 767px) {
+    li {
+      font-size: 3.2rem;
+      padding: 30px 5%;
+    }
+  }
 `;
 
 /*--- 출력 ---*/
@@ -103,32 +125,19 @@ const Category = () => {
         setSelectedImg(
           "https://imagedelivery.net/djfufN1Ft6CV8Emdrip5jA/7b92c9b5-8641-48f2-e332-78536e252f00/w=1024,h=1425"
         );
-        // setSelectedImg("https://live.staticflickr.com/65535/54330744628_71f27d7e9f_o.jpg");
         break;
       case "beauty":
-        // setSelectedImg(
-        //   "https://imagedelivery.net/djfufN1Ft6CV8Emdrip5jA/e7558fbb-25fb-492c-0b86-bcfd8bffb800/w=1024,h=1359"
-        // );
         setSelectedImg(
-          "https://imagedelivery.net/djfufN1Ft6CV8Emdrip5jA/9d458ee2-a152-421e-a1ba-10a1b43ba800/w=1920,h=1920,fit=crop"
+          "https://imagedelivery.net/djfufN1Ft6CV8Emdrip5jA/f5b28ac6-5552-4ecb-d83e-3df2dad65300/w=1024,h=1280"
         );
-        // setSelectedImg(
-        //   "https://imagedelivery.net/djfufN1Ft6CV8Emdrip5jA/4a477542-164f-4ef6-7abd-1a512bc8d000/w=1920,h=2400"
-        // );
-        // setSelectedImg("https://i.pinimg.com/originals/b9/92/46/b992462a11f3bd71303ceae71efd9af5.png");
         break;
       case "artist":
         setSelectedImg(
-          "https://imagedelivery.net/djfufN1Ft6CV8Emdrip5jA/272b22c6-0a0c-44b3-9cc6-39f3f5a87700/w=1024,h=1359"
+          "https://imagedelivery.net/djfufN1Ft6CV8Emdrip5jA/7b3d2a1c-6f84-4122-5599-434742ce6200/w=1856,h=2464"
         );
         break;
       case "promotion":
-        setSelectedImg(
-          "https://imagedelivery.net/djfufN1Ft6CV8Emdrip5jA/df9dabf9-6084-4123-cd4a-b58594f45500/w=1024,h=712"
-        );
-        setSelectedImg(
-          "https://www.elle.co.kr/resources/online/online_image/2024/04/22/a7b95468-a366-4d66-9b2f-4c1287f072c1.jpg"
-        );
+        setSelectedImg("https://i.ibb.co/0Rgf1GMM/category.jpg");
         break;
       default:
         setSelectedImage(
@@ -159,7 +168,7 @@ const Category = () => {
           <li onClick={() => navigate("/filtercategory/artist")} onMouseEnter={() => onMouseEnter("artist")}>
             Artist
           </li>
-          <li onClick={() => navigate("/promotion")} onMouseEnter={() => onMouseEnter("promotion")}>
+          <li onClick={() => navigate("/event")} onMouseEnter={() => onMouseEnter("promotion")}>
             Promotion
           </li>
         </CategoryItem>

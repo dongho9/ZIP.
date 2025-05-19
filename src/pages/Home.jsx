@@ -1,16 +1,13 @@
 import React from "react";
+/*--- 컴포넌트 ---*/
 import MainBanner from "../components/home/MainBanner";
 import SlideBanner from "../components/home/SlideBanner";
 import BeautyPick from "../components/home/BeautyPick";
 import Category from "../components/home/Category";
 import StylePick from "../components/home/StylePick";
-import RecentZip from "../components/home/RecentZip";
 import RollingBanner from "../components/home/RollingBanner";
-// import RollingBanner from "../components/home/common/RollingBanner";
+import RecentZip from "../components/home/RecentZip";
 
-//스타일
-
-//출력
 const Home = () => {
   return (
     <>

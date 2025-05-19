@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
+import { scrollTop } from "./Footer";
 
 const Container = styled.div`
   position: fixed;
@@ -135,6 +136,7 @@ const SearchComp = ({ searchClick, setSearchClick }) => {
     navigate(`search/${inputRef.current.value}`);
     setSearchClick(false);
     inputRef.current.value = "";
+    scrollTop();
   };
   return (
     <Container className={searchClick ? "active" : null}>

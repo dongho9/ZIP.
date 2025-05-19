@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import theQuiett from "../../imgs/event/the_quiett.png";
+import beenzino from "../../imgs/event/beenzino.png";
+import owen from "../../imgs/event/owen.png";
+import dok2 from "../../imgs/event/dok2.png";
+import arm from "../../imgs/event/arm.png";
+import hand from "../../imgs/event/hand.png";
+import inarm from "../../imgs/event/inarm.png";
+import shoulder from "../../imgs/event/shoulder.png";
+import gucci from "../../imgs/event/gucci.png";
+import chanel from "../../imgs/event/chanel.png";
+import louis from "../../imgs/event/louis.png";
+import hermes from "../../imgs/event/hermes.png";
 
 const Container = styled.div`
-width: 100%;
-    height: 100%;
-    padding: 15%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-    background: var(--dark-color);
+  width: 100%;
+  height: 100%;
+  padding: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--dark-color);
 `;
 
 const QuizTitle = styled.div`
@@ -19,10 +30,10 @@ const QuizTitle = styled.div`
   padding: 0px 0px 152px;
   align-self: flex-start;
   @media screen and (max-width: 1300px) {
-  color: var(--light-color);
+    color: var(--light-color);
     font-size: 6rem;
     font-weight: bold;
-    padding: 10% 0;
+    /* padding: 10% 0; */
     align-self: flex-start;
   }
   @media screen and (max-width: 1024px) {
@@ -57,11 +68,11 @@ const BlueBox = styled.div`
 `;
 
 const Question = styled.div`
-    font-size: 6rem;
-    font-weight: bold;
-    padding-top: 80px;
-    color: var(--dark-color);
-    @media screen and (max-width: 1300px) {
+  font-size: 6rem;
+  font-weight: bold;
+  padding-top: 80px;
+  color: var(--dark-color);
+  @media screen and (max-width: 1300px) {
     font-size: 5rem;
     padding: 80px 36px;
   }
@@ -71,11 +82,14 @@ const Question = styled.div`
     padding: 80px 36px;
   }
   @media screen and (max-width: 767px) {
-    font-size: 3.5rem;
+    font-size: 3rem;
     padding: 40px 30px;
   }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 600px) {
     font-size: 2.5rem;
+  }
+  @media screen and (max-width: 480px) {
+    padding: 40px 20px;
   }
   @media screen and (max-width: 402px) {
     font-size: 2rem;
@@ -84,6 +98,7 @@ const Question = styled.div`
 `;
 
 const WhiteBox = styled.div`
+  width: 100%;
   background: #fff;
   border-radius: 0 50px 50px 0;
   display: flex;
@@ -94,7 +109,7 @@ const WhiteBox = styled.div`
   padding: 80px 0;
   @media screen and (max-width: 1300px) {
     gap: 50px;
-  } 
+  }
   @media screen and (max-width: 1024px) {
     width: 100%;
     display: flex;
@@ -104,7 +119,7 @@ const WhiteBox = styled.div`
   }
   @media screen and (max-width: 767px) {
     padding: 40px 0 40px;
-  } 
+  }
   @media screen and (max-width: 450px) {
     gap: 30px;
   }
@@ -135,7 +150,7 @@ const Title = styled.div`
   font-weight: bold;
   font-size: 5rem;
   @media screen and (max-width: 1300px) {
-font-size: 3.5rem;
+    font-size: 3.5rem;
   }
   @media screen and (max-width: 1024px) {
     font-weight: bold;
@@ -158,10 +173,12 @@ font-size: 3.5rem;
 `;
 
 const EachName = styled.div`
+  position: relative;
   font-size: 3.2rem;
   line-height: 1;
+  cursor: pointer;
   @media screen and (max-width: 1300px) {
-font-size: 2.2rem;
+    font-size: 2.2rem;
   }
   @media screen and (max-width: 1024px) {
     font-size: 2.2rem;
@@ -180,43 +197,67 @@ font-size: 2.2rem;
 `;
 
 const Picture = styled.div`
+  /* aspect-ratio: 1 ; */
   width: 100%;
   object-fit: cover;
-  img{
-    width: 100%;
-    height: 100%;
+  overflow: hidden;
+  border-radius: 16%;
+  /* &:last-child{
+    border: 1px solid #f00;
+  } */
+  img {
+    /* width: 100%;
+    height: 100%; */
     object-fit: cover;
     border-radius: 10%;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      scale: 1.05;
+    }
+    @media screen and (max-width: 1530px) {
+      width: 110%;
+      height: 110%;
+    }
+    @media screen and (max-width: 1300px) {
+      width: 100%;
+      height: 100%;
+    }
+    @media screen and (max-width: 1170px) {
+      width: 80%;
+      height: 100%;
+    }
+
+    @media screen and (max-width: 1024px) {
+      width: 70%;
+      height: 100%;
+    }
   }
 `;
 
 const FirstBundle = styled.div`
   display: flex;
-gap: 20%;
+  gap: 20%;
   justify-content: center;
-  /* @media screen and (max-width: 1024px) {
-    gap: 120px;
-  }
-  @media screen and (max-width: 402px) {
-    gap: 20px;
+  /* @media screen and (max-width: 1530px) {
+gap: 30%;
   } */
+    @media screen and (max-width: 1024px) {
+      gap: 10%;
+  } 
 `;
 
 const SecondBundle = styled.div`
   display: flex;
   gap: 20%;
   justify-content: center;
-  /* border: 1px solid #000; */
-  /* @media screen and (max-width: 1024px) {
-    gap: 120px;
-  } */
-  /* @media screen and (max-width: 402px) {
-    gap: 20px;
-  } */
+  @media screen and (max-width: 1024px) {
+      gap: 10%;
+  } 
 `;
 
 const DetailBundle = styled.div`
-width: 25%;
+  /* width: 25%; */
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -234,6 +275,9 @@ const ThirdBundle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 70px;
+  @media screen and (max-width: 1170px) {
+    padding-left: 10%;
+  }
   @media screen and (max-width: 1024px) {
     gap: 70px;
   }
@@ -263,16 +307,36 @@ const EventButton = styled.div`
   align-items: center;
   outline: none;
   cursor: pointer;
-  @media screen and (max-width: 1024px) {
-  }
   @media screen and (max-width: 402px) {
     font-size: 1.3rem;
     height: 50px;
     padding: 20px;
+    margin: 0px auto;
   }
   &:hover {
     color: var(--light-color);
     transition: all 0.3s;
+  }
+`;
+
+const CheckIcon = styled.span`
+  position: absolute;
+  font-size: 3rem;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-start;
+  transform: translateY(-40px);
+  @media screen and (max-width: 1300px) {
+    transform: translateY(-25px);
+    font-size: 2rem;
+  }
+  @media screen and (max-width: 767px) {
+    transform: translate(-3px, -20px);
+    font-size: 1.2rem;
+  }
+  @media screen and (max-width: 600px) {
+    transform: translate(-2px, -11px);
+    font-size: 0.8rem;
   }
 `;
 
@@ -284,10 +348,10 @@ const quizData = [
     name2: "B. 빈지노 ",
     name3: "C. 오왼  ",
     name4: "D. 도끼 ",
-    picture1: "/public/img/thumbnail.png",
-    picture2: "/public/img/thumbnail.png",
-    picture3: "/public/img/thumbnail.png",
-    picture4: "/public/img/thumbnail.png",
+    picture1: theQuiett,
+    picture2: beenzino,
+    picture3: owen,
+    picture4: dok2,
   },
   {
     question: "Q2",
@@ -296,10 +360,10 @@ const quizData = [
     name2: "B. 어깨 ",
     name3: "C. 팔 ",
     name4: "D. 팔안쪽 ",
-    picture1: "/public/img/thumbnail.png",
-    picture2: "/public/img/thumbnail.png",
-    picture3: "/public/img/thumbnail.png",
-    picture4: "/public/img/thumbnail.png",
+    picture1: hand,
+    picture2: shoulder,
+    picture3: arm,
+    picture4: inarm,
   },
   {
     question: "Q3",
@@ -308,14 +372,29 @@ const quizData = [
     name2: "B. 샤넬 ",
     name3: "C. 구찌 ",
     name4: "D. 에르메스 ",
-    picture1: "/public/img/thumbnail.png",
-    picture2: "/public/img/thumbnail.png",
-    picture3: "/public/img/thumbnail.png",
-    picture4: "/public/img/thumbnail.png",
+    picture1: louis,
+    picture2: chanel,
+    picture3: gucci,
+    picture4: hermes,
   },
 ];
 
 const Quiz = () => {
+  // const [checkedItems, setCheckedItems] = useState(Array(quizData.length).fill(false));
+  const [selectedOptions, setSelectedOptions] = useState(
+    Array(quizData.length).fill(-1)
+  );
+
+  // const handleItemClick = (index) => {
+  //   const updated = [...checkedItems];
+  //   updated[index] = !updated[index];
+  //   setCheckedItems(updated);
+  // 각 퀴즈별로 선택된 보기 인덱스를 저장 (-1은 아직 선택되지 않음)
+  const handleOptionClick = (quizIndex, optionIndex) => {
+    const updated = [...selectedOptions];
+    updated[quizIndex] = optionIndex;
+    setSelectedOptions(updated);
+  };
   return (
     <Container>
       <QuizTitle>
@@ -334,22 +413,50 @@ const Quiz = () => {
               <ThirdBundle>
                 <FirstBundle>
                   <DetailBundle>
-                    <EachName>{item.name1}</EachName>
-                    <Picture><img src="/src/imgs/event/the_quiett.png" alt="first" /></Picture>
+                    <EachName onClick={() => handleOptionClick(index, 0)}>
+                      {item.name1}{" "}
+                      {selectedOptions[index] === 0 && (
+                        <CheckIcon>✔️</CheckIcon>
+                      )}
+                    </EachName>
+                    <Picture onClick={() => handleOptionClick(index, 0)}>
+                      <img src={item.picture1} alt={item.name1} />
+                    </Picture>
                   </DetailBundle>
                   <DetailBundle>
-                    <EachName>{item.name2}</EachName>
-                    <Picture><img src="/src/imgs/event/the_quiett.png" alt="first" /></Picture>
+                    <EachName onClick={() => handleOptionClick(index, 1)}>
+                      {item.name2}{" "}
+                      {selectedOptions[index] === 1 && (
+                        <CheckIcon>✔️</CheckIcon>
+                      )}
+                    </EachName>
+                    <Picture onClick={() => handleOptionClick(index, 1)}>
+                      <img src={item.picture2} alt={item.name2} />
+                    </Picture>
                   </DetailBundle>
                 </FirstBundle>
                 <SecondBundle>
                   <DetailBundle>
-                    <EachName>{item.name3}</EachName>
-                    <Picture><img src="/src/imgs/event/the_quiett.png" alt="first" /></Picture>
+                    <EachName onClick={() => handleOptionClick(index, 2)}>
+                      {item.name3}{" "}
+                      {selectedOptions[index] === 2 && (
+                        <CheckIcon>✔️</CheckIcon>
+                      )}
+                    </EachName>
+                    <Picture onClick={() => handleOptionClick(index, 2)}>
+                      <img src={item.picture3} alt={item.name3} />
+                    </Picture>
                   </DetailBundle>
                   <DetailBundle>
-                    <EachName>{item.name4}</EachName>
-                    <Picture><img src="/src/imgs/event/the_quiett.png" alt="first" /></Picture>
+                    <EachName onClick={() => handleOptionClick(index, 3)}>
+                      {item.name4}{" "}
+                      {selectedOptions[index] === 3 && (
+                        <CheckIcon>✔️</CheckIcon>
+                      )}
+                    </EachName>
+                    <Picture onClick={() => handleOptionClick(index, 3)}>
+                      <img src={item.picture4} alt={item.name4} />
+                    </Picture>
                   </DetailBundle>
                 </SecondBundle>
               </ThirdBundle>
@@ -357,7 +464,9 @@ const Quiz = () => {
           </AllBox>
         </React.Fragment>
       ))}
-      <EventButton>이벤트 참여하기</EventButton>
+      <EventButton onClick={() => alert("이벤트에 참여해주셔서 감사합니다!")}>
+        이벤트 참여하기
+      </EventButton>
     </Container>
   );
 };

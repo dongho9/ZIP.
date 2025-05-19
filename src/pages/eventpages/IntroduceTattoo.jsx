@@ -1,21 +1,25 @@
-import Introduce from '../../components/event/Introduce'
-import Quiz from '../../components/event/Quiz'
-import WhatInBag from '../../components/event/WhatInBag'
-import EventBanner from '../../components/event/EventBanner'
-import ScrollButton from '../../components/event/ScrollButton'
-
+import React, { useRef } from "react";
+import EventBanner from "../../components/event/EventBanner";
+import ScrollButton from "../../components/event/ScrollButton";
+import Introduce from "../../components/event/Introduce";
+import Quiz from "../../components/event/Quiz";
+import WhatInBag from "../../components/event/WhatInBag";
 
 const IntroduceTattoo = () => {
-
+  const bundleRefs = [
+    useRef(null), // 박재범
+    useRef(null), // 모니카
+    useRef(null), // PH-1
+  ];
   return (
     <>
-    <EventBanner/>
-    <ScrollButton/>
-    <Introduce/>
-    <Quiz/>
-    <WhatInBag/>
+      <EventBanner />
+      <ScrollButton />
+      <Introduce bundleRefs={bundleRefs} />
+      <Quiz />
+      <WhatInBag bundleRefs={bundleRefs} />
     </>
-  )
-}
+  );
+};
 
 export default IntroduceTattoo;

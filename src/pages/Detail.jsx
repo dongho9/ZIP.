@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import DetailSwiper from "../components/detail/DetailSwiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useParams } from "react-router-dom";
+import { StarData } from "../StarData";
+
 const Container = styled.div``;
 const Wrapper = styled.div`
   display: flex;
@@ -151,7 +154,8 @@ const RelateItemName = styled.p`
 `;
 const Detail = () => {
   const [swiperActive, setSwipierActive] = useState(false);
-
+  const { itemName } = useParams();
+  const { isLoading, data } = StarData();
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1024) {
@@ -166,147 +170,172 @@ const Detail = () => {
     });
   }, []);
   return (
-    <Container>
-      <Wrapper>
-        <SwiperBox>
-          <DetailSwiper enabled={swiperActive} />
-        </SwiperBox>
-        <TextBox>
-          <ItemName>Treatment</ItemName>
-          <ItemPrice>KRW 49,900</ItemPrice>
-          <ItemCount>
-            <button>-</button>
-            <p>1</p>
-            <button>+</button>
-          </ItemCount>
-          <TotalPrice>
-            TOTAL: KRW <span>49,900</span>(<span>1</span>)개
-          </TotalPrice>
-          <ItemButton>
-            <button>ADD TO CART</button>
-            <button>ORDER NOW</button>
-          </ItemButton>
-          <ItemDesc>
-            <p>DESCRIPTION</p>
-            <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus obcaecati fuga facere deleniti incidunt
-              quam et dolore in. Optio quae eligendi nobis sed rem nam consequatur, qui quis nisi. Quos!
-            </span>
-          </ItemDesc>
-          <ItemDesc>
-            <p>EXCHANGE</p>
-            <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus obcaecati fuga facere deleniti incidunt
-              quam et dolore in. Optio quae eligendi nobis sed rem nam consequatur, qui quis nisi. Quos!
-            </span>
-          </ItemDesc>
-        </TextBox>
-      </Wrapper>
-      <RelateProducts>
-        <RelateProductsTitle>Related Products</RelateProductsTitle>
-        <Swiper
-          className="RelateItemWrap"
-          breakpoints={{
-            1920: {
-              slidesPerView: 5,
-              spaceBetween: 20,
-            },
-            1024: {
-              slidesPerView: 4,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-            540: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            0: {
-              slidesPerView: 2, // ✅ 모바일용 설정 추가 (예: 1개 보여줌)
-              spaceBetween: 20,
-            },
-          }}
-        >
-          <SwiperSlide className="RelateItem">
-            <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/product_15_kikii_1280x.jpg?v=1698491589"
-                alt="img02"
-              />
-            </RelateItemImgWrap>
-            <RelateItemText>
-              <RelateItemPick>카리나 PICK</RelateItemPick>
-              <RelateItemName>Sorbet Balm</RelateItemName>
-            </RelateItemText>
-          </SwiperSlide>
-          <SwiperSlide className="RelateItem">
-            <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/product_8_moist_1280x.jpg?v=1698501809"
-                alt="img03"
-              />
-            </RelateItemImgWrap>
-            <RelateItemText>
-              <RelateItemPick>카리나 PICK</RelateItemPick>
-              <RelateItemName>Sorbet Balm</RelateItemName>
-            </RelateItemText>
-          </SwiperSlide>
-          <SwiperSlide className="RelateItem">
-            <RelateItemImgWrap>
-              <RelateItemImg src="https://relilla.com/cdn/shop/files/product_11_1280x.jpg?v=1698491524" alt="img04" />
-            </RelateItemImgWrap>
-            <RelateItemText>
-              <RelateItemPick>카리나 PICK</RelateItemPick>
-              <RelateItemName>Sorbet Balm</RelateItemName>
-            </RelateItemText>
-          </SwiperSlide>
-          <SwiperSlide className="RelateItem">
-            <RelateItemImgWrap>
-              <RelateItemImg src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801" alt="img05" />
-            </RelateItemImgWrap>
-            <RelateItemText>
-              <RelateItemPick>카리나 PICK</RelateItemPick>
-              <RelateItemName>Sorbet Balm</RelateItemName>
-            </RelateItemText>
-          </SwiperSlide>
-          <SwiperSlide className="RelateItem">
-            <RelateItemImgWrap>
-              <RelateItemImg src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654" alt="img06" />
-            </RelateItemImgWrap>
-            <RelateItemText>
-              <RelateItemPick>카리나 PICK</RelateItemPick>
-              <RelateItemName>Sorbet Balm</RelateItemName>
-            </RelateItemText>
-          </SwiperSlide>
-          <SwiperSlide className="RelateItem">
-            <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801"
-                alt="img05"
-              />
-            </RelateItemImgWrap>
-            <RelateItemText>
-              <RelateItemPick>카리나 PICK</RelateItemPick>
-              <RelateItemName>Sorbet Balm</RelateItemName>
-            </RelateItemText>
-          </SwiperSlide>
-          <SwiperSlide className="RelateItem">
-            <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-                alt="img06"
-              />
-            </RelateItemImgWrap>
-            <RelateItemText>
-              <RelateItemPick>카리나 PICK</RelateItemPick>
-              <RelateItemName>Sorbet Balm</RelateItemName>
-            </RelateItemText>
-          </SwiperSlide>
-        </Swiper>
-      </RelateProducts>
-    </Container>
+    <>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <Container>
+          {data.artists.map((artist) => {
+            const product = artist.products.find(
+              (product) => product.itemName === itemName
+            );
+            if (product === undefined) {
+              return null;
+            }
+            return (
+              <Wrapper key={product.itemName}>
+                <SwiperBox>
+                  <DetailSwiper enabled={swiperActive} product={product} />
+                </SwiperBox>
+                <TextBox>
+                  <ItemName>{product.itemName}</ItemName>
+                  <ItemPrice>KRW {product.price}</ItemPrice>
+                  <ItemCount>
+                    <button>-</button>
+                    <p>1</p>
+                    <button>+</button>
+                  </ItemCount>
+                  <TotalPrice>
+                    TOTAL: KRW <span>{product.price}</span>(<span>1</span>)개
+                  </TotalPrice>
+                  <ItemButton>
+                    <button>ADD TO CART</button>
+                    <button>ORDER NOW</button>
+                  </ItemButton>
+                  <ItemDesc>
+                    <p>DESCRIPTION</p>
+                    <span>{product.description}</span>
+                  </ItemDesc>
+                  <ItemDesc>
+                    <p>EXCHANGE</p>
+                    <span>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ducimus obcaecati fuga facere deleniti incidunt quam et
+                      dolore in. Optio quae eligendi nobis sed rem nam
+                      consequatur, qui quis nisi. Quos!
+                    </span>
+                  </ItemDesc>
+                </TextBox>
+              </Wrapper>
+            );
+          })}
+          <RelateProducts>
+            <RelateProductsTitle>Related Products</RelateProductsTitle>
+            <Swiper
+              className="RelateItemWrap"
+              breakpoints={{
+                1920: {
+                  slidesPerView: 5,
+                  spaceBetween: 20,
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+                540: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                0: {
+                  slidesPerView: 2, // ✅ 모바일용 설정 추가 (예: 1개 보여줌)
+                  spaceBetween: 20,
+                },
+              }}
+            >
+              <SwiperSlide className="RelateItem">
+                <RelateItemImgWrap>
+                  <RelateItemImg
+                    src="https://relilla.com/cdn/shop/files/product_15_kikii_1280x.jpg?v=1698491589"
+                    alt="img02"
+                  />
+                </RelateItemImgWrap>
+                <RelateItemText>
+                  <RelateItemPick>카리나 PICK</RelateItemPick>
+                  <RelateItemName>Sorbet Balm</RelateItemName>
+                </RelateItemText>
+              </SwiperSlide>
+              <SwiperSlide className="RelateItem">
+                <RelateItemImgWrap>
+                  <RelateItemImg
+                    src="https://relilla.com/cdn/shop/files/product_8_moist_1280x.jpg?v=1698501809"
+                    alt="img03"
+                  />
+                </RelateItemImgWrap>
+                <RelateItemText>
+                  <RelateItemPick>카리나 PICK</RelateItemPick>
+                  <RelateItemName>Sorbet Balm</RelateItemName>
+                </RelateItemText>
+              </SwiperSlide>
+              <SwiperSlide className="RelateItem">
+                <RelateItemImgWrap>
+                  <RelateItemImg
+                    src="https://relilla.com/cdn/shop/files/product_11_1280x.jpg?v=1698491524"
+                    alt="img04"
+                  />
+                </RelateItemImgWrap>
+                <RelateItemText>
+                  <RelateItemPick>카리나 PICK</RelateItemPick>
+                  <RelateItemName>Sorbet Balm</RelateItemName>
+                </RelateItemText>
+              </SwiperSlide>
+              <SwiperSlide className="RelateItem">
+                <RelateItemImgWrap>
+                  <RelateItemImg
+                    src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801"
+                    alt="img05"
+                  />
+                </RelateItemImgWrap>
+                <RelateItemText>
+                  <RelateItemPick>카리나 PICK</RelateItemPick>
+                  <RelateItemName>Sorbet Balm</RelateItemName>
+                </RelateItemText>
+              </SwiperSlide>
+              <SwiperSlide className="RelateItem">
+                <RelateItemImgWrap>
+                  <RelateItemImg
+                    src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
+                    alt="img06"
+                  />
+                </RelateItemImgWrap>
+                <RelateItemText>
+                  <RelateItemPick>카리나 PICK</RelateItemPick>
+                  <RelateItemName>Sorbet Balm</RelateItemName>
+                </RelateItemText>
+              </SwiperSlide>
+              <SwiperSlide className="RelateItem">
+                <RelateItemImgWrap>
+                  <RelateItemImg
+                    src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801"
+                    alt="img05"
+                  />
+                </RelateItemImgWrap>
+                <RelateItemText>
+                  <RelateItemPick>카리나 PICK</RelateItemPick>
+                  <RelateItemName>Sorbet Balm</RelateItemName>
+                </RelateItemText>
+              </SwiperSlide>
+              <SwiperSlide className="RelateItem">
+                <RelateItemImgWrap>
+                  <RelateItemImg
+                    src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
+                    alt="img06"
+                  />
+                </RelateItemImgWrap>
+                <RelateItemText>
+                  <RelateItemPick>카리나 PICK</RelateItemPick>
+                  <RelateItemName>Sorbet Balm</RelateItemName>
+                </RelateItemText>
+              </SwiperSlide>
+            </Swiper>
+          </RelateProducts>
+          ;
+        </Container>
+      )}
+    </>
   );
 };
 

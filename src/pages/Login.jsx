@@ -63,6 +63,7 @@ const Inner = styled.div`
   h3 {
     font-size: 3.6rem;
     font-weight: bold;
+    font-family: "EHNormalTrial";
   }
   @media screen and (max-width: 428px) {
     h3 {
@@ -105,6 +106,7 @@ const Button = styled.button`
   background: var(--dark-color);
   color: var(--light-color);
   border: none;
+  font-family: "EHNormalTrial";
   cursor: pointer;
 `;
 
@@ -136,7 +138,6 @@ const Login = () => {
     navigate("/signup");
   };
   const btnRef = useRef();
-  console.log(btnRef.current);
   return (
     <Wrapper>
       <ImgWrap>

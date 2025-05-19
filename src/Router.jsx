@@ -19,7 +19,8 @@ import ChangeUserInfo from "./pages/mypages/ChangeUserInfo";
 import UserAddress from "./pages/mypages/UserAddress";
 import Promotion from "./pages/eventpages/Influencer";
 import IntroduceTattoo from "./pages/eventpages/IntroduceTattoo";
-
+import Star from "./pages/Star";
+import StarDetail from "./pages/StarDetail";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -34,13 +35,13 @@ export const router = createBrowserRouter([
         element: <Ott />,
       },
       {
-        path: "detail",
+        path: "detail/:itemName",
         element: <Detail />,
       },
       {
         path: "event",
         element: <Event />,
-        children:[
+        children: [
           {
             index : true,
             element: <IntroduceTattoo/>,
@@ -49,11 +50,19 @@ export const router = createBrowserRouter([
             path: "promotion",
             element: <Promotion />,
           },
-        ]
+        ],
       },
       {
         path: "filtercategory/:categoryName",
         element: <FilterCategory />,
+      },
+      {
+        path: "star",
+        element: <Star />,
+      },
+      {
+        path: "star/:starName",
+        element: <StarDetail />,
       },
       {
         path: "cart",

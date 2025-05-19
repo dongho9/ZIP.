@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useMatch, Link } from "react-router-dom";
+import { useMatch, Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -9,6 +9,8 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  position: relative;
+  z-index: 1;
 `;
 const FooterLeft = styled.div`
   display: flex;
@@ -22,7 +24,9 @@ const Fnb = styled.nav``;
 const FooterFnb = styled.ul`
   display: flex;
   gap: 16px;
-
+  li {
+    cursor: pointer;
+  }
   @media screen and (max-width: 767px) {
   }
 `;
@@ -54,10 +58,14 @@ const FooterRight = styled.div``;
 const HeaderLogoImg = styled.img`
   width: 90px;
 `;
+export const scrollTop = () => {
+  window.scrollTo(0, 0);
+};
 const Footer = () => {
   const [filterCheck, setFilterCheck] = useState(false);
+  const navigate = useNavigate();
   const commerceMatch = useMatch("/");
-  const detailMatch = useMatch("/detail");
+  const detailMatch = useMatch("/detail/:itemName");
   const loginMatch = useMatch("/login");
   const signUpMatch = useMatch("/signup");
   const eventMatch = useMatch("/event");
@@ -66,6 +74,7 @@ const Footer = () => {
   const searchMatch = useMatch("/search/:name");
   const mypageMatch = useMatch("/mypage");
   const mypageMatch02 = useMatch("/mypage/:name");
+
   const filterFunc = () => {
     if (
       commerceMatch ||
@@ -97,16 +106,45 @@ const Footer = () => {
     mypageMatch02,
     searchMatch,
   ]);
+
   return (
     <Container>
       <FooterLeft>
         <Fnb>
           {filterCheck ? (
             <FooterFnb>
-              <li>Style</li>
-              <li>Beauty</li>
-              <li>Artist</li>
-              <li>Promotion</li>
+              <li
+                onClick={() => {
+                  navigate("/filtercategory/style");
+                  scrollTop();
+                }}
+              >
+                Style
+              </li>
+              <li
+                onClick={() => {
+                  navigate("/filtercategory/beauty");
+                  scrollTop();
+                }}
+              >
+                Beauty
+              </li>
+              <li
+                onClick={() => {
+                  navigate("/filtercategory/artist");
+                  scrollTop();
+                }}
+              >
+                Artist
+              </li>
+              <li
+                onClick={() => {
+                  navigate("/event");
+                  scrollTop();
+                }}
+              >
+                Promotion
+              </li>
             </FooterFnb>
           ) : (
             <FooterFnb>
@@ -129,8 +167,8 @@ const Footer = () => {
         </Address>
       </FooterLeft>
       <FooterRight>
-        <Link to="/">
-          <HeaderLogoImg src="./img/Logo.png" />
+        <Link to="/" onClick={scrollTop}>
+          <HeaderLogoImg src="/img/Logo.png" />
         </Link>
       </FooterRight>
     </Container>

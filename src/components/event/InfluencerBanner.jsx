@@ -1,21 +1,21 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const ImgWrapper = styled.div`
-/* position: relative; */
+  /* position: relative; */
   width: 100%;
-  img{
+  img {
     width: 100%;
-  height: 100%;
-  object-fit: cover;
+    height: 100%;
+    object-fit: cover;
   }
-`
+`;
 
 const InfluencerBanner = () => {
   return (
     <ImgWrapper>
-      <img src="/src/imgs/event/influencer-PC.png" alt="eventbanner"/>
+      <img src="/src/imgs/event/influencer-PC.png" alt="eventbanner" />
     </ImgWrapper>
-  )
-}
+  );
+};
 
-export default InfluencerBanner
+export default InfluencerBanner;

@@ -1,6 +1,14 @@
-import { picture } from "motion/react-client";
 import styled from "styled-components";
-import React from "react";
+import React, { forwardRef } from "react";
+import guccibelt from "../../imgs/event/guccibelt.webp";
+import chapsticklib from "../../imgs/event/chapsticklib.avif";
+import shaver from "../../imgs/event/shaver.jpg";
+import lakalib from "../../imgs/event/lakalib.jpeg";
+import burberrywallet from "../../imgs/event/burberrywallet.webp";
+import tamburinsperfume from "../../imgs/event/tamburinsperfume.jpg";
+import pradabag from "../../imgs/event/pradabag.avif";
+import salvatoreferragamo from "../../imgs/event/salvatoreferragamo.png";
+import solgavitamin from "../../imgs/event/solgavitamin.png";
 
 const TattooContents = styled.div`
   width: 100%;
@@ -95,7 +103,7 @@ const VideoContent = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  /* border-radius: 0 0 0 20px; */
+  border-radius: 0 0 0 20px;
   cursor: pointer;
   background: var(--border-color);
 
@@ -194,6 +202,7 @@ const Bundles = styled.div`
 const Picture = styled.div`
   width: 100%;
   border: 1px solid #000;
+  cursor: pointer;
   img {
     width: 100%;
     height: 100%;
@@ -223,6 +232,7 @@ const Picture = styled.div`
 const Pick = styled.div`
   font-size: 1.6rem;
   color: var(--border-color);
+  cursor: pointer;
 
   @media screen and (max-width: 1024px) {
     font-size: 1.3rem;
@@ -240,6 +250,7 @@ const Pick = styled.div`
 const Goods = styled.div`
   font-size: 2.2rem;
   font-weight: bold;
+  cursor: pointer;
 
   @media screen and (max-width: 1024px) {
     font-size: 1.4rem;
@@ -320,69 +331,6 @@ const ContentTitle = styled.div`
   }
 `;
 
-// const InfluencerName = styled.div`
-// font-size: 6rem;
-// font-weight: bold;
-// margin-bottom: 40px;
-// @media screen and (max-width:1024px){
-//   font-size: 4rem;
-//   margin-bottom: 30px;
-// }
-// `
-
-// const QuoteSection = styled.div`
-// font-size: 3rem;
-// font-weight: 500;
-// margin-bottom: 90px;
-// @media screen and (max-width:1024px){
-//   font-size: 2rem;
-//   margin-bottom: 40px;
-// }
-// `
-
-// const VideosContents = styled.div`
-// width: 100%;
-// height: 840px;
-// display: flex;
-// align-items: center;
-// border-radius: 0 0 20px 20px;
-// border: 1px solid var(--border-color);
-// margin-bottom: 60px;
-// @media screen and (max-width:1024px){
-//   height: 100%;
-// }
-// `
-
-// const VideoContent = styled.div`
-// width: 36%;
-// height: 100%;
-// display: flex;
-// align-items: center;
-// border-radius: 0 0  0 20px ;
-// cursor: pointer;
-// background: var(--border-color);
-// /* border: 1px solid #f00; */
-// video {
-//     transition: all 1s;
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//     border-radius: 0 0 0 20px;
-//     @media screen and (max-width:1024px){
-//       height: 440px;
-// }
-//   }
-// `
-// const CommerceContent = styled.div`
-// position: relative;
-// width: 64%;
-// /* height: 100%; */
-// /* border: 1px solid #0f0; */
-// @media screen and (max-width:1024px){
-
-// }
-// `
-
 const Content = styled.div`
   /* position: absolute; */
   width: 100%;
@@ -392,36 +340,10 @@ const Content = styled.div`
   justify-content: center;
   /* align-items: center; */
   padding: 6%;
-  /* border: 1px solid var(--dark-color); */
   @media screen and (max-width: 1024px) {
   }
 `;
 
-// const Pick = styled.div`
-// font-size: 1.6rem;
-// color: var(--border-color);
-// @media screen and (max-width:1024px){
-//   font-size: 1.3rem;
-// }
-// `
-
-// const Goods = styled.div`
-// font-size: 2.2rem;
-// font-weight: bold;
-// @media screen and (max-width:1024px){
-//   font-size: 1.4rem;
-// }
-// `
-
-// const Picture = styled.div`
-// width: 250px;
-// height: 250px;
-// border: 1px solid #000;
-// @media screen and (max-width:1024px){
-//   width: 150px;
-// height: 150px;
-// }
-// `
 const Line = styled.div`
   /* width: 240px; */
   border: 1px solid #000;
@@ -460,9 +382,9 @@ const tattooData = [
     title: "EVERYDAY TOTEM:",
     name: "박재범 JAY PARK",
     quote: "JAY’S WAY: 무심한 듯 확실한 취향",
-    picture1: "/src/imgs/event/prada.png",
-    picture2: '"/src/imgs/home/누끼.png"',
-    picture3: '"/src/imgs/home/누끼.png"',
+    picture1: guccibelt,
+    picture2: chapsticklib,
+    picture3: shaver,
     pick: "JAYPARK PICK",
     content1: "GUCCI BELT",
     content2: "LIB BALM",
@@ -472,9 +394,9 @@ const tattooData = [
     title: "EVERYDAY TOTEM:",
     name: "모니카 MONIKA",
     quote: "“모든 선택에 태도가 담긴 사람, 모니카.”",
-    picture1: '"/src/imgs/home/누끼.png"',
-    picture2: '"/src/imgs/home/누끼.png"',
-    picture3: '"/src/imgs/home/누끼.png"',
+    picture1: tamburinsperfume,
+    picture2: burberrywallet,
+    picture3: lakalib,
     pick: "MORNIKA PICK",
     content1: "TAMBURINS PERFUME",
     content2: "BURBERRY WALLET",
@@ -484,17 +406,17 @@ const tattooData = [
     title: "EVERYDAY TOTEM:",
     name: "박준원 PH-1",
     quote: "“PH-1의 무드를 완성하는 작은 취향들.”",
-    picture1: '"/src/imgs/home/누끼.png"',
-    picture2: '"/src/imgs/home/누끼.png"',
-    picture3: '"/src/imgs/home/누끼.png"',
+    picture1: pradabag,
+    picture2: solgavitamin,
+    picture3: salvatoreferragamo,
     pick: "PH-1 PICK",
     content1: "PRADA BAG",
-    content2: "BUCKET HAT",
+    content2: "SOLGA VITAMINE",
     content3: "SALVATORE PERFUME",
   },
 ];
 
-const WhatInBag = () => {
+const WhatInBag = ({ bundleRefs }) => {
   return (
     <>
       <TattooContents>
@@ -522,9 +444,12 @@ const WhatInBag = () => {
                     <InfluencerName>{item.name}</InfluencerName>
                     <QuoteSection>{item.quote}</QuoteSection>
                     <Bundles>
-                      <Bundle>
+                      <Bundle
+                        ref={bundleRefs[index]}
+                        style={{ height: "500px" }}
+                      >
                         <Picture>
-                          <img src="/src/imgs/event/prada.png" alt="img" />
+                          <img src={item.picture1} alt={item} />
                         </Picture>
                         <DetailBundle>
                           <Pick>{item.pick}</Pick>
@@ -532,9 +457,9 @@ const WhatInBag = () => {
                           <Line />
                         </DetailBundle>
                       </Bundle>
-                      <Bundle>
+                      <Bundle style={{ height: "500px" }}>
                         <Picture>
-                          <img src="/src/imgs/event/prada.png" alt="img" />
+                          <img src={item.picture2} alt={item} />
                         </Picture>
                         <DetailBundle>
                           <Pick>{item.pick}</Pick>
@@ -542,9 +467,9 @@ const WhatInBag = () => {
                           <Line />
                         </DetailBundle>
                       </Bundle>
-                      <Bundle>
+                      <Bundle style={{ height: "500px" }}>
                         <Picture>
-                          <img src="/src/imgs/event/prada.png" alt="img" />
+                          <img src={item.picture3} alt={item} />
                         </Picture>
                         <DetailBundle>
                           <Pick>{item.pick}</Pick>

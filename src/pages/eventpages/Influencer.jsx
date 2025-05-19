@@ -32,63 +32,6 @@ const BlurBackground = styled.div`
   }
 `
 
-// const TopBanner = styled.div`
-//   width: 100%;
-//   height: 400px;
-//   background-color: #1a3b5d;
-//   display: flex;
-//   position: relative;
-  
-//   img {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//   }
-// `
-
-// const BannerContent = styled.div`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   color: white;
-  
-//   h1 {
-//     font-size: 4rem;
-//     font-weight: bold;
-//     letter-spacing: 1px;
-//   }
-// `
-
-// const BannerNav = styled.div`
-//   position: absolute;
-//   bottom: 0;
-//   width: 100%;
-//   display: flex;
-  
-//   a {
-//     flex: 1;
-//     padding: 20px 0;
-//     text-align: center;
-//     background-color: white;
-//     text-decoration: none;
-//     color: black;
-//     font-weight: 500;
-//     border-right: 1px solid #eee;
-    
-//     &:last-child {
-//       border-right: none;
-//     }
-    
-//     &.active {
-//       background-color: #f0f0f0;
-//     }
-//   }
-// `
 
 const CardContainer = styled.div`
   width: 100%;
@@ -394,7 +337,7 @@ const Influencer = () => {
           <LeftContent>
             <Header>
               <SmallTitle>Top Influencer Picks</SmallTitle>
-              <Title>이사배 PICK</Title>
+              <Title>정원 PICK</Title>
             </Header>
             <ProductList>
               <ProductItem>
@@ -402,8 +345,8 @@ const Influencer = () => {
                   <img src={productImages[0]} alt="Lipstick Set" />
                 </ProductImage>
                 <ProductInfo>
-                  <ProductName>이사배 LIPSTICK SET (PRO3 Colors)</ProductName>
-                  <ProductPrice>KRW 15,300</ProductPrice>
+                  <ProductName>샤이닝 브로우 컬러 카라(3 Colors)</ProductName>
+                  <ProductPrice>KRW 26,900</ProductPrice>
                   <DetailButton>상세보기</DetailButton>
                 </ProductInfo>
               </ProductItem>
@@ -412,8 +355,8 @@ const Influencer = () => {
                   <img src={productImages[1]} alt="Eyeshadow Palette" />
                 </ProductImage>
                 <ProductInfo>
-                  <ProductName>셀렉트 아이섀도우 팔레트 (12 Colors)</ProductName>
-                  <ProductPrice>KRW 18,000</ProductPrice>
+                  <ProductName>미니 브로우 브러쉬</ProductName>
+                  <ProductPrice>KRW 3,900</ProductPrice>
                   <DetailButton>상세보기</DetailButton>
                 </ProductInfo>
               </ProductItem>
@@ -424,16 +367,6 @@ const Influencer = () => {
                 <ProductInfo>
                   <ProductName>페이스 앤 보디 미스트</ProductName>
                   <ProductPrice>KRW 8,000</ProductPrice>
-                  <DetailButton>상세보기</DetailButton>
-                </ProductInfo>
-              </ProductItem>
-              <ProductItem>
-                <ProductImage>
-                  <img src={productImages[3]} alt="Eyeshadow Palette 2" />
-                </ProductImage>
-                <ProductInfo>
-                  <ProductName>셀렉트 아이섀도우 팔레트 (12 Colors)</ProductName>
-                  <ProductPrice>KRW 18,000</ProductPrice>
                   <DetailButton>상세보기</DetailButton>
                 </ProductInfo>
               </ProductItem>
