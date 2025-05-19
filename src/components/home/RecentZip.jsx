@@ -1,41 +1,38 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styled from "styled-components";
-import { scrollTop } from "../common/Footer";
-import { useLocation } from "react-router-dom";
 
-/* --- styled-components --- */
+/* --- 스타일 --- */
 const Container = styled.div`
   width: 100%;
   background: var(--light-color);
   color: var(--dark-color);
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 `;
 const Wrapper = styled.div`
   width: 100%;
-  margin: 100px 0;
+  margin-top: 100px;
   @media screen and (max-width: 1024px) {
-    margin: 80px 0;
+    /* margin: 80px 0; */
   }
   @media screen and (max-width: 767px) {
-    margin: 50px 0;
+    /* margin: 50px 0; */
   }
 `;
 const Item = styled.section`
   width: 100%;
-  /* height: 100vh; */
   height: 80%;
-  /* height: 80vh; */
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--lightGray);
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 600;
   position: relative;
-  /* padding: 10px; */
-  background: #fff;
+  background: var(--light-color);
+
+  &:last-child {
+    border-bottom: 1px solid var(--lightGray);
+  }
 `;
 const MainTitle = styled.div`
   display: flex;
@@ -59,13 +56,14 @@ const Title = styled.h2`
 `;
 const Button = styled.button`
   font-size: 2rem;
-  padding: 22px 50px;
   color: var(--light-color);
   background: var(--dark-color);
   text-transform: uppercase;
   border: none;
   cursor: pointer;
   font-family: "EHNormalTrial";
+  padding: 22px 50px;
+  background: var(--dark-color);
 
   @media screen and (max-width: 1024px) {
     font-size: 1.6rem;
@@ -80,10 +78,13 @@ const AccordionCard = styled.div`
   width: 100%;
   padding: 0 10%;
   margin: 50px 0;
+
   @media screen and (max-width: 1024px) {
-    padding: 0% 14%;
-    margin: 0;
-    /* margin: 50px 0; */
+    /* padding: 0% 14%; */
+    /* margin: 0; */
+    /* br {
+      display: none;
+    } */
   }
 `;
 const CardTitle = styled.div`
@@ -92,11 +93,10 @@ const CardTitle = styled.div`
   justify-content: space-between;
   font-size: 6rem;
   font-weight: 700;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   span {
     font-family: "EHNormalTrial";
   }
-
   @media screen and (max-width: 1024px) {
     font-size: 5rem;
     margin-bottom: 30px;
@@ -108,9 +108,9 @@ const CardTitle = styled.div`
 `;
 const CardInfo = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 80px;
-
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     gap: 20px;
@@ -118,45 +118,41 @@ const CardInfo = styled.div`
 `;
 const LeftInfo = styled.aside`
   width: 50%;
-
   h4 {
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: 600;
-    line-height: 4.2rem;
+    line-height: 4rem;
   }
-
   p {
-    margin: 20px 0 30px;
-    font-size: 1.8rem;
+    margin: 20px 0 20px;
+    font-size: 1.6rem;
     font-weight: 300;
-    line-height: 2.6rem;
+    line-height: 2.4rem;
   }
-
   button {
     font-family: "EHNormalTrial";
     font-weight: 500;
-    background: #000;
-    color: #fff;
+    background: var(--dark-color);
+    color: var(--light-color);
     padding: 18px 44px;
     border: none;
     cursor: pointer;
     text-transform: uppercase;
   }
-
   @media screen and (max-width: 1024px) {
     width: 100%;
-
     h4 {
-      font-size: 2.6rem;
-      line-height: 3.4rem;
+      font-size: 3rem;
+      line-height: 3.6rem;
+      white-space: pre-line;
+      margin-top: 20px;
     }
-
     p {
       margin: 20px 0 20px;
+      white-space: pre-line;
       font-size: 1.6rem;
       line-height: 2.4rem;
     }
-
     button {
       display: none;
     }
@@ -171,7 +167,6 @@ const LeftInfo = styled.aside`
       font-size: 1.4rem;
       line-height: 2rem;
     }
-
     button {
       display: none;
     }
@@ -179,7 +174,7 @@ const LeftInfo = styled.aside`
 `;
 const RightInfo = styled.div`
   position: relative;
-  width: 60%;
+  width: 70%;
   padding-top: 26.625%;
   cursor: pointer;
   video {
@@ -190,117 +185,32 @@ const RightInfo = styled.div`
     height: 100%;
     object-fit: cover;
   }
-
   @media screen and (max-width: 1024px) {
     width: 100%;
-    padding-top: 50.625%;
+    padding-top: 38.625%;
   }
 `;
 
-/* --- 목업데이터 --- */
-const data = [
-  {
-    id: "01",
-    name: "닝닝",
-    title: "에스파 닝닝 인마이백\n제대로 모시겠습니다.",
-    desc: "닝닝이 자신의 애장품을 보부상 백에 가득 담아왔습니다...",
-    video: "/videos/recent_1.mp4",
-  },
-  {
-    id: "02",
-    name: "필릭스",
-    title: "스트레이키즈 필릭스가\nn번째 구매한 아이템은?",
-    desc: "스트레이 키즈 필릭스가 화이트 셔츠에 뿌린다는 향수부터...",
-    video: "/videos/recent_2.mp4",
-  },
-  {
-    id: "03",
-    name: "고현정",
-    title: "품절 대란, 고현정이\n가방 탈탈 털어 소개한 일상템",
-    desc: "업로드 일주일 만에 유튜브 조회 수는 100만을 앞뒀고...",
-    video: "/videos/recent_3.mp4",
-  },
-];
-
 /* --- 출력 --- */
-gsap.registerPlugin(ScrollTrigger);
-
-function RecentZip() {
+const RecentZip = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-
-  // 패널 각각에 ref 배열
-  const panelsRef = useRef([]);
+  const [starData, setStarData] = useState([]);
 
   useEffect(() => {
-    scrollTop();
-
-    // ScrollTrigger 초기화
-    panelsRef.current.forEach((panel) => {
-      if (!panel) return;
-
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "top top", // ← 중요: 겹침 방지
-        end: "bottom bottom",
-        pin: true,
-        scrub: true,
-        pinSpacing: true,
-        markers: true, // 디버깅 시 켜기
-      });
-    });
-
-    ScrollTrigger.refresh();
-
-    return () => {
-      const triggers = ScrollTrigger.getAll();
-      for (const t of triggers) {
-        t.kill();
-      }
-    };
-  }, [location.pathname]);
-
-  // 목업 데이터
-  const cards = [
-    {
-      id: 1,
-      name: "닝닝",
-      title: "에스파 닝닝 인마이백\n제대로 모시겠습니다.",
-      desc: "닝닝이 자신의 애장품을 보부상 백에 가득 담아왔습니다. 작사 노트부터 폴라로이드 필름 앨범, 유치원 시절부터 모아온 편지들, 팬이 만들어 준 파우치, 최애 간식까지!",
-      video: "/videos/recent_1.mp4",
-    },
-    {
-      id: 2,
-      name: "필릭스",
-      title: "스트레이키즈 필릭스가\nn번째 구매한 아이템은?",
-      desc: "스트레이 키즈 필릭스가 화이트 셔츠에 뿌린다는 향수부터 가장 아끼는 애착 인형, 당 충전용 젤리까지! 보고 있으면 나도 모르게 웃게 되는 필릭스의 인 마이 백을 만나보세요",
-      video: "/videos/recent_2.mp4",
-    },
-    {
-      id: 3,
-      name: "고현정",
-      title: "품절 대란, 고현정이\n가방 탈탈 털어 소개한 일상템",
-      desc: "업로드 일주일 만에 유튜브 조회 수는 100만을 앞뒀고, 소개한 팩트는 이미 품절되었다는 소식을 전해왔죠! 흔치 않은 기회, 요즘 고현정이 주로 쓰는 찐 일상템, 구경해볼까요?",
-      video: "/videos/recent_3.mp4",
-    },
-  ];
+    fetch("/API/homeData.json")
+      .then((response) => response.json())
+      .then((data) => setStarData(data.starData));
+  }, []);
 
   return (
     <Container>
       <MainTitle>
         <Title>Artist Zip</Title>
-        <Button
-          onClick={() => {
-            scrollTop();
-            navigate("/star");
-          }}
-        >
-          More Zip
-        </Button>
+        <Button onClick={() => navigate("/star")}>More Zip</Button>
       </MainTitle>
       <Wrapper>
-        {cards.map((item, index) => (
-          <Item key={item.index} ref={(el) => (panelsRef.current[index] = el)}>
+        {starData.map((item) => (
+          <Item key={item.id}>
             <AccordionCard>
               <CardTitle>
                 <span>{String(item.id).padStart(2, "0")}</span>
@@ -308,11 +218,18 @@ function RecentZip() {
               </CardTitle>
               <CardInfo>
                 <LeftInfo>
-                  <h4>{item.title}</h4>
+                  <h4>
+                    {item.title.split("\n").map((line, idx) => (
+                      <React.Fragment key={idx}>
+                        {line}
+                        <br />
+                      </React.Fragment>
+                    ))}
+                  </h4>
                   <p>{item.desc}</p>
                   <button onClick={() => navigate(`/star/${item.name}`)}>view zip</button>
                 </LeftInfo>
-                <RightInfo>
+                <RightInfo onClick={() => navigate(`/star/${item.name}`)}>
                   <video src={item.video} muted autoPlay loop></video>
                 </RightInfo>
               </CardInfo>
@@ -322,6 +239,6 @@ function RecentZip() {
       </Wrapper>
     </Container>
   );
-}
+};
 
 export default RecentZip;

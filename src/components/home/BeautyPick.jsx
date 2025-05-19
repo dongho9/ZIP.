@@ -3,9 +3,6 @@ import { useNavigate } from "react-router-dom";
 import ProductItem from "./ProductItem";
 import styled from "styled-components";
 
-import { scrollTop } from "../common/Footer";
-import { useLocation } from "react-router-dom";
-
 /*--- 스타일 ---*/
 const Container = styled.div`
   background: var(--light-color);
@@ -80,12 +77,6 @@ const ProductList = styled.ul`
 const BeautyPick = () => {
   const navigate = useNavigate();
 
-  // const location = useLocation();
-
-  // useEffect(() => {
-  //   scrollTop();
-  // }, [location.pathname]);
-
   const [productData, setProductData] = useState([]);
 
   useEffect(() => {
@@ -100,7 +91,6 @@ const BeautyPick = () => {
         <Title>Beauty ZIP</Title>
         <Button
           onClick={() => {
-            scrollTop();
             navigate("/filtercategory/beauty");
           }}
         >
@@ -110,7 +100,9 @@ const BeautyPick = () => {
       <ProductList>
         {productData?.map((item, index) => (
           <ProductItem
-            onClick={() => navigate(`/detail/${item.detailURL}`)}
+            onClick={() => {
+              navigate(`/detail/${item.detailURL}`);
+            }}
             key={index}
             img={item.img}
             name={item.name}

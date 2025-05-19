@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-import { scrollTop } from "../common/Footer";
-
 /*--- 스타일 ---*/
 const Container = styled.li`
   border-right: 1px solid var(--border-color);
@@ -153,7 +151,7 @@ const ProductItem = ({ img, subtitle, name, price, artistName, detailURL }) => {
       <ProductInfo onClick={() => navigate(`/detail/${detailURL}`)}>
         <Prod_sub>{subtitle}</Prod_sub>
         <Prod_name>{name}</Prod_name>
-        <Prod_price>KRW {price}</Prod_price>
+        <Prod_price>KRW {Number(price).toLocaleString("ko-KR")}</Prod_price>
       </ProductInfo>
     </Container>
   );
