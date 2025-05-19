@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styled from "styled-components";
-import { scrollTop } from "../common/Footer";
 import { useLocation } from "react-router-dom";
 
 /* --- styled-components --- */
@@ -232,34 +231,6 @@ function RecentZip() {
   // 패널 각각에 ref 배열
   const panelsRef = useRef([]);
 
-  useEffect(() => {
-    scrollTop();
-
-    // ScrollTrigger 초기화
-    panelsRef.current.forEach((panel) => {
-      if (!panel) return;
-
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "top top", // ← 중요: 겹침 방지
-        end: "bottom bottom",
-        pin: true,
-        scrub: true,
-        pinSpacing: true,
-        markers: true, // 디버깅 시 켜기
-      });
-    });
-
-    ScrollTrigger.refresh();
-
-    return () => {
-      const triggers = ScrollTrigger.getAll();
-      for (const t of triggers) {
-        t.kill();
-      }
-    };
-  }, [location.pathname]);
-
   // 목업 데이터
   const cards = [
     {
@@ -291,7 +262,6 @@ function RecentZip() {
         <Title>Artist Zip</Title>
         <Button
           onClick={() => {
-            scrollTop();
             navigate("/star");
           }}
         >
@@ -310,7 +280,9 @@ function RecentZip() {
                 <LeftInfo>
                   <h4>{item.title}</h4>
                   <p>{item.desc}</p>
-                  <button onClick={() => navigate(`/star/${item.name}`)}>view zip</button>
+                  <button onClick={() => navigate(`/star/${item.name}`)}>
+                    view zip
+                  </button>
                 </LeftInfo>
                 <RightInfo>
                   <video src={item.video} muted autoPlay loop></video>

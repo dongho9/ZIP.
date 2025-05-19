@@ -1,8 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-/* --- 스크롤 탑 --- */
-import { scrollTop } from "../common/Footer";
 
 /* --- 스타일 --- */
 const Container = styled.li`
@@ -124,7 +122,11 @@ const CardItem = ({ subtitle, title, img, detailURL }) => {
         <button onClick={() => navigate(`/detail/${detailURL}`)}>→</button>
       </CardItemInfo>
       <CardImg>
-        <img onClick={() => navigate(`/detail/${detailURL}`)} src={img} alt={`${title} 이미지`} />
+        <img
+          onClick={() => navigate(`/detail/${detailURL}`)}
+          src={img}
+          alt={`${title} 이미지`}
+        />
       </CardImg>
     </Container>
   );
