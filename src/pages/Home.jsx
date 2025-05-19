@@ -14,8 +14,8 @@ const Home = () => {
       <MainBanner />
       <SlideBanner />
       <BeautyPick />
-      <Category />
       <StylePick />
+      <Category />
       <RollingBanner />
       <RecentZip />
     </>

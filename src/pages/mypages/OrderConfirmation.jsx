@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import shose from "../../imgs/payment/shose1.png";
+import { useNavigate } from "react-router-dom";
+import { useOrderHistory } from "../../hooks/useOrderHistory";
 import OrderCancelModal from "../../components/mypage/OrderCancelModal";
 import OrderDetailModal from "../../components/mypage/OrderDetailModal";
 
@@ -376,6 +377,7 @@ const ActionButton = styled.button`
 `;
 
 const OrderConfirmation = () => {
+  const navigate = useNavigate();
   const [selectedFilter, setSelectedFilter] = useState("Today");
   const [selectedCategory, setSelectedCategory] =
     useState("전체 주문처리 상태");
@@ -383,30 +385,71 @@ const OrderConfirmation = () => {
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
   const [currentOrderId, setCurrentOrderId] = useState(null);
 
+  // 주문 내역 훅 사용
+  const { orderHistory, updateOrderStatus } = useOrderHistory();
+
+  // 디버깅 로그
+  console.log("OrderConfirmation - orderHistory:", orderHistory);
+
+  // 필터링된 주문 내역 상태
+  const [filteredOrders, setFilteredOrders] = useState([]);
+
+  // 필터 옵션
   const filterOptions = ["Today", "1 week", "1 month", "3 month"];
   const categoryOptions = [
     "전체 주문처리 상태",
     "주문 취소",
-    "상품 교환",
-    "반품/환불 신청",
+    "교환 요청",
+    "반품 요청",
   ];
 
-  // 샘플 주문 데이터 (실제로는 API에서 가져올 데이터)
-  const [orders, setOrders] = useState([
-    {
-      id: "ORD-20250423-084",
-      date: "2025-04-23 T07:24:53 Thu",
-      productName: "CONVERSE CHUCK 70 HI",
-      productImage: shose,
-      color: "Mint",
-      size: null,
-      price: "₩49,000",
-      quantity: 1,
-      status: "정상 배송", // 기본 상태
-    },
-  ]);
+  // 주문 내역이 변경되거나 필터가 변경될 때 필터링 적용
+  useEffect(() => {
+    if (!orderHistory || orderHistory.length === 0) {
+      setFilteredOrders([]);
+      return;
+    }
 
-  const hasOrders = orders.length > 0;
+    // 날짜 필터링
+    let filtered = [...orderHistory];
+    const now = new Date().getTime();
+
+    if (selectedFilter === "Today") {
+      // 오늘 날짜만 필터링 (24시간 이내)
+      filtered = filtered.filter((order) => {
+        const orderDate = new Date(order.date).getTime();
+        return now - orderDate < 24 * 60 * 60 * 1000;
+      });
+    } else if (selectedFilter === "1 week") {
+      // 1주일 이내
+      filtered = filtered.filter((order) => {
+        const orderDate = new Date(order.date).getTime();
+        return now - orderDate < 7 * 24 * 60 * 60 * 1000;
+      });
+    } else if (selectedFilter === "1 month") {
+      // 1개월 이내
+      filtered = filtered.filter((order) => {
+        const orderDate = new Date(order.date).getTime();
+        return now - orderDate < 30 * 24 * 60 * 60 * 1000;
+      });
+    } else if (selectedFilter === "3 month") {
+      // 3개월 이내
+      filtered = filtered.filter((order) => {
+        const orderDate = new Date(order.date).getTime();
+        return now - orderDate < 90 * 24 * 60 * 60 * 1000;
+      });
+    }
+
+    // 카테고리 필터링
+    if (selectedCategory !== "전체 주문처리 상태") {
+      filtered = filtered.filter((order) => order.status === selectedCategory);
+    }
+
+    // 최신 주문부터 표시
+    filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    setFilteredOrders(filtered);
+  }, [orderHistory, selectedFilter, selectedCategory]);
 
   // 주문 취소 모달 열기
   const handleOpenOrderModal = (orderId) => {
@@ -422,38 +465,70 @@ const OrderConfirmation = () => {
 
   // 교환 요청 처리
   const handleExchangeRequest = () => {
-    setOrders(
-      orders.map((order) =>
-        order.id === currentOrderId ? { ...order, status: "교환 요청" } : order
-      )
-    );
+    updateOrderStatus({
+      orderId: currentOrderId,
+      newStatus: "교환 요청",
+    });
     setIsOrderModalOpen(false);
   };
 
   // 반품 요청 처리
   const handleReturnRequest = () => {
-    setOrders(
-      orders.map((order) =>
-        order.id === currentOrderId ? { ...order, status: "반품 요청" } : order
-      )
-    );
+    updateOrderStatus({
+      orderId: currentOrderId,
+      newStatus: "반품 요청",
+    });
     setIsOrderModalOpen(false);
   };
 
   // 교환/반품 취소 처리
   const handleCancelRequest = () => {
-    setOrders(
-      orders.map((order) =>
-        order.id === currentOrderId ? { ...order, status: "정상 배송" } : order
-      )
-    );
+    updateOrderStatus({
+      orderId: currentOrderId,
+      newStatus: "결제 완료",
+    });
     setIsDetailModalOpen(false);
   };
 
   // 현재 선택된 주문 찾기
   const getCurrentOrder = () => {
-    return orders.find((order) => order.id === currentOrderId) || {};
+    return orderHistory.find((order) => order.id === currentOrderId) || {};
   };
+
+  // 주문 상품의 첫 번째 아이템 정보 가져오기
+  const getFirstItemInfo = (order) => {
+    console.log("getFirstItemInfo - order:", order);
+
+    if (
+      !order.items ||
+      !order.items.orderItems ||
+      order.items.orderItems.length === 0
+    ) {
+      return { name: "상품 정보 없음", image: null, totalItems: 0 };
+    }
+
+    const items = order.items.orderItems;
+    return {
+      name: items[0].name,
+      image: items[0].image,
+      totalItems: items.length,
+    };
+  };
+
+  // 날짜 포맷팅 함수
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    const dayOfWeek = ["일", "월", "화", "수", "목", "금", "토"][date.getDay()];
+
+    return `${year}-${month}-${day} ${hours}:${minutes} ${dayOfWeek}`;
+  };
+
+  const hasOrders = filteredOrders.length > 0;
 
   return (
     <Container>
@@ -488,46 +563,69 @@ const OrderConfirmation = () => {
       </FilterSection>
 
       {hasOrders ? (
-        orders.map((order) => (
-          <OrderItem key={order.id}>
-            <OrderContent>
-              <ProductImage src={order.productImage} alt={order.productName} />
-              <ProductInfo>
-                <OrderInfo>
-                  주문상품: {order.productName}
-                  <br />
-                  주문일: {order.date}
-                </OrderInfo>
-                <OrderStatus status={order.status}>
-                  상태: {order.status}
-                </OrderStatus>
-              </ProductInfo>
-              <ButtonsContainer>
-                <ActionButtonSmall
-                  onClick={() => handleOpenOrderModal(order.id)}
-                >
-                  주문 취소
-                </ActionButtonSmall>
-                <ActionButtonSmall
-                  onClick={() => handleOpenDetailModal(order.id)}
-                >
-                  상세보기
-                </ActionButtonSmall>
-              </ButtonsContainer>
-            </OrderContent>
-          </OrderItem>
-        ))
+        filteredOrders.map((order) => {
+          try {
+            const { name, image, totalItems } = getFirstItemInfo(order);
+            const additionalItemsText =
+              totalItems > 1 ? ` 외 ${totalItems - 1}개` : "";
+
+            return (
+              <OrderItem key={order.id}>
+                <OrderContent>
+                  <ProductImage
+                    src={image}
+                    alt={name}
+                    onError={(e) => {
+                      console.log("이미지 로드 에러:", image);
+                      e.target.src = "/imgs/default_product.png"; // 에러 시 기본 이미지
+                    }}
+                  />
+                  <ProductInfo>
+                    <OrderInfo>
+                      주문상품: {name}
+                      {additionalItemsText}
+                      <br />
+                      주문일: {formatDate(order.date)}
+                    </OrderInfo>
+                    <OrderStatus status={order.status}>
+                      상태: {order.status}
+                    </OrderStatus>
+                  </ProductInfo>
+                  <ButtonsContainer>
+                    <ActionButtonSmall
+                      onClick={() => handleOpenOrderModal(order.id)}
+                    >
+                      주문 취소
+                    </ActionButtonSmall>
+                    <ActionButtonSmall
+                      onClick={() => handleOpenDetailModal(order.id)}
+                    >
+                      상세보기
+                    </ActionButtonSmall>
+                  </ButtonsContainer>
+                </OrderContent>
+              </OrderItem>
+            );
+          } catch (error) {
+            console.error("주문 항목 렌더링 오류:", error, order);
+            return null;
+          }
+        })
       ) : (
         <>
           <NoOrders>주문 내역이 없습니다.</NoOrders>
           <ActionButtons>
-            <ActionButton>SHOP NEW ITEMS</ActionButton>
-            <ActionButton>GO TO EVENT PAGE</ActionButton>
+            <ActionButton onClick={() => navigate("/")}>
+              SHOP NEW ITEMS
+            </ActionButton>
+            <ActionButton onClick={() => navigate("/event")}>
+              GO TO EVENT PAGE
+            </ActionButton>
           </ActionButtons>
         </>
       )}
 
-      {/* Using the separate modals component */}
+      {/* 모달 컴포넌트 */}
       <OrderCancelModal
         isOpen={isOrderModalOpen}
         onClose={() => setIsOrderModalOpen(false)}

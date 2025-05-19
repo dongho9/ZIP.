@@ -1,26 +1,24 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
+/* --- 스타일 --- */
 const Container = styled.li`
   width: 380px;
   height: 500px;
   background: var(--light-color);
   color: var(--dark-color);
-  /* background: var(--border); */
-  /* border-radius: 10px; */
-  /* gap: 20px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   @media screen and (max-width: 1024px) {
     width: 330px;
-    height: 420px;
+    height: 400px;
   }
   @media screen and (max-width: 767px) {
     width: 290px;
-    height: 380px;
+    height: 350px;
   }
 `;
 const CardItemInfo = styled.div`
@@ -29,7 +27,6 @@ const CardItemInfo = styled.div`
   text-transform: uppercase;
   position: relative;
   letter-spacing: -1px;
-  /* z-index: 1; */
   span {
     letter-spacing: normal;
     font-size: 1.8rem;
@@ -38,8 +35,8 @@ const CardItemInfo = styled.div`
   }
   p {
     max-width: 300px;
-    font-size: 3.4rem;
-    line-height: 4rem;
+    font-size: 3.6rem;
+    line-height: 4.5rem;
     margin: 18px 0 30px;
 
     font-weight: 600;
@@ -78,7 +75,7 @@ const CardItemInfo = styled.div`
     p {
       max-width: 250px;
       font-size: 2.4rem;
-      line-height: 3rem;
+      line-height: 2.8rem;
       margin: 8px 0 12px;
     }
     button {
@@ -89,7 +86,7 @@ const CardItemInfo = styled.div`
 const CardImg = styled.div`
   width: 320px;
   height: 320px;
-  bottom: -100px;
+  bottom: -80px;
   position: absolute;
   z-index: 1;
   img {
@@ -97,6 +94,7 @@ const CardImg = styled.div`
     height: 100%;
     object-fit: cover;
     object-position: top;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 1024px) {
@@ -105,22 +103,29 @@ const CardImg = styled.div`
     height: 260px;
   }
   @media screen and (max-width: 767px) {
-    bottom: -40px;
+    bottom: -30px;
     width: 220px;
     height: 220px;
   }
 `;
 
-const CardItem = ({ subtitle, title, img }) => {
+/* --- 출력 --- */
+const CardItem = ({ subtitle, title, img, detailURL }) => {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <CardItemInfo>
         <span>{subtitle}</span>
         <p>{title}</p>
-        <button>→</button>
+        <button onClick={() => navigate(`/detail/${detailURL}`)}>→</button>
       </CardItemInfo>
       <CardImg>
-        <img src={img} alt={`${title} 이미지`} />
+        <img
+          onClick={() => navigate(`/detail/${detailURL}`)}
+          src={img}
+          alt={`${title} 이미지`}
+        />
       </CardImg>
     </Container>
   );

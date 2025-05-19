@@ -4,7 +4,10 @@ import SearchComp from "./SearchComp";
 import { Link, useMatch, useNavigate, useParams } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { scrollTop } from "./Footer";
+import { getCartItemCount } from "../../hooks/useCart";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebase/firebase";
+import { signOut } from "firebase/auth";
 
 const Container = styled.header``;
 
@@ -297,11 +300,66 @@ const MenuBars = styled.div`
     }
   }
 `;
+
+const CartCount = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 0.8rem;
+  margin-left: 1px;
+  font-size: 1.2rem;
+  font-family: "Pretendard";
+
+  @media screen and (max-width: 1024px) {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 16px;
+    height: 16px;
+    font-size: 0.7rem;
+  }
+`;
+
+const TopBtn = styled.div`
+  position: fixed;
+  transform: translateY(100px);
+  right: 3%;
+  bottom: 6%;
+  background: var(--light-color);
+  color: var(--dark-color);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
+  transition: all 0.3s;
+  opacity: 0;
+  mix-blend-mode: difference;
+  font-family: "EHNormalTrial";
+  font-weight: bold;
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
 const Header = () => {
   const [filterCheck, setFilterCheck] = useState(false);
   const [menuClick, setMenuClick] = useState(false);
   const [searchClick, setSearchClick] = useState(false);
   const [toggleClick, setToggleClick] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
+
+  const [topBtnScroll, setTopBtnScroll] = useState(false);
+
   const headerRef = useRef();
   const navigate = useNavigate();
   const commerceMatch = useMatch("/");
@@ -310,29 +368,27 @@ const Header = () => {
   const signUpMatch = useMatch("/signup");
   const eventMatch = useMatch("/event");
   const cartMatch = useMatch("/cart");
-  const starMatch = useMatch("/star");
   const filterCategoryMatch = useMatch("/filtercategory/:categoryName");
   const searchMatch = useMatch("/search/:name");
   const mypageMatch = useMatch("/mypage");
   const mypageMatch02 = useMatch("/mypage/:name");
+  const starMatch = useMatch("/star");
+  const starDetailMatch = useMatch("/star/:starName");
   const handleCategory = (e) => {
     const category = e.target.innerText;
     navigate(`/filtercategory/${category}`.toLowerCase());
     setMenuClick(false);
     setToggleClick(false);
-    scrollTop();
   };
   const toEvent = () => {
     navigate("./event");
     setMenuClick(false);
     setToggleClick(false);
-    scrollTop();
   };
   const toStar = () => {
     navigate("./star");
     setMenuClick(false);
     setToggleClick(false);
-    scrollTop();
   };
   const filterFunc = () => {
     if (
@@ -346,7 +402,8 @@ const Header = () => {
       searchMatch ||
       mypageMatch ||
       mypageMatch02 ||
-      starMatch
+      starMatch ||
+      starDetailMatch
     ) {
       setFilterCheck(true);
     } else {
@@ -366,6 +423,7 @@ const Header = () => {
     mypageMatch,
     mypageMatch02,
     starMatch,
+    starDetailMatch,
   ]);
 
   gsap.registerPlugin(ScrollTrigger);
@@ -402,6 +460,66 @@ const Header = () => {
   const ToggleMenu = () => {
     setToggleClick((prev) => !prev);
   };
+
+  // 장바구니 개수 업데이트 함수
+  const updateCartCount = () => {
+    const count = getCartItemCount();
+    setCartCount(count);
+  };
+
+  // 컴포넌트 마운트 시와 카트 업데이트 이벤트 발생 시 장바구니 개수 업데이트
+  useEffect(() => {
+    updateCartCount();
+
+    // 장바구니 업데이트 이벤트 감지
+    window.addEventListener("cart-updated", updateCartCount);
+
+    return () => {
+      window.removeEventListener("cart-updated", updateCartCount);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      setTopBtnScroll(true);
+    } else {
+      setTopBtnScroll(false);
+    }
+  });
+
+  //로그인 상태 확인
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    });
+    return () => unsubscribe();
+  }, []);
+
+  //로그인, 로그아웃
+  const handleloginClick = async (e) => {
+    setMenuClick(false);
+    setToggleClick(false);
+
+    if (isLoggedIn) {
+      e.preventDefault();
+      try {
+        await signOut(auth);
+        setIsLoggedIn(false);
+        alert("로그아웃 되었습니다.");
+      } catch (error) {
+        console.error("로그아웃 실패:", error);
+      }
+    }
+  };
+
   return (
     <Container>
       <Wrapper ref={headerRef} className={menuClick ? "filterUnActive" : ""}>
@@ -412,7 +530,6 @@ const Header = () => {
               onClick={() => {
                 setMenuClick(false);
                 setToggleClick(false);
-                scrollTop();
               }}
             >
               <HeaderLogoImg src="/img/Logo.png" alt="logo" />
@@ -423,13 +540,13 @@ const Header = () => {
               <div>
                 <p>COMMERCE</p>
                 <span>|</span>
-                <Link to="/ott" onClick={scrollTop}>
+                <Link to="/ott">
                   <p className="selectActive">OTT</p>
                 </Link>
               </div>
             ) : (
               <div>
-                <Link to="/" onClick={scrollTop}>
+                <Link to="/">
                   <p className="selectActive">COMMERCE</p>
                 </Link>
                 <span>|</span>
@@ -468,10 +585,12 @@ const Header = () => {
                   onClick={() => {
                     setMenuClick(false);
                     setToggleClick(false);
-                    scrollTop();
                   }}
                 >
-                  <span>Cart</span>
+                  <span>
+                    Cart
+                    {cartCount > 0 && <CartCount>({cartCount})</CartCount>}
+                  </span>
                   <svg
                     fill="none"
                     strokeWidth={1.5}
@@ -501,14 +620,10 @@ const Header = () => {
             <HeaderEtcLi>
               <HeaderEtcText>
                 <Link
-                  to="/login"
-                  onClick={() => {
-                    setMenuClick(false);
-                    setToggleClick(false);
-                    scrollTop();
-                  }}
+                  to={isLoggedIn ? "/" : "/login"}
+                  onClick={handleloginClick}
                 >
-                  <span>Login</span>
+                  <span>{isLoggedIn ? "Logout" : "Login"}</span>
                   <img
                     src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad_mypage.svg"
                     alt="login"
@@ -531,6 +646,9 @@ const Header = () => {
         </HeaderRight>
       </Wrapper>
       <SearchComp searchClick={searchClick} setSearchClick={setSearchClick} />
+      <TopBtn onClick={scrollToTop} className={topBtnScroll ? "active" : ""}>
+        ZIP
+      </TopBtn>
     </Container>
   );
 };

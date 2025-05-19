@@ -57,6 +57,7 @@ const Button = styled.button`
 `;
 const ProductList = styled.ul`
   padding: 100px 0;
+  text-transform: uppercase;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-gap: 12px;
@@ -88,11 +89,28 @@ const BeautyPick = () => {
     <Container>
       <MainTitle>
         <Title>Beauty ZIP</Title>
-        <Button onClick={() => navigate("/filtercategory/beauty")}>More Zip</Button>
+        <Button
+          onClick={() => {
+            navigate("/filtercategory/beauty");
+          }}
+        >
+          More Zip
+        </Button>
       </MainTitle>
       <ProductList>
         {productData?.map((item, index) => (
-          <ProductItem key={index} img={item.img} name={item.name} price={item.price} subtitle={item.subtitle} />
+          <ProductItem
+            onClick={() => {
+              navigate(`/detail/${item.detailURL}`);
+            }}
+            key={index}
+            img={item.img}
+            name={item.name}
+            price={item.price}
+            subtitle={item.subtitle}
+            artistName={item.artistName}
+            detailURL={item.detailURL}
+          />
         ))}
       </ProductList>
     </Container>
