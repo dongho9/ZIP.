@@ -155,7 +155,7 @@ const ProductItem = ({ img, subtitle, name, price, artistName, detailURL }) => {
       <ProductInfo onClick={() => navigate(`/detail/${detailURL}`)}>
         <Prod_sub>{subtitle}</Prod_sub>
         <Prod_name>{name}</Prod_name>
-        <Prod_price>KRW {price}</Prod_price>
+        <Prod_price>KRW {Number(price).toLocaleString("ko-KR")}</Prod_price>
       </ProductInfo>
     </Container>
   );

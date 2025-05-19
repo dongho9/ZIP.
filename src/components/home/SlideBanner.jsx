@@ -4,21 +4,20 @@ import styled from "styled-components";
 
 /*--- 스타일 ---*/
 const Container = styled.section`
+  text-transform: uppercase;
   width: 100%;
   height: 400px;
   background: var(--dark-color);
   color: var(--light-color);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  /* padding: 0 3%; */
 
   @media screen and (max-width: 1024px) {
-    height: 500px;
     height: 100%;
+    height: 500px;
     display: flex;
     flex-direction: column;
   }
-
   @media screen and (max-width: 768px) {
     height: 400px;
   }
@@ -30,7 +29,9 @@ const Title = styled.article`
   grid-column: 1 / span 5;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  h2 {
+    font-family: "EHNormalTrial";
+  }
   p {
     font-size: 2rem;
     color: var(--subTitle);
@@ -45,7 +46,7 @@ const Title = styled.article`
       display: none;
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     font-size: 3.6rem;
     line-height: 6rem;
     p {
@@ -112,6 +113,22 @@ const CardItem = styled.li`
 
   @media screen and (max-width: 1024px) {
   }
+  @media screen and (max-width: 767) {
+    .text-overlay {
+      padding: 0px;
+      h3 {
+        font-size: 1rem;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        /* margin: 8px 0 10px; */
+      }
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
 `;
 const Button = styled.button`
   font-size: 1.2rem;
@@ -126,19 +143,20 @@ const Button = styled.button`
   margin-top: 90px;
 
   @media screen and (max-width: 1024px) {
-    font-size: 1.2rem;
-    padding: 20px 40px;
+    margin-top: 30px;
+    font-size: 1rem;
+    padding: 10px 20px;
   }
   @media screen and (max-width: 767px) {
+    margin-top: 10px;
     font-size: 1rem;
-    padding: 16px 24px;
+    padding: 6px 10px;
   }
 `;
 
 /*--- 출력 ---*/
 const SlideBanner = () => {
   const navigate = useNavigate();
-  const onClick = () => {};
 
   return (
     <Container>
@@ -158,20 +176,8 @@ const SlideBanner = () => {
           <div className="text-overlay">
             <h3>lelabo</h3>
             <p>핸드 포마드 히노키 55ml</p>
-            <span>KRW 2631000</span>
+            <span>KRW {Number(39000).toLocaleString("ko-KR")}</span>
             <Button onClick={() => navigate("/detail/핸드 포마드 히노키 55ml")}>view more</Button>
-          </div>
-        </CardItem>
-        <CardItem>
-          <img
-            src="https://www.elle.co.kr/resources_old/online/org_online_image/el/b56beedb-798b-4e66-ba98-3674bdebacfb.jpg"
-            alt=""
-          />
-          <div className="text-overlay">
-            <h3>chanel</h3>
-            <p>르 리프트 라 크렘 망 핸드크림</p>
-            <span>KRW 2631000</span>
-            <Button onClick={() => navigate("/detail/르 리프트 라 크렘 망 핸드 크림")}>view more</Button>
           </div>
         </CardItem>
         <CardItem>
@@ -182,8 +188,20 @@ const SlideBanner = () => {
           <div className="text-overlay">
             <h3>AMI</h3>
             <p>아미 볼 캡</p>
-            <span>KRW 2631000</span>
+            <span>KRW {Number(39000).toLocaleString("ko-KR")}</span>
             <Button onClick={() => navigate("/detail/아미 볼 캡")}>view more</Button>
+          </div>
+        </CardItem>
+        <CardItem>
+          <img
+            src="https://www.elle.co.kr/resources_old/online/org_online_image/el/b56beedb-798b-4e66-ba98-3674bdebacfb.jpg"
+            alt=""
+          />
+          <div className="text-overlay">
+            <h3>chanel</h3>
+            <p>르 리프트 라 크렘 망 핸드크림</p>
+            <span>KRW {Number(39000).toLocaleString("ko-KR")}</span>
+            <Button onClick={() => navigate("/detail/르 리프트 라 크렘 망 핸드 크림")}>view more</Button>
           </div>
         </CardItem>
       </CardWrapper>

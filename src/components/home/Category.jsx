@@ -165,6 +165,7 @@ const Category = () => {
         <CategoryItem>
           <li
             onClick={() => {
+              setTimeout(() => scrollTop(), 0);
               navigate("/filtercategory/style");
             }}
             onMouseEnter={() => onMouseEnter("style")}
@@ -173,6 +174,7 @@ const Category = () => {
           </li>
           <li
             onClick={() => {
+              setTimeout(() => scrollTop(), 0);
               navigate("/filtercategory/beauty");
             }}
             onMouseEnter={() => onMouseEnter("beauty")}
@@ -185,7 +187,7 @@ const Category = () => {
             }}
             onMouseEnter={() => onMouseEnter("artist")}
           >
-            star
+            Star
           </li>
           <li
             onClick={() => {

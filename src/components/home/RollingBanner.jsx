@@ -1,3 +1,4 @@
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const roll = keyframes`
@@ -11,84 +12,58 @@ const roll = keyframes`
 
 const Container = styled.div`
   width: 100%;
-  height: 80px;
-  background: var(--dark-color);
-  color: var(--light-color);
   overflow: hidden;
-  position: relative;
-  display: flex;
+  background: var(--dark-color);
 `;
 
 const Track = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   width: max-content;
-  padding: 30px 0;
-  animation: ${roll} 10s linear infinite;
+  animation: ${roll} 40s linear infinite;
 `;
 
 const LogoWrapper = styled.ul`
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding: 8px 0;
+  margin: 0;
+  list-style: none;
 `;
 
 const BrandLogo = styled.li`
-  width: 60px;
-  margin-right: 60px;
-  list-style: none;
-  /* mix-blend-mode: difference; */
+  width: 50px;
+  margin-right: 80px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+
   img {
     width: 100%;
     height: auto;
-    /* object-fit: contain; */
+    object-fit: contain;
   }
 `;
 
 const logos = [
-  {
-    logo: "https://www.pngall.com/wp-content/uploads/15/Gq-Logo-PNG-Photo.png",
-  },
-  {
-    logo: "https://www.pngall.com/wp-content/uploads/15/Gq-Logo-PNG-Photo.png",
-  },
-  {
-    logo: "https://www.pngall.com/wp-content/uploads/15/Gq-Logo-PNG-Photo.png",
-  },
-  {
-    logo: "https://www.pngall.com/wp-content/uploads/15/Gq-Logo-PNG-Photo.png",
-  },
-  {
-    logo: "/public/img/Logo.png",
-  },
-  {
-    logo: "https://www.pngall.com/wp-content/uploads/15/Gq-Logo-PNG-Photo.png",
-  },
-  {
-    logo: "https://www.pngall.com/wp-content/uploads/15/Gq-Logo-PNG-Photo.png",
-  },
-
-  {
-    logo: "/public/img/Logo.png",
-  },
+  { url: "https://www.doosanmagazine.com/images/brand/vogue/vogue-logo11.png" },
+  { url: "https://www.pngall.com/wp-content/uploads/15/Gq-Logo-PNG-Photo.png" },
+  { url: "https://www.pikpng.com/pngl/b/526-5261756_allure-magazine-logo-white-clipart.png" },
+  { url: "/img/Logo.png" },
+  { url: "https://www.doosanmagazine.com/images/brand/vogue/vogue-logo11.png" },
+  { url: "https://www.pngall.com/wp-content/uploads/15/Gq-Logo-PNG-Photo.png" },
+  { url: "https://www.pikpng.com/pngl/b/526-5261756_allure-magazine-logo-white-clipart.png" },
 ];
 
 const RollingBanner = () => {
+  const copyLogos = [...logos, ...logos, ...logos, ...logos];
+
   return (
     <Container>
       <Track>
         <LogoWrapper>
-          {logos.map((logo, index) => (
+          {copyLogos.map((logo, index) => (
             <BrandLogo key={index}>
-              <img src={logo.logo} alt="브랜드 로고" />
-            </BrandLogo>
-          ))}
-        </LogoWrapper>
-        <LogoWrapper>
-          {logos.map((logo, index) => (
-            <BrandLogo key={index}>
-              <img src={logo.logo} alt="브랜드 로고" />
+              <img src={logo.url} alt="브랜드 로고" />
             </BrandLogo>
           ))}
         </LogoWrapper>

@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
 import "swiper/css";
 import "swiper/css/pagination";
-import { useLocation } from "react-router-dom";
 
 /*--- 스타일 ---*/
 const Container = styled.div`
@@ -41,7 +40,6 @@ const MainTitle = styled.div`
   padding: 100px 3% 0px;
   justify-content: space-between;
   align-items: center;
-
   @media screen and (max-width: 768px) {
     padding: 50px 3% 0;
   }
@@ -51,7 +49,6 @@ const Title = styled.h2`
   font-size: 10rem;
   font-family: "EHNormalTrial";
   font-weight: 500;
-
   @media screen and (max-width: 1024px) {
     font-size: 7rem;
     font-weight: 500;
@@ -86,8 +83,6 @@ const Button = styled.button`
 
 /*--- 출력 ---*/
 export default function StylePick() {
-  const location = useLocation();
-
   const navigate = useNavigate();
 
   const [sildeData, setSlideData] = useState([]);
