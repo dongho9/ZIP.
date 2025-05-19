@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import DetailSwiper from "../components/detail/DetailSwiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { StarData } from "../StarData";
 
 const Container = styled.div``;
@@ -41,9 +41,10 @@ const TextBox = styled.div`
 
 const ItemName = styled.h3`
   font-size: 3.6rem;
+  font-weight: bold;
 `;
 const ItemPrice = styled.div`
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 `;
 const ItemButton = styled.div`
   display: flex;
@@ -53,7 +54,7 @@ const ItemButton = styled.div`
     width: 50%;
     border: none;
     padding: 16px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     cursor: pointer;
     &:nth-child(1) {
       background: var(--light-color);
@@ -105,9 +106,18 @@ const ItemDesc = styled.div`
   gap: 10px;
   p {
     font-size: 1.4rem;
+    cursor: pointer;
   }
   span {
+    opacity: 0;
     font-size: 1.2rem;
+    visibility: hidden;
+    height: 0;
+    &.active {
+      height: 100%;
+      visibility: visible;
+      opacity: 1;
+    }
   }
 `;
 
@@ -127,35 +137,95 @@ const RelateProducts = styled.div`
       gap: 20px;
     }
   }
+  .swiper {
+    .swiper-wrapper {
+      .swiper-slide {
+        cursor: pointer;
+      }
+      .swiper-slide:last-child {
+        div {
+          border-right: none;
+        }
+      }
+    }
+  }
 `;
 const RelateProductsTitle = styled.h3`
   font-size: 3.2rem !important;
   font-size: var(--dark-color);
 `;
-
-const RelateItemImgWrap = styled.div`
-  width: 100%;
-`;
-const RelateItemImg = styled.img`
-  width: 100%;
-`;
-const RelateItemText = styled.div`
+const FilterItem = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  border-right: 1px solid var(--border-color);
+  padding-right: 20px;
+  /* &:last-child {
+    border-right: none;
+  } */
 `;
-const RelateItemPick = styled.span`
+const FilterItemImgWrap = styled.div`
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+`;
+const FilterItemImg = styled.img`
+  padding: 30px;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  background: var(--light-color);
+  transition: all 0.5s ease;
+  /* filter: brightness(0.95); */
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+const FilterItemText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  min-height: 120px;
+  padding: 10px 10px;
+`;
+const FilterItemPick = styled.span`
+  display: inline-block;
+  color: var(--light-color);
+  background: var(--dark-color);
+  font-weight: 400;
+  z-index: 1;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-align: center;
+  padding: 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
+`;
+const FilterItemName = styled.p`
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  margin: 10px 0;
+  font-weight: 600;
+`;
+const FilterItemBrand = styled.li`
+  color: var(--subTitle);
   font-size: 1.4rem;
 `;
-const RelateItemName = styled.p`
-  font-size: 1.8rem;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border-color);
+const FilterItemPrice = styled.li`
+  letter-spacing: 0.2px;
+  color: var(--subTitle);
+  font-size: 1.4rem;
 `;
+
 const Detail = () => {
+  const [quantity, setQuantity] = useState(1);
   const [swiperActive, setSwipierActive] = useState(false);
   const { itemName } = useParams();
   const { isLoading, data } = StarData();
+  const navigate = useNavigate();
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1024) {
@@ -169,6 +239,31 @@ const Detail = () => {
       handleResize();
     });
   }, []);
+
+  const detailData = data?.artists?.map((artist) => artist).flat() || [];
+  const allProducts =
+    data?.artists?.map((artist) => artist.products).flat() || [];
+  const product = allProducts.find((product) => product.itemName === itemName);
+  const relatedProducts = allProducts.filter(
+    (item) => item.keyword === product.keyword
+  );
+  const relatedItems = relatedProducts.slice(0, 8);
+
+  const onDecrease = () => {
+    setQuantity(quantity - 1);
+    if (quantity === 1) {
+      setQuantity(1);
+    }
+  };
+  const onIncrease = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const descOpen = (e) => {
+    const next = e.target.nextElementSibling;
+    next.classList.toggle("active");
+  };
+
   return (
     <>
       {isLoading ? (
@@ -188,31 +283,35 @@ const Detail = () => {
                   <DetailSwiper enabled={swiperActive} product={product} />
                 </SwiperBox>
                 <TextBox>
+                  <p>{artist.artistName} PICK</p>
                   <ItemName>{product.itemName}</ItemName>
-                  <ItemPrice>KRW {product.price}</ItemPrice>
+                  <ItemPrice>
+                    KRW <span>{product.price}</span>
+                  </ItemPrice>
                   <ItemCount>
-                    <button>-</button>
-                    <p>1</p>
-                    <button>+</button>
+                    <button onClick={onDecrease}>-</button>
+                    <p>{quantity}</p>
+                    <button onClick={onIncrease}>+</button>
                   </ItemCount>
                   <TotalPrice>
-                    TOTAL: KRW <span>{product.price}</span>(<span>1</span>)개
+                    TOTAL: KRW <span>{product.price * quantity}</span>(
+                    <span>{quantity}</span>)개
                   </TotalPrice>
                   <ItemButton>
                     <button>ADD TO CART</button>
                     <button>ORDER NOW</button>
                   </ItemButton>
                   <ItemDesc>
-                    <p>DESCRIPTION</p>
+                    <p onClick={descOpen}>DESCRIPTION</p>
                     <span>{product.description}</span>
                   </ItemDesc>
                   <ItemDesc>
-                    <p>EXCHANGE</p>
+                    <p onClick={descOpen}>EXCHANGE</p>
                     <span>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ducimus obcaecati fuga facere deleniti incidunt quam et
-                      dolore in. Optio quae eligendi nobis sed rem nam
-                      consequatur, qui quis nisi. Quos!
+                      해당 상품은 수령일로부터 7일 이내에 미사용/미훼손 상태일
+                      경우 교환이 가능하며, 왕복 배송비는 고객 부담입니다. 보다
+                      정확한 안내를 원하신다면 고객센터(☎️0000-0000)로 연락
+                      부탁드립니다.
                     </span>
                   </ItemDesc>
                 </TextBox>
@@ -229,110 +328,45 @@ const Detail = () => {
                   spaceBetween: 20,
                 },
                 1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 20,
-                },
-                768: {
                   slidesPerView: 3,
                   spaceBetween: 20,
                 },
-                540: {
+                767: {
                   slidesPerView: 2,
                   spaceBetween: 20,
                 },
                 0: {
-                  slidesPerView: 2, // ✅ 모바일용 설정 추가 (예: 1개 보여줌)
+                  slidesPerView: 2,
                   spaceBetween: 20,
                 },
               }}
             >
-              <SwiperSlide className="RelateItem">
-                <RelateItemImgWrap>
-                  <RelateItemImg
-                    src="https://relilla.com/cdn/shop/files/product_15_kikii_1280x.jpg?v=1698491589"
-                    alt="img02"
-                  />
-                </RelateItemImgWrap>
-                <RelateItemText>
-                  <RelateItemPick>카리나 PICK</RelateItemPick>
-                  <RelateItemName>Sorbet Balm</RelateItemName>
-                </RelateItemText>
-              </SwiperSlide>
-              <SwiperSlide className="RelateItem">
-                <RelateItemImgWrap>
-                  <RelateItemImg
-                    src="https://relilla.com/cdn/shop/files/product_8_moist_1280x.jpg?v=1698501809"
-                    alt="img03"
-                  />
-                </RelateItemImgWrap>
-                <RelateItemText>
-                  <RelateItemPick>카리나 PICK</RelateItemPick>
-                  <RelateItemName>Sorbet Balm</RelateItemName>
-                </RelateItemText>
-              </SwiperSlide>
-              <SwiperSlide className="RelateItem">
-                <RelateItemImgWrap>
-                  <RelateItemImg
-                    src="https://relilla.com/cdn/shop/files/product_11_1280x.jpg?v=1698491524"
-                    alt="img04"
-                  />
-                </RelateItemImgWrap>
-                <RelateItemText>
-                  <RelateItemPick>카리나 PICK</RelateItemPick>
-                  <RelateItemName>Sorbet Balm</RelateItemName>
-                </RelateItemText>
-              </SwiperSlide>
-              <SwiperSlide className="RelateItem">
-                <RelateItemImgWrap>
-                  <RelateItemImg
-                    src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801"
-                    alt="img05"
-                  />
-                </RelateItemImgWrap>
-                <RelateItemText>
-                  <RelateItemPick>카리나 PICK</RelateItemPick>
-                  <RelateItemName>Sorbet Balm</RelateItemName>
-                </RelateItemText>
-              </SwiperSlide>
-              <SwiperSlide className="RelateItem">
-                <RelateItemImgWrap>
-                  <RelateItemImg
-                    src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-                    alt="img06"
-                  />
-                </RelateItemImgWrap>
-                <RelateItemText>
-                  <RelateItemPick>카리나 PICK</RelateItemPick>
-                  <RelateItemName>Sorbet Balm</RelateItemName>
-                </RelateItemText>
-              </SwiperSlide>
-              <SwiperSlide className="RelateItem">
-                <RelateItemImgWrap>
-                  <RelateItemImg
-                    src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801"
-                    alt="img05"
-                  />
-                </RelateItemImgWrap>
-                <RelateItemText>
-                  <RelateItemPick>카리나 PICK</RelateItemPick>
-                  <RelateItemName>Sorbet Balm</RelateItemName>
-                </RelateItemText>
-              </SwiperSlide>
-              <SwiperSlide className="RelateItem">
-                <RelateItemImgWrap>
-                  <RelateItemImg
-                    src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654"
-                    alt="img06"
-                  />
-                </RelateItemImgWrap>
-                <RelateItemText>
-                  <RelateItemPick>카리나 PICK</RelateItemPick>
-                  <RelateItemName>Sorbet Balm</RelateItemName>
-                </RelateItemText>
-              </SwiperSlide>
+              {relatedItems.map((item, i) => (
+                <SwiperSlide
+                  key={i}
+                  className="RelateItem"
+                  onClick={() => {
+                    navigate(`/detail/${item.itemName}`);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    setQuantity(1);
+                  }}
+                >
+                  <FilterItem className={i}>
+                    <FilterItemImgWrap>
+                      <FilterItemImg src={item.detailImg.img01} />
+                    </FilterItemImgWrap>
+                    <FilterItemText>
+                      <FilterItemBrand>{item.brand}</FilterItemBrand>
+                      <FilterItemName>{item.itemName}</FilterItemName>
+                      <FilterItemPrice>
+                        KRW {item.price.toLocaleString()}
+                      </FilterItemPrice>
+                    </FilterItemText>
+                  </FilterItem>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </RelateProducts>
-          ;
         </Container>
       )}
     </>

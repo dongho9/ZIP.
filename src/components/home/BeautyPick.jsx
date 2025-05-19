@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import ProductItem from "./ProductItem";
 import styled from "styled-components";
 
-import { scrollTop } from "../common/Footer";
 import { useLocation } from "react-router-dom";
 
 /*--- 스타일 ---*/
@@ -100,7 +99,6 @@ const BeautyPick = () => {
         <Title>Beauty ZIP</Title>
         <Button
           onClick={() => {
-            scrollTop();
             navigate("/filtercategory/beauty");
           }}
         >

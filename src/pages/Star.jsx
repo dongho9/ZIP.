@@ -2,13 +2,33 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import Masonry from "react-masonry-css";
 import { StarData } from "../StarData";
+
 const Container = styled.div`
   padding: 160px 3%;
   background: var(--dark-color);
   color: var(--light-color);
+  .my-masonry-grid_column {
+    &:nth-child(1) {
+      order: 4;
+    }
+    &:nth-child(2) {
+      order: 1;
+    }
+    &:nth-child(3) {
+      order: 2;
+    }
+    &:nth-child(4) {
+      order: 3;
+    }
+    &:nth-child(5) {
+      order: 5;
+    }
+  }
 `;
 const Title = styled.h3`
-  font-size: 3.6rem;
+  font-size: 7rem;
+  letter-spacing: -4px;
+  font-family: "EHNormalTrial";
   margin-bottom: 40px;
 `;
 
@@ -92,7 +112,7 @@ const Star = () => {
         <div>Loading...</div>
       ) : (
         <Container>
-          <Title>Star</Title>
+          <Title>Star ZIP</Title>
           <Masonry
             breakpointCols={breakpointColumnsObj}
             className="my-masonry-grid"

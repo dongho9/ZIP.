@@ -43,6 +43,7 @@ body{
   display: -webkit-box; /* Not needed if autoprefixing */
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
+  align-items: start;
   margin-left: -30px; /* gutter size offset */
   width: auto;
 }
