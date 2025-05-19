@@ -37,6 +37,9 @@ const Address = styled.address`
   gap: 10px;
   p {
     font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 `;
 const AddressList = styled.ul`
@@ -58,9 +61,7 @@ const FooterRight = styled.div``;
 const HeaderLogoImg = styled.img`
   width: 90px;
 `;
-export const scrollTop = () => {
-  window.scrollTo(0, 0);
-};
+
 const Footer = () => {
   const [filterCheck, setFilterCheck] = useState(false);
   const navigate = useNavigate();
@@ -74,7 +75,8 @@ const Footer = () => {
   const searchMatch = useMatch("/search/:name");
   const mypageMatch = useMatch("/mypage");
   const mypageMatch02 = useMatch("/mypage/:name");
-
+  const starMatch = useMatch("/star");
+  const starDetailMatch = useMatch("/star/:starName");
   const filterFunc = () => {
     if (
       commerceMatch ||
@@ -86,7 +88,9 @@ const Footer = () => {
       cartMatch ||
       searchMatch ||
       mypageMatch ||
-      mypageMatch02
+      mypageMatch02 ||
+      starMatch ||
+      starDetailMatch
     ) {
       setFilterCheck(true);
     } else {
@@ -105,6 +109,8 @@ const Footer = () => {
     mypageMatch,
     mypageMatch02,
     searchMatch,
+    starMatch,
+    starDetailMatch,
   ]);
 
   return (
@@ -113,38 +119,10 @@ const Footer = () => {
         <Fnb>
           {filterCheck ? (
             <FooterFnb>
-              <li
-                onClick={() => {
-                  navigate("/filtercategory/style");
-                  scrollTop();
-                }}
-              >
-                Style
-              </li>
-              <li
-                onClick={() => {
-                  navigate("/filtercategory/beauty");
-                  scrollTop();
-                }}
-              >
-                Beauty
-              </li>
-              <li
-                onClick={() => {
-                  navigate("/filtercategory/artist");
-                  scrollTop();
-                }}
-              >
-                Artist
-              </li>
-              <li
-                onClick={() => {
-                  navigate("/event");
-                  scrollTop();
-                }}
-              >
-                Promotion
-              </li>
+              <li onClick={() => navigate("/filtercategory/style")}>Style</li>
+              <li onClick={() => navigate("/filtercategory/beauty")}>Beauty</li>
+              <li onClick={() => navigate("/filtercategory/artist")}>Artist</li>
+              <li onClick={() => navigate("/event")}>Promotion</li>
             </FooterFnb>
           ) : (
             <FooterFnb>
@@ -161,13 +139,13 @@ const Footer = () => {
             <li>TEL: 02 - 1234- 5678</li>
           </AddressList>
           <p>
-            ADDRESS: Gangnam-gu, Seoul <br /> COPYRIGHT © ZIP. ALL RIGHTS
-            RESERVED.
+            <span>ADDRESS: Gangnam-gu, Seoul</span>
+            <span>COPYRIGHT © ZIP. ALL RIGHTS RESERVED.</span>
           </p>
         </Address>
       </FooterLeft>
       <FooterRight>
-        <Link to="/" onClick={scrollTop}>
+        <Link to="/">
           <HeaderLogoImg src="/img/Logo.png" />
         </Link>
       </FooterRight>

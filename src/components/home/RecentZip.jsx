@@ -227,7 +227,9 @@ const RecentZip = () => {
                     ))}
                   </h4>
                   <p>{item.desc}</p>
-                  <button onClick={() => navigate(`/star/${item.name}`)}>view zip</button>
+                  <button onClick={() => navigate(`/star/${item.name}`)}>
+                    view zip
+                  </button>
                 </LeftInfo>
                 <RightInfo onClick={() => navigate(`/star/${item.name}`)}>
                   <video src={item.video} muted autoPlay loop></video>

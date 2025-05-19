@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-import { scrollTop } from "../common/Footer";
 import { useLocation } from "react-router-dom";
 
 /*--- 스타일 ---*/
@@ -119,10 +118,6 @@ const CategoryItem = styled.ul`
 const Category = () => {
   const location = useLocation();
 
-  useEffect(() => {
-    scrollTop();
-  }, [location.pathname]);
-
   const navigate = useNavigate();
   const [selectedImg, setSelectedImg] = useState(
     "https://imagedelivery.net/djfufN1Ft6CV8Emdrip5jA/7b92c9b5-8641-48f2-e332-78536e252f00/w=1024,h=1425"
@@ -188,7 +183,6 @@ const Category = () => {
           </li>
           <li
             onClick={() => {
-              setTimeout(() => scrollTop(), 0);
               navigate("/star");
             }}
             onMouseEnter={() => onMouseEnter("artist")}
@@ -197,7 +191,6 @@ const Category = () => {
           </li>
           <li
             onClick={() => {
-              setTimeout(() => scrollTop(), 0);
               navigate("/event");
             }}
             onMouseEnter={() => onMouseEnter("promotion")}

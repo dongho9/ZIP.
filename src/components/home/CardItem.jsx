@@ -121,7 +121,11 @@ const CardItem = ({ subtitle, title, img, detailURL }) => {
         <button onClick={() => navigate(`/detail/${detailURL}`)}>→</button>
       </CardItemInfo>
       <CardImg>
-        <img onClick={() => navigate(`/detail/${detailURL}`)} src={img} alt={`${title} 이미지`} />
+        <img
+          onClick={() => navigate(`/detail/${detailURL}`)}
+          src={img}
+          alt={`${title} 이미지`}
+        />
       </CardImg>
     </Container>
   );
