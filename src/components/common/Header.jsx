@@ -5,6 +5,8 @@ import { Link, useMatch, useNavigate, useParams } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { scrollTop } from "./Footer";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../../firebase/firebase";
 
 const Container = styled.header``;
 
@@ -302,6 +304,7 @@ const Header = () => {
   const [menuClick, setMenuClick] = useState(false);
   const [searchClick, setSearchClick] = useState(false);
   const [toggleClick, setToggleClick] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const headerRef = useRef();
   const navigate = useNavigate();
   const commerceMatch = useMatch("/");
@@ -385,6 +388,36 @@ const Header = () => {
   };
   headerLogo();
 
+  //로그인 상태 확인
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    });
+    return () => unsubscribe();
+  }, []);
+
+  //로그인, 로그아웃
+  const handleloginClick = async (e) => {
+    setMenuClick(false);
+    setToggleClick(false);
+    scrollTop();
+
+    if (isLoggedIn) {
+      e.preventDefault();
+      try {
+        await signOut(auth);
+        setIsLoggedIn(false);
+        alert("로그아웃 되었습니다.");
+      } catch (error) {
+        console.error("로그아웃 실패:", error);
+      }
+    }
+  };
+
   const handleMenuClick = () => {
     setMenuClick((prev) => !prev);
   };
@@ -402,6 +435,7 @@ const Header = () => {
   const ToggleMenu = () => {
     setToggleClick((prev) => !prev);
   };
+
   return (
     <Container>
       <Wrapper ref={headerRef} className={menuClick ? "filterUnActive" : ""}>
@@ -501,14 +535,10 @@ const Header = () => {
             <HeaderEtcLi>
               <HeaderEtcText>
                 <Link
-                  to="/login"
-                  onClick={() => {
-                    setMenuClick(false);
-                    setToggleClick(false);
-                    scrollTop();
-                  }}
+                  to={isLoggedIn ? "/" : "/login"}
+                  onClick={handleloginClick}
                 >
-                  <span>Login</span>
+                  <span>{isLoggedIn ? "Logout" : "Login"}</span>
                   <img
                     src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad_mypage.svg"
                     alt="login"

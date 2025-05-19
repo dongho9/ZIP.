@@ -1,7 +1,13 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import Agreement from "../components/signup/Agreement";
 import Address from "../components/signup/Address";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase/firebase";
+import { useNavigate } from "react-router-dom";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../firebase/firebase";
 
 const Wrapper = styled.div`
   width: 540px;
@@ -122,6 +128,7 @@ const Error = styled.p`
 `;
 
 const Signup = () => {
+  const [isAgreed, setIsAgreed] = useState(false);
   const {
     register,
     handleSubmit,
@@ -131,8 +138,38 @@ const Signup = () => {
 
   const password = watch("password");
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const navigate = useNavigate();
+
+  //firebase 회원가입
+  const onSubmit = async (data) => {
+    if (!isAgreed) {
+      alert("필수 약관에 동의해주세요.");
+      return;
+    }
+    const { email, password, username, name } = data;
+
+    try {
+      const credential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = credential.user;
+
+      await setDoc(doc(db, "users", user.uid), {
+        email,
+        username,
+        name,
+        createdAt: new Date(),
+      });
+
+      console.log("회원가입 성공:", credential.user);
+      alert("회원가입이 완료되었습니다!");
+      navigate("/login");
+    } catch (error) {
+      console.error("회원가입 에러:", error.message);
+      alert(error.message);
+    }
   };
 
   return (
@@ -186,7 +223,7 @@ const Signup = () => {
           <Error>{errors.confirmPassword.message}</Error>
         )}
         <Address />
-        <InputGroup>
+        {/* <InputGroup>
           <Input
             type="text"
             placeholder="이메일 *"
@@ -204,10 +241,22 @@ const Signup = () => {
             <option value="hanmail.net">hanmail.net</option>
             <option value="nate.com">nate.com</option>
           </Select>
-        </InputGroup>
+        </InputGroup> */}
+        <Input
+          id="email"
+          type="email"
+          placeholder="이메일 *"
+          {...register("email", {
+            required: "이메일을 입력해주세요.",
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: "유효한 이메일 형식이 아닙니다.",
+            },
+          })}
+        />
         {errors.email && <Error>{errors.email.message}</Error>}
       </Form>
-      <Agreement />
+      <Agreement setIsAgreed={setIsAgreed} />
       <Btn type="submit" form="form">
         회원가입 하기
       </Btn>
