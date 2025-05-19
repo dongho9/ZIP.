@@ -1,6 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import Kakao from "../components/login/Kakao";
 import { useRef } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "../firebase/firebase";
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 const Wrapper = styled.div`
   display: flex;
@@ -127,39 +131,97 @@ const Text = styled.div`
   }
 `;
 
-const Kakao = styled(Button)`
-  background: #fee500;
-  color: var(--dark-color);
-`;
-
 const Login = () => {
+  const usernameRef = useRef();
+  const passwordRef = useRef();
   const navigate = useNavigate();
+  const logonNavigate = useNavigate();
   const handleSignupClick = () => {
     navigate("/signup");
   };
   const btnRef = useRef();
+
+  //db에 저장된 아이디, 비밀번호로 로그인
+  const handleLogin = async (enteredusername, enteredpassword) => {
+    try {
+      const q = query(
+        collection(db, "users"),
+        where("username", "==", enteredusername)
+      );
+      const querySnapshot = await getDocs(q);
+
+      if (querySnapshot.empty) {
+        alert("존재하지 않는 아이디입니다.");
+        return;
+      }
+
+      const userDoc = querySnapshot.docs[0];
+      const { email } = userDoc.data();
+
+      const credential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        enteredpassword
+      );
+      console.log("로그인 성공:", credential.user);
+      alert(`${enteredusername}님 반갑습니다!`);
+      logonNavigate("/");
+    } catch (error) {
+      alert("로그인 실패: " + error.message);
+    }
+  };
+
+  const loginImages = [
+    "/src/imgs/login/login1.jpg",
+    "/src/imgs/login/login2.jpg",
+    "/src/imgs/login/login3.jpg",
+  ];
+
+  //랜덤이미지 추출
+  const getRandomImage = () => {
+    const index = Math.floor(Math.random() * loginImages.length);
+    return loginImages[index];
+  };
+
+  //랜더링 될때마다 이미지 바뀜
+  const randomImage = getRandomImage();
+
   return (
     <Wrapper>
       <ImgWrap>
-        <Img src="/src/imgs/login/login.jpg" alt="login" />
+        <Img src={randomImage} alt="login" />
       </ImgWrap>
-      <Form>
+      <Form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleLogin(usernameRef.current.value, passwordRef.current.value);
+        }}
+      >
         <Inner>
           <h3>LOGIN</h3>
           <Group>
-            <Input type="text" placeholder="아이디" />
-            <Input type="password" placeholder="비밀번호" />
+            <Input type="text" placeholder="아이디" ref={usernameRef} />
+            <Input type="password" placeholder="비밀번호" ref={passwordRef} />
           </Group>
           <InputGroup>
             <Group>
-              <Button>LOGIN</Button>
+              <Button
+                onClick={() =>
+                  handleLogin(
+                    username.current.value,
+                    userpassword.current.value
+                  )
+                }
+              >
+                LOGIN
+              </Button>
               <SubBtn ref={btnRef} type="button" onClick={handleSignupClick}>
                 CREATE ACCOUNT
               </SubBtn>
             </Group>
             <Text>아이디 | 비밀번호 찾기</Text>
           </InputGroup>
-          <Kakao>KAKAO LOGIN</Kakao>
+          <Kakao />
         </Inner>
       </Form>
     </Wrapper>

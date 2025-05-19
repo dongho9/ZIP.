@@ -4,11 +4,10 @@ import SearchComp from "./SearchComp";
 import { Link, useMatch, useNavigate, useParams } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-<<<<<<< HEAD
-import { scrollTop } from "./Footer";
 import { getCartItemCount } from "../../hooks/useCart";
-=======
->>>>>>> 677f276dafb1e740bb3a8f7af3a3194144d2b0da
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebase/firebase";
+import { signOut } from "firebase/auth";
 
 const Container = styled.header``;
 
@@ -302,7 +301,6 @@ const MenuBars = styled.div`
   }
 `;
 
-<<<<<<< HEAD
 const CartCount = styled.span`
   display: inline-flex;
   align-items: center;
@@ -327,7 +325,6 @@ const CartCount = styled.span`
   }
 `;
 
-=======
 const TopBtn = styled.div`
   position: fixed;
   transform: translateY(100px);
@@ -353,17 +350,16 @@ const TopBtn = styled.div`
     opacity: 1;
   }
 `;
->>>>>>> 677f276dafb1e740bb3a8f7af3a3194144d2b0da
 const Header = () => {
   const [filterCheck, setFilterCheck] = useState(false);
   const [menuClick, setMenuClick] = useState(false);
   const [searchClick, setSearchClick] = useState(false);
   const [toggleClick, setToggleClick] = useState(false);
-<<<<<<< HEAD
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-=======
+
   const [topBtnScroll, setTopBtnScroll] = useState(false);
->>>>>>> 677f276dafb1e740bb3a8f7af3a3194144d2b0da
+
   const headerRef = useRef();
   const navigate = useNavigate();
   const commerceMatch = useMatch("/");
@@ -465,7 +461,6 @@ const Header = () => {
     setToggleClick((prev) => !prev);
   };
 
-<<<<<<< HEAD
   // 장바구니 개수 업데이트 함수
   const updateCartCount = () => {
     const count = getCartItemCount();
@@ -484,7 +479,6 @@ const Header = () => {
     };
   }, []);
 
-=======
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -496,7 +490,36 @@ const Header = () => {
       setTopBtnScroll(false);
     }
   });
->>>>>>> 677f276dafb1e740bb3a8f7af3a3194144d2b0da
+
+  //로그인 상태 확인
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    });
+    return () => unsubscribe();
+  }, []);
+
+  //로그인, 로그아웃
+  const handleloginClick = async (e) => {
+    setMenuClick(false);
+    setToggleClick(false);
+
+    if (isLoggedIn) {
+      e.preventDefault();
+      try {
+        await signOut(auth);
+        setIsLoggedIn(false);
+        alert("로그아웃 되었습니다.");
+      } catch (error) {
+        console.error("로그아웃 실패:", error);
+      }
+    }
+  };
+
   return (
     <Container>
       <Wrapper ref={headerRef} className={menuClick ? "filterUnActive" : ""}>
@@ -597,13 +620,10 @@ const Header = () => {
             <HeaderEtcLi>
               <HeaderEtcText>
                 <Link
-                  to="/login"
-                  onClick={() => {
-                    setMenuClick(false);
-                    setToggleClick(false);
-                  }}
+                  to={isLoggedIn ? "/" : "/login"}
+                  onClick={handleloginClick}
                 >
-                  <span>Login</span>
+                  <span>{isLoggedIn ? "Logout" : "Login"}</span>
                   <img
                     src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad_mypage.svg"
                     alt="login"

@@ -6,7 +6,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { StarData } from "../StarData";
 
 // 페이지 연동시 필요한 부분 (재기추가)
-import { useNavigate } from "react-router-dom";
 import { useCart } from "../hooks/useCart";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ORDER_ITEMS_KEY } from "../constants/queryKeys";
@@ -349,7 +348,6 @@ const Detail = () => {
     const next = e.target.nextElementSibling;
     next.classList.toggle("active");
   };
-
 
   return (
     <>
