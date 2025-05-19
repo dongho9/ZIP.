@@ -1,11 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 /*--- 스와이퍼 라이브러리 ---*/
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, EffectFade, Pagination, Navigation, Parallax } from "swiper/modules";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+/*--- 애니메이션 ---*/
 
 /*--- 스타일 ---*/
 const Container = styled.div`
@@ -14,10 +17,12 @@ const Container = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: repeat(17, 1fr);
+  padding-top: 82px;
   background: #ffffff;
   overflow: hidden;
   @media screen and (max-width: 1024px) {
     height: 100%;
+    padding-top: 0;
   }
 `;
 const SideSection = styled.div`
@@ -43,14 +48,13 @@ const ImgSection = styled.div`
   height: 100%;
   overflow: hidden;
   position: relative;
-  /* background: rgba(0, 0, 0, 0.8); */
+  background: #f00;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
   .swiper {
-    /* height: 100%; */
     width: 100%;
     height: 100%;
     position: relative;
@@ -90,12 +94,10 @@ const ImgSection = styled.div`
   }
   h4 {
     opacity: 0;
-    /* display: none; */
     position: absolute;
     bottom: 10%;
     left: 5%;
     color: #fff;
-    /* margin: 10% 5%; */
     font-size: 5rem;
     line-height: 5.4rem;
   }
@@ -104,10 +106,13 @@ const ImgSection = styled.div`
     height: 100vh;
     grid-column: span 17;
     h4 {
+      width: 100%;
+      /* height: 100%; */
       opacity: 1;
+      background: #000;
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     height: 100%;
   }
 `;
@@ -154,7 +159,7 @@ const InfoVideo = styled.div`
   position: relative;
   width: 100%;
   padding-top: 50.625%;
-  background: rgba(0, 0, 0, 0.6);
+  transition: all 0.4s ease-in-out;
   video {
     position: absolute;
     top: 0;
@@ -163,67 +168,71 @@ const InfoVideo = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: all 0.4s ease-in-out;
   }
-  &::after {
-    content: "";
+  button {
+    opacity: 0;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
+    z-index: 1;
+    bottom: 0%;
+    right: 0;
+    font-size: 2rem;
+    padding: 22px 50px;
+    color: var(--light-color);
+    background: var(--dark-color);
+    font-family: "EHNormalTrial";
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    @media screen and (max-width: 1024px) {
+      font-size: 1.6rem;
+      padding: 20px 40px;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 1.2rem;
+      padding: 16px 24px;
+    }
+  }
+  &:hover button {
+    opacity: 1;
+  }
+  &:hover video {
+    filter: brightness(1) saturate(1) blur(2px);
     background: rgba(0, 0, 0, 0.6);
+    filter: brightness(0.5) saturate(1.2) blur(1px);
   }
 `;
-
-/*--- 목업데이터 ---*/
-const slides = [
-  {
-    image: "https://i.ibb.co/99CggBjL/image.jpg",
-    title: "윈터의",
-    video: "/videos/main_2.mp4",
-  },
-  {
-    image: "https://i.ibb.co/4n2gNmmD/image.jpg",
-    title: "공명 & 김민하의",
-    video: "/videos/main_3.mp4",
-  },
-  {
-    image: "https://i.ibb.co/VYbLgK83/image.jpg",
-    title: "고민시의",
-    video: "/videos/main_4.mp4",
-  },
-  {
-    image: "https://i.ibb.co/ccbKYm16/image.jpg",
-    title: "차은우의",
-    video: "/videos/main_5.mp4",
-  },
-  {
-    image: "https://i.ibb.co/4wmR4m4j/image.jpg",
-    title: "아일릿의",
-    video: "/videos/main_6.mp4",
-  },
-  {
-    image: "https://i.ibb.co/1JTsskc6/image.jpg",
-    title: "서강준의",
-    video: "/videos/main_1.mp4",
-  },
-];
-
 /*--- 출력 ---*/
-const MainBanner = ({ image, title, video }) => {
+const MainBanner = () => {
+  const navigate = useNavigate();
+
   const [currentSlide, setCurrentSlide] = useState(0);
+  const videoRef = useRef(null);
+  const swiperRef = useRef(null);
 
   const [mainData, setMainData] = useState([]);
 
   useEffect(() => {
-    fetch("/mocData/homeData.json")
+    fetch("/API/homeData.json")
       .then((response) => response.json())
       .then((data) => setMainData(data.mainData));
   }, []);
 
   const handleSlideChange = (swiper) => {
     setCurrentSlide(swiper.activeIndex);
+  };
+
+  const handleMouseEnter = () => {
+    if (videoRef.current) videoRef.current.pause();
+    if (swiperRef.current) swiperRef.current.autoplay.stop();
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) videoRef.current.play();
+    if (swiperRef.current) swiperRef.current.autoplay.start();
   };
 
   return (
@@ -233,6 +242,12 @@ const MainBanner = ({ image, title, video }) => {
       </SideSection>
       <ImgSection>
         <Swiper
+          onClick={() => {
+            const artistName = mainData[currentSlide]?.artistName;
+            if (artistName) {
+              navigate(`/star/${artistName}`);
+            }
+          }}
           style={{
             "--swiper-navigation-color": "#fff",
             "--swiper-pagination-color": "#fff",
@@ -251,29 +266,42 @@ const MainBanner = ({ image, title, video }) => {
           onSlideChange={handleSlideChange}
           effect="fade"
           modules={[Parallax, Pagination, Navigation, Autoplay]}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
         >
-          {slides.map((slide, index) => (
-            <SwiperSlide key={index}>
+          {mainData.map((slide, index) => (
+            <SwiperSlide key={index} onClick={() => useNavigate(slide.url)}>
               <div>
                 <h4>
-                  {slides[currentSlide].title}
+                  {slide.title}
                   <br />
                   리얼템을 <b> ZIP.</b>
                 </h4>
               </div>
-              <img src={slide.image} alt={`Slide ${index + 1}`} />
+              <img src={slide.image} alt="" />
             </SwiperSlide>
           ))}
         </Swiper>
       </ImgSection>
       <InfoSection>
         <h4>
-          {slides[currentSlide].title}
+          {mainData[currentSlide]?.title}
           <br />
           리얼템을 <b> ZIP.</b>
         </h4>
-        <InfoVideo>
-          <video src={slides[currentSlide].video} muted autoPlay loop></video>
+        <InfoVideo onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <button
+            onClick={() => {
+              const artistName = mainData[currentSlide]?.artistName;
+              if (artistName) {
+                navigate(`/star/${artistName}`);
+              }
+            }}
+          >
+            click Zip
+          </button>
+          <video ref={videoRef} src={mainData[currentSlide]?.video} muted autoPlay loop></video>
         </InfoVideo>
       </InfoSection>
     </Container>

@@ -4,8 +4,11 @@ import SearchComp from "./SearchComp";
 import { Link, useMatch, useNavigate, useParams } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+<<<<<<< HEAD
 import { scrollTop } from "./Footer";
 import { getCartItemCount } from "../../hooks/useCart";
+=======
+>>>>>>> 677f276dafb1e740bb3a8f7af3a3194144d2b0da
 
 const Container = styled.header``;
 
@@ -299,6 +302,7 @@ const MenuBars = styled.div`
   }
 `;
 
+<<<<<<< HEAD
 const CartCount = styled.span`
   display: inline-flex;
   align-items: center;
@@ -323,12 +327,43 @@ const CartCount = styled.span`
   }
 `;
 
+=======
+const TopBtn = styled.div`
+  position: fixed;
+  transform: translateY(100px);
+  right: 3%;
+  bottom: 6%;
+  background: var(--light-color);
+  color: var(--dark-color);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
+  transition: all 0.3s;
+  opacity: 0;
+  mix-blend-mode: difference;
+  font-family: "EHNormalTrial";
+  font-weight: bold;
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+>>>>>>> 677f276dafb1e740bb3a8f7af3a3194144d2b0da
 const Header = () => {
   const [filterCheck, setFilterCheck] = useState(false);
   const [menuClick, setMenuClick] = useState(false);
   const [searchClick, setSearchClick] = useState(false);
   const [toggleClick, setToggleClick] = useState(false);
+<<<<<<< HEAD
   const [cartCount, setCartCount] = useState(0);
+=======
+  const [topBtnScroll, setTopBtnScroll] = useState(false);
+>>>>>>> 677f276dafb1e740bb3a8f7af3a3194144d2b0da
   const headerRef = useRef();
   const navigate = useNavigate();
   const commerceMatch = useMatch("/");
@@ -337,29 +372,27 @@ const Header = () => {
   const signUpMatch = useMatch("/signup");
   const eventMatch = useMatch("/event");
   const cartMatch = useMatch("/cart");
-  const starMatch = useMatch("/star");
   const filterCategoryMatch = useMatch("/filtercategory/:categoryName");
   const searchMatch = useMatch("/search/:name");
   const mypageMatch = useMatch("/mypage");
   const mypageMatch02 = useMatch("/mypage/:name");
+  const starMatch = useMatch("/star");
+  const starDetailMatch = useMatch("/star/:starName");
   const handleCategory = (e) => {
     const category = e.target.innerText;
     navigate(`/filtercategory/${category}`.toLowerCase());
     setMenuClick(false);
     setToggleClick(false);
-    scrollTop();
   };
   const toEvent = () => {
     navigate("./event");
     setMenuClick(false);
     setToggleClick(false);
-    scrollTop();
   };
   const toStar = () => {
     navigate("./star");
     setMenuClick(false);
     setToggleClick(false);
-    scrollTop();
   };
   const filterFunc = () => {
     if (
@@ -373,7 +406,8 @@ const Header = () => {
       searchMatch ||
       mypageMatch ||
       mypageMatch02 ||
-      starMatch
+      starMatch ||
+      starDetailMatch
     ) {
       setFilterCheck(true);
     } else {
@@ -393,6 +427,7 @@ const Header = () => {
     mypageMatch,
     mypageMatch02,
     starMatch,
+    starDetailMatch,
   ]);
 
   gsap.registerPlugin(ScrollTrigger);
@@ -430,6 +465,7 @@ const Header = () => {
     setToggleClick((prev) => !prev);
   };
 
+<<<<<<< HEAD
   // 장바구니 개수 업데이트 함수
   const updateCartCount = () => {
     const count = getCartItemCount();
@@ -448,6 +484,19 @@ const Header = () => {
     };
   }, []);
 
+=======
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      setTopBtnScroll(true);
+    } else {
+      setTopBtnScroll(false);
+    }
+  });
+>>>>>>> 677f276dafb1e740bb3a8f7af3a3194144d2b0da
   return (
     <Container>
       <Wrapper ref={headerRef} className={menuClick ? "filterUnActive" : ""}>
@@ -458,7 +507,6 @@ const Header = () => {
               onClick={() => {
                 setMenuClick(false);
                 setToggleClick(false);
-                scrollTop();
               }}
             >
               <HeaderLogoImg src="/img/Logo.png" alt="logo" />
@@ -469,13 +517,13 @@ const Header = () => {
               <div>
                 <p>COMMERCE</p>
                 <span>|</span>
-                <Link to="/ott" onClick={scrollTop}>
+                <Link to="/ott">
                   <p className="selectActive">OTT</p>
                 </Link>
               </div>
             ) : (
               <div>
-                <Link to="/" onClick={scrollTop}>
+                <Link to="/">
                   <p className="selectActive">COMMERCE</p>
                 </Link>
                 <span>|</span>
@@ -514,7 +562,6 @@ const Header = () => {
                   onClick={() => {
                     setMenuClick(false);
                     setToggleClick(false);
-                    scrollTop();
                   }}
                 >
                   <span>
@@ -554,7 +601,6 @@ const Header = () => {
                   onClick={() => {
                     setMenuClick(false);
                     setToggleClick(false);
-                    scrollTop();
                   }}
                 >
                   <span>Login</span>
@@ -580,6 +626,9 @@ const Header = () => {
         </HeaderRight>
       </Wrapper>
       <SearchComp searchClick={searchClick} setSearchClick={setSearchClick} />
+      <TopBtn onClick={scrollToTop} className={topBtnScroll ? "active" : ""}>
+        ZIP
+      </TopBtn>
     </Container>
   );
 };

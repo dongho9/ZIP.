@@ -1,8 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-/* --- 스크롤 탑 --- */
-import { scrollTop } from "../common/Footer";
 
 /* --- 스타일 --- */
 const Container = styled.li`
@@ -16,11 +14,11 @@ const Container = styled.li`
   position: relative;
   @media screen and (max-width: 1024px) {
     width: 330px;
-    height: 420px;
+    height: 400px;
   }
   @media screen and (max-width: 767px) {
     width: 290px;
-    height: 380px;
+    height: 350px;
   }
 `;
 const CardItemInfo = styled.div`
@@ -29,7 +27,6 @@ const CardItemInfo = styled.div`
   text-transform: uppercase;
   position: relative;
   letter-spacing: -1px;
-  /* z-index: 1; */
   span {
     letter-spacing: normal;
     font-size: 1.8rem;
@@ -78,7 +75,7 @@ const CardItemInfo = styled.div`
     p {
       max-width: 250px;
       font-size: 2.4rem;
-      line-height: 3rem;
+      line-height: 2.8rem;
       margin: 8px 0 12px;
     }
     button {
@@ -106,7 +103,7 @@ const CardImg = styled.div`
     height: 260px;
   }
   @media screen and (max-width: 767px) {
-    bottom: -40px;
+    bottom: -30px;
     width: 220px;
     height: 220px;
   }
@@ -124,7 +121,11 @@ const CardItem = ({ subtitle, title, img, detailURL }) => {
         <button onClick={() => navigate(`/detail/${detailURL}`)}>→</button>
       </CardItemInfo>
       <CardImg>
-        <img onClick={() => navigate(`/detail/${detailURL}`)} src={img} alt={`${title} 이미지`} />
+        <img
+          onClick={() => navigate(`/detail/${detailURL}`)}
+          src={img}
+          alt={`${title} 이미지`}
+        />
       </CardImg>
     </Container>
   );

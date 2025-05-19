@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import GlobalStyles from "./styles/GlobalStyles.styles";
 import { Outlet } from "react-router-dom";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import Lenis from "@studio-freight/lenis";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 const Root = () => {
   useEffect(() => {
@@ -22,6 +23,7 @@ const Root = () => {
 
   return (
     <>
+      <ScrollToTop />
       <GlobalStyles />
       <Header />
       <Outlet />
