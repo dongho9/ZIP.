@@ -4,8 +4,6 @@ import CardItem from "./CardItem";
 /*--- 스와이퍼 ---*/
 import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
-
-/*--- 스와이퍼 라이브러리 스타일 ---*/
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -15,6 +13,7 @@ const Container = styled.div`
   height: 100%;
   background: #000;
   color: #fff;
+  margin-top: 120px;
   position: relative;
   .swiper {
     width: 100%;
@@ -41,7 +40,6 @@ const MainTitle = styled.div`
   padding: 100px 3% 0px;
   justify-content: space-between;
   align-items: center;
-
   @media screen and (max-width: 768px) {
     padding: 50px 3% 0;
   }
@@ -51,7 +49,6 @@ const Title = styled.h2`
   font-size: 10rem;
   font-family: "EHNormalTrial";
   font-weight: 500;
-
   @media screen and (max-width: 1024px) {
     font-size: 7rem;
     font-weight: 500;
@@ -100,7 +97,9 @@ export default function StylePick() {
     <Container>
       <MainTitle>
         <Title>Style ZIP</Title>
-        <Button onClick={() => navigate("/filtercategory/style")}>More Zip</Button>
+        <Button onClick={() => navigate("/filtercategory/style")}>
+          More Zip
+        </Button>
       </MainTitle>
       <Swiper
         slidesPerView={4}
@@ -113,7 +112,12 @@ export default function StylePick() {
       >
         {sildeData?.map((item, index) => (
           <SwiperSlide key={index}>
-            <CardItem subtitle={item.subtitle} title={item.title} img={item.img} />
+            <CardItem
+              subtitle={item.subtitle}
+              title={item.title}
+              img={item.img}
+              detailURL={item.detailURL}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -1488,7 +1488,7 @@
         },
         {
           "productId": 4,
-          "mainCategory": "beauty",
+          "mainCategory": "style",
           "keyword": "acc",
           "itemName": "애플 이어폰",
           "brand": "애플",
@@ -3092,7 +3092,7 @@
         },
         {
           "productId": 4,
-          "mainCategory": "beaty",
+          "mainCategory": "beauty",
           "keyword": "food",
           "itemName": "메가도스 비타민 씨",
           "brand": "메가도스",
@@ -3714,7 +3714,7 @@
         },
         {
           "productId": 10,
-          "mainCategory": "beauty",
+          "mainCategory": "style",
           "keyword": "acc",
           "itemName": "마코레 스크리토 레더 지갑",
           "brand": "벨루티",
@@ -4065,7 +4065,7 @@
         },
         {
           "productId": 2,
-          "mainCategory": "style",
+          "mainCategory": "beauty",
           "keyword": "body",
           "itemName": "바디버터 화이트 진저 릴리",
           "brand": "퓨어피지",
@@ -4082,7 +4082,7 @@
         },
         {
           "productId": 3,
-          "mainCategory": "style",
+          "mainCategory": "beauty",
           "keyword": "face",
           "itemName": "바이오 필링 허벌 로션",
           "brand": "바이오필링",
@@ -4826,7 +4826,7 @@
           "productId": 2,
           "mainCategory": "style",
           "keyword": "styling",
-          "itemName": "JACQUARD ALWAYS BSR KINTWEAR BLACK",
+          "itemName": "자쿼드 얼웨이즈 니트 블랙 래빗",
           "brand": "비에스 래빗",
           "brandEng": "bsrabbit",
           "price": 78000,
@@ -4961,7 +4961,7 @@
           "releasedDate": 20230716,
           "sellNum": 19,
           "detailImg": {
-            "img01": "https://kream-phinf.pstatic.net/MjAyNDA3MDNfMTA2/MDAxNzE5OTgyNDQzMTY5.lUjaOzyDUQq_AEqqO5f_ThiOBIM4IL1qTU4rfv9RJ80g.MvxoDbOMqh6hJodx99tyvTllnztlUbeQ7lGSq9QHe-Ag.JPEG/p_f0cd4387c17e4b4cbaa1320b4b83f833.jpg",
+            "img01": "https://www.wishbucket.io/_next/image?url=https%3A%2F%2Fd2gfz7wkiigkmv.cloudfront.net%2Fpickin%2F2%2F1%2F2%2FN4yNQSp0Q-iCuDCmlq9_jA&w=1080&q=75",
             "img02": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi5A-fAqWC1OEK5DYg-PyvRUKYoy2U6KDxcA&s",
             "img03": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPdjCgE6qJFLWRVDWq6YtY1i8pwZC9CbfHtw&s"
           },
@@ -5184,7 +5184,7 @@
           "productId": 6,
           "mainCategory": "style",
           "keyword": "acc",
-          "itemName": "iPhone Case Capsule 16-Gold",
+          "itemName": "아이폰 케이스 캡슐 16 GOLD",
           "brand": "골든컨셉",
           "brandEng": "GOLDEN CONCEPT",
           "price": 1000000,
@@ -5242,7 +5242,7 @@
           "releasedDate": 20250303,
           "sellNum": 933,
           "detailImg": {
-            "img01": "https://img.danawa.com/prod_img/500000/889/228/img/2228889_1.jpg?_v=20200908090217",
+            "img01": "https://image2.lotteimall.com/goods/17/62/59/1433596217_1.jpg/dims/resizemc/550x550/optimize",
             "img02": "https://sitem.ssgcdn.com/80/82/25/item/0000008258280_i1_750.jpg",
             "img03": "https://pbs.twimg.com/amplify_video_thumb/1884239023885148160/img/6gLG7cFKq8vOHqEN.jpg"
           },
@@ -5324,23 +5324,6 @@
             "img03": "https://www.celine.com/on/demandware.static/-/Sites-masterCatalog/default/dwebf91d78/images/large/4S187CPLB.38NO_5_SUM22.jpg?im=Resize=(1200);AspectCrop=(1,1),xPosition=.5,yPosition=.5"
           },
           "description": "세련된 실루엣과 강렬한 존재감이 돋보이는 캣 아이 S187 선글라스는 클래식한 캣아이 쉐입에 현대적인 감각을 더한 아이템입니다. 고급 아세테이트 소재로 제작되어 가볍고 편안한 착용감을 제공하며, 매끄러운 광택감이 얼굴에 고급스러운 인상을 더해줍니다."
-        },
-        {
-          "productId": 4,
-          "mainCategory": "beauty",
-          "keyword": "body",
-          "itemName": "31 허브 오일 20ml",
-          "brand": "스위스유스트",
-          "brandEng": "swissjust",
-          "price": 17400,
-          "releasedDate": 20241215,
-          "sellNum": 590,
-          "detailImg": {
-            "img01": "https://img-cf.kurly.com/hdims/resize/%3E1010x/quality/90/src/shop/data/goodsview/20231121/gv00000196777_1.jpg",
-            "img02": "https://img-cf.kurly.com/hdims/resize/%3E1010x/quality/90/src/shop/data/goodsview/20210624/gv40000196779_1.jpg",
-            "img03": "https://img-cf.kurly.com/hdims/resize/%3E1010x/quality/90/src/shop/data/goodsview/20231121/gv00000196777_1.jpg"
-          },
-          "description": "자연이 선물한 31가지 허브의 에센스를 한 병에 담은 31 허브오일은 다양한 일상 속 케어에 활용할 수 있는 다목적 아로마 오일입니다. 유칼립투스, 라벤더, 로즈마리, 페퍼민트 등 천연 에센셜 오일이 조화롭게 블렌딩되어 상쾌하고 편안한 향을 선사하며, 일상 속 긴장을 완화하고 활력을 불어넣는 데 도움을 줍니다."
         }
       ]
     },
@@ -6157,7 +6140,7 @@
           "releasedDate": 20250101,
           "sellNum": 30,
           "detailImg": {
-            "img01": "https://escentials.com/cdn/shop/products/escentials_BKFN3F4010000_2_720x.jpg?v=1596604057",
+            "img01": "https://cf.bysuco.net/27ca7fa804450944cc8d9e0eaad248c6_cvt.webp?w=6007",
             "img02": "https://cdn2.galleria.co.kr/cmd/RB_650x650/src/https://image.galleria.co.kr/C00001/goods/org/753/231011049384753.jpg",
             "img03": "https://cdn2.galleria.co.kr/cmd/RB_650x650/src/https://image.galleria.co.kr/C00001/goods/org/752/231011049384752.jpg"
           },
@@ -6295,18 +6278,18 @@
           "productId": 5,
           "mainCategory": "style",
           "keyword": "perfume",
-          "itemName": "오드 우드 오 드 퍼퓸 100ml",
-          "brand": "나이키",
-          "brandEng": "nike",
-          "price": 459000,
+          "itemName": "블랑쉬 오 드 퍼퓸 100ml",
+          "brand": "바이레도",
+          "brandEng": "BYREDO",
+          "price": 390000,
           "releasedDate": 20130118,
           "sellNum": 315,
           "detailImg": {
-            "img01": "https://kream-phinf.pstatic.net/MjAyMjA1MDRfMjYy/MDAxNjUxNjYxMzQxNjY4.boo2yV1LGOy1DMc2dffX6KHNCJDbwvvPBmykfhz2Nzwg.LCcSvBwWybW9OzZ5AWkrd5jJn4sCVXLCHriRL54gPRQg.PNG/a_55e0ff68ebac48c084b43c68b574f5c8.png?type=l_webp",
-            "img02": "https://image.sivillage.com/upload/C00001/s3/goods/org/651/240621022294651.jpg?RS=600&SP=1",
-            "img03": "https://duciel.co.kr/web/product/small/202409/ee5d8e664e1ea75442347366afbfb2d5.jpg"
+            "img01": "https://www.spacenk.com/dw/image/v2/ABCE_PRD/on/demandware.static/-/Sites-spacenkmastercatalog/default/dw9e16f751/products/BYREDO/UK200054580_BYREDO.jpg?sw=292&sh=292",
+            "img02": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCRqLFVlNU5tDOySJHkmYY-VvDwMHt1RkXsPr07B6weRemejRCBQZrwdlrGE8vXhec10s&usqp=CAU",
+            "img03": "https://hips.hearstapps.com/hmg-prod/images/screen-shot-2023-10-05-at-12-08-37-pm-651edfaadb714.png?crop=1.00xw:0.897xh;0,0.103xh&resize=1120:*"
           },
-          "description": "나이키 SB RPM 솔리드 백팩은 스케이트보더와 도시 라이프스타일을 즐기는 이들을 위해 설계된 다재다능한 백팩입니다. 26리터의 넉넉한 수납 공간과 다양한 기능이 결합되어 일상과 아웃도어 활동 모두에 적합합니다."
+          "description": "순수하고 심플하면서도 개성이 강한 향. 블랑쉬는 WHITE COLOR에 대한 벤 고햄의 지각에서 출발한다. 자연의 투명한 향기와 함께 여성의 순수하고 맑은 면을 담아, 특별한 사람을 위해 만들어낸 향으로, 클래식한 아름다움에 감사를 표현한다."
         }
       ]
     },
@@ -6525,7 +6508,7 @@
           "releasedDate": 20050505,
           "sellNum": 65,
           "detailImg": {
-            "img01": "https://image.sivillage.com/upload/C00001/goods/org/820/230904006136820.jpg?RS=600&SP=1",
+            "img01": "https://contents.lotteon.com/itemimage/20250116102819/LE/12/18/60/54/21/_1/31/01/43/73/0/LE1218605421_1310143730_1.jpg/dims/optimize/dims/resizemc/400x400",
             "img02": "http://gtems.cafe24.com/23FW/VIVIENNEWESTWOOD/23FW_51010018_S000D_N403_2.jpg",
             "img03": "http://gtems.cafe24.com/23FW/VIVIENNEWESTWOOD/23FW_51010018_S000D_N403_5.jpg"
           },
@@ -6645,7 +6628,7 @@
           "releasedDate": 20240908,
           "sellNum": 900,
           "detailImg": {
-            "img01": "https://static-resource.mlb-korea.com/cdn-cgi/image/format=auto,fit=scale-down,onerror=redirect/images/goods/ec/M21N3ACP6601N50BKS/thnail/9326F48C2ABF4D47ACC5BC82CFF82B03.png",
+            "img01": "https://image2.lotteimall.com/goods/43/20/14/2931142043_1.jpg/dims/resizemc/550x550/optimize",
             "img02": "https://static-resource.mlb-korea.com/cdn-cgi/image/q=100,w=3840,format=auto,fit=scale-down,onerror=redirect/images/goods/ec/M21N3ACP6601N07BKS/thnail/87C4E70575BF4A61A53A6F9A0C72100B.png",
             "img03": "https://static-resource.mlb-korea.com/cdn-cgi/image/q=75,w=790,format=auto,fit=scale-down,onerror=redirect/images/goods/ec/M21N3ACP6601N07BKS/FBF62FA29D0A412F8273D996D33FC0C2.jpg"
           },
@@ -6679,7 +6662,7 @@
           "releasedDate": 20130904,
           "sellNum": 596,
           "detailImg": {
-            "img01": "https://sitem.ssgcdn.com/50/24/98/item/1000054982450_i1_750.jpg",
+            "img01": "https://image-cdn.trenbe.com/productmain/1692164305701-62cd940a-2b8f-4938-b3bc-6f98657e2971.png",
             "img02": "https://blog.kakaocdn.net/dn/ZnTuQ/btsC4vvmWiw/F1VXyEASwxFl206HkKiSBk/img.webp",
             "img03": "https://blog.kakaocdn.net/dn/2X6T6/btsC2ylPiCI/HKaeMgGcrLfyzdJOItbjC0/img.webp"
           },
@@ -6842,7 +6825,7 @@
           "releasedDate": 20181010,
           "sellNum": 297,
           "detailImg": {
-            "img01": "https://img.fasola-shop.com/prod/images/item/5404510016_1.jpg",
+            "img01": "https://image.thehyundai.com/static/1/2/9/51/A1/40A1519217_1_600.jpg",
             "img02": "https://news.nateimg.co.kr/orgImg/sg/2021/09/01/20210901504437.jpg",
             "img03": "https://img.croket.co.kr/item/thumbnail/0a45bbe9cef85623aabc9cd27e0b2224.webp"
           },
@@ -6902,8 +6885,8 @@
           "releasedDate": 20190115,
           "sellNum": 2,
           "detailImg": {
-            "img01": "https://kream-phinf.pstatic.net/MjAyNTAzMDRfMTQ0/MDAxNzQxMDU0MDg2NTEy.LXpB6igtkuXp713lWJ3ZLUc_ibLmmR5Bvn5HIGbqZvIg.FJEZafsufkLE14aSvy-yj1hE0BjQgdfXO8er-GB0rBIg.PNG/a_59f71137d33b4c70b3b5c69663ed3416.png?type=l_webp",
-            "img02": "https://kream-phinf.pstatic.net/MjAyNTAzMDRfMjQ2/MDAxNzQxMDU0MDg2ODEy.EZwq06vXKl35awkgYmPVYvDVUxRXsnrieFJE69n5U0gg.l_jDlU6Xn4GdhksGQaWn86vvCnVZifD0V1m65tDvXyEg.PNG/a_291df2abab5440c6b332b5d27b910afe.png?type=l_webp",
+            "img01": "https://cdn.mustit.co.kr/lib/upload/product/imjapan/2021/06/1624331239-75.JPG/_dims_/quality/80",
+            "img02": "https://files.balaan.io/partner/image/2850/,3ad105dee5963adc04b42221d09036df.png",
             "img03": "https://blog.kakaocdn.net/dn/cl4gmO/btsjnawRUy4/9tqq7jU84mAWIo2W2zyZYK/img.jpg"
           },
           "description": "탱크 워치는 제1차 세계 대전에 참전한 탱크에서 영감을 받아 루이 까르띠에가 디자인했습니다. 플랫 버티컬 샤프트와 사파이어 카보숑으로 절제된 품격을 상징적으로 보여주는 워치는 출시 이후 전 세계 애호가들의 마음을 사로잡았습니다."
@@ -7005,7 +6988,7 @@
           "releasedDate": 20160803,
           "sellNum": 731,
           "detailImg": {
-            "img01": "https://sitem.ssgcdn.com/92/83/74/item/1000546748392_i1_750.jpg",
+            "img01": "https://cf.bysuco.net/b060ff383843b36f74939ac0031dac36.jpg?w=600",
             "img02": "https://cdn.hddfs.com/files/goos/0689/20230308/e4492ae5.jpg?sf=webp&RS=518x518",
             "img03": "https://duciel.co.kr/web/product/big/202408/9082e3097a35934e944a2924bd9e62ec.jpg"
           },

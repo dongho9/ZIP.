@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ShippingAddress from "../../components/mypage/ShippingAddress";
+import { useAddresses } from "../../hooks/useAddresses";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const Container = styled.div`
   padding: 0 3%;
@@ -90,16 +92,16 @@ const AddressList = styled.div`
 
 const AddressItem = styled.div`
   background: #f8f8f8;
-  padding: 28px; // 기존 30px에서 약간 줄임
+  padding: 28px;
   margin-bottom: 20px;
   position: relative;
 
   @media screen and (max-width: 1024px) {
-    padding: 24px; // 기존 25px에서 약간 줄임
+    padding: 24px;
   }
 
   @media screen and (max-width: 402px) {
-    padding: 18px; // 기존 20px에서 약간 줄임
+    padding: 18px;
     margin-bottom: 15px;
   }
 `;
@@ -218,112 +220,185 @@ const NoAddressText = styled.p`
   }
 `;
 
+// 알림 메시지 스타일
+const Notification = styled.div`
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  background-color: ${(props) => (props.success ? "#4caf50" : "#f44336")};
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.4rem;
+  z-index: 1100;
+  opacity: ${(props) => (props.visible ? "1" : "0")};
+  transform: translateY(${(props) => (props.visible ? "0" : "-20px")});
+  transition: opacity 0.3s, transform 0.3s;
+
+  @media screen and (max-width: 402px) {
+    font-size: 1.3rem;
+    padding: 12px 15px;
+    right: 10px;
+    top: 10px;
+  }
+`;
+
+const queryClient = new QueryClient();
+
 const UserAddress = () => {
-  const [addresses, setAddresses] = useState([
-    {
-      id: 1,
-      recipient: "000 님",
-      phone: "010-1234-5678",
-      zipCode: "14285",
-      address: "경기도 00시 00로 157-358번지 (00동, 000아파트)",
-      detailAddress: "000아파트 000호",
-      isDefault: true,
-    },
-    {
-      id: 2,
-      recipient: "000 님",
-      phone: "010-1234-5678",
-      zipCode: "14285",
-      address: "서울특별시 00구 00로 157-358번지 (00동, 000아파트)",
-      detailAddress: "000아파트 000호",
-      isDefault: false,
-    },
-  ]);
+  // React Query 커스텀 훅 사용
+  const { addresses, isLoading, addOrUpdateAddress, deleteAddress } =
+    useAddresses();
 
   // 배송지 모달 상태
   const [isShippingModalOpen, setIsShippingModalOpen] = useState(false);
 
-  // 모달 열기/닫기 함수
+  // 현재 편집 중인 주소 ID 상태
+  const [editingAddressId, setEditingAddressId] = useState(null);
+
+  // 알림 상태
+  const [notification, setNotification] = useState({
+    visible: false,
+    message: "",
+    success: true,
+  });
+
+  // 알림 표시 함수
+  const showNotification = (message, success = true) => {
+    setNotification({
+      visible: true,
+      message,
+      success,
+    });
+
+    // 3초 후 알림 숨기기
+    setTimeout(() => {
+      setNotification((prev) => ({
+        ...prev,
+        visible: false,
+      }));
+    }, 3000);
+  };
+
+  // 모달 열기 함수 - 새 주소 등록
   const handleOpenShippingModal = () => {
+    setEditingAddressId(null); // 편집 ID 초기화 (새 주소 등록 모드)
     setIsShippingModalOpen(true);
   };
 
+  // 모달 열기 함수 - 기존 주소 수정
+  const handleEditAddress = (addressId) => {
+    setEditingAddressId(addressId); // 편집할 주소 ID 설정
+    setIsShippingModalOpen(true);
+  };
+
+  // 모달 닫기 함수
   const handleCloseShippingModal = () => {
     setIsShippingModalOpen(false);
+    setEditingAddressId(null); // 편집 ID 초기화
   };
 
   // 주소 삭제 함수
   const handleDeleteAddress = (id) => {
-    setAddresses(addresses.filter((address) => address.id !== id));
+    deleteAddress.mutate(id, {
+      onSuccess: () => {
+        showNotification("배송지가 삭제되었습니다.");
+      },
+    });
   };
 
-  // 주소 추가 함수
-  const handleAddAddress = (newAddressData) => {
-    // 새로운 주소 객체 생성
-    const newAddressObj = {
-      ...newAddressData,
-      id: Date.now(), // 임시 고유 ID
-    };
+  // 주소 추가/수정 함수
+  const handleAddOrUpdateAddress = (addressData) => {
+    // 수정 모드에서 기존 ID 유지
+    const addressWithId = editingAddressId
+      ? { ...addressData, id: editingAddressId }
+      : addressData;
 
-    // 새 주소가 기본 배송지라면 다른 주소의 기본 배송지 상태 해제
-    let updatedAddresses = [...addresses];
-    if (newAddressData.isDefault) {
-      updatedAddresses = updatedAddresses.map((addr) => ({
-        ...addr,
-        isDefault: false,
-      }));
-    }
+    addOrUpdateAddress.mutate(addressWithId, {
+      onSuccess: () => {
+        showNotification(
+          editingAddressId
+            ? "배송지가 수정되었습니다."
+            : "새 배송지가 추가되었습니다."
+        );
+        handleCloseShippingModal();
+      },
+    });
+  };
 
-    // 새 주소 추가
-    setAddresses([...updatedAddresses, newAddressObj]);
+  // 현재 편집 중인 주소 찾기
+  const getEditingAddress = () => {
+    if (!editingAddressId) return null;
+    return addresses.find((addr) => addr.id === editingAddressId) || null;
   };
 
   return (
-    <Container>
-      <PageTitle>User Address</PageTitle>
+    <QueryClientProvider client={queryClient}>
+      <Container>
+        <PageTitle>User Address</PageTitle>
 
-      <AddressHeader>
-        <TabButton onClick={handleOpenShippingModal}>배송지 등록</TabButton>
-      </AddressHeader>
+        <AddressHeader>
+          <TabButton onClick={handleOpenShippingModal}>배송지 등록</TabButton>
+        </AddressHeader>
 
-      <AddressList>
-        {addresses.length > 0 ? (
-          addresses.map((address) => (
-            <AddressItem key={address.id}>
-              <AddressInfo>
-                <AddressName>
-                  <Recipient>{address.recipient}</Recipient>
-                  {address.isDefault && (
-                    <DefaultBadgeContainer>
-                      <DefaultBadge>기본 배송지</DefaultBadge>
-                    </DefaultBadgeContainer>
-                  )}
-                </AddressName>
-                <AddressText>{address.address}</AddressText>
-                <AddressText>{address.detailAddress}</AddressText>
-                <ZipCode>{address.zipCode}</ZipCode>
-                <Phone>{address.phone}</Phone>
-              </AddressInfo>
-              <ActionButtons>
-                <ActionButton>수정</ActionButton>
-                <ActionButton onClick={() => handleDeleteAddress(address.id)}>
-                  삭제
-                </ActionButton>
-              </ActionButtons>
-            </AddressItem>
-          ))
-        ) : (
-          <NoAddressText>입력된 주소가 없습니다.</NoAddressText>
-        )}
-      </AddressList>
+        <AddressList>
+          {isLoading ? (
+            <NoAddressText>로딩 중...</NoAddressText>
+          ) : addresses.length > 0 ? (
+            addresses.map((address) => (
+              <AddressItem key={address.id}>
+                <AddressInfo>
+                  <AddressName>
+                    <Recipient>
+                      {address.title
+                        ? `${address.title} - ${address.recipient}`
+                        : address.recipient}
+                    </Recipient>
+                    {address.isDefault && (
+                      <DefaultBadgeContainer>
+                        <DefaultBadge>기본 배송지</DefaultBadge>
+                      </DefaultBadgeContainer>
+                    )}
+                  </AddressName>
+                  <AddressText>{address.address}</AddressText>
+                  <AddressText>{address.detailAddress}</AddressText>
+                  <ZipCode>{address.zipCode}</ZipCode>
+                  <Phone>{address.phone}</Phone>
+                </AddressInfo>
+                <ActionButtons>
+                  <ActionButton onClick={() => handleEditAddress(address.id)}>
+                    수정
+                  </ActionButton>
+                  <ActionButton onClick={() => handleDeleteAddress(address.id)}>
+                    삭제
+                  </ActionButton>
+                </ActionButtons>
+              </AddressItem>
+            ))
+          ) : (
+            <NoAddressText>입력된 주소가 없습니다.</NoAddressText>
+          )}
+        </AddressList>
 
-      {/* 배송지 등록 모달 컴포넌트 */}
-      <ShippingAddress
-        isOpen={isShippingModalOpen}
-        onClose={handleCloseShippingModal}
-        onAddAddress={handleAddAddress}
-      />
-    </Container>
+        {/* 배송지 등록/수정 모달 컴포넌트 */}
+        <ShippingAddress
+          isOpen={isShippingModalOpen}
+          onClose={handleCloseShippingModal}
+          onAddAddress={handleAddOrUpdateAddress}
+          editAddress={getEditingAddress()} // 편집할 주소 정보 전달
+          isEditMode={!!editingAddressId} // 편집 모드 여부 전달
+        />
+
+        {/* 알림 메시지 */}
+        <Notification
+          visible={notification.visible}
+          success={notification.success}
+        >
+          {notification.message}
+        </Notification>
+      </Container>
+    </QueryClientProvider>
   );
 };
 

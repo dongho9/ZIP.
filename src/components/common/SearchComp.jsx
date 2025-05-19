@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
-import { scrollTop } from "./Footer";
 
 const Container = styled.div`
   position: fixed;
@@ -133,10 +132,11 @@ const SearchComp = ({ searchClick, setSearchClick }) => {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    navigate(`search/${inputRef.current.value}`);
-    setSearchClick(false);
-    inputRef.current.value = "";
-    scrollTop();
+    if (inputRef.current.value !== "") {
+      navigate(`search/${inputRef.current.value}`);
+      setSearchClick(false);
+      inputRef.current.value = "";
+    }
   };
   return (
     <Container className={searchClick ? "active" : null}>
@@ -166,19 +166,29 @@ const SearchComp = ({ searchClick, setSearchClick }) => {
           <ul>
             <li>POPULAR KEYWORDS</li>
             <li>
-              <Link title="임시">EMIS</Link>
+              <Link to="/search/하니" onClick={() => setSearchClick(false)}>
+                하니
+              </Link>
             </li>
             <li>
-              <Link title="임시">PET</Link>
+              <Link to="/search/신시아" onClick={() => setSearchClick(false)}>
+                신시아
+              </Link>
             </li>
             <li>
-              <Link title="임시">CAP</Link>
+              <Link to="/search/선미" onClick={() => setSearchClick(false)}>
+                선미
+              </Link>
             </li>
             <li>
-              <Link title="임시">Àvie muah</Link>
+              <Link to="/search/고준희" onClick={() => setSearchClick(false)}>
+                고준희
+              </Link>
             </li>
             <li>
-              <Link title="임시">GLOWNY</Link>
+              <Link to="/search/슈화" onClick={() => setSearchClick(false)}>
+                슈화
+              </Link>
             </li>
           </ul>
         </Keyword>
