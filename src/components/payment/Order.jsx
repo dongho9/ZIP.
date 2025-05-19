@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import shose1 from "../../imgs/payment/shose1.png";
-import shose2 from "../../imgs/payment/shose2.png";
+import { FaTrashAlt } from "react-icons/fa";
 
 const OrderSection = styled.div`
   flex: 4;
@@ -17,7 +16,6 @@ const OrderSection = styled.div`
     position: relative;
     top: 0;
     order: 1;
-    /* padding: 15px; */
     border-radius: 4px;
   }
 `;
@@ -49,24 +47,24 @@ const OrderSummary = styled.div`
   margin-top: 15px;
 `;
 
+// 카트 페이지 스타일을 적용한 새 스타일 컴포넌트
 const SummaryTable = styled.div`
   margin-bottom: 20px;
-
-  @media screen and (max-width: 1024px) {
-    background-color: #f8f8f8;
-    padding: 15px;
-    border-radius: 4px;
-  }
+  background-color: #f8f8f8;
+  padding: 30px;
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 4px;
 `;
 
 const SummaryRow = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
 `;
 
 const SummaryLabel = styled.span`
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 
   @media screen and (max-width: 402px) {
     font-size: 1.3rem;
@@ -82,22 +80,24 @@ const SummaryValue = styled.span`
   }
 `;
 
+// 제품 리스트 영역도 스타일 업데이트
 const ProductList = styled.div`
   margin-top: 20px;
   max-height: 500px;
   overflow-y: auto;
-  border-right: 1px solid #eee;
+  background-color: #fff;
+  padding: 30px;
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 4px;
 
   @media screen and (max-width: 1024px) {
     max-height: 300px;
-    border-right: none;
-    border-radius: 4px;
-    padding: 10px;
+    padding: 20px;
   }
 
   @media screen and (max-width: 402px) {
     max-height: 250px;
-    border-right: none;
+    padding: 15px;
   }
 `;
 
@@ -214,54 +214,109 @@ const QuantityInput = styled.input`
 `;
 
 const DeleteButton = styled.button`
-  width: 24px;
-  height: 24px;
-  border: 1px solid #ddd;
-  background: #fff;
+  background: transparent;
+  border: none;
   margin-left: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  color: var(--dark-color, #333);
+
+  &:hover {
+    color: #000;
+  }
 
   @media screen and (max-width: 402px) {
-    width: 22px;
-    height: 22px;
     margin-left: 5px;
   }
 `;
 
-const Order = ({ quantities, setQuantities }) => {
-  // Mock data
-  const orderItems = [
-    {
-      id: 1,
-      brand: "CONVERSE",
-      name: "CONVERSE CHUCK 70 HI",
-      option: "VERNAL POOL/EGERT/BLACK/240",
-      price: 198000,
-      image: shose1,
-    },
-    {
-      id: 2,
-      brand: "CONVERSE",
-      name: "CONVERSE CHUCK 70 HI",
-      option: "BLACK/240",
-      price: 198000,
-      image: shose2,
-    },
-  ];
+// 빈 장바구니 메시지 스타일
+const EmptyMessage = styled.div`
+  height: 100px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  color: var(--dark-color, #555);
+  text-align: center;
+
+  @media (max-width: 767px) {
+    height: 80px;
+    font-size: 1.4rem;
+  }
+`;
+
+const DiscountRow = styled(SummaryRow)`
+  color: #e84118;
+`;
+
+const DiscountValue = styled(SummaryValue)`
+  color: #e84118;
+`;
+
+const DiscountLabel = styled(SummaryLabel)`
+  display: flex;
+  align-items: center;
+`;
+
+const CouponName = styled.span`
+  font-size: 1.2rem;
+  color: #666;
+  margin-left: 10px;
+
+  @media screen and (max-width: 402px) {
+    font-size: 1.1rem;
+  }
+`;
+
+const Order = ({
+  orderItems: propOrderItems = [],
+  quantities,
+  setQuantities,
+  discount,
+  couponName,
+}) => {
+  // props의 orderItems가 있으면 사용, 없으면 기본 데이터 사용
+  const [items, setItems] = useState(
+    propOrderItems.length > 0 ? propOrderItems : []
+  );
+
+  // props로 받은 주문 아이템이 변경되면 상태 업데이트
+  useEffect(() => {
+    if (propOrderItems.length > 0) {
+      setItems(propOrderItems);
+    } else {
+      // 주문 아이템이 없으면 빈 배열로 초기화
+      setItems([]);
+    }
+  }, [propOrderItems]);
 
   // 가격 계산
   const calculateTotalPrice = () => {
-    return orderItems.reduce(
+    return items.reduce(
       (sum, item) => sum + item.price * (quantities[item.id] || 1),
       0
     );
   };
 
   const totalPrice = calculateTotalPrice();
+
+  // 할인 금액 계산
+  const calculateDiscountAmount = () => {
+    if (!discount?.applied) return 0;
+
+    if (discount.type === "percentage") {
+      return Math.floor((totalPrice * discount.rate) / 100);
+    }
+
+    return discount.amount;
+  };
+
+  const discountAmount = calculateDiscountAmount();
+  const finalPrice = totalPrice - discountAmount;
 
   const handleQuantityChange = (id, change) => {
     setQuantities((prev) => {
@@ -270,64 +325,130 @@ const Order = ({ quantities, setQuantities }) => {
     });
   };
 
+  // 아이템 삭제 함수 추가
+  const removeItem = (id) => {
+    setItems(items.filter((item) => item.id !== id));
+
+    // quantities에서도 해당 아이템 제거
+    setQuantities((prev) => {
+      const newQuantities = { ...prev };
+      delete newQuantities[id];
+      return newQuantities;
+    });
+  };
+
+  // 쿠폰 이름에서 부분 텍스트 추출
+  const getShortCouponName = () => {
+    if (!couponName || couponName === "선택 없음" || !discount?.applied)
+      return "";
+
+    if (couponName.includes("MID SEASON")) {
+      return "시즌 할인";
+    } else if (couponName.includes("BIRTH DAY")) {
+      return "생일 할인";
+    } else if (couponName.includes("WELCOME")) {
+      return "웰컴 할인";
+    }
+
+    return "할인 쿠폰";
+  };
+
   return (
     <OrderSection>
       <SectionTitle>결제 정보 요약</SectionTitle>
       <SummaryTable>
-        <SummaryRow>
-          <SummaryLabel>상품 총합 금액</SummaryLabel>
-          <SummaryValue>KRW {totalPrice.toLocaleString()}</SummaryValue>
-        </SummaryRow>
-        <SummaryRow>
-          <SummaryLabel>할인 적용 금액</SummaryLabel>
-          <SummaryValue>KRW 0</SummaryValue>
-        </SummaryRow>
-        <SummaryRow>
-          <SummaryLabel>배송비</SummaryLabel>
-          <SummaryValue>KRW 0</SummaryValue>
-        </SummaryRow>
-        <Divider />
-        <SummaryRow>
-          <SummaryLabel>상품 금액 합계</SummaryLabel>
-          <SummaryValue bold>KRW {totalPrice.toLocaleString()}</SummaryValue>
-        </SummaryRow>
+        {items.length === 0 ? (
+          <EmptyMessage>상품이 비었습니다.</EmptyMessage>
+        ) : (
+          <>
+            <SummaryRow>
+              <SummaryLabel>상품 총합 금액</SummaryLabel>
+              <SummaryValue>KRW {totalPrice.toLocaleString()}</SummaryValue>
+            </SummaryRow>
+
+            {discount?.applied && (
+              <DiscountRow>
+                <DiscountLabel>
+                  할인 적용 금액
+                  <CouponName>
+                    ({getShortCouponName()} {discount.rate}%)
+                  </CouponName>
+                </DiscountLabel>
+                <DiscountValue>
+                  - KRW {discountAmount.toLocaleString()}
+                </DiscountValue>
+              </DiscountRow>
+            )}
+
+            {!discount?.applied && (
+              <SummaryRow>
+                <SummaryLabel>할인 적용 금액</SummaryLabel>
+                <SummaryValue>KRW 0</SummaryValue>
+              </SummaryRow>
+            )}
+
+            <SummaryRow>
+              <SummaryLabel>배송비</SummaryLabel>
+              <SummaryValue>KRW 0</SummaryValue>
+            </SummaryRow>
+            <Divider />
+            <SummaryRow>
+              <SummaryLabel large>상품 금액 합계</SummaryLabel>
+              <SummaryValue large bold>
+                KRW {finalPrice.toLocaleString()}
+              </SummaryValue>
+            </SummaryRow>
+          </>
+        )}
       </SummaryTable>
 
       <SectionTitle>주문 상품</SectionTitle>
       <ProductList>
-        {orderItems.map((item) => (
-          <ProductItem key={item.id}>
-            <ProductImage>
-              <img src={item.image} alt={item.name} width="80" height="90" />
-            </ProductImage>
-            <ProductInfo>
-              <ProductBrand>{item.brand}</ProductBrand>
-              <ProductName>{item.name}</ProductName>
-              <ProductOption>{item.option}</ProductOption>
-              <PriceQuantityRow>
-                <ProductPrice>KRW {item.price.toLocaleString()}</ProductPrice>
-                <QuantityControls>
-                  <QuantityButton
-                    onClick={() => handleQuantityChange(item.id, -1)}
-                  >
-                    -
-                  </QuantityButton>
-                  <QuantityInput value={quantities[item.id] || 1} readOnly />
-                  <QuantityButton
-                    onClick={() => handleQuantityChange(item.id, 1)}
-                  >
-                    +
-                  </QuantityButton>
-                  <DeleteButton>
-                    <span role="img" aria-label="delete">
-                      🗑️
-                    </span>
-                  </DeleteButton>
-                </QuantityControls>
-              </PriceQuantityRow>
-            </ProductInfo>
-          </ProductItem>
-        ))}
+        {items.length === 0 ? (
+          <EmptyMessage>상품이 비었습니다.</EmptyMessage>
+        ) : (
+          items.map((item) => (
+            <ProductItem key={item.id}>
+              <ProductImage>
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  width="80"
+                  height="90"
+                  onError={(e) => {
+                    console.error("Image load error:", item.image);
+                    e.target.src = "/imgs/default_product.png"; // 이미지 로드 실패 시 대체 이미지 표시
+                  }}
+                />
+              </ProductImage>
+              <ProductInfo>
+                <ProductBrand>{item.brand}</ProductBrand>
+                <ProductName>{item.name}</ProductName>
+                <ProductOption>{item.option || item.detail}</ProductOption>
+                <PriceQuantityRow>
+                  <ProductPrice>KRW {item.price.toLocaleString()}</ProductPrice>
+                  <QuantityControls>
+                    <QuantityButton
+                      onClick={() => handleQuantityChange(item.id, -1)}
+                      disabled={(quantities[item.id] || 1) <= 1}
+                    >
+                      -
+                    </QuantityButton>
+                    <QuantityInput value={quantities[item.id] || 1} readOnly />
+                    <QuantityButton
+                      onClick={() => handleQuantityChange(item.id, 1)}
+                    >
+                      +
+                    </QuantityButton>
+                    <DeleteButton onClick={() => removeItem(item.id)}>
+                      <FaTrashAlt size="1.8rem" />
+                    </DeleteButton>
+                  </QuantityControls>
+                </PriceQuantityRow>
+              </ProductInfo>
+            </ProductItem>
+          ))
+        )}
       </ProductList>
     </OrderSection>
   );

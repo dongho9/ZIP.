@@ -18,7 +18,7 @@ const ModalOverlay = styled.div`
 const ModalContent = styled.div`
   background: white;
   width: 450px;
-  height: 450px; 
+  height: 450px;
   max-width: 90%;
   border-radius: 8px;
   overflow: visible;
@@ -80,8 +80,8 @@ const CloseButton = styled.button`
 
 const ModalBody = styled.div`
   padding: 20px;
-  overflow-y: visible; /* 내용이 넘칠 경우 스크롤 생성 */
-  flex: 1; /* 남은 공간 모두 차지하도록 설정 */
+  overflow-y: visible;
+  flex: 1;
 
   @media screen and (max-width: 402px) {
     padding: 15px;
@@ -281,6 +281,51 @@ const ArrowIcon = styled.span`
   transition: transform 0.3s;
 `;
 
+// 쿠폰 선택 상태 메시지 스타일 추가
+const CouponStatusMessage = styled.div`
+  margin-top: 10px;
+  font-size: 1.3rem;
+  padding: 10px;
+  background-color: ${(props) => (props.selected ? "#f0f8ff" : "#fff8f0")};
+  border: 1px solid ${(props) => (props.selected ? "#d0e8ff" : "#ffe8d0")};
+  color: ${(props) => (props.selected ? "#0066cc" : "#cc6600")};
+  border-radius: 4px;
+  text-align: center;
+
+  @media screen and (max-width: 402px) {
+    font-size: 1.2rem;
+    padding: 8px;
+    margin-top: 8px;
+  }
+`;
+
+const ApplyCouponButton = styled.button`
+  width: 100%;
+  padding: 12px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background: #333;
+  }
+
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+
+  @media screen and (max-width: 402px) {
+    padding: 10px;
+    font-size: 1.3rem;
+  }
+`;
+
 const CouponModal = ({
   isOpen,
   onClose,
@@ -292,7 +337,7 @@ const CouponModal = ({
   toggleCouponDropdown,
   applyCoupon,
 }) => {
-  // 쿠폰 옵션
+  // 쿠폰 옵션과 할인율 매핑
   const couponOptions = [
     "선택 없음",
     "MID SEASON OFF SALE 10% COUPON",
@@ -305,15 +350,31 @@ const CouponModal = ({
     toggleCouponDropdown();
   };
 
+  // 쿠폰이 선택되었는지 확인
+  const isCouponSelected =
+    selectedCoupon !== "선택 없음" && selectedCoupon !== "";
+
+  // 쿠폰 적용 핸들러
+  const handleApplyCoupon = (e) => {
+    e.preventDefault();
+    applyCoupon();
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <ModalOverlay isOpen={isOpen} onClick={onClose}>
       <ModalContent onClick={(e) => e.stopPropagation()}>
         <ModalHeader>
           <ModalTitle>Coupons</ModalTitle>
-          <CloseButton onClick={onClose}>×</CloseButton>
+          <CloseButton onClick={onClose} type="button">
+            ×
+          </CloseButton>
         </ModalHeader>
         <ModalBody>
-          <ModalForm>
+          <ModalForm onSubmit={handleSubmit}>
             <ModalFormGroup>
               <ModalLabel>발급받은 쿠폰의 인증번호를 입력해 주세요</ModalLabel>
               <CouponInputGroup>
@@ -330,9 +391,10 @@ const CouponModal = ({
             </ModalFormGroup>
 
             <ModalFormGroup>
+              <ModalLabel>쿠폰 선택</ModalLabel>
               <ModalSelectWrapper>
                 <ModalSelectHeader onClick={toggleCouponDropdown}>
-                  {selectedCoupon}
+                  {selectedCoupon || "선택 없음"}
                   <ArrowIcon isOpen={couponDropdownOpen} />
                 </ModalSelectHeader>
                 <ModalSelectOptions isOpen={couponDropdownOpen}>
@@ -347,6 +409,22 @@ const CouponModal = ({
                   ))}
                 </ModalSelectOptions>
               </ModalSelectWrapper>
+
+              {/* 쿠폰 선택 상태 메시지 */}
+              <CouponStatusMessage selected={isCouponSelected}>
+                {isCouponSelected
+                  ? `${selectedCoupon} 쿠폰이 선택되었습니다.`
+                  : "선택된 쿠폰이 없습니다."}
+              </CouponStatusMessage>
+
+              {/* 쿠폰 적용 버튼 추가 - type="button" 명시 */}
+              <ApplyCouponButton
+                onClick={handleApplyCoupon}
+                disabled={!isCouponSelected}
+                type="button"
+              >
+                쿠폰 적용하기
+              </ApplyCouponButton>
             </ModalFormGroup>
           </ModalForm>
         </ModalBody>

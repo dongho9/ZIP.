@@ -5,6 +5,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useParams, useNavigate } from "react-router-dom";
 import { StarData } from "../StarData";
 
+// 페이지 연동시 필요한 부분 (재기추가)
+import { useNavigate } from "react-router-dom";
+import { useCart } from "../hooks/useCart";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { ORDER_ITEMS_KEY } from "../constants/queryKeys";
+
 const Container = styled.div``;
 const Wrapper = styled.div`
   display: flex;
@@ -226,6 +232,84 @@ const Detail = () => {
   const { itemName } = useParams();
   const { isLoading, data } = StarData();
   const navigate = useNavigate();
+
+  //재기 추가(페이지 연동)
+  const [count, setCount] = useState(1);
+  const { addToCart } = useCart();
+  const queryClient = useQueryClient();
+
+  // 수량 증가 함수
+  const increaseCount = () => {
+    setCount((prev) => prev + 1);
+  };
+
+  // 수량 감소 함수
+  const decreaseCount = () => {
+    setCount((prev) => (prev > 1 ? prev - 1 : 1));
+  };
+
+  // 바로 주문하기 mutation
+  const orderNowMutation = useMutation({
+    mutationFn: (orderItem) => {
+      return Promise.resolve([orderItem]);
+    },
+    onSuccess: (orderItems) => {
+      // 주문 정보를 리액트 쿼리 캐시에 저장
+      queryClient.setQueryData([ORDER_ITEMS_KEY], orderItems);
+      // 결제 페이지로 이동
+      navigate("/payment");
+    },
+  });
+
+  // 장바구니 추가 핸들러
+  const handleAddToCart = (product, artist) => {
+    let imagePath = "";
+    if (product.detailImg) {
+      imagePath = Object.values(product.detailImg)[0] || "";
+    }
+
+    const cartItem = {
+      id: product.productId || Date.now(),
+      brand: product.brand || "BRAND",
+      name: product.itemName,
+      detail: product.description?.substring(0, 30) + "..." || "",
+      price: product.price,
+      image: imagePath, // 수정된 이미지 경로
+      quantity: count,
+      selected: true,
+    };
+
+    addToCart.mutate(cartItem, {
+      onSuccess: () => {
+        // 성공 시 알림
+        alert("상품이 장바구니에 추가되었습니다.");
+        window.dispatchEvent(new CustomEvent("cart-updated"));
+      },
+    });
+  };
+
+  // 바로 주문하기 핸들러
+  const handleOrderNow = (product, artist) => {
+    let imagePath = "";
+    if (product.detailImg) {
+      imagePath = Object.values(product.detailImg)[0] || "";
+    }
+
+    const orderItem = {
+      id: product.productId || Date.now(),
+      brand: product.brand || "BRAND",
+      name: product.itemName,
+      detail: product.description?.substring(0, 30) + "..." || "",
+      price: product.price,
+      image: imagePath, // 수정된 이미지 경로
+      quantity: count,
+      selected: true,
+      option: product.keyword || "",
+    };
+
+    orderNowMutation.mutate(orderItem);
+  };
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1024) {
@@ -238,6 +322,8 @@ const Detail = () => {
     window.addEventListener("resize", () => {
       handleResize();
     });
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const detailData = data?.artists?.map((artist) => artist).flat() || [];
@@ -264,6 +350,7 @@ const Detail = () => {
     next.classList.toggle("active");
   };
 
+
   return (
     <>
       {isLoading ? (
@@ -286,20 +373,27 @@ const Detail = () => {
                   <p>{artist.artistName} PICK</p>
                   <ItemName>{product.itemName}</ItemName>
                   <ItemPrice>
-                    KRW <span>{product.price}</span>
+                    KRW {product.price.toLocaleString("ko-KR")}
                   </ItemPrice>
                   <ItemCount>
-                    <button onClick={onDecrease}>-</button>
-                    <p>{quantity}</p>
-                    <button onClick={onIncrease}>+</button>
+                    <button onClick={decreaseCount}>-</button>
+                    <p>{count}</p>
+                    <button onClick={increaseCount}>+</button>
                   </ItemCount>
                   <TotalPrice>
-                    TOTAL: KRW <span>{product.price * quantity}</span>(
-                    <span>{quantity}</span>)개
+                    TOTAL: KRW{" "}
+                    <span>
+                      {(product.price * count).toLocaleString("ko-KR")}
+                    </span>
+                    (<span>{count}</span>)개
                   </TotalPrice>
                   <ItemButton>
-                    <button>ADD TO CART</button>
-                    <button>ORDER NOW</button>
+                    <button onClick={() => handleAddToCart(product, artist)}>
+                      ADD TO CART
+                    </button>
+                    <button onClick={() => handleOrderNow(product, artist)}>
+                      ORDER NOW
+                    </button>
                   </ItemButton>
                   <ItemDesc>
                     <p onClick={descOpen}>DESCRIPTION</p>

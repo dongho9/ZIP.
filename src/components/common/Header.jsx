@@ -4,6 +4,11 @@ import SearchComp from "./SearchComp";
 import { Link, useMatch, useNavigate, useParams } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+<<<<<<< HEAD
+import { scrollTop } from "./Footer";
+import { getCartItemCount } from "../../hooks/useCart";
+=======
+>>>>>>> 677f276dafb1e740bb3a8f7af3a3194144d2b0da
 
 const Container = styled.header``;
 
@@ -297,6 +302,32 @@ const MenuBars = styled.div`
   }
 `;
 
+<<<<<<< HEAD
+const CartCount = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 0.8rem;
+  margin-left: 1px;
+  font-size: 1.2rem;
+  font-family: "Pretendard";
+
+  @media screen and (max-width: 1024px) {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 16px;
+    height: 16px;
+    font-size: 0.7rem;
+  }
+`;
+
+=======
 const TopBtn = styled.div`
   position: fixed;
   transform: translateY(100px);
@@ -322,12 +353,17 @@ const TopBtn = styled.div`
     opacity: 1;
   }
 `;
+>>>>>>> 677f276dafb1e740bb3a8f7af3a3194144d2b0da
 const Header = () => {
   const [filterCheck, setFilterCheck] = useState(false);
   const [menuClick, setMenuClick] = useState(false);
   const [searchClick, setSearchClick] = useState(false);
   const [toggleClick, setToggleClick] = useState(false);
+<<<<<<< HEAD
+  const [cartCount, setCartCount] = useState(0);
+=======
   const [topBtnScroll, setTopBtnScroll] = useState(false);
+>>>>>>> 677f276dafb1e740bb3a8f7af3a3194144d2b0da
   const headerRef = useRef();
   const navigate = useNavigate();
   const commerceMatch = useMatch("/");
@@ -429,6 +465,26 @@ const Header = () => {
     setToggleClick((prev) => !prev);
   };
 
+<<<<<<< HEAD
+  // 장바구니 개수 업데이트 함수
+  const updateCartCount = () => {
+    const count = getCartItemCount();
+    setCartCount(count);
+  };
+
+  // 컴포넌트 마운트 시와 카트 업데이트 이벤트 발생 시 장바구니 개수 업데이트
+  useEffect(() => {
+    updateCartCount();
+
+    // 장바구니 업데이트 이벤트 감지
+    window.addEventListener("cart-updated", updateCartCount);
+
+    return () => {
+      window.removeEventListener("cart-updated", updateCartCount);
+    };
+  }, []);
+
+=======
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -440,6 +496,7 @@ const Header = () => {
       setTopBtnScroll(false);
     }
   });
+>>>>>>> 677f276dafb1e740bb3a8f7af3a3194144d2b0da
   return (
     <Container>
       <Wrapper ref={headerRef} className={menuClick ? "filterUnActive" : ""}>
@@ -507,7 +564,10 @@ const Header = () => {
                     setToggleClick(false);
                   }}
                 >
-                  <span>Cart</span>
+                  <span>
+                    Cart
+                    {cartCount > 0 && <CartCount>({cartCount})</CartCount>}
+                  </span>
                   <svg
                     fill="none"
                     strokeWidth={1.5}

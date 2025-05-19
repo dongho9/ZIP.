@@ -1488,7 +1488,7 @@
         },
         {
           "productId": 4,
-          "mainCategory": "beauty",
+          "mainCategory": "style",
           "keyword": "acc",
           "itemName": "애플 이어폰",
           "brand": "애플",
@@ -3092,7 +3092,7 @@
         },
         {
           "productId": 4,
-          "mainCategory": "beaty",
+          "mainCategory": "beauty",
           "keyword": "food",
           "itemName": "메가도스 비타민 씨",
           "brand": "메가도스",
@@ -3714,7 +3714,7 @@
         },
         {
           "productId": 10,
-          "mainCategory": "beauty",
+          "mainCategory": "style",
           "keyword": "acc",
           "itemName": "마코레 스크리토 레더 지갑",
           "brand": "벨루티",
@@ -4065,7 +4065,7 @@
         },
         {
           "productId": 2,
-          "mainCategory": "style",
+          "mainCategory": "beauty",
           "keyword": "body",
           "itemName": "바디버터 화이트 진저 릴리",
           "brand": "퓨어피지",
@@ -4082,7 +4082,7 @@
         },
         {
           "productId": 3,
-          "mainCategory": "style",
+          "mainCategory": "beauty",
           "keyword": "face",
           "itemName": "바이오 필링 허벌 로션",
           "brand": "바이오필링",
@@ -4826,7 +4826,7 @@
           "productId": 2,
           "mainCategory": "style",
           "keyword": "styling",
-          "itemName": "JACQUARD ALWAYS BSR KINTWEAR BLACK",
+          "itemName": "자쿼드 얼웨이즈 니트 블랙 래빗",
           "brand": "비에스 래빗",
           "brandEng": "bsrabbit",
           "price": 78000,
@@ -4961,7 +4961,7 @@
           "releasedDate": 20230716,
           "sellNum": 19,
           "detailImg": {
-            "img01": "https://kream-phinf.pstatic.net/MjAyNDA3MDNfMTA2/MDAxNzE5OTgyNDQzMTY5.lUjaOzyDUQq_AEqqO5f_ThiOBIM4IL1qTU4rfv9RJ80g.MvxoDbOMqh6hJodx99tyvTllnztlUbeQ7lGSq9QHe-Ag.JPEG/p_f0cd4387c17e4b4cbaa1320b4b83f833.jpg",
+            "img01": "https://www.wishbucket.io/_next/image?url=https%3A%2F%2Fd2gfz7wkiigkmv.cloudfront.net%2Fpickin%2F2%2F1%2F2%2FN4yNQSp0Q-iCuDCmlq9_jA&w=1080&q=75",
             "img02": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi5A-fAqWC1OEK5DYg-PyvRUKYoy2U6KDxcA&s",
             "img03": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPdjCgE6qJFLWRVDWq6YtY1i8pwZC9CbfHtw&s"
           },
@@ -5184,7 +5184,7 @@
           "productId": 6,
           "mainCategory": "style",
           "keyword": "acc",
-          "itemName": "iPhone Case Capsule 16-Gold",
+          "itemName": "아이폰 케이스 캡슐 16 GOLD",
           "brand": "골든컨셉",
           "brandEng": "GOLDEN CONCEPT",
           "price": 1000000,
@@ -5242,7 +5242,7 @@
           "releasedDate": 20250303,
           "sellNum": 933,
           "detailImg": {
-            "img01": "https://img.danawa.com/prod_img/500000/889/228/img/2228889_1.jpg?_v=20200908090217",
+            "img01": "https://image2.lotteimall.com/goods/17/62/59/1433596217_1.jpg/dims/resizemc/550x550/optimize",
             "img02": "https://sitem.ssgcdn.com/80/82/25/item/0000008258280_i1_750.jpg",
             "img03": "https://pbs.twimg.com/amplify_video_thumb/1884239023885148160/img/6gLG7cFKq8vOHqEN.jpg"
           },
@@ -5324,23 +5324,6 @@
             "img03": "https://www.celine.com/on/demandware.static/-/Sites-masterCatalog/default/dwebf91d78/images/large/4S187CPLB.38NO_5_SUM22.jpg?im=Resize=(1200);AspectCrop=(1,1),xPosition=.5,yPosition=.5"
           },
           "description": "세련된 실루엣과 강렬한 존재감이 돋보이는 캣 아이 S187 선글라스는 클래식한 캣아이 쉐입에 현대적인 감각을 더한 아이템입니다. 고급 아세테이트 소재로 제작되어 가볍고 편안한 착용감을 제공하며, 매끄러운 광택감이 얼굴에 고급스러운 인상을 더해줍니다."
-        },
-        {
-          "productId": 4,
-          "mainCategory": "beauty",
-          "keyword": "body",
-          "itemName": "31 허브 오일 20ml",
-          "brand": "스위스유스트",
-          "brandEng": "swissjust",
-          "price": 17400,
-          "releasedDate": 20241215,
-          "sellNum": 590,
-          "detailImg": {
-            "img01": "https://img-cf.kurly.com/hdims/resize/%3E1010x/quality/90/src/shop/data/goodsview/20231121/gv00000196777_1.jpg",
-            "img02": "https://img-cf.kurly.com/hdims/resize/%3E1010x/quality/90/src/shop/data/goodsview/20210624/gv40000196779_1.jpg",
-            "img03": "https://img-cf.kurly.com/hdims/resize/%3E1010x/quality/90/src/shop/data/goodsview/20231121/gv00000196777_1.jpg"
-          },
-          "description": "자연이 선물한 31가지 허브의 에센스를 한 병에 담은 31 허브오일은 다양한 일상 속 케어에 활용할 수 있는 다목적 아로마 오일입니다. 유칼립투스, 라벤더, 로즈마리, 페퍼민트 등 천연 에센셜 오일이 조화롭게 블렌딩되어 상쾌하고 편안한 향을 선사하며, 일상 속 긴장을 완화하고 활력을 불어넣는 데 도움을 줍니다."
         }
       ]
     },
