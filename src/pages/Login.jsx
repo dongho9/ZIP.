@@ -154,9 +154,8 @@ const Login = () => {
         alert("존재하지 않는 아이디입니다.");
         return;
       }
-
       const userDoc = querySnapshot.docs[0];
-      const { email } = userDoc.data();
+      const { email, name } = userDoc.data();
 
       const credential = await signInWithEmailAndPassword(
         auth,
@@ -164,13 +163,14 @@ const Login = () => {
         enteredpassword
       );
       console.log("로그인 성공:", credential.user);
-      alert(`${enteredusername}님 반갑습니다!`);
+      alert(`${name}님 반갑습니다!`);
       logonNavigate("/");
     } catch (error) {
       alert("로그인 실패: " + error.message);
     }
   };
 
+  //로그인이미지 배열로 저장
   const loginImages = [
     "/src/imgs/login/login1.jpg",
     "/src/imgs/login/login2.jpg",

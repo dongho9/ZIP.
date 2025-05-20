@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from "styled-components";
 import { useDaumPostcodePopup } from "react-daum-postcode";
 
@@ -14,7 +13,6 @@ const Input = styled.input`
   width: 100%;
   border: 1px solid var(--border-color);
   color: var(--border-color);
-  /* padding: 24px 20px; */
   padding: 24px 20px;
   transition: all 0.3s;
   &::placeholder {
@@ -48,11 +46,8 @@ const Button = styled.button`
   }
 `;
 
-const Address = () => {
-  const [userFullAddress, setFullAddress] = useState(""); //유저 주소
-  const [userZoneCode, setUserZoneCode] = useState(""); //유저 우편번호
-
-  //다음 우편번호 찾기 API사용
+const Address = ({ register, setValue }) => {
+  // 다음 우편번호 API
   const postcodeScriptUrl =
     "//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js";
   const open = useDaumPostcodePopup(postcodeScriptUrl);
@@ -73,28 +68,39 @@ const Address = () => {
       fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
     }
 
-    setFullAddress(fullAddress);
-    setUserZoneCode(zonecode);
+    // react-hook-form 값 업데이트
+    setValue("address.zonecode", zonecode);
+    setValue("address.fullAddress", fullAddress);
   };
 
   const handleClick = () => {
     open({ onComplete: handleComplete });
   };
+
   return (
     <>
       <InputGroup>
-        <Input type="text" placeholder="우편번호" value={userZoneCode} />
+        <Input
+          type="text"
+          placeholder="우편번호"
+          {...register("address.zonecode")}
+          readOnly
+        />
         <Button type="button" onClick={handleClick}>
           우편번호 검색
         </Button>
       </InputGroup>
       <Input
-        className="infolnput"
         type="text"
-        defaultValue={userFullAddress}
         placeholder="집주소"
+        {...register("address.fullAddress")}
+        readOnly
       />
-      <Input type="text" placeholder="상세주소" />
+      <Input
+        type="text"
+        placeholder="상세주소"
+        {...register("address.detail")}
+      />
     </>
   );
 };

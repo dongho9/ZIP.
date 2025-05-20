@@ -18,9 +18,9 @@ const Kakao = () => {
       console.log("Kakao SDK initialized");
     }
 
-    // 새로고침 시 기존 로그인 세션(토큰) 삭제
+    // 새로고침 시 무조건 로그아웃
     window.Kakao.Auth.logout(() => {
-      console.log("페이지 로드 시 기존 토큰 로그아웃 완료");
+      console.log("새로고침 시 자동 로그아웃 완료");
     });
   }, []);
 
@@ -30,14 +30,11 @@ const Kakao = () => {
       success: function (authObj) {
         console.log("카카오 로그인 성공", authObj);
 
-        // 사용자 정보 요청
         window.Kakao.API.request({
           url: "/v2/user/me",
           success: function (res) {
             const nickname = res.kakao_account?.profile?.nickname;
-            const id = res.id;
-            console.log("사용자 정보", res);
-            alert(`${nickname}님 반갑습니다! `);
+            alert(`${nickname}님 반갑습니다!`);
           },
           fail: function (error) {
             console.error("사용자 정보 요청 실패", error);
