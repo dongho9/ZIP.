@@ -1,5 +1,11 @@
+// src/hooks/useCart.js
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { CART_ITEMS_KEY } from "../constants/queryKeys";
+import { CART_ITEMS_KEY, PENDING_ORDERS_KEY } from "../constants/queryKeys";
+import {
+  getPendingOrders,
+  savePendingOrders,
+  createPendingOrderFromCart,
+} from "../utils/orderUtils";
 
 // 로컬 스토리지 헬퍼 함수
 const getCartFromStorage = () => {
@@ -64,6 +70,14 @@ export const useCart = () => {
       } else {
         // 새 상품이면 추가
         updatedCart = [...currentCart, { ...newItem, selected: true }];
+
+        // 새 상품이 추가된 경우, 입금대기 주문 생성
+        const newCartItem = { ...newItem, selected: true };
+        const pendingOrder = createPendingOrderFromCart(newCartItem);
+
+        // 입금대기 주문 저장
+        const currentPendingOrders = getPendingOrders();
+        savePendingOrders([...currentPendingOrders, pendingOrder]);
       }
 
       saveCartToStorage(updatedCart);
@@ -71,6 +85,8 @@ export const useCart = () => {
     },
     onSuccess: (updatedCart) => {
       queryClient.setQueryData([CART_ITEMS_KEY], updatedCart);
+      // 입금대기 주문 상태 업데이트
+      queryClient.invalidateQueries([PENDING_ORDERS_KEY]);
       // 장바구니 아이템 개수 업데이트를 위한 이벤트
       window.dispatchEvent(new CustomEvent("cart-updated"));
     },
@@ -82,10 +98,20 @@ export const useCart = () => {
       const currentCart = getCartFromStorage();
       const updatedCart = currentCart.filter((item) => item.id !== itemId);
       saveCartToStorage(updatedCart);
+
+      // 해당 상품과 연관된 입금대기 주문도 제거
+      const currentPendingOrders = getPendingOrders();
+      const updatedPendingOrders = currentPendingOrders.filter(
+        (order) => order.cartItemId !== itemId
+      );
+      savePendingOrders(updatedPendingOrders);
+
       return updatedCart;
     },
     onSuccess: (updatedCart) => {
       queryClient.setQueryData([CART_ITEMS_KEY], updatedCart);
+      // 입금대기 주문 상태 업데이트
+      queryClient.invalidateQueries([PENDING_ORDERS_KEY]);
       // 장바구니 아이템 개수 업데이트를 위한 이벤트
       window.dispatchEvent(new CustomEvent("cart-updated"));
     },
@@ -102,10 +128,31 @@ export const useCart = () => {
         return item;
       });
       saveCartToStorage(updatedCart);
+
+      // 연관된 입금대기 주문의 수량도 업데이트
+      const currentPendingOrders = getPendingOrders();
+      const updatedPendingOrders = currentPendingOrders.map((order) => {
+        if (order.cartItemId === itemId) {
+          const updatedItems = {
+            ...order.items,
+            orderItems: order.items.orderItems.map((item) =>
+              item.id === itemId
+                ? { ...item, quantity: Math.max(1, quantity) }
+                : item
+            ),
+          };
+          return { ...order, items: updatedItems };
+        }
+        return order;
+      });
+      savePendingOrders(updatedPendingOrders);
+
       return updatedCart;
     },
     onSuccess: (updatedCart) => {
       queryClient.setQueryData([CART_ITEMS_KEY], updatedCart);
+      // 입금대기 주문 상태 업데이트
+      queryClient.invalidateQueries([PENDING_ORDERS_KEY]);
       // 장바구니 아이템 개수 업데이트를 위한 이벤트
       window.dispatchEvent(new CustomEvent("cart-updated"));
     },

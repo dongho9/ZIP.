@@ -145,9 +145,7 @@ const Footer = () => {
         </Address>
       </FooterLeft>
       <FooterRight>
-        <Link to="/">
-          <HeaderLogoImg src="/img/Logo.png" />
-        </Link>
+        <Link to="/">{/* <HeaderLogoImg src="/img/Logo.png" /> */}</Link>
       </FooterRight>
     </Container>
   );
