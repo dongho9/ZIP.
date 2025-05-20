@@ -369,6 +369,8 @@ const Header = () => {
   const [toggleClick, setToggleClick] = useState(false);
   const [cartCount, setCartCount] = useState(0);
   const [topBtnScroll, setTopBtnScroll] = useState(false);
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { getCartItemCount } = useCart();
 
   const headerRef = useRef();
@@ -385,7 +387,6 @@ const Header = () => {
   const mypageMatch02 = useMatch("/mypage/:name");
   const starMatch = useMatch("/star");
   const starDetailMatch = useMatch("/star/:starName");
-
 
   const handleCategory = (e) => {
     const category = e.target.innerText;
