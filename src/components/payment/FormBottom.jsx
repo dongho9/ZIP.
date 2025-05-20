@@ -218,10 +218,19 @@ const FormBottom = ({
   const [orderCompletedModal, setOrderCompletedModal] = useState(false);
 
   const handleCheckboxChange = (name) => {
-    setAgreements((prev) => ({
-      ...prev,
-      [name]: !prev[name],
-    }));
+    if (name === "terms") {
+      const newValue = !agreements.terms;
+      setAgreements({
+        terms: newValue,
+        privacy: newValue,
+        refund: newValue,
+      });
+    } else {
+      setAgreements((prev) => ({
+        ...prev,
+        [name]: !prev[name],
+      }));
+    }
   };
 
   // 알림 표시 함수
@@ -236,7 +245,7 @@ const FormBottom = ({
         ...prev,
         visible: false,
       }));
-    }, 3000);
+    }, 1000);
   };
 
   // 결제 방법 선택 핸들러
@@ -278,9 +287,32 @@ const FormBottom = ({
         }
       );
 
-      // 장바구니 비우기 (주문 완료 후)
+      // 장바구니에서 결제 완료된 아이템 제거
+      // 1. ORDER_ITEMS_KEY 비우기
       queryClient.setQueryData([ORDER_ITEMS_KEY], []);
       localStorage.removeItem(ORDER_ITEMS_KEY);
+
+      // 2. CART_ITEMS_KEY에서 결제 완료된 아이템들 제거
+      const CART_ITEMS_KEY = "cartItems"; // 장바구니 키 상수
+      const currentCartItems = JSON.parse(
+        localStorage.getItem(CART_ITEMS_KEY) || "[]"
+      );
+      const orderItemIds = orderItems.map((item) => item.id);
+
+      // 결제된 아이템을 장바구니에서 제외
+      const updatedCartItems = currentCartItems.filter(
+        (item) => !orderItemIds.includes(item.id)
+      );
+
+      // 장바구니 데이터 업데이트
+      queryClient.setQueryData([CART_ITEMS_KEY], updatedCartItems);
+      localStorage.setItem(CART_ITEMS_KEY, JSON.stringify(updatedCartItems));
+
+      // CART_ITEMS_KEY 캐시 무효화하여 UI 업데이트 트리거
+      queryClient.invalidateQueries([CART_ITEMS_KEY]);
+
+      // 장바구니 업데이트 이벤트 발생
+      window.dispatchEvent(new CustomEvent("cart-updated"));
 
       // 처리 중 상태 해제
       setIsProcessing(false);

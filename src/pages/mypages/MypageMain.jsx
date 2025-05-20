@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useOrderStatus } from "../../hooks/useOrderStatus";
 import logoSellor from "../../imgs/mypage/logo-sellor.png";
 import UserLevel from "../../components/mypage/UserLevel";
 import SellerMark from "../../components/mypage/SellerMark";
@@ -491,7 +492,33 @@ const MypageMain = () => {
   const [selectedFilter, setSelectedFilter] = useState("Today");
   const filterOptions = ["Today", "1 week", "1 month", "3 month"];
 
-  // 등급혜택 모달달
+  // 주문 상태 정보 가져오기
+  const { orderStatusCounts, refreshOrderStatus } = useOrderStatus();
+
+  // 주문 상태 변경 이벤트 리스너 설정
+  useEffect(() => {
+    const handleOrderStatusUpdate = () => {
+      refreshOrderStatus();
+    };
+
+    // 이벤트 리스너 등록
+    window.addEventListener("order-status-updated", handleOrderStatusUpdate);
+    window.addEventListener("cart-updated", handleOrderStatusUpdate);
+
+    // 클린업 함수
+    return () => {
+      window.removeEventListener(
+        "order-status-updated",
+        handleOrderStatusUpdate
+      );
+      window.removeEventListener("cart-updated", handleOrderStatusUpdate);
+    };
+  }, [refreshOrderStatus]);
+
+  // 주문 내역 있는지 확인
+  const hasOrders = Object.values(orderStatusCounts).some((count) => count > 0);
+
+  // 등급혜택 모달
   const [isLevelModalOpen, setIsLevelModalOpen] = useState(false);
 
   const handleOpenLevelModal = () => {
@@ -581,31 +608,33 @@ const MypageMain = () => {
       <OrderStatusGrid>
         <OrderStatusItem>
           <div className="circle">
-            <span>0</span>
+            <span>{orderStatusCounts.waitingForPayment}</span>
           </div>
           <div className="label">입금대기</div>
         </OrderStatusItem>
         <OrderStatusItem>
           <div className="circle">
-            <span>0</span>
+            <span>{orderStatusCounts.preparingShipment}</span>
           </div>
           <div className="label">배송준비중</div>
         </OrderStatusItem>
         <OrderStatusItem>
           <div className="circle">
-            <span>0</span>
+            <span>{orderStatusCounts.inTransit}</span>
           </div>
           <div className="label">배송중</div>
         </OrderStatusItem>
         <OrderStatusItem>
           <div className="circle">
-            <span>0</span>
+            <span>{orderStatusCounts.delivered}</span>
           </div>
           <div className="label">배송완료</div>
         </OrderStatusItem>
       </OrderStatusGrid>
 
-      <NoOrdersMessage>최근 주문 내역이 없습니다.</NoOrdersMessage>
+      {!hasOrders && (
+        <NoOrdersMessage>최근 주문 내역이 없습니다.</NoOrdersMessage>
+      )}
 
       <ActionButtons>
         <ButtonLink to="/detail">SHOP NEW ITEMS</ButtonLink>
