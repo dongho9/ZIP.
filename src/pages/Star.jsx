@@ -17,6 +17,10 @@ const Title = styled.h3`
   font-size: 7rem;
   letter-spacing: -4px;
   font-family: "EHNormalTrial";
+  @media screen and (max-width: 1024px) {
+    font-size: 4rem;
+    letter-spacing: -2px;
+  }
 `;
 
 const FilterWrap = styled.div`
@@ -146,6 +150,16 @@ const PaginationWrap = styled.div`
   }
 `;
 
+const Loading = styled.div`
+  width: 100%;
+  height: 100vh;
+  background: var(--dark-color);
+  color: var(--light-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const Star = () => {
   const [selectedFilter, setSelectedFilter] = useState("ALL");
   const navigate = useNavigate();
@@ -184,10 +198,23 @@ const Star = () => {
   };
   const length = filteredData.length; //전체 데이터 갯수
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 767) {
+        setItems(16);
+      } else if (window.innerWidth < 1024) {
+        setItems(18);
+      } else {
+        setItems(25);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+  }, []);
   return (
     <>
       {isLoading ? (
-        <div>Loading...</div>
+        <Loading>Loading...</Loading>
       ) : (
         <Container>
           <Title>Star ZIP</Title>
@@ -196,7 +223,10 @@ const Star = () => {
               {filterArrs.map((arr) => (
                 <li
                   className={selectedFilter === arr ? "active" : ""}
-                  onClick={() => setSelectedFilter(arr)}
+                  onClick={() => {
+                    setSelectedFilter(arr);
+                    setPage(1);
+                  }}
                   key={arr}
                 >
                   {arr}

@@ -380,6 +380,7 @@ const Header = () => {
   const loginMatch = useMatch("/login");
   const signUpMatch = useMatch("/signup");
   const eventMatch = useMatch("/event");
+  const promotionMatch = useMatch("/event/:promotion");
   const cartMatch = useMatch("/cart");
   const filterCategoryMatch = useMatch("/filtercategory/:categoryName");
   const searchMatch = useMatch("/search/:name");
@@ -419,7 +420,8 @@ const Header = () => {
       mypageMatch ||
       mypageMatch02 ||
       starMatch ||
-      starDetailMatch
+      starDetailMatch ||
+      promotionMatch
     ) {
       setFilterCheck(true);
     } else {
@@ -441,6 +443,7 @@ const Header = () => {
     mypageMatch02,
     starMatch,
     starDetailMatch,
+    promotionMatch,
   ]);
 
   gsap.registerPlugin(ScrollTrigger);
@@ -608,7 +611,7 @@ const Header = () => {
             </HeaderGnb>
           ) : (
             <HeaderGnb>
-              <li>haha</li>
+              <li>OTT</li>
             </HeaderGnb>
           )}
           <HeaderBars>|</HeaderBars>
