@@ -4,10 +4,11 @@ import SearchComp from "./SearchComp";
 import { Link, useMatch, useNavigate, useParams } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { getCartItemCount } from "../../hooks/useCart";
+import useCart from "../../hooks/useCart";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 import { signOut } from "firebase/auth";
+import { CART_ITEMS_KEY } from "../../constants/queryKeys";
 
 const Container = styled.header``;
 
@@ -362,6 +363,7 @@ const Header = () => {
   const [cartCount, setCartCount] = useState(0);
 
   const [topBtnScroll, setTopBtnScroll] = useState(false);
+  const { getCartItemCount } = useCart();
 
   const headerRef = useRef();
   const navigate = useNavigate();
@@ -377,17 +379,20 @@ const Header = () => {
   const mypageMatch02 = useMatch("/mypage/:name");
   const starMatch = useMatch("/star");
   const starDetailMatch = useMatch("/star/:starName");
+
   const handleCategory = (e) => {
     const category = e.target.innerText;
     navigate(`/filtercategory/${category}`.toLowerCase());
     setMenuClick(false);
     setToggleClick(false);
   };
+
   const toEvent = () => {
     navigate("./event");
     setMenuClick(false);
     setToggleClick(false);
   };
+
   const toStar = () => {
     navigate("./star");
     setMenuClick(false);
@@ -413,6 +418,7 @@ const Header = () => {
       setFilterCheck(false);
     }
   };
+
   useEffect(() => {
     filterFunc();
   }, [
@@ -480,7 +486,24 @@ const Header = () => {
     return () => {
       window.removeEventListener("cart-updated", updateCartCount);
     };
-  }, []);
+  }, [getCartItemCount]);
+
+  // const getCartCountDirectly = () => {
+  //   try {
+  //     const userId =
+  //       isLoggedIn && auth.currentUser ? auth.currentUser.uid : "guest";
+  //     const cartKey =
+  //       userId === "guest" ? CART_ITEMS_KEY : `${CART_ITEMS_KEY}_${userId}`;
+  //     const cartData = localStorage.getItem(cartKey);
+  //     if (!cartData) return 0;
+
+  //     const items = JSON.parse(cartData);
+  //     return items.reduce((total, item) => total + (item.quantity || 1), 0);
+  //   } catch (error) {
+  //     console.error("장바구니 개수 계산 오류:", error);
+  //     return 0;
+  //   }
+  // };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
