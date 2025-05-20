@@ -198,6 +198,10 @@ const HeaderEtc = styled.ul`
     display: flex;
     align-items: center;
     cursor: pointer;
+    a {
+      display: flex;
+      align-items: center;
+    }
     img {
       filter: invert(1);
       position: absolute;
@@ -219,14 +223,19 @@ const HeaderEtc = styled.ul`
   @media screen and (max-width: 1024px) {
     gap: 20px;
     li {
+      position: relative;
       span {
         display: flex;
         align-items: center;
+        justify-content: center;
+        flex-direction: row;
         span {
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
-          position: absolute;
+          &:first-child {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            position: absolute;
+          }
         }
       }
       img {
@@ -237,11 +246,14 @@ const HeaderEtc = styled.ul`
         pointer-events: visible;
       }
       svg {
-        display: block;
+        display: inline-block;
         position: relative;
         opacity: 1;
         visibility: visible;
         pointer-events: visible;
+        path {
+          /* fill: var(--light-color); */
+        }
       }
     }
   }
@@ -314,14 +326,13 @@ const CartCount = styled.span`
   margin-left: 1px;
   font-size: 1.2rem;
   font-family: "Pretendard";
-
   @media screen and (max-width: 1024px) {
     position: absolute;
     top: -5px;
-    right: -5px;
+    right: -10px;
     width: 16px;
     height: 16px;
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 `;
 
@@ -329,7 +340,7 @@ const TopBtn = styled.div`
   position: fixed;
   transform: translateY(100px);
   right: 3%;
-  bottom: 6%;
+  bottom: 40px;
   background: var(--light-color);
   color: var(--dark-color);
   width: 50px;
@@ -355,10 +366,9 @@ const Header = () => {
   const [menuClick, setMenuClick] = useState(false);
   const [searchClick, setSearchClick] = useState(false);
   const [toggleClick, setToggleClick] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-
   const [topBtnScroll, setTopBtnScroll] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const headerRef = useRef();
   const navigate = useNavigate();
@@ -374,6 +384,7 @@ const Header = () => {
   const mypageMatch02 = useMatch("/mypage/:name");
   const starMatch = useMatch("/star");
   const starDetailMatch = useMatch("/star/:starName");
+
   const handleCategory = (e) => {
     const category = e.target.innerText;
     navigate(`/filtercategory/${category}`.toLowerCase());
@@ -514,6 +525,7 @@ const Header = () => {
         await signOut(auth);
         setIsLoggedIn(false);
         alert("로그아웃 되었습니다.");
+        navigate("/");
       } catch (error) {
         console.error("로그아웃 실패:", error);
       }
@@ -587,10 +599,8 @@ const Header = () => {
                     setToggleClick(false);
                   }}
                 >
-                  <span>
-                    Cart
-                    {cartCount > 0 && <CartCount>({cartCount})</CartCount>}
-                  </span>
+                  <span>Cart</span>
+                  {cartCount > 0 && <CartCount>({cartCount})</CartCount>}
                   <svg
                     fill="none"
                     strokeWidth={1.5}
@@ -617,6 +627,25 @@ const Header = () => {
                 />
               </HeaderEtcText>
             </HeaderEtcLi>
+            {isLoggedIn && (
+              <HeaderEtcLi>
+                <HeaderEtcText>
+                  <Link
+                    to="/mypage"
+                    onClick={() => {
+                      setMenuClick(false);
+                      setToggleClick(false);
+                    }}
+                  >
+                    <span>Mypage</span>
+                    <img
+                      src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad_mypage.svg"
+                      alt="mypage"
+                    />
+                  </Link>
+                </HeaderEtcText>
+              </HeaderEtcLi>
+            )}
             <HeaderEtcLi>
               <HeaderEtcText>
                 <Link
@@ -624,10 +653,19 @@ const Header = () => {
                   onClick={handleloginClick}
                 >
                   <span>{isLoggedIn ? "Logout" : "Login"}</span>
-                  <img
-                    src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad_mypage.svg"
-                    alt="login"
-                  />
+                  {isLoggedIn ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        fill="#fff"
+                        d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z"
+                      />
+                    </svg>
+                  ) : (
+                    <img src="//ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad_mypage.svg"></img>
+                  )}
                 </Link>
               </HeaderEtcText>
             </HeaderEtcLi>

@@ -4,20 +4,8 @@ import { FaTrashAlt } from "react-icons/fa";
 import GlobalStyles from "../styles/GlobalStyles.styles";
 import { useNavigate } from "react-router-dom";
 import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
-import { ORDER_ITEMS_KEY } from "../constants/queryKeys";
-
-// React Query 키 정의
-const CART_ITEMS_KEY = "cartItems";
-
-// 로컬 스토리지 헬퍼 함수들
-const getCartFromStorage = () => {
-  const cart = localStorage.getItem(CART_ITEMS_KEY);
-  return cart ? JSON.parse(cart) : [];
-};
-
-const saveCartToStorage = (cart) => {
-  localStorage.setItem(CART_ITEMS_KEY, JSON.stringify(cart));
-};
+import { ORDER_ITEMS_KEY, CART_ITEMS_KEY } from "../constants/queryKeys";
+import { useCart } from "../hooks/useCart";
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -562,31 +550,57 @@ const OrderBtn = styled.button`
   }
 `;
 
+// 로컬 스토리지 헬퍼 함수들
+const getCartFromStorage = () => {
+  try {
+    const cart = localStorage.getItem(CART_ITEMS_KEY);
+    return cart ? JSON.parse(cart) : [];
+  } catch (error) {
+    console.error("Error getting cart from storage:", error);
+    return [];
+  }
+};
+
+const saveCartToStorage = (cart) => {
+  try {
+    localStorage.setItem(CART_ITEMS_KEY, JSON.stringify(cart));
+  } catch (error) {
+    console.error("Error saving cart to storage:", error);
+  }
+};
+
 const Cart = () => {
   const itemListRef = useRef(null);
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
-  // 카트 아이템 데이터 가져오기
-  const { data: cartItems = [] } = useQuery({
-    queryKey: [CART_ITEMS_KEY],
-    queryFn: getCartFromStorage,
-    initialData: [],
-  });
-
-  // 로컬 상태로 아이템 관리 (React Query에서 가져온 데이터로 초기화)
+  // 로컬 상태로 아이템 관리
   const [items, setItems] = useState([]);
 
-  // 카트 아이템이 변경될 때마다 로컬 상태 업데이트
+  // 컴포넌트 마운트 시 로컬 스토리지에서 직접 데이터 확인
   useEffect(() => {
-    // 목업 데이터 제거하고 실제 카트 데이터만 사용
-    if (cartItems && cartItems.length > 0) {
-      setItems(cartItems);
-    } else {
-      // 빈 배열로 초기화 (목업 데이터 제거)
+    try {
+      // 직접 로컬 스토리지에서 데이터 확인
+      const localStorageCart = localStorage.getItem(CART_ITEMS_KEY);
+      console.log("로컬 스토리지 카트:", localStorageCart);
+
+      if (localStorageCart) {
+        const parsedCart = JSON.parse(localStorageCart);
+
+        // 리액트 쿼리 캐시 업데이트
+        queryClient.setQueryData([CART_ITEMS_KEY], parsedCart);
+
+        // 로컬 상태 업데이트
+        setItems(parsedCart);
+      } else {
+        // 데이터가 없는 경우
+        setItems([]);
+      }
+    } catch (error) {
+      console.error("카트 데이터 불러오기 오류:", error);
       setItems([]);
     }
-  }, [cartItems]);
+  }, [queryClient]);
 
   // 장바구니 업데이트 mutation
   const updateCartMutation = useMutation({

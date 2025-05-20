@@ -133,6 +133,7 @@ const Signup = () => {
     register,
     handleSubmit,
     watch,
+    setValue,
     formState: { errors },
   } = useForm();
 
@@ -160,12 +161,13 @@ const Signup = () => {
         email,
         username,
         name,
+        address: data.address,
         createdAt: new Date(),
       });
 
       console.log("회원가입 성공:", credential.user);
       alert("회원가입이 완료되었습니다!");
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.error("회원가입 에러:", error.message);
       alert(error.message);
@@ -222,7 +224,7 @@ const Signup = () => {
         {errors.confirmPassword && (
           <Error>{errors.confirmPassword.message}</Error>
         )}
-        <Address />
+        <Address register={register} setValue={setValue} />
         {/* <InputGroup>
           <Input
             type="text"

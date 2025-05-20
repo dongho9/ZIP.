@@ -89,9 +89,8 @@ const CardItem = styled.li`
     padding: 30px;
     background: rgba(0, 0, 0, 0.6);
     color: var(--light-color);
-    transition: bottom 0.5s ease;
+    transition: all 0.5s ease;
     h3 {
-      /* margin-bottom: 8px; */
       color: var(--lightGray);
     }
     p {
@@ -112,20 +111,32 @@ const CardItem = styled.li`
   }
 
   @media screen and (max-width: 1024px) {
-  }
-  @media screen and (max-width: 767) {
     .text-overlay {
-      padding: 0px;
       h3 {
-        font-size: 1rem;
       }
       p {
-        font-size: 1rem;
-        line-height: 1.6rem;
-        /* margin: 8px 0 10px; */
+        font-size: 2rem;
+        line-height: 2.6rem;
+        margin: 12px 0 30px;
       }
       span {
-        font-size: 1rem;
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .text-overlay {
+      padding: 20px;
+      h3 {
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        margin: 12px 0 12px;
+      }
+      span {
+        margin-bottom: 16px;
+        font-size: 1.4rem;
       }
     }
   }

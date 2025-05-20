@@ -192,23 +192,10 @@ const FilterItemText = styled.div`
   justify-content: center;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
-  min-height: 120px;
   padding: 10px 10px;
+  min-height: 120px;
 `;
-const FilterItemPick = styled.span`
-  display: inline-block;
-  color: var(--light-color);
-  background: var(--dark-color);
-  font-weight: 400;
-  z-index: 1;
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-  text-align: center;
-  padding: 8px;
-  position: absolute;
-  right: 0;
-  top: 0;
-`;
+
 const FilterItemName = styled.p`
   font-size: 1.8rem;
   line-height: 2.4rem;
@@ -262,6 +249,7 @@ const Detail = () => {
 
   // 장바구니 추가 핸들러
   const handleAddToCart = (product, artist) => {
+    setCount(1);
     let imagePath = "";
     if (product.detailImg) {
       imagePath = Object.values(product.detailImg)[0] || "";

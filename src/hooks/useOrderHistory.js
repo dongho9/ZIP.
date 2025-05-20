@@ -1,10 +1,12 @@
-// src/hooks/useOrderHistory.js
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { ORDER_HISTORY_KEY } from "../constants/queryKeys";
+import { ORDER_HISTORY_KEY, PENDING_ORDERS_KEY } from "../constants/queryKeys";
 import {
   getOrderHistory,
   saveOrderHistory,
   generateOrderId,
+  getPendingOrders,
+  savePendingOrders,
+  scheduleOrderStatusUpdate,
 } from "../utils/orderUtils";
 
 export const useOrderHistory = () => {
@@ -17,7 +19,7 @@ export const useOrderHistory = () => {
     initialData: [],
   });
 
-  // 새 주문 추가하기
+  // 새 주문 추가하기 (결제 완료 시)
   const addOrderMutation = useMutation({
     mutationFn: (orderData) => {
       console.log("addOrderMutation - orderData:", orderData);
@@ -31,7 +33,7 @@ export const useOrderHistory = () => {
         date: new Date().toISOString(),
         items: orderData.orderItems,
         paymentInfo: orderData.paymentInfo,
-        status: "결제 완료", // 기본 상태
+        status: "배송준비중", // 결제 완료 시 "배송준비중" 상태로 설정
       };
 
       console.log("addOrderMutation - newOrder:", newOrder);
@@ -42,12 +44,30 @@ export const useOrderHistory = () => {
 
       console.log("addOrderMutation - updatedHistory:", updatedHistory);
 
+      // 입금대기 상태의 주문 제거 (결제 완료되었으므로)
+      const pendingOrders = getPendingOrders();
+      // 결제된 아이템 ID 목록
+      const paidItemIds = orderData.orderItems.orderItems.map(
+        (item) => item.id
+      );
+      // 결제되지 않은 입금대기 주문만 남김
+      const remainingPendingOrders = pendingOrders.filter(
+        (order) =>
+          !order.items.orderItems.some((item) => paidItemIds.includes(item.id))
+      );
+      savePendingOrders(remainingPendingOrders);
+
+      // 5분 후 자동으로 "배송중" 상태로 변경
+      scheduleOrderStatusUpdate(newOrder.id, "배송중", 10/60);
+
       return newOrder;
     },
     onSuccess: (data) => {
       console.log("주문 성공적으로 추가됨:", data);
       // 주문 내역 쿼리 무효화하여 새로고침
       queryClient.invalidateQueries([ORDER_HISTORY_KEY]);
+      // 입금대기 주문 쿼리 무효화
+      queryClient.invalidateQueries([PENDING_ORDERS_KEY]);
     },
     onError: (error) => {
       console.error("주문 추가 실패:", error);
@@ -70,9 +90,26 @@ export const useOrderHistory = () => {
     },
   });
 
+  // 주문 제거 기능 추가
+  const removeOrderMutation = useMutation({
+    mutationFn: (orderId) => {
+      const currentHistory = getOrderHistory();
+      const updatedHistory = currentHistory.filter(
+        (order) => order.id !== orderId
+      );
+      saveOrderHistory(updatedHistory);
+      return updatedHistory;
+    },
+    onSuccess: () => {
+      // 주문 내역 쿼리 무효화하여 새로고침
+      queryClient.invalidateQueries([ORDER_HISTORY_KEY]);
+    },
+  });
+
   return {
     orderHistory,
     addOrder: addOrderMutation.mutate,
     updateOrderStatus: updateOrderStatusMutation.mutate,
+    removeOrder: removeOrderMutation.mutate, // 주문 제거 함수 추가
   };
 };
