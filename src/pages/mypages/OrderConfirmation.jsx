@@ -163,12 +163,46 @@ const StatusSelect = styled.select`
   }
 `;
 
+// 닫기 버튼 스타일 추가
+const CloseButton = styled.button`
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #999;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #333;
+  }
+
+  @media screen and (max-width: 402px) {
+    right: 10px;
+    top: 10px;
+    font-size: 1.6rem;
+    width: 24px;
+    height: 24px;
+  }
+`;
+
 const OrderItem = styled.div`
   margin-bottom: 40px;
   background: #fff;
   border: 1px solid #f0f0f0;
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  position: relative; /* 닫기 버튼 위치 지정을 위해 추가 */
 
   @media screen and (max-width: 402px) {
     margin-bottom: 30px;
@@ -386,10 +420,7 @@ const OrderConfirmation = () => {
   const [currentOrderId, setCurrentOrderId] = useState(null);
 
   // 주문 내역 훅 사용
-  const { orderHistory, updateOrderStatus } = useOrderHistory();
-
-  // 디버깅 로그
-  console.log("OrderConfirmation - orderHistory:", orderHistory);
+  const { orderHistory, updateOrderStatus, removeOrder } = useOrderHistory(); // removeOrder 추가
 
   // 필터링된 주문 내역 상태
   const [filteredOrders, setFilteredOrders] = useState([]);
@@ -402,6 +433,15 @@ const OrderConfirmation = () => {
     "교환 요청",
     "반품 요청",
   ];
+
+  // 주문 내역 삭제 핸들러 추가
+  const handleRemoveOrder = (orderId, e) => {
+    e.stopPropagation(); // 클릭 이벤트 전파 방지
+
+    if (window.confirm("정말 이 주문을 목록에서 삭제하시겠습니까?")) {
+      removeOrder(orderId);
+    }
+  };
 
   // 주문 내역이 변경되거나 필터가 변경될 때 필터링 적용
   useEffect(() => {
@@ -571,6 +611,10 @@ const OrderConfirmation = () => {
 
             return (
               <OrderItem key={order.id}>
+                {/* X 닫기 버튼 추가 */}
+                <CloseButton onClick={(e) => handleRemoveOrder(order.id, e)}>
+                  ×
+                </CloseButton>
                 <OrderContent>
                   <ProductImage
                     src={image}
