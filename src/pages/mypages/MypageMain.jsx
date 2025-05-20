@@ -6,6 +6,9 @@ import logoSellor from "../../imgs/mypage/logo-sellor.png";
 import UserLevel from "../../components/mypage/UserLevel";
 import SellerMark from "../../components/mypage/SellerMark";
 import CouponList from "../../components/mypage/CouponList";
+import { doc, getDoc } from "firebase/firestore";
+import { db, auth } from "../../firebase/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -491,6 +494,30 @@ const ButtonLink = styled(Link)`
 const MypageMain = () => {
   const [selectedFilter, setSelectedFilter] = useState("Today");
   const filterOptions = ["Today", "1 week", "1 month", "3 month"];
+  const [userData, setUserData] = useState(null);
+
+  //로그인된 회원정보
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        console.log("로그인된 유저 없음");
+        return;
+      }
+
+      try {
+        const userDoc = await getDoc(doc(db, "users", user.uid));
+        if (userDoc.exists()) {
+          setUserData(userDoc.data());
+        } else {
+          console.log("유저 데이터 없음");
+        }
+      } catch (err) {
+        console.error("유저 데이터 가져오기 실패:", err);
+      }
+    });
+
+    return () => unsubscribe(); // cleanup
+  }, []);
 
   // 주문 상태 정보 가져오기
   const { orderStatusCounts, refreshOrderStatus } = useOrderStatus();
@@ -557,8 +584,8 @@ const MypageMain = () => {
       <PageTitle>My Page</PageTitle>
 
       <UserInfo>
-        <h2>안녕하세요, 000 님.</h2>
-        <p>user-email@naver.com</p>
+        <h2>{userData ? `안녕하세요. ${userData.name} 님.` : "안녕하세요."}</h2>
+        <p>{userData ? userData.email : ""}</p>
       </UserInfo>
 
       <StatsContainer>

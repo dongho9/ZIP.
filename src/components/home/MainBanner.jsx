@@ -28,14 +28,13 @@ const Container = styled.div`
 const SideSection = styled.div`
   grid-column: span 1;
   display: flex;
-  align-items: center;
   align-items: end;
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding-bottom: 50px;
+  padding-bottom: 70%;
   img {
-    width: 16px;
+    width: 18px;
     object-fit: cover;
   }
   @media screen and (max-width: 1024px) {
@@ -48,7 +47,6 @@ const ImgSection = styled.div`
   height: 100%;
   overflow: hidden;
   position: relative;
-  background: #f00;
   img {
     width: 100%;
     height: 100%;
@@ -58,22 +56,27 @@ const ImgSection = styled.div`
     width: 100%;
     height: 100%;
     position: relative;
+    background: #000;
+
     .swiper-wrapper {
       .swiper-slide {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+
+        background: rgba($color: #000000, $alpha: 0.5);
+
         cursor: pointer;
         img {
           &::after {
             content: "";
             width: 100%;
-            height: 100%;
+            height: 100vh;
             left: 0;
             top: 0;
             position: absolute;
-            background: rgba($color: #000000, $alpha: 0.3);
-            z-index: -1;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
           }
         }
       }
@@ -95,39 +98,50 @@ const ImgSection = styled.div`
   h4 {
     opacity: 0;
     position: absolute;
-    bottom: 10%;
+    bottom: 14%;
     left: 5%;
     color: #fff;
-    font-size: 5rem;
-    line-height: 5.4rem;
+    font-size: 6rem;
+    line-height: 6.8rem;
+    font-family: "EHNormalTrial";
+    letter-spacing: -2px;
   }
 
   @media screen and (max-width: 1024px) {
     height: 100vh;
     grid-column: span 17;
     h4 {
-      width: 100%;
-      /* height: 100%; */
       opacity: 1;
-      background: #000;
+      width: 100%;
     }
   }
   @media screen and (max-width: 767px) {
     height: 100%;
+    h4 {
+      bottom: 16%;
+      left: 5%;
+      font-size: 4.6rem;
+      line-height: 5.4rem;
+      font-family: "EHNormalTrial";
+      letter-spacing: -2px;
+    }
   }
 `;
 const InfoSection = styled.div`
   padding: 0 8%;
-  padding-top: 100px;
+  /* padding-bottom: 8%; */
+  padding-bottom: 50px;
+  /* padding: 10% 8%; */
   grid-column: span 9;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: end;
+  /* justify-content: center; */
   h4 {
     font-weight: 600;
     font-size: 9rem;
-    line-height: 8.6rem;
-    letter-spacing: -4.6px;
+    line-height: 9.4rem;
+    letter-spacing: -5px;
     b {
       font-size: 9.6rem;
       font-family: "EHNormalTrial";
@@ -205,6 +219,7 @@ const InfoVideo = styled.div`
     filter: brightness(0.5) saturate(1.2) blur(1px);
   }
 `;
+
 /*--- 출력 ---*/
 const MainBanner = () => {
   const navigate = useNavigate();
