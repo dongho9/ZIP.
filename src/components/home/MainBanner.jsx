@@ -117,6 +117,14 @@ const ImgSection = styled.div`
   }
   @media screen and (max-width: 767px) {
     height: 100%;
+    h4 {
+      bottom: 16%;
+      left: 5%;
+      font-size: 4.6rem;
+      line-height: 5.4rem;
+      font-family: "EHNormalTrial";
+      letter-spacing: -2px;
+    }
   }
 `;
 const InfoSection = styled.div`

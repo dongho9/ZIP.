@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -60,33 +61,84 @@ const Text = styled.p`
   }
 `;
 
-const Agreement = () => {
+const Agreement = ({ setIsAgreed }) => {
+  const [allChecked, setAllChecked] = useState(false);
+  const [agreements, setAgreements] = useState({
+    terms: false,
+    privacy: false,
+    shopping: false,
+  });
+
+  useEffect(() => {
+    const requiredAgreement = agreements.terms && agreements.privacy;
+    setIsAgreed(requiredAgreement);
+  }, [agreements, setIsAgreed]);
+
+  //전체동의
+  const handleAllChecked = (e) => {
+    const checked = e.target.checked;
+    setAllChecked(checked);
+    setAgreements({
+      terms: checked,
+      privacy: checked,
+      shopping: checked,
+    });
+  };
+
+  //개별선택
+  const handleAgreement = (e) => {
+    const { name, checked } = e.target;
+    const updated = { ...agreements, [name]: checked };
+    setAgreements(updated);
+
+    const allagreement = updated.terms && updated.privacy && updated.shopping;
+    setAllChecked(allagreement);
+  };
   return (
     <Wrapper>
       <Title>이용약관</Title>
       <Group>
         <label>
-          <input type="checkbox" name="" id="" />
+          <input
+            type="checkbox"
+            checked={allChecked}
+            onChange={handleAllChecked}
+          />
           <span> 아래 약관에 모두 동의합니다.</span>
         </label>
         <CheckboxGroup>
           <AgreementGroup>
             <label>
-              <input type="checkbox" name="" id="" />
+              <input
+                type="checkbox"
+                name="terms"
+                checked={agreements.terms}
+                onChange={handleAgreement}
+              />
               <span> [필수] 이용약관 동의</span>
             </label>
             <Text>자세히 보기</Text>
           </AgreementGroup>
           <AgreementGroup>
             <label>
-              <input type="checkbox" name="" id="" />
+              <input
+                type="checkbox"
+                name="privacy"
+                checked={agreements.privacy}
+                onChange={handleAgreement}
+              />
               <span> [필수] 개인정보 수집 및 이용동의</span>
             </label>
             <Text>자세히 보기</Text>
           </AgreementGroup>
           <AgreementGroup>
             <label>
-              <input type="checkbox" name="" id="" />
+              <input
+                type="checkbox"
+                name="shopping"
+                checked={agreements.shopping}
+                onChange={handleAgreement}
+              />
               <span>[선택] 쇼핑정보 수신 동의</span>
             </label>
             <Text>자세히 보기</Text>

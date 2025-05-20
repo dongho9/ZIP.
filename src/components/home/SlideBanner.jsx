@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 /*--- 스타일 ---*/
 const Container = styled.section`
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   width: 100%;
   height: 400px;
   background: var(--dark-color);
@@ -106,23 +106,6 @@ const CardItem = styled.li`
       display: block;
     }
 
-    @media screen and (max-width: 1024px) {
-      padding: 20px;
-      h3 {
-        font-size: 1.4rem;
-      }
-      p {
-        font-size: 2rem;
-        line-height: 2.6rem;
-      }
-      span {
-        font-size: 1.4rem;
-      }
-    }
-    @media screen and (max-width: 767) {
-      .text-overlay {
-      }
-    }
   }
 
   &:hover .text-overlay {
