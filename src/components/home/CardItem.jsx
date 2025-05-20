@@ -117,15 +117,19 @@ const CardItem = ({ subtitle, title, img, detailURL }) => {
     <Container>
       <CardItemInfo>
         <span>{subtitle}</span>
-        <p>{title}</p>
+        <p>
+          {" "}
+          {title.split("\n").map((line, index) => (
+            <React.Fragment key={index}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
+        </p>
         <button onClick={() => navigate(`/detail/${detailURL}`)}>→</button>
       </CardItemInfo>
       <CardImg>
-        <img
-          onClick={() => navigate(`/detail/${detailURL}`)}
-          src={img}
-          alt={`${title} 이미지`}
-        />
+        <img onClick={() => navigate(`/detail/${detailURL}`)} src={img} alt={`${title} 이미지`} />
       </CardImg>
     </Container>
   );
