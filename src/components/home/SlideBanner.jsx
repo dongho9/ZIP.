@@ -67,14 +67,12 @@ const CardItem = styled.li`
   flex: 1;
   overflow: hidden;
   background: var(--light-color);
-
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
   }
-
   &:hover img {
     transform: scale(1.1);
     filter: blur(2px);
@@ -112,14 +110,10 @@ const CardItem = styled.li`
 
   @media screen and (max-width: 1024px) {
     .text-overlay {
-      h3 {
-      }
       p {
         font-size: 2rem;
         line-height: 2.6rem;
         margin: 12px 0 30px;
-      }
-      span {
       }
     }
   }

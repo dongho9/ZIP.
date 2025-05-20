@@ -1,14 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 /*--- 스와이퍼 라이브러리 ---*/
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Autoplay, EffectFade, Pagination, Navigation, Parallax } from "swiper/modules";
-import styled, { keyframes } from "styled-components";
-
-/*--- 애니메이션 ---*/
+import { Autoplay, Pagination, Navigation, Parallax } from "swiper/modules";
 
 /*--- 스타일 ---*/
 const Container = styled.div`
@@ -58,15 +56,11 @@ const ImgSection = styled.div`
     height: 100%;
     position: relative;
     z-index: 0;
-    /* background: #000; */
-
     .swiper-wrapper {
       .swiper-slide {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        /* background: rgba($color: #000000, $alpha: 0.5); */
-
         cursor: pointer;
       }
     }
