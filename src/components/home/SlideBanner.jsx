@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 /*--- 스타일 ---*/
 const Container = styled.section`
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   width: 100%;
   height: 400px;
   background: var(--dark-color);
@@ -105,29 +105,28 @@ const CardItem = styled.li`
       font-weight: 300;
       display: block;
     }
+
+    @media screen and (max-width: 1024px) {
+      padding: 20px;
+      h3 {
+        font-size: 1.4rem;
+      }
+      p {
+        font-size: 2rem;
+        line-height: 2.6rem;
+      }
+      span {
+        font-size: 1.4rem;
+      }
+    }
+    @media screen and (max-width: 767) {
+      .text-overlay {
+      }
+    }
   }
 
   &:hover .text-overlay {
     bottom: 0;
-  }
-
-  @media screen and (max-width: 1024px) {
-  }
-  @media screen and (max-width: 767) {
-    .text-overlay {
-      padding: 0px;
-      h3 {
-        font-size: 1rem;
-      }
-      p {
-        font-size: 1rem;
-        line-height: 1.6rem;
-        /* margin: 8px 0 10px; */
-      }
-      span {
-        font-size: 1rem;
-      }
-    }
   }
 `;
 const Button = styled.button`
