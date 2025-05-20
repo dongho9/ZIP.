@@ -1309,23 +1309,6 @@
         },
         {
           "productId": 3,
-          "mainCategory": "style",
-          "keyword": "perfume",
-          "itemName": "아르마니 아이리스 블루 오 드 뚜왈렛",
-          "brand": "아르마니",
-          "brandEng": "ARMANI",
-          "price": 207000,
-          "releasedDate": 20230510,
-          "sellNum": 511,
-          "detailImg": {
-            "img01": "https://product-image.wconcept.co.kr/productimg/image/img0/46/306836446_GI94909.jpg",
-            "img02": "https://product-image.wconcept.co.kr/productimg/image/img0/46/306836446_add1_OG71722.jpg?thumbnail=60x80",
-            "img03": "https://product-image.wconcept.co.kr/productimg/image/img0/46/306836446_add3_GO14877.jpg?thumbnail=60x80"
-          },
-          "description": "싱그러운 베르가못과 쌀쌀한 갈바넘이 만나 상쾌하게 시작되어 공기처럼 가볍게 빛나는 아이리스와 그리너리한 자스민이 우아하게 중심을 잡아주고 샤프한 시더우드와 가이악 우드를 화이트 머스크가 부드럽게 감싸 안아 은은한 여운을 만듭니다"
-        },
-        {
-          "productId": 4,
           "mainCategory": "beauty",
           "keyword": "face",
           "itemName": "아르마니 뷰티 파워 페브릭 쿠션",
@@ -1342,7 +1325,7 @@
           "description": "얇고 가볍게 밀착되어 파우더 처리 한듯 매끈한 피부 표현을 선사하고, 처음 바른 그대로, 하루종일 무너짐 없는 강력한 지속력을 경험하세요"
         },
         {
-          "productId": 5,
+          "productId": 4,
           "mainCategory": "beauty",
           "keyword": "face",
           "itemName": "아르마니 뷰티 프리즈마 글레스 립 글라스 클리어 샤인",
@@ -1359,7 +1342,7 @@
           "description": "입술에 투명한 베일을 드리운 듯, 본연의 아름다움을 극대화하는 클리어 샤인"
         },
         {
-          "productId": 6,
+          "productId": 5,
           "mainCategory": "beauty",
           "keyword": "food",
           "itemName": "웁사 에퍼레건 비타민 씨",
@@ -1376,7 +1359,7 @@
           "description": "UPSA 활력 비타민 C 500mg 오렌지 맛 보조제 10포"
         },
         {
-          "productId": 7,
+          "productId": 6,
           "mainCategory": "beauty",
           "keyword": "food",
           "itemName": "애플사이다 비니거 글로시 구미",
@@ -1393,7 +1376,7 @@
           "description": "혈당 관리와 빛나는 피부를 위한 상큼한 애사비 구미"
         },
         {
-          "productId": 8,
+          "productId": 7,
           "mainCategory": "style",
           "keyword": "styling",
           "itemName": "나니머스에이에이 그레이 볼캡",
@@ -1403,14 +1386,14 @@
           "releasedDate": 20240726,
           "sellNum": 516,
           "detailImg": {
-            "img01": "https://kream-phinf.pstatic.net/MjAyNTA0MDhfMTk1/MDAxNzQ0MDg0MTc0MzI1.9ixrh9zRozSeuHKrDkGeIXD3W_AcCdQvaex8BQulOhYg.cishG6rI5bNeQi_0tc5OEiPBGROxhwhu3wgquzCyM_gg.PNG/a_1f49fea5fdcf4a0cbde00da57193e7e3.png?type=l_webp",
-            "img02": "https://kream-phinf.pstatic.net/MjAyNTA0MDhfMTcy/MDAxNzQ0MDg0MTc0NDQ1.3ps_HwtZAoE4y2rnd4QMQrIOUfIIoxOerpcUsT4VQMwg.5CK3vWLTvrrEIVg4DkxidwclcykQA9rpNnbD5_taCUQg.PNG/a_4ab9b24c3a154b878c1079fa740e2e1b.png?type=l_webp",
-            "img03": "https://kream-phinf.pstatic.net/MjAyNTA0MDhfMjMw/MDAxNzQ0MDg0MTc0NTkx.abBNfv3JCTYyK7_NqrP0axvuPKsP8C2z-t4TNBne4m4g.QNeLXvhzDQKd97UHl1SmlOhLo0l0i0oatVosty7_1lQg.PNG/a_69470093f6bf43d88d1c240d1db0c490.png?type=l_webp"
+            "img01": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDExMTVfMjgg%2FMDAxNzMxNjU4NDgzMzE3.nwtdPiVQxhVvxInrWHPJ705JQzk1TmzxVJi4dhXxd1Yg.h1MDv_-CDXrPW_zW0dZu81783_MEvFUpHDE_RRE6Stog.PNG%2Fimage.png&type=sc960_832",
+            "img02": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDExMjBfMjkg%2FMDAxNzMyMTExNTM4MTEy.EUg6cf9GuyEC8m5HSkmcunVsfpYXwpSvOAm_rNr4DHcg.hwSutVIV-IQnd_UhdVfr3Hmtz_gzNc8J-SzB7E_FZ00g.PNG%2F20241120_230504.png&type=sc960_832",
+            "img03": "https://www.cosmopolitan.co.kr/resources/online/online_image/2024/11/13/643d6594-f484-40d7-babb-34eb2f2296bb.jpeg"
           },
           "description": "나니머스에이에이 뉴 아이코닉 캡 D/그레이"
         },
         {
-          "productId": 9,
+          "productId": 8,
           "mainCategory": "beauty",
           "keyword": "face",
           "itemName": "더세럼 클레드뽀 보떼 더 세럼",
@@ -1539,23 +1522,6 @@
         },
         {
           "productId": 7,
-          "mainCategory": "style",
-          "keyword": "acc",
-          "itemName": "보테가 베네타 바이 풀노드 월렛 ",
-          "brand": "보테가 베네타",
-          "brandEng": "bottega-veneta",
-          "price": 76000,
-          "releasedDate": 20230322,
-          "sellNum": 524,
-          "detailImg": {
-            "img01": "https://bottega-veneta.dam.kering.com/m/202b34610660915c/Large-806032VCPP36850_A.jpg?v=1",
-            "img02": "https://bottega-veneta.dam.kering.com/m/176a819d6dc8034e/Large-806032VCPP36850_B.jpg?v=2",
-            "img03": "https://bottega-veneta.dam.kering.com/m/698d85a54eb8b230/Large-806032VCPP36850_C.jpg?v=1"
-          },
-          "description": "인트레치아토 나파 가죽 소재의 카드 케이스"
-        },
-        {
-          "productId": 8,
           "mainCategory": "style",
           "keyword": "acc",
           "itemName": "보테가 베네타 바이 풀노드 월렛 ",

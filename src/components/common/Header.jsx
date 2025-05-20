@@ -5,6 +5,9 @@ import { Link, useMatch, useNavigate, useParams } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { getCartItemCount } from "../../hooks/useCart";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebase/firebase";
+import { signOut } from "firebase/auth";
 
 const Container = styled.header``;
 
@@ -347,15 +350,16 @@ const TopBtn = styled.div`
     opacity: 1;
   }
 `;
-console.log("TopBtn defined:", TopBtn);
-
 const Header = () => {
   const [filterCheck, setFilterCheck] = useState(false);
   const [menuClick, setMenuClick] = useState(false);
   const [searchClick, setSearchClick] = useState(false);
   const [toggleClick, setToggleClick] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [cartCount, setCartCount] = useState(0);
+
   const [topBtnScroll, setTopBtnScroll] = useState(false);
+
   const headerRef = useRef();
   const navigate = useNavigate();
   const commerceMatch = useMatch("/");
@@ -487,6 +491,35 @@ const Header = () => {
     }
   });
 
+  //로그인 상태 확인
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    });
+    return () => unsubscribe();
+  }, []);
+
+  //로그인, 로그아웃
+  const handleloginClick = async (e) => {
+    setMenuClick(false);
+    setToggleClick(false);
+
+    if (isLoggedIn) {
+      e.preventDefault();
+      try {
+        await signOut(auth);
+        setIsLoggedIn(false);
+        alert("로그아웃 되었습니다.");
+      } catch (error) {
+        console.error("로그아웃 실패:", error);
+      }
+    }
+  };
+
   return (
     <Container>
       <Wrapper ref={headerRef} className={menuClick ? "filterUnActive" : ""}>
@@ -587,13 +620,10 @@ const Header = () => {
             <HeaderEtcLi>
               <HeaderEtcText>
                 <Link
-                  to="/login"
-                  onClick={() => {
-                    setMenuClick(false);
-                    setToggleClick(false);
-                  }}
+                  to={isLoggedIn ? "/" : "/login"}
+                  onClick={handleloginClick}
                 >
-                  <span>Login</span>
+                  <span>{isLoggedIn ? "Logout" : "Login"}</span>
                   <img
                     src="https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad_mypage.svg"
                     alt="login"
