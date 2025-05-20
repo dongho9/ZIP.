@@ -9,6 +9,7 @@ import { StarData } from "../StarData";
 import { useCart } from "../hooks/useCart";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ORDER_ITEMS_KEY } from "../constants/queryKeys";
+import useAuth from "../hooks/useAuth";
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -224,6 +225,9 @@ const Detail = () => {
   const { addToCart } = useCart();
   const queryClient = useQueryClient();
 
+  // 인증 관련 - 로그인 상태만 확인
+  const { currentUser } = useAuth();
+
   // 수량 증가 함수
   const increaseCount = () => {
     setCount((prev) => prev + 1);
@@ -249,7 +253,7 @@ const Detail = () => {
 
   // 장바구니 추가 핸들러
   const handleAddToCart = (product, artist) => {
-    setCount(1);
+    // 로그인 확인 필요 없음 - 비로그인 상태도 장바구니 사용 가능
     let imagePath = "";
     if (product.detailImg) {
       imagePath = Object.values(product.detailImg)[0] || "";
@@ -261,7 +265,7 @@ const Detail = () => {
       name: product.itemName,
       detail: product.description?.substring(0, 30) + "..." || "",
       price: product.price,
-      image: imagePath, // 수정된 이미지 경로
+      image: imagePath, // 이미지 경로
       quantity: count,
       selected: true,
     };
@@ -277,6 +281,13 @@ const Detail = () => {
 
   // 바로 주문하기 핸들러
   const handleOrderNow = (product, artist) => {
+    // 로그인 여부 확인
+    if (!currentUser) {
+      alert("로그인이 필요한 서비스입니다.");
+      navigate("/login");
+      return;
+    }
+
     let imagePath = "";
     if (product.detailImg) {
       imagePath = Object.values(product.detailImg)[0] || "";
@@ -288,7 +299,7 @@ const Detail = () => {
       name: product.itemName,
       detail: product.description?.substring(0, 30) + "..." || "",
       price: product.price,
-      image: imagePath, // 수정된 이미지 경로
+      image: imagePath,
       quantity: count,
       selected: true,
       option: product.keyword || "",
@@ -343,7 +354,7 @@ const Detail = () => {
         <div>Loading...</div>
       ) : (
         <Container>
-          {data.artists.map((artist) => {
+          {data?.artists?.map((artist) => {
             const product = artist.products.find(
               (product) => product.itemName === itemName
             );
