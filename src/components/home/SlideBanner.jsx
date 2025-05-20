@@ -105,29 +105,11 @@ const CardItem = styled.li`
       font-weight: 300;
       display: block;
     }
+
   }
 
   &:hover .text-overlay {
     bottom: 0;
-  }
-
-  @media screen and (max-width: 1024px) {
-  }
-  @media screen and (max-width: 767) {
-    .text-overlay {
-      padding: 0px;
-      h3 {
-        font-size: 1rem;
-      }
-      p {
-        font-size: 1rem;
-        line-height: 1.6rem;
-        /* margin: 8px 0 10px; */
-      }
-      span {
-        font-size: 1rem;
-      }
-    }
   }
 `;
 const Button = styled.button`
