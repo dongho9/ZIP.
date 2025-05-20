@@ -65,22 +65,9 @@ const ImgSection = styled.div`
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-
-        background: rgba($color: #000000, $alpha: 0.5);
+        /* background: rgba($color: #000000, $alpha: 0.5); */
 
         cursor: pointer;
-        img {
-          &::after {
-            content: "";
-            width: 100%;
-            height: 100vh;
-            left: 0;
-            top: 0;
-            position: absolute;
-            /* background: rgba(0, 0, 0, 0.5); */
-            z-index: 1;
-          }
-        }
       }
     }
   }
@@ -95,6 +82,7 @@ const ImgSection = styled.div`
     padding: 8px 20px;
     border-radius: 20px;
     font-size: 1.4rem;
+    z-index: 3;
     font-family: "Pretendard";
   }
   h4 {
@@ -107,24 +95,34 @@ const ImgSection = styled.div`
     line-height: 6.8rem;
     font-family: "EHNormalTrial";
     letter-spacing: -2px;
+    z-index: 2;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    opacity: 0;
   }
 
   @media screen and (max-width: 1024px) {
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 1;
-    }
     height: 100vh;
     grid-column: span 17;
+    .overlay {
+      opacity: 1;
+    }
     h4 {
       opacity: 1;
-      width: 100%;
+      z-index: 2;
+      position: absolute;
+      font-size: 7rem;
+      line-height: 7.8rem;
+    }
+    .swiper-pagination {
+      z-index: 3;
     }
   }
   @media screen and (max-width: 767px) {
@@ -297,13 +295,12 @@ const MainBanner = () => {
         >
           {mainData.map((slide, index) => (
             <SwiperSlide key={index} onClick={() => useNavigate(slide.url)}>
-              <div>
-                <h4>
-                  {slide.title}
-                  <br />
-                  리얼템을 <b> ZIP.</b>
-                </h4>
-              </div>
+              <div className="overlay"></div>
+              <h4>
+                {slide.title}
+                <br />
+                리얼템을 <b> ZIP.</b>
+              </h4>
               <img src={slide.image} alt="" />
             </SwiperSlide>
           ))}
