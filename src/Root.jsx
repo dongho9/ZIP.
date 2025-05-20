@@ -1,18 +1,43 @@
-// Root.jsx에 추가
-import { useEffect } from "react";
+// App.jsx 또는 Root.jsx 수정
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import GlobalStyles from "./styles/GlobalStyles.styles";
-import { Outlet, useLocation } from "react-router-dom"; // useLocation 추가
-import { useQueryClient } from "@tanstack/react-query"; // 추가
-import { CART_ITEMS_KEY } from "./constants/queryKeys"; // 추가
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
-import Lenis from "@studio-freight/lenis";
 import ScrollToTop from "./components/common/ScrollToTop";
-import { scheduleOrderStatusUpdate } from "./utils/orderUtils"; // 추가
+import Lenis from "@studio-freight/lenis";
+import { scheduleOrderStatusUpdate } from "./utils/orderUtils";
+import { useQueryClient } from "@tanstack/react-query";
+import { CART_ITEMS_KEY } from "./constants/queryKeys";
+import { useCart } from "./hooks/useCart";
 
 const Root = () => {
-  const queryClient = useQueryClient(); // 추가
-  const location = useLocation(); // 추가
+  const queryClient = useQueryClient();
+  const location = useLocation();
+  const { syncCart } = useCart();
+
+  // 로그인/로그아웃 이벤트 핸들러 등록
+  useEffect(() => {
+    // 인증 상태 변경 시 장바구니 동기화
+    const handleAuthStateChanged = (event) => {
+      if (event.detail.isLoggedIn) {
+        // 로그인 시 게스트 장바구니와 사용자 장바구니 동기화
+        syncCart();
+      } else {
+        // 로그아웃 시 장바구니 캐시 초기화 (게스트 장바구니로 전환)
+        queryClient.invalidateQueries([CART_ITEMS_KEY]);
+      }
+    };
+
+    // 이벤트 리스너 등록
+    window.addEventListener("auth-state-changed", handleAuthStateChanged);
+
+    // 컴포넌트 언마운트 시 이벤트 리스너 제거
+    return () => {
+      window.removeEventListener("auth-state-changed", handleAuthStateChanged);
+    };
+  }, [queryClient, syncCart]);
 
   // 경로 변경 감지 및 카트 데이터 새로고침
   useEffect(() => {

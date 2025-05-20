@@ -9,6 +9,7 @@ import { StarData } from "../StarData";
 import { useCart } from "../hooks/useCart";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ORDER_ITEMS_KEY } from "../constants/queryKeys";
+import useAuth from "../hooks/useAuth";
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -36,7 +37,7 @@ const TextBox = styled.div`
   padding: 0 5%;
   gap: 40px;
   @media screen and (max-width: 1024px) {
-    height: 500px;
+    max-height: 500px;
     width: 100%;
     position: relative;
     padding: 0 3%;
@@ -47,15 +48,22 @@ const TextBox = styled.div`
 const ItemName = styled.h3`
   font-size: 3.6rem;
   font-weight: bold;
+  @media screen and (max-width: 1024px) {
+    font-size: 3rem;
+  }
 `;
 const ItemPrice = styled.div`
   font-size: 1.6rem;
+  @media screen and (max-width: 1024px) {
+    font-size: 1.4rem;
+  }
 `;
 const ItemButton = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
   button {
+    font-family: "Prentendard" !important;
     width: 50%;
     border: none;
     padding: 16px;
@@ -109,20 +117,14 @@ const ItemDesc = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  line-height: 20px;
   p {
     font-size: 1.4rem;
     cursor: pointer;
   }
   span {
-    opacity: 0;
     font-size: 1.2rem;
-    visibility: hidden;
     height: 0;
-    &.active {
-      height: 100%;
-      visibility: visible;
-      opacity: 1;
-    }
   }
 `;
 
@@ -132,6 +134,9 @@ const RelateProducts = styled.div`
   gap: 40px;
   padding: 80px 3%;
   margin-bottom: 80px;
+  @media screen and (max-width: 1024px) {
+    margin-top: 80px;
+  }
   .RelateItemWrap {
     width: 100%;
     display: flex;
@@ -156,8 +161,10 @@ const RelateProducts = styled.div`
   }
 `;
 const RelateProductsTitle = styled.h3`
-  font-size: 3.2rem !important;
-  font-size: var(--dark-color);
+  font-size: 3.2rem;
+  @media screen and (max-width: 1024px) {
+    font-size: 2.4rem;
+  }
 `;
 const FilterItem = styled.div`
   display: flex;
@@ -201,17 +208,49 @@ const FilterItemName = styled.p`
   line-height: 2.4rem;
   margin: 10px 0;
   font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media screen and (max-width: 1024px) {
+    font-size: 1.6rem;
+  }
 `;
 const FilterItemBrand = styled.li`
   color: var(--subTitle);
   font-size: 1.4rem;
+  @media screen and (max-width: 1024px) {
+    font-size: 1.2rem;
+  }
 `;
 const FilterItemPrice = styled.li`
   letter-spacing: 0.2px;
   color: var(--subTitle);
   font-size: 1.4rem;
+  @media screen and (max-width: 1024px) {
+    font-size: 1.2rem;
+  }
 `;
-
+const DescWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  @media screen and (max-width: 1024px) {
+    gap: 60px;
+  }
+  @media screen and (max-width: 767px) {
+    gap: 80px;
+  }
+`;
+const Loading = styled.div`
+  width: 100%;
+  height: 100vh;
+  background: var(--light-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 const Detail = () => {
   const [quantity, setQuantity] = useState(1);
   const [swiperActive, setSwipierActive] = useState(false);
@@ -223,6 +262,9 @@ const Detail = () => {
   const [count, setCount] = useState(1);
   const { addToCart } = useCart();
   const queryClient = useQueryClient();
+
+  // 인증 관련 - 로그인 상태만 확인
+  const { currentUser } = useAuth();
 
   // 수량 증가 함수
   const increaseCount = () => {
@@ -249,7 +291,7 @@ const Detail = () => {
 
   // 장바구니 추가 핸들러
   const handleAddToCart = (product, artist) => {
-    setCount(1);
+    // 로그인 확인 필요 없음 - 비로그인 상태도 장바구니 사용 가능
     let imagePath = "";
     if (product.detailImg) {
       imagePath = Object.values(product.detailImg)[0] || "";
@@ -261,7 +303,7 @@ const Detail = () => {
       name: product.itemName,
       detail: product.description?.substring(0, 30) + "..." || "",
       price: product.price,
-      image: imagePath, // 수정된 이미지 경로
+      image: imagePath, // 이미지 경로
       quantity: count,
       selected: true,
     };
@@ -277,6 +319,13 @@ const Detail = () => {
 
   // 바로 주문하기 핸들러
   const handleOrderNow = (product, artist) => {
+    // 로그인 여부 확인
+    if (!currentUser) {
+      alert("로그인이 필요한 서비스입니다.");
+      navigate("/login");
+      return;
+    }
+
     let imagePath = "";
     if (product.detailImg) {
       imagePath = Object.values(product.detailImg)[0] || "";
@@ -288,7 +337,7 @@ const Detail = () => {
       name: product.itemName,
       detail: product.description?.substring(0, 30) + "..." || "",
       price: product.price,
-      image: imagePath, // 수정된 이미지 경로
+      image: imagePath,
       quantity: count,
       selected: true,
       option: product.keyword || "",
@@ -322,16 +371,6 @@ const Detail = () => {
   );
   const relatedItems = relatedProducts.slice(0, 8);
 
-  const onDecrease = () => {
-    setQuantity(quantity - 1);
-    if (quantity === 1) {
-      setQuantity(1);
-    }
-  };
-  const onIncrease = () => {
-    setQuantity(quantity + 1);
-  };
-
   const descOpen = (e) => {
     const next = e.target.nextElementSibling;
     next.classList.toggle("active");
@@ -340,10 +379,10 @@ const Detail = () => {
   return (
     <>
       {isLoading ? (
-        <div>Loading...</div>
+        <Loading>Loading...</Loading>
       ) : (
         <Container>
-          {data.artists.map((artist) => {
+          {data?.artists?.map((artist) => {
             const product = artist.products.find(
               (product) => product.itemName === itemName
             );
@@ -381,19 +420,21 @@ const Detail = () => {
                       ORDER NOW
                     </button>
                   </ItemButton>
-                  <ItemDesc>
-                    <p onClick={descOpen}>DESCRIPTION</p>
-                    <span>{product.description}</span>
-                  </ItemDesc>
-                  <ItemDesc>
-                    <p onClick={descOpen}>EXCHANGE</p>
-                    <span>
-                      해당 상품은 수령일로부터 7일 이내에 미사용/미훼손 상태일
-                      경우 교환이 가능하며, 왕복 배송비는 고객 부담입니다. 보다
-                      정확한 안내를 원하신다면 고객센터(☎️0000-0000)로 연락
-                      부탁드립니다.
-                    </span>
-                  </ItemDesc>
+                  <DescWrap>
+                    <ItemDesc>
+                      <p>DESCRIPTION</p>
+                      <span>{product.description}</span>
+                    </ItemDesc>
+                    <ItemDesc>
+                      <p>EXCHANGE</p>
+                      <span>
+                        해당 상품은 수령일로부터 7일 이내에 미사용/미훼손 상태일
+                        경우 교환이 가능하며, 왕복 배송비는 고객 부담입니다.
+                        보다 정확한 안내를 원하신다면 고객센터(☎️0000-0000)로
+                        연락 부탁드립니다.
+                      </span>
+                    </ItemDesc>
+                  </DescWrap>
                 </TextBox>
               </Wrapper>
             );
@@ -408,15 +449,19 @@ const Detail = () => {
                   spaceBetween: 20,
                 },
                 1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 20,
+                },
+                768: {
                   slidesPerView: 3,
                   spaceBetween: 20,
                 },
-                767: {
+                540: {
                   slidesPerView: 2,
                   spaceBetween: 20,
                 },
                 0: {
-                  slidesPerView: 2,
+                  slidesPerView: 2, // ✅ 모바일용 설정 추가 (예: 1개 보여줌)
                   spaceBetween: 20,
                 },
               }}

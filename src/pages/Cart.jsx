@@ -3,9 +3,10 @@ import styled from "styled-components";
 import { FaTrashAlt } from "react-icons/fa";
 import GlobalStyles from "../styles/GlobalStyles.styles";
 import { useNavigate } from "react-router-dom";
-import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ORDER_ITEMS_KEY, CART_ITEMS_KEY } from "../constants/queryKeys";
 import { useCart } from "../hooks/useCart";
+import { useAuth } from "../hooks/useAuth";
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -574,59 +575,16 @@ const Cart = () => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
+  const { currentUser } = useAuth();
+  const { cartItems, updateCartItem, removeFromCart, isLoggedIn } = useCart();
+
   // 로컬 상태로 아이템 관리
   const [items, setItems] = useState([]);
 
-  // 컴포넌트 마운트 시 로컬 스토리지에서 직접 데이터 확인
+  // 장바구니 데이터 로드
   useEffect(() => {
-    try {
-      // 직접 로컬 스토리지에서 데이터 확인
-      const localStorageCart = localStorage.getItem(CART_ITEMS_KEY);
-      console.log("로컬 스토리지 카트:", localStorageCart);
-
-      if (localStorageCart) {
-        const parsedCart = JSON.parse(localStorageCart);
-
-        // 리액트 쿼리 캐시 업데이트
-        queryClient.setQueryData([CART_ITEMS_KEY], parsedCart);
-
-        // 로컬 상태 업데이트
-        setItems(parsedCart);
-      } else {
-        // 데이터가 없는 경우
-        setItems([]);
-      }
-    } catch (error) {
-      console.error("카트 데이터 불러오기 오류:", error);
-      setItems([]);
-    }
-  }, [queryClient]);
-
-  // 장바구니 업데이트 mutation
-  const updateCartMutation = useMutation({
-    mutationFn: (updatedCart) => {
-      saveCartToStorage(updatedCart);
-      return updatedCart;
-    },
-    onSuccess: (updatedCart) => {
-      queryClient.setQueryData([CART_ITEMS_KEY], updatedCart);
-      // 장바구니 업데이트 이벤트 발생 (카운트 업데이트를 위해)
-      window.dispatchEvent(new CustomEvent("cart-updated"));
-    },
-  });
-
-  // 주문하기 mutation
-  const orderMutation = useMutation({
-    mutationFn: (selectedItems) => {
-      return Promise.resolve(selectedItems);
-    },
-    onSuccess: (selectedItems) => {
-      // 주문 아이템 정보를 React Query 캐시에 저장
-      queryClient.setQueryData([ORDER_ITEMS_KEY], selectedItems);
-      // Payment 페이지로 이동
-      navigate("/payment");
-    },
-  });
+    setItems(cartItems);
+  }, [cartItems]);
 
   // 스크롤 이벤트 핸들러 설정
   useEffect(() => {
@@ -647,6 +605,43 @@ const Cart = () => {
       }
     };
   }, [items.length]);
+
+  // 장바구니 업데이트 mutation
+  const updateCartMutation = useMutation({
+    mutationFn: (updatedItems) => {
+      const promises = updatedItems.map((item) => {
+        if (item._isDeleted) {
+          return removeFromCart.mutate(item.id);
+        } else {
+          return updateCartItem.mutate({
+            itemId: item.id,
+            quantity: item.quantity,
+            selected: item.selected,
+          });
+        }
+      });
+
+      return Promise.all(promises).then(() =>
+        updatedItems.filter((item) => !item._isDeleted)
+      );
+    },
+    onSuccess: () => {
+      // 업데이트 완료 후 추가 작업이 필요하면 여기에 작성
+    },
+  });
+
+  // 주문하기 mutation
+  const orderMutation = useMutation({
+    mutationFn: (selectedItems) => {
+      return Promise.resolve(selectedItems);
+    },
+    onSuccess: (selectedItems) => {
+      // 주문 아이템 정보를 React Query 캐시에 저장
+      queryClient.setQueryData([ORDER_ITEMS_KEY], selectedItems);
+      // Payment 페이지로 이동
+      navigate("/payment");
+    },
+  });
 
   // 전체 선택 토글
   const toggleSelectAll = () => {
@@ -681,8 +676,10 @@ const Cart = () => {
 
   // 아이템 제거 핸들러
   const removeItem = (id) => {
-    const updatedItems = items.filter((item) => item.id !== id);
-    setItems(updatedItems);
+    const updatedItems = items.map((item) =>
+      item.id === id ? { ...item, _isDeleted: true } : item
+    );
+    setItems(items.filter((item) => item.id !== id));
     updateCartMutation.mutate(updatedItems);
   };
 
@@ -692,9 +689,19 @@ const Cart = () => {
     0
   );
 
-  // 주문하기 버튼 클릭 핸들러
+  // 주문하기 버튼 클릭 핸들러 - 여기서만 로그인 확인
   const handleOrderClick = () => {
-    if (selectedItems.length === 0) return;
+    if (selectedItems.length === 0) {
+      alert("주문할 상품을 선택해주세요.");
+      return;
+    }
+
+    // 로그인 상태 확인 - 비로그인이면 로그인 페이지로 이동
+    if (!isLoggedIn) {
+      alert("로그인이 필요한 서비스입니다.");
+      navigate("/login");
+      return;
+    }
 
     // 선택된 아이템 정보 가공
     const orderData = selectedItems.map((item) => ({
@@ -734,7 +741,6 @@ const Cart = () => {
                 </span>
               </SelectAllBox>
 
-              {/* ref 추가하여 DOM 접근 가능하게 함 */}
               <ItemListContainer
                 ref={itemListRef}
                 itemCount={items.length}
