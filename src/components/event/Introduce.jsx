@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { button, style } from "motion/react-client";
 import styled from "styled-components";
-import { color } from "motion";
-import Promotion from "./Promotion";
 import { Link } from "react-router-dom";
+import { px } from "motion";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -26,30 +25,7 @@ const TattooContents = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 10%;
-  /* padding: 206px 210px 300px 210px; */
-  /* @media screen and (max-width: 1500px) {
-    padding: 206px 100px 300px 100px;
-  }
-
-  @media screen and (max-width: 1200px) {
-    padding: 206px 50px 300px 50px;
-  }
-
-  @media screen and (max-width: 1024px) {
-    padding: 100px 50px 150px 50px;
-    gap: 30px;
-  }
-  @media screen and (max-width: 767px) {
-    padding: 50px 100px 80px 100px;
-  }
-  @media screen and (max-width: 550px) {
-    padding: 50px 50px 80px 50px;
-  }
-  @media screen and (max-width: 402px) {
-    padding: 50px 20px 80px 20px;
-    gap: 20px;
-  } */
+  padding: 100px 15%;
 `;
 
 const TattooTittle = styled.div`
@@ -432,19 +408,35 @@ const tattooData = [
   },
 ];
 
-const Introduce = () => {
-  const HashtagList = ({ tags }) => {
-    console.log(tags);
-    return (
-      <HashtagWrap>
-        {tags.map((tag, index) => (
-          <span key={index} className="hashTags">
-            #{tag}
-          </span>
-        ))}
-      </HashtagWrap>
-    );
-  }; // 공부할 것
+const Introduce = ({ bundleRefs }) => {
+  // const handleScrollClick = (index) => {
+  //   const targetRef = bundleRefs[index];
+  //   if (targetRef?.current) {
+  //     targetRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
+
+  const handleScrollTo = (index) => {
+    const target = bundleRefs[index]?.current;
+    if (target) {
+      const offsetTop = target.getBoundingClientRect().top + window.scrollY;
+      const headerOffset = 400; // 고정된 헤더 높이만큼 조정 (예: 100px)
+
+      window.scrollTo({
+        top: offsetTop - headerOffset,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const HashtagList = ({ tags }) => (
+    <HashtagWrap>
+      {tags.map((tag, index) => (
+        <span key={index}>#{tag}</span>
+      ))}
+    </HashtagWrap>
+  );
+
   return (
     <>
       <Wrapper />
@@ -466,7 +458,7 @@ const Introduce = () => {
                       <InfluencerName>{item.name}</InfluencerName>
                       <QuoteSection>{item.quote}</QuoteSection>
                       <HashtagList tags={item.tags} />
-                      <ClickButton>
+                      <ClickButton onClick={() => handleScrollTo(index)}>
                         {item.button}{" "}
                         <span className="fas fa-angle-right"></span>
                       </ClickButton>
@@ -478,7 +470,6 @@ const Introduce = () => {
                       autoPlay
                       loop
                     ></video>
-                    {/* <video src={item.videoSrc} autoPlay loop muted /> */}
                   </RightContent>
                 </AllContent>
               </VideosContent>
