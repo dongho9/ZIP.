@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { StarData } from "../StarData";
+import Pagination from "react-js-pagination";
 
 const Container = styled.div`
   margin-top: 100px;
@@ -16,6 +17,10 @@ const FilterTitle = styled.h3`
   font-size: 7rem;
   letter-spacing: -4px;
   font-family: "EHNormalTrial";
+  @media screen and (max-width: 1024px) {
+    font-size: 4rem;
+    letter-spacing: -2px;
+  }
 `;
 const SearchResult = styled.div`
   font-size: 2.4rem;
@@ -81,9 +86,25 @@ const FilterItem = styled.div`
   cursor: pointer;
   &:nth-child(5n) {
     border-right: none;
+    @media (max-width: 1024px) {
+      border-right: 1px solid var(--border-color);
+    }
   }
   &:last-child {
     border-right: none;
+  }
+  @media (max-width: 1024px) {
+    &:nth-child(3n) {
+      border-right: none;
+      @media (max-width: 767px) {
+        border-right: 1px solid var(--border-color);
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    &:nth-child(2n) {
+      border-right: none;
+    }
   }
 `;
 const FilterItemImgWrap = styled.div`
@@ -132,15 +153,29 @@ const FilterItemName = styled.p`
   line-height: 2.4rem;
   margin: 10px 0;
   font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media screen and (max-width: 1024px) {
+    font-size: 1.6rem;
+  }
 `;
 const FilterItemBrand = styled.li`
   color: var(--subTitle);
   font-size: 1.4rem;
+  @media screen and (max-width: 1024px) {
+    font-size: 1.2rem;
+  }
 `;
 const FilterItemPrice = styled.li`
   letter-spacing: 0.2px;
   color: var(--subTitle);
   font-size: 1.4rem;
+  @media screen and (max-width: 1024px) {
+    font-size: 1.2rem;
+  }
 `;
 const NotFound = styled.div`
   display: flex;
@@ -149,17 +184,51 @@ const NotFound = styled.div`
   height: 30.3vh;
   grid-column: 1 / -1;
 `;
+
+const PaginationWrap = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ul {
+    display: flex;
+    li {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--border-color);
+      border-right: none;
+      font-family: "Pretendard";
+      &:last-child {
+        border-right: 1px solid var(--border-color);
+      }
+      &.active {
+        background: var(--dark-color);
+        color: var(--light-color);
+      }
+      a {
+      }
+    }
+  }
+`;
+
 const Search = () => {
   const [sortOption, setSortOption] = useState("신상품순");
   const { isLoading, data } = StarData();
   const { name } = useParams();
   const navigate = useNavigate();
+  const [page, setPage] = useState(1); //페이지 설정
+  const [items, setItems] = useState(25); //한페이지에 보여줄 데이터 갯수
+
   const onSelectChange = (e) => {
     setSortOption(e.target.value);
   };
 
   useEffect(() => {
     setSortOption("신상품순");
+    setPage(1);
   }, [name]);
 
   const allProducts =
@@ -177,7 +246,6 @@ const Search = () => {
           artistName: artist.artistName,
         }));
     }) || [];
-
   const sortedProducts = [...allProducts].sort((a, b) => {
     if (sortOption === "신상품순") {
       return b.releasedDate - a.releasedDate;
@@ -189,6 +257,26 @@ const Search = () => {
       return a.sellNum - b.sellNum;
     }
   });
+
+  const handlePageChange = (page) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setPage(page);
+  };
+  const length = sortedProducts.length; //전체 데이터 갯수
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 767) {
+        setItems(16);
+      } else if (window.innerWidth < 1024) {
+        setItems(18);
+      } else {
+        setItems(25);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+  }, []);
   return (
     <Container>
       <FilterTitle>Search ZIP</FilterTitle>
@@ -213,33 +301,46 @@ const Search = () => {
       ) : (
         <FilterContent>
           {sortedProducts.length > 0 ? (
-            sortedProducts.map((product, j) => (
-              <FilterItem
-                key={j}
-                onClick={() => navigate(`/detail/${product.itemName}`)}
-              >
-                <FilterItemImgWrap>
-                  <FilterItemPick>
-                    {product.artistName}
-                    <br />
-                    PICK
-                  </FilterItemPick>
-                  <FilterItemImg src={product.detailImg.img01} />
-                </FilterItemImgWrap>
-                <FilterItemText>
-                  <FilterItemBrand>{product.brand}</FilterItemBrand>
-                  <FilterItemName>{product.itemName}</FilterItemName>
-                  <FilterItemPrice>
-                    KRW {product.price.toLocaleString()}
-                  </FilterItemPrice>
-                </FilterItemText>
-              </FilterItem>
-            ))
+            sortedProducts
+              .slice((page - 1) * items, page * items)
+              .map((product, j) => (
+                <FilterItem
+                  key={j}
+                  onClick={() => navigate(`/detail/${product.itemName}`)}
+                >
+                  <FilterItemImgWrap>
+                    <FilterItemPick>
+                      {product.artistName}
+                      <br />
+                      PICK
+                    </FilterItemPick>
+                    <FilterItemImg src={product.detailImg.img01} />
+                  </FilterItemImgWrap>
+                  <FilterItemText>
+                    <FilterItemBrand>{product.brand}</FilterItemBrand>
+                    <FilterItemName>{product.itemName}</FilterItemName>
+                    <FilterItemPrice>
+                      KRW {product.price.toLocaleString()}
+                    </FilterItemPrice>
+                  </FilterItemText>
+                </FilterItem>
+              ))
           ) : (
             <NotFound>검색결과가 없습니다.</NotFound>
           )}
         </FilterContent>
       )}
+      <PaginationWrap>
+        <Pagination
+          activePage={page} //현재 페이지
+          itemsCountPerPage={items} //페이지당 아이템 갯수
+          totalItemsCount={length} //전체 아이템 갯수
+          pageRangeDisplayed={5} //한번에 보여지는 페이지 range
+          onChange={handlePageChange} //페이지 바뀔때 핸들링하는 함수
+          // hideNavigation={true} //navigation 버튼 숨기기(prev page, next page)
+          hideFirstLastPages={true} //첫페이지, 끝페이지 버튼 숨기기
+        />
+      </PaginationWrap>
     </Container>
   );
 };
