@@ -198,6 +198,10 @@ const HeaderEtc = styled.ul`
     display: flex;
     align-items: center;
     cursor: pointer;
+    a {
+      display: flex;
+      align-items: center;
+    }
     img {
       filter: invert(1);
       position: absolute;
@@ -219,14 +223,19 @@ const HeaderEtc = styled.ul`
   @media screen and (max-width: 1024px) {
     gap: 20px;
     li {
+      position: relative;
       span {
         display: flex;
         align-items: center;
+        justify-content: center;
+        flex-direction: row;
         span {
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
-          position: absolute;
+          &:first-child {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            position: absolute;
+          }
         }
       }
       img {
@@ -237,7 +246,7 @@ const HeaderEtc = styled.ul`
         pointer-events: visible;
       }
       svg {
-        display: block;
+        display: inline-block;
         position: relative;
         opacity: 1;
         visibility: visible;
@@ -317,14 +326,13 @@ const CartCount = styled.span`
   margin-left: 1px;
   font-size: 1.2rem;
   font-family: "Pretendard";
-
   @media screen and (max-width: 1024px) {
     position: absolute;
     top: -5px;
-    right: -5px;
+    right: -10px;
     width: 16px;
     height: 16px;
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 `;
 
@@ -332,7 +340,7 @@ const TopBtn = styled.div`
   position: fixed;
   transform: translateY(100px);
   right: 3%;
-  bottom: 6%;
+  bottom: 40px;
   background: var(--light-color);
   color: var(--dark-color);
   width: 50px;
@@ -358,10 +366,9 @@ const Header = () => {
   const [menuClick, setMenuClick] = useState(false);
   const [searchClick, setSearchClick] = useState(false);
   const [toggleClick, setToggleClick] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-
   const [topBtnScroll, setTopBtnScroll] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const headerRef = useRef();
   const navigate = useNavigate();
@@ -377,6 +384,7 @@ const Header = () => {
   const mypageMatch02 = useMatch("/mypage/:name");
   const starMatch = useMatch("/star");
   const starDetailMatch = useMatch("/star/:starName");
+
   const handleCategory = (e) => {
     const category = e.target.innerText;
     navigate(`/filtercategory/${category}`.toLowerCase());
@@ -591,10 +599,8 @@ const Header = () => {
                     setToggleClick(false);
                   }}
                 >
-                  <span>
-                    Cart
-                    {cartCount > 0 && <CartCount>({cartCount})</CartCount>}
-                  </span>
+                  <span>Cart</span>
+                  {cartCount > 0 && <CartCount>({cartCount})</CartCount>}
                   <svg
                     fill="none"
                     strokeWidth={1.5}

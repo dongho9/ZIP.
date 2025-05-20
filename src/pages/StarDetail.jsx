@@ -1,8 +1,7 @@
-import { useParams } from "react-router-dom";
+import { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Masonry from "react-masonry-css";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import YouTube from "react-youtube";
 import { StarData } from "../StarData";
 
 const Container = styled.div`
@@ -12,6 +11,9 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
+  padding-top: 80px;
+  background: #000;
   .my-masonry-grid {
     display: -webkit-box; /* Not needed if autoprefixing */
     display: -ms-flexbox; /* Not needed if autoprefixing */
@@ -34,6 +36,20 @@ const Container = styled.div`
     margin-bottom: 100px;
     width: 100%;
   }
+  .swiper {
+    .swiper-wrapper {
+      .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid var(--border-color);
+        padding-right: 20px;
+        cursor: pointer;
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+  }
   @media screen and (max-width: 768px) {
     .my-masonry-grid {
       gap: 30px;
@@ -54,43 +70,55 @@ const Container = styled.div`
   }
 `;
 
-const ArtistTitle = styled.h3`
+const ArtistTitle = styled.h4`
   font-size: 6rem;
   font-family: "EHNormalTrial";
 `;
 
 const ArtistBg = styled.div`
   top: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 70vh;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
   iframe {
     width: 100%;
-    object-fit: cover;
-    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    scroll-behavior: none;
+    z-index: -1;
     filter: brightness(50%);
+    &.active {
+      filter: brightness(100%);
+    }
   }
-`;
-const ArtistInfoWrap = styled.div`
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 450px;
-  padding: 0 3%;
-  position: absolute;
-  top: 40%;
-  z-index: 1;
 `;
 
 const ArtistText = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
+  opacity: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
   p {
     font-size: 2.6rem;
     font-family: "EHNormalTrial";
   }
   h4 {
     margin-top: 14px;
+  }
+  &.active {
+    opacity: 0;
+    visibility: hidden;
   }
 `;
 
@@ -126,58 +154,72 @@ const RelateItemImgWrap = styled.div`
 const RelateItemImg = styled.img`
   width: 100%;
   object-fit: cover;
+  padding: 30px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  background: var(--light-color);
+  transition: all 0.5s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 const RelateItemText = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: center;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 10px;
+  min-height: 120px;
 `;
-const RelateItemPick = styled.span`
+const RelateItemBrand = styled.span`
+  color: var(--subTitle);
   font-size: 1.4rem;
 `;
 const RelateItemName = styled.p`
   font-size: 1.8rem;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border-color);
+  line-height: 2.4rem;
+  margin: 10px 0;
+  font-weight: 600;
 `;
-
+const RelateItemPrice = styled.span`
+  letter-spacing: 0.2px;
+  color: var(--subTitle);
+  font-size: 1.4rem;
+  color: var(--subTitle);
+`;
 const StarDetail = () => {
   const { starName } = useParams();
-  const { itemName } = useParams();
-  
+  const navigate = useNavigate();
   const { isLoading, data } = StarData();
-
-  const videoOpts = {
-    height: "1920",
-    width: "1080",
-    playerVars: {
-      autoplay: 0, // 자동재생 끔
-      controls: 1, // 컨트롤 보임
-    },
+  const [textHide, setTextHide] = useState(false);
+  const filterData =
+    data?.artists?.filter((artist) => artist.artistName === starName) || [];
+  const filterProducts = filterData[0]?.products;
+  const iframeClick = () => {
+    setTextHide(true);
   };
-
   return (
     <Container>
-      <ArtistInfoWrap>
-        <ArtistText>
-          <p>ACTOR</p>
-          <ArtistTitle>
-            IN MY PLACE
-            <h4>{starName}</h4>
-          </ArtistTitle>
-        </ArtistText>
-      </ArtistInfoWrap>
       <ArtistBg>
         <iframe
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=0&showinfo=0&modestbranding=1&loop=1&playlist=dQw4w9WgXcQ"
-          title="Artist Background Video"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-          frameBorder="0"
+          className={textHide ? "active" : ""}
+          scrolling="no"
+          src={filterData[0]?.videoURL}
         />
+        <ArtistText
+          className={textHide ? "active" : ""}
+          onClick={() => {
+            iframeClick();
+          }}
+        >
+          <p>ACTOR</p>
+          <ArtistTitle>IN MY PLACE</ArtistTitle>
+          <h4>{starName}</h4>
+        </ArtistText>
       </ArtistBg>
       <RelateProducts>
-        <RelateProductsTitle>{starName} Pick</RelateProductsTitle>
+        <RelateProductsTitle>{starName} PICK</RelateProductsTitle>
         <Swiper
           className="RelateItemWrap"
           breakpoints={{
@@ -203,75 +245,24 @@ const StarDetail = () => {
             },
           }}
         >
-          <SwiperSlide className="RelateItem">
-            <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/product_15_kikii_1280x.jpg?v=1698491589"
-                alt="img02"
-              />
-            </RelateItemImgWrap>
-            <RelateItemText>
-              <RelateItemPick>카리나 PICK</RelateItemPick>
-              <RelateItemName>Sorbet Balm</RelateItemName>
-            </RelateItemText>
-          </SwiperSlide>
-          <SwiperSlide className="RelateItem">
-            <RelateItemImgWrap>
-              <RelateItemImg
-                src="https://relilla.com/cdn/shop/files/product_8_moist_1280x.jpg?v=1698501809"
-                alt="img03"
-              />
-            </RelateItemImgWrap>
-            <RelateItemText>
-              <RelateItemPick>카리나 PICK</RelateItemPick>
-              <RelateItemName>Sorbet Balm</RelateItemName>
-            </RelateItemText>
-          </SwiperSlide>
-          <SwiperSlide className="RelateItem">
-            <RelateItemImgWrap>
-              <RelateItemImg src="https://relilla.com/cdn/shop/files/product_11_1280x.jpg?v=1698491524" alt="img04" />
-            </RelateItemImgWrap>
-            <RelateItemText>
-              <RelateItemPick>카리나 PICK</RelateItemPick>
-              <RelateItemName>Sorbet Balm</RelateItemName>
-            </RelateItemText>
-          </SwiperSlide>
-          <SwiperSlide className="RelateItem">
-            <RelateItemImgWrap>
-              <RelateItemImg src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801" alt="img05" />
-            </RelateItemImgWrap>
-            <RelateItemText>
-              <RelateItemPick>카리나 PICK</RelateItemPick>
-              <RelateItemName>Sorbet Balm</RelateItemName>
-            </RelateItemText>
-          </SwiperSlide>
-          <SwiperSlide className="RelateItem">
-            <RelateItemImgWrap>
-              <RelateItemImg src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654" alt="img06" />
-            </RelateItemImgWrap>
-            <RelateItemText>
-              <RelateItemPick>카리나 PICK</RelateItemPick>
-              <RelateItemName>Sorbet Balm</RelateItemName>
-            </RelateItemText>
-          </SwiperSlide>
-          <SwiperSlide className="RelateItem">
-            <RelateItemImgWrap>
-              <RelateItemImg src="https://relilla.com/cdn/shop/files/product_25_1280x.jpg?v=1698498801" alt="img05" />
-            </RelateItemImgWrap>
-            <RelateItemText>
-              <RelateItemPick>카리나 PICK</RelateItemPick>
-              <RelateItemName>Sorbet Balm</RelateItemName>
-            </RelateItemText>
-          </SwiperSlide>
-          <SwiperSlide className="RelateItem">
-            <RelateItemImgWrap>
-              <RelateItemImg src="https://relilla.com/cdn/shop/files/Web_1920_2_0_1280x.jpg?v=1718842654" alt="img06" />
-            </RelateItemImgWrap>
-            <RelateItemText>
-              <RelateItemPick>카리나 PICK</RelateItemPick>
-              <RelateItemName>Sorbet Balm</RelateItemName>
-            </RelateItemText>
-          </SwiperSlide>
+          {filterProducts?.map((product, i) => (
+            <SwiperSlide
+              key={i}
+              className="RelateItem"
+              onClick={() => navigate(`/detail/${product.itemName}`)}
+            >
+              <RelateItemImgWrap>
+                <RelateItemImg src={product.detailImg.img01} alt="img02" />
+              </RelateItemImgWrap>
+              <RelateItemText onClick={() => `/detail/${product.itemName}`}>
+                <RelateItemBrand>{product.brand}</RelateItemBrand>
+                <RelateItemName>{product.itemName}</RelateItemName>
+                <RelateItemPrice>
+                  KRW {product.price.toLocaleString()}
+                </RelateItemPrice>
+              </RelateItemText>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </RelateProducts>
     </Container>
