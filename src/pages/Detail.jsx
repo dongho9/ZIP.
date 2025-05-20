@@ -239,6 +239,9 @@ const DescWrap = styled.div`
   @media screen and (max-width: 1024px) {
     gap: 60px;
   }
+  @media screen and (max-width: 767px) {
+    gap: 80px;
+  }
 `;
 const Loading = styled.div`
   width: 100%;
