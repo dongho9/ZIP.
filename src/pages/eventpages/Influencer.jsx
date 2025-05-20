@@ -1,6 +1,28 @@
+import React from 'react';
 import ScrollButton from '../../components/event/ScrollButton'
 import styled from 'styled-components'
 import InfluencerBanner from '../../components/event/InfluencerBanner'
+import { FaInstagram } from 'react-icons/fa';
+import isabe01 from '../../imgs/event/isabe01.jpg';
+import isabe02 from '../../imgs/event/isabe02.jpg';
+import isabe03 from '../../imgs/event/isabe03.jpg';
+import isabe04 from '../../imgs/event/isabe04.jpg';
+import jungwon01 from '../../imgs/event/jungwon01.jpg';
+import jungwon02 from '../../imgs/event/jungwon02.jpg';
+import jungwon03 from '../../imgs/event/jungwon03.jpg';
+import leoj01 from '../../imgs/event/leoj01.jpg';
+import leoj02 from '../../imgs/event/leoj02.jpg';
+import leoj03 from '../../imgs/event/leoj03.jpeg';
+import leoj04 from '../../imgs/event/leoj04.webp';
+import isabeprofile from '../../imgs/event/isabeprofile.jpg';
+import jungwonprofile from '../../imgs/event/jungwonprofile.webp';
+import leojprofile from '../../imgs/event/leojprofile.webp';
+import blurimg from '../../imgs/event/blurimage.png';
+import blurimg02 from '../../imgs/event/blurimage02.png';
+// import blurimg03 from '../../imgs/event/blurimage03.jpg';
+import { Link } from 'react-router-dom';
+
+
 
 // Main layout containers
 const PageWrapper = styled.div`
@@ -27,7 +49,7 @@ const BlurBackground = styled.div`
     width: 100%;
     height: 100%;
     backdrop-filter: blur(15px);
-    background-color: rgba(255, 255, 255, 0.4);
+    /* background-color: rgba(255, 255, 255, 0.4); */
     z-index: 0;
   }
 `
@@ -35,7 +57,7 @@ const BlurBackground = styled.div`
 
 const CardContainer = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1450px;
   background-color: white;
   border-radius: 20px;
   display: flex;
@@ -47,14 +69,14 @@ const CardContainer = styled.div`
 `
 
 const LeftContent = styled.div`
-  width: 60%;
-  padding: 40px;
+  width: 50%;
+  padding: 70px 60px;
   display: flex;
   flex-direction: column;
 `
 
 const RightContent = styled.div`
-  width: 40%;
+  width: 60%;
   position: relative;
   
   img {
@@ -69,16 +91,16 @@ const Header = styled.div`
 `
 
 const SmallTitle = styled.div`
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #888;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 `
 
 const Title = styled.h2`
-  font-size: 32px;
+  font-size: 3.5rem;
   font-weight: bold;
   color: #000;
-  margin: 0;
+  margin-top: 10px;
 `
 
 const ProductList = styled.div`
@@ -99,17 +121,21 @@ const ProductItem = styled.div`
 `
 
 const ProductImage = styled.div`
-  width: 65px;
-  height: 65px;
+  width: 100px;
+  height: 100px;
   margin-right: 20px;
   background-color: #f9f9f9;
   border-radius: 5px;
   overflow: hidden;
-  
+  cursor: pointer;
+  transition: all 0.3s;
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+  }
+  &:hover {
+    scale: 1.1;
   }
 `
 
@@ -118,27 +144,24 @@ const ProductInfo = styled.div`
 `
 
 const ProductName = styled.div`
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #333;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
 `
 
 const ProductPrice = styled.div`
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  cursor: pointer;
 `
 
-const DetailButton = styled.button`
-  background-color: #f5f5f5;
-  border: none;
-  padding: 5px 15px;
-  border-radius: 4px;
-  font-size: 12px;
+const DetailButton = styled.a`
+  font-size: 1.2rem;
   cursor: pointer;
-  
   &:hover {
-    background-color: #e8e8e8;
+    border-bottom: 1px solid var(--dark-color);
   }
 `
 
@@ -147,7 +170,7 @@ const ProfileSection = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: white;
+  background-color: var(--light-color);
   padding: 20px;
 `
 
@@ -156,13 +179,19 @@ const ProfileHeader = styled.div`
   align-items: center;
   margin-bottom: 15px;
 `
+const ProfileDetail = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`
 
 const ProfilePicture = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   overflow: hidden;
   margin-right: 10px;
+  cursor: pointer;
   
   img {
     width: 100%;
@@ -172,29 +201,43 @@ const ProfilePicture = styled.div`
 `
 
 const ProfileName = styled.div`
-  font-size: 16px;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-right: 10px;
+  cursor: pointer;
 `
 
 const ProfileSocial = styled.div`
-  font-size: 12px;
+  font-size: 1.5rem;
   color: #888;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+
+  svg {
+    margin-right: 5px;
+  }
+
 `
 
 const ProfileDescription = styled.div`
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.6;
   color: #555;
   
+  
   a {
-    color: #4a90e2;
-    text-decoration: none;
+    color: var(--event-color);
+    /* text-decoration: none; */
+    &:hover {
+      border-bottom: 1px solid var(--event-color);
+    }
   }
 `
 
 const CampaignTitle = styled.div`
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 10px;
 `
@@ -202,12 +245,12 @@ const CampaignTitle = styled.div`
 const Footer = styled.div`
   width: 100%;
   background-color: black;
-  color: white;
+  color: var(--light-color);
   text-align: center;
   padding: 40px 0;
   
   h3 {
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: normal;
     margin-bottom: 20px;
     line-height: 1.5;
@@ -215,8 +258,7 @@ const Footer = styled.div`
   
   button {
     background-color: transparent;
-    border: 1px solid white;
-    color: white;
+    color: var(--light-color);
     padding: 8px 20px;
     cursor: pointer;
     border-radius: 3px;
@@ -228,25 +270,59 @@ const Footer = styled.div`
 `
 
 const Influencer = () => {
+  const YouTubeEmbed = ({ videoId }) => (
+    <iframe
+      width="100%"
+      height="100%"
+      src={`https://www.youtube.com/embed/${videoId}`}
+      title="YouTube video"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  );
+
+  const onClick = () => {window.location.href='https://twoslashfour.com/product/%EC%83%A4%EC%9D%B4%EB%8B%9D-%EB%B8%8C%EB%A1%9C%EC%9A%B0-%EC%BB%AC%EB%9F%AC-%EC%B9%B4%EB%9D%BC3-colors/72/?srsltid=AfmBOoqc0VshEui1wg7zGiRI3dvdRCtiVvztCxDA_GMxkkbW43gIKGLT'}
+  const onClick1 = () => {window.location.href='https://twoslashfour.com/product/detail.html?product_no=73&cate_no=1&display_group=6'}
+  const onClick2 = () => {window.location.href='https://twoslashfour.com/product/%EC%9D%B4%EB%A0%88%EC%9D%B4%EC%A7%95-%ED%8E%98%EC%9D%B4%EC%8A%A4-%ED%81%90%EB%B8%8C/53/?srsltid=AfmBOooC3z66YDgCQQm1q7szVqMrSga8UrP4pya5In28cP1-auIDkiDh'}
+  const onClick3 = () => {window.location.href='https://twoslashfour.com/product/detail.html?product_no=46&cate_no=71&display_group=1'}
+  const onClick4 = () => {window.location.href='https://doingwhat.co.kr/product/%EB%91%90%EC%9E%89%EC%99%93-%EC%8A%A4%ED%82%A8%ED%86%A4-%ED%95%84%ED%84%B0-%EB%A1%9C%EC%85%98-spf-30-pa/23/'}
+  const onClick5 = () => {window.location.href='https://doingwhat.co.kr/product/%EB%91%90%EC%9E%89%EC%99%93-%EB%B3%BC%EB%A5%A8-%EC%8A%A4%ED%83%80%EC%9D%BC%EB%A7%81-%EC%97%90%EC%84%BC%EC%8A%A4/22/'}
+  const onClick6 = () => {window.location.href='https://doingwhat.co.kr/product/%EB%91%90%EC%9E%89%EC%99%93-%EB%82%B4%EC%B6%94%EB%9F%B4-%EC%98%A4%EC%9D%BC-%EC%BB%A8%ED%8A%B8%EB%A1%A4-%ED%8E%98%EC%9D%B4%ED%8D%BC/25/category/43/display/1/'}
+  const onClick7 = () => {window.location.href = 'https://www.kurly.com/goods/1000205965'}
+  const onClick8 = () => {window.location.href = 'https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000164840'}
+  const onClick9 = () => {window.location.href = 'https://dalba.co.kr/goods/goods_view.php?goodsNo=1000000100'}
+  const onClick10 = () => {window.location.href = 'https://www.amoremall.com/kr/ko/product/detail?onlineProdSn=55930&srsltid=AfmBOopp_fi0j445EDg21BL8Ppwziel_ryL8mI3cfKd7tkgNjK6pR1di&onlineProdCode=110090000121'}
   // Images for the product thumbnails
   const productImages = [
-    '/imgs/event/',
-    '/images/product-eyeshadow.jpg',
-    '/images/product-mist.jpg',
-    '/images/product-eyeshadow2.jpg'
+    isabe01,
+    isabe02,
+    isabe03,
+    isabe04,
+    jungwon01,
+    jungwon02,
+    jungwon03,
+    leoj01,
+    leoj02,
+    leoj03,
+    leoj04,
   ];
   
   // Profile images
-  const profileImage = '/images/risabae-profile.jpg';
+  const profileImage = [
+    isabeprofile,
+    jungwonprofile,
+    leojprofile
+  ];
   
   // Model images
   const modelImage1 = '/images/model-white-headwrap.jpg';
   const modelImage2 = '/images/model-sunglasses.jpg';
   
   // Background blur images (using the same images but could be different)
-  const bgImage1 = '/images/bg-blur-1.jpg';
-  const bgImage2 = '/images/bg-blur-2.jpg';
-  const bgImage3 = '/images/bg-blur-3.jpg';
+  const bgImage1 = blurimg;
+  const bgImage2 = blurimg02;
+  const bgImage3 = blurimg;
   
   return (
     <PageWrapper>
@@ -265,63 +341,67 @@ const Influencer = () => {
             </Header>
             <ProductList>
               <ProductItem>
-                <ProductImage>
+                <ProductImage onClick={onClick}>
                   <img src={productImages[0]} alt="Lipstick Set" />
                 </ProductImage>
                 <ProductInfo>
-                  <ProductName>이사배 LIPSTICK SET (PRO3 Colors)</ProductName>
-                  <ProductPrice>KRW 15,300</ProductPrice>
-                  <DetailButton>상세보기</DetailButton>
+                  <ProductName onClick={onClick}>샤이닝 브로우 컬러 카라(3 Colors)</ProductName>
+                  <ProductPrice onClick={onClick}>KRW 15,300</ProductPrice>
+                  <DetailButton onClick={onClick}>자세히</DetailButton>
                 </ProductInfo>
               </ProductItem>
               <ProductItem>
-                <ProductImage>
+                <ProductImage onClick={onClick1}>
                   <img src={productImages[1]} alt="Eyeshadow Palette" />
                 </ProductImage>
                 <ProductInfo>
-                  <ProductName>셀렉트 아이섀도우 팔레트 (12 Colors)</ProductName>
-                  <ProductPrice>KRW 18,000</ProductPrice>
-                  <DetailButton>상세보기</DetailButton>
+                  <ProductName onClick={onClick1} >페이드 브로우 파우더 듀오 (3 Colors)</ProductName>
+                  <ProductPrice onClick={onClick1}>KRW 18,000</ProductPrice>
+                  <DetailButton onClick={onClick1}>자세히</DetailButton>
                 </ProductInfo>
               </ProductItem>
               <ProductItem>
-                <ProductImage>
+                <ProductImage onClick={onClick2}>
                   <img src={productImages[2]} alt="Face Mist" />
                 </ProductImage>
                 <ProductInfo>
-                  <ProductName>페이스 앤 보디 미스트</ProductName>
-                  <ProductPrice>KRW 8,000</ProductPrice>
-                  <DetailButton>상세보기</DetailButton>
+                  <ProductName onClick={onClick2}>이레이징 페이스 큐브</ProductName>
+                  <ProductPrice onClick={onClick2}>KRW 26,600</ProductPrice>
+                  <DetailButton onClick={onClick2}>자세히</DetailButton>
                 </ProductInfo>
               </ProductItem>
               <ProductItem>
-                <ProductImage>
+                <ProductImage onClick={onClick3}> 
                   <img src={productImages[3]} alt="Eyeshadow Palette 2" />
                 </ProductImage>
                 <ProductInfo>
-                  <ProductName>셀렉트 아이섀도우 팔레트 (12 Colors)</ProductName>
-                  <ProductPrice>KRW 18,000</ProductPrice>
-                  <DetailButton>상세보기</DetailButton>
+                  <ProductName onClick={onClick3}>올오버 페이스 브러쉬 </ProductName>
+                  <ProductPrice onClick={onClick3}>KRW 18,000</ProductPrice>
+                  <DetailButton onClick={onClick3}>자세히</DetailButton>
                 </ProductInfo>
               </ProductItem>
             </ProductList>
           </LeftContent>
           <RightContent>
-            <img src={modelImage1} alt="Model with white headwrap" />
+          <YouTubeEmbed videoId="o9NZ9x2Oxdk" />
             <ProfileSection>
               <ProfileHeader>
-                <ProfilePicture>
-                  <img src={profileImage} alt="RISABAE Profile" />
+                <ProfilePicture><a href="http://instagram.com/risabae_art/" target="_blank" >
+                  <img src={profileImage[0]} alt="lisabe Profile" />
+                  </a>
                 </ProfilePicture>
-                <ProfileName>RISABAE</ProfileName>
-                <ProfileSocial>@risabae_art</ProfileSocial>
+              <ProfileDetail>
+                  <ProfileName><a href="http://instagram.com/risabae_art/" target="_blank" >RISABAE</a></ProfileName>
+                  <ProfileSocial ><a href="http://instagram.com/risabae_art/" target="_blank" >  <img
+      src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+      alt="Instagram"
+      style={{ width: '10px', height: '10px', marginRight: '4px' }}
+    />instagram.com/Risabae_art</a></ProfileSocial>
+              </ProfileDetail>
               </ProfileHeader>
               <CampaignTitle>FADE OUT, LOOK CLEAR</CampaignTitle>
               <ProfileDescription>
-                오랜 연구 끝에 완성한 이사배 X 집닷컴 콜라보레이션 상품을 만나보세요. 
-                프로페셔널 메이크업 아티스트로서 선보이는 특별한 제품들과 함께 
-                당신만의 스타일을 완성하세요. 
-                <a href="#"> @risabae_official</a> 에서 더 많은 정보를 확인하실 수 있습니다.
+              눈썹 컬러 힘을 빼고 밝힐수록, 더 선명해지는 브로우 메이크업 룩을 완성해보세요! 눈썹 톤을 자연스럽게 잡아주는<a href="https://twoslashfour.com/product/detail.html?product_no=73&cate_no=1&display_group=6">#페이드브로우파우더듀오</a>  와 은은한 반짝임의 블론드 펄이 믹스된 <a href='https://twoslashfour.com/product/%EC%83%A4%EC%9D%B4%EB%8B%9D-%EB%B8%8C%EB%A1%9C%EC%9A%B0-%EC%BB%AC%EB%9F%AC-%EC%B9%B4%EB%9D%BC3-colors/72/?srsltid=AfmBOoqc0VshEui1wg7zGiRI3dvdRCtiVvztCxDA_GMxkkbW43gIKGLT'>#샤이닝브로우컬러카라 </a>로 어둡고 진한 눈썹을  한번의 터치로 자연스럽게 밝혀보세요!
               </ProfileDescription>
             </ProfileSection>
           </RightContent>
@@ -332,58 +412,64 @@ const Influencer = () => {
       <BlurBackground bgImage={bgImage2}>
         <CardContainer>
           <RightContent>
-            <img src={modelImage2} alt="Model with sunglasses" />
+          <YouTubeEmbed videoId="nJzpph-wzGA" />
           </RightContent>
           <LeftContent>
             <Header>
               <SmallTitle>Top Influencer Picks</SmallTitle>
-              <Title>정원 PICK</Title>
+              <Title>관리는 하고 살자 PICK</Title>
             </Header>
             <ProductList>
               <ProductItem>
-                <ProductImage>
-                  <img src={productImages[0]} alt="Lipstick Set" />
+                <ProductImage onClick={onClick4}>
+                  <img src={productImages[4]} alt="Lipstick Set" />
                 </ProductImage>
                 <ProductInfo>
-                  <ProductName>샤이닝 브로우 컬러 카라(3 Colors)</ProductName>
-                  <ProductPrice>KRW 26,900</ProductPrice>
-                  <DetailButton>상세보기</DetailButton>
+                  <ProductName onClick={onClick4}>두잉왓 스킨톤 필터 로션[SPF 30 PA++]</ProductName>
+                  <ProductPrice onClick={onClick4}>KRW 26,900</ProductPrice>
+                  <DetailButton onClick={onClick4}>자세히</DetailButton>
                 </ProductInfo>
               </ProductItem>
               <ProductItem>
-                <ProductImage>
-                  <img src={productImages[1]} alt="Eyeshadow Palette" />
+                <ProductImage onClick={onClick5}>
+                  <img src={productImages[5]} alt="Eyeshadow Palette" />
                 </ProductImage>
                 <ProductInfo>
-                  <ProductName>미니 브로우 브러쉬</ProductName>
-                  <ProductPrice>KRW 3,900</ProductPrice>
-                  <DetailButton>상세보기</DetailButton>
+                  <ProductName onClick={onClick5}>두잉왓 볼륨 스타일링 에센스</ProductName>
+                  <ProductPrice onClick={onClick5}>KRW 12,900</ProductPrice>
+                  <DetailButton onClick={onClick5}>자세히</DetailButton>
                 </ProductInfo>
               </ProductItem>
               <ProductItem>
-                <ProductImage>
-                  <img src={productImages[2]} alt="Face Mist" />
+                <ProductImage onClick={onClick6}>
+                  <img src={productImages[6]} alt="Face Mist" />
                 </ProductImage>
                 <ProductInfo>
-                  <ProductName>페이스 앤 보디 미스트</ProductName>
-                  <ProductPrice>KRW 8,000</ProductPrice>
-                  <DetailButton>상세보기</DetailButton>
+                  <ProductName onClick={onClick6}>두잉왓 내추럴 오일 컨트롤 페이퍼</ProductName>
+                  <ProductPrice onClick={onClick6}>KRW 3,900</ProductPrice>
+                  <DetailButton onClick={onClick6}>자세히</DetailButton>
                 </ProductInfo>
               </ProductItem>
             </ProductList>
             <ProfileHeader style={{ marginTop: '20px' }}>
-              <ProfilePicture>
-                <img src={profileImage} alt="RISABAE Profile" />
+              <ProfilePicture><a href='https://www.instagram.com/jung__won.k/' target='/blank'>
+                <img src={profileImage[1]} alt="jungwon Profile" />
+                </a>
               </ProfilePicture>
-              <ProfileName>RISABAE</ProfileName>
-              <ProfileSocial>@risabae_art</ProfileSocial>
+              <ProfileDetail>
+                  <ProfileName><a href='https://www.instagram.com/jung__won.k/' target='/blank'>관리는 하고 살자</a></ProfileName>
+                  <ProfileSocial><a href='https://www.instagram.com/jung__won.k/' target='/blank'><a href="http://instagram.com/risabae_art/" target="_blank" >  <img
+      src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+      alt="Instagram"
+      style={{ width: '10px', height: '10px', marginRight: '4px' }}
+    />instagram.com/jung__won.k</a></a></ProfileSocial>
+              </ProfileDetail>
             </ProfileHeader>
             <CampaignTitle>FADE OUT, LOOK CLEAR</CampaignTitle>
             <ProfileDescription>
-              오랜 연구 끝에 완성한 이사배 X 집닷컴 콜라보레이션 상품을 만나보세요. 
-              프로페셔널 메이크업 아티스트로서 선보이는 특별한 제품들과 함께 
-              당신만의 스타일을 완성하세요. 
-              <a href="#"> @risabae_official</a> 에서 더 많은 정보를 확인하실 수 있습니다.
+            원래 내 피부인 것처럼 자연스럽게! <br/>
+            꾸민듯 안꾸민듯 아무도 모르게 , 두잉왓 스킨톤 필터 로션
+              {/* <a href="#"> @risabae_official</a> 에서 더 많은 정보를 확인하실 수 있습니다. */}
             </ProfileDescription>
           </LeftContent>
         </CardContainer>
@@ -395,67 +481,73 @@ const Influencer = () => {
           <LeftContent>
             <Header>
               <SmallTitle>Top Influencer Picks</SmallTitle>
-              <Title>이사배 PICK</Title>
+              <Title>레오제이 PICK</Title>
             </Header>
             <ProductList>
               <ProductItem>
-                <ProductImage>
-                  <img src={productImages[0]} alt="Lipstick Set" />
+                <ProductImage onClick={onClick7}>
+                  <img src={productImages[7]} alt="Lipstick Set" />
                 </ProductImage>
                 <ProductInfo>
-                  <ProductName>이사배 LIPSTICK SET (PRO3 Colors)</ProductName>
-                  <ProductPrice>KRW 15,300</ProductPrice>
-                  <DetailButton>상세보기</DetailButton>
+                  <ProductName onClick={onClick7}>투쿨포스쿨 픽싱누드 쿠션</ProductName>
+                  <ProductPrice onClick={onClick7}>KRW 28,800</ProductPrice>
+                  <DetailButton onClick={onClick7}>자세히</DetailButton>
                 </ProductInfo>
               </ProductItem>
               <ProductItem>
-                <ProductImage>
-                  <img src={productImages[1]} alt="Eyeshadow Palette" />
+                <ProductImage onClick={onClick8}>
+                  <img src={productImages[8]} alt="Eyeshadow Palette" />
                 </ProductImage>
                 <ProductInfo>
-                  <ProductName>셀렉트 아이섀도우 팔레트 (12 Colors)</ProductName>
-                  <ProductPrice>KRW 18,000</ProductPrice>
-                  <DetailButton>상세보기</DetailButton>
+                  <ProductName onClick={onClick8}>필리밀리 아이브러시 프로컬렉션</ProductName>
+                  <ProductPrice onClick={onClick8}>KRW 22,800</ProductPrice>
+                  <DetailButton onClick={onClick8}>자세히</DetailButton>
                 </ProductInfo>
               </ProductItem>
               <ProductItem>
-                <ProductImage>
-                  <img src={productImages[2]} alt="Face Mist" />
+                <ProductImage onClick={onClick9}>
+                  <img src={productImages[9]} alt="Face Mist" />
                 </ProductImage>
                 <ProductInfo>
-                  <ProductName>페이스 앤 보디 미스트</ProductName>
-                  <ProductPrice>KRW 8,000</ProductPrice>
-                  <DetailButton>상세보기</DetailButton>
+                  <ProductName onClick={onClick9}>화이트 트러플 더블 세럼 앤 크림</ProductName>
+                  <ProductPrice onClick={onClick9}>KRW 78,000</ProductPrice>
+                  <DetailButton onClick={onClick9}>자세히</DetailButton>
                 </ProductInfo>
               </ProductItem>
               <ProductItem>
-                <ProductImage>
-                  <img src={productImages[3]} alt="Eyeshadow Palette 2" />
+                <ProductImage onClick={onClick10}>
+                  <img src={productImages[10]} alt="Eyeshadow Palette 2" />
                 </ProductImage>
                 <ProductInfo>
-                  <ProductName>셀렉트 아이섀도우 팔레트 (12 Colors)</ProductName>
-                  <ProductPrice>KRW 18,000</ProductPrice>
-                  <DetailButton>상세보기</DetailButton>
+                  <ProductName onClick={onClick10}>페이드 브로우 파우더 듀오 (3 Colors)</ProductName>
+                  <ProductPrice onClick={onClick10}>KRW 20,000</ProductPrice>
+                  <DetailButton onClick={onClick10}>자세히</DetailButton>
                 </ProductInfo>
               </ProductItem>
             </ProductList>
-          </LeftContent>
+          </LeftContent> 
           <RightContent>
-            <img src={modelImage1} alt="Model with white headwrap" />
+          <YouTubeEmbed videoId="cGBoGj7TJdc" />
             <ProfileSection>
               <ProfileHeader>
-                <ProfilePicture>
-                  <img src={profileImage} alt="RISABAE Profile" />
+                <ProfilePicture><a href='https://www.instagram.com/leojmakeup/?hl=ko' target='/blank'>
+                  <img src={profileImage[2]} alt="leoj Profile" />
+                  </a>
                 </ProfilePicture>
-                <ProfileName>RISABAE</ProfileName>
-                <ProfileSocial>@risabae_art</ProfileSocial>
+                <ProfileDetail>
+                  <ProfileName><a href='https://www.instagram.com/leojmakeup/?hl=ko' target='/blank'>LeoJ Makeup</a></ProfileName>
+                  <ProfileSocial><a href='https://www.instagram.com/leojmakeup/?hl=ko' target='/blank'><a href="http://instagram.com/risabae_art/" target="_blank" >  <img
+      src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+      alt="Instagram"
+      style={{ width: '10px', height: '10px', marginRight: '4px' }}
+    />instagram.com/leojmakeup</a></a></ProfileSocial>
+              </ProfileDetail>
               </ProfileHeader>
               <CampaignTitle>FADE OUT, LOOK CLEAR</CampaignTitle>
               <ProfileDescription>
-                오랜 연구 끝에 완성한 이사배 X 집닷컴 콜라보레이션 상품을 만나보세요. 
-                프로페셔널 메이크업 아티스트로서 선보이는 특별한 제품들과 함께 
-                당신만의 스타일을 완성하세요. 
-                <a href="#"> @risabae_official</a> 에서 더 많은 정보를 확인하실 수 있습니다.
+              투쿨포스쿨 픽싱 누드핏 쿠션
+“얇게, 하지만 완벽하게. 하루 종일 무너짐 없이.”
+메이크업 아티스트이자 뷰티 인플루언서 레오제이가 직접 제작에 참여한 쿠션. 누구보다 피부 표현에 진심인 그가 선택한 픽싱력, 밀착력, 커버력을 모두 갖춘 베이스의 완성.
               </ProfileDescription>
             </ProfileSection>
           </RightContent>

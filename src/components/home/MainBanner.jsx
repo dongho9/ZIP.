@@ -51,12 +51,14 @@ const ImgSection = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
   }
   .swiper {
     width: 100%;
     height: 100%;
     position: relative;
-    background: #000;
+    z-index: 0;
+    /* background: #000; */
 
     .swiper-wrapper {
       .swiper-slide {
@@ -75,8 +77,8 @@ const ImgSection = styled.div`
             left: 0;
             top: 0;
             position: absolute;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2;
+            /* background: rgba(0, 0, 0, 0.5); */
+            z-index: 1;
           }
         }
       }
@@ -108,6 +110,16 @@ const ImgSection = styled.div`
   }
 
   @media screen and (max-width: 1024px) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
     height: 100vh;
     grid-column: span 17;
     h4 {
@@ -124,19 +136,17 @@ const ImgSection = styled.div`
       line-height: 5.4rem;
       font-family: "EHNormalTrial";
       letter-spacing: -2px;
+      z-index: 2;
     }
   }
 `;
 const InfoSection = styled.div`
   padding: 0 8%;
-  /* padding-bottom: 8%; */
   padding-bottom: 50px;
-  /* padding: 10% 8%; */
   grid-column: span 9;
   display: flex;
   flex-direction: column;
   justify-content: end;
-  /* justify-content: center; */
   h4 {
     font-weight: 600;
     font-size: 9rem;
