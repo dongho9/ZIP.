@@ -129,19 +129,21 @@ const ImgSection = styled.div`
 `;
 const InfoSection = styled.div`
   padding: 0 8%;
-  padding-bottom: 8%;
+  /* padding-bottom: 8%; */
+  padding-bottom: 50px;
   /* padding: 10% 8%; */
   grid-column: span 9;
   display: flex;
   flex-direction: column;
   justify-content: end;
+  /* justify-content: center; */
   h4 {
     font-weight: 600;
-    font-size: 10rem;
-    line-height: 10.2rem;
+    font-size: 9rem;
+    line-height: 9.4rem;
     letter-spacing: -5px;
     b {
-      font-size: 10.6rem;
+      font-size: 9.6rem;
       font-family: "EHNormalTrial";
       font-weight: 500;
     }
