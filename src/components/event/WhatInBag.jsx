@@ -200,7 +200,8 @@ const Bundles = styled.div`
 `;
 
 const Picture = styled.div`
-  width: 100%;
+  width: 250px;
+  height: 250px;
   border: 1px solid #000;
   cursor: pointer;
   img {
@@ -322,8 +323,8 @@ const Circle = styled.div`
 const ContentTitle = styled.div`
   font-size: 2rem;
   font-weight: 700;
-  color: #ace0ff;
-  margin-bottom: 5px;
+  color: var(--event-color);
+  margin-bottom: 20px;
   @media screen and (max-width: 1024px) {
     font-size: 1.7rem;
     font-weight: 600;
@@ -389,6 +390,7 @@ const tattooData = [
     content1: "GUCCI BELT",
     content2: "LIB BALM",
     content3: "SHAVER",
+    videoId: "YNYsnknpuig"
   },
   {
     title: "EVERYDAY TOTEM:",
@@ -401,6 +403,7 @@ const tattooData = [
     content1: "TAMBURINS PERFUME",
     content2: "BURBERRY WALLET",
     content3: "LAKA LIB",
+    videoId: "pFVSsNlL2kQ"
   },
   {
     title: "EVERYDAY TOTEM:",
@@ -413,10 +416,22 @@ const tattooData = [
     content1: "PRADA BAG",
     content2: "SOLGA VITAMINE",
     content3: "SALVATORE PERFUME",
+    videoId: "tfabmoB__24"
   },
 ];
 
 const WhatInBag = ({ bundleRefs }) => {
+  const YouTubeEmbed = ({ videoId }) => (
+    <iframe
+      width="100%"
+      height="100%"
+      src={`https://www.youtube.com/embed/${videoId}`}
+      title="YouTube video"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  );
   return (
     <>
       <TattooContents>
@@ -431,12 +446,7 @@ const WhatInBag = ({ bundleRefs }) => {
               </VideoTop>
               <VideosContents>
                 <VideoContent>
-                  <video
-                    src="/public/videos/일반비_플러스 메인 상단_V2_저용량 버전.mp4"
-                    autoPlay
-                    loop
-                  ></video>
-                  {/* <video src={item.videoSrc} autoPlay loop muted /> */}
+                  <YouTubeEmbed videoId={item.videoId} />
                 </VideoContent>
                 <CommerceContent>
                   <Content>

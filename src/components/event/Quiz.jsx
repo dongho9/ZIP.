@@ -86,9 +86,11 @@ const Question = styled.div`
     padding: 40px 30px;
   }
   @media screen and (max-width: 600px) {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    padding: 40px 20px;
   }
   @media screen and (max-width: 480px) {
+        /* font-size: 2.5rem; */
     padding: 40px 20px;
   }
   @media screen and (max-width: 402px) {
@@ -160,6 +162,9 @@ const Title = styled.div`
     /* justify-content: center; */
     /* padding: 80px 0 0; */
   }
+  @media screen and (max-width: 767px) {
+    font-size: 2.2rem;
+  }
   @media screen and (max-width: 600px) {
     font-size: 1.5rem;
   }
@@ -216,8 +221,8 @@ const Picture = styled.div`
       scale: 1.05;
     }
     @media screen and (max-width: 1530px) {
-      width: 110%;
-      height: 110%;
+      width: 100%;
+      height: 100%;
     }
     @media screen and (max-width: 1300px) {
       width: 100%;
@@ -321,22 +326,28 @@ const EventButton = styled.div`
 
 const CheckIcon = styled.span`
   position: absolute;
-  font-size: 3rem;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
   z-index: 10;
   display: flex;
   justify-content: flex-start;
-  transform: translateY(-40px);
+  transform: translate(-10px,-50px);
   @media screen and (max-width: 1300px) {
-    transform: translateY(-25px);
-    font-size: 2rem;
+    transform: translate(-10px,-35px);
+    /* font-size: 2rem; */
+    width: 40px;
+    height: 40px;
   }
   @media screen and (max-width: 767px) {
-    transform: translate(-3px, -20px);
-    font-size: 1.2rem;
+    transform: translate(-6px, -25px);
+    width: 25px;
+    height: 25px;
   }
   @media screen and (max-width: 600px) {
-    transform: translate(-2px, -11px);
-    font-size: 0.8rem;
+    transform: translate(-4px, -15px);
+    width: 16px;
+    height: 16px;
   }
 `;
 
@@ -416,7 +427,7 @@ const Quiz = () => {
                     <EachName onClick={() => handleOptionClick(index, 0)}>
                       {item.name1}{" "}
                       {selectedOptions[index] === 0 && (
-                        <CheckIcon>✔️</CheckIcon>
+                        <CheckIcon><img src="/src/imgs/event/check.png" alt="check" /></CheckIcon>
                       )}
                     </EachName>
                     <Picture onClick={() => handleOptionClick(index, 0)}>
@@ -427,7 +438,7 @@ const Quiz = () => {
                     <EachName onClick={() => handleOptionClick(index, 1)}>
                       {item.name2}{" "}
                       {selectedOptions[index] === 1 && (
-                        <CheckIcon>✔️</CheckIcon>
+                        <CheckIcon><img src="/src/imgs/event/check.png" alt="check" /></CheckIcon>
                       )}
                     </EachName>
                     <Picture onClick={() => handleOptionClick(index, 1)}>
@@ -440,7 +451,7 @@ const Quiz = () => {
                     <EachName onClick={() => handleOptionClick(index, 2)}>
                       {item.name3}{" "}
                       {selectedOptions[index] === 2 && (
-                        <CheckIcon>✔️</CheckIcon>
+                        <CheckIcon><img src="/src/imgs/event/check.png" alt="check" /></CheckIcon>
                       )}
                     </EachName>
                     <Picture onClick={() => handleOptionClick(index, 2)}>
@@ -451,7 +462,7 @@ const Quiz = () => {
                     <EachName onClick={() => handleOptionClick(index, 3)}>
                       {item.name4}{" "}
                       {selectedOptions[index] === 3 && (
-                        <CheckIcon>✔️</CheckIcon>
+                        <CheckIcon><img src="/src/imgs/event/check.png" alt="check" /></CheckIcon>
                       )}
                     </EachName>
                     <Picture onClick={() => handleOptionClick(index, 3)}>
@@ -464,7 +475,7 @@ const Quiz = () => {
           </AllBox>
         </React.Fragment>
       ))}
-      <EventButton onClick={() => alert("이벤트에 참여해주셔서 감사합니다!")}>
+      <EventButton onClick={() => alert("이벤트에 참여해주셔서 감사합니다! 당첨결과는 8월 15일 카톡으로 알려드립니다")}>
         이벤트 참여하기
       </EventButton>
     </Container>

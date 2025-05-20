@@ -7055,6 +7055,186 @@
           "description": "코오롱스포츠의 시그니처 아이템으로, 당일 산행에 최적화도니 32L 티어드롭형 백팩입니다. 솔리드 조직의 소재를 사용하여 표면이 균일하고 매끄러운 느낌을 줍니다. 5-10시간 사이의 하이킹이나 여행용으로 적합한 백팩입니다."
         }
       ]
+    },
+    {
+      "id": 71,
+      "artistName": "박재범",
+      "artistImg": "https://img.vogue.co.kr/vogue/2015/11/style_56448505de349.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://www.youtube.com/watch?v=YNYsnknpuig",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "구찌 벨트",
+          "brand": "구찌",
+          "brandEng": "Gucci",
+          "price": 880000,
+          "releasedDate": 20220714,
+          "sellNum": 901,
+          "detailImg": {
+            "img01": "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1581090304/627055_CAO2T_1062_001_100_0000_Light.jpg",
+            "img02": "https://contents.lotteon.com/itemimage/20231214111905/LO/18/03/72/43/12/_1/80/37/24/31/3/LO1803724312_1803724313_1.jpg/dims/optimize/dims/resizemc/400x400",
+            "img03": "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1623259804/414516_AP00T_1000_008_100_0000_Light-GG.jpg"
+          },
+          "description": "리버서블 레더 벨트. 텍스처 레더, 더블 G 버클 및 구찌의 1970년대 디자인 아카이브에서 영감을 받은 메탈 장식."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "beaty",
+          "keyword": "face",
+          "itemName": "찹스틱 립밤",
+          "brand": "찹스틱",
+          "brandEng": "Chapstick",
+          "price": 3500,
+          "releasedDate": 20230111,
+          "sellNum": 902,
+          "detailImg": {
+            "img01": "https://cdn.011st.com/11dims/resize/400x400/quality/75/11src/asin/B07D2KBXPJ/B.jpg?1636383592974",
+            "img02": "https://kr.canada-pharmaci.com/image/cache/catalog/products/Chapstick-_-_-_015oz4g-600x600.jpg",
+            "img03": "https://i.ebayimg.com/00/s/MTAwMFgxMDAw/z/-i0AAOSw9GhbTyUF/$_57.JPG?set_id=8800005007"
+          },
+          "description": "이 챕스틱 클래식 스피어민트, 체리, 스트로베리 립밤 튜브 버라이어티 팩은 섬세한 입술에 보습을 선사하며 세 가지 맛으로 모든 바를 즐겁게 만듭니다."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "beaty",
+          "keyword": "face",
+          "itemName": "브라운 쉐이버",
+          "brand": "브라운",
+          "brandEng": "braun",
+          "price": 192000,
+          "releasedDate": 20230824,
+          "sellNum": 903,
+          "detailImg": {
+            "img01": "https://hnsgsfp.imgix.net/9/images/detailed/97/braun-series-6-61-b1500s-wet-and-dry-shaver-fgb10-108.jpg?fit=fill&bg=0FFF&w=2500&h=1463&auto=format,compress",
+            "img02": "https://smartbuy-me.com/cdn/shop/files/ITS0637ST0147.jpg?v=1726910022",
+            "img03": "https://cdn11.bigcommerce.com/s-61qnoipi5/content/img/electricShavers/m_Braun_Category-ElectricShavers_Hero_ManShaving.jpg"
+          },
+          "description": "이 챕스틱 클래식 스피어민트, 체리, 스트로베리 립밤 튜브 버라이어티 팩은 섬세한 입술에 보습을 선사하며 세 가지 맛으로 모든 바를 즐겁게 만듭니다."
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "artistName": "모니카",
+      "artistImg": "https://img.vogue.co.kr/vogue/2022/10/style_635246ef95602.jpg",
+      "jobCategory": "musician",
+      "videoURL": "https://www.youtube.com/watch?v=pFVSsNlL2kQ",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "템버린즈 카모 향수",
+          "brand": "템버린즈",
+          "brandEng": "tamburins",
+          "price": 149000,
+          "releasedDate": 20240214,
+          "sellNum": 1001,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/606/966/img/17966606_1.jpg?_v=20230406173500",
+            "img02": "https://web-resource.tamburins.com/catalog/product/1662463206/0c336d2b-2655-4c93-9771-d6c9a2cbeaef/thumbnail_50ml_Perfume_Lale.jpg",
+            "img03": "https://cdn.eyesmag.com/content/uploads/sliderImages/2023/06/16/Tamburins-perfumed-hand-wash-1-32642382-e46c-4650-bf0e-a6753dd3041b.jpg"
+          },
+          "description": "꿀처럼 진득하고 달콤한 카모마일과 씁쓸한 클라리세이지의 허브 향이 오묘한 조화를 이루어 중독성 있는 향을 선사합니다. 자칫 차갑게 느껴질 수 있는 촉촉한 이끼의 느낌을 우아하고 부드러운 나무결의 블론드 우드와 따뜻한 머스크로 감싸주어 당신의 지친 마음에 특별하고 작은 위안을 선물합니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "style",
+          "keyword": "acc",
+          "itemName": "버버리 반지갑 스몰 체크 바이폴드 지갑",
+          "brand": "버버리",
+          "brandEng": "burberry",
+          "price": 764500,
+          "releasedDate": 20230721,
+          "sellNum": 1002,
+          "detailImg": {
+            "img01": "https://cdn.011st.com/11dims/resize/400x400/quality/75/11src/asin/B07D2KBXPJ/B.jpg?1636383592974",
+            "img02": "https://before-images-item.croketglobal.net/item/thumbnail/087b0d145535a6051ceb8a14b5168ee1.webp",
+            "img03": "https://before-images-item.croketglobal.net/item/thumbnail/773fb13cf7f57095fb6b826cc2c4794b.webp"
+          },
+          "description": "버버리 체크와 스무드 송아지 가죽 소재의안감이 돋보이는 지갑. 스냅 단추 디테일,다수의 카드 수납칸 및 지퍼 포켓이 특징."
+        },
+        {
+          "productId": 3,
+          "mainCategory": "beaty",
+          "keyword": "face",
+          "itemName": "라카 본딩 글로우 립스틱",
+          "brand": "라카",
+          "brandEng": "laka",
+          "price": 14400,
+          "releasedDate": 20230520,
+          "sellNum": 1003,
+          "detailImg": {
+            "img01": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0018/A00000018603002ko.jpg?qt=80",
+            "img02": "https://cdn.lcnews.co.kr/news/photo/202310/62192_68915_935.jpg",
+            "img03": "https://img.hankyung.com/photo/202402/01.35866981.1.jpg"
+          },
+          "description": "자연스러운 누드 컬러부터, 선명한 포인트 컬러까지, 다채롭게 펼쳐지는 컬러 스펙트럼"
+        }
+      ]
+    },
+    {
+      "id":73,
+      "artistName": "PH-1",
+      "artistImg": "https://cdn.topstarnews.net/news/photo/201903/606562_292357_4145.png",
+      "jobCategory": "musician",
+      "videoURL": "https://www.youtube.com/watch?v=tfabmoB__24",
+      "products": [
+        {
+          "productId": 1,
+          "mainCategory": "style",
+          "keyword": "styling",
+          "itemName": "프라다 나일론 크로스백",
+          "brand": "프라다",
+          "brandEng": "prada",
+          "price": 2338200,
+          "releasedDate": 20230110,
+          "sellNum": 1101,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/342/840/img/17840342_1.jpg?shrink=360:360&_v=20241220101820",
+            "img02": "https://i.balaan.io/images/b7/b726d9/b726d93e61b789f5637a66a7f11a402c2c6b2a4324fe8ab6075dcc6f159ff2b3.jpg",
+            "img03": "https://cdn.mariooutlet.com/Product/A0333/A7X/P001426502_d1.jpg?RS=520&CS=-1X1000&CG=2"
+          },
+          "description": "나일론으로 만들어진 프라다 크로스백으로, 편하게 걸치기 매우 좋은 가방입니다."
+        },
+        {
+          "productId": 2,
+          "mainCategory": "beaty",
+          "keyword": "food",
+          "itemName": "솔가 비타민d 3",
+          "brand": "솔가",
+          "brandEng": "solga",
+          "price": 25900,
+          "releasedDate": 20220411,
+          "sellNum": 1102,
+          "detailImg": {
+            "img01": "https://img.danawa.com/prod_img/500000/681/648/img/3648681_1.jpg?_v=20200624161154",
+            "img02": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtUlkjL_BPBIFDWk76UtCxWKg54a2q0Ziulw&s",
+            "img03": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdUydXceTkB30WWUhzoAdtbyhdb1PsDWRXaw&s"
+          },
+          "description": "체내 활성도 및 흡수율이 높은 비타민 d, 솔가 비타민d 3를 추천드립니다"
+        },
+        {
+          "productId": 3,
+          "mainCategory": "style",
+          "keyword": "perfume",
+          "itemName": "살바토레 페레가모 향수",
+          "brand": "살바토레",
+          "brandEng": "salvatore",
+          "price": 119000,
+          "releasedDate": 20220401,
+          "sellNum": 1103,
+          "detailImg": {
+            "img01": "https://m.media-amazon.com/images/I/81gXYdfPu6L.jpg",
+            "img02": "https://gdimg.gmarket.co.kr/4212388206/still/280?ver=1739025896", 
+            "img03": "https://mblogthumb-phinf.pstatic.net/20140714_76/arame07_1405348116215vtGvF_JPEG/%C7%CF%C0%CC%C4%DA%BD%BA_%BE%C6%C4%ED%BE%C6_%BF%A1%BC%BE%BC%C8_%BA%ED%B7%E7_AD.jpg?type=w420"
+          },
+          "description": "심플하면서도, 기하학적인 외관은 숨길 수 없는 우아함과 순수한 모습을 표현하며,센슈얼함과 프레쉬함으로 센스와 기품을 갖춘 품격있는 남성에게 어울리는 향수입니다."
+        }
+      ]
     }
   ]
 }

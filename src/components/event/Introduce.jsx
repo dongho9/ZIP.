@@ -386,7 +386,7 @@ const tattooData = [
       '"그의 타투는 자유에 대한 선언이었다." 몸에 새기는 건, 지워지지 않는 말. 그는 아무 말도 하지 않아도, 이미 수많은 문장을 새겼다. 타투는 그에게 반항이 아니라 해방이었고, 스타일이 아니라 생존의 증명이었다. 박재범의 몸은, 그가 살아온 기록이다."',
     tags: ["GQ KOREA", "박재범", "JAY PARK", "사자", "치카노"],
     button: "지금, 그의 가방 속까지 들여다보고 싶다면",
-    // videoSrc: '/videos/일반비_플러스 메인 상단_V2_저용량 버전.mp4',
+    videoId: "sWHCnmBAMjc"
   },
   {
     title: "TATTOOED THOUGHTS:",
@@ -395,7 +395,7 @@ const tattooData = [
       '"그녀의 타투는 말보다 강했다."  단 한 번의 동작,  단 한 줄의 문장. 모니카는 침묵으로 말하고,  몸 위에 의지를 새긴다. 그녀의 타투는 장식이 아닌 다짐이다. 모든 움직임엔 이유가 있고, 그녀의 타투엔 철학이 있다.',
     tags: ["GQ KOREA", "모니카", "MONIKA", "TATTOO", "사슴"],
     button: "지금, 그의 가방 속까지 들여다보고 싶다면",
-    // videoSrc: '/videos/일반비_플러스 메인 상단_V2_저용량 버전.mp4',
+    videoId: "VMf52LL18Ts"
   },
   {
     title: "TATTOOED THOUGHTS:",
@@ -404,18 +404,22 @@ const tattooData = [
       '"그의 타투는 흐름 위에 새긴 방향이었다." 겉으로는 가볍고 편안하지만, 그는 언제나 선을 알고 있었다. PH-1의 타투는 멋이 아니라 스스로를 잃지 않기 위한 표식. 흔들리지 않기 위해 그는 몸 위에 흐름을 새겼다.',
     tags: ["GQ KOREA", "ph-1", "박준원", "낙서타투", "태극기"],
     button: "지금, 그의 가방 속까지 들여다보고 싶다면",
-    // videoSrc: '/videos/일반비_플러스 메인 상단_V2_저용량 버전.mp4',
+    videoId: "-RSp0fyjsx4"
   },
 ];
 
 const Introduce = ({ bundleRefs }) => {
-  // const handleScrollClick = (index) => {
-  //   const targetRef = bundleRefs[index];
-  //   if (targetRef?.current) {
-  //     targetRef.current.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
-
+  const YouTubeEmbed = ({ videoId }) => (
+    <iframe
+      width="100%"
+      height="100%"
+      src={`https://www.youtube.com/embed/${videoId}`}
+      title="YouTube video"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  );
   const handleScrollTo = (index) => {
     const target = bundleRefs[index]?.current;
     if (target) {
@@ -465,11 +469,7 @@ const Introduce = ({ bundleRefs }) => {
                     </Content>
                   </LeftContent>
                   <RightContent>
-                    <video
-                      src="/public/videos/일반비_플러스 메인 상단_V2_저용량 버전.mp4"
-                      autoPlay
-                      loop
-                    ></video>
+                  <YouTubeEmbed videoId={item.videoId}/>
                   </RightContent>
                 </AllContent>
               </VideosContent>
