@@ -51,10 +51,6 @@ const Form = styled.form`
     width: 100%;
     padding: 0 3%;
   }
-  /* @media screen and (max-width: 402px) {
-    width: 100%;
-    padding: 0 20%;
-  } */
 `;
 
 const Inner = styled.div`
@@ -78,7 +74,6 @@ const Inner = styled.div`
 
 const Input = styled.input`
   width: 100%;
-  /* font-size: 1.8rem; */
   border: 1px solid var(--border-color);
   padding: 20px 20px;
   &::placeholder {

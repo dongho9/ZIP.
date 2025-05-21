@@ -54,7 +54,6 @@ const Input = styled.input`
   width: 100%;
   border: 1px solid var(--border-color);
   color: var(--border-color);
-  /* padding: 24px 20px; */
   padding: 24px 20px;
   transition: all 0.3s;
   &::placeholder {
@@ -74,33 +73,11 @@ const Input = styled.input`
   }
 `;
 
-const InputGroup = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-`;
-
 const Group = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 5px;
-`;
-
-const Select = styled.select`
-  /* font-size: 1.8rem; */
-  padding: 24px 0;
-  border: 1px solid var(--border-color);
-  cursor: pointer;
-  &:focus {
-    outline: none;
-    border: 1px solid var(--dark-color);
-  }
-  @media screen and (max-width: 428px) {
-    padding: 20px 0;
-  }
 `;
 
 const Btn = styled.button`
@@ -225,25 +202,6 @@ const Signup = () => {
           <Error>{errors.confirmPassword.message}</Error>
         )}
         <Address register={register} setValue={setValue} />
-        {/* <InputGroup>
-          <Input
-            type="text"
-            placeholder="이메일 *"
-            {...register("email", {
-              required: "이메일을 입력해주세요.",
-            })}
-          />
-          <span>@</span>
-          <Select name="" id="">
-            <option value="" selected disabled>
-              선택
-            </option>
-            <option value="naver.com">naver.com</option>
-            <option value="gmail.com">gmail.com</option>
-            <option value="hanmail.net">hanmail.net</option>
-            <option value="nate.com">nate.com</option>
-          </Select>
-        </InputGroup> */}
         <Input
           id="email"
           type="email"

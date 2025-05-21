@@ -255,7 +255,7 @@ const MainBanner = () => {
   return (
     <Container>
       <SideSection>
-        <img src="/src/imgs/home/vertical.png" alt="사이드 영역 이미지" />
+        <img src="/img/vertical.png" alt="사이드 영역 이미지" />
       </SideSection>
       <ImgSection>
         <Swiper
