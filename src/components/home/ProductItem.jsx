@@ -115,9 +115,6 @@ const Prod_price = styled.span`
     margin-top: 2px;
     font-size: 1.2rem;
   }
-
-  @media screen and (max-width: 767px) {
-  }
 `;
 const FilterItemPick = styled.span`
   display: inline-block;
@@ -132,7 +129,6 @@ const FilterItemPick = styled.span`
   position: absolute;
   right: 0;
   top: 0;
-  /* border: 1px solid #f00; */
 `;
 
 /*--- 출력 ---*/
@@ -146,11 +142,7 @@ const ProductItem = ({ img, subtitle, name, price, artistName, detailURL }) => {
           {artistName} <br />
           PICK
         </FilterItemPick>
-        <img
-          src={img}
-          alt="{img} 제품"
-          onClick={() => navigate(`/detail/${detailURL}`)}
-        />
+        <img src={img} alt="{img} 제품" onClick={() => navigate(`/detail/${detailURL}`)} />
       </ProductImg>
       <ProductInfo onClick={() => navigate(`/detail/${detailURL}`)}>
         <Prod_sub>{subtitle}</Prod_sub>

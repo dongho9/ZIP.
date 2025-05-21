@@ -7,17 +7,12 @@ const Container = styled.div`
   width: 100%;
   background: var(--light-color);
   color: var(--dark-color);
-  /* margin-bottom: 100px; */
 `;
 const Wrapper = styled.div`
   width: 100%;
   margin-top: 100px;
   @media screen and (max-width: 1024px) {
     margin-top: 50px;
-    /* margin: 80px 0; */
-  }
-  @media screen and (max-width: 767px) {
-    /* margin: 50px 0; */
   }
 `;
 const Item = styled.section`
@@ -79,14 +74,6 @@ const AccordionCard = styled.div`
   width: 100%;
   padding: 0 10%;
   margin: 50px 0;
-
-  @media screen and (max-width: 1024px) {
-    /* padding: 0% 14%; */
-    /* margin: 0; */
-    /* br {
-      display: none;
-    } */
-  }
 `;
 const CardTitle = styled.div`
   display: flex;

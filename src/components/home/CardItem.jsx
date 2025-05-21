@@ -118,7 +118,6 @@ const CardItem = ({ subtitle, title, img, detailURL }) => {
       <CardItemInfo>
         <span>{subtitle}</span>
         <p>
-          {" "}
           {title.split("\n").map((line, index) => (
             <React.Fragment key={index}>
               {line}

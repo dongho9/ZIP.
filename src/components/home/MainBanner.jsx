@@ -1,14 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 /*--- 스와이퍼 라이브러리 ---*/
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Autoplay, EffectFade, Pagination, Navigation, Parallax } from "swiper/modules";
-import styled, { keyframes } from "styled-components";
-
-/*--- 애니메이션 ---*/
+import { Autoplay, Pagination, Navigation, Parallax } from "swiper/modules";
 
 /*--- 스타일 ---*/
 const Container = styled.div`
@@ -58,29 +56,12 @@ const ImgSection = styled.div`
     height: 100%;
     position: relative;
     z-index: 0;
-    /* background: #000; */
-
     .swiper-wrapper {
       .swiper-slide {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-
-        background: rgba($color: #000000, $alpha: 0.5);
-
         cursor: pointer;
-        img {
-          &::after {
-            content: "";
-            width: 100%;
-            height: 100vh;
-            left: 0;
-            top: 0;
-            position: absolute;
-            /* background: rgba(0, 0, 0, 0.5); */
-            z-index: 1;
-          }
-        }
       }
     }
   }
@@ -95,6 +76,7 @@ const ImgSection = styled.div`
     padding: 8px 20px;
     border-radius: 20px;
     font-size: 1.4rem;
+    z-index: 3;
     font-family: "Pretendard";
   }
   h4 {
@@ -107,24 +89,34 @@ const ImgSection = styled.div`
     line-height: 6.8rem;
     font-family: "EHNormalTrial";
     letter-spacing: -2px;
+    z-index: 2;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    opacity: 0;
   }
 
   @media screen and (max-width: 1024px) {
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 1;
-    }
     height: 100vh;
     grid-column: span 17;
+    .overlay {
+      opacity: 1;
+    }
     h4 {
       opacity: 1;
-      width: 100%;
+      z-index: 2;
+      position: absolute;
+      font-size: 7rem;
+      line-height: 7.8rem;
+    }
+    .swiper-pagination {
+      z-index: 3;
     }
   }
   @media screen and (max-width: 767px) {
@@ -297,13 +289,12 @@ const MainBanner = () => {
         >
           {mainData.map((slide, index) => (
             <SwiperSlide key={index} onClick={() => useNavigate(slide.url)}>
-              <div>
-                <h4>
-                  {slide.title}
-                  <br />
-                  리얼템을 <b> ZIP.</b>
-                </h4>
-              </div>
+              <div className="overlay"></div>
+              <h4>
+                {slide.title}
+                <br />
+                리얼템을 <b> ZIP.</b>
+              </h4>
               <img src={slide.image} alt="" />
             </SwiperSlide>
           ))}
