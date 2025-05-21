@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 
 const ImgWrapper = styled.div`
   width: 100%;
@@ -9,12 +10,27 @@ const ImgWrapper = styled.div`
     height: 100%;
     object-fit: cover;
   }
+  @media screen and (max-width: 402px) {
+
+  }
 `;
 
 const EventBanner = () => {
+  const [imgUrl, setImgUrl] = useState("http://localhost:5173/src/imgs/event/tattoo-PC.png")
+  useEffect(() => {
+    const handleResize = () => {
+      if(window.innerWidth <  767){
+      setImgUrl("http://localhost:5173/src/imgs/event/tattoo-MO.png");
+      }else {
+        setImgUrl("http://localhost:5173/src/imgs/event/tattoo-PC.png");
+      }
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+  },[])
   return (
     <ImgWrapper>
-      <img src="/src/imgs/event/tattoo-PC.png" alt="eventbanner" />
+      <img src={imgUrl} alt="eventbanner" />
     </ImgWrapper>
   );
 };

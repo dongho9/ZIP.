@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { forwardRef } from "react";
+import React from "react";
 import guccibelt from "../../imgs/event/guccibelt.webp";
 import chapsticklib from "../../imgs/event/chapsticklib.avif";
 import shaver from "../../imgs/event/shaver.jpg";
@@ -9,6 +9,7 @@ import tamburinsperfume from "../../imgs/event/tamburinsperfume.jpg";
 import pradabag from "../../imgs/event/pradabag.avif";
 import salvatoreferragamo from "../../imgs/event/salvatoreferragamo.png";
 import solgavitamin from "../../imgs/event/solgavitamin.png";
+import { useNavigate } from "react-router-dom";
 
 const TattooContents = styled.div`
   width: 100%;
@@ -106,6 +107,7 @@ const VideoContent = styled.div`
   border-radius: 0 0 0 20px;
   cursor: pointer;
   background: var(--border-color);
+  
 
   video {
     transition: all 1s;
@@ -130,7 +132,11 @@ const VideoContent = styled.div`
 
   @media screen and (max-width: 1024px) {
     width: 100%;
-    height: auto;
+    height: 500px;
+  }
+  @media screen and (max-width: 402px) {
+    width: 100%;
+    height: 300px;
   }
 `;
 
@@ -194,40 +200,65 @@ const Bundles = styled.div`
   }
 
   @media screen and (max-width: 767px) {
-    /* flex-direction: column; */
     gap: 24px;
   }
 `;
 
 const Picture = styled.div`
-  width: 250px;
-  height: 250px;
-  border: 1px solid #000;
+    width: 250px;
+    height: 250px;
+  aspect-ratio: 1 / 1;
   cursor: pointer;
+  overflow: hidden;
+  display: inline-block;
+  object-fit: cover;
+
+
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width:100%;
+    object-fit: cover; 
+    display: inline-block;
   }
-  /* @media screen and (max-width: 1782px) {
+  @media screen and (max-width: 1800px) {
+    width: 200px;
+  }
+
+  @media screen and (max-width: 1560px) {
+    width: 180px;
+    height: 180px;
+  } 
+  @media screen and (max-width: 1250px) {
+    width: 160px;
+    height: 160px;
+  } 
+  @media screen and (max-width: 1150px) {
+    width: 130px;
+    height: 130px;
+  } 
+
+  @media screen and (max-width: 1025px) {
+    width: 100%;
+    height: 250px;
+  } 
+
+  @media screen and (max-width: 970px) {
     width: 200px;
     height: 200px;
-  } */
+  }
 
-  /* @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 810px) {
     width: 150px;
     height: 150px;
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 640px) {
     width: 120px;
     height: 120px;
-  }
-
-  @media screen and (max-width: 402px) {
-    width: 100px;
-    height: 100px;
-  } */
+  } 
+  @media screen and (max-width: 550px) {
+    width: 80px;
+    height: 80px;
+  } 
 `;
 
 const Pick = styled.div`
@@ -266,25 +297,6 @@ const Goods = styled.div`
   }
 `;
 
-// const TattooContents = styled.div`
-// width: 100%;
-// display: flex;
-// flex-direction: column;
-// gap: 64px;
-// padding:  200px 210px;
-// @media screen and (max-width:1024px){
-//   padding:  200px 50px;
-// }
-// `
-
-// const TattooTittle = styled.div`
-// width: 100%;
-// height: 42px;
-//   font-size: 5rem;
-//   @media screen and (max-width:1024px){
-//     font-size: 4rem;
-// }
-// `
 const TattooVideos = styled.div`
   width: 100%;
   height: 100%;
@@ -294,18 +306,6 @@ const TattooVideos = styled.div`
   }
 `;
 
-// const VideoTop = styled.div`
-//   width: 100%;
-//   height: 40px;
-//   display: flex;
-//   align-items: center;
-//   border-radius: 20px 20px 0 0;
-//   background: var(--event-color);
-//   gap: 10px;
-//   @media screen and (max-width:1024px){
-//     height: 35px;
-// }
-// `
 
 const Circle = styled.div`
   width: 12px;
@@ -333,27 +333,23 @@ const ContentTitle = styled.div`
 `;
 
 const Content = styled.div`
-  /* position: absolute; */
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
   padding: 6%;
   @media screen and (max-width: 1024px) {
   }
 `;
 
 const Line = styled.div`
-  /* width: 240px; */
-  border: 1px solid #000;
+  border: 1px solid var(--dark-color);
   @media screen and (max-width: 1024px) {
   }
 `;
 
 const Bundle = styled.div`
-  /* border: 1px solid #f00; */
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -361,14 +357,7 @@ const Bundle = styled.div`
   }
 `;
 
-// const Bundles = styled.div`
-// display: flex;
-// gap: 30px;
-// /* flex-direction: column; */
-// @media screen and (max-width:1024px){
 
-// }
-// `
 
 const DetailBundle = styled.div`
   display: flex;
@@ -377,6 +366,7 @@ const DetailBundle = styled.div`
   @media screen and (max-width: 1024px) {
   }
 `;
+
 
 const tattooData = [
   {
@@ -387,10 +377,10 @@ const tattooData = [
     picture2: chapsticklib,
     picture3: shaver,
     pick: "JAYPARK PICK",
-    content1: "GUCCI BELT",
-    content2: "LIB BALM",
-    content3: "SHAVER",
-    videoId: "YNYsnknpuig"
+    content1: "구찌 벨트",
+    content2: "찹스틱 립밤",
+    content3: "브라운 쉐이버",
+    videoId: "YNYsnknpuig",
   },
   {
     title: "EVERYDAY TOTEM:",
@@ -400,9 +390,9 @@ const tattooData = [
     picture2: burberrywallet,
     picture3: lakalib,
     pick: "MORNIKA PICK",
-    content1: "TAMBURINS PERFUME",
-    content2: "BURBERRY WALLET",
-    content3: "LAKA LIB",
+    content1: "템버린즈 카모 향수",
+    content2: "버버리 반지갑 스몰 체크 바이폴드 지갑",
+    content3: "라카 본딩 글로우 립스틱",
     videoId: "pFVSsNlL2kQ"
   },
   {
@@ -413,24 +403,23 @@ const tattooData = [
     picture2: solgavitamin,
     picture3: salvatoreferragamo,
     pick: "PH-1 PICK",
-    content1: "PRADA BAG",
-    content2: "SOLGA VITAMINE",
-    content3: "SALVATORE PERFUME",
+    content1: "프라다 나일론 크로스백",
+    content2: "솔가 비타민d 3",
+    content3: "살바토레 페레가모 향수",
     videoId: "tfabmoB__24"
   },
 ];
 
 const WhatInBag = ({ bundleRefs }) => {
+  const navigate = useNavigate();
   const YouTubeEmbed = ({ videoId }) => (
-    <iframe
-      width="100%"
-      height="100%"
-      src={`https://www.youtube.com/embed/${videoId}`}
-      title="YouTube video"
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    />
+      <iframe
+        width="100%"
+        height="100%"
+        src={`https://www.youtube.com/embed/${videoId}`}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;  block;"
+        allowFullScreen
+      />
   );
   return (
     <>
@@ -454,11 +443,10 @@ const WhatInBag = ({ bundleRefs }) => {
                     <InfluencerName>{item.name}</InfluencerName>
                     <QuoteSection>{item.quote}</QuoteSection>
                     <Bundles>
-                      <Bundle
+                      <Bundle onClick={() => navigate(`/detail/${item.content1}`)}
                         ref={bundleRefs[index]}
-                        style={{ height: "500px" }}
                       >
-                        <Picture>
+                        <Picture >
                           <img src={item.picture1} alt={item} />
                         </Picture>
                         <DetailBundle>
@@ -467,7 +455,7 @@ const WhatInBag = ({ bundleRefs }) => {
                           <Line />
                         </DetailBundle>
                       </Bundle>
-                      <Bundle style={{ height: "500px" }}>
+                      <Bundle onClick={() => navigate(`/detail/${item.content2}`)}>
                         <Picture>
                           <img src={item.picture2} alt={item} />
                         </Picture>
@@ -477,7 +465,7 @@ const WhatInBag = ({ bundleRefs }) => {
                           <Line />
                         </DetailBundle>
                       </Bundle>
-                      <Bundle style={{ height: "500px" }}>
+                      <Bundle onClick={() => navigate(`/detail/${item.content3}`)}>
                         <Picture>
                           <img src={item.picture3} alt={item} />
                         </Picture>

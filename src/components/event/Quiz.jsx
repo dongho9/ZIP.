@@ -33,30 +33,25 @@ const QuizTitle = styled.div`
     color: var(--light-color);
     font-size: 6rem;
     font-weight: bold;
-    /* padding: 10% 0; */
     align-self: flex-start;
   }
   @media screen and (max-width: 1024px) {
     font-size: 5rem;
-    /* padding: 100px 50px; */
   }
   @media screen and (max-width: 600px) {
     font-size: 3rem;
+    padding: 0px 0px 50px;
   }
   @media screen and (max-width: 402px) {
     font-size: 2rem;
-    /* padding: 100px 30px; */
   }
 `;
 
 const BlueBox = styled.div`
-  /* width: 240px; */
-  /* height: 1326px; */
   background: #ace0ff;
   border-radius: 50px 0 0 50px;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   padding: 0 60px;
   @media screen and (max-width: 1300px) {
     padding: 0 15px;
@@ -90,7 +85,6 @@ const Question = styled.div`
     padding: 40px 20px;
   }
   @media screen and (max-width: 480px) {
-        /* font-size: 2.5rem; */
     padding: 40px 20px;
   }
   @media screen and (max-width: 402px) {
@@ -132,23 +126,18 @@ const WhiteBox = styled.div`
 `;
 
 const AllBox = styled.div`
-  /* box-sizing: border-box; */
-  /* width: 100%; */
   height: 100%;
   display: flex;
-  /* justify-content: center; */
   padding-bottom: 100px;
   @media screen and (max-width: 1024px) {
     width: 100%;
     height: 100%;
   }
   @media screen and (max-width: 402px) {
-    /* padding: 0 20px 100px; */
   }
 `;
 
 const Title = styled.div`
-  /* position: absolute; */
   font-weight: bold;
   font-size: 5rem;
   @media screen and (max-width: 1300px) {
@@ -173,7 +162,6 @@ const Title = styled.div`
     font-size: 1.2rem;
     display: flex;
     align-items: center;
-    /* padding: 36px 0 0; */
   }
 `;
 
@@ -196,23 +184,15 @@ const EachName = styled.div`
     font-size: 1rem;
   }
   @media screen and (max-width: 402px) {
-    /* font-size: 1.5rem; */
-    /* line-height: 0.8; */
   }
 `;
 
 const Picture = styled.div`
-  /* aspect-ratio: 1 ; */
   width: 100%;
   object-fit: cover;
   overflow: hidden;
   border-radius: 16%;
-  /* &:last-child{
-    border: 1px solid #f00;
-  } */
   img {
-    /* width: 100%;
-    height: 100%; */
     object-fit: cover;
     border-radius: 10%;
     cursor: pointer;
@@ -244,9 +224,6 @@ const FirstBundle = styled.div`
   display: flex;
   gap: 20%;
   justify-content: center;
-  /* @media screen and (max-width: 1530px) {
-gap: 30%;
-  } */
     @media screen and (max-width: 1024px) {
       gap: 10%;
   } 
@@ -262,7 +239,6 @@ const SecondBundle = styled.div`
 `;
 
 const DetailBundle = styled.div`
-  /* width: 25%; */
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -391,16 +367,10 @@ const quizData = [
 ];
 
 const Quiz = () => {
-  // const [checkedItems, setCheckedItems] = useState(Array(quizData.length).fill(false));
   const [selectedOptions, setSelectedOptions] = useState(
     Array(quizData.length).fill(-1)
   );
 
-  // const handleItemClick = (index) => {
-  //   const updated = [...checkedItems];
-  //   updated[index] = !updated[index];
-  //   setCheckedItems(updated);
-  // 각 퀴즈별로 선택된 보기 인덱스를 저장 (-1은 아직 선택되지 않음)
   const handleOptionClick = (quizIndex, optionIndex) => {
     const updated = [...selectedOptions];
     updated[quizIndex] = optionIndex;
