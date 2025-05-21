@@ -14,13 +14,13 @@ const ImgWrapper = styled.div`
 `;
 
 const InfluencerBanner = () => {
-  const [imgUrl, setImgUrl] = useState("http://localhost:5173/src/imgs/event/influencer-PC.png")
+  const [imgUrl, setImgUrl] = useState("http://localhost:5173/img/influencer-PC.png")
   useEffect(() => {
     const handleResize = () => {
       if(window.innerWidth <  767){
-      setImgUrl("http://localhost:5173/src/imgs/event/influencer-MO.png");
+      setImgUrl("http://localhost:5173/img/influencer-MO.png");
       }else {
-        setImgUrl("http://localhost:5173/src/imgs/event/influencer-PC.png");
+        setImgUrl("http://localhost:5173/img/influencer-PC.png");
       }
     }
     handleResize();

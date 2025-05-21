@@ -16,13 +16,13 @@ const ImgWrapper = styled.div`
 `;
 
 const EventBanner = () => {
-  const [imgUrl, setImgUrl] = useState("http://localhost:5173/src/imgs/event/tattoo-PC.png")
+  const [imgUrl, setImgUrl] = useState("http://localhost:5173/img/tattoo-PC.png")
   useEffect(() => {
     const handleResize = () => {
       if(window.innerWidth <  767){
-      setImgUrl("http://localhost:5173/src/imgs/event/tattoo-MO.png");
+      setImgUrl("http://localhost:5173/img/tattoo-MO.png");
       }else {
-        setImgUrl("http://localhost:5173/src/imgs/event/tattoo-PC.png");
+        setImgUrl("http://localhost:5173/img/tattoo-PC.png");
       }
     }
     handleResize();
