@@ -18,6 +18,7 @@ import jungwonprofile from '../../imgs/event/jungwonprofile.webp';
 import leojprofile from '../../imgs/event/leojprofile.webp';
 import blurimg from '../../imgs/event/blurimage.png';
 import blurimg02 from '../../imgs/event/blurimage02.png';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -270,6 +271,11 @@ const Footer = styled.div`
 `
 
 const Influencer = () => {
+  const navigate = useNavigate();
+
+  const InfluencerClick = () =>  {
+    navigate("/mypage")
+  }
   const YouTubeEmbed = ({ videoId }) => (
     <iframe
       width="100%"
@@ -543,7 +549,7 @@ const Influencer = () => {
       </BlurBackground>
       <Footer>
         <h3>이제 ZIP에서<br />당신도 인플루언서 상품을 판매해보세요</h3>
-        <button>입점하러 가기</button>
+        <button onClick={InfluencerClick}>입점하러 가기</button>
       </Footer>
     </PageWrapper>
   )
