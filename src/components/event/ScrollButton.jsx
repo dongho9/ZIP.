@@ -24,6 +24,7 @@ const IntroduceLinkButton = styled(Link)`
   align-items: center;
   font-size: 2rem;
   font-weight: bold;
+  font-family: "EHNormalTrial";
   cursor: pointer;
   display: flex;
 
@@ -57,6 +58,7 @@ const InfluencerLinkButton = styled(Link)`
   align-items: center;
   font-size: 2rem;
   font-weight: bold;
+  font-family: "EHNormalTrial";
   text-decoration: none;
   color: var(--dark-color);
   cursor: pointer;
@@ -85,7 +87,7 @@ const ScrollButton = () => {
   return (
     <ButtonContents>
       <IntroduceLinkButton to="/event"  selected={location.pathname === '/event'}>
-        INTROUDUCETATTOO
+        INTROUDUCE TATTOO
       </IntroduceLinkButton>
       <InfluencerLinkButton to="/event/promotion" selected={location.pathname === '/event/promotion'}>INFLUENCER</InfluencerLinkButton>
     </ButtonContents>
