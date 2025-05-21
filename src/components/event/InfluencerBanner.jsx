@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 
 const ImgWrapper = styled.div`
   /* position: relative; */
@@ -13,9 +14,21 @@ const ImgWrapper = styled.div`
 `;
 
 const InfluencerBanner = () => {
+  const [imgUrl, setImgUrl] = useState("http://localhost:5173/src/imgs/event/influencer-PC.png")
+  useEffect(() => {
+    const handleResize = () => {
+      if(window.innerWidth <  767){
+      setImgUrl("http://localhost:5173/src/imgs/event/influencer-MO.png");
+      }else {
+        setImgUrl("http://localhost:5173/src/imgs/event/influencer-PC.png");
+      }
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+  },[])
   return (
     <ImgWrapper>
-      <img src="/src/imgs/event/influencer-PC.png" alt="eventbanner" />
+      <img src={imgUrl} alt="eventbanner" />
     </ImgWrapper>
   );
 };

@@ -7,9 +7,9 @@ import WhatInBag from "../../components/event/WhatInBag";
 
 const IntroduceTattoo = () => {
   const bundleRefs = [
-    useRef(null), // 박재범
-    useRef(null), // 모니카
-    useRef(null), // PH-1
+    useRef(null), 
+    useRef(null), 
+    useRef(null),
   ];
   return (
     <>

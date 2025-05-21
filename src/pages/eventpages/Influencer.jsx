@@ -2,7 +2,6 @@ import React from 'react';
 import ScrollButton from '../../components/event/ScrollButton'
 import styled from 'styled-components'
 import InfluencerBanner from '../../components/event/InfluencerBanner'
-import { FaInstagram } from 'react-icons/fa';
 import isabe01 from '../../imgs/event/isabe01.jpg';
 import isabe02 from '../../imgs/event/isabe02.jpg';
 import isabe03 from '../../imgs/event/isabe03.jpg';
@@ -19,12 +18,9 @@ import jungwonprofile from '../../imgs/event/jungwonprofile.webp';
 import leojprofile from '../../imgs/event/leojprofile.webp';
 import blurimg from '../../imgs/event/blurimage.png';
 import blurimg02 from '../../imgs/event/blurimage02.png';
-// import blurimg03 from '../../imgs/event/blurimage03.jpg';
-import { Link } from 'react-router-dom';
 
 
 
-// Main layout containers
 const PageWrapper = styled.div`
   width: 100%;
   background-color: #f8f8f8;
@@ -49,7 +45,6 @@ const BlurBackground = styled.div`
     width: 100%;
     height: 100%;
     backdrop-filter: blur(15px);
-    /* background-color: rgba(255, 255, 255, 0.4); */
     z-index: 0;
   }
 `
@@ -58,7 +53,7 @@ const BlurBackground = styled.div`
 const CardContainer = styled.div`
   width: 100%;
   max-width: 1450px;
-  background-color: white;
+  background-color: var(--light-color);
   border-radius: 20px;
   display: flex;
   overflow: hidden;
@@ -99,7 +94,7 @@ const SmallTitle = styled.div`
 const Title = styled.h2`
   font-size: 3.5rem;
   font-weight: bold;
-  color: #000;
+  color: var(--dark-color);
   margin-top: 10px;
 `
 
@@ -164,6 +159,10 @@ const DetailButton = styled.a`
     border-bottom: 1px solid var(--dark-color);
   }
 `
+const Youtubesection = styled.div`
+  width: 100%;
+  height: 75%;
+`
 
 const ProfileSection = styled.div`
   position: absolute;
@@ -178,6 +177,7 @@ const ProfileHeader = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  z-index: 100;
 `
 const ProfileDetail = styled.div`
   display: flex;
@@ -209,7 +209,7 @@ const ProfileName = styled.div`
 
 const ProfileSocial = styled.div`
   font-size: 1.5rem;
-  color: #888;
+  color: var(--border-color);
   cursor: pointer;
   &:hover {
     text-decoration: underline;
@@ -224,12 +224,11 @@ const ProfileSocial = styled.div`
 const ProfileDescription = styled.div`
   font-size: 1.4rem;
   line-height: 1.6;
-  color: #555;
+  color: var(--subTitle);
   
   
   a {
     color: var(--event-color);
-    /* text-decoration: none; */
     &:hover {
       border-bottom: 1px solid var(--event-color);
     }
@@ -244,7 +243,7 @@ const CampaignTitle = styled.div`
 
 const Footer = styled.div`
   width: 100%;
-  background-color: black;
+  background-color: var(--dark-color);
   color: var(--light-color);
   text-align: center;
   padding: 40px 0;
@@ -257,14 +256,15 @@ const Footer = styled.div`
   }
   
   button {
-    background-color: transparent;
+    background-color:var(--border-color);
     color: var(--light-color);
     padding: 8px 20px;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 50px;
+    font-size: 1.5rem;
     
     &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--dark-color);
     }
   }
 `
@@ -276,7 +276,6 @@ const Influencer = () => {
       height="100%"
       src={`https://www.youtube.com/embed/${videoId}`}
       title="YouTube video"
-      frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
     />
@@ -293,7 +292,6 @@ const Influencer = () => {
   const onClick8 = () => {window.location.href = 'https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000164840'}
   const onClick9 = () => {window.location.href = 'https://dalba.co.kr/goods/goods_view.php?goodsNo=1000000100'}
   const onClick10 = () => {window.location.href = 'https://www.amoremall.com/kr/ko/product/detail?onlineProdSn=55930&srsltid=AfmBOopp_fi0j445EDg21BL8Ppwziel_ryL8mI3cfKd7tkgNjK6pR1di&onlineProdCode=110090000121'}
-  // Images for the product thumbnails
   const productImages = [
     isabe01,
     isabe02,
@@ -308,18 +306,13 @@ const Influencer = () => {
     leoj04,
   ];
   
-  // Profile images
   const profileImage = [
     isabeprofile,
     jungwonprofile,
     leojprofile
   ];
   
-  // Model images
-  const modelImage1 = '/images/model-white-headwrap.jpg';
-  const modelImage2 = '/images/model-sunglasses.jpg';
   
-  // Background blur images (using the same images but could be different)
   const bgImage1 = blurimg;
   const bgImage2 = blurimg02;
   const bgImage3 = blurimg;
@@ -328,10 +321,6 @@ const Influencer = () => {
     <PageWrapper>
       <InfluencerBanner/>
       <ScrollButton/>
-      
-
-      
-      {/* First Card Section - Model with white headwrap */}
       <BlurBackground bgImage={bgImage1}>
         <CardContainer>
           <LeftContent>
@@ -383,7 +372,9 @@ const Influencer = () => {
             </ProductList>
           </LeftContent>
           <RightContent>
-          <YouTubeEmbed videoId="o9NZ9x2Oxdk" />
+          <Youtubesection>
+            <YouTubeEmbed videoId="o9NZ9x2Oxdk" />
+            </Youtubesection>
             <ProfileSection>
               <ProfileHeader>
                 <ProfilePicture><a href="http://instagram.com/risabae_art/" target="_blank" >
@@ -407,12 +398,10 @@ const Influencer = () => {
           </RightContent>
         </CardContainer>
       </BlurBackground>
-      
-      {/* Second Card Section - Model with sunglasses */}
       <BlurBackground bgImage={bgImage2}>
         <CardContainer>
           <RightContent>
-          <YouTubeEmbed videoId="nJzpph-wzGA" />
+<YouTubeEmbed videoId="nJzpph-wzGA" />
           </RightContent>
           <LeftContent>
             <Header>
@@ -469,13 +458,10 @@ const Influencer = () => {
             <ProfileDescription>
             원래 내 피부인 것처럼 자연스럽게! <br/>
             꾸민듯 안꾸민듯 아무도 모르게 , 두잉왓 스킨톤 필터 로션
-              {/* <a href="#"> @risabae_official</a> 에서 더 많은 정보를 확인하실 수 있습니다. */}
             </ProfileDescription>
           </LeftContent>
         </CardContainer>
       </BlurBackground>
-      
-      {/* Third Card Section - Repeat of first layout */}
       <BlurBackground bgImage={bgImage3}>
         <CardContainer>
           <LeftContent>
@@ -527,7 +513,9 @@ const Influencer = () => {
             </ProductList>
           </LeftContent> 
           <RightContent>
-          <YouTubeEmbed videoId="cGBoGj7TJdc" />
+<Youtubesection>
+  <YouTubeEmbed videoId="cGBoGj7TJdc" />
+  </Youtubesection>
             <ProfileSection>
               <ProfileHeader>
                 <ProfilePicture><a href='https://www.instagram.com/leojmakeup/?hl=ko' target='/blank'>
@@ -553,11 +541,9 @@ const Influencer = () => {
           </RightContent>
         </CardContainer>
       </BlurBackground>
-      
-      {/* Footer CTA Section */}
       <Footer>
         <h3>이제 ZIP에서<br />당신도 인플루언서 상품을 판매해보세요</h3>
-        <button>신청 바로가기</button>
+        <button>입점하러 가기</button>
       </Footer>
     </PageWrapper>
   )
