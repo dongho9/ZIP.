@@ -26,11 +26,10 @@ const Container = styled.div`
 const SideSection = styled.div`
   grid-column: span 1;
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding-bottom: 70%;
   img {
     width: 18px;
     object-fit: cover;
