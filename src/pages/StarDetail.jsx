@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { StarData } from "../StarData";
-
+import YouTube from "react-youtube";
 const Container = styled.div`
   color: var(--light-color);
   display: flex;
@@ -88,6 +88,7 @@ const ArtistBg = styled.div`
   iframe {
     width: 100%;
     position: absolute;
+    pointer-events: none; /* 클릭도 막음 */
     left: 0;
     top: 0;
     height: 100%;
@@ -238,14 +239,51 @@ const StarDetail = () => {
       navigate("/404");
     }
   }, [data, starName, navigate]);
+
+  const playerRef = useRef(null);
+
+  const onReady = (event) => {
+    playerRef.current = event.target;
+    playerRef.current.mute(); // 자동 재생을 위해 음소거
+    playerRef.current.playVideo();
+  };
+
+  const handlePause = () => {
+    playerRef.current.pauseVideo();
+  };
+
+  const handlePlay = () => {
+    playerRef.current.playVideo();
+  };
+
+  const opts = {
+    height: "390",
+    width: "640",
+    playerVars: {
+      autoplay: 1,
+      mute: 1,
+      loop: 1,
+      controls: 0, // 플레이어 컨트롤 숨김
+      modestbranding: 1, // 채널 정보/제목 안 뜨게
+      rel: 0, // 관련 영상 막기
+      fs: 0, // 전체화면 버튼 제거
+    },
+  };
   return (
     <Container>
       <ArtistBg>
-        <iframe
+        {/* <iframe
           className={textHide ? "active" : ""}
           scrolling="no"
           src={filterData[0]?.videoURL}
+        /> */}
+        <YouTube
+          videoId={filterData[0]?.videoURL}
+          opts={opts}
+          onReady={onReady}
         />
+        <button onClick={handlePause}>일시정지</button>
+        <button onClick={handlePlay}>재생</button>
         <ArtistText
           className={textHide ? "active" : ""}
           onClick={() => {

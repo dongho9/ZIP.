@@ -5,7 +5,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #333;
+  background: var(--ott-bg-color);
   color: var(--light-color);
 `;
 const Ott = () => {

@@ -612,6 +612,10 @@ const Header = () => {
           ) : (
             <HeaderGnb>
               <li>OTT</li>
+              <li>OTT</li>
+              <li>OTT</li>
+              <li>OTT</li>
+              <li>OTT</li>
             </HeaderGnb>
           )}
           <HeaderBars>|</HeaderBars>
