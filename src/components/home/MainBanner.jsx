@@ -26,11 +26,10 @@ const Container = styled.div`
 const SideSection = styled.div`
   grid-column: span 1;
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding-bottom: 70%;
   img {
     width: 18px;
     object-fit: cover;
@@ -255,7 +254,7 @@ const MainBanner = () => {
   return (
     <Container>
       <SideSection>
-        <img src="/src/imgs/home/vertical.png" alt="사이드 영역 이미지" />
+        <img src="/img/vertical.png" alt="사이드 영역 이미지" />
       </SideSection>
       <ImgSection>
         <Swiper

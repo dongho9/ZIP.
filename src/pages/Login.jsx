@@ -166,11 +166,7 @@ const Login = () => {
   };
 
   //로그인이미지 배열로 저장
-  const loginImages = [
-    "/src/imgs/login/login1.jpg",
-    "/src/imgs/login/login2.jpg",
-    "/src/imgs/login/login3.jpg",
-  ];
+  const loginImages = ["/img/login1.jpg", "/img/login2.jpg", "/img/login3.jpg"];
 
   //랜덤이미지 추출
   const getRandomImage = () => {

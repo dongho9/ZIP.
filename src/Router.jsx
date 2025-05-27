@@ -43,8 +43,8 @@ export const router = createBrowserRouter([
         element: <Event />,
         children: [
           {
-            index : true,
-            element: <IntroduceTattoo/>,
+            index: true,
+            element: <IntroduceTattoo />,
           },
           {
             path: "promotion",

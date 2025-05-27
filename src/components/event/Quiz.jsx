@@ -397,7 +397,7 @@ const Quiz = () => {
                     <EachName onClick={() => handleOptionClick(index, 0)}>
                       {item.name1}{" "}
                       {selectedOptions[index] === 0 && (
-                        <CheckIcon><img src="/src/imgs/event/check.png" alt="check" /></CheckIcon>
+                        <CheckIcon><img src="/img/check.png" alt="check" /></CheckIcon>
                       )}
                     </EachName>
                     <Picture onClick={() => handleOptionClick(index, 0)}>
@@ -408,7 +408,7 @@ const Quiz = () => {
                     <EachName onClick={() => handleOptionClick(index, 1)}>
                       {item.name2}{" "}
                       {selectedOptions[index] === 1 && (
-                        <CheckIcon><img src="/src/imgs/event/check.png" alt="check" /></CheckIcon>
+                        <CheckIcon><img src="/img/check.png" alt="check" /></CheckIcon>
                       )}
                     </EachName>
                     <Picture onClick={() => handleOptionClick(index, 1)}>
@@ -421,7 +421,7 @@ const Quiz = () => {
                     <EachName onClick={() => handleOptionClick(index, 2)}>
                       {item.name3}{" "}
                       {selectedOptions[index] === 2 && (
-                        <CheckIcon><img src="/src/imgs/event/check.png" alt="check" /></CheckIcon>
+                        <CheckIcon><img src="/img/check.png" alt="check" /></CheckIcon>
                       )}
                     </EachName>
                     <Picture onClick={() => handleOptionClick(index, 2)}>
@@ -432,7 +432,7 @@ const Quiz = () => {
                     <EachName onClick={() => handleOptionClick(index, 3)}>
                       {item.name4}{" "}
                       {selectedOptions[index] === 3 && (
-                        <CheckIcon><img src="/src/imgs/event/check.png" alt="check" /></CheckIcon>
+                        <CheckIcon><img src="/img/check.png" alt="check" /></CheckIcon>
                       )}
                     </EachName>
                     <Picture onClick={() => handleOptionClick(index, 3)}>
