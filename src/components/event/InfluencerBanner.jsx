@@ -14,18 +14,18 @@ const ImgWrapper = styled.div`
 `;
 
 const InfluencerBanner = () => {
-  const [imgUrl, setImgUrl] = useState("http://localhost:5173/src/imgs/event/influencer-PC.png")
+  const [imgUrl, setImgUrl] = useState("/img/influencer-PC.png");
   useEffect(() => {
     const handleResize = () => {
-      if(window.innerWidth <  767){
-      setImgUrl("http://localhost:5173/src/imgs/event/influencer-MO.png");
-      }else {
-        setImgUrl("http://localhost:5173/src/imgs/event/influencer-PC.png");
+      if (window.innerWidth < 767) {
+        setImgUrl("/img/influencer-MO.png");
+      } else {
+        setImgUrl("/img/influencer-PC.png");
       }
-    }
+    };
     handleResize();
     window.addEventListener("resize", handleResize);
-  },[])
+  }, []);
   return (
     <ImgWrapper>
       <img src={imgUrl} alt="eventbanner" />

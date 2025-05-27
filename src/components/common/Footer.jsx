@@ -129,7 +129,7 @@ const Footer = () => {
             </FooterFnb>
           ) : (
             <FooterFnb>
-              <li>haha</li>
+              <li>OTT</li>
             </FooterFnb>
           )}
         </Fnb>
