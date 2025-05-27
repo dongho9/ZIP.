@@ -153,4 +153,4 @@ const ProductItem = ({ img, subtitle, name, price, artistName, detailURL }) => {
   );
 };
 
-export default ProductItem;
+export default React.memo(ProductItem);

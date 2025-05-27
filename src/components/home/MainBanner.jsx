@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Autoplay, Pagination, Navigation, Parallax } from "swiper/modules";
+import { Autoplay, Pagination, Navigation, Parallax } from "swiper/modules"; 
 
 /*--- 스타일 ---*/
 const Container = styled.div`
@@ -18,6 +18,7 @@ const Container = styled.div`
   padding-top: 82px;
   background: #ffffff;
   overflow: hidden;
+    
   @media screen and (max-width: 1024px) {
     height: 100%;
     padding-top: 0;
