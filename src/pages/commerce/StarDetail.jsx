@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { StarData } from "../StarData";
+import { StarData } from "../../StarData";
 import YouTube from "react-youtube";
+
 const Container = styled.div`
   color: var(--light-color);
   display: flex;
@@ -80,22 +81,21 @@ const ArtistTitle = styled.h4`
 
 const ArtistBg = styled.div`
   top: 0;
-  width: 100vw;
-  height: 70vh;
+  width: 100%;
   position: relative;
   cursor: pointer;
   z-index: 1;
+  padding-top: 56.25%;
   iframe {
     width: 100%;
+    object-fit: cover;
     position: absolute;
-    pointer-events: none; /* 클릭도 막음 */
+    pointer-events: none;
     left: 0;
     top: 0;
-    height: 100%;
-    overflow: hidden;
     scroll-behavior: none;
     z-index: -1;
-    filter: brightness(50%);
+    /* filter: brightness(50%); */
     &.active {
       filter: brightness(100%);
     }
@@ -248,17 +248,9 @@ const StarDetail = () => {
     playerRef.current.playVideo();
   };
 
-  const handlePause = () => {
-    playerRef.current.pauseVideo();
-  };
-
-  const handlePlay = () => {
-    playerRef.current.playVideo();
-  };
-
   const opts = {
-    height: "390",
-    width: "640",
+    width: "100%",
+    height: "100%",
     playerVars: {
       autoplay: 1,
       mute: 1,
@@ -272,18 +264,11 @@ const StarDetail = () => {
   return (
     <Container>
       <ArtistBg>
-        {/* <iframe
-          className={textHide ? "active" : ""}
-          scrolling="no"
-          src={filterData[0]?.videoURL}
-        /> */}
         <YouTube
           videoId={filterData[0]?.videoURL}
           opts={opts}
           onReady={onReady}
         />
-        <button onClick={handlePause}>일시정지</button>
-        <button onClick={handlePlay}>재생</button>
         <ArtistText
           className={textHide ? "active" : ""}
           onClick={() => {

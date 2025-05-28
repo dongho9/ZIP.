@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import FormTop from "../components/payment/FormTop";
-import FormBottom from "../components/payment/FormBottom";
-import Order from "../components/payment/Order";
-import CouponModal from "../components/payment/CouponModal";
+import FormTop from "../../components/payment/FormTop";
+import FormBottom from "../../components/payment/FormBottom";
+import Order from "../../components/payment/Order";
+import CouponModal from "../../components/payment/CouponModal";
 import {
   QueryClientProvider,
   QueryClient,
   useQuery,
 } from "@tanstack/react-query";
-import { ORDER_ITEMS_KEY } from "../constants/queryKeys";
+import { ORDER_ITEMS_KEY } from "../../constants/queryKeys";
 
 const Container = styled.div`
   max-width: 1200px;

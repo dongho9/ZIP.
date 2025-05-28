@@ -1,15 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import DetailSwiper from "../components/detail/DetailSwiper";
+import DetailSwiper from "../../components/detail/DetailSwiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useParams, useNavigate } from "react-router-dom";
-import { StarData } from "../StarData";
+import { StarData } from "../../StarData";
 
 // 페이지 연동시 필요한 부분 (재기추가)
-import { useCart } from "../hooks/useCart";
+import { useCart } from "../../hooks/useCart";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { ORDER_ITEMS_KEY } from "../constants/queryKeys";
-import useAuth from "../hooks/useAuth";
+import { ORDER_ITEMS_KEY } from "../../constants/queryKeys";
+import useAuth from "../../hooks/useAuth";
 
 const Container = styled.div``;
 const Wrapper = styled.div`

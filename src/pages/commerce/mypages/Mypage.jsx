@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Outlet } from "react-router-dom";
-import MypageSidebar from "../../components/mypage/MypageSidebar";
+import MypageSidebar from "../../../components/mypage/MypageSidebar";
 
 const Container = styled.div`
   max-width: 1200px;

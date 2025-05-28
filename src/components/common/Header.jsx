@@ -615,7 +615,7 @@ const Header = () => {
               <li>OTT</li>
               <li>OTT</li>
               <li>OTT</li>
-              <li>OTT</li>
+              <li onClick={() => navigate("/ott/original")}>Original</li>
             </HeaderGnb>
           )}
           <HeaderBars>|</HeaderBars>

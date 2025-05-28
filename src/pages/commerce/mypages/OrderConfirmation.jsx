@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { useOrderHistory } from "../../hooks/useOrderHistory";
-import OrderCancelModal from "../../components/mypage/OrderCancelModal";
-import OrderDetailModal from "../../components/mypage/OrderDetailModal";
+import { useOrderHistory } from "../../../hooks/useOrderHistory";
+import OrderCancelModal from "../../../components/mypage/OrderCancelModal";
+import OrderDetailModal from "../../../components/mypage/OrderDetailModal";
 
 const Container = styled.div`
   padding: 0 3%;

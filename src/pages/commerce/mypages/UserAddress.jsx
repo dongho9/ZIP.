@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import ShippingAddress from "../../components/mypage/ShippingAddress";
-import { useAddresses } from "../../hooks/useAddresses";
+import ShippingAddress from "../../../components/mypage/ShippingAddress";
+import { useAddresses } from "../../../hooks/useAddresses";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const Container = styled.div`
