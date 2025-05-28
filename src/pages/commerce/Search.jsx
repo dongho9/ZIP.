@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { StarData } from "../StarData";
+import { StarData } from "../../StarData";
 import Pagination from "react-js-pagination";
 
 const Container = styled.div`

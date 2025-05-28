@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { FaTrashAlt } from "react-icons/fa";
-import GlobalStyles from "../styles/GlobalStyles.styles";
+import GlobalStyles from "../../styles/GlobalStyles.styles";
 import { useNavigate } from "react-router-dom";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { ORDER_ITEMS_KEY, CART_ITEMS_KEY } from "../constants/queryKeys";
-import { useCart } from "../hooks/useCart";
-import { useAuth } from "../hooks/useAuth";
+import { ORDER_ITEMS_KEY, CART_ITEMS_KEY } from "../../constants/queryKeys";
+import { useCart } from "../../hooks/useCart";
+import { useAuth } from "../../hooks/useAuth";
 
 const PageWrapper = styled.div`
   width: 100%;

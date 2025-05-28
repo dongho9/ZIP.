@@ -1,26 +1,27 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
-import Home from "./pages/Home";
-import Detail from "./pages/Detail";
-import Event from "./pages/eventpages/Event";
-import Ott from "./pages/Ott";
-import FilterCategory from "./pages/FilterCategory";
-import Cart from "./pages/Cart";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Search from "./pages/Search";
-import Payment from "./pages/Payment";
-import Mypage from "./pages/mypages/Mypage";
-import MypageMain from "./pages/mypages/MypageMain";
-import OrderConfirmation from "./pages/mypages/OrderConfirmation";
-import FAQ from "./pages/mypages/FAQ";
-import DeleteAccount from "./pages/mypages/DeleteAccount";
-import ChangeUserInfo from "./pages/mypages/ChangeUserInfo";
-import UserAddress from "./pages/mypages/UserAddress";
-import Promotion from "./pages/eventpages/Influencer";
-import IntroduceTattoo from "./pages/eventpages/IntroduceTattoo";
-import Star from "./pages/Star";
-import StarDetail from "./pages/StarDetail";
+import Home from "./pages/commerce/Home";
+import Detail from "./pages/commerce/Detail";
+import Event from "./pages/commerce/eventpages/Event";
+import Ott from "./pages/ott/Ott";
+import FilterCategory from "./pages/commerce/FilterCategory";
+import Cart from "./pages/commerce/Cart";
+import Login from "./pages/commerce/Login";
+import Signup from "./pages/commerce/Signup";
+import Search from "./pages/commerce/Search";
+import Payment from "./pages/commerce/Payment";
+import Mypage from "./pages/commerce/mypages/Mypage";
+import MypageMain from "./pages/commerce/mypages/MypageMain";
+import OrderConfirmation from "./pages/commerce/mypages/OrderConfirmation";
+import FAQ from "./pages/commerce/mypages/FAQ";
+import DeleteAccount from "./pages/commerce/mypages/DeleteAccount";
+import ChangeUserInfo from "./pages/commerce/mypages/ChangeUserInfo";
+import UserAddress from "./pages/commerce/mypages/UserAddress";
+import Promotion from "./pages/commerce/eventpages/Influencer";
+import IntroduceTattoo from "./pages/commerce/eventpages/IntroduceTattoo";
+import Star from "./pages/commerce/Star";
+import StarDetail from "./pages/commerce/StarDetail";
+import Original from "./pages/ott/Original";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -29,10 +30,6 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-      },
-      {
-        path: "ott",
-        element: <Ott />,
       },
       {
         path: "detail/:itemName",
@@ -113,6 +110,20 @@ export const router = createBrowserRouter([
             element: <UserAddress />,
           },
         ],
+      },
+    ],
+  },
+  {
+    path: "/ott",
+    element: <Root />,
+    children: [
+      {
+        index: true,
+        element: <Ott />,
+      },
+      {
+        path: "original",
+        element: <Original />,
       },
     ],
   },

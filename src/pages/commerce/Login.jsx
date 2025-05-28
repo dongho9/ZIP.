@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Kakao from "../components/login/Kakao";
+import Kakao from "../../components/login/Kakao";
 import { useRef } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth, db } from "../firebase/firebase";
+import { auth, db } from "../../firebase/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 const Wrapper = styled.div`

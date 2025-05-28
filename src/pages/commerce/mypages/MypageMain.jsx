@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useOrderStatus } from "../../hooks/useOrderStatus";
-import logoSellor from "../../imgs/mypage/logo-sellor.png";
-import UserLevel from "../../components/mypage/UserLevel";
-import SellerMark from "../../components/mypage/SellerMark";
-import CouponList from "../../components/mypage/CouponList";
+import { useOrderStatus } from "../../../hooks/useOrderStatus";
+import logoSellor from "../../../imgs/mypage/logo-sellor.png";
+import UserLevel from "../../../components/mypage/UserLevel";
+import SellerMark from "../../../components/mypage/SellerMark";
+import CouponList from "../../../components/mypage/CouponList";
 import { doc, getDoc } from "firebase/firestore";
-import { db, auth } from "../../firebase/firebase";
+import { db, auth } from "../../../firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
 const Container = styled.div`
