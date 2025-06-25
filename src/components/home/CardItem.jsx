@@ -4,47 +4,42 @@ import styled from "styled-components";
 
 /* --- 스타일 --- */
 const Container = styled.li`
-  width: 380px;
-  height: 500px;
+  width: 300px;
+  height: 400px;
   background: var(--light-color);
   color: var(--dark-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  @media screen and (max-width: 1024px) {
-    width: 330px;
-    height: 400px;
-  }
-  @media screen and (max-width: 767px) {
-    width: 290px;
-    height: 350px;
+  @media screen and (max-width: 1200px) {
+    width: 240px;
+    height: 320px;
   }
 `;
 const CardItemInfo = styled.div`
   width: inherit;
-  padding: 40px;
+  padding: 8%;
   text-transform: uppercase;
   position: relative;
   letter-spacing: -1px;
   span {
     letter-spacing: normal;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 400;
     color: var(--subTitle);
   }
   p {
     max-width: 300px;
-    font-size: 3.6rem;
-    line-height: 4.5rem;
-    margin: 18px 0 30px;
-
+    font-size: 2.6rem;
+    line-height: 1.2;
+    margin: 14px 0 20px;
     font-weight: 600;
     cursor: pointer;
   }
   button {
-    padding: 15px 16px;
-    font-size: 2rem;
+    padding: 12px 13px;
+    font-size: 1.6rem;
     border-radius: 50%;
     background: var(--dark-color);
     color: var(--light-color);
@@ -53,39 +48,24 @@ const CardItemInfo = styled.div`
     cursor: pointer;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1200px) {
     span {
-      font-size: 1.6rem;
+      font-size: 1.2rem;
     }
     p {
       max-width: 280px;
-      font-size: 3rem;
-      line-height: 3.6rem;
-      margin: 8px 0 20px;
-    }
-    button {
-      padding: 10px 11px;
-      font-size: 1.6rem;
-    }
-  }
-  @media screen and (max-width: 767px) {
-    span {
-      font-size: 1.4rem;
-    }
-    p {
-      max-width: 250px;
       font-size: 2.4rem;
-      line-height: 2.8rem;
       margin: 8px 0 12px;
     }
     button {
-      padding: 8px 9px;
+      padding: 7px 8px;
+      font-size: 1.4rem;
     }
   }
 `;
 const CardImg = styled.div`
-  width: 320px;
-  height: 320px;
+  width: 300px;
+  height: 300px;
   bottom: -80px;
   position: absolute;
   z-index: 1;
@@ -97,15 +77,10 @@ const CardImg = styled.div`
     cursor: pointer;
   }
 
-  @media screen and (max-width: 1024px) {
-    bottom: -70px;
-    width: 260px;
-    height: 260px;
-  }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1200px) {
     bottom: -30px;
-    width: 220px;
-    height: 220px;
+    width: 210px;
+    height: 210px;
   }
 `;
 
@@ -118,7 +93,7 @@ const CardItem = ({ subtitle, title, img, detailURL }) => {
       <CardItemInfo>
         <span>{subtitle}</span>
         <p>
-          {title.split("\n").map((line, index) => (
+          {title?.split("\n").map((line, index) => (
             <React.Fragment key={index}>
               {line}
               <br />
@@ -128,7 +103,7 @@ const CardItem = ({ subtitle, title, img, detailURL }) => {
         <button onClick={() => navigate(`/detail/${detailURL}`)}>→</button>
       </CardItemInfo>
       <CardImg>
-        <img onClick={() => navigate(`/detail/${detailURL}`)} src={img} alt={`${title} 이미지`} />
+        <img onClick={() => navigate(`/detail/${detailURL}`)} src={img} alt={`${detailURL} 이미지`} />
       </CardImg>
     </Container>
   );

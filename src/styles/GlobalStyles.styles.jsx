@@ -26,6 +26,8 @@ a{
   --lightGray: #D3D3D3;
   --event-color: #ACE0FF;
   --ott-bg-color: #0E100F;
+  --video-text: #aaaaaa;
+  --border-bottom: #3c3c3c;
 }
 
 html {
@@ -36,7 +38,7 @@ body{
   font-size: 1.6rem;
   font-family: "Pretendard";
   background: var(--light-color);
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 /* mansoryCss */
