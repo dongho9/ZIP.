@@ -5,9 +5,8 @@ import { StarData } from "../../StarData";
 import Pagination from "react-js-pagination";
 
 const Container = styled.div`
-  margin-top: 100px;
   background: var(--light-color);
-  padding: 60px 3% 100px 3%;
+  padding: 120px 3% 100px 3%;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -190,29 +189,13 @@ const Loading = styled.div`
 `;
 const PaginationWrap = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-bottom: 30px;
   ul {
     display: flex;
+    justify-content: center;
     li {
       width: 30px;
       height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid var(--border-color);
-      border-right: none;
-      font-family: "Pretendard";
-      &:last-child {
-        border-right: 1px solid var(--border-color);
-      }
-      &.active {
-        background: var(--dark-color);
-        color: var(--light-color);
-      }
-      a {
-      }
     }
   }
 `;
@@ -303,7 +286,7 @@ const FilterComp = ({ categoryName }) => {
         <Loading>Loading...</Loading>
       ) : (
         <Container>
-          <FilterTitle style={{ textTransform: "capitalize" }}>
+          <FilterTitle style={{ textTransform: "uppercase" }}>
             {categoryName} ZIP
           </FilterTitle>
           <FilterWrap>

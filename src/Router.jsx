@@ -1,26 +1,37 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
-import Home from "./pages/Home";
-import Detail from "./pages/Detail";
-import Event from "./pages/eventpages/Event";
-import Ott from "./pages/Ott";
-import FilterCategory from "./pages/FilterCategory";
-import Cart from "./pages/Cart";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Search from "./pages/Search";
-import Payment from "./pages/Payment";
-import Mypage from "./pages/mypages/Mypage";
-import MypageMain from "./pages/mypages/MypageMain";
-import OrderConfirmation from "./pages/mypages/OrderConfirmation";
-import FAQ from "./pages/mypages/FAQ";
-import DeleteAccount from "./pages/mypages/DeleteAccount";
-import ChangeUserInfo from "./pages/mypages/ChangeUserInfo";
-import UserAddress from "./pages/mypages/UserAddress";
-import Promotion from "./pages/eventpages/Influencer";
-import IntroduceTattoo from "./pages/eventpages/IntroduceTattoo";
-import Star from "./pages/Star";
-import StarDetail from "./pages/StarDetail";
+import Home from "./pages/commerce/Home";
+import Detail from "./pages/commerce/Detail";
+import Event from "./pages/commerce/eventpages/Event";
+import Ott from "./pages/ott/Ott";
+import FilterCategory from "./pages/commerce/FilterCategory";
+import Cart from "./pages/commerce/Cart";
+import Login from "./pages/commerce/Login";
+import Signup from "./pages/commerce/signuppages/Signup";
+import Signupv2 from "./pages/commerce/signuppages/Signupv2";
+import Search from "./pages/commerce/Search";
+import Payment from "./pages/commerce/Payment";
+import Mypage from "./pages/commerce/mypages/Mypage";
+import MypageMain from "./pages/commerce/mypages/MypageMain";
+import OrderConfirmation from "./pages/commerce/mypages/OrderConfirmation";
+import FAQ from "./pages/commerce/mypages/FAQ";
+import DeleteAccount from "./pages/commerce/mypages/DeleteAccount";
+import ChangeUserInfo from "./pages/commerce/mypages/ChangeUserInfo";
+import FavoriteArtist from "./pages/commerce/mypages/FavoriteArtist";
+import UserAddress from "./pages/commerce/mypages/UserAddress";
+import Promotion from "./pages/commerce/eventpages/Influencer";
+import IntroduceTattoo from "./pages/commerce/eventpages/IntroduceTattoo";
+import Star from "./pages/commerce/Star";
+import StarDetail from "./pages/commerce/StarDetail";
+import Original from "./pages/ott/Original";
+import OriginalDetail from "./pages/ott/OriginalDetail";
+import Short from "./pages/ott/Short";
+
+import InMyBag from "./pages/ott/InMyBag";
+import OttDetail from "./pages/ott/OttDetail";
+import Talk from "./pages/ott/Talk";
+import Work from "./pages/ott/Work";
+import OttSearchComp from "./components/common/OttSearchComp";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -29,10 +40,6 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-      },
-      {
-        path: "ott",
-        element: <Ott />,
       },
       {
         path: "detail/:itemName",
@@ -77,6 +84,10 @@ export const router = createBrowserRouter([
         element: <Signup />,
       },
       {
+        path: "signupv2",
+        element: <Signupv2 />,
+      },
+      {
         path: "search/:name",
         element: <Search />,
       },
@@ -112,7 +123,53 @@ export const router = createBrowserRouter([
             path: "user-address",
             element: <UserAddress />,
           },
+          {
+            path: "FavoriteArtist",
+            element: <FavoriteArtist />,
+          },
         ],
+      },
+    ],
+  },
+  {
+    path: "/ott",
+    element: <Root />,
+    children: [
+      {
+        index: true,
+        element: <Ott />,
+      },
+      {
+        path: "original",
+        element: <Original />,
+      },
+      {
+        path: "originalDetail/:id",
+        element: <OriginalDetail />,
+      },
+      {
+        path: "short",
+        element: <Short />,
+      },
+      {
+        path: "bagzip",
+        element: <InMyBag />,
+      },
+      {
+        path: "workzip",
+        element: <Work />,
+      },
+      {
+        path: "talkzip",
+        element: <Talk />,
+      },
+      {
+        path: "detail/:title",
+        element: <OttDetail />,
+      },
+      {
+        path: "search/:query",
+        element: <OttSearchComp />,
       },
     ],
   },

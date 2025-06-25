@@ -58,17 +58,12 @@ const AddressList = styled.ul`
   }
 `;
 const FooterRight = styled.div``;
-const HeaderLogoImg = styled.img`
-  width: 90px;
-`;
 
 const Footer = () => {
   const [filterCheck, setFilterCheck] = useState(false);
   const navigate = useNavigate();
   const commerceMatch = useMatch("/");
   const detailMatch = useMatch("/detail/:itemName");
-  const loginMatch = useMatch("/login");
-  const signUpMatch = useMatch("/signup");
   const eventMatch = useMatch("/event");
   const promotionMatch = useMatch("/event/:promotion");
   const cartMatch = useMatch("/cart");
@@ -76,23 +71,17 @@ const Footer = () => {
   const searchMatch = useMatch("/search/:name");
   const mypageMatch = useMatch("/mypage");
   const mypageMatch02 = useMatch("/mypage/:name");
-  const starMatch = useMatch("/star");
-  const starDetailMatch = useMatch("/star/:starName");
   const filterFunc = () => {
     if (
       commerceMatch ||
       detailMatch ||
       filterCategoryMatch ||
-      loginMatch ||
-      signUpMatch ||
       eventMatch ||
       cartMatch ||
       searchMatch ||
+      promotionMatch ||
       mypageMatch ||
-      mypageMatch02 ||
-      starMatch ||
-      starDetailMatch ||
-      promotionMatch
+      mypageMatch02
     ) {
       setFilterCheck(true);
     } else {
@@ -105,14 +94,9 @@ const Footer = () => {
     commerceMatch,
     detailMatch,
     filterCategoryMatch,
-    loginMatch,
-    signUpMatch,
     eventMatch,
-    mypageMatch,
-    mypageMatch02,
+    cartMatch,
     searchMatch,
-    starMatch,
-    starDetailMatch,
     promotionMatch,
   ]);
 
@@ -124,12 +108,16 @@ const Footer = () => {
             <FooterFnb>
               <li onClick={() => navigate("/filtercategory/style")}>Style</li>
               <li onClick={() => navigate("/filtercategory/beauty")}>Beauty</li>
-              <li onClick={() => navigate("/filtercategory/artist")}>Artist</li>
               <li onClick={() => navigate("/event")}>Promotion</li>
             </FooterFnb>
           ) : (
             <FooterFnb>
-              <li>haha</li>
+              <li>Bag</li>
+              <li>Style</li>
+              <li>Talk</li>
+              <li onClick={() => navigate("/ott/short")}>Shorts</li>
+              <li onClick={() => navigate("/star")}>Star</li>
+              <li onClick={() => navigate("/ott/original")}>Original</li>
             </FooterFnb>
           )}
         </Fnb>

@@ -1,14 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import SearchComp from "./SearchComp";
-import { Link, useMatch, useNavigate, useParams } from "react-router-dom";
+import OttSearchWrap from "./OttSearchWrap";
+import { Link, useMatch, useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useCart from "../../hooks/useCart";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 import { signOut } from "firebase/auth";
-import { CART_ITEMS_KEY } from "../../constants/queryKeys";
 
 const Container = styled.header``;
 
@@ -27,10 +27,9 @@ const Wrapper = styled.div`
   color: #fff;
   mix-blend-mode: difference;
   background: transparent;
-  /* backdrop-filter: blur(16px) saturate(180%); */
-  z-index: 2;
+  z-index: 3;
   &.active {
-    transform: translateY(-100px);
+    backdrop-filter: blur(16px) saturate(180%);
   }
   &.filterUnActive {
     mix-blend-mode: normal;
@@ -45,13 +44,13 @@ const HeaderLeft = styled.div`
   gap: 20px;
   align-items: center;
 `;
+
 const Logo = styled.div`
   position: relative;
   display: flex;
   align-items: center;
   transform-origin: top left;
-  padding-top: 24px;
-  width: 160px;
+  width: 138px;
   z-index: 3;
   transition: all 0.3s;
   a {
@@ -63,7 +62,11 @@ const Logo = styled.div`
   @media screen and (max-width: 767px) {
     width: 100px !important;
   }
+  @media screen and (max-width: 460px) {
+    width: 80px !important;
+  }
 `;
+
 const HeaderLogoImg = styled.img`
   width: 100%;
 `;
@@ -76,13 +79,21 @@ const HeaderSelect = styled.div`
     font-weight: 300;
     font-family: "EHNormalTrial";
     font-size: 1.2rem;
-    a {
-      p {
-        &.selectActive {
-          color: #5a5959;
-        }
-        color: #fff;
+    p {
+      &.selectActive {
+        color: #5a5959;
+        cursor: pointer;
       }
+    }
+  }
+  @media screen and (max-width: 420px) {
+    div {
+      span {
+        display: none;
+        visibility: hidden;
+      }
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 `;
@@ -94,9 +105,11 @@ const HeaderRight = styled.nav`
   font-weight: 300;
   font-family: "EHNormalTrial";
   font-size: 1.2rem;
-
   @media screen and (max-width: 1024px) {
     gap: 20px;
+  }
+  @media screen and (max-width: 460px) {
+    gap: 14px;
   }
 `;
 
@@ -110,6 +123,7 @@ const HeaderGnb = styled.ul`
     transition: all 0.5s ease-in-out;
   }
   li {
+    white-space: nowrap;
     cursor: pointer;
     width: 100%;
     height: 100%;
@@ -124,7 +138,7 @@ const HeaderGnb = styled.ul`
     }
     &:hover {
       span {
-        transform: translateY(-100%);
+        transform: translateY(-120%);
       }
       &::after {
         transform: translateY(0%);
@@ -150,7 +164,7 @@ const HeaderGnb = styled.ul`
     width: 100%;
     height: 100vh;
     display: block;
-    padding: 160px 3%;
+    padding: 140px 3%;
     li {
       font-size: 2.4rem;
       margin-bottom: 30px;
@@ -188,6 +202,9 @@ const HeaderGnb = styled.ul`
       color: var(--light-color);
       border-bottom: 1px solid #fff;
     }
+  }
+  @media screen and (max-width: 760px) {
+    padding-top: 120px;
   }
 `;
 
@@ -258,9 +275,15 @@ const HeaderEtc = styled.ul`
       }
     }
   }
+  @media screen and (max-width: 460px) {
+    gap: 14px;
+  }
 `;
+
 const HeaderEtcLi = styled.li``;
+
 const HeaderEtcText = styled.span``;
+
 const HeaderBars = styled.span`
   @media screen and (max-width: 1024px) {
     opacity: 0;
@@ -362,10 +385,13 @@ const TopBtn = styled.div`
     opacity: 1;
   }
 `;
+
 const Header = () => {
+  const [headerActive, setHeaderActive] = useState(false);
   const [filterCheck, setFilterCheck] = useState(false);
   const [menuClick, setMenuClick] = useState(false);
   const [searchClick, setSearchClick] = useState(false);
+  const [ottSearchClick, setOttSearchClick] = useState(false);
   const [toggleClick, setToggleClick] = useState(false);
   const [cartCount, setCartCount] = useState(0);
   const [topBtnScroll, setTopBtnScroll] = useState(false);
@@ -379,6 +405,7 @@ const Header = () => {
   const detailMatch = useMatch("/detail/:itemName");
   const loginMatch = useMatch("/login");
   const signUpMatch = useMatch("/signup");
+  const signUpMatch02 = useMatch("/signupv2");
   const eventMatch = useMatch("/event");
   const promotionMatch = useMatch("/event/:promotion");
   const cartMatch = useMatch("/cart");
@@ -388,6 +415,9 @@ const Header = () => {
   const mypageMatch02 = useMatch("/mypage/:name");
   const starMatch = useMatch("/star");
   const starDetailMatch = useMatch("/star/:starName");
+  const ottMatch = useMatch("/ott");
+  const ottMatch02 = useMatch("/ott/:params");
+  const ottMatch03 = useMatch("/ott/:params/:params");
 
   const handleCategory = (e) => {
     const category = e.target.innerText;
@@ -402,26 +432,17 @@ const Header = () => {
     setToggleClick(false);
   };
 
-  const toStar = () => {
-    navigate("./star");
-    setMenuClick(false);
-    setToggleClick(false);
-  };
   const filterFunc = () => {
     if (
       commerceMatch ||
       detailMatch ||
       filterCategoryMatch ||
-      loginMatch ||
-      signUpMatch ||
       eventMatch ||
       cartMatch ||
       searchMatch ||
+      promotionMatch ||
       mypageMatch ||
-      mypageMatch02 ||
-      starMatch ||
-      starDetailMatch ||
-      promotionMatch
+      mypageMatch02
     ) {
       setFilterCheck(true);
     } else {
@@ -431,19 +452,17 @@ const Header = () => {
 
   useEffect(() => {
     filterFunc();
+    setOttSearchClick(false);
+    setSearchClick(false);
   }, [
     commerceMatch,
     detailMatch,
     filterCategoryMatch,
-    loginMatch,
-    signUpMatch,
     eventMatch,
     searchMatch,
+    promotionMatch,
     mypageMatch,
     mypageMatch02,
-    starMatch,
-    starDetailMatch,
-    promotionMatch,
   ]);
 
   gsap.registerPlugin(ScrollTrigger);
@@ -461,22 +480,27 @@ const Header = () => {
       });
     }
   };
+
   headerLogo();
 
   const handleMenuClick = () => {
     setMenuClick((prev) => !prev);
   };
+
   window.addEventListener("resize", () => {
     if (window.innerWidth > 1024) {
       setMenuClick(false);
       setToggleClick(false);
     }
   });
+
   const searchToggle = () => {
     setToggleClick(false);
     setMenuClick(false);
     setSearchClick(true);
+    setOttSearchClick(true);
   };
+
   const ToggleMenu = () => {
     setToggleClick((prev) => !prev);
   };
@@ -499,23 +523,6 @@ const Header = () => {
     };
   }, [getCartItemCount]);
 
-  // const getCartCountDirectly = () => {
-  //   try {
-  //     const userId =
-  //       isLoggedIn && auth.currentUser ? auth.currentUser.uid : "guest";
-  //     const cartKey =
-  //       userId === "guest" ? CART_ITEMS_KEY : `${CART_ITEMS_KEY}_${userId}`;
-  //     const cartData = localStorage.getItem(cartKey);
-  //     if (!cartData) return 0;
-
-  //     const items = JSON.parse(cartData);
-  //     return items.reduce((total, item) => total + (item.quantity || 1), 0);
-  //   } catch (error) {
-  //     console.error("장바구니 개수 계산 오류:", error);
-  //     return 0;
-  //   }
-  // };
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -523,8 +530,10 @@ const Header = () => {
   window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
       setTopBtnScroll(true);
+      setHeaderActive(true);
     } else {
       setTopBtnScroll(false);
+      setHeaderActive(false);
     }
   });
 
@@ -560,11 +569,25 @@ const Header = () => {
 
   return (
     <Container>
-      <Wrapper ref={headerRef} className={menuClick ? "filterUnActive" : ""}>
+      <Wrapper
+        ref={headerRef}
+        className={menuClick ? "filterUnActive" : headerActive ? "active" : ""}
+      >
         <HeaderLeft>
           <Logo className="logo">
             <Link
-              to="/"
+              to={
+                ottMatch ||
+                ottMatch02 ||
+                ottMatch03 ||
+                starMatch ||
+                starDetailMatch ||
+                loginMatch ||
+                signUpMatch ||
+                signUpMatch02
+                  ? "/ott"
+                  : "/"
+              }
               onClick={() => {
                 setMenuClick(false);
                 setToggleClick(false);
@@ -578,15 +601,15 @@ const Header = () => {
               <div>
                 <p>COMMERCE</p>
                 <span>|</span>
-                <Link to="/ott">
-                  <p className="selectActive">OTT</p>
-                </Link>
+                <p onClick={() => navigate("/ott")} className="selectActive">
+                  OTT
+                </p>
               </div>
             ) : (
               <div>
-                <Link to="/">
-                  <p className="selectActive">COMMERCE</p>
-                </Link>
+                <p onClick={() => navigate("/")} className="selectActive">
+                  COMMERCE
+                </p>
                 <span>|</span>
                 <p>OTT</p>
               </div>
@@ -602,16 +625,72 @@ const Header = () => {
               <li onClick={handleCategory} data-li="Beauty">
                 <span>Beauty</span>
               </li>
-              <li onClick={toStar} data-li="Star">
-                <span>Star</span>
-              </li>
               <li onClick={toEvent} data-li="Promotion">
                 <span>Promotion</span>
               </li>
             </HeaderGnb>
           ) : (
-            <HeaderGnb>
-              <li>OTT</li>
+            <HeaderGnb className={menuClick ? "active" : ""}>
+              <li
+                onClick={() => {
+                  navigate("/ott/bagzip");
+                  setMenuClick(false);
+                  setToggleClick(false);
+                }}
+                data-li="Bag"
+              >
+                <span>Bag</span>
+              </li>
+              <li
+                onClick={() => {
+                  navigate("/ott/workzip");
+                  setMenuClick(false);
+                  setToggleClick(false);
+                }}
+                data-li="Work"
+              >
+                <span>Work</span>
+              </li>
+              <li
+                onClick={() => {
+                  navigate("/ott/talkzip");
+                  setMenuClick(false);
+                  setToggleClick(false);
+                }}
+                data-li="Talk"
+              >
+                <span>Talk</span>
+              </li>
+              <li
+                onClick={() => {
+                  navigate("/ott/short");
+                  setMenuClick(false);
+                  setToggleClick(false);
+                }}
+                data-li="Shorts"
+              >
+                <span>Shorts</span>
+              </li>
+              <li
+                onClick={() => {
+                  navigate("/star");
+                  setMenuClick(false);
+                  setToggleClick(false);
+                }}
+                data-li="Star"
+              >
+                <span>Star</span>
+              </li>
+              <li
+                onClick={() => {
+                  navigate("/ott/original");
+                  setMenuClick(false);
+                  setToggleClick(false);
+                }}
+                data-li="Original"
+              >
+                <span>Original</span>
+              </li>
             </HeaderGnb>
           )}
           <HeaderBars>|</HeaderBars>
@@ -709,7 +788,25 @@ const Header = () => {
           </MenuBars>
         </HeaderRight>
       </Wrapper>
-      <SearchComp searchClick={searchClick} setSearchClick={setSearchClick} />
+      {ottMatch ||
+      ottMatch02 ||
+      ottMatch03 ||
+      starMatch ||
+      starDetailMatch ||
+      loginMatch ||
+      signUpMatch02 ? (
+        <OttSearchWrap
+          ottSearchClick={ottSearchClick}
+          setOttSearchClick={setOttSearchClick}
+          setSearchClick={setSearchClick}
+        />
+      ) : (
+        <SearchComp
+          searchClick={searchClick}
+          setSearchClick={setSearchClick}
+          setOttSearchClick={setOttSearchClick}
+        />
+      )}
       <TopBtn onClick={scrollToTop} className={topBtnScroll ? "active" : ""}>
         ZIP
       </TopBtn>

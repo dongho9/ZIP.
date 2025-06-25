@@ -1,0 +1,904 @@
+{
+  "originalData": [
+    {
+      "id": 1,
+      "starName": "신시아",
+      "mainTitle": "신시아가 찐으로 추천하는 향기템",
+      "subTitle": "손민수 하고 싶은 신시아의 향기템 리스트",
+      "keyword": ["#향수", "#신시아", "#톰포드"],
+      "description": "신시아가 애용하는 톰포드 솔레이 네이지 퍼퓸! 겨울철에도 따뜻하고 우아한 향으로 특별한 날에 꼭 뿌리는 시그니처 향수예요. 플로럴과 머스크의 조화가 정말 매력적이에요.",
+      "shortUrl": "mKr3SZxPsys",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "톰포드",
+          "itemName": "SOLEIL NEIGE PARFUM",
+          "itemImg": "https://sdcdn.io/tf/tf_sku_TF1301_3000x3000_0.png?height=700px&width=700px",
+          "itemUrl": "SOLEIL NEIGE PARFUM"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "신시아의 시그니처 향수 추천",
+          "like": 45000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "perfume_lover",
+          "username": "향수덕후",
+          "userAvatar": "https://images.unsplash.com/photo-1494790108755-2616b612b784?w=50&h=50&fit=crop&crop=face",
+          "comment": "신시아님 덕분에 톰포드 입문했어요! 향이 정말 고급스러워요 💕"
+        },
+        {
+          "userId": "winter_scent",
+          "username": "겨울향기",
+          "userAvatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face",
+          "comment": "솔레이 네이지 진짜 겨울에 완벽한 향이에요 ㅠㅠ 신시아 취향 최고!"
+        },
+        {
+          "userId": "signature_scent",
+          "username": "시그니처향찾기",
+          "userAvatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face",
+          "comment": "이 향수 뿌리고 나가면 향 물어보는 사람 너무 많아요! 신시아 추천 굿"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "starName": "대성",
+      "mainTitle": "대성의 구강케어 필수템",
+      "subTitle": "대성이 매일 사용하는 구강관리 아이템",
+      "keyword": ["#구강케어", "#대성", "#구강스프레이"],
+      "description": "대성이 추천하는 구취 제거에 효과적인 유시몰 구강 스프레이! 매일 사용하면 입안이 상쾌하고 구취 걱정 없어요. 특히 중요한 일정 전에는 꼭 사용한다고 해요.",
+      "shortUrl": "xj0qCdS4kO8",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "유시몰",
+          "itemName": "유시몰 구강 스프레이",
+          "itemImg": "https://img.29cm.co.kr/item/202502/11eff5a4a52ce8dbacea97756c0ffa08.jpg?width=700&format=webp",
+          "itemUrl": "유시몰 구강 스프레이"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "대성의 구강케어 루틴 공개",
+          "like": 28000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "fresh_breath",
+          "username": "상쾌한입김",
+          "userAvatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face",
+          "comment": "대성님 덕분에 입냄새 고민 해결됐어요! 정말 감사해요 ㅜㅜ"
+        },
+        {
+          "userId": "bigbang_fan",
+          "username": "빅뱅사랑",
+          "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=50&h=50&fit=crop&crop=face",
+          "comment": "대성오빠가 추천하니까 더 믿음이 가요 💕 바로 주문했어요!"
+        },
+        {
+          "userId": "oral_care",
+          "username": "구강관리왕",
+          "userAvatar": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=50&h=50&fit=crop&crop=face",
+          "comment": "유시몰 스프레이 휴대하기도 좋고 효과도 빨라요! 대성 추천 굿"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "starName": "정은채",
+      "mainTitle": "정은채의 건강 비타민",
+      "subTitle": "정은채가 3개월째 물에 타먹는 영양제",
+      "keyword": ["#비타민C", "#정은채", "#건강관리"],
+      "description": "정은채가 3개월째 꾸준히 물에 타서 마시고 있는 비타민C 파우더! 면역력 강화와 피부 건강에 도움이 되어서 매일 챙겨 먹는다고 해요. 물에 타면 상큼한 맛이 일품!",
+      "shortUrl": "T8sU80IMGfU",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "나우푸드",
+          "itemName": "웁사 에퍼레건 비타민 씨",
+          "itemImg": "https://www.mon-pharmacien-conseil.com/14430-large_default/efferalgan-vitamin-c-16-effervescent-tablets.jpg",
+          "itemUrl": "웁사 에퍼레건 비타민 씨"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "정은채가 꾸준히 물에 타 먹는 이것!!",
+          "like": 52000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "vitamin_lover",
+          "username": "비타민덕후",
+          "userAvatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=50&h=50&fit=crop&crop=face",
+          "comment": "저도 3개월째 먹고 있는데 확실히 감기 안 걸려요! 추천추천"
+        },
+        {
+          "userId": "ive_fan123",
+          "username": "아이브사랑해",
+          "userAvatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=50&h=50&fit=crop&crop=face",
+          "comment": "은채언니 따라서 저도 시작했어요~ 맛도 상큼하고 좋아요"
+        },
+        {
+          "userId": "health_guru",
+          "username": "건강지킴이",
+          "userAvatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=50&h=50&fit=crop&crop=face",
+          "comment": "비타민C 파우더 흡수율이 더 좋다고 하던데! 정은채 선택 굿 👍"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "starName": "손예진",
+      "mainTitle": "손예진의 미네랄 워터 추천",
+      "subTitle": "손예진이 건강을 위해 마시는 특별한 물",
+      "keyword": ["#미네랄워터", "#손예진", "#건강관리"],
+      "description": "손예진이 건강관리를 위해 매일 마시는 아임 에코 워터! 깨끗한 미네랄 성분으로 피부와 건강에 좋다고 해요. 촬영장에서도 항상 챙겨 마시는 필수 아이템이에요.",
+      "shortUrl": "BUre6sJUICE",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "아임 에코",
+          "itemName": "아임 에코 워터",
+          "itemImg": "https://www.brandb.net/_next/image?url=https%3A%2F%2Fapi.brandb.net%2Fapi%2Fv2%2Fcommon%2Fimage%3FfileId%3D20331&w=1920&q=75",
+          "itemUrl": "아임 에코 워터"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "손예진의 건강 미네랄 워터",
+          "like": 34000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "water_lover",
+          "username": "물덕후",
+          "userAvatar": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=50&h=50&fit=crop&crop=face",
+          "comment": "손예진님 피부가 좋은 이유가 있었네요! 물부터 신경쓰시는구나"
+        },
+        {
+          "userId": "yejin_fan",
+          "username": "예진언니팬",
+          "userAvatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=50&h=50&fit=crop&crop=face",
+          "comment": "언니 따라서 아임 에코 워터 주문했어요! 건강해지고 싶어요 💕"
+        },
+        {
+          "userId": "mineral_water",
+          "username": "미네랄워터연구가",
+          "userAvatar": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=50&h=50&fit=crop&crop=face",
+          "comment": "아임 에코 미네랄 성분 정말 좋아요! 손예진 선택 역시 👍"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "starName": "한지민",
+      "mainTitle": "한지민의 촉촉한 눈 관리템",
+      "subTitle": "한지민의 사슴눈망울 비결은 바로 이것!",
+      "keyword": ["#아이케어", "#한지민", "#눈관리"],
+      "description": "한지민이 촉촉하고 편안한 눈을 위해 사용하는 아이리드 스프레이! 건조한 눈과 피로한 눈에 수분을 공급해주는 특별한 아이템이에요. 한번도 빼놓지 않고 사용한다고 해요.",
+      "shortUrl": "wnxzJxdki6c",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "스위스유스트",
+          "itemName": "아이리드 스프레이 18ml",
+          "itemImg": "https://godomall.speedycdn.net/498d887fac59cf58302b3aecd5d85533/goods/237/image/detail/237_detail_082.png",
+          "itemUrl": "아이리드 스프레이 18ml"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "한지민의 사슴눈망울 비밀템",
+          "like": 67000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "eye_care",
+          "username": "아이케어러",
+          "userAvatar": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=50&h=50&fit=crop&crop=face",
+          "comment": "한지민님 눈이 항상 촉촉해 보이는 이유가 있었네요! 바로 주문"
+        },
+        {
+          "userId": "dry_eyes",
+          "username": "안구건조증",
+          "userAvatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop&crop=face",
+          "comment": "눈이 항상 건조한데 이거 써보면 도움될까요? ㅠㅠ 한지민 따라하고 싶어요"
+        },
+        {
+          "userId": "jimin_love",
+          "username": "지민언니팬",
+          "userAvatar": "https://images.unsplash.com/photo-1526510747491-58f928ec870f?w=50&h=50&fit=crop&crop=face",
+          "comment": "언니 눈망울이 그렇게 예쁜 이유가 관리 때문이었구나 💕"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "starName": "영케이",
+      "mainTitle": "영케이의 달콤한 간식",
+      "subTitle": "영케이가 요즘 빠져있는 리찌 간식",
+      "keyword": ["#간식", "#영케이", "#리찌"],
+      "description": "영케이가 요즘 푹 빠져있는 오리온 리찌 알맹이! 달콤하고 상큼한 리찌 맛으로 스트레스받을 때나 달달한 게 땡길 때 꼭 찾는 간식이에요. 한 번 먹으면 계속 손이 가는 중독성!",
+      "shortUrl": "SwqEX0q55SY",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "오리온",
+          "itemName": "리찌 알맹이",
+          "itemImg": "https://img.danawa.com/prod_img/500000/912/410/img/18410912_1.jpg?shrink=330:*&_v=20221201164635",
+          "itemUrl": "리찌 알맹이"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "영케이가 중독된 달콤한 간식",
+          "like": 29000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "sweet_tooth",
+          "username": "달달이",
+          "userAvatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=50&h=50&fit=crop&crop=face",
+          "comment": "영케이님 덕분에 리찌 알맹이 알게 됐어요! 진짜 달콤하고 맛있어요"
+        },
+        {
+          "userId": "snack_lover",
+          "username": "간식덕후",
+          "userAvatar": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=50&h=50&fit=crop&crop=face",
+          "comment": "오리온 리찌 시리즈 다 맛있는데 알맹이가 진짜 레전드죠! 영케이 취향 굿"
+        },
+        {
+          "userId": "lychee_fan",
+          "username": "리찌마니아",
+          "userAvatar": "https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?w=50&h=50&fit=crop&crop=face",
+          "comment": "리찌 좋아하는 사람이라면 꼭 먹어봐야 할 간식! 영케이가 추천하니 더 믿음 가요 💕"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "starName": "카리나",
+      "mainTitle": "카리나의 품절대란 고구마 스틱",
+      "subTitle": "카리나가 즐겨먹는 대국민 고구마스틱",
+      "keyword": ["#간식", "#카리나", "#고구마스틱"],
+      "description": "카리나가 즐겨먹어서 품절대란을 일으킨 대국민 고구마스틱! 바삭하고 달콤한 고구마 맛으로 건강한 간식을 찾는 카리나의 완벽한 선택이에요. 한 번 먹으면 멈출 수 없는 맛!",
+      "shortUrl": "SumRMAQmrL4",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "훼밀리 인터내셔날",
+          "itemName": "대국민 고구마스틱",
+          "itemImg": "https://thumbnail7.coupangcdn.com/thumbnails/remote/492x492ex/image/rs_quotation_api/muymaz1v/cdd822a98efb4ee498327dfc3795cc6b.jpg",
+          "itemUrl": "대국민 고구마스틱"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "카리나 때문에 품절된 고구마스틱",
+          "like": 89000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "aespa_my",
+          "username": "마이",
+          "userAvatar": "https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?w=50&h=50&fit=crop&crop=face",
+          "comment": "카리나언니 덕분에 고구마스틱 알게 됐는데 진짜 맛있어요! 품절되기 전에 사재기"
+        },
+        {
+          "userId": "healthy_snack",
+          "username": "건강간식러",
+          "userAvatar": "https://images.unsplash.com/photo-1507038732509-8b1a6fdf97a7?w=50&h=50&fit=crop&crop=face",
+          "comment": "고구마스틱 죄책감 없이 먹을 수 있어서 좋아요 ㅠㅠ 카리나 취향 최고"
+        },
+        {
+          "userId": "sweet_potato",
+          "username": "고구마덕후",
+          "userAvatar": "https://images.unsplash.com/photo-1548345680-f5475ea60348?w=50&h=50&fit=crop&crop=face",
+          "comment": "카리나가 먹는다고 해서 사봤는데 진짜 바삭하고 달달해요! 추천 👍"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "starName": "윈터",
+      "mainTitle": "윈터의 럭셔리 핸드크림",
+      "subTitle": "윈터가 사용하는 샤넬 핸드크림",
+      "keyword": ["#핸드케어", "#윈터", "#샤넬"],
+      "description": "윈터가 애용하는 샤넬 르 리프트 핸드크림! 고급스러운 향과 뛰어난 보습력으로 손을 부드럽고 매끄럽게 만들어줘요. 윈터의 우아한 손끝 비밀이 바로 이 핸드크림이에요.",
+      "shortUrl": "K6Diys5qGds",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "샤넬",
+          "itemName": "르 리프트 라 크렘 망 핸드크림",
+          "itemImg": "https://www.chanel.com/images//t_one//w_0.43,h_0.43,c_crop/q_auto:good,f_autoplus,fl_lossy,dpr_1.1/w_1020/le-lift-la-creme-main-smooths-evens-replenishes-1-7fl-oz--packshot-default-141640-8815634382878.jpg",
+          "itemUrl": "르 리프트 라 크렘 망 핸드크림"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "윈터의 럭셔리 핸드케어 루틴",
+          "like": 73000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "chanel_lover",
+          "username": "샤넬덕후",
+          "userAvatar": "https://images.unsplash.com/photo-1550628297-69d57ba5dc1d?w=50&h=50&fit=crop&crop=face",
+          "comment": "윈터언니 덕분에 샤넬 핸드크림 알게 됐어요! 향도 좋고 보습력도 최고"
+        },
+        {
+          "userId": "hand_care",
+          "username": "핸드케어마니아",
+          "userAvatar": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=50&h=50&fit=crop&crop=face",
+          "comment": "르 리프트 라인 진짜 좋아요 ㅠㅠ 윈터가 쓰는 거라니 더 특별해 보여요"
+        },
+        {
+          "userId": "winter_my",
+          "username": "윈터마이",
+          "userAvatar": "https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?w=50&h=50&fit=crop&crop=face",
+          "comment": "언니 손이 항상 예쁜 이유가 있었구나! 샤넬 핸드크림 바로 주문 💕"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "starName": "공명",
+      "mainTitle": "공명의 시그니처 향수",
+      "subTitle": "공명이 애용하는 바이레도 블랑쉬",
+      "keyword": ["#향수", "#공명", "#바이레도"],
+      "description": "공명의 시그니처 향수인 바이레도 블랑쉬! 깨끗하고 미니멀한 향으로 공명의 세련된 매력을 완벽하게 표현해주는 향수예요. 은은하면서도 기억에 남는 특별한 향이에요.",
+      "shortUrl": "1iVO4rZhM_E",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "바이레도",
+          "itemName": "블랑쉬 오 드 퍼퓸 100ml",
+          "itemImg": "https://www.spacenk.com/dw/image/v2/ABCE_PRD/on/demandware.static/-/Sites-spacenkmastercatalog/default/dw9e16f751/products/BYREDO/UK200054580_BYREDO.jpg?sw=292&sh=292",
+          "itemUrl": "블랑쉬 오 드 퍼퓸 100ml"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "공명의 시그니처 바이레도 향수",
+          "like": 41000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "byredo_fan",
+          "username": "바이레도러버",
+          "userAvatar": "https://images.unsplash.com/photo-1512106975791-68d97c2e2b4b?w=50&h=50&fit=crop&crop=face",
+          "comment": "공명님 덕분에 블랑쉬 알게 됐는데 진짜 깨끗하고 세련된 향이에요!"
+        },
+        {
+          "userId": "perfume_collector",
+          "username": "향수콜렉터",
+          "userAvatar": "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=50&h=50&fit=crop&crop=face",
+          "comment": "바이레도 블랑쉬 진짜 명품 향수죠! 공명이 쓰는 거라니 더 특별해요"
+        },
+        {
+          "userId": "gongmyeong_fan",
+          "username": "공명팬",
+          "userAvatar": "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=50&h=50&fit=crop&crop=face",
+          "comment": "공명님 향수 취향이 정말 고급스러워요 ㅠㅠ 저도 블랑쉬 써보고 싶어요 💕"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "starName": "고민시",
+      "mainTitle": "고민시의 완벽한 립케어",
+      "subTitle": "고민시가 입술 관리를 위해 사용하는 제품",
+      "keyword": ["#립케어", "#고민시", "#립 메덱스"],
+      "description": "고민시의 부드럽고 촉촉한 입술 비밀! 라네즈 립케어 제품으로 매일 관리해주면 각질도 제거되고 수분도 가득 채워져요. 고민시의 매끄러운 입술 관리법이에요.",
+      "shortUrl": "ZMoKg1iqPog",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "빌스텍스",
+          "itemName": "립 메덱스",
+          "itemImg": "https://medias.watsons.com.my/publishing/WTCMY-1010810-back-zoom.jpg?version=1720204812",
+          "itemUrl": "립 메덱스"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "고민시의 립케어 비법 공개",
+          "like": 58000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "lip_care_lover",
+          "username": "립케어덕후",
+          "userAvatar": "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=50&h=50&fit=crop&crop=face",
+          "comment": "고민시님 입술이 항상 예쁜 이유가 있었네요! 라네즈 제품 바로 주문"
+        },
+        {
+          "userId": "gominsi_fan",
+          "username": "고민시팬",
+          "userAvatar": "https://images.unsplash.com/photo-1525253013412-55c1a69a5738?w=50&h=50&fit=crop&crop=face",
+          "comment": "언니 따라서 립케어 루틴 시작했어요! 확실히 입술이 부드러워져요"
+        },
+        {
+          "userId": "laneige_user",
+          "username": "라네즈애용자",
+          "userAvatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=50&h=50&fit=crop&crop=face",
+          "comment": "라네즈 립케어 라인 진짜 좋아요 ㅠㅠ 고민시가 쓰는 거라니 더 믿음 가요 💋"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "starName": "아일릿",
+      "mainTitle": "아일릿 멤버들의 감성 가방",
+      "subTitle": "아일릿멤버가 사용하는 히스테릭 글래머 토트백",
+      "keyword": ["#가방", "#아일릿", "#히스테릭글래머"],
+      "description": "아일릿 멤버들이 애용하는 히스테릭 글래머 토트백! Y2K 감성의 독특한 디자인으로 아일릿의 개성 있는 스타일을 완성해주는 필수 아이템이에요. 실용성과 스타일을 모두 잡은 완벽한 가방!",
+      "shortUrl": "QDsfb_ObXpM",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "베스티에르 콜렉티브",
+          "itemName": "히스테릭 글래머 토트백",
+          "itemImg": "https://images.vestiairecollective.com/images/resized/w=1024,q=75,f=auto,/produit/beige-plastic-hysteric-glamour-handbag-36100759-1_2.jpg",
+          "itemUrl": "히스테릭 글래머 토트백"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "아일릿의 감성 토트백 추천",
+          "like": 47000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "illit_glitter",
+          "username": "일릿글리터",
+          "userAvatar": "https://images.unsplash.com/photo-1601455763557-db1bea8a9a5a?w=50&h=50&fit=crop&crop=face",
+          "comment": "아일릿 언니들 가방 취향 너무 독특하고 예뻐요! 히글 토트백 갖고 싶어요"
+        },
+        {
+          "userId": "hysteric_lover",
+          "username": "히글러버",
+          "userAvatar": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=50&h=50&fit=crop&crop=face",
+          "comment": "히스테릭 글래머 가방 진짜 개성 있고 좋아요! 아일릿이 메는 거라니 더 특별해 보여요"
+        },
+        {
+          "userId": "tote_bag_fan",
+          "username": "토트백마니아",
+          "userAvatar": "https://images.unsplash.com/photo-1544348817-5f2cf14b88c8?w=50&h=50&fit=crop&crop=face",
+          "comment": "Y2K 감성 토트백 찾고 있었는데 아일릿 덕분에 딱 찾았어요! 실용적이면서 스타일리시해요 💕"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "starName": "이재욱",
+      "mainTitle": "이재욱의 세련된 안경",
+      "subTitle": "이재욱이 애용하는 젠틀몬스터 안경",
+      "keyword": ["#안경", "#이재욱", "#젠틀몬스터"],
+      "description": "이재욱의 지적이고 세련된 매력을 완성해주는 젠틀몬스터 쿠보 C1! 클래식하면서도 모던한 디자인으로 어떤 스타일에도 완벽하게 어울리는 이재욱의 시그니처 안경이에요.",
+      "shortUrl": "RqAGPY3b8B4",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "젠틀몬스터",
+          "itemName": "쿠보 C1",
+          "itemImg": "https://gm-prd-resource.gentlemonster.com/catalog/product/9F9VZTIZYHX2/9F9VZTIZYHX2_FRONT.jpg",
+          "itemUrl": "쿠보 C1"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "이재욱의 지적 매력 안경 추천",
+          "like": 35000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "gentle_monster_fan",
+          "username": "젠몬러버",
+          "userAvatar": "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=50&h=50&fit=crop&crop=face",
+          "comment": "이재욱님 안경 정말 잘 어울려요! 쿠보 C1 디자인 너무 세련돼요"
+        },
+        {
+          "userId": "glasses_collector",
+          "username": "안경콜렉터",
+          "userAvatar": "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=50&h=50&fit=crop&crop=face",
+          "comment": "젠틀몬스터 안경 퀄리티 진짜 좋아요! 이재욱이 쓰는 거라니 더 믿음 가네요"
+        },
+        {
+          "userId": "jaeuk_fan",
+          "username": "재욱팬",
+          "userAvatar": "https://images.unsplash.com/photo-1494822296737-37931d7c1084?w=50&h=50&fit=crop&crop=face",
+          "comment": "재욱오빠 안경 쓴 모습 너무 지적이고 멋있어요 ㅠㅠ 저도 젠몬 사고 싶어요 💕"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "starName": "정호연",
+      "mainTitle": "정호연의 프리미엄 세럼",
+      "subTitle": "정호연이 애용하는 랑콤 제니피끄 세럼",
+      "keyword": ["#스킨케어", "#정호연", "#랑콤"],
+      "description": "정호연의 완벽한 피부 비밀인 랑콤 제니피끄 얼티미트 세럼! 피부 재생과 탄력 개선에 뛰어난 효과로 정호연의 빛나는 피부를 만들어주는 프리미엄 세럼이에요.",
+      "shortUrl": "q12o6lLGnxY",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "랑콤",
+          "itemName": "제니피끄 얼티미트 세럼 30ML",
+          "itemImg": "https://asset.m-gs.kr/prod/1062097099/1/2000",
+          "itemUrl": "제니피끄 얼티미트 세럼 30ML"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "정호연의 피부 비밀 세럼 공개",
+          "like": 81000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "lancome_lover",
+          "username": "랑콤덕후",
+          "userAvatar": "https://images.unsplash.com/photo-1484399172022-72a90b12e3c1?w=50&h=50&fit=crop&crop=face",
+          "comment": "정호연님 피부가 그렇게 완벽한 이유가 있었네요! 제니피끄 세럼 바로 주문"
+        },
+        {
+          "userId": "skincare_expert",
+          "username": "스킨케어전문가",
+          "userAvatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=50&h=50&fit=crop&crop=face",
+          "comment": "제니피끄 얼티미트 세럼 진짜 효과 좋아요! 정호연이 쓰는 거라니 더 믿음직해요"
+        },
+        {
+          "userId": "hoyeon_fan",
+          "username": "호연언니팬",
+          "userAvatar": "https://images.unsplash.com/photo-1524638431109-93d95c968f03?w=50&h=50&fit=crop&crop=face",
+          "comment": "언니 피부 진짜 도자기 같아요 ㅠㅠ 세럼 따라 써봐야겠어요 💕"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "starName": "민규",
+      "mainTitle": "민규의 프리미엄 이어폰",
+      "subTitle": "민규가 음악 감상을 위해 사용하는 이어폰",
+      "keyword": ["#이어폰", "#민규", "#뱅앤올룹슨"],
+      "description": "민규가 음악 감상을 위해 사용하는 뱅 앤 올룹슨 이어폰! 뛰어난 음질과 고급스러운 디자인으로 민규의 음악에 대한 열정을 완벽하게 표현해주는 프리미엄 이어폰이에요.",
+      "shortUrl": "-sge912Qma8",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "뱅 엔 올룹슨",
+          "itemName": "뱅 엔 올룹슨 이어폰",
+          "itemImg": "https://images.kolonmall.com/Prod_Img/10003423/2022/LM3/K1675773603926012NO01_LM3.jpg",
+          "itemUrl": "뱅 엔 올룹슨 이어폰"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "민규의 음악 감상용 프리미엄 이어폰",
+          "like": 63000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "bo_audiophile",
+          "username": "뱅올러버",
+          "userAvatar": "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=50&h=50&fit=crop&crop=face",
+          "comment": "민규님 음악 취향만큼 이어폰 취향도 최고네요! 뱅올 음질 진짜 깨끗해요"
+        },
+        {
+          "userId": "music_lover",
+          "username": "음악덕후",
+          "userAvatar": "https://images.unsplash.com/photo-1536431311719-398b6704d4cc?w=50&h=50&fit=crop&crop=face",
+          "comment": "뱅 앤 올룹슨 이어폰 진짜 명품이죠! 민규가 쓰는 거라니 더 특별해 보여요"
+        },
+        {
+          "userId": "mingyu_carat",
+          "username": "민규캐럿",
+          "userAvatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=50&h=50&fit=crop&crop=face",
+          "comment": "규형 이어폰까지 고급스러워요 ㅠㅠ 음악 들을 때 진짜 좋을 것 같아요 💕"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "starName": "닝닝",
+      "mainTitle": "닝닝의 시그니처 향수",
+      "subTitle": "닝닝이 애용하는 크리드 실버 마운틴 워터",
+      "keyword": ["#향수", "#닝닝", "#크리드"],
+      "description": "닝닝의 시그니처 향수인 크리드 실버 마운틴 워터! 시원하고 깔끔한 향으로 닝닝의 청순하면서도 세련된 매력을 완벽하게 표현해주는 프리미엄 향수예요.",
+      "shortUrl": "8MJ5FgNKFTQ",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "크리드",
+          "itemName": "실버 마운틴 워터 오 드 퍼퓸 100ml",
+          "itemImg": "https://image-cdn.trenbe.com/productmain/1692164305701-62cd940a-2b8f-4938-b3bc-6f98657e2971.png",
+          "itemUrl": "실버 마운틴 워터 오 드 퍼퓸 100ml"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "닝닝의 시원한 시그니처 향수",
+          "like": 55000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "creed_lover",
+          "username": "크리드덕후",
+          "userAvatar": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=50&h=50&fit=crop&crop=face",
+          "comment": "닝닝님 향수 취향 정말 고급스러워요! 실버 마운틴 워터 향 진짜 시원하고 좋아요"
+        },
+        {
+          "userId": "perfume_collector",
+          "username": "향수콜렉터",
+          "userAvatar": "https://images.unsplash.com/photo-1494790108755-2616b612b784?w=50&h=50&fit=crop&crop=face",
+          "comment": "크리드 실버 마운틴 워터 명품 향수죠! 닝닝이 쓰는 거라니 더 특별해요"
+        },
+        {
+          "userId": "ningning_my",
+          "username": "닝닝마이",
+          "userAvatar": "https://images.unsplash.com/photo-1506629905587-4bf73c9193f8?w=50&h=50&fit=crop&crop=face",
+          "comment": "언니 향수 취향까지 완벽해요 ㅠㅠ 저도 같은 향수 써보고 싶어요 💕"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "starName": "태민",
+      "mainTitle": "태민과 한몸인 애착 목걸이",
+      "subTitle": "하루만 태민 목에 목걸이가 되고싶어",
+      "keyword": ["#태민", "#목걸이", "#크롬하츠"],
+      "description": "태민이 항상 착용하는 크롬하츠 24k 세이프티 목걸이! 무대에서나 일상에서나 절대 빼지 않는 태민의 트레이드마크 액세서리예요. 고급스러운 크롬하츠의 시그니처 디자인이 태민의 카리스마를 더욱 돋보이게 해줘요.",
+      "shortUrl": "grI1vREMh-I",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "크롬하츠",
+          "itemName": "크롬하츠 24k 세이프티 목걸이",
+          "itemImg": "https://www.wishbucket.io/_next/image?url=https%3A%2F%2Fd2gfz7wkiigkmv.cloudfront.net%2Fpickin%2F2%2F1%2F2%2Fm_JLkn2SRMKrByzQnBb7-A&w=640&q=75",
+          "itemUrl": "크롬하츠 24k 세이프티 목걸이"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "태민이 절대 안 빼는 그 목걸이",
+          "like": 187000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "chrome_hearts_fan",
+          "username": "크롬하츠덕후",
+          "userAvatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=50&h=50&fit=crop&crop=face",
+          "comment": "태민오빠 목걸이 정말 멋있어요! 크롬하츠 세이프티 체인 진짜 고급져요"
+        },
+        {
+          "userId": "taemin_shawol",
+          "username": "태민샤월",
+          "userAvatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=50&h=50&fit=crop&crop=face",
+          "comment": "오빠가 항상 차고 있는 목걸이구나! 그래서 더 애착이 가는 것 같아요 💕"
+        },
+        {
+          "userId": "jewelry_lover",
+          "username": "액세서리마니아",
+          "userAvatar": "https://images.unsplash.com/photo-1493666438817-866a91353ca9?w=50&h=50&fit=crop&crop=face",
+          "comment": "크롬하츠 24k 라인 진짜 명품이에요! 태민 취향 역시 최고 👍"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "starName": "홍경",
+      "mainTitle": "홍경의 촉촉 립케어 루틴",
+      "subTitle": "홍경이 매일 발라주는 탬버린즈 립밤",
+      "keyword": ["#홍경", "#립밤", "#탬버린즈"],
+      "description": "홍경이 매일 빼놓지 않고 바르는 탬버린즈 에그 립밤 로즈우디! 독특한 에그 모양의 디자인과 은은한 로즈우디 향으로 홍경의 입술을 촉촉하고 부드럽게 만들어주는 시그니처 립케어 아이템이에요.",
+      "shortUrl": "xzCWQdvUf08",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "탬버린즈",
+          "itemName": "에그 립밤 로즈우디",
+          "itemImg": "https://web-resource.tamburins.com/catalog/product/1695802162/427af98d-5277-4a6c-a937-e0b11b7d37a2/thumbnail_LipBalm_RoseWoody.jpg",
+          "itemUrl": "에그 립밤 로즈우디"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "홍경의 귀여운 에그 립밤",
+          "like": 92000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "tamburins_lover",
+          "username": "탬버린즈러버",
+          "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=50&h=50&fit=crop&crop=face",
+          "comment": "홍경님 덕분에 탬버린즈 립밤 알게 됐어요! 에그 모양이 너무 귀여워요"
+        },
+        {
+          "userId": "lip_care_queen",
+          "username": "립케어여왕",
+          "userAvatar": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=50&h=50&fit=crop&crop=face",
+          "comment": "로즈우디 향 진짜 은은하고 좋아요! 홍경 립케어 루틴 따라해야겠어요"
+        },
+        {
+          "userId": "hongkyung_fan",
+          "username": "홍경팬",
+          "userAvatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=50&h=50&fit=crop&crop=face",
+          "comment": "언니 입술이 항상 촉촉한 이유가 있었구나! 에그 립밤 바로 주문 💋"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "starName": "선미",
+      "mainTitle": "선미의 여행 필수템",
+      "subTitle": "선미가 여행갈 때 꼭 챙기는 트래블 케이스",
+      "keyword": ["#선미", "#트래블케이스", "#엑스니힐로"],
+      "description": "선미가 여행갈 때마다 꼭 챙기는 엑스니힐로 트래블 케이스! 헥사곤 블랙마블 디자인으로 고급스러우면서도 실용적이에요. 화장품부터 액세서리까지 깔끔하게 정리할 수 있어서 선미의 여행 필수템이 되었어요.",
+      "shortUrl": "42Bn5UWe4GM",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "엑스니힐로",
+          "itemName": "트래블 케이스 헥사곤 블랙마블",
+          "itemImg": "https://image.sivillage.com/upload/C00001/goods/org/752/210512001224752.jpg?RS=600&SP=1",
+          "itemUrl": "트래블 케이스 헥사곤 블랙마블"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "선미의 고급스러운 트래블 케이스",
+          "like": 68000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "travel_addict",
+          "username": "여행중독자",
+          "userAvatar": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=50&h=50&fit=crop&crop=face",
+          "comment": "선미님 트래블 케이스 너무 세련돼요! 여행갈 때 이런 케이스 하나 있으면 정말 편할 것 같아요"
+        },
+        {
+          "userId": "sunmi_wonder",
+          "username": "선미원더",
+          "userAvatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=50&h=50&fit=crop&crop=face",
+          "comment": "언니 여행 갈 때마다 이거 들고 다니는구나! 헥사곤 디자인 진짜 독특하고 예뻐요 💕"
+        },
+        {
+          "userId": "organized_life",
+          "username": "정리의여왕",
+          "userAvatar": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=50&h=50&fit=crop&crop=face",
+          "comment": "엑스니힐로 제품 퀄리티 좋아요! 선미가 추천하니까 더 믿음직해요"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "starName": "차은우",
+      "mainTitle": "차은우의 럭셔리 시계",
+      "subTitle": "차은우가 착용하는 까르띠에 워치",
+      "keyword": ["#차은우", "#시계", "#까르띠에"],
+      "description": "차은우가 중요한 자리에서 착용하는 까르띠에 산토스 드 까르띠에 워치! 클래식하면서도 모던한 디자인으로 차은우의 우아한 매력을 완성해주는 프리미엄 시계예요. 정교한 기계식 무브먼트와 고급스러운 스테인리스 스틸 소재가 인상적이에요.",
+      "shortUrl": "e3f6_13OB2E",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "까르띠에",
+          "itemName": "산토스 드 까르띠에 워치",
+          "itemImg": "https://www.cartier.com/dw/image/v2/BGTJ_PRD/on/demandware.static/-/Sites-cartier-master/default/dw632fc973/images/large/5fd1b28d5c7051e4b4b8898ac235c52a.png?sw=750&sh=750&sm=fit&sfrm=png",
+          "itemUrl": "산토스 드 까르띠에 워치"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "차은우의 까르띠에 명품 시계",
+          "like": 245000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "cartier_collector",
+          "username": "까르띠에콜렉터",
+          "userAvatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=50&h=50&fit=crop&crop=face",
+          "comment": "차은우님 시계 취향 정말 고급스러워요! 산토스 드 까르띠에 진짜 명품이죠"
+        },
+        {
+          "userId": "eunwoo_astro",
+          "username": "은우아스트로",
+          "userAvatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop&crop=face",
+          "comment": "오빠 손목에 까르띠에 시계 차고 있는 모습 너무 멋있어요 ㅠㅠ 진짜 왕자님 같아요"
+        },
+        {
+          "userId": "luxury_watch",
+          "username": "명품시계러버",
+          "userAvatar": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=50&h=50&fit=crop&crop=face",
+          "comment": "까르띠에 산토스 라인 정말 클래식하고 좋아요! 차은우가 차니까 더 특별해 보여요 ⌚"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "starName": "차준환",
+      "mainTitle": "차준환의 새콤달콤 간식",
+      "subTitle": "차준환이 훈련 후 즐겨먹는 아이셔!",
+      "keyword": ["#차준환", "#아이셔-캔디", "#간식"],
+      "description": "차준환이 힘든 훈련 후에 항상 찾는 오리온 아이셔! 상큼한 신맛과 달콤함이 절묘하게 조화된 이 간식으로 피로를 달래고 기분전환을 한다고 해요. 간단하면서도 에너지를 채워주는 차준환의 필수 간식이에요.",
+      "shortUrl": "YI3BvRHYTKM",
+      "item": [
+        {
+          "itemId": 1,
+          "itemBrand": "오리온",
+          "itemName": "아이셔 캔디",
+          "itemImg": "https://cmprd-content.baemin.com/upload/product/main/0014554d-17ef-4cfc-8970-c00ca2bd48d6.png",
+          "itemUrl": "아이셔 캔디"
+        }
+      ],
+      "shorts": [
+        {
+          "shortId": 1,
+          "shortTitle": "차준환의 훈련 후 필수 간식",
+          "like": 156000
+        }
+      ],
+      "comments": [
+        {
+          "userId": "figure_skating_fan",
+          "username": "피겨덕후",
+          "userAvatar": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=50&h=50&fit=crop&crop=face",
+          "comment": "차준환 선수 훈련 정말 힘들텐데 새콤달콤으로 기분전환하는구나! 귀여워요"
+        },
+        {
+          "userId": "sweet_sour_lover",
+          "username": "새콤달콤러버",
+          "userAvatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=50&h=50&fit=crop&crop=face",
+          "comment": "새콤달콤 진짜 오랜만에 먹고 싶어지네요! 차준환이 먹는다니 더 맛있어 보여요"
+        },
+        {
+          "userId": "junhwan_fan",
+          "username": "준환팬",
+          "userAvatar": "https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?w=50&h=50&fit=crop&crop=face",
+          "comment": "준환오빠 힘든 훈련 후에 이런 달콤한 간식으로 힐링하는구나 💕 화이팅!"
+        }
+      ]
+    }
+  ]
+}

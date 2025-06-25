@@ -20,6 +20,7 @@ const Container = styled.div`
     }
   }
   @media screen and (max-width: 1024px) {
+    height: 100%;
     form {
       width: 100%;
     }
@@ -119,21 +120,23 @@ const CloseBtn = styled.button`
     }
   }
 `;
-const SearchComp = ({ searchClick, setSearchClick }) => {
+const SearchComp = ({ searchClick, setSearchClick, setOttSearchClick }) => {
   // const [inputVal, setInputVal] = useState("");
   const navigate = useNavigate();
   const inputRef = useRef();
   const closeBtnClick = (e) => {
     e.preventDefault();
     setSearchClick(false);
+    setOttSearchClick(false);
   };
   const bgClick = () => {
     setSearchClick(false);
+    setOttSearchClick(false);
   };
   const onSubmit = (e) => {
     e.preventDefault();
     if (inputRef.current.value !== "") {
-      navigate(`search/${inputRef.current.value}`);
+      navigate(`/search/${inputRef.current.value}`);
       setSearchClick(false);
       inputRef.current.value = "";
     }
